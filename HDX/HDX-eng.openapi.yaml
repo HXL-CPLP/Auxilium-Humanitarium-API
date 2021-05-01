@@ -1,0 +1,7 @@
+# https://oai.github.io/Documentation/specification-structure.html
+
+openapi: 3.1.0
+info:
+  title: A minimal OpenAPI document
+  version: 0.0.1
+paths: {} # No endpoints defined

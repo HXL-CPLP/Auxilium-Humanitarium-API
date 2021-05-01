@@ -19,6 +19,15 @@
 <!--
 - https://raml-org.github.io/playground/raml_oas.html?
 - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+- https://www.openapis.org/blog/2021/02/16/migrating-from-openapi-3-0-to-3-1-0
+
+- https://hxl.etica.ai/COD-Services-API-doc/HDX/HDX-eng.raml.yml
+- https://hxl.etica.ai/COD-Services-API-doc/HDX/HDX-eng.oas.yml
+
+
+Learning about OpenAPI
+- https://openapi-map.apihandyman.io/
+
 -->
 
 ### API documentation formats
@@ -60,7 +69,13 @@ See **<https://openapi.tools/>** and:
 
 ##### VSCode extensions
 
-
+- OpenAPI specific
+  - `ext install 42Crunch.vscode-openapi`
+    - https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi
+    - https://github.com/42Crunch/vscode-openapi
+  - `ext install Arjun.swagger-viewer`
+    - https://marketplace.visualstudio.com/items?itemName=Arjun.swagger-viewer
+    - https://github.com/arjun-g/vs-swagger-viewer
 - RAML specific
   - Set ".raml" files as type "YAML"
     - By defailt, VSCode does not recognize RAML as YAML-like, so you can

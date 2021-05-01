@@ -1,0 +1,4 @@
+# Example of a `.gitattributes` file which reclassifies `.rb` files as Java:
+*.raml.yml linguist-language=RAML
+
+# @see https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
