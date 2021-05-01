@@ -1,6 +1,6 @@
 #%RAML 1.0
 #
-# https://beta.itos.uga.edu/CODV2API/Help
+# FILE: CODV2API-eng.raml
 ---
 
 title: COD Services API
@@ -22,7 +22,7 @@ baseUri: https://beta.itos.uga.edu/CODV2API/api/v1
       P-Code representing a specific location. It is case insensitive.JSON
 /themes:
   /cod-ab:
-    /locations/:
+    /locations:
       /{pCode}:
         /versions:
           /{versionId}:

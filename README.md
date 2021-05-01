@@ -16,6 +16,11 @@
 
 ## Internal comments
 
+<!--
+- https://raml-org.github.io/playground/raml_oas.html?
+- https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+-->
+
 ### API documentation formats
 
 - AML
