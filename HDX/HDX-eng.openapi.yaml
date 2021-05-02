@@ -24,8 +24,6 @@ info:
   license:
     name: Several license types
     url: https://data.humdata.org/about/license
-    # TODO: while OpenAPI 3.0 don't enforce SPDX https://spdx.org/licenses/
-    #       the OpenAPI 3.1 recommends/requires SPDX. So this will need ajusts
   contact:
     name: Centre for Humanitarian Data
     url: https://centre.humdata.org/contact-us/

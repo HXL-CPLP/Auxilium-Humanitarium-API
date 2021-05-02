@@ -35,78 +35,84 @@ info:
     # TODO: while OpenAPI 3.0 don't enforce SPDX https://spdx.org/licenses/
     #       the OpenAPI 3.1 recommends/requires SPDX. So this will need ajusts
   contact:
-    name: HXLStandard
+    name: HXLStandard (Mail list, GitHub Issues)
     url: https://github.com/HXLStandard/hxl-proxy/issues
     email: hxlproject@googlegroups.com
     # https://groups.google.com/g/hxlproject
 
 servers:
-  - url: https://proxy.hxlstandard.org/
+  - url: https://proxy.hxlstandard.org
     description: HXLStandard production server
-  - url: http://localhost:5000/
+  - url: http://beta.proxy.hxlstandard.org/
+    description: HXLStandard beta server (no HTTPS)
+  - url: http://localhost:5000
     description: HXL-proxy localhost docker
     # https://github.com/HXLStandard/hxl-proxy/blob/master/docker_files/docker-compose.yml
 
+# paths: {}
+paths:
+  /data.csv?:
+    get:
+      description: |
+        Computer programs can use the HXL Proxy as if it were an
+        Application programming interface (API).
 
-paths: {}
+        There are two basic URL patterns available (substitute a different
+        domain if you are using a local copy of the proxy):
 
-# # NOTE: for maintainers, the Team Digitale have a few references about OpenAPI
-# #       and CKAN. For example, the file
-# # https://github.com/teamdigitale/api-openapi-samples/blob/master/external-apis/api.daf.teamdigitale.it.yaml.src
-# paths:
-#   /package_list:
-#     get:
-#       parameters:
-#         - in: query
-#           name: limit
-#           description: >
-#             If given, the list of datasets will be broken into pages of at most
-#             `limit` datasets per page and only one page will be returned at a time
-#           required: false
-#           schema:
-#             type: integer
-#             default: 250
-#             # NOTE: is possible to not use a default and display EVERYTING.
-#             #       But this can freeze user browser even if a 200kb response.
-#         - in: query
-#           name: offset
-#           description: >
-#             When `limit` is given, the `offset` to start returning packages from
-#           required: false
-#           schema:
-#             type: integer
-#       responses:
-#         '200':
-#           description: >
-#             Return a list of the names of the site’s datasets (packages).
+        ```
+        https://proxy.hxlstandard.org/data.<ext>
+        https://proxy.hxlstandard.org/data/download/<basename>.<ext>
+        ```
+        The ext portion may be either "csv" for
+        [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) data, or
+        "json" for [JSON](https://en.wikipedia.org/wiki/JSON) data.
+        In the second form, you can chose any custom download filename by
+        setting the basename appropriately, e.g. "2016-burundi-3w".
 
-#             See also:
-#               - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
-#           content:
-#             application/json:
-#               schema:
-#                 type: array
-#                 items:
-#                   $ref: '#/components/schemas/CkanReply'
-#   /tag_list: {}
-#   # TODO: /tag_list 
-#   # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_list
+        You may optionally also include the form parameters from the
+        interactive [Recipe page](https://github.com/HXLStandard/hxl-proxy/wiki/Recipe-page)
+        if you wish. The HXL Proxy will read the recipe parameter first,
+        then append any form-based filters after it.
 
-#   /tag_show: {}
-#   # TODO: /tag_show 
-#   # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_show
+        For full documentation, see
+        <https://github.com/HXLStandard/hxl-proxy/wiki/API>.
 
+      parameters:
+        - in: query
+          name: url
+          description: >
+            URL of the original dataset (see Special URL handling).
+
+            See <https://github.com/HXLStandard/hxl-proxy/wiki/Special-URL-handling>.
+          required: true
+          schema:
+            type: string
+            default: "https://hdp.etica.ai/ontologia/codicem/codicem.locum.hxl.csv"
+
+        - in: query
+          name: sheet
+          description: >
+            Zero-based index of the tab to use from an Excel workbook
+          required: false
+          schema:
+            type: integer
+            example: 1
+
+      responses:
+        '200':
+          description: >
+            Return a list of the names of the site’s datasets (packages).
+
+            See also:
+              - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+          content:
+            text/csv:
+              schema:
+                type: string
+                # example: 
 
 # components:
-#   # NOTE: OpenAPI 3.0 seems to not allow use $ref outside schemas
-#   #       (but OpenAPI 3.1 allow it), but the teamdigitale/api-openapi-samples
-#   #       uses this as part of build scripts. We will keep it simple without
-#   #       use extra steps.
-#   # responses:
-#   #   CkanResponse:
-#   #     description: >-
-#   #       Standard Ckan Reply. See http://docs.ckan.org/en/latest/api/index.html.
-
 #   schemas:
 #     CkanReply:
 #       # From teamdigitale/api-openapi-samples
