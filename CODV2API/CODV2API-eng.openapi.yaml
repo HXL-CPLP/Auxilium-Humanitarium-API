@@ -1,7 +1,7 @@
-# FILE:            HDX-eng.openapi.yaml
+# FILE:            CODV2API-eng.openapi.yaml
 # LICENSE:         Unlicense
 #
-# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/HDX/HDX-eng.openapi.yaml
+# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/HDX/CODV2API-eng.openapi.yaml
 #
 # README FIRST!:   This file uses OpenAPI syntax (https://www.openapis.org/),
 #                  a de facto non-proprietary industry standard to document
@@ -19,36 +19,64 @@ openapi: 3.0.3
 # @see https://spec.openapis.org/oas/v3.1.0
 
 info:
-  title: The Humanitarian Data Exchange API (Unofficial) documentation (English version)
-  description: "TODO: add description"
-  version: "3" # 3 because CKAN uses 3, see https://docs.ckan.org/en/2.9/api/
-  termsOfService: https://data.humdata.org/about/terms
+  title: COD Version 2 API (English)
+  description: |
+
+    This resource, using [OpenAPI 3.0 specification](https://www.openapis.org/)
+    and [dedicated to public domain](https://unlicense.org/), is an
+    [HXL-CPLP volunteers user group](https://github.com/HXL-CPLP) initiative
+    to document the [COD Version 2 API](https://beta.itos.uga.edu/CODV2API/) in
+    Portuguese language. Use of resource (recommended: see
+    [Open API Tools](https://openapi.tools/)) to make integrations and
+    translations to other natural languages.
+
+    **Important:** HXL-CPLP, translators, volunteers or third-party
+    projects using the OpenAPI file are not affiliated with the API providers.
+    Use of public domain like licenses (when viable) on derived work is
+    encouraged.
+
+    ## About the API
+
+    The API is built for humanitarian information management. Some
+    [UN OCHA](https://www.unocha.org/) activities are encapsulated in this
+    tool with respect to Common Operational Datasets maintenance.
+    Find metadata and location information and gazeteer type output for the
+    CODs compatible for applications and for visualizations.
+    The scope of the data varies but comprises enhanced CODs processed in
+    OCHA workflows for roughly 50 countries (as shown in the
+    [COD dashboard](https://cod.unocha.org/)) in the humanitarian support
+    sphere. For more information see the
+    [About page](https://beta.itos.uga.edu/CODV2API/Home/About).
+    Enjoy and comments welcome at ocha-fis-data@un.org.
+
+    ## What are CODs?
+    Common Operational Datasets (CODs) are authoritative reference datasets
+    needed to support operations and decision-making for all actors in a
+    humanitarian response. CODs are 'best available' datasets that ensure
+    consistency and simplify the discovery and exchange of key data for the
+    humanitarian community.
+
+  version: "2"
+
+  # termsOfService copied from "Privacy" link at https://beta.itos.uga.edu/CODV2API/Home/About
+  termsOfService: https://eits.uga.edu/access_and_security/infosec/pols_regs/policies/privacy/
   license:
     name: Several license types
     url: https://data.humdata.org/about/license
   contact:
-    name: Centre for Humanitarian Data
-    url: https://centre.humdata.org/contact-us/
-    email: hdx@un.org
-  # NOTE: The 'info:'' group is based on HDX website. The "Unofficial" is
-  #       added to avoid confusion individuals contributing via HXL-CPLP, an
-  #       HXL regional user group, be part of HDX.
-  #       The close to "official" documentation is likely to be:
-  #         - https://docs.ckan.org/en/latest/api/index.html
-  #         - https://data.humdata.org/faq
-  #       The "English version" on title is because one idea of HXL-CPLP is
-  #       eventually encourage localized translations.
+    name: OCHA Field Information Services
+    url: https://data.humdata.org/user/ocha-fis-data
+    email: ocha-fis-data@un.org
 
 servers:
-  - url: https://data.humdata.org/api/3/action
-    description: HDX Production server
-
+  - url: https://beta.itos.uga.edu/CODV2API/api/v1
+    description: COD Version 2 API production server
 
 # NOTE: for maintainers, the Team Digitale have a few references about OpenAPI
 #       and CKAN. For example, the file
 # https://github.com/teamdigitale/api-openapi-samples/blob/master/external-apis/api.daf.teamdigitale.it.yaml.src
 paths:
-  /package_list:
+  /locations:
     get:
       parameters:
         - in: query

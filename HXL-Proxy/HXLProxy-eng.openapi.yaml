@@ -1,13 +1,14 @@
 # FILE:            HXLProxy-eng.openapi.yaml
 # LICENSE:         Unlicense
 #
+# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/HXL-Proxy/HXLProxy-eng.openapi.yaml
+#
 # README FIRST!:   This file uses OpenAPI syntax (https://www.openapis.org/),
 #                  a de facto non-proprietary industry standard to document
 #                  APIs.
 #                  Consider as starting point:
 #                    - Use this online editor https://editor.swagger.io/
 #                    - Check this https://openapi.tools/ for compatible tools
-
 
 openapi: 3.0.3
 # NOTE: the current file, as 2021-05-01, uses OpenAPI 3.0 because 3.1 still too
