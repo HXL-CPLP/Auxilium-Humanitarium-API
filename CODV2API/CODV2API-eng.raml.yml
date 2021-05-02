@@ -3,6 +3,8 @@
 # FILE: CODV2API-eng.raml
 ---
 
+# NOTE: this file is deprecated, use CODV2API-eng.openapi.yaml
+
 title: COD Services API
 version: v2
 # baseUri: https://beta.itos.uga.edu/CODV2API/api/{version}

@@ -1,7 +1,7 @@
 # FILE:            CODV2API-eng.openapi.yaml
 # LICENSE:         Unlicense
 #
-# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/HDX/CODV2API-eng.openapi.yaml
+# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/CODV2API/CODV2API-eng.openapi.yaml
 #
 # README FIRST!:   This file uses OpenAPI syntax (https://www.openapis.org/),
 #                  a de facto non-proprietary industry standard to document
@@ -19,7 +19,7 @@ openapi: 3.0.3
 # @see https://spec.openapis.org/oas/v3.1.0
 
 info:
-  title: COD Version 2 API (English)
+  title: UN OCHA COD Version 2 API (English)
   description: |
 
     This resource, using [OpenAPI 3.0 specification](https://www.openapis.org/)
@@ -76,81 +76,278 @@ servers:
 #       and CKAN. For example, the file
 # https://github.com/teamdigitale/api-openapi-samples/blob/master/external-apis/api.daf.teamdigitale.it.yaml.src
 paths:
+
+  # NOTE: the will not be documented here
+  # /current:
+
   /locations:
     get:
-      parameters:
-        - in: query
-          name: limit
-          description: >
-            If given, the list of datasets will be broken into pages of at most
-            `limit` datasets per page and only one page will be returned at a time
-          required: false
-          schema:
-            type: integer
-            default: 250
-            # NOTE: is possible to not use a default and display EVERYTING.
-            #       But this can freeze user browser even if a 200kb response.
-        - in: query
-          name: offset
-          description: >
-            When `limit` is given, the `offset` to start returning packages from
-          required: false
-          schema:
-            type: integer
+      # description: >
+      #   List available locations(with metadata about each such as preferred name,
+      #   iso codes, etc.) and lists of themes available in each location Returns:
+      #   location name, iso_3, themes
       responses:
         '200':
           description: >
-            Return a list of the names of the site’s datasets (packages).
-
-            See also:
-              - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+            List available locations(with metadata about each such as preferred
+            name, iso codes, etc.) and lists of themes available in each
+            location Returns: location name, iso_3, themes
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/CkanReply'
-  /tag_list: {}
-  # TODO: /tag_list 
-  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_list
+                  $ref: '#/components/schemas/LocationMetadataReply'
+  /locations/{pCode}:
+    parameters:
+      - $ref: '#/components/parameters/pCodePathParam'
 
-  /tag_show: {}
-  # TODO: /tag_show 
-  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_show
+    get:
+      # description: >
+      #   List available locations(with metadata about each such as preferred name,
+      #   iso codes, etc.) and lists of themes available in each location Returns:
+      #   location name, iso_3, themes
 
+      responses:
+        '200':
+          description: >
+            List available locations(with metadata about each such as preferred
+            name, iso codes, etc.) and lists of themes available in each
+            location Returns: location name, iso_3, themes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LocationMetadataReply'
+        '500':
+          $ref: '#/components/schemas/Error500GenericReply'
+
+  # TODO: this endpint needs testing
+  # TODO: this endpint needs documentation
+  /themes/cod-ab/locations/{pCode}/versions/current:
+    parameters:
+      - $ref: '#/components/parameters/pCodePathParam'
+    get:
+      responses:
+        '200':
+          description: >
+            List available locations(with metadata about each such as preferred
+            name, iso codes, etc.) and lists of themes available in each
+            location Returns: location name, iso_3, themes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LocationMetadataReply'
+        '500':
+          $ref: '#/components/schemas/Error500GenericReply'
+
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode-versions-versionId
+  /themes/cod-ab/locations/{pCode}/versions/{versionId}:
+    parameters:
+      - $ref: '#/components/parameters/pCodePathParam'
+      - $ref: '#/components/parameters/versionIdPathParam'
+    get:
+      responses:
+        '200':
+          description: >
+            Provides metadata about a specific COD-AB version (number of
+            levels, level names, notes about levels, number of units within
+            each level, availability of geometry, version dates, etc.) with
+            URLs to various downloadables and services.
+
+            example: /api/v1/themes/cod-ab/locations/GUI/versions/0.4
+          content:
+            application/json:
+              # TODO: add exact response type
+              schema:
+                type: string
+        '500':
+          $ref: '#/components/schemas/Error500GenericReply'
+
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode
+  /themes/cod-ab/locations/{pCode}:
+    parameters:
+      - $ref: '#/components/parameters/pCodeNeedsFixPathParam'
+    get:
+      responses:
+        '200':
+          description: >
+            Provides metadata about all COD-AB versions at a location
+            ( input iso location returns admin0 pcode, name, version number,
+            valid_from and valid_to with comments). The parameter takes unique
+            location identfier which is a string data type.
+            An /api/v1/themes/cod-ab/locations/sdn/
+
+            example: /api/v1/themes/cod-ab/locations/sdn/ JSON
+          content:
+            application/json:
+              # TODO: add exact response schema type (see example)
+              schema:
+                type: string
+              example:
+                {
+                  "AllVersionsAtLocation": [
+                    {
+                      "admin0Pcode": "sdn",
+                      "admin0Name_ref": " Sudan",
+                      "version": "Latest",
+                      "valid_from": "2020-08-31T00:00:00",
+                      "valid_to": "2021-08-31T00:00:00",
+                      "comments": null
+                    },
+                    {
+                      "admin0Pcode": "sdn",
+                      "admin0Name_ref": " Sudan",
+                      "version": "Latest",
+                      "valid_from": "2020-08-31T00:00:00",
+                      "valid_to": "2021-08-31T00:00:00",
+                      "comments": null
+                    }
+                  ]
+                }
+        '500':
+          $ref: '#/components/schemas/Error500GenericReply'
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode-versions-current-level-z-x-y.pbf
+  
+  # TODO: discover some z b y that would allow test the result.
+  /themes/cod-ab/locations/{pCode}/versions/current/{level}/{z}/{x}/{y}.pbf:
+    parameters:
+      - $ref: '#/components/parameters/pCodeNeedsFixPathParam'
+      - name: "level"
+        in: path
+        description: "Individual level (1 of 0-n)"
+        required: true
+        schema:
+          type: string
+        example: "1"
+      - name: "z"
+        in: path
+        description: "(FIXME: add description)"
+        required: true
+        schema:
+          type: string
+        example: "1"
+      - name: "x"
+        in: path
+        description: "(FIXME: add description)"
+        required: true
+        schema:
+          type: string
+        example: "1"
+      - name: "y"
+        in: path
+        description: "(FIXME: add description)"
+        required: true
+        schema:
+          type: string
+        example: "1"
+    get:
+      responses:
+        '200':
+          description: >
+            Retrieve the vector tiles in protobuf (.pbf) format for input
+            country (Pcode) and individual level ( 1 of 0-n). pbf
+
+          content:
+            application/json:
+              # TODO: add exact response schema type (see example)
+              schema:
+                type: string
+        '500':
+          $ref: '#/components/schemas/Error500GenericReply'
+
+        # FIXME: the https://beta.itos.uga.edu/CODV2API/api/v1/themes/cod-ab/locations/SDN/versions/current/1/1/1/1.pbf
+        #        return 200 OK (not something like HTTP/1.1 400 Bad Request)
+        #        and it's content is text/html, not someting like JSON.
+        #            HTTP/1.1 200 OK
+        #            Content-Type: text/html; charset=utf-8
+        #      
+        #            Cannot GET /services/postgis/sdn_adm1/wkb_geometry/vector-tiles/1/1/1.pbf?fields=admin0name_en,admin0pcode,admin1name_en,admin1pcode
+
+  # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode-versions-current-format-level
+  # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-Themes
+  # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-Lookup-latlng-latlong-wkid-level
+  # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-lookup-level-iso2
 
 components:
-  # NOTE: OpenAPI 3.0 seems to not allow use $ref outside schemas
-  #       (but OpenAPI 3.1 allow it), but the teamdigitale/api-openapi-samples
-  #       uses this as part of build scripts. We will keep it simple without
-  #       use extra steps.
-  # responses:
-  #   CkanResponse:
-  #     description: >-
-  #       Standard Ckan Reply. See http://docs.ckan.org/en/latest/api/index.html.
-
   schemas:
-    CkanReply:
-      # From teamdigitale/api-openapi-samples
+    LocationMetadataReply:
+      # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-locations
+      # title: |
+      #   List available locations (with metadata about each such as preferred
+      #   name, iso codes, etc.) and lists of themes available in each location
+      #   Returns: location name, iso_3, themes.
       type: object
       required:
-        - result
-        - success
-        - help
+        - location_iso
+        - location_name
+        - Themes
       properties:
-        success:
+        location_iso:
           type: string
-        result:
-          anyOf:
-            - type: object
-            - type: array
-        error:
-          type: object
-        help:
+          minLength: 3
+          maxLength: 3
+        location_name:
           type: string
-          format: url
+        Themes:
+          type: array
+          items:
+            enum:
+              - "Administrative Boundary"
+              - "Population Statistics"
         status:
-          type: boolean
+          type: string
           enum:
-            - true
-            - false
+            - OK
+            # TODO: ask when is not OK?
+        total:
+          type: number
+  
+    Error500GenericReply:
+      type: object
+      required:
+        - $id
+        - message
+      properties:
+        "$id":
+          type: string
+        message:
+          type: string
+      example:
+        {
+          "$id": "1",
+          "message": "An error has occurred."
+        }
+
+  parameters:
+    pCodePathParam:
+      name: pCode
+      in: path
+      description: "P-code (Place Code) is (TODO: ADD SHORT DESCRIPTION)"
+      required: true
+      schema:
+        type: string
+      example: "HN01"
+
+    # FIXME: the https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode
+    #        says its a P-Code, but seems to be an ISO3 country code. We
+    #        need to check this.
+    pCodeNeedsFixPathParam:
+      name: pCode
+      in: path
+      description: "(TODO: ADD SHORT DESCRIPTION)"
+      required: true
+      schema:
+        type: string
+      example: "SDN"
+
+    versionIdPathParam:
+      name: versionId
+      in: path
+      description: "(TODO: ADD SHORT DESCRIPTION)"
+      required: true
+      schema:
+        type: integer
