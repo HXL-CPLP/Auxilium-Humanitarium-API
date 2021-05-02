@@ -17,7 +17,8 @@ openapi: 3.0.3
 # @see https://spec.openapis.org/oas/v3.1.0
 
 info:
-  title: The Humanitarian Data Exchange API (Unofficial) documentation, English version
+  title: The Humanitarian Data Exchange API (Unofficial) documentation (English version)
+  description: "TODO: add description"
   version: "3" # 3 because CKAN uses 3, see https://docs.ckan.org/en/2.9/api/
   termsOfService: https://data.humdata.org/about/terms
   license:
@@ -58,9 +59,9 @@ paths:
           required: false
           schema:
             type: integer
-            # NOTE: is possible to not use a default. But this can freeze user
-            #       browser even if a 200kb response.
             default: 250
+            # NOTE: is possible to not use a default and display EVERYTING.
+            #       But this can freeze user browser even if a 200kb response.
         - in: query
           name: offset
           description: >
@@ -68,13 +69,6 @@ paths:
           required: false
           schema:
             type: integer
-          # example: 25
-        # offset:
-        #   description: >
-        #     When `limit` is given, the `offset` to start returning packages from
-        #   required: false
-        #   type: int
-        #   example: 25
       responses:
         '200':
           description: >
@@ -88,6 +82,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/CkanReply'
+  /tag_list: {}
+  # TODO: /tag_list 
+  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_list
+
+  /tag_show: {}
+  # TODO: /tag_show 
+  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_show
 
 
 components:
