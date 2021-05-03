@@ -1,7 +1,7 @@
-# FILE:            api/BR/portais-arcgis-brasil/por/openapi.yaml
-# LICENSE:         Unlicense
+# ARQUIVO:         api/BR/portais-arcgis-brasil/por/openapi.yaml
+# LICENÇA:         SPDX-License-Identifier: Unlicense
 #
-# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/openapi.yaml
+# VERSÃO ONLINE:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/openapi.yaml
 
 openapi: 3.0.3
 # NOTE: o arquivo atual, nesta data de 2021-05-02, usa OpenAPI 3.0 pois

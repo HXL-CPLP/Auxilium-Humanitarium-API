@@ -1,9 +1,17 @@
 # Auxilium Humanitarium API documentōrum
+
+> - [Documentation in English language here](eng.md)
+> - [Documentação na língua portuguesa aqui](por.md)
+
+<!--
+
 **[working-draft] <span lang="en">Argumented documentation of common APIs for
 humanitarian aid with [OpenAPI](https://www.openapis.org/), the _de facto_
 open industry standard to document REST APIs.</span>**
 
 Old documentation: [README-old.md](README-old.md)
+
+-->
 
 <!--
 > Trivia:
@@ -21,57 +29,16 @@ Old documentation: [README-old.md](README-old.md)
 >        - https://en.wiktionary.org/wiki/inter-#Latin
 >      - "faciem"
 >        - https://en.wiktionary.org/wiki/facies#Latin
+> "specificationem"
+>  - https://en.wiktionary.org/wiki/specification
+> "situm"
+>  - https://en.wiktionary.org/wiki/situs#Latin
+> "online"
+>  - https://en.wiktionary.org/wiki/online#English
+#  - on +‎ line
+>    - "līneam", https://en.wiktionary.org/wiki/linea#Latin
+>    - "on"
+>      - ???
 -->
 
 ---
-
-<!-- TOC depthFrom:2 -->
-
-- [API](#api)
-    - [UN](#un)
-        - [HDX](#hdx)
-            - [HDX-eng](#hdx-eng)
-    - [XZ](#xz)
-        - [HXL-Proxy](#hxl-proxy)
-            - [HXL-Proxy](#hxl-proxy-1)
-        - [BR](#br)
-            - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
-
-<!-- /TOC -->
-
----
-
-
-## API
-
-### UN
-
-#### HDX
-
-##### HDX-eng
-- File:
-  - GitHub: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
-  - Site alternative: <https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
-- Preview/Execute
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
-
-### XZ
-
-#### HXL-Proxy
-
-##### HXL-Proxy
-- File:
-  - GitHub: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
-  - Site alternative: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
-- Preview/Execute
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
-
-#### BR
-
-##### portais-ckan-brasil-por
-
-- File:
-  - GitHub: [api/BR/portais-ckan-brasil/openapi.yaml](api/BR/portais-ckan-brasil/openapi.yaml)
-  - Site alternative: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/openapi.yaml>
-- Preview/Execute
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/openapi.yaml>

@@ -1,14 +1,7 @@
-# FILE:            api/BR/portais-ckan-brasil/por/openapi.yaml
-# LICENSE:         Unlicense
+# ARQUIVO:         api/BR/portais-arcgis-brasil/por/openapi.yaml
+# LICENÇA:         SPDX-License-Identifier: Unlicense
 #
-# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml
-#
-# README FIRST!:   This file uses OpenAPI syntax (https://www.openapis.org/),
-#                  a de facto non-proprietary industry standard to document
-#                  APIs.
-#                  Consider as starting point:
-#                    - Use this online editor https://editor.swagger.io/
-#                    - Check this https://openapi.tools/ for compatible tools
+# VERSÃO ONLINE:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/openapi.yaml
 
 openapi: 3.0.3
 # NOTE: o arquivo atual, nesta data de 2021-05-02, usa OpenAPI 3.0 pois
