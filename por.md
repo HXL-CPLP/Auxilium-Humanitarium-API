@@ -1,13 +1,16 @@
-# Documentação interativa para APIs humanitárias
-<div lang="pt">
+---
+title: "Documentação interativa para APIs humanitárias"
+description: "[rascunho] Documentação argumentada de APIs comuns para ajuda humanitária com OpenAPI"
+locale: pt
+---
 
-[rascunho] Documentação argumentada de APIs comuns para ajuda humanitária com
+# Documentação interativa para APIs humanitárias
+
+**[rascunho] Documentação argumentada de APIs comuns para ajuda humanitária com
 [OpenAPI](https://www.openapis.org/), o padrão de mercado aberto de fato para
-documentar APIs REST.
+documentar APIs REST.**
 
 > - **[Documentation in English here](eng.md)**
-
-Documentação antiga: [README-old.md](README-old.md)
 
 <!-- TOC depthFrom:2 -->
 
@@ -23,6 +26,7 @@ Documentação antiga: [README-old.md](README-old.md)
 - [Systema](#systema)
     - [OpenAPI](#openapi)
         - [Editores online](#editores-online)
+- [Licença](#licença)
 
 <!-- /TOC -->
 
@@ -67,4 +71,12 @@ Documentação antiga: [README-old.md](README-old.md)
 - <https://editor.swagger.io/>
 - <https://editor.swagger.io/?url=https://example.org/myfile.yaml>
 
-</div>
+## Licença
+
+<!--TODO: o texto em português da licença é um rascunho. Ainda precisa ser revisado -->
+
+[![Public Domain Dedication](https://i.creativecommons.org/p/zero/1.0/88x31.png)](UNLICENSE)
+
+Na medida do possível sob a lei, as pessoas autoras de
+[HXL-CPLP](https://github.com/HXL-CPLP) renunciam todos os direitos autorais e
+direitos conexos ou vizinhos a este trabalho para o [domínio público](UNLICENSE).
