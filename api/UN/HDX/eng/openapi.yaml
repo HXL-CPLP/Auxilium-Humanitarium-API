@@ -1,7 +1,7 @@
-# FILE:            HDX-eng.openapi.yaml
+# FILE:            api/UN/HDX/eng/openapi.yaml
 # LICENSE:         Unlicense
 #
-# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/HDX/HDX-eng.openapi.yaml
+# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml
 #
 # README FIRST!:   This file uses OpenAPI syntax (https://www.openapis.org/),
 #                  a de facto non-proprietary industry standard to document

@@ -1,7 +1,7 @@
-# FILE:            locum/BR/portais-ckan-brasil/openapi.yaml
+# FILE:            api/BR/portais-ckan-brasil/por/openapi.yaml
 # LICENSE:         Unlicense
 #
-# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/locum/BR/portais-ckan-brasil/openapi.yaml
+# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml
 #
 # README FIRST!:   This file uses OpenAPI syntax (https://www.openapis.org/),
 #                  a de facto non-proprietary industry standard to document

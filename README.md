@@ -1,106 +1,77 @@
-# COD-AB (Unofficial) API machine-parseable documentation
-**[working draft][proof of concept] Unofficial Postman documentation of https://beta.itos.uga.edu/CODV2API/ (this will be obsolete soon as is used for the private feedback)**
+# Auxilium Humanitarium API documentōrum
+**[working-draft] <span lang="en">Argumented documentation of common APIs for
+humanitarian aid with [OpenAPI](https://www.openapis.org/), the _de facto_
+open industry standard to document REST APIs.</span>**
 
-<!-- TOC -->
+Old documentation: [README-old.md](README-old.md)
 
-- [COD-AB (Unofficial) API machine-parseable documentation](#cod-ab-unofficial-api-machine-parseable-documentation)
-    - [Internal comments](#internal-comments)
-        - [API documentation formats](#api-documentation-formats)
-        - [Conversion/Comparison betwen formats](#conversioncomparison-betwen-formats)
-        - [Tools to parse API documentations](#tools-to-parse-api-documentations)
-            - [Installing/Using](#installingusing)
-                - [VSCode extensions](#vscode-extensions)
-                - [Postman](#postman)
+<!--
+> Trivia:
+> - "Auxilium humanitarium"
+>   - https://la.wikipedia.org/wiki/Auxilium_humanitarium
+> - "documentōrum"
+>   - https://en.wiktionary.org/wiki/documentum#Latin
+> API
+>   - "applicātiōnem"
+>      - https://en.wiktionary.org/wiki/applicatio#Latin
+>   - "programma"
+>      - https://en.wiktionary.org/wiki/programma#Italian
+>   - "interface", inter- (“between”) +‎ face (“shape, figure, form”).
+>      - "inter"
+>        - https://en.wiktionary.org/wiki/inter-#Latin
+>      - "faciem"
+>        - https://en.wiktionary.org/wiki/facies#Latin
+-->
+
+---
+
+<!-- TOC depthFrom:2 -->
+
+- [API](#api)
+    - [UN](#un)
+        - [HDX](#hdx)
+            - [HDX-eng](#hdx-eng)
+    - [XZ](#xz)
+        - [HXL-Proxy](#hxl-proxy)
+            - [HXL-Proxy](#hxl-proxy-1)
+        - [BR](#br)
+            - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
 
 <!-- /TOC -->
 
-## Internal comments
-
-<!--
-- https://raml-org.github.io/playground/raml_oas.html?
-- https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
-- https://www.openapis.org/blog/2021/02/16/migrating-from-openapi-3-0-to-3-1-0
-
-- https://hxl.etica.ai/COD-Services-API-doc/HDX/HDX-eng.raml.yml
-- https://hxl.etica.ai/COD-Services-API-doc/HDX/HDX-eng.oas.yml
+---
 
 
-Learning about OpenAPI
-- https://openapi-map.apihandyman.io/
+## API
 
--->
+### UN
 
-### API documentation formats
+#### HDX
 
-- AML
-  - https://aml-org.github.io/aml-spec/vocabularies/
-- GraphQL
-  - https://graphql.org/
-- JSON API
-  - https://jsonapi.org/format/
-- OpenAPI Specification
-  - https://www.openapis.org/
-  - https://spec.openapis.org/oas/v3.1.0
-- RAML
-  - https://raml.org/
-- WADL
-  - https://www.w3.org/Submission/wadl/
+##### HDX-eng
+- File:
+  - GitHub: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
+  - Site alternative: <https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
+- Preview/Execute
+  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
 
-### Conversion/Comparison betwen formats
-- https://stackshare.io/stackups/postman-vs-swagger-ui
-- https://www.youtube.com/watch?v=_a-gbqAzHOM (Import swagger into postman collection)
-- https://swagger.io/blog/api-strategy/difference-between-swagger-and-openapi/
-- https://github.com/checkr/oas3-to-raml
-- https://github.com/raml-org/webapi-parser
+### XZ
 
-### Tools to parse API documentations
+#### HXL-Proxy
 
-See **<https://openapi.tools/>** and:
+##### HXL-Proxy
+- File:
+  - GitHub: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
+  - Site alternative: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
+- Preview/Execute
+  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
 
-- https://swagger.io/
-  - Uses OpenAPI
-  - Open Source
-  - https://swagger.io/tools/
-  - https://inspector.swagger.io/builder
-  - Live demo: https://petstore.swagger.io/
-- Postman
+#### BR
 
-#### Installing/Using
+##### portais-ckan-brasil-por
 
-##### VSCode extensions
-
-- OpenAPI specific
-  - `ext install 42Crunch.vscode-openapi`
-    - https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi
-    - https://github.com/42Crunch/vscode-openapi
-  - `ext install Arjun.swagger-viewer`
-    - https://marketplace.visualstudio.com/items?itemName=Arjun.swagger-viewer
-    - https://github.com/arjun-g/vs-swagger-viewer
-- RAML specific
-  - Set ".raml" files as type "YAML"
-    - By defailt, VSCode does not recognize RAML as YAML-like, so you can
-      trigger this to use generic YAML syntax highlight without any special
-      extension.
-      - BUT the `ext install MiguelRubioJimenez.raml-easy` allow autocomplete
-  - `ext install blzjns.vscode-raml`
-    - https://github.com/blzjns/vscode-raml
-  - `ext install OneMain.raml-ls`
-    - https://github.com/OneMainF/raml-language-server
-  - `ext install MiguelRubioJimenez.raml-easy`
-    - https://github.com/MikeRubio/raml-easy (Snippets)
-  - `ext install MiguelRubioJimenez.raml-easy`
-    - https://github.com/deiteris/api-contractor (maybe, not tested, seems interesting)
-
-##### Postman
-```bash
-lsb_release -a
-    # No LSB modules are available.
-    # Distributor ID:	Ubuntu
-    # Description:	Ubuntu 20.04.2 LTS
-    # Release:	20.04
-    # Codename:	focal
-
-# @see https://snapcraft.io/postman
-sudo snap install postman
-
-```
+- File:
+  - GitHub: [api/BR/portais-ckan-brasil/openapi.yaml](api/BR/portais-ckan-brasil/openapi.yaml)
+  - Site alternative: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/openapi.yaml>
+- Preview/Execute
+  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/openapi.yaml>

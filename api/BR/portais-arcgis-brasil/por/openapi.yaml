@@ -1,7 +1,7 @@
-# FILE:            locum/BR/portais-arcgis-brasil/openapi.yaml
+# FILE:            api/BR/portais-arcgis-brasil/por/openapi.yaml
 # LICENSE:         Unlicense
 #
-# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/locum/BR/portais-arcgis-brasil/openapi.yaml
+# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/openapi.yaml
 
 openapi: 3.0.3
 # NOTE: o arquivo atual, nesta data de 2021-05-02, usa OpenAPI 3.0 pois
@@ -30,6 +30,7 @@ info:
       - https://proxy.hxlstandard.org/data/edit?dest=data_edit&filter01=sort&filter-label01=%23adm2%2Bcode+ordering&sort-tags01=%23adm2%2Bcode&filter02=select&filter-label02=%23item%2Bpor_solucao%3DCKAN&select-query02-01=%23item%2Bpor_solucao%3DArcGIS&tagger-match-all=on&tagger-01-header=titulo&tagger-01-tag=%23item+%2Bname+%2Bi_por&tagger-02-header=url&tagger-02-tag=%23item+%2Burl&tagger-03-header=municipio&tagger-03-tag=%23adm3+%2Bname+%2Bi_por&tagger-04-header=uf&tagger-04-tag=%23adm2+%2Bcode&tagger-05-header=esfera&tagger-05-tag=%23status+%2Bpor_esfera&tagger-06-header=poder&tagger-06-tag=%23status+%2Bpor_poder&tagger-07-header=solucao&tagger-07-tag=%23item+%2Bpor_solucao&header-row=1&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdadosgovbr%2Fcatalogos-dados-brasil%2Fmaster%2Fdados%2Fcatalogos.csv
       - https://doc.arcgis.com/en/arcgis-earth/automation-api/automation-api-help-page-with-swagger.htm
       - https://github.com/AmrEldib/agol-swagger/blob/master/data/swagger.json
+        - https://editor.swagger.io/?url=https://github.com/AmrEldib/agol-swagger/blob/master/data/swagger.json
 
   version: "3" # 3 por causa que o CKAN usa 3, https://docs.ckan.org/en/2.9/api/
 
