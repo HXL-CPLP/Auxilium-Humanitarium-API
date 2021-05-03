@@ -1,0 +1,132 @@
+# FILE:            locum/BR/portais-arcgis-brasil/openapi.yaml
+# LICENSE:         Unlicense
+#
+# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/locum/BR/portais-arcgis-brasil/openapi.yaml
+
+openapi: 3.0.3
+# NOTE: o arquivo atual, nesta data de 2021-05-02, usa OpenAPI 3.0 pois
+#       a OpenAPI 3.1 é muito recente (lançada em 2021-02-15) e poucas
+#       ferramentas tem suporte a ela. A migração para o 3.1 deve ser feita
+#       eventualmente.
+# @see https://spec.openapis.org/oas/v3.0.3
+# @see https://spec.openapis.org/oas/v3.1.0
+
+# WTF. É impressão minha ou precisa criar conta no arcgis apenas para listar
+# packages?? https://developers.arcgis.com/documentation/mapping-apis-and-services/security/arcgis-identity/serverless-web-apps/
+
+info:
+  title: Portais CKAN de dados abertos do Brasil
+  description: |
+    (descrição temporaria)
+
+    Isto é um rascunho. ArcGIS não foi implementado ainda.
+
+    Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
+
+    - TODO: 
+      - https://developers.arcgis.com/rest/
+      - https://developers.arcgis.com/rest/services-reference/get-started-with-the-services-directory.htm
+      - https://community.esri.com/t5/arcgis-hub-questions/arcgis-open-data-api/m-p/708359
+      - https://proxy.hxlstandard.org/data/edit?dest=data_edit&filter01=sort&filter-label01=%23adm2%2Bcode+ordering&sort-tags01=%23adm2%2Bcode&filter02=select&filter-label02=%23item%2Bpor_solucao%3DCKAN&select-query02-01=%23item%2Bpor_solucao%3DArcGIS&tagger-match-all=on&tagger-01-header=titulo&tagger-01-tag=%23item+%2Bname+%2Bi_por&tagger-02-header=url&tagger-02-tag=%23item+%2Burl&tagger-03-header=municipio&tagger-03-tag=%23adm3+%2Bname+%2Bi_por&tagger-04-header=uf&tagger-04-tag=%23adm2+%2Bcode&tagger-05-header=esfera&tagger-05-tag=%23status+%2Bpor_esfera&tagger-06-header=poder&tagger-06-tag=%23status+%2Bpor_poder&tagger-07-header=solucao&tagger-07-tag=%23item+%2Bpor_solucao&header-row=1&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdadosgovbr%2Fcatalogos-dados-brasil%2Fmaster%2Fdados%2Fcatalogos.csv
+      - https://doc.arcgis.com/en/arcgis-earth/automation-api/automation-api-help-page-with-swagger.htm
+      - https://github.com/AmrEldib/agol-swagger/blob/master/data/swagger.json
+
+  version: "3" # 3 por causa que o CKAN usa 3, https://docs.ckan.org/en/2.9/api/
+
+# Usamos na nomenclatura ISO 3166-2:BR
+# https://en.wikipedia.org/wiki/ISO_3166-2:BR
+# Sobre URNS do Brasil
+#   - https://docs.google.com/spreadsheets/d/16SW1kOv01IKcdO5nZvGjnjat7DrUqFem4mcWC2OQbz4/edit#gid=332977705
+servers:
+
+  - url: https://data.humdata.org/api/3/action
+    description: "(TODO: Remove this) HDX Production server"
+
+  - url: https://www.data.rio/
+    description: "{[urn:data:xz:iso:3166-2:BR-RJ][urn:data:un:p:BR3304557]} data.rio"
+
+  - url: https://portalgeo-pcrj.opendata.arcgis.com/
+    description: "{[urn:data:xz:iso:3166-2:BR-RJ][urn:data:un:p:BR3304557]} Dados Geográficos Abertos da Cidade do Rio de Janeiro (offline?)"
+
+# NOTE: for maintainers, the Team Digitale have a few references about OpenAPI
+#       and CKAN. For example, the file
+# https://github.com/teamdigitale/api-openapi-samples/blob/master/external-apis/api.daf.teamdigitale.it.yaml.src
+paths:
+  /package_list:
+    get:
+      parameters:
+        - in: query
+          name: limit
+          description: >
+            If given, the list of datasets will be broken into pages of at most
+            `limit` datasets per page and only one page will be returned at a time
+          required: false
+          schema:
+            type: integer
+            default: 250
+            # NOTE: is possible to not use a default and display EVERYTING.
+            #       But this can freeze user browser even if a 200kb response.
+        - in: query
+          name: offset
+          description: >
+            When `limit` is given, the `offset` to start returning packages from
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: >
+            Return a list of the names of the site’s datasets (packages).
+
+            See also:
+              - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CkanReply'
+  /tag_list: {}
+  # TODO: /tag_list 
+  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_list
+
+  /tag_show: {}
+  # TODO: /tag_show 
+  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_show
+
+
+components:
+  # NOTE: OpenAPI 3.0 seems to not allow use $ref outside schemas
+  #       (but OpenAPI 3.1 allow it), but the teamdigitale/api-openapi-samples
+  #       uses this as part of build scripts. We will keep it simple without
+  #       use extra steps.
+  # responses:
+  #   CkanResponse:
+  #     description: >-
+  #       Standard Ckan Reply. See http://docs.ckan.org/en/latest/api/index.html.
+
+  schemas:
+    CkanReply:
+      # From teamdigitale/api-openapi-samples
+      type: object
+      required:
+        - result
+        - success
+        - help
+      properties:
+        success:
+          type: string
+        result:
+          anyOf:
+            - type: object
+            - type: array
+        error:
+          type: object
+        help:
+          type: string
+          format: url
+        status:
+          type: boolean
+          enum:
+            - true
+            - false

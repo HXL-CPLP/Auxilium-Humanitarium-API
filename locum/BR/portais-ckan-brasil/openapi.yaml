@@ -10,7 +10,6 @@
 #                    - Use this online editor https://editor.swagger.io/
 #                    - Check this https://openapi.tools/ for compatible tools
 
-
 openapi: 3.0.3
 # NOTE: o arquivo atual, nesta data de 2021-05-02, usa OpenAPI 3.0 pois
 #       a OpenAPI 3.1 é muito recente (lançada em 2021-02-15) e poucas
