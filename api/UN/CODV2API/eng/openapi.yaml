@@ -268,6 +268,40 @@ paths:
         #            Cannot GET /services/postgis/sdn_adm1/wkb_geometry/vector-tiles/1/1/1.pbf?fields=admin0name_en,admin0pcode,admin1name_en,admin1pcode
 
   # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode-versions-current-format-level
+  /themes/cod-ab/locations/{pCode}/versions/current/{format}/{level}:
+    parameters:
+      - $ref: '#/components/parameters/pCodeNeedsFixPathParam'
+      - $ref: '#/components/parameters/formatParam'
+      - $ref: '#/components/parameters/levelParam'
+    get:
+      responses:
+        '200':
+          description: >
+            Downloads of COD data in various formats for current versions of COD Countries
+
+            - {pCode} example: SYR
+              - For a list of country pCode(s) available for administrative
+                boundaries: check out the themes results from the api:
+                /themes
+            - {level} example: 2
+              - For levels, check out the list of levels available for each
+                COD country: at /themes/cod-ab/locations/SYR/versions/current
+            - {format} examples: SHP, vectortiles, Geodatabase, Geoservice, XLSX, CSV, geoJSON
+              - Note that shapefiles ("SHP" format) are downloaded for all
+                levels (administrative boundary designations) since they are
+                packaged that way. However Vector tiles,
+              - NEW!!!! are downloaded for the respective level as they are
+                available. For the list of available vector tiles, check out the
+                github and search for the .mbtiles term or column in the
+                spreadsheet: [service deployment status](https://github.com/UGA-ITOSHumanitarianGIS/mapservicedoc/blob/master/Data/AWSDeploymentURLlist.xlsx).
+
+          content:
+            application/json:
+              # TODO: add exact response type
+              schema:
+                type: string
+        '500':
+          $ref: '#/components/schemas/Error500GenericReply'
   # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-Themes
   # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-Lookup-latlng-latlong-wkid-level
   # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-lookup-level-iso2
@@ -343,6 +377,8 @@ components:
       schema:
         type: string
       example: "SDN"
+      # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode-versions-current-format-level
+      # example: "SYR"
 
     versionIdPathParam:
       name: versionId
@@ -351,3 +387,48 @@ components:
       required: true
       schema:
         type: integer
+
+    formatParam:
+      name: format
+      in: path
+      description: |
+        Examples: SHP, vectortiles, Geodatabase, Geoservice, XLSX, CSV, geoJSON
+
+        - Note that shapefiles ("SHP" format) are downloaded for all
+          levels (administrative boundary designations) since they are
+          packaged that way. However Vector tiles,
+        - NEW!!!! are downloaded for the respective level as they are
+          available. For the list of available vector tiles, check out the
+          github and search for the .mbtiles term or column in the
+          spreadsheet: [service deployment status](https://github.com/UGA-ITOSHumanitarianGIS/mapservicedoc/blob/master/Data/AWSDeploymentURLlist.xlsx).
+
+      required: true
+      schema:
+        type: string
+        example: geoJSON
+        enum:
+          - SHP
+          - vectortiles
+          - Geodatabase
+          - Geoservice
+          - XLSX
+          - CSV
+          - geoJSON
+
+    levelParam:
+      name: level
+      in: path
+      description: |
+        Example: 2
+        For levels, check out the list of levels available for each COD country:
+        at /themes/cod-ab/locations/SYR/versions/current
+      required: true
+      schema:
+        type: string
+        example: "2"
+        enum:
+          - "1"
+          - "2"
+          - "3"
+          - "4" # TODO: check if 4 exists
+          - "5" # TODO: check if 5 exists
