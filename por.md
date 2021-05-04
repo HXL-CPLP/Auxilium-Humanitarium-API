@@ -16,12 +16,15 @@ documentar APIs REST.**
 
 - [API](#api)
     - [UN](#un)
-        - [HDX](#hdx)
+        - [HDX - The Humanitarian Data Exchange](#hdx---the-humanitarian-data-exchange)
             - [HDX-eng](#hdx-eng)
+        - [CODV2API](#codv2api)
+            - [CODV2API-eng](#codv2api-eng)
     - [XZ](#xz)
-        - [HXL-Proxy](#hxl-proxy)
-            - [HXL-Proxy](#hxl-proxy-1)
-        - [BR](#br)
+        - [HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária](#hxl-proxy---proxy-da-linguagem-de-intercâmbio-humanitária)
+            - [HXL-Proxy](#hxl-proxy)
+    - [BR](#br)
+        - [portais-ckan-brasil - Portais de dados abertos do Brasil](#portais-ckan-brasil---portais-de-dados-abertos-do-brasil)
             - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
 - [Systema](#systema)
     - [OpenAPI](#openapi)
@@ -37,29 +40,34 @@ documentar APIs REST.**
 
 ### UN
 
-#### HDX
+#### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
-- Arquivo: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
-- Pré-visualizar/executar online:
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
+- **Arquivo OpenAPI**: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
+- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
+
+#### CODV2API
+
+##### CODV2API-eng
+- **Arquivo OpenAPI**: [api/UN/CODV2API/eng/openapi.yaml](api/UN/CODV2API/eng/openapi.yaml)
+- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/CODV2API/eng/openapi.yaml>
 
 ### XZ
 
-#### HXL-Proxy
+#### HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária
 
 ##### HXL-Proxy
-- Arquivo: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
-- Pré-visualizar/executar online:
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
+- **Arquivo OpenAPI**: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
+- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
 
-#### BR
+### BR
+
+#### portais-ckan-brasil - Portais de dados abertos do Brasil
 
 ##### portais-ckan-brasil-por
 
-- Arquivo: [api/BR/portais-ckan-brasil/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
-- Pré-visualizar/executar online:
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
+- **Arquivo OpenAPI**: [api/BR/portais-ckan-brasil/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
+- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
 
 ## Systema
 

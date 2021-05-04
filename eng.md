@@ -11,16 +11,23 @@ open industry standard to document REST APIs.**
 
 > - **[Documentação na língua portuguesa aqui](por.md)**
 
+---
+
+**Table of contents**
+
 <!-- TOC depthFrom:2 -->
 
 - [API](#api)
     - [UN](#un)
-        - [HDX](#hdx)
+        - [HDX - The Humanitarian Data Exchange](#hdx---the-humanitarian-data-exchange)
             - [HDX-eng](#hdx-eng)
+        - [CODV2API](#codv2api)
+            - [CODV2API-eng](#codv2api-eng)
     - [XZ](#xz)
-        - [HXL-Proxy](#hxl-proxy)
-            - [HXL-Proxy](#hxl-proxy-1)
-        - [BR](#br)
+        - [HXL-Proxy - Humanitarian Exchange Language Proxy](#hxl-proxy---humanitarian-exchange-language-proxy)
+            - [HXL-Proxy](#hxl-proxy)
+    - [BR](#br)
+        - [portais-ckan-brasil - Brazilian Open Data portals](#portais-ckan-brasil---brazilian-open-data-portals)
             - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
 - [Systema](#systema)
     - [OpenAPI](#openapi)
@@ -36,29 +43,34 @@ open industry standard to document REST APIs.**
 
 ### UN
 
-#### HDX
+#### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
-- File: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
-- Preview/Execute
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
+- **OpenAPI File**: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
+- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
+
+#### CODV2API
+
+##### CODV2API-eng
+- **OpenAPI File**: [api/UN/CODV2API/eng/openapi.yaml](api/UN/CODV2API/eng/openapi.yaml)
+- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/CODV2API/eng/openapi.yaml>
 
 ### XZ
 
-#### HXL-Proxy
+#### HXL-Proxy - Humanitarian Exchange Language Proxy
 
 ##### HXL-Proxy
-- File: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
-- Preview/Execute
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
+- **OpenAPI File**: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
+- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
 
-#### BR
+### BR
+
+#### portais-ckan-brasil - Brazilian Open Data portals
 
 ##### portais-ckan-brasil-por
 
-- File: [api/BR/portais-ckan-brasil/por/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
-- Preview/Execute
-  - <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
+- **OpenAPI File**: [api/BR/portais-ckan-brasil/por/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
+- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
 
 ## Systema
 
@@ -75,7 +87,7 @@ open industry standard to document REST APIs.**
 
 <!--TODO: This license terms are a draft; Need to be reviewned -->
 
-[![Public Domain Dedication](img/public-domain.png)](UNLICENSE)
+[![Public Domain Dedication](https://i.creativecommons.org/p/zero/1.0/88x31.png)](UNLICENSE)
 
 The [HXL-CPLP](https://github.com/HXL-CPLP) has dedicated the work to the
 [public domain](UNLICENSE) by waiving all of their rights to the work worldwide
