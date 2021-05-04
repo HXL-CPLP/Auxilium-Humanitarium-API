@@ -267,7 +267,7 @@ paths:
         #      
         #            Cannot GET /services/postgis/sdn_adm1/wkb_geometry/vector-tiles/1/1/1.pbf?fields=admin0name_en,admin0pcode,admin1name_en,admin1pcode
 
-  # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode-versions-current-format-level
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-locations-pCode-versions-current-format-level
   /themes/cod-ab/locations/{pCode}/versions/current/{format}/{level}:
     parameters:
       - $ref: '#/components/parameters/pCodeNeedsFixPathParam'
@@ -295,13 +295,90 @@ paths:
                 github and search for the .mbtiles term or column in the
                 spreadsheet: [service deployment status](https://github.com/UGA-ITOSHumanitarianGIS/mapservicedoc/blob/master/Data/AWSDeploymentURLlist.xlsx).
 
+            FIXME 2021-05-04 07:53 UTC:
+            - This does not work "geoJSON"
+              - https://beta.itos.uga.edu/CODV2API/api/v1/themes/cod-ab/locations/SYR/versions/current/geoJSON/2
+            - This works "json"
+              - https://beta.itos.uga.edu/CODV2API/api/v1/themes/cod-ab/locations/SYR/versions/current/json/2
+
+            TODO: 2021-05-05 07:57 UTC:
+             - Document an example using getJSON / TopoJSON. use as references
+               - https://github.com/topojson/topojson-specification
+               - https://tools.ietf.org/html/rfc7946
+
           content:
-            application/json:
+            # application/json:
+            #   # TODO: add exact response type
+            #   schema:
+            #     type: string
+
+            ## GeoJSON _________________________________________________________
+            # RFC: The GeoJSON Format
+            # https://tools.ietf.org/html/rfc7946#section-12
+            # https://github.com/DataCurationNetwork/data-primers/issues/16
+            application/geo+json:
               # TODO: add exact response type
               schema:
                 type: string
+
+            ## XLSX ____________________________________________________________
+            # https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+
+            ### Vectortiles ____________________________________________________
+            # - https://en.wikipedia.org/wiki/Vector_tiles
+            # - https://github.com/mapbox/vector-tile-spec
+            #   - https://github.com/mapbox/vector-tile-spec/blob/master/2.1/README.md#22-multipurpose-internet-mail-extensions-mime
+            application/vnd.mapbox-vector-tile:
+              schema:
+                type: string
+                format: binary
+
+            ### SHP ____________________________________________________________
+            # - https://en.wikipedia.org/wiki/Shapefile
+            #   - Wikipedia says:
+            #     - "x-gis/x-shapefile"
+            # - https://www.iana.org/assignments/media-types/media-types.xhtml
+            #   - IANA says:
+            #     - "application/vnd.shp"
+            #       - https://www.iana.org/assignments/media-types/application/vnd.shp
+            #     - "application/vnd.shx"
+            #       - https://www.iana.org/assignments/media-types/application/vnd.shx
+            #     - "application/vnd.dbf"
+            #       - https://www.iana.org/assignments/media-types/application/vnd.dbf
+            application/vnd.shp:
+              schema:
+                type: string
+                format: binary
+
+            ### CSV ____________________________________________________________
+            # - https://tools.ietf.org/html/rfc4180
+            text/csv:
+              schema:
+                type: string
+
+            ### Geodatabase ____________________________________________________
+            # TODO: Geodatabase (review)
+            # - https://community.esri.com/t5/arcgis-runtime-sdk-for-qt/attachment-content-type-is-incorrect-when-adding-to/td-p/593526
+            # - https://www.digipres.org/formats/mime-types/#text/xml
+            # - https://www.digipres.org/formats/sources/fdd/formats/#fdd000295
+            text/xml:
+              schema:
+                type: string
+
+            ### Geoservice _____________________________________________________
+            # TODO: review Geoservice. But seems that is a redirection to
+            #       ArcGIS, like
+            #       - https://beta.itos.uga.edu/CODV2API/api/v1/themes/cod-ab/locations/SYR/versions/current/geoservice/2
+            #         - https://gistmaps.itos.uga.edu/arcgis/rest/services/V00_0/SYR_pcode/MapServer
+
+
         '500':
           $ref: '#/components/schemas/Error500GenericReply'
+
   # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-Themes
   # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-Lookup-latlng-latlong-wkid-level
   # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-lookup-level-iso2
