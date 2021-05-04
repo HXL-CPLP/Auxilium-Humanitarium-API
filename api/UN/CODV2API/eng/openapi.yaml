@@ -72,6 +72,29 @@ servers:
   - url: https://beta.itos.uga.edu/CODV2API/api/v1
     description: COD Version 2 API production server
 
+tags:
+ - name: "COD API"
+   description: |
+      **COD API Metadata, Downloads, Services and General**.
+      Themes for the COD at the system level.
+      For instance, Administrative Boundary or Population Statistics
+
+ - name: Themes
+   description: |
+      Themes for the COD at the system level.
+      For instance, Administrative Boundary or Population Statistics
+
+ - name: Versions
+   description: |
+      Version for the COD at the country level.
+
+ - name: Lookup
+   description: |
+      Look up for the COD contents at the system level.
+      JSON results are returned in what are commonly refererred to as
+      Gazeteer format.
+
+
 # NOTE: for maintainers, the Team Digitale have a few references about OpenAPI
 #       and CKAN. For example, the file
 # https://github.com/teamdigitale/api-openapi-samples/blob/master/external-apis/api.daf.teamdigitale.it.yaml.src
@@ -82,6 +105,7 @@ paths:
 
   /locations:
     get:
+      tags: [ "COD API" ]
       # description: >
       #   List available locations(with metadata about each such as preferred name,
       #   iso codes, etc.) and lists of themes available in each location Returns:
@@ -98,11 +122,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/LocationMetadataReply'
+
   /locations/{pCode}:
     parameters:
       - $ref: '#/components/parameters/pCodePathParam'
 
     get:
+      tags: [ "COD API" ]
       # description: >
       #   List available locations(with metadata about each such as preferred name,
       #   iso codes, etc.) and lists of themes available in each location Returns:
@@ -129,6 +155,7 @@ paths:
     parameters:
       - $ref: '#/components/parameters/pCodePathParam'
     get:
+      tags: [ "COD API" ]
       responses:
         '200':
           description: >
@@ -150,6 +177,7 @@ paths:
       - $ref: '#/components/parameters/pCodePathParam'
       - $ref: '#/components/parameters/versionIdPathParam'
     get:
+      tags: [ "COD API" ]
       responses:
         '200':
           description: >
@@ -172,6 +200,7 @@ paths:
     parameters:
       - $ref: '#/components/parameters/pCodeNeedsFixPathParam'
     get:
+      tags: [ "COD API" ]
       responses:
         '200':
           description: >
@@ -245,6 +274,7 @@ paths:
           type: string
         example: "1"
     get:
+      tags: [ "COD API" ]
       responses:
         '200':
           description: >
@@ -274,6 +304,7 @@ paths:
       - $ref: '#/components/parameters/formatParam'
       - $ref: '#/components/parameters/levelParam'
     get:
+      tags: [ "COD API" ]
       responses:
         '200':
           description: >
@@ -379,9 +410,205 @@ paths:
         '500':
           $ref: '#/components/schemas/Error500GenericReply'
 
-  # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-Themes
-  # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-Lookup-latlng-latlong-wkid-level
-  # TODO: https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-lookup-level-iso2
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-Themes
+  # NOTE: Changed from "themes" to "/themes"
+  /themes:
+    get:
+      tags: [ "Themes" ]
+      responses:
+        '200':
+          description: >
+            Retrieve Theme information in the system.
+          content:
+            application/json:
+              schema:
+                type: string
+                # TODO: Create specific schema
+
+              example:
+                [
+                  {
+                    "theme_name": "Administrative Boundary",
+                    "comment": "",
+                    "countries": [
+                      "mli",
+                      "per",
+                      "",
+                      "kdn",
+                      "tls",
+                    ],
+                    "Total": 157
+                  },
+                  {
+                    "theme_name": "Population Statistics",
+                    "comment": "",
+                    "countries": [
+                      "ton",
+                      "ecu",
+                      "bgd",
+                      "tha",
+                      "ssd",
+                    ],
+                    "Total": 5
+                  }
+                ]
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-themeId
+  # FIXME (2021-05-04 08:50 UTC):
+  #   This entrypoint is returning not countries at all at this moment.
+  #   (but is returning something)
+  /themes/{themeId}:
+    parameters:
+      - $ref: '#/components/parameters/themeIdParam'
+    get:
+      tags: [ "Themes" ]
+      responses:
+        '200':
+          description: >
+            1 is Administrative Boundary.
+            2 is Population Statistics
+          content:
+            application/json:
+              schema:
+                type: string
+                # TODO: Create specific schema
+
+              example:
+                {
+                  "theme_name": null,
+                  "comment": null,
+                  "countries": [],
+                  "Total": 0
+                }
+
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-Version-id
+  # FIXME: This is returning 404 not found. Needs testing.
+  # {
+  #   "$id": "1",
+  #   "message": "No HTTP resource was found that matches the request URI 'http://beta.itos.uga.edu/CODV2API/api/v1/Version/2'."
+  # }
+  /Version/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: "(TODO: ADD SHORT DESCRIPTION)"
+        required: true
+        schema:
+          type: string
+        example: "1"
+    get:
+      tags: [ "Versions" ]
+      responses:
+        '200':
+          description: >
+            Service Level List available versions of the API.
+          content:
+            application/json:
+              # TODO: Create specific schema
+              schema:
+                type: string
+
+  # https://beta.itos.uga.edu/CODV2API/Areas/HelpPage/Views/Help/~~/Help/Api/GET-api-Versions
+  # FIXME: this is returning 404
+  /Versions:
+    get:
+      tags: [ "Versions" ]
+      responses:
+        '200':
+          description: >
+            Service Level List available versions of the API.
+          content:
+            application/json:
+              # TODO: Create specific schema
+              schema:
+                type: string
+
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-Lookup-latlng-latlong-wkid-level
+  /themes/cod-ab/Lookup/latlng/{latlong}/{wkid}/{level}:
+    parameters:
+      - $ref: '#/components/parameters/latlongParam'
+      - $ref: '#/components/parameters/wkidParam'
+      - $ref: '#/components/parameters/levelParam'
+    get:
+      tags: [ "Lookup" ]
+      responses:
+        '200':
+          description: >
+            Retrieve location by level and latlng parameter with wkid units
+            meters and World Mercator projection. If no levels are entered,
+            all levels are returned. If no version is specified, the current
+            version is returned.
+            
+            Returns: Names and Pcodes
+          content:
+            application/json:
+              # TODO: Create specific schema
+              schema:
+                type: string
+
+              example:
+                [
+                  {
+                    "admin0Name_ref": "Null",
+                    "admin0Pcode": "BF",
+                    "admin0Name_local": "Burkina Faso",
+                    "admin1Name_ref": "Null",
+                    "admin1Pcode": "BF50",
+                    "admin1Name_local": "Centre-Ouest",
+                    "admin2Name_ref": "Null",
+                    "admin2Pcode": "BF5001",
+                    "admin2Name_local": "Boulkiemdé",
+                    "status": "OK"
+                  }
+                ]
+
+  # https://beta.itos.uga.edu/CODV2API/Help/Api/GET-api-v1-themes-cod-ab-lookup-level-iso2
+  /themes/cod-ab/lookup/{level}/{iso2}:
+    parameters:
+      - $ref: '#/components/parameters/levelParam'
+      - $ref: '#/components/parameters/iso2Param'
+    get:
+      tags: [ "Lookup" ]
+      responses:
+        '200':
+          description: >
+            Retrieve place names and Pcodes based on level and country Pcode
+            (i.e. BF for Burkina Faso) If no levels are entered, all places are
+            returned. If no version is specified, the current version is
+            returned.
+            Returns: Names and Pcodes
+          content:
+            application/json:
+              # TODO: Create specific schema
+              schema:
+                type: string
+
+              example:
+                [
+                  {
+                    "admin0Name_ref": "Null",
+                    "admin0Pcode": "HN",
+                    "admin0Name_local": "Honduras",
+                    "admin1Name_ref": "Null",
+                    "admin1Pcode": "HN11",
+                    "admin1Name_local": "Islas de La Bahia",
+                    "admin2Name_ref": "Null",
+                    "admin2Pcode": "HN1102",
+                    "admin2Name_local": "Guanaja",
+                    "status": "OK"
+                  },
+                  {
+                    "admin0Name_ref": "Null",
+                    "admin0Pcode": "HN",
+                    "admin0Name_local": "Honduras",
+                    "admin1Name_ref": "Null",
+                    "admin1Pcode": "HN11",
+                    "admin1Name_local": "Islas de La Bahia",
+                    "admin2Name_ref": "Null",
+                    "admin2Pcode": "HN1103",
+                    "admin2Name_local": "Jose Santos Guardiola",
+                    "status": "OK"
+                  }
+                ]
 
 components:
   schemas:
@@ -509,3 +736,47 @@ components:
           - "3"
           - "4" # TODO: check if 4 exists
           - "5" # TODO: check if 5 exists
+
+    themeIdParam:
+      name: themeId
+      in: path
+      description: |
+        1 is Administrative Boundary.
+        2 is Population Statistics
+      required: true
+      schema:
+        type: string
+        example: "2"
+        enum:
+          - "1" # Administrative Boundary.
+          - "2" # Population Statistics
+
+    wkidParam:
+      name: wkid
+      in: path
+      description: |
+        (TODO: add wkid short description)
+      required: true
+      schema:
+        type: string
+        example: "4326"
+
+    latlongParam:
+      name: latlong
+      in: path
+      description: |
+        (TODO: add wkid short description)
+      required: true
+      schema:
+        type: string
+        example: "-2.33,12.34"
+
+    iso2Param:
+      name: iso2
+      in: path
+      description: |
+        country iso2 (i.e. BF for Burkina Faso)
+      required: true
+      schema:
+        type: string
+        example: "HN"
