@@ -1,7 +1,0 @@
-{
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://hapi.etica.ai/schema/CODV2API/v1.0/location-item.schema.json",
-    "title": "UN/CODV2API v1.0 location-item",
-    "description": "JSON schema from item of https://beta.itos.uga.edu/CODV2API/api/v1/locations",
-    "type": "object"
-}

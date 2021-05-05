@@ -6,5 +6,6 @@
         "Population Statistics"
     ],
     "status": "OK",
-    "Total": 2
+    "Total": 2,
+    "_unknow-key": "This will be ignored by the schema"
 }
