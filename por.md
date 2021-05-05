@@ -26,6 +26,7 @@ documentar APIs REST.**
     - [BR](#br)
         - [portais-ckan-brasil - Portais de dados abertos do Brasil](#portais-ckan-brasil---portais-de-dados-abertos-do-brasil)
             - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
+- [Schema](#schema)
 - [Systema](#systema)
     - [OpenAPI](#openapi)
         - [Editores online](#editores-online)
@@ -68,6 +69,11 @@ documentar APIs REST.**
 
 - **Arquivo OpenAPI**: [api/BR/portais-ckan-brasil/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
 - **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
+
+
+## Schema
+
+Por favor, navege no repositório em <https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/tree/main/schema>.
 
 ## Systema
 

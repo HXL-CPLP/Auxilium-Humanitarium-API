@@ -29,6 +29,7 @@ open industry standard to document REST APIs.**
     - [BR](#br)
         - [portais-ckan-brasil - Brazilian Open Data portals](#portais-ckan-brasil---brazilian-open-data-portals)
             - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
+- [Schema](#schema)
 - [Systema](#systema)
     - [OpenAPI](#openapi)
         - [Online editors](#online-editors)
@@ -71,6 +72,10 @@ open industry standard to document REST APIs.**
 
 - **OpenAPI File**: [api/BR/portais-ckan-brasil/por/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
 - **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
+
+## Schema
+
+Please see repository at <https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/tree/main/schema>.
 
 ## Systema
 

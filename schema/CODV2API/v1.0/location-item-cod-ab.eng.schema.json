@@ -1,0 +1,67 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://hapi.etica.ai/schema/CODV2API/v1.0/location-item-cod-ab.eng.schema.json",
+    "title": "UN/CODV2API v1.0 location-item",
+    "description": "JSON schema (English descriptions) from items of https://beta.itos.uga.edu/CODV2API/api/v1/themes/cod-ab/locations/SDN    (as 2021-05-05) \nJSON Schem specification here https://json-schema.org/ \nExample of online editor: https://www.jsonschemavalidator.net/",
+    "type": "object",
+    "required": [
+        "admin0Pcode",
+        "admin0Name_ref",
+        "version",
+        "valid_from",
+        "valid_to"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "admin0Pcode": {
+            "description": "TODO: admin0Pcode description",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 3,
+            "example": "sdn"
+        },
+        "admin0Name_ref": {
+            "description": "TODO: admin0Name_ref description",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 128,
+            "example": "Sudan"
+        },
+        "version": {
+            "description": "TODO: version description",
+            "type": "string",
+            "example": "Latest"
+        },
+        "Total": {
+            "description": "TODO: Total description",
+            "type": "integer"
+        },
+        "valid_from": {
+            "description": "TODO: valid_from description",
+            "type": "string",
+            "format": "date-time"
+        },
+        "valid_to": {
+            "description": "TODO: valid_to description",
+            "type": "string",
+            "format": "date-time"
+        },
+        "comments": {
+            "description": "TODO: comments description",
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    },
+    "patternProperties": {
+        "^_": {
+            "type": [
+                "string",
+                "array",
+                "object"
+            ],
+            "description": "Properties starting with Properties are tolerated, since we're enforcing additionalProperties=false"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "admin0Pcode": "sdn",
+    "admin0Name_ref": " Sudan",
+    "version": "Latest",
+    "valid_from": "2020-08-31T00:00:00",
+    "valid_to": "2021-08-31T00:00:00",
+    "comments": null,
+    "_comment": {
+        "date": "2021-05-05T06:38:00Z",
+        "source": "First item of https://beta.itos.uga.edu/CODV2API/api/v1/themes/cod-ab/locations/SDN"
+    }
+}

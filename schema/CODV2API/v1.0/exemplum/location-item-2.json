@@ -1,0 +1,14 @@
+{
+    "location_name": "Atlantida",
+    "iso_3": "hnd",
+    "themes": [
+      "Administrative Boundary"
+    ],
+    "status": "ok",
+    "total": 1,
+    "_comment": {
+        "date": "2021-05-05T06:27:00Z",
+        "source": "First item of https://beta.itos.uga.edu/CODV2API/api/v1/locations/HN01",
+        "note": "Here uses iso_3"
+    }
+}
