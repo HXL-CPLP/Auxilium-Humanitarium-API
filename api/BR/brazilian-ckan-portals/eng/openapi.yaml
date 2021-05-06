@@ -33,14 +33,14 @@ servers:
   - url: https://dados.gov.br/api/3/action
     description: "{[ISO 3166-1:BR]} Portal Brasileiro de Dados Abertos"
 
-  - url: https://dados.al.gov.br/api/3/action
+  - url: https://dados.al.gov.br/catalogo/api/3/action
     description: "{[urn:data:xz:iso:BR-AC][urn:data:un:p:BR27]} Alagoas em dados e informações"
 
   # CORS OK
   - url: https://dados.fortaleza.ce.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-CE][urn:data:un:p:BR2304400]} Fortaleza Dados Abertos"
 
-  - url: https://dados.df.gov.br/api/3/action
+  - url: http://dados.df.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-DF][urn:data:un:p:BR5300108]} Dados abertos Distrito Federal"
 
   # FIXME: não é mais CKAN http://www.transparencia.mg.gov.br/dados-abertos
@@ -50,9 +50,10 @@ servers:
   - url: https://dados.pbh.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-MG][urn:data:un:p:BR3106200]} Portal de Dados Abertos – Prefeitura de Belo Horizonte"
 
+  # FIXME: não é mais CKAN
   # HTTPS quebrada
-  - url: http://web.transparencia.pe.gov.br/dados-abertos/api/3/action
-    description: "{[urn:data:xz:iso:3166-2:BR-PE][urn:data:un:p:BR26]} Dados Abertos – Portal da Transparência de Pernambuco"
+  # - url: http://web.transparencia.pe.gov.br/dados-abertos/api/3/action
+  #   description: "{[urn:data:xz:iso:3166-2:BR-PE][urn:data:un:p:BR26]} Dados Abertos – Portal da Transparência de Pernambuco"
 
   # CORS OK
   # HTTPS quebrada
@@ -69,7 +70,7 @@ servers:
   - url: https://dados.rs.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-RS][urn:data:un:p:BR43]} Dados RS"
 
-  - url: https://dados.tce.rs.gov.br/api/3/action
+  - url: http://dados.tce.rs.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-RS][urn:data:un:p:BR43]} Dados Abertos TCE-RS"
 
   # CORS OK
@@ -80,7 +81,9 @@ servers:
   - url: http://dados.sc.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-SC][urn:data:un:p:BR42]} Dados Abertos SC"
 
-  - url: https://www.governoaberto.sp.gov.br/api/3/action
+  # URL foi alterada
+  # - url: https://www.governoaberto.sp.gov.br/api/3/action
+  - url: http://catalogo.governoaberto.sp.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-SP][urn:data:un:p:BR35]} Governo Aberto SP"
 
   # CORS OK

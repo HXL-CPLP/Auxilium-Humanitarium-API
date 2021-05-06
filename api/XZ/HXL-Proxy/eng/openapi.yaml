@@ -52,7 +52,7 @@ servers:
 
 # paths: {}
 paths:
-  /data.csv?:
+  /data.csv:
     get:
       description: |
         Computer programs can use the HXL Proxy as if it were an
