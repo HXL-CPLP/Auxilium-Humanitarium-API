@@ -20,9 +20,9 @@ info:
 
     Veja também: 
      - https://github.com/dadosgovbr/catalogos-dados-brasil/blob/master/dados/catalogos.csv
-     - https://proxy.hxlstandard.org/data/edit?tagger-match-all=on&tagger-01-header=titulo&tagger-01-tag=%23item+%2Bname+%2Bi_por&tagger-02-header=url&tagger-02-tag=%23item+%2Burl&tagger-03-header=municipio&tagger-03-tag=%23adm3+%2Bname+%2Bi_por&tagger-04-header=uf&tagger-04-tag=%23adm2+%2Bcode&tagger-05-header=esfera&tagger-05-tag=%23status+%2Bpor_esfera&tagger-06-header=poder&tagger-06-tag=%23status+%2Bpor_poder&tagger-07-header=solucao&tagger-07-tag=%23item+%2Bpor_solucao&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdadosgovbr%2Fcatalogos-dados-brasil%2Fmaster%2Fdados%2Fcatalogos.csv&header-row=1&dest=data_view
+     - [catalogos.csv via HXL-Proxy](https://proxy.hxlstandard.org/data/edit?tagger-match-all=on&tagger-01-header=titulo&tagger-01-tag=%23item+%2Bname+%2Bi_por&tagger-02-header=url&tagger-02-tag=%23item+%2Burl&tagger-03-header=municipio&tagger-03-tag=%23adm3+%2Bname+%2Bi_por&tagger-04-header=uf&tagger-04-tag=%23adm2+%2Bcode&tagger-05-header=esfera&tagger-05-tag=%23status+%2Bpor_esfera&tagger-06-header=poder&tagger-06-tag=%23status+%2Bpor_poder&tagger-07-header=solucao&tagger-07-tag=%23item+%2Bpor_solucao&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdadosgovbr%2Fcatalogos-dados-brasil%2Fmaster%2Fdados%2Fcatalogos.csv&header-row=1&dest=data_view)
      - Filtrado CKAN
-       - https://proxy.hxlstandard.org/data/edit?dest=data_edit&filter01=sort&filter-label01=%23adm2%2Bcode+ordering&sort-tags01=%23adm2%2Bcode&filter02=select&filter-label02=%23item%2Bpor_solucao%3DCKAN&select-query02-01=%23item%2Bpor_solucao%3DCKAN&tagger-match-all=on&tagger-01-header=titulo&tagger-01-tag=%23item+%2Bname+%2Bi_por&tagger-02-header=url&tagger-02-tag=%23item+%2Burl&tagger-03-header=municipio&tagger-03-tag=%23adm3+%2Bname+%2Bi_por&tagger-04-header=uf&tagger-04-tag=%23adm2+%2Bcode&tagger-05-header=esfera&tagger-05-tag=%23status+%2Bpor_esfera&tagger-06-header=poder&tagger-06-tag=%23status+%2Bpor_poder&tagger-07-header=solucao&tagger-07-tag=%23item+%2Bpor_solucao&header-row=1&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdadosgovbr%2Fcatalogos-dados-brasil%2Fmaster%2Fdados%2Fcatalogos.csv
+       - [catalogos.csv via HXL-Proxy](https://proxy.hxlstandard.org/data/edit?dest=data_edit&filter01=sort&filter-label01=%23adm2%2Bcode+ordering&sort-tags01=%23adm2%2Bcode&filter02=select&filter-label02=%23item%2Bpor_solucao%3DCKAN&select-query02-01=%23item%2Bpor_solucao%3DCKAN&tagger-match-all=on&tagger-01-header=titulo&tagger-01-tag=%23item+%2Bname+%2Bi_por&tagger-02-header=url&tagger-02-tag=%23item+%2Burl&tagger-03-header=municipio&tagger-03-tag=%23adm3+%2Bname+%2Bi_por&tagger-04-header=uf&tagger-04-tag=%23adm2+%2Bcode&tagger-05-header=esfera&tagger-05-tag=%23status+%2Bpor_esfera&tagger-06-header=poder&tagger-06-tag=%23status+%2Bpor_poder&tagger-07-header=solucao&tagger-07-tag=%23item+%2Bpor_solucao&header-row=1&url=https%3A%2F%2Fraw.githubusercontent.com%2Fdadosgovbr%2Fcatalogos-dados-brasil%2Fmaster%2Fdados%2Fcatalogos.csv)
 
   version: "3" # 3 por causa que o CKAN usa 3, https://docs.ckan.org/en/2.9/api/
 
@@ -41,6 +41,7 @@ servers:
   - url: https://dados.al.gov.br/api/3/action
     description: "{[urn:data:xz:iso:BR-AC][urn:data:un:p:BR27]} Alagoas em dados e informações"
 
+  # CORS OK
   - url: https://dados.fortaleza.ce.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-CE][urn:data:un:p:BR2304400]} Fortaleza Dados Abertos"
 
@@ -58,6 +59,7 @@ servers:
   - url: http://web.transparencia.pe.gov.br/dados-abertos/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-PE][urn:data:un:p:BR26]} Dados Abertos – Portal da Transparência de Pernambuco"
 
+  # CORS OK
   # HTTPS quebrada
   - url: http://dados.recife.pe.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-PE][urn:data:un:p:BR2611606]} Dados Recife"
@@ -75,6 +77,7 @@ servers:
   - url: https://dados.tce.rs.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-RS][urn:data:un:p:BR43]} Dados Abertos TCE-RS"
 
+  # CORS OK
   - url: https://dados.portoalegre.rs.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-RS][urn:data:un:p:BR4314902]} Dados Abertos POA"
 
@@ -85,6 +88,7 @@ servers:
   - url: https://www.governoaberto.sp.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-SP][urn:data:un:p:BR35]} Governo Aberto SP"
 
+  # CORS OK
   # HTTPS quebrada
   - url: http://dados.prefeitura.sp.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-SP][urn:data:un:p:BR3550308]} Portal de Dados Abertos da Cidade de São Paulo"
@@ -127,6 +131,163 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/CkanReply'
+
+  /package_search:
+    get:
+      summary: Searches for packages satisfying a given search criteria
+      operationId: searchInventory
+      description: |
+        Searches for packages satisfying a given search criteria.
+
+        This action accepts solr search query parameters (details below), and
+        returns a dictionary of results, including dictized datasets that match
+        the search criteria, a search count and also facet information.
+
+        **Solr Parameters:**
+
+        For more in depth treatment of each paramter, please read the
+        [Solr Documentation](https://lucene.apache.org/solr/guide/6_6/common-query-parameters.html).
+
+        This action accepts a subset of solr’s search query parameters.
+
+        For full documentation, see
+        <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_search>.
+
+      parameters:
+        - in: query
+          name: q
+          description: 'the solr query. For example ``title:covid``'
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+            example: 'title:covid'
+
+        - in: query
+          name: fq
+          description: >
+            any filter queries to apply. Note: `+site_id:{ckan_site_id}`
+            is added to this string prior to the query being executed.
+          schema:
+            type: string
+
+        # TODO: fq_list
+        #       https://docs.ckan.org/en/2.9/api/index.html
+
+        - in: query
+          name: sort
+          description: >
+            sorting of the search results. Optional.
+            **Default: 'score desc, metadata_modified desc'**.
+
+            As per the solr documentation, this is a comma-separated string of
+            field names and sort-orderings.
+          required: false
+          schema:
+            type: string
+            default: 'score desc, metadata_modified desc'
+
+        - in: query
+          name: rows
+          description: >-
+            the maximum number of matching rows (datasets) to return.
+            (optional, default: `10`, upper limit: `1000` unless set in site’s
+            configuration `ckan.search.rows_max`)
+          required: false
+          schema:
+            type: integer
+
+        - in: query
+          name: start
+          description: >-
+            the offset in the complete result for where the set of returned
+            datasets should begin.
+          schema:
+            type: integer
+
+        - in: query
+          name: facet
+          description: >-
+            whether to enable faceted results. Default: `True`.
+          required: false
+          schema:
+            type: string
+            default: True
+
+        - in: query
+          name: facet.mincount
+          description: >-
+            the minimum counts for facet fields should be included in the
+            results.
+          required: false
+          schema:
+            type: integer
+
+        - in: query
+          name: facet.limit
+          description: >-
+            the maximum number of values the facet fields return.
+            A negative value means unlimited. This can be set instance-wide
+            with the `search.facets.limit` config option. Default is `50`.
+          schema:
+            type: integer
+            default: 50
+
+        - in: query
+          name: facet.field
+          description: >-
+            (list of strings) – the fields to facet upon. Default empty.
+            If empty, then the returned facet information is empty.
+          schema:
+            type: string
+
+        - in: query
+          name: include_drafts
+          description: >-
+            if `True`, draft datasets will be included in the results.
+            A user will only be returned their own draft datasets,
+            and a sysadmin will be returned all draft datasets.
+            Optional, the default is `False`.
+          schema:
+            type: boolean
+            default: false
+
+        - in: query
+          name: include_private
+          description: >-
+            if `True`, private datasets will be included
+            in the results. Only private datasets from the user’s organizations
+            will be returned and sysadmins will be returned all
+            private datasets.
+            Optional, the default is `False`.
+          schema:
+            type: boolean
+            default: false
+
+        - in: query
+          name: use_default_schema
+          description: >-
+            use default package schema instead of a custom schema defined with
+            an IDatasetForm plugin (default: `False`)
+          schema:
+            type: boolean
+            default: false
+
+      responses:
+        '200':
+          description: >
+            Return a list of the names of the site’s datasets (packages).
+
+            See also:
+              - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CkanReply'
+
+  
   /tag_list: {}
   # TODO: /tag_list 
   # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_list
