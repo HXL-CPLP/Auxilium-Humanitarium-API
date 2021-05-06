@@ -1,0 +1,464 @@
+# ARQUIVO:         schema/api/ckan/por/ckan-openapi.yaml
+# LICENÇA:         SPDX-License-Identifier: Unlicense
+#
+# POR SER FEITO:   (2021-05-06) Este arquivo é um rascunho.
+#                  Ainda requer ajuda para ser  traduzido de inglês
+#                  para português.
+#
+# Trivia:
+# - 'operātiōnem'
+#    - https://en.wiktionary.org/wiki/operatio#Latin
+# - 'schēma'
+#    - https://en.wiktionary.org/wiki/schema#Latin
+# - 'resultandum'
+
+operationem:
+  package_list:
+    get:
+      tags:
+        - List and search
+      summary: Return a list of the names of the site’s datasets (packages).
+      parameters:
+        - in: query
+          name: limit
+          description: >
+            If given, the list of datasets will be broken into pages of at most
+            `limit` datasets per page and only one page will be returned at a time
+          required: false
+          schema:
+            type: integer
+            default: 250
+            # NOTE: is possible to not use a default and display EVERYTING.
+            #       But this can freeze user browser even if a 200kb response.
+        - in: query
+          name: offset
+          description: >
+            When `limit` is given, the `offset` to start returning packages from
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: >
+            Return a list of the names of the site’s datasets (packages).
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schema/CKANResultandum"
+
+  package_search:
+    get:
+      tags:
+        - List and search
+      summary: Searches for packages satisfying a given search criteria
+      operationId: searchInventory
+      parameters:
+        - in: query
+          name: q
+          description: "the solr query. For example ``title:covid``"
+          required: false
+          schema:
+            type: string
+            default: "*:*"
+            example: "title:covid"
+
+        - in: query
+          name: fq
+          description: >
+            any filter queries to apply. Note: `+site_id:{ckan_site_id}`
+            is added to this string prior to the query being executed.
+          schema:
+            type: string
+
+        # TODO: fq_list
+        #       https://docs.ckan.org/en/2.9/api/index.html
+
+        - in: query
+          name: sort
+          description: >
+            sorting of the search results. Optional.
+            **Default: 'score desc, metadata_modified desc'**.
+
+            As per the solr documentation, this is a comma-separated string of
+            field names and sort-orderings.
+          required: false
+          schema:
+            type: string
+            default: "score desc, metadata_modified desc"
+
+        - in: query
+          name: rows
+          description: >-
+            the maximum number of matching rows (datasets) to return.
+            (optional, default: `10`, upper limit: `1000` unless set in site’s
+            configuration `ckan.search.rows_max`)
+          required: false
+          schema:
+            type: integer
+
+        - in: query
+          name: start
+          description: >-
+            the offset in the complete result for where the set of returned
+            datasets should begin.
+          schema:
+            type: integer
+
+        - in: query
+          name: facet
+          description: >-
+            whether to enable faceted results. Default: `True`.
+          required: false
+          schema:
+            type: string
+            default: True
+
+        - in: query
+          name: facet.mincount
+          description: >-
+            the minimum counts for facet fields should be included in the
+            results.
+          required: false
+          schema:
+            type: integer
+
+        - in: query
+          name: facet.limit
+          description: >-
+            the maximum number of values the facet fields return.
+            A negative value means unlimited. This can be set instance-wide
+            with the `search.facets.limit` config option. Default is `50`.
+          schema:
+            type: integer
+            default: 50
+
+        - in: query
+          name: facet.field
+          description: >-
+            (list of strings) – the fields to facet upon. Default empty.
+            If empty, then the returned facet information is empty.
+          schema:
+            type: string
+
+        - in: query
+          name: include_drafts
+          description: >-
+            if `True`, draft datasets will be included in the results.
+            A user will only be returned their own draft datasets,
+            and a sysadmin will be returned all draft datasets.
+            Optional, the default is `False`.
+          schema:
+            type: boolean
+            default: false
+
+        - in: query
+          name: include_private
+          description: >-
+            if `True`, private datasets will be included
+            in the results. Only private datasets from the user’s organizations
+            will be returned and sysadmins will be returned all
+            private datasets.
+            Optional, the default is `False`.
+          schema:
+            type: boolean
+            default: false
+
+        - in: query
+          name: use_default_schema
+          description: >-
+            use default package schema instead of a custom schema defined with
+            an IDatasetForm plugin (default: `False`)
+          schema:
+            type: boolean
+            default: false
+
+      responses:
+        "200":
+          description: |
+            Searches for packages satisfying a given search criteria.
+
+            This action accepts solr search query parameters (details below),
+            and returns a dictionary of results, including dictized datasets
+            that match the search criteria, a search count and also facet
+            information.
+
+            **Solr Parameters:**
+
+            For more in depth treatment of each paramter, please read the
+            [Solr Documentation](https://lucene.apache.org/solr/guide/6_6/common-query-parameters.html).
+
+            This action accepts a subset of solr’s search query parameters.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_search>.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schema/CKANResultandum"
+
+  tag_list:
+    get:
+      tags:
+        - List and search
+      summary: Return a list of the site’s tags.
+      parameters:
+        - in: query
+          name: query
+          description: >
+            a tag name query to search for, if given only tags whose names
+            contain this string will be returned (optional)
+          required: false
+          schema:
+            type: string
+
+        - in: query
+          name: vocabulary_id
+          description: >
+            the id or name of a vocabulary, if give only tags that belong to
+            this vocabulary will be returned (optional).
+          required: false
+          schema:
+            type: string
+
+        - in: query
+          name: all_fields
+          description: >
+            return full tag dictionaries instead of just names
+            (optional, default: `False`)
+          required: false
+          schema:
+            type: boolean
+            default: false
+
+      responses:
+        "200":
+          description: >
+            Return a list of the site’s tags.
+
+            By default only free tags (tags that don’t belong to a vocabulary)
+            are returned. If the `vocabulary_id` argument is given then only
+            tags belonging to that vocabulary will be returned instead.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_list>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schema/CKANResultandum"
+
+  vocabulary_list:
+    get:
+      tags:
+        - List and search
+      summary: Return a list of all the site’s tag vocabularies.
+      responses:
+        "200":
+          description: >
+            Return a list of all the site’s tag vocabularies.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.vocabulary_list>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schema/CKANResultandum"
+
+  package_show:
+    get:
+      tags:
+        - Details
+      summary: Return the metadata of a dataset (package) and its resources.
+      # operationId: showInventory
+      parameters:
+        - in: query
+          name: id
+          description: the id or name of the dataset
+          required: true
+          schema:
+            type: string
+
+        - in: query
+          name: use_default_schema
+          description: |
+            use default package schema instead of a custom schema defined with
+            an IDatasetForm plugin (default: `False`)
+          schema:
+            type: boolean
+            default: false
+
+        - in: query
+          name: include_tracking
+          description: |
+            add tracking information to dataset and resources (default: `False`)
+          schema:
+            type: boolean
+            default: false
+      responses:
+        "200":
+          description: >
+            Return the metadata of a dataset (package) and its resources.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/2.9/api/index.html#ckan.logic.action.get.package_show>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schema/CKANResultandum"
+
+  resource_show:
+    get:
+      tags:
+        - Details
+      summary: Return the metadata of a resource.
+      # operationId: showInventory
+      parameters:
+        - in: query
+          name: id
+          description: the id of the resource
+          required: true
+          schema:
+            type: string
+
+        - in: query
+          name: include_tracking
+          description: |
+            use default package schema instead of a custom schema defined with
+            an IDatasetForm plugin (default: `False`)
+          schema:
+            type: boolean
+            default: false
+
+      responses:
+        "200":
+          description: >
+            Return the metadata of a resource.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.resource_show>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schema/CKANResultandum"
+
+  # /package_activity_list: {}
+  # "You must be authorized to view the package.". Não vamos incluir
+
+  vocabulary_show:
+    get:
+      tags:
+        - Details
+      summary: Return a single tag vocabulary.
+      # operationId: showInventory
+      parameters:
+        - in: query
+          name: id
+          description: the id or name of the vocabulary
+          required: true
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: >
+            Return a single tag vocabulary.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.vocabulary_show>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schema/CKANResultandum"
+
+  tag_show:
+    get:
+      tags:
+        - Details
+      summary: Return the details of a tag and all its datasets.
+      # operationId: showInventory
+      parameters:
+        - in: query
+          name: id
+          description: the name or id of the tag
+          required: true
+          schema:
+            type: string
+
+        - in: query
+          name: vocabulary_id
+          description: |
+            the id or name of the tag vocabulary that the tag
+            is in - if it is not specified it will assume it is a free tag.
+            (optional)
+          required: false
+          schema:
+            type: string
+
+        - in: query
+          name: include_datasets
+          description: |
+            Return the details of a tag and all its datasets.
+
+            Returns: the details of the tag, including a list of all of the
+            tag’s datasets and their details
+          required: false
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: >
+            Return the details of a tag and all its datasets.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_show>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schema/CKANResultandum"
+
+schema:
+  CKANResultandum:
+    # From teamdigitale/api-openapi-samples
+    # TODO: review this response. It may not be as complete
+    #       (Emerson Rocha, 2021-05-06 12:30 UTC)
+    type: object
+    required:
+      - result
+      - success
+      - help
+    properties:
+      success:
+        type: string
+      result:
+        anyOf:
+          - type: object
+          - type: array
+      error:
+        type: object
+      help:
+        type: string
+        format: url
+      status:
+        type: boolean
+        enum:
+          - true
+          - false

@@ -1,0 +1,47 @@
+# FILE:            schema/api/arcgis/por/arcgis-openapi.yaml
+# LICENSE:         Unlicense
+#
+# Trivia:
+# - 'operātiōnem'
+#    - https://en.wiktionary.org/wiki/operatio#Latin
+# - 'schēma'
+#    - https://en.wiktionary.org/wiki/schema#Latin
+# - 'resultandum'
+
+operationem:
+  datajson:
+    get:
+      description: |
+        Nota: esta requisição irá acionar <https://www.data.rio/data.json>.
+        O arquivo é extremamente grande (seu navegador pode travar) e no
+        momento não está claro se é possível limitar quantidade da resposta.
+
+        Considere usar uma ferramenta que suporte respostas grandes.
+      responses:
+        "200":
+          description: >
+            Return a list of the names of the site’s datasets (packages).
+
+            See also:
+              - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+          content:
+            $ref: "#/schema/datajsonResultandum"
+
+schema:
+  datajsonResultandum:
+    application/json:
+      schema:
+        type: object
+        example:
+          {
+            "@context": "https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+            "@type": "dcat:Catalog",
+            "conformsTo": "https://project-open-data.cio.gov/v1.1/schema",
+            "describedBy": "https://project-open-data.cio.gov/v1.1/schema/catalog.json",
+            "dataset":
+              [
+                { "@type": "dcat:Dataset" },
+                { "@type": "dcat:Dataset" },
+                { "@type": "dcat:Dataset" },
+              ],
+          }

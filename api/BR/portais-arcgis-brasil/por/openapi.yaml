@@ -15,9 +15,9 @@ openapi: 3.0.3
 # packages?? https://developers.arcgis.com/documentation/mapping-apis-and-services/security/arcgis-identity/serverless-web-apps/
 
 info:
-  title: Portais CKAN de dados abertos do Brasil
+  title: Portais ArcGIS de dados abertos do Brasil
   description: |
-    (descrição temporaria)
+    **(descrição temporaria)**
 
     Isto é um rascunho. ArcGIS não foi implementado ainda.
 
@@ -42,9 +42,6 @@ info:
 #   - https://docs.google.com/spreadsheets/d/16SW1kOv01IKcdO5nZvGjnjat7DrUqFem4mcWC2OQbz4/edit#gid=332977705
 servers:
 
-  # - url: https://data.humdata.org/api/3/action
-  #   description: "(TODO: Remove this) HDX Production server"
-
   - url: https://www.data.rio/
     description: "{[urn:data:xz:iso:3166-2:BR-RJ][urn:data:un:p:BR3304557]} data.rio"
 
@@ -56,35 +53,4 @@ servers:
 # https://github.com/teamdigitale/api-openapi-samples/blob/master/external-apis/api.daf.teamdigitale.it.yaml.src
 paths:
   /data.json:
-    get:
-      description: |
-        Nota: esta requisição irá acionar <https://www.data.rio/data.json>.
-        O arquivo é extremamente grande (seu navegador pode travar) e no
-        momento não está claro se é possível limitar quantidade da resposta.
-
-        Considere usar uma ferramenta que suporte respostas grandes.
-      responses:
-        '200':
-          description: >
-            Return a list of the names of the site’s datasets (packages).
-
-            See also:
-              - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  {
-                    "@context":"https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
-                    "@type":"dcat:Catalog",
-                    "conformsTo":"https://project-open-data.cio.gov/v1.1/schema",
-                    "describedBy":"https://project-open-data.cio.gov/v1.1/schema/catalog.json",
-                    "dataset":
-                      [
-                        {"@type":"dcat:Dataset"},
-                        {"@type":"dcat:Dataset"},
-                        {"@type":"dcat:Dataset"}
-                      ]
-                  }
-  
+     $ref: "../../../../schema/api/arcgis/por/arcgis-openapi.yaml#/operationem/datajson"
