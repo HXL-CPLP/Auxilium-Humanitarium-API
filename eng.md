@@ -27,8 +27,10 @@ open industry standard to document REST APIs.**
         - [HXL-Proxy - Humanitarian Exchange Language Proxy](#hxl-proxy---humanitarian-exchange-language-proxy)
             - [HXL-Proxy](#hxl-proxy)
     - [BR](#br)
-        - [portais-ckan-brasil - Brazilian Open Data portals](#portais-ckan-brasil---brazilian-open-data-portals)
+        - [Brazilian Open Data portals](#brazilian-open-data-portals)
             - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
+            - [portais-arcgis-brasil-por](#portais-arcgis-brasil-por)
+            - [brazilian-ckan-portals-eng](#brazilian-ckan-portals-eng)
 - [Schema](#schema)
 - [Systema](#systema)
     - [OpenAPI](#openapi)
@@ -66,12 +68,22 @@ open industry standard to document REST APIs.**
 
 ### BR
 
-#### portais-ckan-brasil - Brazilian Open Data portals
+#### Brazilian Open Data portals
 
 ##### portais-ckan-brasil-por
 
 - **OpenAPI File**: [api/BR/portais-ckan-brasil/por/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
 - **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
+
+##### portais-arcgis-brasil-por
+
+- **OpenAPI File**: [api/BR/portais-arcgis-brasil/por/openapi.yaml](api/BR/portais-arcgis-brasil/por/openapi.yaml)
+- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/openapi.yaml>
+
+##### brazilian-ckan-portals-eng
+
+- **OpenAPI File**: [api/BR/brazilian-ckan-portals/eng/openapi.yaml](api/BR/brazilian-ckan-portals/eng/openapi.yaml)
+- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/openapi.yaml>
 
 ## Schema
 

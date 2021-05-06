@@ -24,8 +24,10 @@ documentar APIs REST.**
         - [HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária](#hxl-proxy---proxy-da-linguagem-de-intercâmbio-humanitária)
             - [HXL-Proxy](#hxl-proxy)
     - [BR](#br)
-        - [portais-ckan-brasil - Portais de dados abertos do Brasil](#portais-ckan-brasil---portais-de-dados-abertos-do-brasil)
+        - [Portais de dados abertos no Brasil](#portais-de-dados-abertos-no-brasil)
+            - [brazilian-ckan-portals-eng](#brazilian-ckan-portals-eng)
             - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
+            - [portais-arcgis-brasil-por](#portais-arcgis-brasil-por)
 - [Schema](#schema)
 - [Systema](#systema)
     - [OpenAPI](#openapi)
@@ -63,13 +65,22 @@ documentar APIs REST.**
 
 ### BR
 
-#### portais-ckan-brasil - Portais de dados abertos do Brasil
+#### Portais de dados abertos no Brasil
+
+##### brazilian-ckan-portals-eng
+
+- **Arquivo OpenAPI**: [api/BR/brazilian-ckan-portals/eng/openapi.yaml](api/BR/brazilian-ckan-portals/eng/openapi.yaml)
+- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/openapi.yaml>
 
 ##### portais-ckan-brasil-por
 
-- **Arquivo OpenAPI**: [api/BR/portais-ckan-brasil/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
+- **Arquivo OpenAPI**: [api/BR/portais-ckan-brasil/por/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
 - **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
 
+##### portais-arcgis-brasil-por
+
+- **Arquivo OpenAPI**: [api/BR/portais-arcgis-brasil/por/openapi.yaml](api/BR/portais-arcgis-brasil/por/openapi.yaml)
+- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/openapi.yaml>
 
 ## Schema
 

@@ -14,7 +14,7 @@ openapi: 3.0.3
 info:
   title: Portais CKAN de dados abertos do Brasil
   description: |
-    (descrição temporaria)
+    **Version in English: `api/BR/brazilian-ckan-portals/eng/openapi.yaml`**
 
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
 
@@ -31,7 +31,6 @@ info:
 # Sobre URNS do Brasil
 #   - https://docs.google.com/spreadsheets/d/16SW1kOv01IKcdO5nZvGjnjat7DrUqFem4mcWC2OQbz4/edit#gid=332977705
 servers:
-
   - url: https://data.humdata.org/api/3/action
     description: "(TODO: Remove this) HDX Production server"
 
@@ -93,12 +92,24 @@ servers:
   - url: http://dados.prefeitura.sp.gov.br/api/3/action
     description: "{[urn:data:xz:iso:3166-2:BR-SP][urn:data:un:p:BR3550308]} Portal de Dados Abertos da Cidade de São Paulo"
 
+tags:
+  - name: "List and search"
+    description: |
+      Search an list collections
+
+  - name: "Details"
+    description: |
+      Details about an item
+
 # NOTE: for maintainers, the Team Digitale have a few references about OpenAPI
 #       and CKAN. For example, the file
 # https://github.com/teamdigitale/api-openapi-samples/blob/master/external-apis/api.daf.teamdigitale.it.yaml.src
 paths:
   /package_list:
     get:
+      tags:
+        - List and search
+      summary: Return a list of the names of the site’s datasets (packages).
       parameters:
         - in: query
           name: limit
@@ -119,49 +130,34 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: >
             Return a list of the names of the site’s datasets (packages).
 
-            See also:
-              - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+            For full documentation, see:
+            <https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list>
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/CkanReply'
+                  $ref: "#/components/schemas/CkanReply"
 
   /package_search:
     get:
+      tags:
+        - List and search
       summary: Searches for packages satisfying a given search criteria
       operationId: searchInventory
-      description: |
-        Searches for packages satisfying a given search criteria.
-
-        This action accepts solr search query parameters (details below), and
-        returns a dictionary of results, including dictized datasets that match
-        the search criteria, a search count and also facet information.
-
-        **Solr Parameters:**
-
-        For more in depth treatment of each paramter, please read the
-        [Solr Documentation](https://lucene.apache.org/solr/guide/6_6/common-query-parameters.html).
-
-        This action accepts a subset of solr’s search query parameters.
-
-        For full documentation, see
-        <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_search>.
-
       parameters:
         - in: query
           name: q
-          description: 'the solr query. For example ``title:covid``'
+          description: "the solr query. For example ``title:covid``"
           required: false
           schema:
             type: string
-            default: '*:*'
-            example: 'title:covid'
+            default: "*:*"
+            example: "title:covid"
 
         - in: query
           name: fq
@@ -185,7 +181,7 @@ paths:
           required: false
           schema:
             type: string
-            default: 'score desc, metadata_modified desc'
+            default: "score desc, metadata_modified desc"
 
         - in: query
           name: rows
@@ -274,28 +270,265 @@ paths:
             default: false
 
       responses:
-        '200':
-          description: >
-            Return a list of the names of the site’s datasets (packages).
+        "200":
+          description: |
+            Searches for packages satisfying a given search criteria.
 
-            See also:
-              - https://docs.ckan.org/en/2.9/api/#ckan.logic.action.get.package_list
+            This action accepts solr search query parameters (details below),
+            and returns a dictionary of results, including dictized datasets
+            that match the search criteria, a search count and also facet
+            information.
+
+            **Solr Parameters:**
+
+            For more in depth treatment of each paramter, please read the
+            [Solr Documentation](https://lucene.apache.org/solr/guide/6_6/common-query-parameters.html).
+
+            This action accepts a subset of solr’s search query parameters.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.package_search>.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/CkanReply'
+                  $ref: "#/components/schemas/CkanReply"
 
-  
-  /tag_list: {}
-  # TODO: /tag_list 
-  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_list
+  /tag_list:
+    get:
+      tags:
+        - List and search
+      summary: Return a list of the site’s tags.
+      parameters:
+        - in: query
+          name: query
+          description: >
+            a tag name query to search for, if given only tags whose names
+            contain this string will be returned (optional)
+          required: false
+          schema:
+            type: string
 
-  /tag_show: {}
-  # TODO: /tag_show 
-  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_show
+        - in: query
+          name: vocabulary_id
+          description: >
+            the id or name of a vocabulary, if give only tags that belong to
+            this vocabulary will be returned (optional).
+          required: false
+          schema:
+            type: string
 
+        - in: query
+          name: all_fields
+          description: >
+            return full tag dictionaries instead of just names
+            (optional, default: `False`)
+          required: false
+          schema:
+            type: boolean
+            default: false
+
+      responses:
+        "200":
+          description: >
+            Return a list of the site’s tags.
+
+            By default only free tags (tags that don’t belong to a vocabulary)
+            are returned. If the `vocabulary_id` argument is given then only
+            tags belonging to that vocabulary will be returned instead.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_list>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CkanReply"
+
+  /vocabulary_list:
+    get:
+      tags:
+        - List and search
+      summary: Return a list of all the site’s tag vocabularies.
+      responses:
+        "200":
+          description: >
+            Return a list of all the site’s tag vocabularies.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.vocabulary_list>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CkanReply"
+
+  /package_show:
+    get:
+      tags:
+        - Details
+      summary: Return the metadata of a dataset (package) and its resources.
+      # operationId: showInventory
+      parameters:
+        - in: query
+          name: id
+          description: the id or name of the dataset
+          required: true
+          schema:
+            type: string
+
+        - in: query
+          name: use_default_schema
+          description: |
+            use default package schema instead of a custom schema defined with
+            an IDatasetForm plugin (default: `False`)
+          schema:
+            type: boolean
+            default: false
+
+        - in: query
+          name: include_tracking
+          description: |
+            add tracking information to dataset and resources (default: `False`)
+          schema:
+            type: boolean
+            default: false
+      responses:
+        "200":
+          description: >
+            Return the metadata of a dataset (package) and its resources.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/2.9/api/index.html#ckan.logic.action.get.package_show>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CkanReply"
+
+  /resource_show:
+    get:
+      tags:
+        - Details
+      summary: Return the metadata of a resource.
+      # operationId: showInventory
+      parameters:
+        - in: query
+          name: id
+          description: the id of the resource
+          required: true
+          schema:
+            type: string
+
+        - in: query
+          name: include_tracking
+          description: |
+            use default package schema instead of a custom schema defined with
+            an IDatasetForm plugin (default: `False`)
+          schema:
+            type: boolean
+            default: false
+
+      responses:
+        "200":
+          description: >
+            Return the metadata of a resource.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.resource_show>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CkanReply"
+
+  # /package_activity_list: {}
+  # "You must be authorized to view the package.". Não vamos incluir
+
+  /vocabulary_show:
+    get:
+      tags:
+        - Details
+      summary: Return a single tag vocabulary.
+      # operationId: showInventory
+      parameters:
+        - in: query
+          name: id
+          description: the id or name of the vocabulary
+          required: true
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: >
+            Return a single tag vocabulary.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.vocabulary_show>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CkanReply"
+
+  /tag_show:
+    get:
+      tags:
+        - Details
+      summary: Return the details of a tag and all its datasets.
+      # operationId: showInventory
+      parameters:
+        - in: query
+          name: id
+          description: the name or id of the tag
+          required: true
+          schema:
+            type: string
+
+        - in: query
+          name: vocabulary_id
+          description: |
+            the id or name of the tag vocabulary that the tag
+            is in - if it is not specified it will assume it is a free tag.
+            (optional)
+          required: false
+          schema:
+            type: string
+
+        - in: query
+          name: include_datasets
+          description: |
+            Return the details of a tag and all its datasets.
+
+            Returns: the details of the tag, including a list of all of the
+            tag’s datasets and their details
+          required: false
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: >
+            Return the details of a tag and all its datasets.
+
+            For full documentation, see:
+            <https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.tag_show>
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CkanReply"
+
+  # TODO: /resource_show
+  # https://docs.ckan.org/en/latest/api/index.html#ckan.logic.action.get.resource_show
 
 components:
   # NOTE: OpenAPI 3.0 seems to not allow use $ref outside schemas

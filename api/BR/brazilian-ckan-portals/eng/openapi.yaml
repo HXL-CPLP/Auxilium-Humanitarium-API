@@ -1,46 +1,92 @@
-# FILE:            api/UN/HDX/eng/openapi.yaml
-# LICENSE:         Unlicense
+# ARQUIVO:         api/BR/brazilian-ckan-portals/eng/openapi.yaml
+# LICENÇA:         SPDX-License-Identifier: Unlicense
 #
-# ONLINE VERSION:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml
-#
-# README FIRST!:   This file uses OpenAPI syntax (https://www.openapis.org/),
-#                  a de facto non-proprietary industry standard to document
-#                  APIs.
-#                  Consider as starting point:
-#                    - Use this online editor https://editor.swagger.io/
-#                    - Check this https://openapi.tools/ for compatible tools
+# VERSÃO ONLINE:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/openapi.yaml
 
 openapi: 3.0.3
-# NOTE: the current file, as 2021-05-01, uses OpenAPI 3.0 because 3.1 still too
-#       new (released 2021-02-15). But some comments already consider future
-#       upgrade.
+# NOTE: o arquivo atual, nesta data de 2021-05-02, usa OpenAPI 3.0 pois
+#       a OpenAPI 3.1 é muito recente (lançada em 2021-02-15) e poucas
+#       ferramentas tem suporte a ela. A migração para o 3.1 deve ser feita
+#       eventualmente.
 # @see https://spec.openapis.org/oas/v3.0.3
 # @see https://spec.openapis.org/oas/v3.1.0
 
 info:
-  title: The Humanitarian Data Exchange API (Unofficial) documentation (English version)
-  description: "TODO: add description"
-  version: "3" # 3 because CKAN uses 3, see https://docs.ckan.org/en/2.9/api/
-  termsOfService: https://data.humdata.org/about/terms
-  license:
-    name: Several license types
-    url: https://data.humdata.org/about/license
-  contact:
-    name: Centre for Humanitarian Data
-    url: https://centre.humdata.org/contact-us/
-    email: hdx@un.org
-  # NOTE: The 'info:'' group is based on HDX website. The "Unofficial" is
-  #       added to avoid confusion individuals contributing via HXL-CPLP, an
-  #       HXL regional user group, be part of HDX.
-  #       The close to "official" documentation is likely to be:
-  #         - https://docs.ckan.org/en/latest/api/index.html
-  #         - https://data.humdata.org/faq
-  #       The "English version" on title is because one idea of HXL-CPLP is
-  #       eventually encourage localized translations.
+  title: Brazilian CKAN data portals
+  description: |
+    (Working draft)
 
+    **Versão em português: `api/BR/portais-ckan-brasil/por/openapi.yaml`**
+
+    See discussion at <https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4>
+
+  version: "3" # 3 por causa que o CKAN usa 3, https://docs.ckan.org/en/2.9/api/
+
+# Usamos na nomenclatura ISO 3166-2:BR
+# https://en.wikipedia.org/wiki/ISO_3166-2:BR
+# Sobre URNS do Brasil
+#   - https://docs.google.com/spreadsheets/d/16SW1kOv01IKcdO5nZvGjnjat7DrUqFem4mcWC2OQbz4/edit#gid=332977705
 servers:
   - url: https://data.humdata.org/api/3/action
-    description: HDX Production server
+    description: "(TODO: Remove this) HDX Production server"
+
+  - url: https://dados.gov.br/api/3/action
+    description: "{[ISO 3166-1:BR]} Portal Brasileiro de Dados Abertos"
+
+  - url: https://dados.al.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:BR-AC][urn:data:un:p:BR27]} Alagoas em dados e informações"
+
+  # CORS OK
+  - url: https://dados.fortaleza.ce.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-CE][urn:data:un:p:BR2304400]} Fortaleza Dados Abertos"
+
+  - url: https://dados.df.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-DF][urn:data:un:p:BR5300108]} Dados abertos Distrito Federal"
+
+  # FIXME: não é mais CKAN http://www.transparencia.mg.gov.br/dados-abertos
+  # - url: ???
+  #   description: "{[urn:data:xz:iso:3166-2:BR-MG][urn:data:un:p:BR31]} Dados abertos – Estado de MG"
+
+  - url: https://dados.pbh.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-MG][urn:data:un:p:BR3106200]} Portal de Dados Abertos – Prefeitura de Belo Horizonte"
+
+  # HTTPS quebrada
+  - url: http://web.transparencia.pe.gov.br/dados-abertos/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-PE][urn:data:un:p:BR26]} Dados Abertos – Portal da Transparência de Pernambuco"
+
+  # CORS OK
+  # HTTPS quebrada
+  - url: http://dados.recife.pe.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-PE][urn:data:un:p:BR2611606]} Dados Recife"
+
+  # FIXME: não é mais CKAN https://www.data.rio/
+  #        Agora é arcgis
+
+  # HTTPS quebrada
+  - url: http://dados.natal.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-RN][urn:data:un:p:BR2408102]} Portal da Transparência e Mobilidade Urbana de Natal"
+
+  - url: https://dados.rs.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-RS][urn:data:un:p:BR43]} Dados RS"
+
+  - url: https://dados.tce.rs.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-RS][urn:data:un:p:BR43]} Dados Abertos TCE-RS"
+
+  # CORS OK
+  - url: https://dados.portoalegre.rs.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-RS][urn:data:un:p:BR4314902]} Dados Abertos POA"
+
+  # HTTPS quebrada
+  - url: http://dados.sc.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-SC][urn:data:un:p:BR42]} Dados Abertos SC"
+
+  - url: https://www.governoaberto.sp.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-SP][urn:data:un:p:BR35]} Governo Aberto SP"
+
+  # CORS OK
+  # HTTPS quebrada
+  - url: http://dados.prefeitura.sp.gov.br/api/3/action
+    description: "{[urn:data:xz:iso:3166-2:BR-SP][urn:data:un:p:BR3550308]} Portal de Dados Abertos da Cidade de São Paulo"
 
 tags:
   - name: "List and search"
