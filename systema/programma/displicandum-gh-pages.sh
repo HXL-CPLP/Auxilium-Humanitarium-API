@@ -49,6 +49,7 @@ ROOTDIR="/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API"
 
 LOCALGIT="${ROOTDIR}/systema/cache/gh-pages-temp-git"
 DESTDIR="${LOCALGIT}/docs"
+LOCALBUILD="${LOCALGIT}/build"
 
 DEPLOY_REPO="git@github.com:HXL-CPLP/hapi.etica.ai.git"
 DEPLOY_REMOTE_NAME="remote-publisher"
@@ -79,6 +80,8 @@ cd "${ROOTDIR}" || exit
 init_local_repo(){
     echo "creating ${LOCALGIT}"
     mkdir "${LOCALGIT}"
+    echo "creating ${LOCALBUILD}"
+    mkdir "${LOCALBUILD}"
     echo "creating ${DESTDIR}"
     mkdir "${DESTDIR}"
 
@@ -91,6 +94,14 @@ init_local_repo(){
     echo "> git branch ?"
     git branch
     cd "${ROOTDIR}" || exit
+}
+
+
+# jekyll help build
+# @see https://jekyllrb.com/docs/usage/
+jekyll_local_build(){
+    jekyll build --source "${LOCALBUILD}" --destination "${DESTDIR}"
+    touch "${DESTDIR}/.nojekyll"
 }
 
 if [ -d "${LOCALGIT}" ]; then
@@ -119,20 +130,28 @@ fi
 # We don't need to use rsync --delete because the entire repository is deleted
 # on each build. Also, we could use operatinal system /tmp to not waste sooner
 # local disk (this may be relevant if number of files become huge)
-rsync -av --exclude=".*" "${ROOTDIR}/api/" "${DESTDIR}/api/"
-rsync -av --exclude=".*" "${ROOTDIR}/schema/" "${DESTDIR}/schema/"
+rsync -av --exclude=".*" "${ROOTDIR}/api/" "${LOCALBUILD}/api/"
+rsync -av --exclude=".*" "${ROOTDIR}/schema/" "${LOCALBUILD}/schema/"
 
 ## TODO: make this group less verbose
-# rsync -av --exclude=".*" "${ROOTDIR}/*.md" "${DESTDIR}/"
-rsync -av --exclude=".*" "${ROOTDIR}/por.md" "${DESTDIR}/por.md"
-rsync -av --exclude=".*" "${ROOTDIR}/eng.md" "${DESTDIR}/eng.md"
-rsync -av --exclude=".*" "${ROOTDIR}/README.md" "${DESTDIR}/README.md"
-rsync -av --exclude=".*" "${ROOTDIR}/README-old.md" "${DESTDIR}/README-old.md"
+# rsync -av --exclude=".*" "${ROOTDIR}/*.md" "${LOCALBUILD}/"
+rsync -av --exclude=".*" "${ROOTDIR}/por.md" "${LOCALBUILD}/por.md"
+rsync -av --exclude=".*" "${ROOTDIR}/eng.md" "${LOCALBUILD}/eng.md"
+rsync -av --exclude=".*" "${ROOTDIR}/README.md" "${LOCALBUILD}/README.md"
+rsync -av --exclude=".*" "${ROOTDIR}/README-old.md" "${LOCALBUILD}/README-old.md"
 
-rsync -av --exclude=".*" "${ROOTDIR}/_config.yml" "${DESTDIR}/_config.yml"
-# rsync -av --exclude=".*" "${ROOTDIR}/CNAME" "${DESTDIR}/CNAME"
+rsync -av --exclude=".*" "${ROOTDIR}/_config.yml" "${LOCALBUILD}/_config.yml"
+# rsync -av --exclude=".*" "${ROOTDIR}/CNAME" "${LOCALBUILD}/CNAME"
+# echo "${DEPLOY_CNAME}" > "${LOCALBUILD}/CNAME"
+echo "build/" > "${LOCALGIT}/.gitignore"
+rsync -av --exclude=".*" "${ROOTDIR}/UNLICENSE" "${LOCALBUILD}/UNLICENSE"
+
+jekyll_local_build
+
+# TODO: DESTDIR or LOCALGIT for CNAME? Needs to check later.
 echo "${DEPLOY_CNAME}" > "${DESTDIR}/CNAME"
-rsync -av --exclude=".*" "${ROOTDIR}/UNLICENSE" "${DESTDIR}/UNLICENSE"
+echo "${DEPLOY_CNAME}" > "${LOCALGIT}/CNAME"
+echo "PULL REQUESTS HERE https://github.com/HXL-CPLP/Auxilium-Humanitarium-API" > "${LOCALGIT}/README.md"
 
 cd ${LOCALGIT} || exit
 
@@ -142,7 +161,18 @@ GIT_COMMITTER_NAME="${GIT_COMMITTER_NAME}" \
      GIT_COMMITTER_EMAIL="${GIT_COMMITTER_EMAIL}" \
      git commit -m "${COMMIT_MESSAGE}" --author="${DEPLOY_AUTHOR}"
 
-echo git push -u "${DEPLOY_REMOTE_NAME}" "${DEPLOY_BRANCH}"
+echo "RUN THIS MANUALLY"
+echo ""
+echo cd "${LOCALGIT}"
+echo git push -u "${DEPLOY_REMOTE_NAME}" "${DEPLOY_BRANCH}" --force
 
 # GIT_COMMITTER_NAME="${GIT_COMMITTER_NAME}" \
 #   GIT_COMMITTER_EMAIL="${GIT_COMMITTER_EMAIL}" git commit --author="New Name <name@email.com>
+
+# /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/systema/cache/gh-pages-temp-git
+# http://git.workspace.localhost/HXL-CPLP/Auxilium-Humanitarium-API/systema/cache/gh-pages-temp-git/docs/
+# https://ohshitgit.com/
+#   git reflog
+
+# openapi-generator-cli list
+# openapi-generator-cli dynamic-html help
