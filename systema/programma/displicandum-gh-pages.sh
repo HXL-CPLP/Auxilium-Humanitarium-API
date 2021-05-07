@@ -49,9 +49,25 @@ ROOTDIR="/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API"
 
 LOCALGIT="${ROOTDIR}/systema/cache/gh-pages-temp-git"
 DESTDIR="${LOCALGIT}/docs"
-DEPLOY_REPO="git@github.com:HXL-CPLP/Auxilium-Humanitarium-API.git"
+
+DEPLOY_REPO="git@github.com:HXL-CPLP/hapi.etica.ai.git"
+DEPLOY_REMOTE_NAME="remote-publisher"
 DEPLOY_BRANCH="gh-pages"
 DEPLOY_CNAME="hapi.etica.ai"
+DEPLOY_DATETIME="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+
+COMMIT_MESSAGE="Displicandum gh-pages [${DEPLOY_DATETIME}]: HXL-CPLP/Auxilium-Humanitarium-API"
+
+# @see https://stackoverflow.com/questions/3696938
+#      /how-do-you-commit-code-as-a-different-user
+# https://github.com/eticaaibot
+DEPLOY_AUTHOR="EticaAI Bot <etica.of.a.ai@gmail.com>"
+GIT_COMMITTER_NAME="EticaAI Bot"
+GIT_COMMITTER_EMAIL="etica.of.a.ai@gmail.com"
+
+# DEPLOY_RESET="1"
+DEPLOY_RESET=""
+
 
 cd "${ROOTDIR}" || exit
 
@@ -70,7 +86,7 @@ init_local_repo(){
     cd "$LOCALGIT" || exit
     git init
     git checkout -b "${DEPLOY_BRANCH}"
-    git remote add orign "${DEPLOY_REPO}"
+    git remote add "${DEPLOY_REMOTE_NAME}" "${DEPLOY_REPO}"
     mkdir "${DESTDIR}"
     echo "> git branch ?"
     git branch
@@ -80,9 +96,15 @@ init_local_repo(){
 if [ -d "${LOCALGIT}" ]; then
     # /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/cache/
     # mv "cache/gh-pages-temp-git" "cache/gh-pages-temp-git.OLD"
-    echo "cleaning ${LOCALGIT}"
-    rm -r "${LOCALGIT}"
+    if [ "${DEPLOY_RESET}" != "1" ]; then
+        echo "${LOCALGIT} exists, but no DEPLOY_RESET"
+    else
+        echo "cleaning ${LOCALGIT}"
+        rm -r "${LOCALGIT}"
 
+        init_local_repo
+    fi
+else
     init_local_repo
 fi
 
@@ -111,3 +133,16 @@ rsync -av --exclude=".*" "${ROOTDIR}/_config.yml" "${DESTDIR}/_config.yml"
 # rsync -av --exclude=".*" "${ROOTDIR}/CNAME" "${DESTDIR}/CNAME"
 echo "${DEPLOY_CNAME}" > "${DESTDIR}/CNAME"
 rsync -av --exclude=".*" "${ROOTDIR}/UNLICENSE" "${DESTDIR}/UNLICENSE"
+
+cd ${LOCALGIT} || exit
+
+git add .
+
+GIT_COMMITTER_NAME="${GIT_COMMITTER_NAME}" \
+     GIT_COMMITTER_EMAIL="${GIT_COMMITTER_EMAIL}" \
+     git commit -m "${COMMIT_MESSAGE}" --author="${DEPLOY_AUTHOR}"
+
+echo git push -u "${DEPLOY_REMOTE_NAME}" "${DEPLOY_BRANCH}"
+
+# GIT_COMMITTER_NAME="${GIT_COMMITTER_NAME}" \
+#   GIT_COMMITTER_EMAIL="${GIT_COMMITTER_EMAIL}" git commit --author="New Name <name@email.com>
