@@ -8,28 +8,46 @@
 //   - https://www.npmjs.com/package/gh-pages
 //   - https://pages.github.com/
 
+// console.log(process.version);
+
+// function npmls(cb) {
+//     require('child_process').exec('npm ls --json', function(err, stdout, stderr) {
+//       if (err) return cb(err)
+//       cb(null, JSON.parse(stdout));
+//     });
+//   }
+//   npmls(console.log);
 
 // npm gh-pages ______________________________________________________________
 // @see https://www.npmjs.com/package/gh-pages
-// npm install -g gh-pages
+// /// hotfix, why 3.0.0 = https://github.com/tschaub/gh-pages/issues/354
+// npm install -g gh-pages@3.0.0
 
 // Were in branch main at this point, publishing files to branch gh-pages folder docs/
 //    gh-pages --src '**/*' --dest '.' --branch gh-pages --user 'HXL-CPLP bot <no-reply@etica.ai>' --no-push --no-history
+//    gh-pages --dist '/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/' --dest 'docs/' --branch gh-pages --user 'HXL-CPLP bot <no-reply@etica.ai>' --no-push --no-history
+// ./systema/node_modules/gh-pages/bin/gh-pages.js --help
+
+// node ./systema/node_modules/gh-pages/bin/gh-pages.js --git git --no-push --no-history
+// gh-pages --git "$(which git)"
+
 
 // TODO: consider use --before-add 
 //       https://www.npmjs.com/package/gh-pages#optionsbeforeadd
 
 // ./systema/programma/displicandum-gh-pages.js
 
-var ghpages = require('gh-pages');
+import { publish } from 'gh-pages';
 
 // console.log('Hello world!');
 
 // var callback = console.log
 
-ghpages.publish(
+publish(
     // We're using root folder of HXL-CPLP/Auxilium-Humanitarium-API/ as source
-    './',
+    // './',
+    // TODO: remove hardcoded path
+    '/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/',
     {
         // Branch to publish: gh-pages
         branch: 'gh-pages',
@@ -44,7 +62,8 @@ ghpages.publish(
         add: false,
 
         // Remove files on dest before commit
-        remove: "node_modules/",
+        // remove: "node_modules/",
+        remove: "systema/",
 
         // Push to target repository
         push: false,

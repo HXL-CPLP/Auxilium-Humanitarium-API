@@ -1,0 +1,16 @@
+{
+  "name": "auxilium-humanitarium-api-systema",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "displicandum-gh-pages": "programma/displicandum-gh-pages.mjs"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "devDependencies": {
+    "gh-pages": "3.0.0"
+  }
+}
