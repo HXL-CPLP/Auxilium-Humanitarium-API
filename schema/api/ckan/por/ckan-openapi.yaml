@@ -449,9 +449,14 @@ schema:
       success:
         type: string
       result:
-        anyOf:
-          - type: object
-          - type: array
+        type: object
+      # HOTFIX: anyOf may have bugs
+      # see https://github.com/OpenAPITools/openapi-generator/issues/4576
+      # We will comment it for now (2021-05-07)
+      # result:
+      #   anyOf:
+      #     - type: object
+      #     - type: array
       error:
         type: object
       help:
@@ -462,3 +467,41 @@ schema:
         enum:
           - true
           - false
+
+# TODO: do some clean up.
+# openapi-generator-cli validate is much more strict. It may ENFORCE
+# components/schemas, components/parameters etc in some very specific cases
+# (like a resource that loads another resource from an different file)
+components:
+  schemas:
+    CKANResultandum:
+      # From teamdigitale/api-openapi-samples
+      # TODO: review this response. It may not be as complete
+      #       (Emerson Rocha, 2021-05-06 12:30 UTC)
+      type: object
+      required:
+        - result
+        - success
+        - help
+      properties:
+        success:
+          type: string
+        result:
+          type: object
+        # HOTFIX: anyOf may have bugs
+        # see https://github.com/OpenAPITools/openapi-generator/issues/4576
+        # We will comment it for now (2021-05-07)
+        # result:
+        #   anyOf:
+        #     - type: object
+        #     - type: array
+        error:
+          type: object
+        help:
+          type: string
+          format: url
+        status:
+          type: boolean
+          enum:
+            - true
+            - false

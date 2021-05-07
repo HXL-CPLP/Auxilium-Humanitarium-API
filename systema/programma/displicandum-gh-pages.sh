@@ -175,4 +175,29 @@ echo git push -u "${DEPLOY_REMOTE_NAME}" "${DEPLOY_BRANCH}" --force
 #   git reflog
 
 # openapi-generator-cli list
-# openapi-generator-cli dynamic-html help
+# openapi-generator-cli generate help
+# openapi-generator-cli generate --generator-name dynamic-html --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test1
+# openapi-generator-cli generate --generator-name html2 --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test2
+# openapi-generator-cli generate --generator-name html --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test3
+# openapi-generator-cli generate --generator-name graphql-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test4
+#
+# openapi-generator-cli validate --input-spec https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml
+# openapi-generator-cli validate --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml
+# openapi-generator-cli validate --input-spec api/UN/CODV2API/eng/openapi.yaml
+
+# Ok
+#     openapi-generator-cli validate --input-spec https://hapi.etica.ai/api/UN/CODV2API/eng/openapi.yaml
+#     openapi-generator-cli validate --input-spec api/UN/CODV2API/eng/openapi.yaml
+
+# Error
+#  # openapi-generator-cli validate --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml
+
+# Error
+#  cd api/BR/portais-ckan-brasil/por/
+#  openapi-generator-cli validate --input-spec openapi.yaml
+
+# OPENAPI_GENERATOR_VERSION=3.1.0 openapi-generator-cli validate --input-spec openapi.yaml
+# OPENAPI_GENERATOR_VERSION=4.3.1 openapi-generator-cli validate --input-spec openapi.yaml
+# openapi-generator-cli validate --input-spec https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml
+
+# See this extension later https://marketplace.visualstudio.com/items?itemName=humao.rest-client#review-details
