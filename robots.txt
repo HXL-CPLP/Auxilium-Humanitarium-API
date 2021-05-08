@@ -9,4 +9,4 @@ Disallow: *.md
 Disallow: /api/*/*/*/html
 Disallow: /api/*/*/*/html2
 
-# Sitemap: https://hapi.etica.ai/sitemap.xml
+Sitemap: https://hapi.etica.ai/sitemap.xml

@@ -1,0 +1,1377 @@
+# Converted from https://apidoc.rwlabs.org/swagger.yaml (swagger: "2.0")
+# using https://mermade.org.uk/openapi-converter to OpenAPI 3.0
+# on 2021-05-08. No manual review yet
+
+openapi: 3.0.0
+info:
+  title: The ReliefWeb API
+  description: Interactive API documentation for the data API of Reliefweb.int. ReliefWeb
+    is a leading source of information on global crises and disasters.
+
+
+    Our continuous coverage and archive going back to the 1970s makes ReliefWeb
+    an unparalleled resource for both current and historical data on
+    humanitarian response.
+
+    The vast majority of content on ReliefWeb has
+    been contributed by humanitarian partners. We owe it to the community to
+    make data more accessible and reusable, so that developers can build tools
+    that increase exposure for valuable content and facilitate analysis for
+    better decisions.
+  termsOfService: https://apidoc.rwlabs.org/#tos
+  version: v1
+  contact:
+    url: https://reliefweb.int/contact
+    email: api@reliefweb.int
+  license:
+    name: Creative Commons Zero - Public Domain
+    url: http://creativecommons.org/about/cc0
+tags:
+  - name: Discovery
+    description: Versions and main endpoints.
+    externalDocs:
+      description: RWApi docs.
+      url: https://apidoc.rwlabs.org
+  - name: Reports
+    description: Gateway to updates and analysis from more than 4,000 global information
+      sources.
+    externalDocs:
+      description: RWApi docs.
+      url: https://apidoc.rwlabs.org
+  - name: Jobs
+    description: Humanitarian job listings.
+    externalDocs:
+      description: RWApi docs.
+      url: https://apidoc.rwlabs.org
+  - name: Training
+    description: Humanitarian training opportunities and courses.
+    externalDocs:
+      description: RWApi docs.
+      url: https://apidoc.rwlabs.org
+  - name: Countries
+    description: Countries covered by ReliefWeb.
+    externalDocs:
+      description: RWApi docs.
+      url: https://apidoc.rwlabs.org
+  - name: Disasters
+    description: Disasters covered by ReliefWeb.
+    externalDocs:
+      description: RWApi docs.
+      url: https://apidoc.rwlabs.org
+  - name: Sources
+    description: Organizations providing content to ReliefWeb.
+    externalDocs:
+      description: RWApi docs.
+      url: https://apidoc.rwlabs.org
+paths:
+  /../:
+    get:
+      tags:
+        - Discovery
+      description: Review location and status of all versions.
+      operationId: discoveryVersions
+      responses:
+        "200":
+          description: Success.
+  /:
+    get:
+      tags:
+        - Discovery
+      description: Review list of main entrypoints and top-level resources.
+      operationId: discoveryResources
+      responses:
+        "200":
+          description: Success.
+  /reports:
+    get:
+      tags:
+        - Reports
+      summary: |
+        List or search updates, headlines or maps.
+      description: ""
+      operationId: getReports
+      parameters:
+        - $ref: "#/components/parameters/query_value_"
+        - $ref: "#/components/parameters/query_operator_"
+        - $ref: "#/components/parameters/query_fields_Array"
+        - $ref: "#/components/parameters/filter_field_"
+        - $ref: "#/components/parameters/filter_value_Array"
+        - $ref: "#/components/parameters/filter_operator_"
+        - $ref: "#/components/parameters/filter_negate_"
+        - $ref: "#/components/parameters/filter_conditions_Array"
+        - $ref: "#/components/parameters/facets_field_"
+        - $ref: "#/components/parameters/facets_name_"
+        - $ref: "#/components/parameters/facets_limit_"
+        - $ref: "#/components/parameters/facets_sort_"
+        - $ref: "#/components/parameters/facets_filter_Array"
+        - $ref: "#/components/parameters/facets_interval_"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/offset"
+        - $ref: "#/components/parameters/sortArray"
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/preset"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Report"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+    post:
+      tags:
+        - Reports
+      summary: |
+        List or search updates, headlines or maps.
+      description: |
+        
+
+      operationId: searchReports
+      requestBody:
+        $ref: "#/components/requestBodies/post-params"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Report"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  "/reports/{reportId}":
+    get:
+      tags:
+        - Reports
+      summary: Find report by its unique ID
+      description: |
+        Individual reports.
+      operationId: getReportById
+      parameters:
+        - description: The identifier of the report.
+          in: path
+          name: reportId
+          required: true
+          schema:
+            type: string
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+      responses:
+        "200":
+          description: Report fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Report"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /jobs:
+    get:
+      tags:
+        - Jobs
+      summary: |
+        List or search humanitarian job offers.
+      description: ""
+      operationId: getJobs
+      parameters:
+        - $ref: "#/components/parameters/query_value_"
+        - $ref: "#/components/parameters/query_operator_"
+        - $ref: "#/components/parameters/query_fields_Array"
+        - $ref: "#/components/parameters/filter_field_"
+        - $ref: "#/components/parameters/filter_value_Array"
+        - $ref: "#/components/parameters/filter_operator_"
+        - $ref: "#/components/parameters/filter_negate_"
+        - $ref: "#/components/parameters/filter_conditions_Array"
+        - $ref: "#/components/parameters/facets_field_"
+        - $ref: "#/components/parameters/facets_name_"
+        - $ref: "#/components/parameters/facets_limit_"
+        - $ref: "#/components/parameters/facets_sort_"
+        - $ref: "#/components/parameters/facets_filter_Array"
+        - $ref: "#/components/parameters/facets_interval_"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/offset"
+        - $ref: "#/components/parameters/sortArray"
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/preset"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+    post:
+      tags:
+        - Jobs
+      summary: |
+        List or search humanitarian job offers.
+      description: >
+        
+      operationId: searchJobs
+      requestBody:
+        $ref: "#/components/requestBodies/post-params"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  "/jobs/{jobId}":
+    get:
+      tags:
+        - Jobs
+      summary: Find job by its unique ID
+      description: |
+        Individual jobs.
+      operationId: getJobById
+      parameters:
+        - description: The identifier of the job.
+          in: path
+          name: jobId
+          required: true
+          schema:
+            type: string
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+      responses:
+        "200":
+          description: Job fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /training:
+    get:
+      tags:
+        - Training
+      summary: |
+        List or search humanitarian learning opportunities.
+      description: ""
+      operationId: getTraining
+      parameters:
+        - $ref: "#/components/parameters/query_value_"
+        - $ref: "#/components/parameters/query_operator_"
+        - $ref: "#/components/parameters/query_fields_Array"
+        - $ref: "#/components/parameters/filter_field_"
+        - $ref: "#/components/parameters/filter_value_Array"
+        - $ref: "#/components/parameters/filter_operator_"
+        - $ref: "#/components/parameters/filter_negate_"
+        - $ref: "#/components/parameters/filter_conditions_Array"
+        - $ref: "#/components/parameters/facets_field_"
+        - $ref: "#/components/parameters/facets_name_"
+        - $ref: "#/components/parameters/facets_limit_"
+        - $ref: "#/components/parameters/facets_sort_"
+        - $ref: "#/components/parameters/facets_filter_Array"
+        - $ref: "#/components/parameters/facets_interval_"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/offset"
+        - $ref: "#/components/parameters/sortArray"
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/preset"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Training"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+    post:
+      tags:
+        - Training
+      summary: |
+        List or search humanitarian learning opportunities.
+      description: ""
+      operationId: searchTraining
+      requestBody:
+        $ref: "#/components/requestBodies/post-params"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Training"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  "/training/{trainingId}":
+    get:
+      tags:
+        - Training
+      summary: Find training by its unique ID
+      description: |
+        Individual training opportunities.
+      operationId: getTrainingById
+      parameters:
+        - description: The identifier of the training opportunity.
+          in: path
+          name: trainingId
+          required: true
+          schema:
+            type: string
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+      responses:
+        "200":
+          description: Training fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Training"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /countries:
+    get:
+      tags:
+        - Countries
+      summary: |
+        List or search countries covered by ReliefWeb.
+      description: ""
+      operationId: getCountries
+      parameters:
+        - $ref: "#/components/parameters/query_value_"
+        - $ref: "#/components/parameters/query_operator_"
+        - $ref: "#/components/parameters/query_fields_Array"
+        - $ref: "#/components/parameters/filter_field_"
+        - $ref: "#/components/parameters/filter_value_Array"
+        - $ref: "#/components/parameters/filter_operator_"
+        - $ref: "#/components/parameters/filter_negate_"
+        - $ref: "#/components/parameters/filter_conditions_Array"
+        - $ref: "#/components/parameters/facets_field_"
+        - $ref: "#/components/parameters/facets_name_"
+        - $ref: "#/components/parameters/facets_limit_"
+        - $ref: "#/components/parameters/facets_sort_"
+        - $ref: "#/components/parameters/facets_filter_Array"
+        - $ref: "#/components/parameters/facets_interval_"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/offset"
+        - $ref: "#/components/parameters/sortArray"
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/preset"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Country"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+    post:
+      tags:
+        - Countries
+      summary: |
+        List or search countries covered by ReliefWeb.
+      description: ""
+      operationId: searchCountries
+      requestBody:
+        $ref: "#/components/requestBodies/post-params"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Country"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  "/countries/{countryId}":
+    get:
+      tags:
+        - Countries
+      summary: Find country by its unique ID
+      description: |
+        Individual countries
+      operationId: getCountryById
+      parameters:
+        - description: The identifier of the country
+          in: path
+          name: countryId
+          required: true
+          schema:
+            type: string
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+      responses:
+        "200":
+          description: Country fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Country"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /disasters:
+    get:
+      tags:
+        - Disasters
+      summary: |
+        List or search disasters covered by ReliefWeb.
+      description: ""
+      operationId: getDisasters
+      parameters:
+        - $ref: "#/components/parameters/query_value_"
+        - $ref: "#/components/parameters/query_operator_"
+        - $ref: "#/components/parameters/query_fields_Array"
+        - $ref: "#/components/parameters/filter_field_"
+        - $ref: "#/components/parameters/filter_value_Array"
+        - $ref: "#/components/parameters/filter_operator_"
+        - $ref: "#/components/parameters/filter_negate_"
+        - $ref: "#/components/parameters/filter_conditions_Array"
+        - $ref: "#/components/parameters/facets_field_"
+        - $ref: "#/components/parameters/facets_name_"
+        - $ref: "#/components/parameters/facets_limit_"
+        - $ref: "#/components/parameters/facets_sort_"
+        - $ref: "#/components/parameters/facets_filter_Array"
+        - $ref: "#/components/parameters/facets_interval_"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/offset"
+        - $ref: "#/components/parameters/sortArray"
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/preset"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Disaster"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+    post:
+      tags:
+        - Disasters
+      summary: |
+        List or search disasters covered by ReliefWeb.
+      description: ""
+      operationId: searchDisasters
+      requestBody:
+        $ref: "#/components/requestBodies/post-params"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Disaster"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  "/disasters/{disasterId}":
+    get:
+      tags:
+        - Disasters
+      summary: Find disaster by its unique ID
+      description: |
+        Individual disasters
+      operationId: getDisasterById
+      parameters:
+        - description: The identifier of the disaster
+          in: path
+          name: disasterId
+          required: true
+          schema:
+            type: string
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+      responses:
+        "200":
+          description: Disaster fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Disaster"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /sources:
+    get:
+      tags:
+        - Sources
+      summary: |
+        List or search organizations providing content to ReliefWeb.
+      description: ""
+      operationId: getSources
+      parameters:
+        - $ref: "#/components/parameters/query_value_"
+        - $ref: "#/components/parameters/query_operator_"
+        - $ref: "#/components/parameters/query_fields_Array"
+        - $ref: "#/components/parameters/filter_field_"
+        - $ref: "#/components/parameters/filter_value_Array"
+        - $ref: "#/components/parameters/filter_operator_"
+        - $ref: "#/components/parameters/filter_negate_"
+        - $ref: "#/components/parameters/filter_conditions_Array"
+        - $ref: "#/components/parameters/facets_field_"
+        - $ref: "#/components/parameters/facets_name_"
+        - $ref: "#/components/parameters/facets_limit_"
+        - $ref: "#/components/parameters/facets_sort_"
+        - $ref: "#/components/parameters/facets_filter_Array"
+        - $ref: "#/components/parameters/facets_interval_"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/offset"
+        - $ref: "#/components/parameters/sortArray"
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/preset"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Source"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+    post:
+      tags:
+        - Sources
+      summary: |
+        List or search organizations providing content to ReliefWeb.
+      description: ""
+      operationId: searchSources
+      requestBody:
+        $ref: "#/components/requestBodies/post-params"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Source"
+        "400":
+          description: Unexpected value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  "/sources/{sourceId}":
+    get:
+      tags:
+        - Sources
+      summary: Find source by its unique ID
+      description: |
+        Individual sources.
+      operationId: getSourceById
+      parameters:
+        - description: The identifier of the source
+          in: path
+          name: sourceId
+          required: true
+          schema:
+            type: string
+        - $ref: "#/components/parameters/profile"
+        - $ref: "#/components/parameters/fields_include_Array"
+        - $ref: "#/components/parameters/fields_exclude_Array"
+      responses:
+        "200":
+          description: Source fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Source"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+servers:
+  - url: http://api.reliefweb.int/v1
+  - url: https://api.reliefweb.int/v1
+components:
+  parameters:
+    limit:
+      description: >
+        The maximum number of items to return for a list query. The default is
+        10 and the maximum 1000.
+      in: query
+      name: limit
+      required: false
+      schema:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000
+        default: 10
+    offset:
+      description: >
+        The offset from which to return the items in a list query. Allows paging
+        through all results. The default is 0.
+      in: query
+      name: offset
+      required: false
+      schema:
+        type: integer
+        format: int64
+        minimum: 0
+        default: 0
+    profile:
+      description: >
+        Pre-built standard selections of fields to return for ease of displaying
+        lists or items.
+      in: query
+      name: profile
+      schema:
+        type: string
+        enum:
+          - full
+          - list
+          - minimal
+    preset:
+      description: >
+        Pre-built standard configurations of queries, filters and sorts for
+        common use cases.
+      in: query
+      name: preset
+      schema:
+        type: string
+        enum:
+          - analysis
+          - latest
+          - minimal
+    fields_include_Array:
+      description: >
+        Specify which fields to include for each item. Defaults to an item label.
+      in: query
+      name: fields[include][]
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+    fields_exclude_Array:
+      description: >
+        Specify sub-fields to exclude from overall results. For example, if you
+        include date you may exclude date.changed.
+      in: query
+      name: fields[exclude][]
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+    query_value_:
+      description: |
+        Specify the terms of your fuzzy search. The default is no query.
+      in: query
+      name: query[value]
+      required: false
+      schema:
+        type: string
+    query_operator_:
+      description: |
+        Specify the operator by which your search query words will be combined.
+      in: query
+      name: query[operator]
+      required: false
+      schema:
+        type: string
+        enum:
+          - AND
+          - OR
+    query_fields_Array:
+      description: >
+        Specify which fields to target with your search. You may use boost
+        syntax here, see the Advanced API Usage documentation.
+      in: query
+      name: query[fields][]
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+    filter_field_:
+      description: >
+        Field to filter by. Every condition must contain either a
+        field or conditions property.
+      in: query
+      name: filter[field]
+      required: false
+      schema:
+        type: string
+    filter_value_Array:
+      description: >
+        Value for the field being filtered. Leave blank to require existence of
+        the field, must be present for range and value
+        conditions.
+      in: query
+      name: filter[value][]
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+    filter_operator_:
+      description: |
+        Operator by which filters will be combined.
+      in: query
+      name: filter[operator]
+      required: false
+      schema:
+        type: string
+        enum:
+          - AND
+          - OR
+    filter_negate_:
+      description: |
+        Reverse the filter to include those items that do not match.
+      in: query
+      name: filter[negate]
+      required: false
+      schema:
+        type: boolean
+    filter_conditions_Array:
+      description: >
+        This property is used to combine conditions with a logical connector
+        (the operator property). Every condition must contain one
+        of the field or conditions properties.
+      in: query
+      name: filter[conditions][]
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+    facets_field_:
+      description: |
+        Field to facet by. May include dates, references or the status field.
+      in: query
+      name: facets[field]
+      required: false
+      schema:
+        type: string
+    facets_name_:
+      description: >
+        Identifier for resulting facet data. Useful when faceting multiple ways
+        on the same field.
+      in: query
+      name: facets[name]
+      required: false
+      schema:
+        type: string
+    facets_limit_:
+      description: |
+        Limit the number of facets returned for non-date based facets.
+      in: query
+      name: facets[limit]
+      required: false
+      schema:
+        type: integer
+    facets_sort_:
+      description: >
+        The sort order of non-date facets. Sorting may be by value
+        or count of terms, and ascending or descending.
+        count defaults to desc, value
+        defaults to asc.
+      in: query
+      name: facets[sort]
+      required: false
+      schema:
+        type: string
+    facets_filter_Array:
+      description: >
+        Apply all the same capabilities of the filter parameter to the specific
+        results of this facet request.
+      in: query
+      name: facets[filter][]
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+    facets_interval_:
+      description: >
+        Round date information to the nearest interval unit.
+
+        Apply all the same capabilities of the filter parameter to the specific results of this facet request.
+      in: query
+      name: facets[interval]
+      required: false
+      schema:
+        type: string
+        enum:
+          - year
+          - month
+          - week
+          - day
+    sortArray:
+      description: >
+        Sort the list results. Defaults to search relevance. Values in the form
+        of fieldname:(asc|desc).
+      in: query
+      name: sort[]
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+  requestBodies:
+    post-params:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/post-params"
+      description: Returned fields
+  schemas:
+    Report:
+      properties:
+        body:
+          type: string
+        country:
+          items:
+            $ref: "#/components/schemas/country"
+          type: array
+        date:
+          $ref: "#/components/schemas/date"
+        format:
+          description: Format of report.
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        id:
+          format: int64
+          type: integer
+        language:
+          $ref: "#/components/schemas/language"
+        primary_country:
+          $ref: "#/components/schemas/country"
+        source:
+          description: Report production and coordination bodies.
+          items:
+            $ref: "#/components/schemas/source"
+          type: array
+        status:
+          type: boolean
+        theme:
+          description: Category of information contained in the report.
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        title:
+          type: string
+        type:
+          type: string
+    Job:
+      properties:
+        category:
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        city:
+          items:
+            $ref: "#/components/schemas/location"
+          type: array
+        country:
+          items:
+            $ref: "#/components/schemas/country"
+          type: array
+        date:
+          $ref: "#/components/schemas/date"
+        description:
+          type: string
+        description-html:
+          type: string
+        experience:
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        file:
+          items:
+            $ref: "#/components/schemas/file"
+          type: array
+        how-to-apply-html:
+          type: string
+        how_to_apply:
+          type: string
+        id:
+          type: string
+        language:
+          $ref: "#/components/schemas/language"
+        link:
+          type: string
+        theme:
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        title:
+          type: string
+        url:
+          type: string
+    Training:
+      properties:
+        category:
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        city:
+          items:
+            $ref: "#/components/schemas/location"
+          type: array
+        country:
+          items:
+            $ref: "#/components/schemas/country"
+          type: array
+        date:
+          $ref: "#/components/schemas/date"
+        description:
+          type: string
+        description-html:
+          type: string
+        file:
+          items:
+            $ref: "#/components/schemas/file"
+          type: array
+        format:
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        how-to-apply-html:
+          type: string
+        how_to_apply:
+          type: string
+        id:
+          type: string
+        language:
+          $ref: "#/components/schemas/language"
+        link:
+          type: string
+        theme:
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        title:
+          type: string
+        url:
+          type: string
+    Country:
+      properties:
+        current:
+          type: boolean
+        description:
+          type: string
+        description-html:
+          type: string
+        featured:
+          type: boolean
+        id:
+          type: integer
+        iso3:
+          type: string
+        name:
+          type: string
+        shortname:
+          type: string
+        type:
+          type: string
+        url:
+          type: string
+    Disaster:
+      properties:
+        category:
+          items:
+            $ref: "#/components/schemas/category"
+          type: array
+        category_primary:
+          $ref: "#/components/schemas/category"
+        country:
+          description: Countries impacted by this disaster.
+          items:
+            $ref: "#/components/schemas/country"
+          type: array
+        current:
+          description: Ongoing disaster
+          type: boolean
+        description:
+          type: string
+        description-html:
+          type: string
+        featured:
+          description: Receiving special attention.
+          type: boolean
+        glide:
+          description: |
+            [Glide number](http://glidenumber.net)
+          type: string
+        id:
+          type: integer
+        link:
+          type: string
+        name:
+          type: string
+        primary_country:
+          $ref: "#/components/schemas/country"
+        type:
+          type: string
+    Source:
+      properties:
+        description:
+          type: string
+        description-html:
+          type: string
+        id:
+          type: integer
+        longname:
+          type: string
+        name:
+          type: string
+        shortname:
+          type: string
+        type:
+          items:
+            $ref: "#/components/schemas/country"
+          type: array
+        url:
+          type: string
+    category:
+      properties:
+        id:
+          format: integer
+          type: integer
+        name:
+          type: string
+    country:
+      description: Country object.
+      properties:
+        id:
+          type: integer
+        iso3:
+          type: string
+        name:
+          type: string
+        primary:
+          type: boolean
+        shortname:
+          type: string
+    date:
+      description: Date object
+      properties:
+        changed:
+          format: string
+          type: string
+        created:
+          format: string
+          type: string
+        original:
+          format: string
+          type: string
+    file:
+      properties:
+        description:
+          type: string
+        filename:
+          type: string
+        id:
+          type: integer
+        mimetype:
+          type: string
+        url:
+          type: string
+    language:
+      properties:
+        code:
+          type: string
+        id:
+          format: int64
+          type: integer
+        name:
+          type: string
+    location:
+      properties:
+        name:
+          type: string
+    source:
+      properties:
+        homepage:
+          type: string
+        id:
+          format: integer
+          type: integer
+        link:
+          type: string
+        longname:
+          type: string
+        name:
+          type: string
+        shortname:
+          type: string
+        type:
+          $ref: "#/components/schemas/category"
+    error:
+      properties:
+        status:
+          type: integer
+        error:
+          $ref: "#/components/schemas/error-definition"
+    error-definition:
+      type: string
+    post-params:
+      properties:
+        "query[value]":
+          $ref: "#/components/schemas/query_value_-post"
+        "query[operator]-post":
+          $ref: "#/components/schemas/query_operator_-post"
+        "query[fields][]-post":
+          $ref: "#/components/schemas/query_fields_Array-post"
+        "filter[field]-post":
+          $ref: "#/components/schemas/filter_field_-post"
+        "filter[value][]-post":
+          $ref: "#/components/schemas/filter_value_Array-post"
+        "filter[operator]-post":
+          $ref: "#/components/schemas/filter_operator_-post"
+        "filter[negate]-post":
+          $ref: "#/components/schemas/filter_negate_-post"
+        "filter[conditions][]-post":
+          $ref: "#/components/schemas/filter_conditions_Array-post"
+        "facets[field]-post":
+          $ref: "#/components/schemas/facets_field_-post"
+        "facets[name]-post":
+          $ref: "#/components/schemas/facets_name_-post"
+        "facets[limit]-post":
+          $ref: "#/components/schemas/facets_limit_-post"
+        "facets[sort]-post":
+          $ref: "#/components/schemas/facets_sort_-post"
+        "facets[filter][]-post":
+          $ref: "#/components/schemas/facets_filter_Array-post"
+        "facets[interval]-post":
+          $ref: "#/components/schemas/facets_interval_-post"
+        "fields[include][]":
+          $ref: "#/components/schemas/fields_include_Array-post"
+        "fields[exclude][]":
+          $ref: "#/components/schemas/fields_exclude_Array-post"
+        "sort[]-post":
+          $ref: "#/components/schemas/sortArray-post"
+        limit-post:
+          $ref: "#/components/schemas/limit-post"
+        offset-post:
+          $ref: "#/components/schemas/offset-post"
+        profile:
+          $ref: "#/components/schemas/profile-post"
+        preset-post:
+          $ref: "#/components/schemas/preset-post"
+    limit-post:
+      description: >
+        The maximum number of items to return for a list query. The default is
+        10 and the maximum 1000.
+      default: 10
+      format: int64
+      maximum: 1000
+      minimum: 1
+      type: integer
+    offset-post:
+      default: 0
+      description: >
+        The offset from which to return the items in a list query. Allows paging
+        through all results. The default is 0.
+      format: int64
+      minimum: 0
+      type: integer
+    preset-post:
+      description: >
+        Pre-built standard configurations of queries, filters and sorts for
+        common use cases.
+      enum:
+        - analysis
+        - latest
+        - minimal
+      type: string
+    profile-post:
+      enum:
+        - full
+        - list
+        - minimal
+      type: string
+    query_value_-post:
+      description: |
+        Specify the terms of your fuzzy search. The default is no query.
+      type: string
+    query_operator_-post:
+      description: |
+        Specify the operator by which your search query words will be combined.
+      enum:
+        - AND
+        - OR
+      type: string
+    query_fields_Array-post:
+      description: >
+        Specify which fields to target with your search. You may use boost
+        syntax here, see the Advanced API Usage documentation.
+      type: array
+      items:
+        type: string
+    fields_include_Array-post:
+      description: |
+        Fields to include for each item.
+      items:
+        type: string
+      type: array
+    fields_exclude_Array-post:
+      description: >
+        Sub-fields to exclude from results. For example, if you include
+        date you may exclude date.changed.
+      items:
+        type: string
+      type: array
+    filter_field_-post:
+      description: >
+        Field to filter by. Every condition must contain either a
+        field or conditions property.
+      type: string
+    filter_value_Array-post:
+      description: >
+        Value for the field being filtered. Leave blank to require existence of
+        the field, must be present for range and value
+        conditions.
+      items:
+        type: string
+      type: array
+    filter_operator_-post:
+      description: |
+        Operator by which filters will be combined.
+      enum:
+        - AND
+        - OR
+      type: string
+    filter_negate_-post:
+      description: |
+        Reverse the filter to include those items that do not match.
+      type: boolean
+    filter_conditions_Array-post:
+      description: >
+        This property is used to combine conditions with a logical connector
+        (the operator property). Every condition must contain one
+        of the field or conditions properties.
+      items:
+        type: string
+      type: array
+    facets_field_-post:
+      description: |
+        Field to facet by. May include dates, references or the status field.
+      type: string
+    facets_name_-post:
+      description: >
+        Identifier for resulting facet data. Useful when faceting multiple ways
+        on the same field.
+      type: string
+    facets_limit_-post:
+      description: |
+        Limit the number of facets returned for non-date based facets.
+      type: integer
+      format: int64
+    facets_sort_-post:
+      description: >
+        The sort order of non-date facets. Sorting may be by value
+        or count of terms, and ascending or descending.
+        count defaults to desc, value
+        defaults to asc.
+      type: string
+    facets_filter_Array-post:
+      description: >
+        Apply all the same capabilities of the filter parameter to the specific
+        results of this facet request.
+      items:
+        type: string
+      type: array
+    facets_interval_-post:
+      description: >
+        Round date information to the nearest interval unit.
+
+        Apply all the same capabilities of the filter parameter to the specific results of this facet request.
+      enum:
+        - year
+        - month
+        - week
+        - day
+      type: string
+    sortArray-post:
+      description: >
+        Sort the list results. Defaults to search relevance. Values in the form
+        of fieldname:(asc|desc).
+      items:
+        type: string
+      type: array

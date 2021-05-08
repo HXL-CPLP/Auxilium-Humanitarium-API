@@ -6,8 +6,8 @@
 <!--
 
 TODOs:
-- https://github.com/jekyll/jekyll-sitemap
-- https://github.com/swagger-api/swagger-js/blob/master/docs/usage/installation.md
+- https://github.com/ibm/openapi-to-graphql
+- https://www.npmjs.com/package/graphql-to-openapi
 
 **[working-draft] <span lang="en">Argumented documentation of common APIs for
 humanitarian aid with [OpenAPI](https://www.openapis.org/), the _de facto_

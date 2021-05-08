@@ -1,12 +1,36 @@
-"""
-https://stackoverflow.com/questions/58636397/using-graphql-machinery-but-return-csv
-https://spectrum.chat/apollo/apollo-server/get-graphql-response-as-a-csv-instead-of-json~a57fb3dd-cd4d-4adf-936f-c1bb520634dc
-https://developers.cloudflare.com/analytics/graphql-api/tutorials/export-graphql-to-csv
-https://x-team.com/blog/5-popular-tools-for-graphql/
-"""
+type Launch {
+  id: ID!
+  site: String
+  mission: Mission
+  rocket: Rocket
+  isBooked: Boolean!
+}
 
-{
-  hero {
-    name
-  }
+type Rocket {
+  id: ID!
+  name: String
+  type: String
+}
+
+type User {
+  id: ID!
+  email: String!
+  trips: [Launch]!
+  token: String
+}
+
+type Mission {
+  name: String
+  missionPatch(size: PatchSize): String
+}
+
+enum PatchSize {
+  SMALL
+  LARGE
+}
+
+type Query {
+  launches: [Launch]!
+  launch(id: ID!): Launch
+  me: User
 }
