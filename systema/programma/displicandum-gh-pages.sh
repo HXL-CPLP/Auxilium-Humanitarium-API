@@ -1,9 +1,9 @@
 #!/bin/sh
 #===============================================================================
 #
-#          FILE:  prepare-hapi-pages.sh
+#          FILE:  displicandum-gh-pages.sh
 #
-#         USAGE:  ./prepare-hapi-pages.sh
+#         USAGE:  ./displicandum-gh-pages.sh
 #
 #   DESCRIPTION:  ./systema/programma/displicandum-gh-pages.sh
 #

@@ -6,3 +6,9 @@ systema/node_modules/
 systema/package-lock.json
 openapitools.json
 .gqlconfig
+
+## openapi-generator-cli
+# api/BR/portais-ckan-brasil/por/html
+# openapi-generator-cli
+api/*/*/*/html
+api/*/*/*/html2

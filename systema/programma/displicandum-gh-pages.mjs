@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+// DEPRECATED: Use displicandum-gh-pages.sh! (Emerson Rocha, 2021-05-08 08:04 UTC)
+
 // Trivia:
 // - "displicandum"
 //   - https://en.wiktionary.org/wiki/displico#Latin
