@@ -1,4 +1,4 @@
-# api/UN/UNdata
+# api/UN/reliefweb
 > (2021-05-06) This is an draft
 
 - <https://data.un.org/>

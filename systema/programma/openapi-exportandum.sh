@@ -50,6 +50,7 @@ OPENAPI_RADICEM=(
     'por api/BR/portais-ckan-brasil/por'
     'eng api/UN/CODV2API/eng'
     'eng api/UN/HDX/eng'
+    'eng api/UN/reliefweb/eng'
     'eng api/XZ/HXL-Proxy/eng'
 )
 
@@ -57,6 +58,8 @@ OPENAPI_RADICEM=(
 OPENAPI_EXPORTANDUM=(
     'html'
     'html2'
+    'mysql-schema'
+    'graphql-schema'
 )
 
 

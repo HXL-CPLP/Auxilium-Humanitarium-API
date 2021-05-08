@@ -42,7 +42,7 @@ OPENAPI_SPECS=(
   'api/UN/CODV2API/eng/openapi.yaml'
   'api/UN/HDX/eng/openapi.yaml'
   'api/XZ/HXL-Proxy/eng/openapi.yaml'
-  'api/UN/reliefweb/openapi.yaml'
+  'api/UN/reliefweb/eng/openapi.yaml'
 )
 
 #### CUSTOMIZATIONS, end _______________________________________________________
