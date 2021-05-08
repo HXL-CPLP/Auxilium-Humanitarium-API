@@ -6,12 +6,15 @@ systema/node_modules/
 systema/package-lock.json
 openapitools.json
 .gqlconfig
+.graphqlrc.yaml
 
 ## openapi-generator-cli
 # api/BR/portais-ckan-brasil/por/html
 # openapi-generator-cli
 api/*/*/*/html
 api/*/*/*/html2
+api/*/*/*/mysql-schema
+api/*/*/*/graphql-schema
 
 # Our custom index page per project per language
 # @see systema/programma/openapi-exportandum.sh
