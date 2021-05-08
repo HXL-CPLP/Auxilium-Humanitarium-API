@@ -5,3 +5,4 @@ node_modules/
 systema/node_modules/
 systema/package-lock.json
 openapitools.json
+.gqlconfig

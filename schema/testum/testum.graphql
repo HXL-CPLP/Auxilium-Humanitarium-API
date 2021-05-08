@@ -1,0 +1,11 @@
+"""
+https://stackoverflow.com/questions/58636397/using-graphql-machinery-but-return-csv
+https://spectrum.chat/apollo/apollo-server/get-graphql-response-as-a-csv-instead-of-json~a57fb3dd-cd4d-4adf-936f-c1bb520634dc
+https://developers.cloudflare.com/analytics/graphql-api/tutorials/export-graphql-to-csv
+"""
+
+{
+  hero {
+    name
+  }
+}
