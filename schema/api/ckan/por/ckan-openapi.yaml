@@ -15,7 +15,7 @@
 operationem:
   package_list:
     get:
-      operationId: GETPackageList
+      operationId: getPackageList
       tags:
         - List and search
       summary: Return a list of the names of the site’s datasets (packages).
@@ -54,7 +54,7 @@ operationem:
 
   package_search:
     get:
-      operationId: GETPackageSearch
+      operationId: getPackageSearch
       tags:
         - List and search
       summary: Searches for packages satisfying a given search criteria
@@ -206,7 +206,7 @@ operationem:
 
   tag_list:
     get:
-      operationId: GETtag_list
+      operationId: getTagList
       tags:
         - List and search
       summary: Return a list of the site’s tags.
@@ -259,7 +259,7 @@ operationem:
 
   vocabulary_list:
     get:
-      operationId: GETvocabulary_list
+      operationId: getVocabularyList
       tags:
         - List and search
       summary: Return a list of all the site’s tag vocabularies.
@@ -279,7 +279,7 @@ operationem:
 
   package_show:
     get:
-      operationId: GETPackageShow
+      operationId: getPackageShow
       tags:
         - Details
       summary: Return the metadata of a dataset (package) and its resources.
@@ -324,7 +324,7 @@ operationem:
 
   resource_show:
     get:
-      operationId: GETResourceShow
+      operationId: getResourceShow
       tags:
         - Details
       summary: Return the metadata of a resource.
@@ -365,7 +365,7 @@ operationem:
 
   vocabulary_show:
     get:
-      operationId: GETVocabularyShow
+      operationId: getVocabularyShow
       tags:
         - Details
       summary: Return a single tag vocabulary.
@@ -394,7 +394,7 @@ operationem:
 
   tag_show:
     get:
-      operationId: GETTagShow
+      operationId: getTagShow
       tags:
         - Details
       summary: Return the details of a tag and all its datasets.

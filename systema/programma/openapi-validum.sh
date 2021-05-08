@@ -5,7 +5,10 @@
 #
 #         USAGE:  ./systema/programma/openapi-validum.sh
 #
-#   DESCRIPTION:  Trivia:
+#   DESCRIPTION:  Do valitation of openapi.yaml files. Useful to find
+#                 errors before trying to export to new formats.
+#
+#                 Trivia:
 #                 - "OpenAPI"
 #                   - https://www.openapis.org/
 #                 - "validum"
@@ -27,41 +30,40 @@
 #      REVISION:  ---
 #===============================================================================
 
-# ROOTDIR="/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API"
-# TODO: let configurable ROOTDIR later
-# ROOTDIR="$(pwd)"
-
-
-# # api/BR/portais-ckan-brasil/por/openapi.yaml
-# openapi-generator-cli generate --generator-name html \
-#   --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml \
-#   --output api/BR/portais-ckan-brasil/por/html
-
-# openapi-generator-cli generate --generator-name html2 \
-#   --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml \
-#   --output api/BR/portais-ckan-brasil/por/html2
+#### CUSTOMIZATIONS, start _____________________________________________________
+# Note: while is possible to search by filename, at this moment this script
+#       requires manual edit to add new files. Eventually this could be
+#       improved
 
 OPENAPI_SPECS=(
-  'api/BR/portais-ckan-brasil/por/openapi.yaml'
   'api/BR/brazilian-ckan-portals/eng/openapi.yaml'
+  'api/BR/portais-arcgis-brasil/por/openapi.yaml'
+  'api/BR/portais-ckan-brasil/por/openapi.yaml'
+  'api/UN/CODV2API/eng/openapi.yaml'
+  'api/UN/HDX/eng/openapi.yaml'
+  'api/XZ/HXL-Proxy/eng/openapi.yaml'
 )
 
-# https://stackoverflow.com/questions/4332478/read-the-current-text-color-in-a-xterm/4332530#4332530
-BLACK=$(tput setaf 0)
+#### CUSTOMIZATIONS, end _______________________________________________________
+
+
+# @see https://stackoverflow.com/questions/4332478
+#      /read-the-current-text-color-in-a-xterm/4332530#4332530
+# BLACK=$(tput setaf 0)
 RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-LIME_YELLOW=$(tput setaf 190)
-POWDER_BLUE=$(tput setaf 153)
-BLUE=$(tput setaf 4)
-MAGENTA=$(tput setaf 5)
+# GREEN=$(tput setaf 2)
+# YELLOW=$(tput setaf 3)
+# LIME_YELLOW=$(tput setaf 190)
+# POWDER_BLUE=$(tput setaf 153)
+# BLUE=$(tput setaf 4)
+# MAGENTA=$(tput setaf 5)
 CYAN=$(tput setaf 6)
-WHITE=$(tput setaf 7)
+# WHITE=$(tput setaf 7)
 BRIGHT=$(tput bold)
-NORMAL=$(tput sgr0)
-BLINK=$(tput blink)
-REVERSE=$(tput smso)
-UNDERLINE=$(tput smul)
+# NORMAL=$(tput sgr0)
+# BLINK=$(tput blink)
+# REVERSE=$(tput smso)
+# UNDERLINE=$(tput smul)
 
 # Trivia: 'errōrem', https://en.wiktionary.org/wiki/error#Latin
 ERROREM=0
@@ -76,27 +78,13 @@ do
         printf '\n%s%sopenapi-validum.sh: %s validum?  %s\n' \
           "$BRIGHT" "$RED" "$oas_filum" "$NORMAL"
         # printf '\t\t%s%s%s%s\n\n' "$RED" "$BLINK" "$oas_filum" "$NORMAL"
-        ERROREM=$($ERROREM + 1)
+        ERROREM=$((ERROREM + 1))
     fi
 done
 
 if [ "$ERROREM" != 0 ]; then
-    echo "exiting with error"
+    # echo "exiting with error"
     exit 1
 else
     exit 0
 fi
-
-# openapi-generator-cli validate --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml
-
-
-
-
-# if [ $? -eq 0 ]
-# then
-#   echo "The script ran ok"
-#   exit 0
-# else
-#   echo "The script failed" >&2
-#   exit 1
-# fi
