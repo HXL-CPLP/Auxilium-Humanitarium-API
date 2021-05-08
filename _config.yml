@@ -20,3 +20,18 @@ twitter:
 # - https://docs.github.com/en/enterprise-server@3.0/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll
 # - https://pages.github.com/versions/
 # - https://jekyllrb.com/docs/front-matter/
+
+# @see https://github.com/jekyll/jekyll-sitemap
+url: "https://hapi.etica.ai" # the base hostname & protocol for your site
+plugins:
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: "api/*/*/*/html"
+    values:
+      sitemap: false
+  - scope:
+      path: "api/*/*/*/html2"
+    values:
+      sitemap: false

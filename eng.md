@@ -49,22 +49,22 @@ open industry standard to document REST APIs.**
 #### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
+- **Preview/Execute**: <https://hapi.etica.ai/api/UN/HDX/eng>
 - **OpenAPI File**: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
-- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
 
 #### CODV2API
 
 ##### CODV2API-eng
+- **Preview/Execute**: <https://hapi.etica.ai/api/UN/CODV2API/eng>
 - **OpenAPI File**: [api/UN/CODV2API/eng/openapi.yaml](api/UN/CODV2API/eng/openapi.yaml)
-- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/CODV2API/eng/openapi.yaml>
 
 ### XZ
 
 #### HXL-Proxy - Humanitarian Exchange Language Proxy
 
 ##### HXL-Proxy
+- **Preview/Execute**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng>
 - **OpenAPI File**: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
-- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
 
 ### BR
 
@@ -72,18 +72,19 @@ open industry standard to document REST APIs.**
 
 ##### portais-ckan-brasil-por
 
+- **Preview/Execute**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por>
 - **OpenAPI File**: [api/BR/portais-ckan-brasil/por/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
-- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
 
 ##### portais-arcgis-brasil-por
 
+- **Preview/Execute**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por>
 - **OpenAPI File**: [api/BR/portais-arcgis-brasil/por/openapi.yaml](api/BR/portais-arcgis-brasil/por/openapi.yaml)
-- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/openapi.yaml>
+
 
 ##### brazilian-ckan-portals-eng
 
+- **Preview/Execute**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng>
 - **OpenAPI File**: [api/BR/brazilian-ckan-portals/eng/openapi.yaml](api/BR/brazilian-ckan-portals/eng/openapi.yaml)
-- **Preview/Execute**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/openapi.yaml>
 
 ## Schema
 

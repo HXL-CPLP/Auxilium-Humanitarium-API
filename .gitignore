@@ -12,3 +12,7 @@ openapitools.json
 # openapi-generator-cli
 api/*/*/*/html
 api/*/*/*/html2
+
+# Our custom index page per project per language
+# @see systema/programma/openapi-exportandum.sh
+api/*/*/*/index.html

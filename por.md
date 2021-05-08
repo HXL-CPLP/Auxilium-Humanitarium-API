@@ -46,22 +46,22 @@ documentar APIs REST.**
 #### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
+- **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/UN/HDX/eng>
 - **Arquivo OpenAPI**: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
-- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/HDX/eng/openapi.yaml>
 
 #### CODV2API
 
 ##### CODV2API-eng
+- **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/UN/CODV2API/eng>
 - **Arquivo OpenAPI**: [api/UN/CODV2API/eng/openapi.yaml](api/UN/CODV2API/eng/openapi.yaml)
-- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/UN/CODV2API/eng/openapi.yaml>
 
 ### XZ
 
 #### HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária
 
 ##### HXL-Proxy
+- **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng>
 - **Arquivo OpenAPI**: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
-- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/openapi.yaml>
 
 ### BR
 
@@ -69,18 +69,18 @@ documentar APIs REST.**
 
 ##### brazilian-ckan-portals-eng
 
+- **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng>
 - **Arquivo OpenAPI**: [api/BR/brazilian-ckan-portals/eng/openapi.yaml](api/BR/brazilian-ckan-portals/eng/openapi.yaml)
-- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/openapi.yaml>
 
 ##### portais-ckan-brasil-por
 
+- **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por>
 - **Arquivo OpenAPI**: [api/BR/portais-ckan-brasil/por/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
-- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml>
 
 ##### portais-arcgis-brasil-por
 
+- **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por>
 - **Arquivo OpenAPI**: [api/BR/portais-arcgis-brasil/por/openapi.yaml](api/BR/portais-arcgis-brasil/por/openapi.yaml)
-- **Pré-visualizar/executar online**: <https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/openapi.yaml>
 
 ## Schema
 

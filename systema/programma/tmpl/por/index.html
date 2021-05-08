@@ -1,10 +1,8 @@
 <html lang="pt">
-<!--
-https://stackoverflow.com/questions/25800493/converting-swagger-specification-json-to-html-documentation
--->
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.17.0/swagger-ui.css">
     <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/rapipdf/dist/rapipdf-min.js"></script>
     <script>
 
         function render() {
@@ -24,6 +22,10 @@ https://stackoverflow.com/questions/25800493/converting-swagger-specification-js
 
 <body onload="render()">
     <div id="swagger-ui"></div>
+    <aside style="max-width: 800px; margin: 0 auto;">
+        <rapi-pdf style="width:700px; height:40px; font-size:18px;" spec-url="openapi.yaml" button-bg="#b44646">
+        </rapi-pdf>
+    </aside>
 </body>
 
 </html>

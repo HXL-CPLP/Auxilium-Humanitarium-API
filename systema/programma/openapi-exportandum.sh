@@ -59,10 +59,18 @@ OPENAPI_EXPORTANDUM=(
     'html2'
 )
 
+
+# Git user ID, e.g. openapitools.
+OPENAPI_GIT_USER_ID="HXL-CPLP"
+# Git repo ID, e.g. openapi-generator.
+OPENAPI_GIT_REPO_ID="Auxilium-Humanitarium-API"
+
+
 #### CUSTOMIZATIONS, end _______________________________________________________
 
 # Trivia: 'errōrem', https://en.wiktionary.org/wiki/error#Latin
 ERROREM=0
+
 
 # @see https://stackoverflow.com/questions/4332478
 #      /read-the-current-text-color-in-a-xterm/4332530#4332530
@@ -73,7 +81,7 @@ RED=$(tput setaf 1)
 # LIME_YELLOW=$(tput setaf 190)
 # POWDER_BLUE=$(tput setaf 153)
 # BLUE=$(tput setaf 4)
-# MAGENTA=$(tput setaf 5)
+MAGENTA=$(tput setaf 5)
 CYAN=$(tput setaf 6)
 # WHITE=$(tput setaf 7)
 BRIGHT=$(tput bold)
@@ -82,20 +90,8 @@ NORMAL=$(tput sgr0)
 # REVERSE=$(tput smso)
 # UNDERLINE=$(tput smul)
 
-# Split
-# Author: https://stackoverflow.com/questions/918886
-#         /how-do-i-split-a-string-on-a-delimiter-in-bash/44153302#44153302
-split() {
-    local string="$1"
-    local delimiter="$2"
-    if [ -n "$string" ]; then
-        local part
-        while read -r -d "$delimiter" part; do
-            echo "$part"
-        done <<< "$string"
-        echo "$part"
-    fi
-}
+PATHSCRIPT=$(dirname "$(readlink -f "$0")")
+TMPL="${PATHSCRIPT}/tmpl"
 
 for oas_meta in "${OPENAPI_RADICEM[@]}"
 do
@@ -108,68 +104,16 @@ do
     printf '\n%s%sopenapi-exportandum.sh: %s  %s\n' \
         "$BRIGHT" "$CYAN" "$oas_radix" "$NORMAL"
 
-    # https://stackoverflow.com/questions/918886
-    # /how-do-i-split-a-string-on-a-delimiter-in-bash
-    # oas_meta_split="(${oas_meta//;/ })"
-    # IFS='|'; oas_meta_split=("$oas_meta"); unset IFS;
-    # oas_meta='api/BR/brazilian-ckan-portals/eng eng'
-    # A=$(echo "$oas_meta" | awk -F: "{print $1}")
-    # B=$(echo "$oas_meta" | awk -F: "{print $2}")
-    # B=$(echo one_two_three_four_five | awk -F_ '{print $2}')  
-    # C=$(echo one_two_three_four_five | awk -F_ '{print $3}') 
-    # $(echo "$oas_meta" | cut -f1 | read str1)
-    # $(echo "$oas_meta" | cut -f2 | read str2)
-    # echo $str1
-    # echo $str2
-    # echo $C
-    # echo $D
-
-    # var1=$(echo "bla@some.com;john@home.com" | cut -d ";" -f 1)
-    # echo "$var1"
-
-    # echo 'ooi'
-
-    # string='one_two_three_four_five'
-    # IFS='_' read -r a second a fourth a <<<"$string"
-    # echo "$second $fourth"
-
-    # string='oas_meta'
-    # IFS='|' read -r a second a fourth a <<<"$oas_meta"
-    # echo "$a $second"
-
-    # # arr=(`echo $IN | tr ';' ' '`)
-    # IN="bla@some.com;john@home.com"
-    # IN="bla@some.com;john@home.com"
-    # read -r ADDR1 ADDR2 <<<$(IFS=';'; echo $IN)
-    # # read -r ADDR1 ADDR2 <<<$(IFS='|'; echo $oas_meta)
-    # echo $oas_meta
-    # echo $ADDR1
-    # echo $ADDR2
-    # echo "fin"
-    # exit 1
-
-    # oas_radix="${oas_meta_split[0]}"
-
-    # For each exporter
+    ### For each openapi-generator-cli exporter
     for oas_exporto in "${OPENAPI_EXPORTANDUM[@]}"
     do
         oas_exporto_radix="${oas_radix}/${oas_exporto}"
         printf '\n%s%s  openapi-exportandum.sh: %s/%s  %s\n' \
             "$BRIGHT" "$CYAN" "$oas_radix" "$oas_exporto" "$NORMAL"
 
-        # echo $oas_exporto_radix
-
-        # # printf '\t\t%s%s%s%s\n\n' "$GREEN" "$BLINK" "$oas_filum" "$NORMAL"
-        # printf '\n%s%sopenapi-validum.sh: %s validum?  %s\n' \
-        #     "$BRIGHT" "$CYAN" "$oas_filum" "$NORMAL"
-        # # echo ">>> $oas_filum\n\n\n"
-        # if ! openapi-generator-cli validate --input-spec "$oas_filum"; then
-        #     printf '\n%s%sopenapi-validum.sh: %s validum?  %s\n' \
-        #       "$BRIGHT" "$RED" "$oas_filum" "$NORMAL"
-        #     # printf '\t\t%s%s%s%s\n\n' "$RED" "$BLINK" "$oas_filum" "$NORMAL"
-        #     ERROREM=$((ERROREM + 1))
-        # fi
-        if ! openapi-generator-cli generate \
+        if ! openapi-generator-cli generate --minimal-update \
+              --git-user-id "${OPENAPI_GIT_USER_ID}" \
+              --git-repo-id "${OPENAPI_GIT_REPO_ID}" \
               --generator-name "$oas_exporto" \
               --input-spec "$oas_filum" \
               --output "$oas_exporto_radix" ; then
@@ -180,20 +124,13 @@ do
         fi
     done
 
-    # Create new index file
-    # echo 
+    ### Our custom index page per project per language
+    printf '\n%s%sopenapi-exportandum.sh: %s/index.html custom index %s\n' \
+        "$BRIGHT" "$MAGENTA" "$oas_radix" "$NORMAL"
+    cp "${TMPL}/${linguam_iso6393}/index.html" "$oas_radix/index.html"
+    # echo "${TMPL}/${linguam_iso6393}/index.html"
+    # echo "$oas_radix/index.html"
 
-
-    # # printf '\t\t%s%s%s%s\n\n' "$GREEN" "$BLINK" "$oas_filum" "$NORMAL"
-    # printf '\n%s%sopenapi-validum.sh: %s validum?  %s\n' \
-    #     "$BRIGHT" "$CYAN" "$oas_filum" "$NORMAL"
-    # # echo ">>> $oas_filum\n\n\n"
-    # if ! openapi-generator-cli validate --input-spec "$oas_filum"; then
-    #     printf '\n%s%sopenapi-validum.sh: %s validum?  %s\n' \
-    #       "$BRIGHT" "$RED" "$oas_filum" "$NORMAL"
-    #     # printf '\t\t%s%s%s%s\n\n' "$RED" "$BLINK" "$oas_filum" "$NORMAL"
-    #     ERROREM=$((ERROREM + 1))
-    # fi
 done
 
 if [ "$ERROREM" != 0 ]; then
