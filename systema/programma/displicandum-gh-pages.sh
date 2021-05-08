@@ -139,6 +139,7 @@ rsync -av --exclude=".*" "${ROOTDIR}/por.md" "${LOCALBUILD}/por.md"
 rsync -av --exclude=".*" "${ROOTDIR}/eng.md" "${LOCALBUILD}/eng.md"
 rsync -av --exclude=".*" "${ROOTDIR}/README.md" "${LOCALBUILD}/README.md"
 rsync -av --exclude=".*" "${ROOTDIR}/README-old.md" "${LOCALBUILD}/README-old.md"
+rsync -av --exclude=".*" "${ROOTDIR}/robots.txt" "${LOCALBUILD}/robots.txt"
 
 rsync -av --exclude=".*" "${ROOTDIR}/_config.yml" "${LOCALBUILD}/_config.yml"
 # rsync -av --exclude=".*" "${ROOTDIR}/CNAME" "${LOCALBUILD}/CNAME"
