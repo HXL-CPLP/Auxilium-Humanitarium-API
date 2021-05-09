@@ -6,8 +6,8 @@
 <!--
 
 TODOs:
-- https://github.com/ibm/openapi-to-graphql
-- https://www.npmjs.com/package/graphql-to-openapi
+- https://github.com/frictionlessdata/schemas/blob/master/definitions.json
+  - https://github.com/frictionlessdata/specs/blob/master/schemas/registry.csv
 
 **[working-draft] <span lang="en">Argumented documentation of common APIs for
 humanitarian aid with [OpenAPI](https://www.openapis.org/), the _de facto_

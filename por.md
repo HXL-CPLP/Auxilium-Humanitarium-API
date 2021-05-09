@@ -29,6 +29,10 @@ documentar APIs REST.**
             - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
             - [portais-arcgis-brasil-por](#portais-arcgis-brasil-por)
 - [Schema](#schema)
+    - [ISO 639-3](#iso-639-3)
+        - [In English](#in-english)
+    - [ISO 15924](#iso-15924)
+        - [In English](#in-english-1)
 - [Systema](#systema)
     - [OpenAPI](#openapi)
         - [Editores online](#editores-online)
@@ -84,7 +88,41 @@ documentar APIs REST.**
 
 ## Schema
 
-Por favor, navege no repositório em <https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/tree/main/schema>.
+### ISO 639-3
+- **Descrição**: Conjuntos de códigos para um número de sistemas de escrita –
+  Parte 3:códigos Alpha-3 para cobertura abrangente de idiomas
+- **Sites oficiais**:
+  - <http://iso639-3.sil.org/>
+- **Download**:
+  - <https://iso639-3.sil.org/code_tables/download_tables>
+    - <https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab>
+- **Wikipédia**:
+  - eng: <https://en.wikipedia.org/wiki/ISO_639-3>
+
+#### In English
+- SQL:
+  - [schema/iso/iso639-3/eng/iso639-3.sql](schema/iso/iso639-3/eng/iso639-3.sql)
+- JSON Schema:
+  - [schema/iso/iso639-3/eng/iso639-3.json](schema/iso/iso639-3/eng/iso639-3.json)
+  - [schema/iso/iso639-3/eng/iso639-3_macrolanguages.json](schema/iso/iso639-3/eng/iso639-3_macrolanguages.json)
+- GraphQL Schema <sup>(beta)</sup>
+  - [schema/iso/iso639-3/eng/iso639-3_macrolanguages.json](schema/iso/iso639-3/eng/iso639-3_macrolanguages.json)
+
+### ISO 15924
+- **Descrição**: Codes for the representation of names of scripts
+- **Sites oficiais**:
+  - <https://www.unicode.org/iso15924/>
+  - <https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en>
+- **Download**:
+  - <https://www.unicode.org/iso15924/iso15924.txt>
+- **Wikipédia**
+  - por: <https://pt.wikipedia.org/wiki/ISO_15924>
+  - eng: <https://en.wikipedia.org/wiki/ISO_15924>
+
+#### In English
+
+- JSON Schema:
+  - [schema/iso/iso15924/eng/iso15924.json](schema/iso/iso15924/eng/iso15924.json)
 
 ## Systema
 
