@@ -56,7 +56,7 @@ documentar APIs REST.**
 -->
 
 ##### ReliefWeb-eng
-- **Pré-visualizar/executar online**: <https://hapi.etica.aiapi/UN/reliefweb/eng/>
+- **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/UN/reliefweb/eng/>
 - **Arquivo OpenAPI**: [api/UN/reliefweb/eng/openapi.yaml](api/UN/reliefweb/eng/openapi.yaml)
 
 #### HDX - The Humanitarian Data Exchange
