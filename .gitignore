@@ -19,3 +19,7 @@ api/*/*/*/graphql-schema
 # Our custom index page per project per language
 # @see systema/programma/openapi-exportandum.sh
 api/*/*/*/index.html
+
+
+# Temporary
+schema/iso/iso639-3/eng/graphql-doc
