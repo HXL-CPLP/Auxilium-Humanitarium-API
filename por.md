@@ -16,9 +16,11 @@ documentar APIs REST.**
 
 - [API](#api)
     - [UN](#un)
+        - [ReliefWeb](#reliefweb)
+            - [ReliefWeb-eng](#reliefweb-eng)
         - [HDX - The Humanitarian Data Exchange](#hdx---the-humanitarian-data-exchange)
             - [HDX-eng](#hdx-eng)
-        - [CODV2API](#codv2api)
+        - [CODV2API <sup>(beta)</sup>](#codv2api-supbetasup)
             - [CODV2API-eng](#codv2api-eng)
     - [XZ](#xz)
         - [HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária](#hxl-proxy---proxy-da-linguagem-de-intercâmbio-humanitária)
@@ -47,13 +49,23 @@ documentar APIs REST.**
 
 ### UN
 
+#### ReliefWeb
+<!--
+- **Wikipedia**:
+  - eng: <https://en.wikipedia.org/wiki/ReliefWeb>
+-->
+
+##### ReliefWeb-eng
+- **Pré-visualizar/executar online**: <https://hapi.etica.aiapi/UN/reliefweb/eng/>
+- **Arquivo OpenAPI**: [api/UN/reliefweb/eng/openapi.yaml](api/UN/reliefweb/eng/openapi.yaml)
+
 #### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/UN/HDX/eng>
 - **Arquivo OpenAPI**: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
 
-#### CODV2API
+#### CODV2API <sup>(beta)</sup>
 
 ##### CODV2API-eng
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/UN/CODV2API/eng>
@@ -124,6 +136,7 @@ documentar APIs REST.**
 - JSON Schema:
   - [schema/iso/iso15924/eng/iso15924.json](schema/iso/iso15924/eng/iso15924.json)
 
+<!--
 ## Systema
 
 ### OpenAPI
@@ -133,6 +146,8 @@ documentar APIs REST.**
 #### Editores online
 - <https://editor.swagger.io/>
 - <https://editor.swagger.io/?url=https://example.org/myfile.yaml>
+
+-->
 
 ## Licença
 
