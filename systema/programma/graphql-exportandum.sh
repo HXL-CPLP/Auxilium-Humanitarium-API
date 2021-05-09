@@ -34,6 +34,8 @@
 #    Error: ✗ Must provide schema definition with query type or a type named Query.
 
 graphdoc --schema-file schema/iso/iso639-3/eng/iso639-3.graphql --output schema/iso/iso639-3/eng/graphql-doc --force
+graphdoc --schema-file schema/graphql.schema.js --output schema/iso/iso639-3/eng/graphql-doc --force
+graphdoc --schema-file schema/graphql.schema.mjs --output schema/iso/iso639-3/eng/graphql-doc --force
 
 
 exit 0
