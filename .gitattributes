@@ -1,0 +1,23 @@
+# See https://github.com/github/linguist
+
+## We explicitly want on this repository some data-type language files
+*.csv linguist-detectable
+*.json linguist-detectable
+*.jsonld linguist-detectable
+*.json5 linguist-detectable
+*.graphql linguist-detectable
+*.gql linguist-detectable
+*.graphqls linguist-detectable
+
+## Markdown are documentation (this could be changed later)
+*.md linguist-documentation
+
+## Files on systema/, at the moment, will be marked as vendored
+## We may change a bit this later
+systema/* linguist-vendored
+
+Gemfile linguist-vendored
+robots.txt linguist-vendored
+
+## This (test) file on schema needs to be ignored
+schema/graphql.schema.mjs linguist-generated

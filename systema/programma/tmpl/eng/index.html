@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Hapi: Augmented APIs documentation for humanitarian use</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
@@ -11,8 +12,12 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.17.0/swagger-ui.css"
         integrity="sha384-EsNi7oBa+y4MD5KbpC28MUDGgPo3qn7XURKXTbKQwPyzE/vkRHg+1LEJAnuWqe8g" crossorigin="anonymous">
-
-    <title>HAPI: Augmented documentation for Humanitarian APIs</title>
+    <style>
+        /* Hide some strange SVG not loading */
+        .swagger-ui>div>svg {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -87,14 +92,14 @@
                                 aria-expanded="false">API BR 🇧🇷</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown08">
                                 <li><a class="dropdown-item" href="/api/BR/brazilian-ckan-portals/eng/">
-                                    Brazilian CKAN data portals</a>
+                                        Brazilian CKAN data portals</a>
                                 </li>
                                 <li><a class="dropdown-item" href="/api/BR/portais-arcgis-brasil/por/">
-                                    [por] <em>Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></em></a>
+                                        [por] <em>Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></em></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link disabled" href="#" tabindex="-1"
-                                        aria-disabled="true">Data SUS</a>
+                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Data
+                                        SUS</a>
                                 </li>
                             </ul>
                         </li>
@@ -119,31 +124,89 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <svg style="height: 2em" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="language" class="svg-inline--fa fa-language fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M152.1 236.2c-3.5-12.1-7.8-33.2-7.8-33.2h-.5s-4.3 21.1-7.8 33.2l-11.1 37.5H163zM616 96H336v320h280c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24zm-24 120c0 6.6-5.4 12-12 12h-11.4c-6.9 23.6-21.7 47.4-42.7 69.9 8.4 6.4 17.1 12.5 26.1 18 5.5 3.4 7.3 10.5 4.1 16.2l-7.9 13.9c-3.4 5.9-10.9 7.8-16.7 4.3-12.6-7.8-24.5-16.1-35.4-24.9-10.9 8.7-22.7 17.1-35.4 24.9-5.8 3.5-13.3 1.6-16.7-4.3l-7.9-13.9c-3.2-5.6-1.4-12.8 4.2-16.2 9.3-5.7 18-11.7 26.1-18-7.9-8.4-14.9-17-21-25.7-4-5.7-2.2-13.6 3.7-17.1l6.5-3.9 7.3-4.3c5.4-3.2 12.4-1.7 16 3.4 5 7 10.8 14 17.4 20.9 13.5-14.2 23.8-28.9 30-43.2H412c-6.6 0-12-5.4-12-12v-16c0-6.6 5.4-12 12-12h64v-16c0-6.6 5.4-12 12-12h16c6.6 0 12 5.4 12 12v16h64c6.6 0 12 5.4 12 12zM0 120v272c0 13.3 10.7 24 24 24h280V96H24c-13.3 0-24 10.7-24 24zm58.9 216.1L116.4 167c1.7-4.9 6.2-8.1 11.4-8.1h32.5c5.1 0 9.7 3.3 11.4 8.1l57.5 169.1c2.6 7.8-3.1 15.9-11.4 15.9h-22.9a12 12 0 0 1-11.5-8.6l-9.4-31.9h-60.2l-9.1 31.8c-1.5 5.1-6.2 8.7-11.5 8.7H70.3c-8.2 0-14-8.1-11.4-15.9z"></path></svg>
+                                <svg style="height: 2em" aria-hidden="true" focusable="false" data-prefix="fas"
+                                    data-icon="language" class="svg-inline--fa fa-language fa-w-20" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                    <path fill="currentColor"
+                                        d="M152.1 236.2c-3.5-12.1-7.8-33.2-7.8-33.2h-.5s-4.3 21.1-7.8 33.2l-11.1 37.5H163zM616 96H336v320h280c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24zm-24 120c0 6.6-5.4 12-12 12h-11.4c-6.9 23.6-21.7 47.4-42.7 69.9 8.4 6.4 17.1 12.5 26.1 18 5.5 3.4 7.3 10.5 4.1 16.2l-7.9 13.9c-3.4 5.9-10.9 7.8-16.7 4.3-12.6-7.8-24.5-16.1-35.4-24.9-10.9 8.7-22.7 17.1-35.4 24.9-5.8 3.5-13.3 1.6-16.7-4.3l-7.9-13.9c-3.2-5.6-1.4-12.8 4.2-16.2 9.3-5.7 18-11.7 26.1-18-7.9-8.4-14.9-17-21-25.7-4-5.7-2.2-13.6 3.7-17.1l6.5-3.9 7.3-4.3c5.4-3.2 12.4-1.7 16 3.4 5 7 10.8 14 17.4 20.9 13.5-14.2 23.8-28.9 30-43.2H412c-6.6 0-12-5.4-12-12v-16c0-6.6 5.4-12 12-12h64v-16c0-6.6 5.4-12 12-12h16c6.6 0 12 5.4 12 12v16h64c6.6 0 12 5.4 12 12zM0 120v272c0 13.3 10.7 24 24 24h280V96H24c-13.3 0-24 10.7-24 24zm58.9 216.1L116.4 167c1.7-4.9 6.2-8.1 11.4-8.1h32.5c5.1 0 9.7 3.3 11.4 8.1l57.5 169.1c2.6 7.8-3.1 15.9-11.4 15.9h-22.9a12 12 0 0 1-11.5-8.6l-9.4-31.9h-60.2l-9.1 31.8c-1.5 5.1-6.2 8.7-11.5 8.7H70.3c-8.2 0-14-8.1-11.4-15.9z">
+                                    </path>
+                                </svg>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown09">
                                 <li><a class="dropdown-item" href="/api/UN/HDX/eng/">
-                                    English</a>
+                                        English</a>
                                 </li>
-                                <li><a class="dropdown-item" href="/api/UN/HDX/por/">
-                                    Português</a>
+                                <li><a class="dropdown-item" href="/api/BR/portais-ckan-brasil/por/">
+                                        Português</a>
                                 </li>
                             </ul>
                         </li>
-                     </ul>
+                    </ul>
                 </div>
             </div>
         </nav>
+        <div class="px-4 py-5 my-5 text-center">
+            <h1 class="display-5 fw-bold">Hapi: Augmented APIs documentation for humanitarian
+                use<sup>alpha</sup>
+            </h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Hapi centralizes interactive documentation of data providers
+                    with potential use for humanitarians.
+                    At the moment, the alpha version already have some
+                    international APIs and Brazilian ones while the
+                    documentation is both in Portuguese and English.
+                    Since we use OpenAPI and schemas, the way Hapi do
+                    allow reuse of previous work to, via volunteers interest,
+                    add new languages and countries!
+                </p>
+                <!--
+                <div class="alert alert-secondary" role="alert">
+                    Suggestions for new content or interest to help
+                    (for example, with translations or editing HTML, YAML
+                    and JSON) are welcome!
+                </div>
+                -->
+                <!--
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Primary button</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+                </div>
+                -->
+            </div>
+        </div>
 
         <div class="container">
-            <h2 style="text-align: center;">Augmented documentation for Humanitarian APIs<sup>beta</sup></h2>
-            <div id="swagger-ui"></div>
+            <div style="border-style: dotted; border-width: 2px; border-color: #ccc">
+                <h2 style="text-align: center;">Interactive API documented in English</h2>
+                <div id="swagger-ui"></div>
+                <aside style="max-width: 800px; margin: 0 auto;">
+                    <h3>Save as PDF</h3>
+                    <rapi-pdf style="width:700px; height:40px; font-size:18px;" spec-url="openapi.yaml"
+                        button-bg="#b44646">
+                    </rapi-pdf>
+                </aside>
+
+                <aside class="alert alert-info" style="margin-top: 2em" role="alert">
+
+                    <p>
+                        Note: this section allows you to interactively preview OpenAPI files
+                        and even execute requests from your browser without leaving the
+                        hapi.etica.ai website (some APIs even documented in more than one language!).
+                        Some documentation, either by the original API or by using the original
+                        description of the site, may be written in the first person, but obviously
+                        this is not the volunteers compiling the documentation.
+                    </p>
+
+                    <p>
+                        Exceptions to this rule are translation errors and / or failures
+                        in relation to updates but APIs reported here.
+                        In this case is our fault, not the API provider,
+                        so let us know!
+                    </p>
+                </aside>
+            </div>
         </div>
-        <aside style="max-width: 800px; margin: 0 auto;">
-            <h3>Save as PDF</h3>
-            <rapi-pdf style="width:700px; height:40px; font-size:18px;" spec-url="openapi.yaml" button-bg="#b44646">
-            </rapi-pdf>
-        </aside>
     </main>
     <footer>
         <div class="container">
@@ -153,7 +216,8 @@
                     <a class="nav-link" href="//github.com/HXL-CPLP/Auxilium-Humanitarium-API">GitHub</a>
                     <a class="nav-link"
                         href="//github.com/HXL-CPLP/Auxilium-Humanitarium-API/archive/refs/heads/main.zip">Download</a>
-                    <li class="nav-item"><a href="https://unlicense.org/" class="nav-link">License: Public Domain</a></li>
+                    <li class="nav-item"><a href="https://unlicense.org/" class="nav-link">License: Public Domain</a>
+                    </li>
                 </ul>
             </header>
         </div>

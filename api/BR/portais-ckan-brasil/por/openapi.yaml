@@ -2,6 +2,7 @@
 # LICENÇA:         SPDX-License-Identifier: Unlicense
 #
 # VERSÃO ONLINE:  https://editor.swagger.io/?url=https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml
+# TODO: https://github.com/augusto-herrmann/transparencia-dados-abertos-brasil/blob/master/data/valid/brazilian-transparency-and-open-data-portals.csv
 
 openapi: 3.0.3
 # NOTE: o arquivo atual, nesta data de 2021-05-02, usa OpenAPI 3.0 pois

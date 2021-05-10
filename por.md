@@ -118,7 +118,7 @@ documentar APIs REST.**
   - [schema/iso/iso639-3/eng/iso639-3.json](schema/iso/iso639-3/eng/iso639-3.json)
   - [schema/iso/iso639-3/eng/iso639-3_macrolanguages.json](schema/iso/iso639-3/eng/iso639-3_macrolanguages.json)
 - GraphQL Schema <sup>(beta)</sup>
-  - [schema/iso/iso639-3/eng/iso639-3_macrolanguages.json](schema/iso/iso639-3/eng/iso639-3_macrolanguages.json)
+  - [schema/iso/iso639-3/eng/iso639-3.graphql](schema/iso/iso639-3/eng/iso639-3.graphql)
 
 ### ISO 15924
 - **Descrição**: Codes for the representation of names of scripts
