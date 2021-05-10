@@ -5,6 +5,7 @@
 *.json linguist-detectable
 *.jsonld linguist-detectable
 *.json5 linguist-detectable
+*.sql linguist-detectable
 *.graphql linguist-detectable
 *.gql linguist-detectable
 *.graphqls linguist-detectable
