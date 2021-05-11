@@ -25,10 +25,11 @@
 ### Create on local computer ---------------------------------------------------
 # @see https://docs.github.com/en/developers/overview/managing-deploy-keys
 # @see https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+# @see https://github.com/marketplace/actions/github-pages-action#%EF%B8%8F-create-ssh-deploy-key
 
 ssh-keygen -t ed25519 -C "etica.of.a.ai+HXL-CPLP-hapi.etica.ai@gmail.com" -f "$HOME/.ssh/eticaai/id_ed25519-hapi"
 
-### Add on the deploy repository -----------------------------------------------
+### Add on the deploy repository, [HXL-CPLP/hapi.etica.ai] ---------------------
 # On our case is here
 #  - https://github.com/HXL-CPLP/hapi.etica.ai/settings/keys
 # If someone is create on a different project, change this
@@ -37,6 +38,10 @@ ssh-keygen -t ed25519 -C "etica.of.a.ai+HXL-CPLP-hapi.etica.ai@gmail.com" -f "$H
 # /home/fititnt/.ssh/eticaai/
 # ├── id_ed25519-hapi
 # └── id_ed25519-hapi.pub
+
+
+#### Add ACTIONS_DEPLOY_KEY on [HXL-CPLP/Auxilium-Humanitarium-API] ____________
+# @see https://github.com/marketplace/actions/github-pages-action#%EF%B8%8F-create-ssh-deploy-key
 
 #### Change git push to use custom SSH key _____________________________________
 ### ALTERNATIVE ONE ------------------------------------------------------------

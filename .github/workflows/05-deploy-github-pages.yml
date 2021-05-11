@@ -1,0 +1,41 @@
+# FILE:            .github/workflows/05-deploy-github-pages.yml
+#
+# @see https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
+# @see https://github.com/marketplace/actions/github-pages-action
+
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: bash systema/infrastructuram/travis-ci.sh
+
+        # run: make ci
+      - name: Deploy to HXL-CPLP/hapi.etica.ai
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          external_repository: HXL-CPLP/hapi.etica.ai
+          publish_branch: gh-pages
+          publish_dir: "./"
+          destination_dir: ./docs
+          cname: hapi.etica.ai
+    # - name: Deploy
+    #   if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: ./out
