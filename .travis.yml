@@ -1,0 +1,8 @@
+# @see systema/infrastructuram/temporarium.sh
+# @see https://docs.travis-ci.com/user/deployment/script/
+
+deploy:
+  provider: script
+  script: bash systema/infrastructuram/travis-ci.sh
+  on:
+    branch: main

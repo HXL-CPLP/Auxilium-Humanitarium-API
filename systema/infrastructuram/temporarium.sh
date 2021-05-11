@@ -75,3 +75,11 @@ ssh-keygen -t ed25519 -C "etica.of.a.ai+HXL-CPLP-hapi.etica.ai@gmail.com" -f "$H
 # New command instead of git push -u remote-publisher gh-pages --force
 #   GIT_SSH_COMMAND="ssh -i $HOME/.ssh/eticaai/id_ed25519-hapi" git push -u remote-publisher gh-pages --force
 
+
+#### draft _____________________________________________________________________
+# @see https://andy-carter.com/blog/setting-up-travis-locally-with-docker-to-test-continuous-integration
+# @see https://stackoverflow.com/questions/21053657/how-to-run-travis-ci-locally
+# @see https://stackoverflow.com/questions/21053657/how-to-run-travis-ci-locally/49019950#49019950
+
+### simple sh script -----------------------------------------------------------
+# @see https://docs.travis-ci.com/user/deployment/script/
