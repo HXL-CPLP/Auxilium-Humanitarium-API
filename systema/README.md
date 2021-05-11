@@ -11,8 +11,14 @@
 >   - https://en.wiktionary.org/wiki/displico#Latin
 >   - English, "deploy", "deployment"
 >     - https://en.wiktionary.org/wiki/deploy
-
-
+> - "infrastrūctūram", "infra"" + "strūctūram"
+>   - "infra-"
+>     - https://en.wiktionary.org/wiki/infra-#English
+>   - "structure"
+>     - https://en.wiktionary.org/wiki/structura#Latin
+>     - https://en.wiktionary.org/wiki/structure#English
+> - "temporārium"
+>   - temporārium, https://en.wiktionary.org/wiki/temporarius#Latin
 <!--
 cd systema || exit
 npm run displicandum-gh-pages

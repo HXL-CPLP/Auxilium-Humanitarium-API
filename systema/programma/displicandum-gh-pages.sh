@@ -165,7 +165,11 @@ GIT_COMMITTER_NAME="${GIT_COMMITTER_NAME}" \
 echo "RUN THIS MANUALLY"
 echo ""
 echo cd "${LOCALGIT}"
+echo "# if want to publish with your own SSH key"
 echo git push -u "${DEPLOY_REMOTE_NAME}" "${DEPLOY_BRANCH}" --force
+
+echo "# if want to publish with a very specific Deploy key (recommented)"
+echo GIT_SSH_COMMAND="ssh -i $HOME/.ssh/eticaai/id_ed25519-hapi" git push -u "${DEPLOY_REMOTE_NAME}" "${DEPLOY_BRANCH}" --force
 
 # GIT_COMMITTER_NAME="${GIT_COMMITTER_NAME}" \
 #   GIT_COMMITTER_EMAIL="${GIT_COMMITTER_EMAIL}" git commit --author="New Name <name@email.com>
