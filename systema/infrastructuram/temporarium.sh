@@ -75,6 +75,41 @@ ssh-keygen -t ed25519 -C "etica.of.a.ai+HXL-CPLP-hapi.etica.ai@gmail.com" -f "$H
 # New command instead of git push -u remote-publisher gh-pages --force
 #   GIT_SSH_COMMAND="ssh -i $HOME/.ssh/eticaai/id_ed25519-hapi" git push -u remote-publisher gh-pages --force
 
+#### Allow travis publish to GH Pages repo _____________________________________
+
+### Create travis encrypted things ---------------------------------------------
+# @see https://docs.travis-ci.com/user/environment-variables#defining-encrypted-variables-in-travisyml
+# @see https://snapcraft.io/travis
+sudo snap install travis --edge
+
+# @see https://docs.travis-ci.com/user/encrypting-files/#automated-encryption
+ travis login --com --github-token "..."
+
+# @see https://docs.travis-ci.com/user/encrypting-files/#automated-encryption
+# travis encrypt-file -f "$HOME/.ssh/eticaai/id_ed25519-hapi" -r HXL-CPLP/Auxilium-Humanitarium-API
+# travis encrypt-file -f "$HOME/.ssh/eticaai/id_ed25519-hapi" -r /github/HXL-CPLP/Auxilium-Humanitarium-API
+
+# @see https://docs.travis-ci.com/user/best-practices-security#recommendations-on-how-to-avoid-leaking-secrets-to-build-logs
+
+### Recommendations on how to avoid leaking secrets to build logs #
+# Despite our best efforts, there are however many ways in which secure
+# information can accidentally be exposed. These vary according to what tools
+# you are using and what settings you have enabled. Some things to look out for are:
+#    settings which duplicate commands to standard output, such as set -x or set -v in your bash scripts
+#    displaying environment variables, by running env or printenv
+#    printing secrets within the code, for example echo "$SECRET_KEY"
+#    using tools that print secrets on error output, such as php -i
+#    git commands like git fetch or git push may expose tokens or other secure environment variables
+#    mistakes in string escaping
+#    settings which increase command verbosity
+#    testing tools or plugins that may expose secrets while operating
+
+# fititnt@bravo:/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API$ travis encrypt-file -f "$HOME/.ssh/eticaai/id_ed25519-hapi" -r HXL-CPLP/Auxilium-Humanitarium-API
+# Outdated CLI version, run `gem install travis`.
+# repository not known to https://api.travis-ci.org/: HXL-CPLP/Auxilium-Humanitarium-API
+
+# This works
+# travis show -r travis-ci/travis-api
 
 #### draft _____________________________________________________________________
 # @see https://andy-carter.com/blog/setting-up-travis-locally-with-docker-to-test-continuous-integration
