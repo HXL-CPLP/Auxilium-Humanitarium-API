@@ -19,8 +19,29 @@ jobs:
 
       - name: Build
         run: bash systema/infrastructuram/travis-ci.sh
-      - name: Build
-        run: 'echo "hapi.etica.ai" > ./CNAME'
+
+      # @see https://github.com/actions/setup-java#supported-distributions
+      - name: "Java installation (required by openapi-generator-cli)"
+        uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: "11"
+
+      # @see https://github.com/actions/setup-node
+      - name: "Node/NPM installation (required by openapi-generator-cli)"
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: "npm install -g @openapitools/openapi-generator-cli"
+        run: npm install -g @openapitools/openapi-generator-cli
+
+      - name: "openapi-generator-cli: generate files"
+        run: bash ./systema/programma/openapi-exportandum.sh
+
+      - name: "Steps before Jekyll: CNAME"
+        run: |
+          echo "hapi.etica.ai" > ./CNAME
 
         # run: make ci
       - name: Deploy to HXL-CPLP/hapi.etica.ai
