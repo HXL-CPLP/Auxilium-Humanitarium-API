@@ -1,6 +1,7 @@
+<!-- Trivia: 'caput', https://en.wiktionary.org/wiki/caput#Latin -->
 <header class="site-header">
 
-  <div class="wrapper">
+  <div class="container">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}

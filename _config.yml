@@ -52,6 +52,10 @@ plugins:
 
 defaults:
   - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "defallo"
+  - scope:
       path: "api/*/*/*/html"
     values:
       sitemap: false
