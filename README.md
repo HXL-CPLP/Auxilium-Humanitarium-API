@@ -7,6 +7,11 @@
 
 <!--
 ![Repo license](https://img.shields.io/github/license/HXL-CPLP/Auxilium-Humanitarium-API)
+
+- https://jekyllrb.com/docs/step-by-step/06-data-files/
+- https://unicode.org/udhr/translations.html
+  - https://unicode.org/udhr/d/udhr_por_PT.txt
+  - https://udhr.audio/UDHR_Video.asp?lng=por&p=Preamble
 -->
 
 > - [Documentation in English language here](eng.md)

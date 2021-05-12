@@ -37,6 +37,9 @@ exclude:
   - schema/iso/iso15924/eng/README.md
   - README-old.md
 
+keep_files:
+  - _assets/
+
 # GitHub pages related
 # - https://docs.github.com/en/enterprise-server@3.0/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll
 # - https://pages.github.com/versions/
