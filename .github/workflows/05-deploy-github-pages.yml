@@ -40,14 +40,20 @@ jobs:
         run: bash ./systema/programma/openapi-exportandum.sh
 
       - name: "Steps before Jekyll: CNAME"
-        run: |
-          echo "hapi.etica.ai" > ./CNAME
+        run: echo "hapi.etica.ai" > ./CNAME
+
+      # On the GitHub deploy, we explicity want it publish generated assets
+      - name: "Steps before Jekyll: rm .gitignore"
+        run: rm .gitignore
 
       - name: "DEBUG: sudo apt install tree"
         run: sudo apt install tree
 
-      - name: "DEBUG: tree"
-        run: tree
+      - name: "DEBUG: pwd"
+        run: pwd
+
+      - name: "DEBUG: tree -a"
+        run: tree -a
 
         # run: make ci
       - name: Deploy to HXL-CPLP/hapi.etica.ai
