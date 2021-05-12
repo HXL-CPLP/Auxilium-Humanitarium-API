@@ -46,16 +46,15 @@ jobs:
       - name: "Steps before Jekyll: rm .gitignore"
         run: rm .gitignore
 
-      - name: "DEBUG: sudo apt install tree"
-        run: sudo apt install tree
+      # - name: "DEBUG: sudo apt install tree"
+      #   run: sudo apt install tree
 
-      - name: "DEBUG: pwd"
-        run: pwd
+      # - name: "DEBUG: pwd"
+      #   run: pwd
 
-      - name: "DEBUG: tree -a"
-        run: tree -a
+      # - name: "DEBUG: tree -a"
+      #   run: tree -a
 
-        # run: make ci
       - name: Deploy to HXL-CPLP/hapi.etica.ai
         uses: peaceiris/actions-gh-pages@v3
         with:

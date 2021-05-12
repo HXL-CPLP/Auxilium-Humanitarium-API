@@ -4,10 +4,13 @@ description: "Augmented documentation for Humanitarian APIs"
 # see https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # lang: 'pt'
 
+# @see https://github.com/kurtsson/jekyll-multiple-languages-plugin
+
 # include: [CONTRIBUTING.md]
 
 # https://github.com/pages-themes/cayman
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman
+theme: minima
 show_downloads: false
 # google_analytics: [Your Google Analytics tracking ID]
 
@@ -15,6 +18,24 @@ show_downloads: false
 twitter:
   username: EticaAI
   card: summary
+
+exclude:
+  - systema/
+  - "api/*/*/*/html/*.md"
+  - "api/*/*/*/html2/*.md"
+  - "api/*/*/*/mysql-schema/*.md"
+  - "api/*/*/*/mysql-schema/*.md"
+  - api/README.md
+  - api/UN/README.md
+  - api/UN/CODV1API/README.md
+  - api/UN/reliefweb/README.md
+  - api/UN/UNdata/README.md
+  - api/UN/UNSD/README.md
+  - api/XZ/worldbank/README.md
+  - api/XZ/README.md
+  - schema/iso/iso639-3/eng/README.md
+  - schema/iso/iso15924/eng/README.md
+  - README-old.md
 
 # GitHub pages related
 # - https://docs.github.com/en/enterprise-server@3.0/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll
