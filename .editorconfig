@@ -1,0 +1,17 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+# https://google.github.io/styleguide/htmlcssguide.html#Indentation
+# https://google.github.io/styleguide/jsguide.html#jsdoc-whitespace
+[*.{html,htm,css,scss,js,mjs}]
+indent_style = space
+indent_size = 2
+
