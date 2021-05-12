@@ -19,6 +19,8 @@ jobs:
 
       - name: Build
         run: bash systema/infrastructuram/travis-ci.sh
+      - name: Build
+        run: 'echo "hapi.etica.ai" > ./CNAME'
 
         # run: make ci
       - name: Deploy to HXL-CPLP/hapi.etica.ai
@@ -32,7 +34,8 @@ jobs:
           publish_branch: gh-pages
           publish_dir: "./"
           destination_dir: ./docs
-          cname: hapi.etica.ai
+          enable_jekyll: true
+          # cname: hapi.etica.ai
     # - name: Deploy
     #   if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     #   uses: peaceiris/actions-gh-pages@v3
