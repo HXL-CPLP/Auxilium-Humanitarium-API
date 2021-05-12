@@ -43,6 +43,12 @@ jobs:
         run: |
           echo "hapi.etica.ai" > ./CNAME
 
+      - name: "DEBUG: sudo apt install tree"
+        run: sudo apt install tree
+
+      - name: "DEBUG: tree"
+        run: tree
+
         # run: make ci
       - name: Deploy to HXL-CPLP/hapi.etica.ai
         uses: peaceiris/actions-gh-pages@v3
