@@ -17,8 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build
-        run: bash _systema/infrastructuram/travis-ci.sh
+      - name: Download community-contributed translations via Google Sheets from HXL-CPLP
+        run: bash _systema/programma/download-hxl-datum.sh
 
       # @see https://github.com/actions/setup-java#supported-distributions
       - name: "Java installation (required by openapi-generator-cli)"

@@ -1,5 +1,8 @@
 #item+code,#item+l10n+i_lat,#item+l10n+i_eng,#item+l10n+i_por
-l10n_API,API,API,API
-l10n_API_UN,API UN 🇺🇳,API UN 🇺🇳,API UN 🇺🇳
-l10n_openapi_filum,OpenAPI Fīlum,OpenAPI file,Arquivo OpenAPI
-l10n_vicipaediam,Vicipaediam,Wikipedia,Wikipédia
+L10n_API,API,API,API
+L10n_API_UN,API UN 🇺🇳,API UN 🇺🇳,API UN 🇺🇳
+L10n_API_XZ,API XZ 🌐,API XZ 🌐,API XZ 🌐
+L10n_API_BR,API BR 🇧🇷,API BR 🇧🇷,API BR 🇧🇷
+L10n_schema,Schēmam,Schema,Schema
+L10n_openapi_filum,OpenAPI Fīlum,OpenAPI file,Arquivo OpenAPI
+L10n_vicipaediam,Vicipaediam,Wikipedia,Wikipédia
