@@ -2,6 +2,7 @@
 title: "Documentação interativa para APIs humanitárias"
 description: "[rascunho] Documentação argumentada de APIs comuns para ajuda humanitária com OpenAPI"
 locale: pt
+linguam: lat
 permalink: /por/
 
 ---
@@ -14,7 +15,11 @@ permalink: /por/
 [OpenAPI](https://www.openapis.org/), o padrão de mercado aberto de fato para
 documentar APIs REST.**
 
-> - **[Documentation in English here](eng.md)**
+> - **[Documentation in English here](/eng/)**
+
+---
+
+**Índice**
 
 <!-- TOC depthFrom:2 -->
 
@@ -61,19 +66,19 @@ documentar APIs REST.**
 
 ##### ReliefWeb-eng
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/UN/reliefweb/eng/>
-- **Arquivo OpenAPI**: [api/UN/reliefweb/eng/openapi.yaml](api/UN/reliefweb/eng/openapi.yaml)
+- **Arquivo OpenAPI**: [/api/UN/reliefweb/eng/openapi.yaml](/api/UN/reliefweb/eng/openapi.yaml)
 
 #### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/UN/HDX/eng>
-- **Arquivo OpenAPI**: [api/UN/HDX/eng/openapi.yaml](api/UN/HDX/eng/openapi.yaml)
+- **Arquivo OpenAPI**: [/api/UN/HDX/eng/openapi.yaml](/api/UN/HDX/eng/openapi.yaml)
 
 #### CODV2API <sup>(beta)</sup>
 
 ##### CODV2API-eng
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/UN/CODV2API/eng>
-- **Arquivo OpenAPI**: [api/UN/CODV2API/eng/openapi.yaml](api/UN/CODV2API/eng/openapi.yaml)
+- **Arquivo OpenAPI**: [/api/UN/CODV2API/eng/openapi.yaml](/api/UN/CODV2API/eng/openapi.yaml)
 
 ### XZ
 
@@ -81,7 +86,7 @@ documentar APIs REST.**
 
 ##### HXL-Proxy
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng>
-- **Arquivo OpenAPI**: [api/XZ/HXL-Proxy/eng/openapi.yaml](api/XZ/HXL-Proxy/eng/openapi.yaml)
+- **Arquivo OpenAPI**: [/api/XZ/HXL-Proxy/eng/openapi.yaml](/api/XZ/HXL-Proxy/eng/openapi.yaml)
 
 ### BR
 
@@ -90,17 +95,17 @@ documentar APIs REST.**
 ##### brazilian-ckan-portals-eng
 
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng>
-- **Arquivo OpenAPI**: [api/BR/brazilian-ckan-portals/eng/openapi.yaml](api/BR/brazilian-ckan-portals/eng/openapi.yaml)
+- **Arquivo OpenAPI**: [/api/BR/brazilian-ckan-portals/eng/openapi.yaml](/api/BR/brazilian-ckan-portals/eng/openapi.yaml)
 
 ##### portais-ckan-brasil-por
 
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por>
-- **Arquivo OpenAPI**: [api/BR/portais-ckan-brasil/por/openapi.yaml](api/BR/portais-ckan-brasil/por/openapi.yaml)
+- **Arquivo OpenAPI**: [/api/BR/portais-ckan-brasil/por/openapi.yaml](/api/BR/portais-ckan-brasil/por/openapi.yaml)
 
 ##### portais-arcgis-brasil-por
 
 - **Pré-visualizar/executar online**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por>
-- **Arquivo OpenAPI**: [api/BR/portais-arcgis-brasil/por/openapi.yaml](api/BR/portais-arcgis-brasil/por/openapi.yaml)
+- **Arquivo OpenAPI**: [/api/BR/portais-arcgis-brasil/por/openapi.yaml](/api/BR/portais-arcgis-brasil/por/openapi.yaml)
 
 ## Schema
 
@@ -117,12 +122,12 @@ documentar APIs REST.**
 
 #### In English
 - SQL:
-  - [schema/iso/iso639-3/eng/iso639-3.sql](schema/iso/iso639-3/eng/iso639-3.sql)
+  - [/schema/iso/iso639-3/eng/iso639-3.sql](/schema/iso/iso639-3/eng/iso639-3.sql)
 - JSON Schema:
-  - [schema/iso/iso639-3/eng/iso639-3.json](schema/iso/iso639-3/eng/iso639-3.json)
-  - [schema/iso/iso639-3/eng/iso639-3_macrolanguages.json](schema/iso/iso639-3/eng/iso639-3_macrolanguages.json)
+  - [/schema/iso/iso639-3/eng/iso639-3.json](/schema/iso/iso639-3/eng/iso639-3.json)
+  - [/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json](/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json)
 - GraphQL Schema <sup>(beta)</sup>
-  - [schema/iso/iso639-3/eng/iso639-3.graphql](schema/iso/iso639-3/eng/iso639-3.graphql)
+  - [/schema/iso/iso639-3/eng/iso639-3.graphql](/schema/iso/iso639-3/eng/iso639-3.graphql)
 
 ### ISO 15924
 - **Descrição**: Codes for the representation of names of scripts
@@ -138,7 +143,7 @@ documentar APIs REST.**
 #### In English
 
 - JSON Schema:
-  - [schema/iso/iso15924/eng/iso15924.json](schema/iso/iso15924/eng/iso15924.json)
+  - [/schema/iso/iso15924/eng/iso15924.json](/schema/iso/iso15924/eng/iso15924.json)
 
 <!--
 ## Systema
