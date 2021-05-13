@@ -2,8 +2,8 @@
 title: "Augmented documentation for Humanitarian APIs"
 description: "[working-draft] Argumented documentation of common APIs for humanitarian aid with OpenAPI"
 locale: en
-linguam: lat
-permalink: /eng
+linguam: eng
+permalink: /eng/
 ---
 
 # Augmented documentation for Humanitarian APIs
@@ -48,7 +48,6 @@ open industry standard to document REST APIs.**
 <!-- /TOC -->
 
 ---
-
 
 ## API
 

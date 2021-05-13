@@ -1,91 +1,263 @@
 <!-- Trivia: 'caput', https://en.wiktionary.org/wiki/caput#Latin -->
+
+
+<!--
+  TODO: este arquivo está verboso demais. Eventualmente será transformado
+        em https://jekyllrb.com/docs/step-by-step/06-data-files/ em vez
+        de requerer editar HTML diretamente.
+-->
+
 <header class="site-header">
 
+  {% if page.linguam == "por" %}
+  <!-- page.linguam == "por" -->
+  <nav aria-label="Main navbar of site" class="navbar navbar-expand-lg navbar-light"
+  style="background-color: #e3f2fd;">
+    <div class="container">
+      <a class="navbar-brand" href="/">Hapi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+        aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="container">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-    <!-- <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a> -->
+      <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!--
+                          api/UN/
+                      -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown"
+              aria-expanded="false">API UN 🇺🇳</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown07">
+              <li><a class="dropdown-item" href="/api/UN/HDX/eng/">
+                  HDX - Intercâmbio de Dados Humanitários</a>
+              </li>
+              <li><a class="dropdown-item" href="/api/UN/reliefweb/eng/">
+                  ReliefWeb - Informando humanitários em todo o mundo</a>
+              </li>
+              <li><a class="dropdown-item" href="/api/UN/CODV2API/eng/">
+                  [eng] <em>COD API versão 2<sup>beta</sup></em></a>
+              </li>
+              <!-- https://unstats.un.org/sdgapi/swagger/ -->
+              <!-- https://unstats.un.org/unsd/amaapi/swagger/index.html -->
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">UNSD SDG
+                  API</a>
+              </li>
 
-    <nav id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        {% assign locum_data = site.data[page.linguam] %}
-        {% assign links = locum_data.documentum-navigandum %}
-        {% for link in links %}
-          {% assign class = nil %}
-          {% if page.url contains link.url %}
-            {% assign class = 'active' %}
-          {% endif %}
+            </ul>
+          </li>
+          <!--
+                          api/XZ/
+                      -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown"
+              aria-expanded="false">API XZ 🌐</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown08">
+              <li><a class="dropdown-item" href="/api/XZ/HXL-Proxy/eng/">
+                  HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Worldbank</a>
+              </li>
+            </ul>
+          </li>
+          <!--
+                          api/BR/
+                      -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown"
+              aria-expanded="false">API BR 🇧🇷</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown08">
+              <li><a class="dropdown-item" href="/api/BR/portais-ckan-brasil/por/">
+                  Portais CKAN de dados abertos no Brasil</a>
+              </li>
+              <li><a class="dropdown-item" href="/api/BR/portais-arcgis-brasil/por/">
+                  Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Data
+                  SUS</a>
+              </li>
+            </ul>
+          </li>
+          <!--
+                          Schemas
+                      -->
+          <li class="nav-item">
+            <a class="nav-link" href="//hapi.etica.ai/por#schema">Esquemas de Dados</a>
+          </li>
+        </ul>
+        <form action="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/search?q=" method="GET">
+          <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Pesquisar" name="q">
+        </form>
 
-          {% if link.sublinks %}
-            <li class="dropdown {{ class }}">
-              <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ link.title }} <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                {% for sublink in link.sublinks %}
-                  {% if sublink.title == 'separator' %}
-                    <li role="separator" class="divider"></li>
-                  {% else %}
-                    <li>
-                        <a href="{{ site.url }}{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            </li>
-          {% else %}
-            <li class="{{ class }}">
-                <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
-    </ul>
-    </nav>
-
-
-    {%- if titles_size > 0 -%}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Hapi</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/por/">Português</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/eng/">Inglês</a>
-            </li>
-          </ul>
-        </div>
+        <!--
+          This Language selector needs inprovement.
+          It's hardcoded to a /api/UN/HDX/...
+          We also could detect user language and try to suggest
+          a different page.
+        -->
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <svg style="height: 2em" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="language"
+                class="svg-inline--fa fa-language fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 512">
+                <path fill="currentColor"
+                  d="M152.1 236.2c-3.5-12.1-7.8-33.2-7.8-33.2h-.5s-4.3 21.1-7.8 33.2l-11.1 37.5H163zM616 96H336v320h280c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24zm-24 120c0 6.6-5.4 12-12 12h-11.4c-6.9 23.6-21.7 47.4-42.7 69.9 8.4 6.4 17.1 12.5 26.1 18 5.5 3.4 7.3 10.5 4.1 16.2l-7.9 13.9c-3.4 5.9-10.9 7.8-16.7 4.3-12.6-7.8-24.5-16.1-35.4-24.9-10.9 8.7-22.7 17.1-35.4 24.9-5.8 3.5-13.3 1.6-16.7-4.3l-7.9-13.9c-3.2-5.6-1.4-12.8 4.2-16.2 9.3-5.7 18-11.7 26.1-18-7.9-8.4-14.9-17-21-25.7-4-5.7-2.2-13.6 3.7-17.1l6.5-3.9 7.3-4.3c5.4-3.2 12.4-1.7 16 3.4 5 7 10.8 14 17.4 20.9 13.5-14.2 23.8-28.9 30-43.2H412c-6.6 0-12-5.4-12-12v-16c0-6.6 5.4-12 12-12h64v-16c0-6.6 5.4-12 12-12h16c6.6 0 12 5.4 12 12v16h64c6.6 0 12 5.4 12 12zM0 120v272c0 13.3 10.7 24 24 24h280V96H24c-13.3 0-24 10.7-24 24zm58.9 216.1L116.4 167c1.7-4.9 6.2-8.1 11.4-8.1h32.5c5.1 0 9.7 3.3 11.4 8.1l57.5 169.1c2.6 7.8-3.1 15.9-11.4 15.9h-22.9a12 12 0 0 1-11.5-8.6l-9.4-31.9h-60.2l-9.1 31.8c-1.5 5.1-6.2 8.7-11.5 8.7H70.3c-8.2 0-14-8.1-11.4-15.9z">
+                </path>
+              </svg>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown09">
+              <li><a class="dropdown-item" href="/api/UN/HDX/eng/">
+                  English</a>
+              </li>
+              <li><a class="dropdown-item" href="/api/BR/portais-ckan-brasil/por/">
+                  Português</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
-      <!--
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
+    </div>
+  </nav>
 
-        <div class="trigger">
-          {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {%- endif -%}
-          {%- endfor -%}
-        </div>
-      </nav>
-      -->
-    {%- endif -%}
-  </div>
+  {% elsif page.linguam == "eng" %}
+  <!-- page.linguam == "eng" -->
+  <nav aria-label="Main navbar of site" class="navbar navbar-expand-lg navbar-light"
+  style="background-color: #e3f2fd;">
+    <div class="container">
+      <a class="navbar-brand" href="/">Hapi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+        aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown"
+              aria-expanded="false">API UN 🇺🇳</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown07">
+              <li><a class="dropdown-item" href="/api/UN/HDX/eng/">
+                  HDX - The Humanitarian Data Exchange</a>
+              </li>
+              <li><a class="dropdown-item" href="/api/UN/reliefweb/eng/">
+                  ReliefWeb - Informing humanitarians worldwide</a>
+              </li>
+              <li><a class="dropdown-item" href="/api/UN/CODV2API/eng/">
+                  COD Version 2 API <sup>beta</sup></a>
+              </li>
+              <!-- https://unstats.un.org/sdgapi/swagger/ -->
+              <!-- https://unstats.un.org/unsd/amaapi/swagger/index.html -->
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">UNSD SDG
+                  API</a>
+              </li>
+
+            </ul>
+          </li>
+          <!--
+            api/XZ/
+          -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown"
+              aria-expanded="false">API XZ 🌐</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown08">
+              <li><a class="dropdown-item" href="/api/XZ/HXL-Proxy/eng/">
+                  HXL-Proxy - Proxy of the Humanitarian Exchange Language</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Worldbank</a>
+              </li>
+            </ul>
+          </li>
+          <!--
+            api/BR/
+          -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown"
+              aria-expanded="false">API BR 🇧🇷</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown08">
+              <li><a class="dropdown-item" href="/api/BR/brazilian-ckan-portals/eng/">
+                  Brazilian CKAN data portals</a>
+              </li>
+              <li><a class="dropdown-item" href="/api/BR/portais-arcgis-brasil/por/">
+                  [por] <em>Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></em></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Data
+                  SUS</a>
+              </li>
+            </ul>
+          </li>
+          <!--
+            Schemas
+          -->
+          <li class="nav-item">
+            <a class="nav-link" href="//hapi.etica.ai/eng#schema">Data schemas</a>
+          </li>
+        </ul>
+        <form action="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/search?q=" method="GET">
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="q">
+        </form>
+
+        <!--
+            This Language selector needs inprovement.
+            It's hardcoded to a /api/UN/HDX/...
+            We also could detect user language and try to suggest
+            a different page.
+        -->
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <svg style="height: 2em" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="language"
+                class="svg-inline--fa fa-language fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 512">
+                <path fill="currentColor"
+                  d="M152.1 236.2c-3.5-12.1-7.8-33.2-7.8-33.2h-.5s-4.3 21.1-7.8 33.2l-11.1 37.5H163zM616 96H336v320h280c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24zm-24 120c0 6.6-5.4 12-12 12h-11.4c-6.9 23.6-21.7 47.4-42.7 69.9 8.4 6.4 17.1 12.5 26.1 18 5.5 3.4 7.3 10.5 4.1 16.2l-7.9 13.9c-3.4 5.9-10.9 7.8-16.7 4.3-12.6-7.8-24.5-16.1-35.4-24.9-10.9 8.7-22.7 17.1-35.4 24.9-5.8 3.5-13.3 1.6-16.7-4.3l-7.9-13.9c-3.2-5.6-1.4-12.8 4.2-16.2 9.3-5.7 18-11.7 26.1-18-7.9-8.4-14.9-17-21-25.7-4-5.7-2.2-13.6 3.7-17.1l6.5-3.9 7.3-4.3c5.4-3.2 12.4-1.7 16 3.4 5 7 10.8 14 17.4 20.9 13.5-14.2 23.8-28.9 30-43.2H412c-6.6 0-12-5.4-12-12v-16c0-6.6 5.4-12 12-12h64v-16c0-6.6 5.4-12 12-12h16c6.6 0 12 5.4 12 12v16h64c6.6 0 12 5.4 12 12zM0 120v272c0 13.3 10.7 24 24 24h280V96H24c-13.3 0-24 10.7-24 24zm58.9 216.1L116.4 167c1.7-4.9 6.2-8.1 11.4-8.1h32.5c5.1 0 9.7 3.3 11.4 8.1l57.5 169.1c2.6 7.8-3.1 15.9-11.4 15.9h-22.9a12 12 0 0 1-11.5-8.6l-9.4-31.9h-60.2l-9.1 31.8c-1.5 5.1-6.2 8.7-11.5 8.7H70.3c-8.2 0-14-8.1-11.4-15.9z">
+                </path>
+              </svg>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown09">
+              <li><a class="dropdown-item" href="/api/UN/HDX/eng/">
+                  English</a>
+              </li>
+              <li><a class="dropdown-item" href="/api/BR/portais-ckan-brasil/por/">
+                  Português</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  {% else %}
+  <nav aria-label="Main navbar of site" class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <div class="container">
+      <a class="navbar-brand" href="/">Hapi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/por/">Português</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/eng/">Inglês</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% endif %}
 </header>

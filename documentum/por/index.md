@@ -2,7 +2,7 @@
 title: "Documentação interativa para APIs humanitárias"
 description: "[rascunho] Documentação argumentada de APIs comuns para ajuda humanitária com OpenAPI"
 locale: pt
-linguam: lat
+linguam: por
 permalink: /por/
 
 ---

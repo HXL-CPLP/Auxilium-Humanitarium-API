@@ -1,0 +1,9 @@
+# ARQUIVO:         _data/por/l10n.yml
+
+l10n_API: "API"
+l10n_API_UN: "API UN 🇺🇳"
+l10n_API_XZ: "API XZ 🌐"
+l10n_API_BR: "API BR 🇧🇷"
+l10n_schema: "Schema"
+l10n_openapi_filum: "Arquivo OpenAPI"
+l10n_vicipaediam: "Wikipédia"
