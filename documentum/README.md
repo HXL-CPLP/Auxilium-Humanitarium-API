@@ -6,6 +6,8 @@ published: false
 
 > TODOs:
 > - https://forestry.io/blog/creating-a-multilingual-blog-with-jekyll/
+> - https://jekyllcodex.org/without-plugins/
+> - http://hamishwillee.github.io/2014/11/13/jekyll-includes-are-functions/
 
 ## Extensões e plugins
 ### VSCode

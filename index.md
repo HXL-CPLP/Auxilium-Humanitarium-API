@@ -34,3 +34,8 @@ permalink: /
     </div>
   </div>
 </div>
+
+Testing
+<pre>
+{% include l10n.html _="l10n_API" %}
+</pre>
