@@ -3,7 +3,7 @@
 #
 #          FILE:  openapi-validum.sh
 #
-#         USAGE:  ./systema/programma/openapi-validum.sh
+#         USAGE:  ./_systema/programma/openapi-validum.sh
 #
 #   DESCRIPTION:  Do valitation of openapi.yaml files. Useful to find
 #                 errors before trying to export to new formats.

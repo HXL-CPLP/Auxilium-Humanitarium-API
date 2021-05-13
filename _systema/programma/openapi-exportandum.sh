@@ -3,7 +3,7 @@
 #
 #          FILE:  openapi-exportandum.sh
 #
-#         USAGE:  ./systema/programma/openapi-exportandum.sh
+#         USAGE:  ./_systema/programma/openapi-exportandum.sh
 #
 #   DESCRIPTION:  Trivia:
 #                 - "OpenAPI"

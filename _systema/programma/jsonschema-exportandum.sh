@@ -3,7 +3,7 @@
 #
 #          FILE:  jsonschema-exportandum.sh
 #
-#         USAGE:  ./systema/programma/jsonschema-exportandum.sh
+#         USAGE:  ./_systema/programma/jsonschema-exportandum.sh
 #
 #   DESCRIPTION:  Trivia:
 #                 - "OpenAPI"
@@ -32,6 +32,6 @@
 
 # THE jsonschema-exportandum.sh IS AN DRAFT!
 
-# generate-schema-doc schema/testum/testum.schema.json systema/cache/testum-json-schema-1/index.html
+# generate-schema-doc schema/testum/testum.schema.json _systema/cache/testum-json-schema-1/index.html
 
 exit 0

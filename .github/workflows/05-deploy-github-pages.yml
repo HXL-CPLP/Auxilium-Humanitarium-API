@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build
-        run: bash systema/infrastructuram/travis-ci.sh
+        run: bash _systema/infrastructuram/travis-ci.sh
 
       # @see https://github.com/actions/setup-java#supported-distributions
       - name: "Java installation (required by openapi-generator-cli)"
@@ -37,7 +37,7 @@ jobs:
         run: npm install -g @openapitools/openapi-generator-cli
 
       - name: "openapi-generator-cli: generate files"
-        run: bash ./systema/programma/openapi-exportandum.sh
+        run: bash ./_systema/programma/openapi-exportandum.sh
 
       - name: "Steps before Jekyll: CNAME"
         run: echo "hapi.etica.ai" > ./CNAME

@@ -29,16 +29,16 @@
 // Were in branch main at this point, publishing files to branch gh-pages folder docs/
 //    gh-pages --src '**/*' --dest '.' --branch gh-pages --user 'HXL-CPLP bot <no-reply@etica.ai>' --no-push --no-history
 //    gh-pages --dist '/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/' --dest 'docs/' --branch gh-pages --user 'HXL-CPLP bot <no-reply@etica.ai>' --no-push --no-history
-// ./systema/node_modules/gh-pages/bin/gh-pages.js --help
+// ./_systema/node_modules/gh-pages/bin/gh-pages.js --help
 
-// node ./systema/node_modules/gh-pages/bin/gh-pages.js --git git --no-push --no-history
+// node ./_systema/node_modules/gh-pages/bin/gh-pages.js --git git --no-push --no-history
 // gh-pages --git "$(which git)"
 
 
 // TODO: consider use --before-add 
 //       https://www.npmjs.com/package/gh-pages#optionsbeforeadd
 
-// ./systema/programma/displicandum-gh-pages.js
+// ./_systema/programma/displicandum-gh-pages.js
 
 import { publish } from 'gh-pages';
 
@@ -66,7 +66,7 @@ publish(
 
         // Remove files on dest before commit
         // remove: "node_modules/",
-        remove: "systema/",
+        remove: "_systema/",
 
         // Push to target repository
         push: false,

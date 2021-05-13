@@ -3,7 +3,7 @@
 #
 #          FILE:  temporarium.sh
 #
-#         USAGE:  ./systema/infrastructuram/temporarium.sh
+#         USAGE:  ./_systema/infrastructuram/temporarium.sh
 #
 #   DESCRIPTION:  ---
 #
@@ -73,9 +73,9 @@ ssh-keygen -t ed25519 -C "etica.of.a.ai+HXL-CPLP-hapi.etica.ai@gmail.com" -f "$H
 
 ### ALTERNATIVE TWO ------------------------------------------------------------
 # @see https://stackoverflow.com/questions/7927750/specify-an-ssh-key-for-git-push-for-a-given-domain/43953433#43953433
-# fititnt@bravo:/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API$ ./systema/programma/displicandum-gh-pages.sh
+# fititnt@bravo:/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API$ ./_systema/programma/displicandum-gh-pages.sh
 #   manual instructions says
-#       cd /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/systema/cache/gh-pages-temp-git
+#       cd /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_systema/cache/gh-pages-temp-git
 #       git push -u remote-publisher gh-pages --force
 # New command instead of git push -u remote-publisher gh-pages --force
 #   GIT_SSH_COMMAND="ssh -i $HOME/.ssh/eticaai/id_ed25519-hapi" git push -u remote-publisher gh-pages --force

@@ -3,7 +3,7 @@
 #
 #          FILE:  travis-ci.sh
 #
-#         USAGE:  ./systema/infrastructuram/travis-ci.sh
+#         USAGE:  ./_systema/infrastructuram/travis-ci.sh
 #
 #   DESCRIPTION:  ---
 #
@@ -43,5 +43,5 @@ TEST2="test1${HAPI_DEPLOY_KEY_TEST}test2"
 
 echo "TEST2: [$TEST2]"
 
-echo "hello from /systema/infrastructuram/travis-ci.sh"
+echo "hello from /_systema/infrastructuram/travis-ci.sh"
 exit 0

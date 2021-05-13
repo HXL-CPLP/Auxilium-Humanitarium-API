@@ -20,7 +20,7 @@ twitter:
   card: summary
 
 exclude:
-  - systema/
+  - _systema/
   - "api/*/*/*/html/*.md"
   - "api/*/*/*/html2/*.md"
   - "api/*/*/*/mysql-schema/*.md"

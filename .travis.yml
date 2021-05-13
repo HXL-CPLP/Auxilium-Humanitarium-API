@@ -1,14 +1,14 @@
-# @see systema/infrastructuram/temporarium.sh
+# @see _systema/infrastructuram/temporarium.sh
 # @see https://docs.travis-ci.com/user/deployment/script/
 
 
 # Without specifing language, it would default to ruby and this can fail
-# script: bash systema/infrastructuram/travis-ci.sh
+# script: bash _systema/infrastructuram/travis-ci.sh
 # @see https://docs.travis-ci.com/user/languages/minimal-and-generic/
 language: generic
 
 deploy:
   provider: script
-  script: bash systema/infrastructuram/travis-ci.sh
+  script: bash _systema/infrastructuram/travis-ci.sh
   on:
     branch: main

@@ -5,7 +5,7 @@
 #
 #         USAGE:  ./displicandum-gh-pages.sh
 #
-#   DESCRIPTION:  ./systema/programma/displicandum-gh-pages.sh
+#   DESCRIPTION:  ./_systema/programma/displicandum-gh-pages.sh
 #
 #       OPTIONS:  ---
 #
@@ -47,7 +47,7 @@ ROOTDIR="/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API"
 # TODO: let configurable ROOTDIR later
 #     ROOTDIR="$(pwd)"
 
-LOCALGIT="${ROOTDIR}/systema/cache/gh-pages-temp-git"
+LOCALGIT="${ROOTDIR}/_systema/cache/gh-pages-temp-git"
 DESTDIR="${LOCALGIT}/docs"
 LOCALBUILD="${LOCALGIT}/build"
 
@@ -121,7 +121,7 @@ fi
 
 # echo "git status ${LOCALGIT}"
 # git status "${LOCALGIT}"
-# cd /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/systema/cache/gh-pages-temp-git && git status
+# cd /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_systema/cache/gh-pages-temp-git && git status
 # mkdir "cache/gh-pages-temp-git"
 
 # git init cache/gh-pages-temp-git/
@@ -174,31 +174,31 @@ echo GIT_SSH_COMMAND="ssh -i $HOME/.ssh/eticaai/id_ed25519-hapi" git push -u "${
 # GIT_COMMITTER_NAME="${GIT_COMMITTER_NAME}" \
 #   GIT_COMMITTER_EMAIL="${GIT_COMMITTER_EMAIL}" git commit --author="New Name <name@email.com>
 
-# /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/systema/cache/gh-pages-temp-git
-# http://git.workspace.localhost/HXL-CPLP/Auxilium-Humanitarium-API/systema/cache/gh-pages-temp-git/docs/
+# /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_systema/cache/gh-pages-temp-git
+# http://git.workspace.localhost/HXL-CPLP/Auxilium-Humanitarium-API/_systema/cache/gh-pages-temp-git/docs/
 # https://ohshitgit.com/
 #   git reflog
 
 # openapi-generator-cli list
 # openapi-generator-cli generate help
-# openapi-generator-cli generate --generator-name dynamic-html --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test1
-# openapi-generator-cli generate --generator-name html2 --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test2
-# openapi-generator-cli generate --generator-name html --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test3
-# openapi-generator-cli generate --generator-name graphql-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test4
-# openapi-generator-cli generate --generator-name protobuf-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test5
-# openapi-generator-cli generate --generator-name mysql-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test6
-# openapi-generator-cli generate --generator-name avro-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test7
-# openapi-generator-cli generate --generator-name apache2 --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test8
-# openapi-generator-cli generate --generator-name apache2 --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test8
-# openapi-generator-cli generate --generator-name ktorm-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-ktorm-schema
-# openapi-generator-cli generate --generator-name plantuml --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-plantuml
-# openapi-generator-cli generate --generator-name openapi-yaml --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-openapi-yaml
-# openapi-generator-cli generate --generator-name openapi --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-openapi
-# openapi-generator-cli generate --generator-name asciidoc --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-asciidoc
-# openapi-generator-cli generate --generator-name markdown --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-markdown
-# openapi-generator-cli generate --generator-name php --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-client-php
-# openapi-generator-cli generate --generator-name bash --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-client-bash
-# openapi-generator-cli generate --generator-name javascript --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output systema/cache/test-client-javascript
+# openapi-generator-cli generate --generator-name dynamic-html --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test1
+# openapi-generator-cli generate --generator-name html2 --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test2
+# openapi-generator-cli generate --generator-name html --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test3
+# openapi-generator-cli generate --generator-name graphql-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test4
+# openapi-generator-cli generate --generator-name protobuf-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test5
+# openapi-generator-cli generate --generator-name mysql-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test6
+# openapi-generator-cli generate --generator-name avro-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test7
+# openapi-generator-cli generate --generator-name apache2 --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test8
+# openapi-generator-cli generate --generator-name apache2 --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test8
+# openapi-generator-cli generate --generator-name ktorm-schema --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-ktorm-schema
+# openapi-generator-cli generate --generator-name plantuml --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-plantuml
+# openapi-generator-cli generate --generator-name openapi-yaml --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-openapi-yaml
+# openapi-generator-cli generate --generator-name openapi --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-openapi
+# openapi-generator-cli generate --generator-name asciidoc --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-asciidoc
+# openapi-generator-cli generate --generator-name markdown --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-markdown
+# openapi-generator-cli generate --generator-name php --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-client-php
+# openapi-generator-cli generate --generator-name bash --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-client-bash
+# openapi-generator-cli generate --generator-name javascript --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml --output _systema/cache/test-client-javascript
 #
 # openapi-generator-cli validate --input-spec https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml
 # openapi-generator-cli validate --input-spec api/BR/portais-ckan-brasil/por/openapi.yaml

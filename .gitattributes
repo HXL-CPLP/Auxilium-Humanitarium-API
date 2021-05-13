@@ -16,9 +16,9 @@
 ## These files are HTML liquid templates
 _includes/fn/* linguist-language=Liquid
 
-## Files on systema/, at the moment, will be marked as vendored
+## Files on _systema/, at the moment, will be marked as vendored
 ## We may change a bit this later
-systema/* linguist-vendored
+_systema/* linguist-vendored
 
 Gemfile linguist-vendored
 robots.txt linguist-vendored

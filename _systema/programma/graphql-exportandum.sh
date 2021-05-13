@@ -3,7 +3,7 @@
 #
 #          FILE:  graphql-exportandum.sh
 #
-#         USAGE:  ./systema/programma/graphql-exportandum.sh
+#         USAGE:  ./_systema/programma/graphql-exportandum.sh
 #
 #   DESCRIPTION:  Trivia:
 #                 - "OpenAPI"
@@ -29,8 +29,8 @@
 
 # THE graphql-exportandum.sh IS AN DRAFT!
 
-# graphdoc --schema-file schema/testum/testum.graphql --output systema/cache/testum-graphql-1/ --force
-# graphdoc --schema-file api/UN/reliefweb/eng/graphql-schema/openapi2graphql/api/countries_api.graphql --output systema/cache/testum-reliefweb-countries_api/ --force
+# graphdoc --schema-file schema/testum/testum.graphql --output _systema/cache/testum-graphql-1/ --force
+# graphdoc --schema-file api/UN/reliefweb/eng/graphql-schema/openapi2graphql/api/countries_api.graphql --output _systema/cache/testum-reliefweb-countries_api/ --force
 #    Error: ✗ Must provide schema definition with query type or a type named Query.
 
 graphdoc --schema-file schema/iso/iso639-3/eng/iso639-3.graphql --output schema/iso/iso639-3/eng/graphql-doc --force
