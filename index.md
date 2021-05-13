@@ -36,9 +36,7 @@ permalink: /
   </div>
 </div>
 
-<!--
 Testing
 <pre>
-{% include fn/l10n vocab="l10n_API" %}
+{% include fn/L10n vocab="L10n_API" %}
 </pre>
--->
