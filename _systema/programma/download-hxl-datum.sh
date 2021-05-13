@@ -45,6 +45,13 @@ ROOTDIR="$(pwd)"
 # TODO: check first if remote resources are online (or if do exist network)
 #       instead of save to disk. These " if true;" are placeholders
 
+# TODO: check error codes if download fails
+
 if true ; then
+    echo "HAPI_L10N"
+    echo "   Fontem: [$HAPI_L10N]"
+    echo "   Filum:  [${ROOTDIR}/_data/L10n.hxl.csv]"
     wget -qO- "$HAPI_L10N" > "${ROOTDIR}/_data/L10n.hxl.csv"
 fi
+
+exit 0

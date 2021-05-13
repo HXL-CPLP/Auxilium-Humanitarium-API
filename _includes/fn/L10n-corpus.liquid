@@ -1,4 +1,10 @@
-{% capture hxl_col %}{{ '#item+l10n+i_' | append: page.linguam }}{% endcapture %}
+{% if include.linguam != nil %}
+  {% assign linguam_est = include.linguam %}
+{% else %}
+  {% assign linguam_est = page.linguam %}
+{% endif %}
+
+{% capture hxl_col %}{{ '#item+l10n+i_' | append: linguam_est }}{% endcapture %}
 {% capture hxl_col_alt %}{{ '#item+l10n+i_' | append: page.linguam_alternum }}{% endcapture %}
 {% capture vocab_errorem %}{{ include.vocab | append: '!!' | prepend: '!!' }}{% endcapture %}
 

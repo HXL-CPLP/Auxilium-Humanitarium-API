@@ -1,1 +1,1 @@
-{% capture vocab_no_spaces %}{% include fn/L10n-corpus.liquid vocab="l10n_API" %}{% endcapture %}{{ vocab_no_spaces | strip }}
+{% capture vocab_no_spaces %}{% include fn/L10n-corpus.liquid vocab=include.vocab linguam=include.linguam %}{% endcapture %}{{ vocab_no_spaces | strip }}
