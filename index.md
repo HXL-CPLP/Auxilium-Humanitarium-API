@@ -4,7 +4,8 @@ description: |
   English: Augmented documentation for Humanitarian APIs;
   Português: Documentação interativa para APIs humanitárias
 locale: la
-linguam: lat
+# linguam: lat
+# linguam_alternum: lat
 permalink: /
 ---
 
@@ -35,7 +36,9 @@ permalink: /
   </div>
 </div>
 
+<!--
 Testing
 <pre>
-{% include l10n.html _="l10n_API" %}
+{% include fn/l10n vocab="l10n_API" %}
 </pre>
+-->

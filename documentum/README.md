@@ -17,4 +17,5 @@ published: false
   - https://github.com/GingerBear/vscode-liquid
   - https://marketplace.visualstudio.com/items?itemName=neilding.language-liquid
   - https://github.com/siteleaf/liquid-syntax-mode
+  - https://marketplace.visualstudio.com/items?itemName=neilding.language-liquid
 -->

@@ -1,0 +1,15 @@
+{% capture hxl_col %}{{ '#item+l10n+i_' | append: page.linguam }}{% endcapture %}
+{% capture hxl_col_alt %}{{ '#item+l10n+i_' | append: page.linguam_alternum }}{% endcapture %}
+{% capture vocab_errorem %}{{ include.vocab | append: '!!' | prepend: '!!' }}{% endcapture %}
+
+{% for vocab in site.data.l10n %}
+  {% if vocab['#item+code'] == include.vocab %}
+    {{ vocab[hxl_col] | default: vocab[hxl_col_alt] | default: vocab[hxl_col_alt] | default: vocab_errorem }}
+    {% assign resultatum_ok = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if resultatum_ok != true %}
+  {{ vocab_errorem }}
+{% endif %}
