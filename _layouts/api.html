@@ -1,0 +1,76 @@
+---
+layout: defallo
+---
+
+<div style="border-style: dotted; border-width: 2px; border-color: #ccc">
+
+  {% case page.linguam %}
+    {% when 'por' %}
+      <h2 style="text-align: center;">API interativa documentada em português</h2>
+    {% when 'eng' %}
+      <h2 style="text-align: center;">Interactive API documented in English</h2>
+  {% endcase %}
+
+  <div id="swagger-ui"></div>
+
+  {% case page.linguam %}
+    {% when 'por' %}
+      <aside style="max-width: 800px; margin: 0 auto;">
+        <h3>Salvar como PDF</h3>
+        <rapi-pdf style="width:700px; height:40px; font-size:18px;" spec-url="openapi.yaml"
+            button-bg="#b44646">
+        </rapi-pdf>
+      </aside>
+
+      <aside class="alert alert-info" style="margin-top: 2em" role="alert">
+        <p>
+          Nota: esta seção permite pré- visualizar de forma interativa arquivos OpenAPI
+          e até mesmo executar requisições do seu navegador sem sair do site hapi.etica.ai
+          (algumas API inclusive documentadas em mais de um idioma!). Algumas documentações,
+          seja pela API original ou por usarmos descrição original do site, podem ser escritas
+          em primeira pessoa que, <strong>obviamente</strong>, não se trata de voluntários
+          em compilar as documentações.
+        </p>
+        <p>
+          Exceção a esta regra são erros de tradução e/ou falhas em relação a atualizações mas APIs
+          informadas aqui. Nesse caso nos avise!
+        </p>
+      </aside>
+    {% when 'eng' %}
+      <aside style="max-width: 800px; margin: 0 auto;">
+        <h3>Save as PDF</h3>
+        <rapi-pdf style="width:700px; height:40px; font-size:18px;" spec-url="openapi.yaml"
+            button-bg="#b44646">
+        </rapi-pdf>
+      </aside>
+      <aside class="alert alert-info" style="margin-top: 2em" role="alert">
+        <p>
+          Note: this section allows you to interactively preview OpenAPI files
+          and even execute requests from your browser without leaving the
+          hapi.etica.ai website (some APIs even documented in more than one language!).
+          Some documentation, either by the original API or by using the original
+          description of the site, may be written in the first person, but obviously
+          this is not the volunteers compiling the documentation.
+        </p>
+
+        <p>
+          Exceptions to this rule are translation errors and / or failures
+          in relation to updates but APIs reported here.
+          In this case is our fault, not the API provider,
+          so let us know!
+        </p>
+      </aside>
+    {% endcase %}
+
+
+
+
+  {% if page.linguam == 'por' %}
+
+  {% endif %}
+
+  {% if page.linguam == 'eng' %}
+
+  {% endif %}
+
+</div>
