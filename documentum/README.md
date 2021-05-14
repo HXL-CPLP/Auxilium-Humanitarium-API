@@ -18,6 +18,15 @@ published: false
 ### HXL-CPLP-Vocab_Auxilium-Humanitarium-API
 - <https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279>
 
+## Internacionalização/Localização
+
+### Links de referência
+- **Informar o Google sobre versões localizadas da sua página**
+  - https://developers.google.com/search/docs/advanced/crawling/localized-versions?hl=pt-br
+  - https://resultadosdigitais.com.br/blog/tag-hreflang/
+  - https://searchengineland.com/how-to-implement-the-hreflang-element-using-xml-sitemaps-123030
+  - https://en.wikipedia.org/wiki/Hreflang
+
 ## (rascunho) por ser feito
 
 > TODOs:
