@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
+    <title>Hapi: Augmented APIs documentation for humanitarian use</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HAPI: Documentação interativa para APIs humanitárias</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,6 +22,17 @@
 
 <body>
     <main>
+
+        <!--
+        <a class="github-button" href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/archive/HEAD.zip"
+            data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-download"
+            aria-label="Download HXL-CPLP/Auxilium-Humanitarium-API on GitHub">Download</a>
+
+        <a class="github-button" href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API"
+            data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star"
+            data-show-count="true" aria-label="Star HXL-CPLP/Auxilium-Humanitarium-API on GitHub">Star</a>
+        -->
+
         <nav aria-label="Main navbar of site" class="navbar navbar-expand-lg navbar-light"
             style="background-color: #e3f2fd;">
             <div class="container">
@@ -51,13 +62,13 @@
                                 aria-expanded="false">API UN 🇺🇳</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown07">
                                 <li><a class="dropdown-item" href="/api/UN/HDX/eng/">
-                                        HDX - Intercâmbio de Dados Humanitários</a>
+                                        HDX - The Humanitarian Data Exchange</a>
                                 </li>
                                 <li><a class="dropdown-item" href="/api/UN/reliefweb/eng/">
-                                        ReliefWeb - Informando humanitários em todo o mundo</a>
+                                        ReliefWeb - Informing humanitarians worldwide</a>
                                 </li>
                                 <li><a class="dropdown-item" href="/api/UN/CODV2API/eng/">
-                                        [eng] <em>COD API versão 2<sup>beta</sup></em></a>
+                                        COD Version 2 API <sup>beta</sup></a>
                                 </li>
                                 <!-- https://unstats.un.org/sdgapi/swagger/ -->
                                 <!-- https://unstats.un.org/unsd/amaapi/swagger/index.html -->
@@ -76,7 +87,7 @@
                                 aria-expanded="false">API XZ 🌐</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown08">
                                 <li><a class="dropdown-item" href="/api/XZ/HXL-Proxy/eng/">
-                                        HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária</a>
+                                        HXL-Proxy - Proxy of the Humanitarian Exchange Language</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link disabled" href="#" tabindex="-1"
@@ -91,11 +102,11 @@
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown"
                                 aria-expanded="false">API BR 🇧🇷</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown08">
-                                <li><a class="dropdown-item" href="/api/BR/portais-ckan-brasil/por/">
-                                        Portais CKAN de dados abertos no Brasil</a>
+                                <li><a class="dropdown-item" href="/api/BR/brazilian-ckan-portals/eng/">
+                                        Brazilian CKAN data portals</a>
                                 </li>
                                 <li><a class="dropdown-item" href="/api/BR/portais-arcgis-brasil/por/">
-                                        Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></a>
+                                        [por] <em>Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></em></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Data
@@ -107,11 +118,11 @@
                             Schemas
                         -->
                         <li class="nav-item">
-                            <a class="nav-link" href="//hapi.etica.ai/por#schema">Esquemas de Dados</a>
+                            <a class="nav-link" href="//hapi.etica.ai/eng#schema">Data schemas</a>
                         </li>
                     </ul>
                     <form action="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/search?q=" method="GET">
-                        <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Pesquisar" name="q">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="q">
                     </form>
 
                     <!--
@@ -145,24 +156,26 @@
                 </div>
             </div>
         </nav>
-
         <div class="px-4 py-5 my-5 text-center">
-            <h1 class="display-5 fw-bold">Hapi: Documentação interativa de APIs para uso humanitário<sup>alpha</sup>
+            <h1 class="display-5 fw-bold">Hapi: Augmented APIs documentation for humanitarian
+                use<sup>alpha</sup>
             </h1>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">
-                    Hapi (Alpha) centraliza documentação interativa
-                    de provedores de dados com potencial uso no meio humanitário.
-                    No momento provê APIs internacionais e do Brasil e nas línguas
-                    portuguesa e inglesa. Como usamos OpenAPI e Schemas,
-                    tem potencial para reusar trabalho anterior novas línguas
-                    e novos países!
+                    Hapi centralizes interactive documentation of data providers
+                    with potential use for humanitarians.
+                    At the moment, the alpha version already have some
+                    international APIs and Brazilian ones while the
+                    documentation is both in Portuguese and English.
+                    Since we use OpenAPI and schemas, the way Hapi do
+                    allow reuse of previous work to, via volunteers interest,
+                    add new languages and countries!
                 </p>
                 <!--
                 <div class="alert alert-secondary" role="alert">
-                    Sugestões de conteúdo ou interesse de ajudar
-                    (por exemplo, com traduções ou editando HTML, YAML e
-                    JSON) são bem vindas!
+                    Suggestions for new content or interest to help
+                    (for example, with translations or editing HTML, YAML
+                    and JSON) are welcome!
                 </div>
                 -->
                 <!--
@@ -176,31 +189,31 @@
 
         <div class="container">
             <div style="border-style: dotted; border-width: 2px; border-color: #ccc">
-
-                <h2 style="text-align: center;">API interativa documentada em português</h2>
-
+                <h2 style="text-align: center;">Interactive API documented in English</h2>
                 <div id="swagger-ui"></div>
-
-
                 <aside style="max-width: 800px; margin: 0 auto;">
-                    <h3>Salvar como PDF</h3>
+                    <h3>Save as PDF</h3>
                     <rapi-pdf style="width:700px; height:40px; font-size:18px;" spec-url="openapi.yaml"
                         button-bg="#b44646">
                     </rapi-pdf>
                 </aside>
 
                 <aside class="alert alert-info" style="margin-top: 2em" role="alert">
+
                     <p>
-                        Nota: esta seção permite pré- visualizar de forma interativa arquivos OpenAPI
-                        e até mesmo executar requisições do seu navegador sem sair do site hapi.etica.ai
-                        (algumas API inclusive documentadas em mais de um idioma!). Algumas documentações,
-                        seja pela API original ou por usarmos descrição original do site, podem ser escritas
-                        em primeira pessoa que, <strong>obviamente</strong>, não se trata de voluntários
-                        em compilar as documentações.
+                        Note: this section allows you to interactively preview OpenAPI files
+                        and even execute requests from your browser without leaving the
+                        hapi.etica.ai website (some APIs even documented in more than one language!).
+                        Some documentation, either by the original API or by using the original
+                        description of the site, may be written in the first person, but obviously
+                        this is not the volunteers compiling the documentation.
                     </p>
+
                     <p>
-                        Exceção a esta regra são erros de tradução e/ou falhas em relação a atualizações mas APIs
-                        informadas aqui. Nesse caso nos avise!
+                        Exceptions to this rule are translation errors and / or failures
+                        in relation to updates but APIs reported here.
+                        In this case is our fault, not the API provider,
+                        so let us know!
                     </p>
                 </aside>
             </div>
@@ -227,13 +240,16 @@
         crossorigin="anonymous"></script>
     <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
     <script src="https://unpkg.com/rapipdf/dist/rapipdf-min.js"></script>
+    <!--
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    -->
     <script>
 
         function render() {
             var ui = SwaggerUIBundle({
                 // url:  `path/to/my/swagger.yaml`,
                 // url: `https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml`,
-                url: `openapi.yaml`,
+                url: `{{ page.openapi_filum }}`,
                 dom_id: '#swagger-ui',
                 presets: [
                     SwaggerUIBundle.presets.apis,
