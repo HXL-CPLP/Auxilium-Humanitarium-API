@@ -1,0 +1,1 @@
+{% capture vocab_no_spaces %}{% include fn/Conatum-corpus.liquid prefix=include.prefix suffix=include.suffix %}{% endcapture %}{{ vocab_no_spaces | strip }}

@@ -1,0 +1,68 @@
+{% comment %}
+Conatum-corpus.liquid try select the first availible data from
+_data/Temporarium.yml
+
+{% endcomment %}
+
+{% if include.prefix %}
+  {% comment %}Array? String with , ?{% endcomment %}
+  {% if include.prefix[0] %}
+    {% assign prefix_est = include.prefix %}
+  {% else %}
+    {% assign prefix_est = include.prefix | remove: " " | split: "," %}
+  {% endif %}
+{% else %}
+  {% assign prefix_est = nil %}
+{% endif %}
+
+{% if include.suffix %}
+  {% comment %}Array? String with , ?{% endcomment %}
+  {% if include.suffix[0] %}
+    {% assign suffix_est = include.suffix %}
+  {% else %}
+    {% assign suffix_est = include.suffix | remove: " " | split: "," %}
+  {% endif %}
+{% else %}
+  {% assign suffix_est = nil %}
+{% endif %}
+
+{% comment %}
+prefix_est
+{{ prefix_est | json }}
+
+suffix_est
+{{ suffix_est | json }}
+{% endcomment %}
+
+{% comment %}
+This is a loop.
+{% endcomment %}
+{% for prefix in prefix_est %}
+  {% unless resultatum_okay == true %}
+    {% if suffix_est == nil %}
+      {% if site.data.Temporarium[prefix] %}
+        {{ site.data.Temporarium[prefix] }}
+        {% assign resultatum_okay = true %}
+        {{ break }}
+      {% endif %}
+    {% else %}
+      {% for suffix in suffix_est %}
+        {% capture prefix_suffix %}{{ prefix }}{{ suffix }}{% endcapture %}
+        {% if site.data.Temporarium[prefix_suffix] %}
+          {{ site.data.Temporarium[prefix_suffix] }}
+          {% assign resultatum_okay = true %}
+          {{ break }}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+
+{% comment %}
+[[[[[{{ prefix_est | json }}]]]]]
+[[[[[{{ suffix_est | inpect }}]]]]]
+{% endcomment %}
+
+{% if resultatum_okay != true %}
+  !!Conatum [{{ include | inpect }}]!!
+{% endif %}

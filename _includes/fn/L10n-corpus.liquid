@@ -11,11 +11,11 @@
 {% for vocab in site.data.L10nhxl %}
   {% if vocab['#item+code'] == include.vocab %}
     {{ vocab[hxl_col] | default: vocab[hxl_col_alt] | default: vocab[hxl_col_alt] | default: vocab_errorem }}
-    {% assign resultatum_ok = true %}
+    {% assign resultatum_okay = true %}
     {% break %}
   {% endif %}
 {% endfor %}
 
-{% if resultatum_ok != true %}
+{% if resultatum_okay != true %}
   {{ vocab_errorem }}
 {% endif %}
