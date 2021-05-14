@@ -8,11 +8,11 @@
 #   - "fallback"
 #     - https://en.wiktionary.org/wiki/fallback
 
-temp1: |
+varnamen: |
   <p>
     No message
   </p>
-temp1eng: |
+varnameneng: |
   <p>
     Note: this section allows you to interactively preview OpenAPI files
     and even execute requests from your browser without leaving the
@@ -28,7 +28,7 @@ temp1eng: |
     so let us know!
   </p>
 
-temp1por: |
+varnamenpor: |
   <p>
     Nota: esta seção permite pré- visualizar de forma interativa arquivos OpenAPI
     e até mesmo executar requisições do seu navegador sem sair do site hapi.etica.ai

@@ -1,0 +1,22 @@
+# FILUM:           _data/linguam.yml
+# Trivia:
+# - 'temporārium'
+#   - https://en.wiktionary.org/wiki/temporarius#Latin
+# - cōnātum
+#   - https://en.wiktionary.org/wiki/conatus#Latin
+# - retractum
+#   - https://en.wiktionary.org/wiki/retractus#Latin
+#   - "fallback"
+#     - https://en.wiktionary.org/wiki/fallback
+
+canatum:
+  eng:
+    - "eng"
+    - "por"
+    - "lat"
+  por:
+    - "por"
+    - "eng"
+    - "lat"
+  lat:
+    - "lat"

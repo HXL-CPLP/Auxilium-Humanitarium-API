@@ -1,8 +1,30 @@
 {% comment %}
-Conatum-corpus.liquid try select the first availible data from
-_data/Temporarium.yml
+FILE:           _includes/fn/Conatum-corpus.liquid
+USAGE:
+                \{\% include fn/Conatum prefix='varnamen' suffix='por' \%\}
+                \{\% include fn/Conatum prefix='varnamenpor' suffix=false \%\}
+              (if page.linguam: por, suffix is not need)
+                \{\% include fn/Conatum prefix='varerror,varnamen' \%\}
+                \{\% include fn/Conatum prefix='varnamen' \%\}
+                \{\% include fn/Conatum prefix='varnamen' suffix='sfx1,sfx2' \%\}
 
+DESCRIPTION:    ---
+
+OPTIONS:        prefix:
+                  prefix of variable (can be a list ',' or array)
+                suffix (optional):
+                  suffix of variable (can be a list ',' or array)
+                  default: uses _data/linguam.yml and page.linguam
+AUTHOR:         Emerson Rocha <rocha[at]ieee.org>
+LICENSE:        Public Domain dedication
+                SPDX-License-Identifier: Unlicense
+VERSION:        v1.0
+CREATED:        2021-05-14 20:44 UTC started
+REVISION:       ---
 {% endcomment %}
+
+{% comment %} testum = [], initialize an array {% endcomment %}
+{% assign testum = "" | split: ',' %}
 
 {% if include.prefix %}
   {% comment %}Array? String with , ?{% endcomment %}
@@ -12,6 +34,7 @@ _data/Temporarium.yml
     {% assign prefix_est = include.prefix | remove: " " | split: "," %}
   {% endif %}
 {% else %}
+   ?![Conatum [NOPREFIXERROR]?!
   {% assign prefix_est = nil %}
 {% endif %}
 
@@ -23,23 +46,37 @@ _data/Temporarium.yml
     {% assign suffix_est = include.suffix | remove: " " | split: "," %}
   {% endif %}
 {% else %}
-  {% assign suffix_est = nil %}
+  {% comment %}
+    suffix not array.
+    If not == false (this would disable try add suffixes), we will use
+    page.linguam and _data/linguam.yml to try alternatives
+  {% endcomment %}
+  {% if include.suffix == false }
+    {% assign suffix_est = nil %}
+  {% else %}
+    {% capture suffix_est %}{{ site.data.linguam.canatum[page.linguam] | join: "," }}{% endcapture %}
+    {% assign suffix_est = suffix_est | split: ',' %}
+  {% endif %}
 {% endif %}
 
-{% comment %}
-prefix_est
-{{ prefix_est | json }}
+
+{% comment %} prefix_est
+{{ prefix_est | inspect }}
 
 suffix_est
-{{ suffix_est | json }}
-{% endcomment %}
+{{ suffix_est | inspect }} {% endcomment %}
 
-{% comment %}
-This is a loop.
-{% endcomment %}
+
+{% assign resultatum_okay = false %}
+
 {% for prefix in prefix_est %}
   {% unless resultatum_okay == true %}
     {% if suffix_est == nil %}
+      {% comment %} {{ testum | inspect }} {% endcomment %}
+      {% assign testum = testum | push: prefix %}
+      {% comment %} {{ prefix | inspect }} {% endcomment %}
+      {{ testum | inspect }}
+
       {% if site.data.Temporarium[prefix] %}
         {{ site.data.Temporarium[prefix] }}
         {% assign resultatum_okay = true %}
@@ -48,21 +85,17 @@ This is a loop.
     {% else %}
       {% for suffix in suffix_est %}
         {% capture prefix_suffix %}{{ prefix }}{{ suffix }}{% endcapture %}
+        {% assign testum = testum | push: prefix_suffix %}
         {% if site.data.Temporarium[prefix_suffix] %}
           {{ site.data.Temporarium[prefix_suffix] }}
           {% assign resultatum_okay = true %}
-          {{ break }}
+          {% break %}
         {% endif %}
       {% endfor %}
     {% endif %}
   {% endunless %}
 {% endfor %}
 
-{% comment %}
-[[[[[{{ prefix_est | json }}]]]]]
-[[[[[{{ suffix_est | inpect }}]]]]]
-{% endcomment %}
-
 {% if resultatum_okay != true %}
-  !!Conatum [{{ include | inpect }}]!!
+  ?![Conatum [{{ include | inpect }}] [testum [{{ testum | inspect }}]]]?!
 {% endif %}
