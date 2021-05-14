@@ -4,6 +4,8 @@ description: "[rascunho] Documentação argumentada de APIs comuns para ajuda hu
 locale: pt
 linguam: por
 permalink: /por/
+categories:
+  - index
 
 ---
 

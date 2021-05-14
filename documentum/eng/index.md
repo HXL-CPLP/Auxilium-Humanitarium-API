@@ -4,6 +4,9 @@ description: "[working-draft] Argumented documentation of common APIs for humani
 locale: en
 linguam: eng
 permalink: /eng/
+categories: index
+tags:
+  - index
 ---
 
 # Augmented documentation for Humanitarian APIs

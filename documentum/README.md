@@ -40,6 +40,9 @@ published: false
 >   - https://weblate.org/pt/
 >     - https://docs.weblate.org/pt/latest/formats.html#csv-files
 >     - https://docs.weblate.org/pt/latest/formats.html#xliff
+> - Update boostrap
+>   - https://github.com/twbs/bootstrap/releases/tag/v5.0.1
+>     - https://github.com/twbs/bootstrap/pull/33709
 
 <!--
 ## Extensões e plugins

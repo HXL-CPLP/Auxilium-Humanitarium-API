@@ -1,3 +1,10 @@
+---
+layout: null
+permalink: /robots.txt
+sitemap:
+  exclude: yes
+---
+
 # 2021-05-08 (draft)
 
 User-agent: *

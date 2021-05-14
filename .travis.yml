@@ -1,6 +1,7 @@
 # @see _systema/infrastructuram/temporarium.sh
 # @see https://docs.travis-ci.com/user/deployment/script/
 
+# TODO: remove this file. travis not used now (Emerson Rocha, 2021-05-14 15:30 UTC)
 
 # Without specifing language, it would default to ruby and this can fail
 # script: bash _systema/infrastructuram/travis-ci.sh

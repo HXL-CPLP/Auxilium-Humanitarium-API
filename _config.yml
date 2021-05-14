@@ -47,8 +47,8 @@ keep_files:
 
 # @see https://github.com/jekyll/jekyll-sitemap
 url: "https://hapi.etica.ai" # the base hostname & protocol for your site
-plugins:
-  - jekyll-sitemap
+# plugins:
+#   - jekyll-sitemap
 
 defaults:
   - scope:
