@@ -20,6 +20,8 @@ twitter:
   card: summary
 
 exclude:
+  - vendor/
+  - openapitools.json
   - _systema/
   - "api/*/*/*/html/*.md"
   - "api/*/*/*/html2/*.md"
