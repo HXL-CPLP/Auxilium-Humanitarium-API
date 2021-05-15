@@ -13,6 +13,9 @@ _site/
 .bundle/
 vendor/
 
+## TODO: talvez remover esse ignore
+Gemfile.lock
+
 ### Specific from Hapi
 _systema/node_modules/
 _systema/package-lock.json

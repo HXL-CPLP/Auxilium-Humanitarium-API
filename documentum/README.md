@@ -14,6 +14,16 @@ published: false
 
 ## Notas aos mantenedores em português
 
+## Executar o Jekyll localmente
+
+```bash
+bundle exec jekyll serve
+# Server address: http://127.0.0.1:4000/
+
+## Debug
+bundle exec jekyll build --trace --watch
+```
+
 ## Planilha online
 ### HXL-CPLP-Vocab_Auxilium-Humanitarium-API
 - <https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279>
