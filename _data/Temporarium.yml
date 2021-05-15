@@ -8,11 +8,29 @@
 #   - "fallback"
 #     - https://en.wiktionary.org/wiki/fallback
 
-varnamen: |
+
+Temp_hapi_api_titulo_h2_lat: "?!(Temp_hapi_api_titulo_lat)!?"
+Temp_hapi_api_titulo_h2_por: "API interativa documentada em português"
+Temp_hapi_api_titulo_h2_eng: "Interactive API documented in English"
+
+Temp_hapi_api_aviso_de_isencao_lat: |
+  ?!(Temp_hapi_api_aviso_de_isencao_lat)?!
+
+Temp_hapi_api_aviso_de_isencao_por: |
   <p>
-    No message
+    Nota: esta seção permite pré- visualizar de forma interativa arquivos OpenAPI
+    e até mesmo executar requisições do seu navegador sem sair do site hapi.etica.ai
+    (algumas API inclusive documentadas em mais de um idioma!). Algumas documentações,
+    seja pela API original ou por usarmos descrição original do site, podem ser escritas
+    em primeira pessoa que, <strong>obviamente</strong>, não se trata de voluntários
+    em compilar as documentações.
   </p>
-varnameneng: |
+  <p>
+    Exceção a esta regra são erros de tradução e/ou falhas em relação a atualizações mas APIs
+    informadas aqui. Nesse caso nos avise!
+  </p>
+
+Temp_hapi_api_aviso_de_isencao_eng: |
   <p>
     Note: this section allows you to interactively preview OpenAPI files
     and even execute requests from your browser without leaving the
@@ -28,16 +46,6 @@ varnameneng: |
     so let us know!
   </p>
 
-varnamenpor: |
-  <p>
-    Nota: esta seção permite pré- visualizar de forma interativa arquivos OpenAPI
-    e até mesmo executar requisições do seu navegador sem sair do site hapi.etica.ai
-    (algumas API inclusive documentadas em mais de um idioma!). Algumas documentações,
-    seja pela API original ou por usarmos descrição original do site, podem ser escritas
-    em primeira pessoa que, <strong>obviamente</strong>, não se trata de voluntários
-    em compilar as documentações.
-  </p>
-  <p>
-    Exceção a esta regra são erros de tradução e/ou falhas em relação a atualizações mas APIs
-    informadas aqui. Nesse caso nos avise!
-  </p>
+Temp_hapi_api_salvar_como_pdf_lat: "?!(Temp_hapi_api_salvar_como_pdf_lat)!?"
+Temp_hapi_api_salvar_como_pdf_por: "Salvar como PDF"
+Temp_hapi_api_salvar_como_pdf_eng: "Save as PDF"

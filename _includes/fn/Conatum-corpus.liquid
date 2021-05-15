@@ -84,7 +84,8 @@ suffix_est
       {% endif %}
     {% else %}
       {% for suffix in suffix_est %}
-        {% capture prefix_suffix %}{{ prefix }}{{ suffix }}{% endcapture %}
+        {% comment %} {% capture prefix_suffix %}{{ prefix }}{{ suffix }}{% endcapture %} {% endcomment %}
+        {% capture prefix_suffix %}{{ prefix }}_{{ suffix }}{% endcapture %}
         {% assign testum = testum | push: prefix_suffix %}
         {% if site.data.Temporarium[prefix_suffix] %}
           {{ site.data.Temporarium[prefix_suffix] }}
