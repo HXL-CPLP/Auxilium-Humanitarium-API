@@ -123,3 +123,9 @@ sudo snap install travis --edge
 
 ### simple sh script -----------------------------------------------------------
 # @see https://docs.travis-ci.com/user/deployment/script/
+
+
+#### From Jekyll (GitHub Pages) to custom plugins ______________________________
+# @see https://jekyllrb.com/tutorials/using-jekyll-with-bundler/
+bundle config set --local path 'vendor/bundle'
+bundle add jekyll
