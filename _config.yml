@@ -10,7 +10,7 @@ description: "Augmented documentation for Humanitarian APIs"
 
 # https://github.com/pages-themes/cayman
 # theme: jekyll-theme-cayman
-theme: minima
+# theme: minima
 show_downloads: false
 # google_analytics: [Your Google Analytics tracking ID]
 

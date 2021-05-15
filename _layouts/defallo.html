@@ -11,6 +11,9 @@
     <div class="container">
       {{ content }}
     </div>
+    <div>
+      <p>Plugin test: {{ page.content | reading_time }}</p>
+    </div>
   </main>
 
   {%- include pedem.html -%}
