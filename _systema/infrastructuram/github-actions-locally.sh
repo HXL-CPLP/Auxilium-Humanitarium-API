@@ -81,8 +81,12 @@ act
 
 # act --secret secrets.ACTIONS_DEPLOY_KEY="..."
 # # sudo act --secret secrets.ACTIONS_DEPLOY_KEY="..."
-act --secret secrets-file="$HOME/.ssh/eticaai/.hapi.env"
+# act --secret secrets-file="$HOME/.ssh/eticaai/.hapi.env"
 # sudo act --secret secrets-file="$HOME/.ssh/eticaai/.hapi.env"
 
 # Note: the first run, even with secrets files, did not published to GitHub.
 #       but all steps before worked.
+
+### Use one of these
+act --secret secrets-file="$HOME/.ssh/eticaai/.hapi.env"
+act --secret GH_TOKEN="EticaAIbotGHPersonalTokenHere"

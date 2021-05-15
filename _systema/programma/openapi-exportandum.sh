@@ -56,8 +56,8 @@ OPENAPI_RADICEM=(
 
 # Trivia: 'exportandum', https://en.wiktionary.org/wiki/exporto#Latin
 OPENAPI_EXPORTANDUM=(
-    'html'
-    'html2'
+#    'html'
+#    'html2'
     'mysql-schema'
     'graphql-schema'
 )
