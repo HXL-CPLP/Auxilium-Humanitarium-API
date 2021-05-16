@@ -52,3 +52,24 @@ Temp_hapi_api_salvar_como_pdf_eng: "Save as PDF"
 Temp_TOC_lat: "Índice de Conteúdo"
 Temp_TOC_por: "Índice de Conteúdo"
 Temp_TOC_eng: "Table of contents"
+
+Temp_licença_aviso_lat: |
+  ?!(Temp_licença_aviso_lat)!?
+
+Temp_licença_aviso_eng: |
+  <!--TODO: This license terms are a draft; Need to be reviewned -->
+
+  [![Public Domain Dedication](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
+
+  The [HXL-CPLP](https://github.com/HXL-CPLP) has dedicated this work to the
+  [public domain](https://unlicense.org/) by waiving all of their rights to the work worldwide
+  under copyright law, including all related and neighboring rights, to the extent
+  allowed by law.
+
+Temp_licença_aviso_por: |
+  <!--TODO: o texto em português da licença é um rascunho. Ainda precisa ser revisado -->
+  [![Dedicação ao domínio publico](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
+
+  Na medida do possível sob a lei, as pessoas autoras de
+  [HXL-CPLP](https://github.com/HXL-CPLP) renunciam todos os direitos autorais e
+  direitos conexos ou vizinhos a este trabalho para o [domínio público](https://unlicense.org/).

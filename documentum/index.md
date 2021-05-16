@@ -7,46 +7,9 @@ locale: la
 # linguam: lat
 # linguam_alternum: lat
 permalink: /
+layout: fiat-lux
 ---
 
-<!--
-
-[![Site](https://img.shields.io/badge/Site-hapi.etica.ai-blue)](https://hapi.etica.ai) 
-[![HXL-CPLP/Auxilium-Humanitarium-API](https://img.shields.io/badge/GitHub-HXL--CPLP%2FAuxilium--Humanitarium--API-lightgrey?logo=github&style=social)](https://github.com/HXL-CPLP/Auxilium-Humanitarium-API) 
-[![GitHub Repo stars](https://img.shields.io/github/stars/HXL-CPLP/Auxilium-Humanitarium-API?style=social)](https://github.com/HXL-CPLP/Auxilium-Humanitarium-API) 
-[![Download .zip](https://img.shields.io/badge/Download-.zip-brightgreen)](https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/archive/refs/heads/main.zip)
-
-
-> - [Documentation in English language (Latin script) here](/eng/)
-> - [Documentação na língua portuguesa (alfabeto latino) aqui](/por/)
-
--->
-
-<div class="px-4 pt-5 my-5 text-center border-bottom">
-  <h1 class="display-4 fw-bold">{% include fn/L10n vocab="L10n_HAPI_namen" %}</h1>
-  <div class="col-lg-6 mx-auto">
-    <!--
-    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-    -->
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-    <a href="/eng/" class="btn btn-primary btn-lg px-4 me-sm-3">{% include fn/L10n vocab="L10n_HAPI_linguam_ego" linguam="eng" %}</a>
-    <br>
-    <a href="/por/" class="btn btn-primary btn-lg px-4">{% include fn/L10n vocab="L10n_HAPI_linguam_ego" linguam="por" %}</a>
-    </div>
-  </div>
-</div>
-
-<ul class="list-group list-group-horizontal">
-  <li class="list-group-item">
-    <a href="https://hapi.etica.ai"><img src="https://img.shields.io/badge/Site-hapi.etica.ai-blue" alt="hapi.etica.ai"></a>
-  </li>
-  <li class="list-group-item">
-    <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API"><img src="https://img.shields.io/badge/GitHub-HXL--CPLP%2FAuxilium--Humanitarium--API-lightgrey?logo=github&style=social" alt="HXL-CPLP/Auxilium-Humanitarium-API"></a>
-  </li>
-  <li class="list-group-item">
-    <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API"><img src="https://img.shields.io/github/stars/HXL-CPLP/Auxilium-Humanitarium-API?style=social" alt="GitHub Repo stars"></a>
-  </li>
-  <li class="list-group-item">
-    <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/Download-.zip-brightgreen" alt="Download .zip"></a>
-  </li>
-</ul>
+- Notitia:
+  - [por] Edite diretametne [_layouts/fiat-lux.html](_layouts/fiat-lux.html).
+    conteúdo aqui não é carregado no layout final.

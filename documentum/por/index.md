@@ -121,10 +121,4 @@ toc: true
 
 ## Licença
 
-<!--TODO: o texto em português da licença é um rascunho. Ainda precisa ser revisado -->
-
-[![Public Domain Dedication](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
-
-Na medida do possível sob a lei, as pessoas autoras de
-[HXL-CPLP](https://github.com/HXL-CPLP) renunciam todos os direitos autorais e
-direitos conexos ou vizinhos a este trabalho para o [domínio público](https://unlicense.org/).
+{% include fn/Conatum prefix='Temp_licença_aviso' %}

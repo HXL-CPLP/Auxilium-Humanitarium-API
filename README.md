@@ -1,4 +1,4 @@
-# Auxilium Humanitarium API documentōrum
+# Auxilium Humanitarium API documentōrum <sup>(alpha)</sup>
 
 [![Site](https://img.shields.io/badge/Site-hapi.etica.ai-blue)](https://hapi.etica.ai) 
 [![HXL-CPLP/Auxilium-Humanitarium-API](https://img.shields.io/badge/GitHub-HXL--CPLP%2FAuxilium--Humanitarium--API-lightgrey?logo=github&style=social)](https://github.com/HXL-CPLP/Auxilium-Humanitarium-API) 

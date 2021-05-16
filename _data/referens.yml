@@ -1,0 +1,28 @@
+# - "referēns"
+#   - https://en.wiktionary.org/wiki/referens#Latin
+#   - https://en.wiktionary.org/wiki/reference#English
+# - "scopum"
+#   - https://en.wiktionary.org/wiki/scopus#Latin
+#   - https://en.wiktionary.org/wiki/scope#English
+# - "front-matter-defaults"
+#  - https://jekyllrb.com/docs/configuration/front-matter-defaults/
+
+linguam:
+  eng:
+    locale: en
+
+  ## Noticia:
+  ## [por] Em geral, vamos usar Português (genérico) e evitar usar pt_BR
+  ##       ou pt_PT. Isso faz sentido em outras línguas onde a diferença é
+  ##       muito mais significativa, porém português escrito tem pouca
+  ##       variações
+  por:
+    locale: pt
+  por-BR:
+    locale: pt_BR
+  por-PT:
+    locale: pt_PT
+
+
+### Temp
+# - https://en.wikipedia.org/wiki/IETF_language_tag
