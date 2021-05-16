@@ -9,6 +9,7 @@ tags: [index, index2]
 # published: false
 sitemap:
   exclude: yes
+noindex: true
 ---
 
 {{ page.tags | json }}

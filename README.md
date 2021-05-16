@@ -108,11 +108,11 @@ HXL-CPLP.
 ### Executar o Jekyll localmente
 
 ```bash
-bundle exec jekyll serve
+JEKYLL_ENV=development bundle exec jekyll serve
 # Server address: http://127.0.0.1:4000/
 
 ## Debug
-bundle exec jekyll build --trace --watch
+JEKYLL_ENV=development bundle exec jekyll build --trace --watch
 ```
 
 ### `_data/L10n.hxl.csv`

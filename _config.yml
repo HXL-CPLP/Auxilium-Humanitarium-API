@@ -82,3 +82,9 @@ defaults:
       path: "api/*/*/*/html2"
     values:
       sitemap: false
+
+# page_gen:
+#   - data: 'api'
+#     template: 'api'
+#     name: 'namen'
+#     dir: 'people'
