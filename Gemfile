@@ -10,10 +10,11 @@ group :jekyll_plugins do
   gem 'jekyll-toc'
   gem 'jekyll-feed'
   gem 'jekyll-seo-tag'
+  # @see https://github.com/jeffreytse/jekyll-spaceship
   gem 'jekyll-spaceship'
+  # @see https://github.com/avillafiorita/jekyll-datapage_gen
+  gem 'jekyll-datapage-generator'
   gem 'kramdown-parser-gfm'
 end
 
 gem 'html-proofer'
-
-# TODO: https://github.com/jeffreytse/jekyll-spaceship

@@ -7,15 +7,23 @@
 
 ## Links
 
-- 🌐:
-  - https://hapi.etica.ai/
-    - https://github.com/HXL-CPLP/hapi.etica.ai
-      - https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/actions
-- 
+1. **❓🌐 https://hapi.etica.ai/ 🌐❓**
+    1. ❗ https://github.com/HXL-CPLP/hapi.etica.ai ❗
+        1. ❗ https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/actions ❗
+            1. ❗[.github/workflows/05-deploy-github-pages.yml](.github/workflows/05-deploy-github-pages.yml) ❗
+                1. ❗https://github.com/HXL-CPLP/Auxilium-Humanitarium-API ❗
+                2. ❗[docs.google.com: HXL-CPLP-Vocab_Auxilium-Humanitarium-API](https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279)❗
+                    1. 🆘 https://support.google.com/docs/answer/6000292 🆘
+2. **❓🔤 https://hapi.etica.ai/por/ 🔤❓**
+    1. ❗ [GitHub.com: documentum/por/](documentum/por/) ❗
+        1. ❗ [GitHub.com: _data/Temporarium.yml](_data/Temporarium.yml) ❗
+    2. ❗ [docs.google.com:: HXL-CPLP-Vocab_Auxilium-Humanitarium-API](https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279)❗
+3. **❓🔤 https://hapi.etica.ai/eng/ 🔤❓**
+    1. ❗ [GitHub.com: documentum/eng/](documentum/eng/) ❗
+        1. ❗ [docs.google.com: HXL-CPLP-Vocab_Auxilium-Humanitarium-API](https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279)❗
+        2. ❗ [GitHub.com: _data/Temporarium.yml](_data/Temporarium.yml) ❗
 
 > @TODO: [por] adicionar mais links
-
-> @TODO: https://plantuml.com/
 
 ## English
 
@@ -31,3 +39,5 @@
 
 ## Português
 
+> TODO: [por] Começar a mover documentação de como manter o projeto para este
+  arquivo.
