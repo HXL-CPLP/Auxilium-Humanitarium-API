@@ -1,55 +1,16 @@
 ---
 title: "Augmented documentation for Humanitarian APIs"
-description: "[working-draft] Argumented documentation of common APIs for humanitarian aid with OpenAPI"
+description: |
+  Argumented documentation of common APIs for humanitarian aid with
+  [OpenAPI](https://www.openapis.org/), the _de facto_ open industry standard
+  to document REST APIs.
 locale: en
 linguam: eng
 permalink: /eng/
 categories: [index]
 tags: [index]
-# toc: true
----
-
-# Augmented documentation for Humanitarian APIs
-**[working-draft] Argumented documentation of common APIs for
-humanitarian aid with [OpenAPI](https://www.openapis.org/), the _de facto_
-open industry standard to document REST APIs.**
-
-> - **[Documentação na língua portuguesa aqui](/por/)**
-
----
-
-**Table of contents**
-
-<!-- TOC depthFrom:2 -->
-
-- [API](#api)
-    - [UN](#un)
-        - [ReliefWeb](#reliefweb)
-            - [ReliefWeb-eng](#reliefweb-eng)
-        - [HDX - The Humanitarian Data Exchange](#hdx---the-humanitarian-data-exchange)
-            - [HDX-eng](#hdx-eng)
-        - [CODV2API <sup>(beta)</sup>](#codv2api-supbetasup)
-            - [CODV2API-eng](#codv2api-eng)
-    - [XZ](#xz)
-        - [HXL-Proxy - Humanitarian Exchange Language Proxy](#hxl-proxy---humanitarian-exchange-language-proxy)
-            - [HXL-Proxy](#hxl-proxy)
-    - [BR](#br)
-        - [Brazilian Open Data portals](#brazilian-open-data-portals)
-            - [portais-ckan-brasil-por](#portais-ckan-brasil-por)
-            - [portais-arcgis-brasil-por](#portais-arcgis-brasil-por)
-            - [brazilian-ckan-portals-eng](#brazilian-ckan-portals-eng)
-- [Schema](#schema)
-    - [ISO 639-3](#iso-639-3)
-        - [In English](#in-english)
-    - [ISO 15924](#iso-15924)
-        - [In English](#in-english-1)
-- [Systema](#systema)
-    - [OpenAPI](#openapi)
-        - [Online editors](#online-editors)
-- [License](#license)
-
-<!-- /TOC -->
-
+layout: index
+toc: true
 ---
 
 ## API

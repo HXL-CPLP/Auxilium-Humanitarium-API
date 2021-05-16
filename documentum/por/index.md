@@ -8,13 +8,10 @@ locale: pt
 linguam: por
 permalink: /por/
 categories: [ index ]
-layout: defallo
-# layout: index
-# toc: true
+# layout: defallo
+layout: index
+toc: true
 ---
-
-# {{ page.title }}
-{{ page.description }}
 
 > - **[Documentation in English here](/eng/)**
 

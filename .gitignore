@@ -14,7 +14,7 @@ _site/
 vendor/
 
 ## TODO: talvez remover esse ignore
-# Gemfile.lock
+Gemfile.lock
 
 ### Specific from Hapi
 _systema/node_modules/
