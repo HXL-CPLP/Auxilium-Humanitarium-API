@@ -5,58 +5,29 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/HXL-CPLP/Auxilium-Humanitarium-API?style=social)](https://github.com/HXL-CPLP/Auxilium-Humanitarium-API) 
 [![Download .zip](https://img.shields.io/badge/Download-.zip-brightgreen)](https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/archive/refs/heads/main.zip)
 
-<!--
-![Repo license](https://img.shields.io/github/license/HXL-CPLP/Auxilium-Humanitarium-API)
+## Links
 
-- https://jekyllrb.com/docs/step-by-step/06-data-files/
-- https://unicode.org/udhr/translations.html
-  - https://unicode.org/udhr/d/udhr_por_PT.txt
-  - https://udhr.audio/UDHR_Video.asp?lng=por&p=Preamble
--->
+- 🌐:
+  - https://hapi.etica.ai/
+    - https://github.com/HXL-CPLP/hapi.etica.ai
+      - https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/actions
+- 
 
-> - [Documentation in English language here](eng.md)
-> - [Documentação na língua portuguesa aqui](por.md)
+> @TODO: [por] adicionar mais links
 
-<!--
+> @TODO: https://plantuml.com/
 
-TODOs:
-- https://github.com/frictionlessdata/schemas/blob/master/definitions.json
-  - https://github.com/frictionlessdata/specs/blob/master/schemas/registry.csv
+## English
 
-**[working-draft] <span lang="en">Argumented documentation of common APIs for
-humanitarian aid with [OpenAPI](https://www.openapis.org/), the _de facto_
-open industry standard to document REST APIs.</span>**
+### Note to maintainers in English
 
-Old documentation: [README-old.md](README-old.md)
+- <https://translate.google.com/translate?sl=pt&tl=en&u=https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/blob/main/README.md>
 
--->
+## Español
 
-<!--
-> Trivia:
-> - "Auxilium humanitarium"
->   - https://la.wikipedia.org/wiki/Auxilium_humanitarium
-> - "documentōrum"
->   - https://en.wiktionary.org/wiki/documentum#Latin
-> API
->   - "applicātiōnem"
->      - https://en.wiktionary.org/wiki/applicatio#Latin
->   - "programma"
->      - https://en.wiktionary.org/wiki/programma#Italian
->   - "interface", inter- (“between”) +‎ face (“shape, figure, form”).
->      - "inter"
->        - https://en.wiktionary.org/wiki/inter-#Latin
->      - "faciem"
->        - https://en.wiktionary.org/wiki/facies#Latin
-> "specificationem"
->  - https://en.wiktionary.org/wiki/specification
-> "situm"
->  - https://en.wiktionary.org/wiki/situs#Latin
-> "online"
->  - https://en.wiktionary.org/wiki/online#English
-#  - on +‎ line
->    - "līneam", https://en.wiktionary.org/wiki/linea#Latin
->    - "on"
->      - ???
--->
+### Nota para mantenedores en español
 
----
+- <https://translate.google.com/translate?sl=pt&tl=es&u=https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/blob/main/README.md>
+
+## Português
+

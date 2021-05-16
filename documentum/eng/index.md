@@ -23,8 +23,9 @@ toc: true
   - eng: <https://en.wikipedia.org/wiki/ReliefWeb>
 -->
 
+
 ##### ReliefWeb-eng
-- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: <https://hapi.etica.ai/api/UN/reliefweb/eng/>
+- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: </api/UN/reliefweb/eng/>
 - **{% include fn/L10n vocab="L10n_openapi_filum" %}**: [/api/UN/reliefweb/eng/openapi.yaml](/api/UN/reliefweb/eng/openapi.yaml)
 
 #### HDX - The Humanitarian Data Exchange
