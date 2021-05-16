@@ -1,9 +1,21 @@
 # https://github.com/avillafiorita/jekyll-datapage_gen
 
-- namen: api/BR/brazilian-ckan-portals2
-  # description: 
-  bio: long bio goes here
-- namen: pietro molini 
-  bio: another long bio
-- namen: aaron ciaghi 
-  bio: another very long bio
+
+# eng:
+- referens: api-BR-portais-ckan-brasil
+  gid: /api/BR
+  linguam: eng
+  openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
+  slug: brazilian-ckan-portals
+  namen:
+  descriptionen:
+
+
+# por:
+- referens: api-BR-portais-ckan-brasil
+  gid: /api/BR
+  linguam: por
+  openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
+  slug: portais-ckan-brasil
+  namen:
+  descriptionen:

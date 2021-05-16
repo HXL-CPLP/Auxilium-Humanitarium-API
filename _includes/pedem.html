@@ -8,7 +8,7 @@
 integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 crossorigin="anonymous"></script>
 
-{% if page.layout contains 'api' %}
+{% if page.layout contains 'api' or page.openapi_filum != nil %}
 <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
 <script src="https://unpkg.com/rapipdf/dist/rapipdf-min.js"></script>
 <script>

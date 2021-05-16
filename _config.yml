@@ -83,8 +83,15 @@ defaults:
     values:
       sitemap: false
 
-# page_gen:
-#   - data: 'api'
-#     template: 'api'
-#     name: 'namen'
-#     dir: 'people'
+page_gen:
+  # referens: api-BR-portais-ckan-brasil
+  - data: 'api'
+    template: 'api'
+    name: 'slug'
+    dir: 'eng/api-TEMP/BR'
+    filter_condition: "record['gid'] == '/api/BR' and record['linguam'] == 'eng'"
+  - data: 'api'
+    template: 'api'
+    name: 'slug'
+    dir: 'eng/api-TEMP/BR'
+    filter_condition: "record['gid'] == '/api/BR' and record['linguam'] == 'por'"

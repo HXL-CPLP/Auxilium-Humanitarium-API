@@ -16,7 +16,7 @@ group :jekyll_plugins do
   # @see https://github.com/jeffreytse/jekyll-spaceship
   # gem 'jekyll-spaceship'
   # @see https://github.com/avillafiorita/jekyll-datapage_gen
-  gem 'jekyll-datapage-generator'
+  # gem 'jekyll-datapage-generator'
   gem 'kramdown-parser-gfm'
 end
 
