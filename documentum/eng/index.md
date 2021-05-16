@@ -6,6 +6,7 @@ linguam: eng
 permalink: /eng/
 categories: [index]
 tags: [index]
+# toc: true
 ---
 
 # Augmented documentation for Humanitarian APIs
@@ -159,9 +160,9 @@ open industry standard to document REST APIs.**
 
 <!--TODO: This license terms are a draft; Need to be reviewned -->
 
-[![Public Domain Dedication](https://i.creativecommons.org/p/zero/1.0/88x31.png)](UNLICENSE)
+[![Public Domain Dedication](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
 
-The [HXL-CPLP](https://github.com/HXL-CPLP) has dedicated the work to the
-[public domain](UNLICENSE) by waiving all of their rights to the work worldwide
+The [HXL-CPLP](https://github.com/HXL-CPLP) has dedicated this work to the
+[public domain](https://unlicense.org/) by waiving all of their rights to the work worldwide
 under copyright law, including all related and neighboring rights, to the extent
 allowed by law.

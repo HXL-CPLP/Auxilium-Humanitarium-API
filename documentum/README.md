@@ -64,3 +64,10 @@ bundle exec jekyll build --trace --watch
   - https://github.com/siteleaf/liquid-syntax-mode
   - https://marketplace.visualstudio.com/items?itemName=neilding.language-liquid
 -->
+
+<!--
+
+bundle exec jekyll build
+bundle exec htmlproofer --disable-external --empty_alt_ignore ./_site
+
+-->

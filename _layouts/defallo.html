@@ -9,7 +9,14 @@
 
   <main class="page-content" aria-label="Content">
     <div class="container">
-      {{ content }}
+      <div>
+        <div id="table-of-contents">
+          {{ content | toc_only }}
+        </div>
+        <div id="markdown-content">
+          {{ content  }}
+        </div>
+      </div>
     </div>
     <div class="container">
       <p>Plugin test: {{ page.content | reading_time }}</p>
