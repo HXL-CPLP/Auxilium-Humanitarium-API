@@ -93,9 +93,3 @@ jobs:
           bundler_ver: '>=0'                    # Default is latest bundler version
           cname: 'hapi.etica.ai'                # Default is to not use a cname
           actor: 'eticaaibot'                   # Default is the GITHUB_ACTOR
-
-
-      # TODO: implementar testes no HTML gerado, vide
-      #       - https://github.com/sfarrens/jekyll_tutorial#treat-your-website-like-code
-      #       - https://github.com/gjtorikian/html-proofer#caching-with-continuous-integration
-      #       - https://github.com/jekyll/jekyll/blob/master/script/proof

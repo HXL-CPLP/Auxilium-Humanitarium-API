@@ -35,3 +35,18 @@ permalink: /
     </div>
   </div>
 </div>
+
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item">
+    <a href="https://hapi.etica.ai"><img src="https://img.shields.io/badge/Site-hapi.etica.ai-blue" alt="hapi.etica.ai"></a>
+  </li>
+  <li class="list-group-item">
+    <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API"><img src="https://img.shields.io/badge/GitHub-HXL--CPLP%2FAuxilium--Humanitarium--API-lightgrey?logo=github&style=social" alt="HXL-CPLP/Auxilium-Humanitarium-API"></a>
+  </li>
+  <li class="list-group-item">
+    <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API"><img src="https://img.shields.io/github/stars/HXL-CPLP/Auxilium-Humanitarium-API?style=social" alt="GitHub Repo stars"></a>
+  </li>
+  <li class="list-group-item">
+    <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/Download-.zip-brightgreen" alt="Download .zip"></a>
+  </li>
+</ul>
