@@ -10,7 +10,68 @@ sitemap:
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home / -->
+  <url>
+      <loc>{{ site.url }}/</loc>
+      <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link
+        rel="alternate"
+        hreflang="x-default"
+        href="{{ site.url }}/" />
+      <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="{{ site.url }}/eng/" />
+      <xhtml:link
+        rel="alternate"
+        hreflang="pt"
+        href="{{ site.url }}/por/" />
+  </url>
+  <!-- /eng/ -->
+  <url>
+      <loc>{{ site.url }}/eng/</loc>
+      <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+      <xhtml:link
+        rel="alternate"
+        hreflang="x-default"
+        href="{{ site.url }}/" />
+      <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="{{ site.url }}/eng/" />
+      <xhtml:link
+        rel="alternate"
+        hreflang="pt"
+        href="{{ site.url }}/por/" />
+  </url>
+
+  <!-- /por/ -->
+  <url>
+      <loc>{{ site.url }}/por/</loc>
+      <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+      <xhtml:link
+        rel="alternate"
+        hreflang="x-default"
+        href="{{ site.url }}/" />
+      <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="{{ site.url }}/eng/" />
+      <xhtml:link
+        rel="alternate"
+        hreflang="pt"
+        href="{{ site.url }}/por/" />
+  </url>
+
+
   {% for post in site.posts %}
     {% unless post.published == false %}
     <url>
