@@ -92,7 +92,7 @@ page_gen:
     # dir: 'eng/api-TEMP/BR'
     dir_expr: "record['linguam'] + '/' + record['gid']"
     # filter_condition: "record['gid'] == 'api/BR' and record['linguam'] == 'eng'"
-    debug: true
+    # debug: true
 
   # - data: 'api'
   #   template: 'api'

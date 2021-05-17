@@ -1,24 +1,7 @@
 # https://github.com/avillafiorita/jekyll-datapage_gen
 
 
-# eng:
-- gid: api/BR
-  lid: portais-ckan-brasil
-  linguam: eng
-  openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
-  slug: brazilian-ckan-portals
-  noindex: true
-  # namen:
-  # descriptionen:
-
-- gid: api/BR
-  lid: portais-ckan-brasil
-  linguam: por
-  openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
-  slug: portais-ckan-brasil
-  noindex: true
-  # namen:
-  # descriptionen:
+### UN _________________________________________________________________________
 
 - gid: api/UN
   lid: HDX
@@ -26,7 +9,7 @@
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   slug: humanitarian-data-exchange
   noindex: true
-  # namen: Humanitarian Data Exchange
+  title: HDX - The Humanitarian Data Exchange API
   # namen:
   # descriptionen:
 
@@ -35,8 +18,61 @@
   linguam: eng
   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
   slug: reliefweb
+  title: ReliefWeb - Informing humanitarians worldwide
+  # title: ReliefWeb - Informing humanitarians worldwide
   noindex: true
-  # namen: Humanitarian Data Exchange
+
+- gid: api/UN
+  lid: CODV2API
+  linguam: eng
+  openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
+  slug: common-operational-datasets-api
+  title: Common Operational Datasets Services 2 (COD Services)
+  noindex: true
+
+### XZ _________________________________________________________________________
+
+- gid: api/XZ
+  lid: HXL-Proxy
+  linguam: eng
+  openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml
+  slug: hxl-proxy
+  title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
+  noindex: true
+
+### BR _________________________________________________________________________
+
+- gid: api/BR
+  lid: portais-ckan-brasil
+  linguam: eng
+  openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
+  slug: brazilian-ckan-portals
+  title: Portais CKAN de dados abertos do Brasil
+  description: |
+    Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
+  noindex: true
+  # namen:
+  # descriptionen:
+
+- gid: api/BR
+  lid: portais-ckan-brasil
+  linguam: por
+  openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
+  slug: dados-abertos-ckan-brasil
+  title: Portais ArcGIS de dados abertos do Brasil
+  description: |
+    Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
+  noindex: true
+  # namen:
+  # descriptionen:
+
+- gid: api/BR
+  lid: portais-arcgis-brasil
+  linguam: por
+  openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml
+  slug: ados-abertos-arcgis-brasil
+  title: Portais ArcGIS de dados abertos do Brasil
+  noindex: true
   # namen:
   # descriptionen:
 
