@@ -83,6 +83,8 @@ defaults:
     values:
       sitemap: false
 
+# @see https://github.com/avillafiorita/jekyll-datapage_gen
+page_gen-dirs: true
 page_gen:
   # referens: api-BR-portais-ckan-brasil
   - data: 'api'
@@ -90,8 +92,8 @@ page_gen:
     name: 'slug'
     # name_expr: "record['slug'] + '_' + record['slug']"
     # dir: 'eng/api-TEMP/BR'
-    dir_expr: "record['linguam'] + '/' + record['gid']"
-    # filter_condition: "record['gid'] == 'api/BR' and record['linguam'] == 'eng'"
+    dir_expr: "record['linguam'] + '/' + record['typum'] + '/' + record['gid']"
+    filter_condition: "record['linguam'] != 'mul'"
     # debug: true
 
   # - data: 'api'

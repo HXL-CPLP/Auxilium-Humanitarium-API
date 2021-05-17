@@ -1,74 +1,146 @@
 # https://github.com/avillafiorita/jekyll-datapage_gen
 
+### [linguam]/api/UN ___________________________________________________________
 
-### UN _________________________________________________________________________
-
-- gid: api/UN
+## -----------------------------------------------------------------------------
+- x-default: /mul/api/UN/HDX/
+  uid: /mul/api/UN/HDX/
+  linguam: mul
+  typum: api
+  gid: UN
   lid: HDX
+  title: /mul/api/UN/HDX/
+  noindex: true
+
+- x-default: /mul/api/UN/HDX/
+  uid: /eng/api/UN/humanitarian-data-exchange/
   linguam: eng
+  typum: api
+  gid: UN
+  lid: HDX
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   slug: humanitarian-data-exchange
-  noindex: true
   title: HDX - The Humanitarian Data Exchange API
-  # namen:
-  # descriptionen:
+  noindex: true
 
-- gid: api/UN
-  lid: ReliefWeb
+## -----------------------------------------------------------------------------
+- x-default: /mul/api/UN/ReliefWeb/
+  uid: /mul/api/UN/ReliefWeb/
+  linguam: mul
+  typum: api
+  gid: UN
+  lid: HDX
+  title: /mul/api/UN/ReliefWeb/
+  noindex: true
+
+- x-default: /mul/api/UN/ReliefWeb/
+  uid: /mul/api/UN/reliefweb/
   linguam: eng
+  typum: api
+  gid: UN
+  lid: ReliefWeb
   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
   slug: reliefweb
   title: ReliefWeb - Informing humanitarians worldwide
   # title: ReliefWeb - Informing humanitarians worldwide
   noindex: true
 
-- gid: api/UN
-  lid: CODV2API
+## -----------------------------------------------------------------------------
+- x-default: /mul/api/UN/CODV2API/
+  uid: /mul/api/UN/CODV2API/
+  linguam: mul
+  typum: api
+  gid: UN
+  lid: HDX
+  title: /mul/api/UN/CODV2API/
+  noindex: true
+
+- x-default: /mul/api/UN/CODV2API/
   linguam: eng
+  typum: api
+  gid: UN
+  lid: CODV2API
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
   slug: common-operational-datasets-api
   title: Common Operational Datasets Services 2 (COD Services)
   noindex: true
 
-### XZ _________________________________________________________________________
+### [linguam]/api/ZX ___________________________________________________________
 
-- gid: api/XZ
-  lid: HXL-Proxy
+## -----------------------------------------------------------------------------
+- x-default: /mul/api/XZ/HXL-Proxy/
+  uid: /mul/api/XZ/HXL-Proxy/
+  linguam: mul
+  typum: api
+  gid: XZ
+  # lid: HXL-Proxy
+  title: /mul/api/XZ/HXL-Proxy/
+  noindex: true
+
+- x-default: /mul/api/XZ/HXL-Proxy/
   linguam: eng
+  typum: api
+  gid: XZ
+  # lid: HXL-Proxy
   openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml
   slug: hxl-proxy
   title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
   noindex: true
 
-### BR _________________________________________________________________________
+### [linguam]/api/BR ___________________________________________________________
 
-- gid: api/BR
-  lid: portais-ckan-brasil
+## -----------------------------------------------------------------------------
+- x-default: /mul/api/BR/portais-ckan-brasil/
+  uid: /mul/api/BR/portais-ckan-brasil/
+  linguam: mul
+  typum: api
+  gid: BR
+  # lid: portais-ckan-brasil
+  title: /mul/api/BR/portais-ckan-brasil/
+  noindex: true
+
+- x-default: /mul/api/BR/portais-ckan-brasil/
+  uid: /eng/api/BR/brazilian-ckan-portals/
   linguam: eng
+  typum: api
+  gid: BR
+  lid: portais-ckan-brasil
   openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
   slug: brazilian-ckan-portals
   title: Portais CKAN de dados abertos do Brasil
   description: |
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
   noindex: true
-  # namen:
-  # descriptionen:
 
-- gid: api/BR
-  lid: portais-ckan-brasil
+- x-default: /mul/api/BR/portais-ckan-brasil/
+  uid: /por/api/BR/dados-abertos-ckan-brasil/
   linguam: por
+  typum: api
+  gid: BR
+  lid: dados-abertos-ckan-brasil
   openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
   slug: dados-abertos-ckan-brasil
   title: Portais ArcGIS de dados abertos do Brasil
   description: |
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
   noindex: true
-  # namen:
-  # descriptionen:
 
-- gid: api/BR
-  lid: portais-arcgis-brasil
+## -----------------------------------------------------------------------------
+- x-default: /mul/api/BR/portais-arcgis-brasil/
+  uid: /mul/api/BR/portais-arcgis-brasil/
+  linguam: mul
+  typum: api
+  gid: BR
+  # lid: portais-arcgis-brasil
+  title: /mul/api/BR/portais-arcgis-brasil/
+  noindex: true
+
+- x-default: /mul/api/BR/portais-arcgis-brasil/
+  uid: /por/api/BR/portais-arcgis-brasil/
   linguam: por
+  typum: api
+  gid: BR
+  lid: portais-arcgis-brasil
   openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml
   slug: ados-abertos-arcgis-brasil
   title: Portais ArcGIS de dados abertos do Brasil

@@ -49,6 +49,7 @@ Temp_hapi_api_aviso_de_isencao_eng: |
 Temp_hapi_api_salvar_como_pdf_lat: "?!(Temp_hapi_api_salvar_como_pdf_lat)!?"
 Temp_hapi_api_salvar_como_pdf_por: "Salvar como PDF"
 Temp_hapi_api_salvar_como_pdf_eng: "Save as PDF"
+Temp_TOC_mul: "Index"
 Temp_TOC_lat: "Índice de Conteúdo"
 Temp_TOC_por: "Índice de Conteúdo"
 Temp_TOC_eng: "Table of contents"
