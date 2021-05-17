@@ -2,20 +2,51 @@
 
 
 # eng:
-- referens: api-BR-portais-ckan-brasil
-  gid: /api/BR
+- gid: api/BR
+  lid: portais-ckan-brasil
   linguam: eng
   openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
   slug: brazilian-ckan-portals
-  namen:
-  descriptionen:
+  noindex: true
+  # namen:
+  # descriptionen:
 
-
-# por:
-- referens: api-BR-portais-ckan-brasil
-  gid: /api/BR
+- gid: api/BR
+  lid: portais-ckan-brasil
   linguam: por
   openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
   slug: portais-ckan-brasil
-  namen:
-  descriptionen:
+  noindex: true
+  # namen:
+  # descriptionen:
+
+- gid: api/UN
+  lid: HDX
+  linguam: eng
+  openapi_filum: /api/UN/HDX/eng/openapi.yaml
+  slug: humanitarian-data-exchange
+  noindex: true
+  # namen: Humanitarian Data Exchange
+  # namen:
+  # descriptionen:
+
+- gid: api/UN
+  lid: ReliefWeb
+  linguam: eng
+  openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
+  slug: reliefweb
+  noindex: true
+  # namen: Humanitarian Data Exchange
+  # namen:
+  # descriptionen:
+
+# Note: jekyll-datapage-generator.rb needs fix for non-latin alphabet
+# - gid: api/UN
+#   lid: ReliefWeb
+#   linguam: eng
+#   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
+#   slug: "اختبارات"
+#   noindex: true
+#   # namen: Humanitarian Data Exchange
+#   # namen:
+#   # descriptionen:

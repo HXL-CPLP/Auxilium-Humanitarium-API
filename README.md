@@ -109,10 +109,15 @@ HXL-CPLP.
 
 ```bash
 JEKYLL_ENV=development bundle exec jekyll serve
+# JEKYLL_ENV=development bundle exec jekyll serve --incremental
 # Server address: http://127.0.0.1:4000/
 
 ## Debug
 JEKYLL_ENV=development bundle exec jekyll build --trace --watch
+
+## Velocidade
+JEKYLL_ENV=development bundle exec jekyll serve --profile
+
 ```
 
 ### `_data/L10n.hxl.csv`

@@ -5,7 +5,4 @@
 - Author: Adolfo Villafiorita, @avillafiorita
   Project: <https://github.com/avillafiorita/jekyll-datapage_gen>
   License: MIT
-  Changes made: no significant changes made
-
-## reading_time.rb
-This is an test plugin. Will be deleted.
+  Changes made: <s>no significant changes made</s> dir_expr option (still need testing)

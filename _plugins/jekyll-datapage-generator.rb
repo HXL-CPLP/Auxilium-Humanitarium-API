@@ -26,6 +26,7 @@ module Jekyll
       #
       # - `index_files` specifies if we want to generate named folders (true) or not (false)
       # - `dir` is the default output directory
+      # - `dir_expr` is an expression for generating the output directory
       # - `page_data_prefix` is the prefix used to output the page data
       # - `data` is the data of the record for which we are generating a page
       # - `name` is the key in `data` which determines the output filename
@@ -34,7 +35,7 @@ module Jekyll
       # - `title_expr` is an expression for generating the page title
       # - `template` is the name of the template for generating the page
       # - `extension` is the extension for the generated file
-      def initialize(site, base, index_files, dir, page_data_prefix, data, name, name_expr, title, title_expr, template, extension, debug)
+      def initialize(site, base, index_files, dir, dir_expr, page_data_prefix, data, name, name_expr, title, title_expr, template, extension, debug)
         @site = site
         @base = base
   
@@ -43,7 +44,7 @@ module Jekyll
           puts ">> #{data}"
   
           puts "debug (datapage-gen) Configuration variables:"
-          [:index_files, :dir, :page_data_prefix, :name, :name_expr, :title, :title_expr, :template, :extension].each do |variable|
+          [:index_files, :dir, :dir_expr, :page_data_prefix, :name, :name_expr, :title, :title_expr, :template, :extension].each do |variable|
             puts ">> #{variable}: #{eval(variable.to_s)}"
           end
         end
@@ -90,7 +91,22 @@ module Jekyll
   
         filename = sanitize_filename(raw_filename).to_s
   
-        @dir = dir + (index_files ? "/" + filename + "/" : "")
+        # Old option, without dir_expr
+        # @dir = dir + (index_files ? "/" + filename + "/" : "")
+
+        if dir_expr
+          record = data
+          raw_dir = eval(dir_expr)
+          if raw_dir == nil
+            puts "error (datapage-gen). raw_dir '#{raw_dir}' generated an empty value in record #{data}"
+            return
+          end
+          @dir = raw_dir + (index_files ? "/" + filename + "/" : "")
+          puts "debug (datapage-gen). using raw_dir: '#{raw_dir}' will be used the directory output" if debug
+        else
+          @dir = dir + (index_files ? "/" + filename + "/" : "")
+        end
+
         @name = (index_files ? "index" : filename) + "." + extension.to_s
   
         self.process(@name)
@@ -147,6 +163,7 @@ module Jekyll
             title            = data_spec['title']
             title_expr       = data_spec['title_expr']
             dir              = data_spec['dir'] || data_spec['data']
+            dir_expr         = data_spec['dir_expr']
             extension        = data_spec['extension'] || "html"
             page_data_prefix = data_spec['page_data_prefix']
             debug            = data_spec['debug']
@@ -178,7 +195,7 @@ module Jekyll
               # we now have the list of all records for which we want to generate individual pages
               # iterate and call the constructor
               records.each do |record|
-                site.pages << DataPage.new(site, site.source, index_files_for_this_data, dir, page_data_prefix, record, name, name_expr, title, title_expr, template, extension, debug)
+                site.pages << DataPage.new(site, site.source, index_files_for_this_data, dir, dir_expr, page_data_prefix, record, name, name_expr, title, title_expr, template, extension, debug)
               end
             end
           end
