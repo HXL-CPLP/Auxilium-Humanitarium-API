@@ -160,6 +160,17 @@ sera completamente ignorada.
 >   - https://github.com/twbs/bootstrap/releases/tag/v5.0.1
 >     - https://github.com/twbs/bootstrap/pull/33709
 
+
+<!--
+# VSCode
+#   ext install misogi.ruby-rubocop
+#     https://github.com/misogi/vscode-ruby-rubocop
+#   ext install rebornix.Ruby
+#     https://github.com/rubyide/vscode-ruby
+sudo gem install rubocop
+-->
+
+
 ### Licença
 <!--TODO: o texto em português da licença é um rascunho. Ainda precisa ser revisado -->
 

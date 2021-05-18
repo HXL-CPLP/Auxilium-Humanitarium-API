@@ -15,3 +15,10 @@ charset = utf-8
 indent_style = space
 indent_size = 2
 
+
+
+# https://github.com/rubocop/ruby-style-guide
+# "Use two spaces per indentation level (aka soft tabs)."
+[*.rb]
+indent_style = space
+indent_size = 2
