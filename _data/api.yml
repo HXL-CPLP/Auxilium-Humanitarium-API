@@ -23,6 +23,18 @@
   title: HDX - The Humanitarian Data Exchange API
   noindex: true
 
+# Note: this is just a test to check if non US-ASCII characters can work with
+#       Hapi toolchain
+- x-default: /mul/api/UN/HDX/
+  uid: /arb/api/UN/اختبارات/
+  linguam: arb
+  typum: api
+  gid: UN
+  # lid: HDX
+  openapi_filum: /api/UN/HDX/eng/openapi.yaml
+  title: "اختبارات"
+  noindex: true
+
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/reliefweb/
   uid: /mul/api/UN/reliefweb/

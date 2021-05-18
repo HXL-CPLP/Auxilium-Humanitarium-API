@@ -16,6 +16,28 @@ module Jekyll
     "AAAAAAaaaaaaAaAaAaCcCcCcCcCcDdDdDdEEEEeeeeEeEeEeEeEeGgGgGgGgHhHhIIIIiiiiIiIiIiIiIiJjKkkLlLlLlLlLlNnNnNnNnnNnNnOOOOOOooooooOoOoOoRrRrRrSsSsSsSssTtTtTtUUUUuuuuUuUuUuUuUuUuWwYyyYyYZzZzZz"
   ).downcase.strip.gsub(' ', '-').gsub(/[^\w.-]/, '')
       end
+
+      # sanitize_filename_i18n is a (work in progress) variant of
+      # sanitize_filename. The idea here is not acindentaly strip non-US-ASCII
+      #
+      # @see https://apidock.com/ruby/Regexp
+      #
+      def sanitize_filename_i18n(name)
+        if(name.is_a? Integer)
+          return name.to_s
+        end
+        return name.strip
+           # Whitespace character ([:blank:], newline, carriage return, etc.)
+           # replaced by -
+          .gsub(/[[:space:]]/, '-')
+           # /[[:cntrl:]]/ - Control character
+           # remove any one present
+          .gsub(/[[:cntrl:]]/, '')
+
+          # TODO: investigate usage of
+          #       /[[:word:]]/ - A character in one of the following Unicode
+          #       general categories Letter, Mark, Number, Connector_Punctuation
+      end
     end
   
     # this class is used to tell Jekyll to generate a page
@@ -88,9 +110,10 @@ module Jekyll
           end
             puts "debug (datapage-gen). will use '#{raw_title}' as the page title" if debug
         end
-  
-        filename = sanitize_filename(raw_filename).to_s
-  
+
+        # filename = sanitize_filename(raw_filename).to_s
+        filename = sanitize_filename_i18n(raw_filename).to_s
+
         # Old option, without dir_expr
         # @dir = dir + (index_files ? "/" + filename + "/" : "")
 
@@ -219,7 +242,8 @@ module Jekyll
       # need to generate the links by hand
       def datapage_url(input, dir)
         extension = @context.registers[:site].config['page_gen-dirs'] ? '/' : '.html'
-        "#{dir}/#{sanitize_filename(input)}#{extension}"
+        # "#{dir}/#{sanitize_filename(input)}#{extension}"
+        "#{dir}/#{sanitize_filename_i18n(input)}#{extension}"
       end
     end
   
