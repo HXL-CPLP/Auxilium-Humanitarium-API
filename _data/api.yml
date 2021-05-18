@@ -8,7 +8,7 @@
   linguam: mul
   typum: api
   gid: UN
-  lid: HDX
+  # lid: HDX
   title: "Index: HDX"
   noindex: true
 
@@ -17,7 +17,7 @@
   linguam: eng
   typum: api
   gid: UN
-  lid: HDX
+  # lid: HDX
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   slug: humanitarian-data-exchange
   title: HDX - The Humanitarian Data Exchange API
@@ -29,16 +29,16 @@
   linguam: mul
   typum: api
   gid: UN
-  lid: reliefweb
+  # lid: reliefweb
   title: "Index: ReliefWeb"
   noindex: true
 
 - x-default: /mul/api/UN/reliefweb/
-  uid: /mul/api/UN/reliefweb/
+  uid: /eng/api/UN/reliefweb/
   linguam: eng
   typum: api
   gid: UN
-  lid: ReliefWeb
+  # lid: ReliefWeb
   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
   slug: reliefweb
   title: ReliefWeb - Informing humanitarians worldwide
@@ -51,7 +51,7 @@
   linguam: mul
   typum: api
   gid: UN
-  lid: CODV2API
+  # lid: CODV2API
   title: "Index: CODV2API"
   noindex: true
 
@@ -60,7 +60,7 @@
   linguam: eng
   typum: api
   gid: UN
-  lid: CODV2API
+  # lid: CODV2API
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
   # slug: common-operational-datasets-api
   title: Common Operational Datasets Services 2 (COD Services)
@@ -106,7 +106,7 @@
   linguam: eng
   typum: api
   gid: BR
-  lid: portais-ckan-brasil
+  # lid: portais-ckan-brasil
   openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
   slug: brazilian-ckan-portals
   title: Brazilian CKAN Open Data Portals
@@ -119,7 +119,7 @@
   linguam: por
   typum: api
   gid: BR
-  lid: dados-abertos-ckan-brasil
+  # lid: dados-abertos-ckan-brasil
   openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
   slug: dados-abertos-ckan-brasil
   title: Portais CKAN de dados abertos do Brasil
@@ -142,7 +142,7 @@
   linguam: por
   typum: api
   gid: BR
-  lid: portais-arcgis-brasil
+  # lid: portais-arcgis-brasil
   openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml
   slug: dados-abertos-arcgis-brasil
   title: Portais ArcGIS de dados abertos do Brasil
