@@ -2,7 +2,7 @@
 #
 # https://jekyllrb.com/docs/plugins/generators/
 
-module SamplePlugin
+module HapiApi
     class CategoryPageGenerator < Jekyll::Generator
       safe true
   
