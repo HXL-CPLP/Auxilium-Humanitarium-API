@@ -89,11 +89,12 @@ page_gen:
   # referens: api-BR-portais-ckan-brasil
   - data: 'api'
     template: 'api'
-    name: 'slug'
-    # name_expr: "record['slug'] + '_' + record['slug']"
-    # dir: 'eng/api-TEMP/BR'
-    dir_expr: "record['linguam'] + '/' + record['typum'] + '/' + record['gid']"
-    filter_condition: "record['linguam'] != 'mul'"
+    name: 'title'
+    # name_expr: "record['slug'] or record['lid']"
+    # dir: 'uid'
+    dir_expr: "record['uid']"
+    # dir_expr: "record['linguam'] + '/' + record['typum'] + '/' + record['gid']"
+    # filter_condition: "record['linguam'] != 'mul'"
     # debug: true
 
   # - data: 'api'
