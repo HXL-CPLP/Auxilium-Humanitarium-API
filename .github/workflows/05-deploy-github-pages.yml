@@ -93,3 +93,7 @@ jobs:
           bundler_ver: '>=0'                    # Default is latest bundler version
           cname: 'hapi.etica.ai'                # Default is to not use a cname
           actor: 'eticaaibot'                   # Default is the GITHUB_ACTOR
+
+# Another strategy to deploy github pages with even more control
+# @see https://github.com/avillafiorita/jekyll-datapage_gen/issues/71#issuecomment-625532769
+# @see https://github.com/JamesIves/github-pages-deploy-action
