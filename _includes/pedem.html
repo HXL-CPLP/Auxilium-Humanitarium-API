@@ -17,7 +17,7 @@ crossorigin="anonymous"></script>
         var ui = SwaggerUIBundle({
             // url:  `path/to/my/swagger.yaml`,
             // url: `https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/openapi.yaml`,
-            url: `{{ page.openapi_filum }}`,
+            url: `{{ page.openapi_filum | default: page.datum.openapi_filum }}`,
             dom_id: '#swagger-ui',
             presets: [
                 SwaggerUIBundle.presets.apis,

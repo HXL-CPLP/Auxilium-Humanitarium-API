@@ -25,118 +25,57 @@ module HapiApi
     safe true
 
     def generate(site)
-      puts site.data['api'][0]
-
-      # site.data['api'].map do |api|
-      #   # api["testes123"] = api["linguam"] + '/'
-      #   api['uid2'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
-      #   # api['locale'] = HapiApi::Utilitatem.linguam_to_html_lang(api['linguam'])
-      #   api['locale'] = Utilitatem.linguam_to_html_lang(api['linguam'])
-      #   # api['locale'] = linguam_to_html_lang(api['linguam'])
-      # end
-
-      @debug_all = true
+      @debug_all = false
 
       @apis = Utilitatem.expandendum_api_datum(site.data['api'])
 
+      # _[eng] We override site.data.api [eng]_
+      # _[por] Sobrescrevemos o site.data.api [por]_
       site.data['api'] = @apis
 
-      # puts @apis[0]
-
-      site.data['api'].each do |api|
-        @debug_est = @debug_all or api['debug']
-        # @template_est = 'api'
-        @jekyll_datum = {
-          'template' => 'api'
-        }
-        # puts api
-        # puts 'oi'
-        # @teste = ApiPaginam.new(site, site.source, api['dir'], api['lid'], @template_est, @debug_est)
-        # debug @teste
-        # puts 'oi2'
-        # puts @teste.inspect
-        site.pages << ApiPaginam.new(site, api, @jekyll_datum, @debug_est)
-        # break
+      site.data['api'].each do |api_datum|
+        @debug_est = @debug_all or api_datum['debug']
+        site.pages << ApiPaginam.new(site, api_datum, @debug_est)
       end
-
-      # site.pages << ApiPaginam.new(site)
-
-      # site.pages << ApiPaginam.new(site, @apis)
-      # site.pages << ApiPaginam.new(site, nil, nil, nil)
-      # site.pages << ApiPaginam.new(site)
-
-      # site.data['api'].each do |api|
-      #   puts api
-      #   site.pages << ApiPaginam.new(site, api)
-      # end
-      # site.categories.each do |category, posts|
-      #   site.pages << ApiPaginam.new(site, category, posts)
-      # end
     end
   end
 
-  # Subclass of `Jekyll::Page` with custom method definitions.
+  # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
+  # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-    # def initialize(site, category, posts)
-    # def initialize(site, _api)
 
     # rubocop:disable Lint/MissingSuper
 
-    # Initialize a new Page.
+    # _[eng] Initialize a new page [eng]_
+    # _[por] Inicializa uma nova página [por]_
     #
-    # site          - The Site object.
+    # site          - Jekyll site obiectum
     # api_datum     - API Datum
-    # jekyll_datum  - Jekyll Datum
     # debug         - Debug est?
-    def initialize(site, api_datum, jekyll_datum, debug)
-      # def initialize(site)
-      # warning:Lint/MissingSuper
+    def initialize(site, api_datum, debug)
       # super()
       @site = site              # the current site instance.
       @base = site.source       # path to the source directory.
-      @dir  = api_datum['dir']  # the directory the page will reside in.
-      @name = api_datum['lid']
-      template = jekyll_datum['template']
+      # @dir  = api_datum['dir']  # the directory the page will reside in.
+      # @name = api_datum['lid']
+      @dir  = api_datum['dir'] + '/' + api_datum['lid'] + '/'
+      @name = 'index.html'
+      template = api_datum['jekyll-page']['template']
 
-      puts 'oi_1'
-      puts data
-
-      # @path = site.in_source_dir(base, dir, name)
-      # @path = File.join(@site.layouts[template].path, @site.layouts[template].name)
-
-      # puts @site.layouts
-      # puts 'oi3'
-      # puts @site.layouts['api']
-
-      if @site.layouts[template].path.end_with? 'html'
-        @path = @site.layouts[template].path.dup
-      else
-        @path = File.join(@site.layouts[template].path, @site.layouts[template].name)
-      end
-
-      # puts debug
-
-      # if debug
-      #     [:base, :dir, :name].each do |variable|
-      #       puts ">> #{variable}: #{eval(variable.to_s)}"
-
-      # if debug
-      #   puts ">> base [#{base}] dir [#{dir}]"
-      #   # puts ">> site.posts [#{site.posts}]"
-      #   # require 'json'
-      #   # puts ">> site.posts.docs.last [#{site.posts.docs.to_json}]"
-      #   # puts ">> site.posts.docs.last [#{site.posts.docs[0]}]"
-      #   puts ">> site.posts [#{site.posts.inspect}]"
-      #   # puts ">> base [#{base}] dir [#{dir}]"
-      #   # puts ">> base #{base}"
-      # end
+      @path = if @site.layouts[template].path.end_with? 'html'
+                @site.layouts[template].path.dup
+              else
+                File.join(@site.layouts[template].path, @site.layouts[template].name)
+              end
 
       process(name)
       # read_yaml(PathManager.join(base, dir), name)
 
       base_path = @site.layouts[template].path
       base_path.slice! @site.layouts[template].name
-      self.read_yaml(base_path, @site.layouts[template].name)
+
+      # self.read_yaml, rubocop complaints about self.
+      read_yaml(base_path, @site.layouts[template].name)
 
       generate_excerpt if site.config['page_excerpts']
 
@@ -145,46 +84,14 @@ module HapiApi
         site.frontmatter_defaults.find(relative_path, type, key)
       end
 
-
       # self.data, rubocop complaints about self.
       data['datum'] = api_datum
-      # data.merge!(api_datum)
+      data.merge!(api_datum['jekyll-page'])
 
-      puts 'oi_2'
-      puts data
+      # puts 'oi_2'
+      # puts data
       Jekyll::Hooks.trigger :pages, :post_init, self
-
-      puts 'oi_3'
-      puts data
-
-      # return nil
-
-      # # All pages have the same filename, so define attributes straight away.
-      # @basename = 'index'      # filename without the extension.
-      # @ext      = '.html'      # the extension.
-      # @name     = 'index.html' # basically @basename + @ext.
-
-      # # Initialize data hash with a key pointing to all posts under current category.
-      # # This allows accessing the list in a template via `page.linked_docs`.
-      # @data = {
-      #   'linked_docs' => posts
-      # }
-
-      # # Look up front matter defaults scoped to type `categories`, if given key
-      # # doesn't exist in the `data` hash.
-      # data.default_proc = proc do |_, key|
-      #   site.frontmatter_defaults.find(relative_path, :categories, key)
-      # end
     end
-
-    # # Placeholders that are used in constructing page URL.
-    # def url_placeholders
-    #   {
-    #     category: @dir,
-    #     basename: basename,
-    #     output_ext: output_ext
-    #   }
-    # end
 
     # rubocop:enable Lint/MissingSuper
   end
@@ -213,9 +120,19 @@ module HapiApi
     # _[por] Macro para 'expandir' o que usuário escreveu [por]_
     def expandendum_api_datum(apis)
       apis.map do |api|
-        api['uid2'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
+        api['uid'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
         api['dir'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/"
-        api['locale'] = Utilitatem.linguam_to_html_lang(api['linguam'])
+        # api['locale'] = Utilitatem.linguam_to_html_lang(api['linguam'])
+
+        api['jekyll-page'] = {
+          # 'locale' => Utilitatem.linguam_to_html_lang(api['linguam']),
+          'linguam' => api['linguam'],
+          'lang' => Utilitatem.linguam_to_html_lang(api['linguam']),
+          'title' => api['title'],
+          'description' => api['description'] || api['descriptionem'],
+          'template' => 'api',
+          'layout' => 'api'
+        }
 
         api['debug'] = true
       end
