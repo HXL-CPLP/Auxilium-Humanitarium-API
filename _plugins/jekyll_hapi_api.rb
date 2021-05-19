@@ -1,7 +1,12 @@
 # WTF!? @see https://github.com/rubocop/ruby-style-guide/issues/301
-# rubocop:disable AsciiComments
+# WTF!? @see https://github.com/rubocop/ruby-style-guide/issues/137
+# rubocop:disable RubocopIsRacist/AsciiComments
+# rubocop:disable Metrics/MethodLength
 
 # frozen_string_literal: true
+
+# Testando variaveis com caracteres alem de ASCII
+@ááá = 'aa'
 
 # Trivia:
 # - 'pāginam'
@@ -10,10 +15,9 @@
 #   - https://en.wiktionary.org/wiki/utilitas#Latin
 
 # TODO: document
-# lorem ipsum..
+# TODO: document
 module HapiApi
-  # TODO: document
-  # lorem ipsum..
+  # HapiApiGenerator is (TODO: document)
   class HapiApiGenerator < Jekyll::Generator
     safe true
 
@@ -27,6 +31,7 @@ module HapiApi
   # Subclass of `Jekyll::Page` with custom method definitions.
   class ApiPaginam < Jekyll::Page
     def initialize(site, category, posts)
+      super()
       @site = site             # the current site instance.
       @base = site.source      # path to the source directory.
       @dir  = category         # the directory the page will reside in.
@@ -58,9 +63,28 @@ module HapiApi
       }
     end
   end
+
+  # class ūtilitātem
+  class Utilitatem
+    def sanitize_filename_i18n(name)
+      return name.to_s if name.is_a? Integer
+
+      # TODO: investigate usage of
+      #       /[[:word:]]/ - A character in one of the following Unicode
+      #       general categories Letter, Mark, Number, Connector_Punctuation
+      name.strip
+          # Whitespace character ([:blank:], newline, carriage return, etc.)
+          # replaced by -
+          .gsub(/[[:space:]]/, '-')
+          # /[[:cntrl:]]/ - Control character
+          # remove any one present
+          .gsub(/[[:cntrl:]]/, '')
+    end
+  end
 end
 
-#   Liquid::Template.register_filter(Jekyll::DataPageLinkGenerator)
+# rubocop:enable Metrics/MethodLength
+
 # WTF!? @see https://github.com/rubocop/ruby-style-guide/issues/301
 # Essa porra é tão racista que obriga por rubocop:enable AsciiComments
-# rubocop:enable AsciiComments
+# rubocop:enable RubocopIsRacist/AsciiComments
