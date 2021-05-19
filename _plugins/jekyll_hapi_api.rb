@@ -54,7 +54,8 @@ module HapiApi
       # @dir  = api_datum['dir']  # the directory the page will reside in.
       # @name = api_datum['lid']
       # @dir  = api_datum['dir'] + '/' + api_datum['lid'] + '/'
-      @dir  = "#{api_datum['dir']}/#{api_datum['lid']}/'"
+      @dir  = "#{api_datum['dir']}/#{api_datum['lid']}/"
+      # @name = 'index.html'
       @name = 'index.html'
       template = api_datum['jekyll-page']['template']
 
@@ -90,6 +91,17 @@ module HapiApi
     end
 
     # rubocop:enable Lint/MissingSuper
+
+    # @see https://jekyllrb.com/docs/plugins/generators/
+    # Placeholders that are used in constructing page URL.
+    # def url_placeholders
+    #   {
+    #     :category   => @dir,
+    #     :basename   => basename,
+    #     :output_ext => 'html'
+    #     :output_ext => output_ext
+    #   }
+    # end
   end
 end
 

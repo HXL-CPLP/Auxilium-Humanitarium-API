@@ -39,7 +39,7 @@
 
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/HDX/
-  # uid: /mul/api/UN/HDX/
+  uid: /mul/api/UN/HDX/
   linguam: mul
   typum: api
   gid: UN
