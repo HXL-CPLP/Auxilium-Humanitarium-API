@@ -17,7 +17,7 @@
   linguam: eng
   typum: api
   gid: UN
-  # lid: HDX
+  lid: HDX
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   slug: humanitarian-data-exchange
   title: HDX - The Humanitarian Data Exchange API
@@ -30,7 +30,7 @@
   linguam: arb
   typum: api
   gid: UN
-  # lid: HDX
+  lid: 'اختبارات'
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   title: "اختبارات"
   noindex: true
@@ -41,7 +41,7 @@
   linguam: mul
   typum: api
   gid: UN
-  # lid: reliefweb
+  lid: reliefweb
   title: "Index: ReliefWeb"
   noindex: true
 
@@ -50,7 +50,7 @@
   linguam: eng
   typum: api
   gid: UN
-  # lid: ReliefWeb
+  lid: reliefweb
   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
   slug: reliefweb
   title: ReliefWeb - Informing humanitarians worldwide
@@ -63,7 +63,7 @@
   linguam: mul
   typum: api
   gid: UN
-  # lid: CODV2API
+  lid: CODV2API
   title: "Index: CODV2API"
   noindex: true
 
@@ -72,7 +72,7 @@
   linguam: eng
   typum: api
   gid: UN
-  # lid: CODV2API
+  lid: common-operational-datasets-api
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
   # slug: common-operational-datasets-api
   title: Common Operational Datasets Services 2 (COD Services)
@@ -86,7 +86,7 @@
   linguam: mul
   typum: api
   gid: XZ
-  # lid: HXL-Proxy
+  lid: hxl-proxy
   title: "Index: HXL-Proxy"
   noindex: true
 
@@ -95,9 +95,9 @@
   linguam: eng
   typum: api
   gid: XZ
-  # lid: HXL-Proxy
+  lid: hxl-proxy
   openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml
-  slug: hxl-proxy
+  # slug: hxl-proxy
   title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
   noindex: true
 
@@ -109,7 +109,7 @@
   linguam: mul
   typum: api
   gid: BR
-  # lid: portais-ckan-brasil
+  lid: portais-ckan-brasil
   title: "Index: Portais CKAN de dados abertos do Brasil"
   noindex: true
 
@@ -118,7 +118,7 @@
   linguam: eng
   typum: api
   gid: BR
-  # lid: portais-ckan-brasil
+  lid: brazilian-ckan-portals
   openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
   slug: brazilian-ckan-portals
   title: Brazilian CKAN Open Data Portals
@@ -131,9 +131,9 @@
   linguam: por
   typum: api
   gid: BR
-  # lid: dados-abertos-ckan-brasil
+  lid: dados-abertos-ckan-brasil
   openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
-  slug: dados-abertos-ckan-brasil
+  # slug: dados-abertos-ckan-brasil
   title: Portais CKAN de dados abertos do Brasil
   description: |
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
@@ -145,7 +145,7 @@
   linguam: mul
   typum: api
   gid: BR
-  # lid: portais-arcgis-brasil
+  lid: portais-arcgis-brasil
   title: "Index: Portais ArcGIS de dados abertos do Brasil"
   noindex: true
 
@@ -154,7 +154,7 @@
   linguam: por
   typum: api
   gid: BR
-  # lid: portais-arcgis-brasil
+  lid: portais-arcgis-brasil
   openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml
   slug: dados-abertos-arcgis-brasil
   title: Portais ArcGIS de dados abertos do Brasil

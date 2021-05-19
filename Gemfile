@@ -1,9 +1,9 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # gem "github-pages", group: :jekyll_plugins
 # gem "jekyll", "~> 3.9"
 
-gem "jekyll", "~> 4.2"
+gem 'jekyll', '~> 4.2'
 
 group :jekyll_plugins do
   # @see https://github.com/toshimaru/jekyll-toc

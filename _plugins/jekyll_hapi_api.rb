@@ -35,11 +35,26 @@ module HapiApi
       #   # api['locale'] = linguam_to_html_lang(api['linguam'])
       # end
 
+      @debug_all = true
+
       @apis = Utilitatem.expandendum_api_datum(site.data['api'])
 
       site.data['api'] = @apis
 
-      puts @apis[0]
+      # puts @apis[0]
+
+      site.data['api'].each do |api|
+        @debug_est = @debug_all or api['debug']
+        @template_est = 'api'
+        # puts api
+        # puts 'oi'
+        @teste = ApiPaginam.new(site, site.source, api['dir'], api['lid'], @template_est, @debug_est)
+        # debug @teste
+        # puts 'oi2'
+        # puts @teste.inspect
+        site.pages << ApiPaginam.new(site, site.source, api['dir'], api['lid'], @template_est, @debug_est)
+        # break
+      end
 
       # site.pages << ApiPaginam.new(site)
 
@@ -62,7 +77,6 @@ module HapiApi
     # def initialize(site, category, posts)
     # def initialize(site, _api)
 
-    # rubocop:disable Metrics/MethodLength
     # rubocop:disable Lint/MissingSuper
 
     # Initialize a new Page.
@@ -71,14 +85,63 @@ module HapiApi
     # base - The String path to the source.
     # dir  - The String path between the source and the file.
     # name - The String filename of the file.
-    # def initialize(site, _base, _dir, _name)
-    def initialize(site)
+    # debug - Output more information about this item
+    def initialize(site, base, dir, name, template, debug)
       # def initialize(site)
       # warning:Lint/MissingSuper
       # super()
       @site = site             # the current site instance.
-      @base = site.source      # path to the source directory.
-      # @dir  = category         # the directory the page will reside in.
+      @base = base             # path to the source directory.
+      @dir  = dir              # the directory the page will reside in.
+      @name = name
+
+      # @path = site.in_source_dir(base, dir, name)
+      # @path = File.join(@site.layouts[template].path, @site.layouts[template].name)
+
+      # puts @site.layouts
+      # puts 'oi3'
+      # puts @site.layouts['api']
+
+      if @site.layouts[template].path.end_with? 'html'
+        @path = @site.layouts[template].path.dup
+      else
+        @path = File.join(@site.layouts[template].path, @site.layouts[template].name)
+      end
+
+      # puts debug
+
+      # if debug
+      #     [:base, :dir, :name].each do |variable|
+      #       puts ">> #{variable}: #{eval(variable.to_s)}"
+
+      # if debug
+      #   puts ">> base [#{base}] dir [#{dir}]"
+      #   # puts ">> site.posts [#{site.posts}]"
+      #   # require 'json'
+      #   # puts ">> site.posts.docs.last [#{site.posts.docs.to_json}]"
+      #   # puts ">> site.posts.docs.last [#{site.posts.docs[0]}]"
+      #   puts ">> site.posts [#{site.posts.inspect}]"
+      #   # puts ">> base [#{base}] dir [#{dir}]"
+      #   # puts ">> base #{base}"
+      # end
+
+      process(name)
+      # read_yaml(PathManager.join(base, dir), name)
+
+      base_path = @site.layouts[template].path
+      base_path.slice! @site.layouts[template].name
+      self.read_yaml(base_path, @site.layouts[template].name)
+
+
+      generate_excerpt if site.config['page_excerpts']
+
+      data.default_proc = proc do |_, key|
+        site.frontmatter_defaults.find(relative_path, type, key)
+      end
+
+      Jekyll::Hooks.trigger :pages, :post_init, self
+
+      # return nil
 
       # # All pages have the same filename, so define attributes straight away.
       # @basename = 'index'      # filename without the extension.
@@ -107,7 +170,6 @@ module HapiApi
     #   }
     # end
 
-    # rubocop:enable Metrics/MethodLength
     # rubocop:enable Lint/MissingSuper
   end
 
@@ -136,7 +198,10 @@ module HapiApi
     def expandendum_api_datum(apis)
       apis.map do |api|
         api['uid2'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
+        api['dir'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/"
         api['locale'] = Utilitatem.linguam_to_html_lang(api['linguam'])
+
+        api['debug'] = true
       end
 
       apis

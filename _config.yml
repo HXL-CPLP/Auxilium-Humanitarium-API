@@ -83,27 +83,27 @@ defaults:
     values:
       sitemap: false
 
-# @see https://github.com/avillafiorita/jekyll-datapage_gen
-page_gen-dirs: true
-page_gen:
-  # referens: api-BR-portais-ckan-brasil
-  - data: 'api'
-    template: 'api'
-    # name: 'title'
-    name_expr: "record['uid'].split('/').last"
-    # name_expr: "record['slug'] or record['lid']"
-    # dir: 'uid'
-    # "/mul/api/XZ/HXL-Proxy/".chomp("/mul/api/XZ/HXL-Proxy/".split('/').last + "/")
-    # record['uid'].chomp(record['uid'].split('/').last + "/")
-    dir_expr: "record['uid'].chomp(record['uid'].split('/').last + '/')"
-    # dir_expr: "record['uid']"
-    # dir_expr: "record['linguam'] + '/' + record['typum'] + '/' + record['gid']"
-    # filter_condition: "record['linguam'] != 'mul'"
-    # debug: true
+# # @see https://github.com/avillafiorita/jekyll-datapage_gen
+# page_gen-dirs: true
+# page_gen:
+#   # referens: api-BR-portais-ckan-brasil
+#   - data: 'api'
+#     template: 'api'
+#     # name: 'title'
+#     name_expr: "record['uid'].split('/').last"
+#     # name_expr: "record['slug'] or record['lid']"
+#     # dir: 'uid'
+#     # "/mul/api/XZ/HXL-Proxy/".chomp("/mul/api/XZ/HXL-Proxy/".split('/').last + "/")
+#     # record['uid'].chomp(record['uid'].split('/').last + "/")
+#     dir_expr: "record['uid'].chomp(record['uid'].split('/').last + '/')"
+#     # dir_expr: "record['uid']"
+#     # dir_expr: "record['linguam'] + '/' + record['typum'] + '/' + record['gid']"
+#     # filter_condition: "record['linguam'] != 'mul'"
+#     # debug: true
 
-  # - data: 'api'
-  #   template: 'api'
-  #   name: 'slug'
-  #   dir: 'eng/api-TEMP/BR'
-  #   filter_condition: "record['gid'] == '/api/BR' and record['linguam'] == 'por'"
-  #   debug: true
+#   # - data: 'api'
+#   #   template: 'api'
+#   #   name: 'slug'
+#   #   dir: 'eng/api-TEMP/BR'
+#   #   filter_condition: "record['gid'] == '/api/BR' and record['linguam'] == 'por'"
+#   #   debug: true
