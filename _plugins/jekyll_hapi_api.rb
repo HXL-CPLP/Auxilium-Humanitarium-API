@@ -1,12 +1,9 @@
-# WTF!? @see https://github.com/rubocop/ruby-style-guide/issues/301
-# WTF!? @see https://github.com/rubocop/ruby-style-guide/issues/137
+# FILUM:           _lugins/hapi/utilitatem.rb
+#
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
-
-# frozen_string_literal: true
-
-# Testando variaveis com caracteres alem de ASCII
-@ááá = 'aa'
-
+#   @see https://github.com/rubocop/ruby-style-guide/issues/301
+#   @see https://github.com/rubocop/ruby-style-guide/issues/137
+#
 # Trivia:
 # - 'datum'
 #   - https://en.wiktionary.org/wiki/datum#Latin
@@ -16,9 +13,8 @@
 #   - https://en.wiktionary.org/wiki/utilitas#Latin
 # - 'expandendum'
 #   - https://en.wiktionary.org/wiki/expando#Latin
+# frozen_string_literal: true
 
-# TODO: document
-# TODO: document
 module HapiApi
   # HapiApiGenerator is (TODO: document)
   class HapiApiGenerator < Jekyll::Generator
@@ -43,7 +39,6 @@ module HapiApi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-
     # rubocop:disable Lint/MissingSuper
 
     # _[eng] Initialize a new page [eng]_
@@ -58,7 +53,8 @@ module HapiApi
       @base = site.source       # path to the source directory.
       # @dir  = api_datum['dir']  # the directory the page will reside in.
       # @name = api_datum['lid']
-      @dir  = api_datum['dir'] + '/' + api_datum['lid'] + '/'
+      # @dir  = api_datum['dir'] + '/' + api_datum['lid'] + '/'
+      @dir  = "#{api_datum['dir']}/#{api_datum['lid']}/'"
       @name = 'index.html'
       template = api_datum['jekyll-page']['template']
 
@@ -94,63 +90,6 @@ module HapiApi
     end
 
     # rubocop:enable Lint/MissingSuper
-  end
-
-  # _[eng] Generic utils [eng]_
-  # _[por] Utilitários diversos [por]_
-  module Utilitatem
-    module_function
-
-    # _[eng] TODO: document [eng]_
-    # _[por] TODO: por ser documentado [por]_
-    def sanitize_filename_i18n(name)
-      return name.to_s if name.is_a? Integer
-
-      # TODO: _[eng] investigate usage of  /[[:word:]]/ [eng]_
-      name.strip
-          # Whitespace character ([:blank:], newline, carriage return, etc.)
-          # replaced by -
-          .gsub(/[[:space:]]/, '-')
-          # /[[:cntrl:]]/ - Control character
-          # remove any one present
-          .gsub(/[[:cntrl:]]/, '')
-    end
-
-    # _[eng] Macro to 'expand' user written api data to new variables  [eng]_
-    # _[por] Macro para 'expandir' o que usuário escreveu [por]_
-    def expandendum_api_datum(apis)
-      apis.map do |api|
-        api['uid'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
-        api['dir'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/"
-        # api['locale'] = Utilitatem.linguam_to_html_lang(api['linguam'])
-
-        api['jekyll-page'] = {
-          # 'locale' => Utilitatem.linguam_to_html_lang(api['linguam']),
-          'linguam' => api['linguam'],
-          'lang' => Utilitatem.linguam_to_html_lang(api['linguam']),
-          'title' => api['title'],
-          'description' => api['description'] || api['descriptionem'],
-          'template' => 'api',
-          'layout' => 'api'
-        }
-
-        api['debug'] = true
-      end
-
-      apis
-    end
-
-    # _[eng] We use ISO 639-3, but HTML lang wants BCP-47 [eng]_
-    # _[por] Usamos ISO 639-3, porém HTML lang deseja BCP-47 [por]_
-    def linguam_to_html_lang(linguam)
-      @referens = {
-        'eng' => 'en',
-        'por' => 'pt',
-        'lat' => 'la',
-        'mul' => 'pt'
-      }
-      @referens[linguam]
-    end
   end
 end
 

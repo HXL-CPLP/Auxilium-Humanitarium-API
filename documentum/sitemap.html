@@ -41,7 +41,7 @@ sitemap:
       <ul>
         {% for post in site.pages %}
           <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
+            <a href="{{ post.url }}" title='{{ post.datum | jsonify }}'>{{ post.title }}</a>
           </li>
         {% endfor %}
       </ul>

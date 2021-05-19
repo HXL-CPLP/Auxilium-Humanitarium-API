@@ -1,10 +1,45 @@
 # https://github.com/avillafiorita/jekyll-datapage_gen
 
+
+# Trivia
+# - 'x-default':
+#   - https://en.wikipedia.org/wiki/Hreflang
+# - 'linguam':
+#   - https://en.wiktionary.org/wiki/lingua#Latin
+# - 'typum':
+#   - https://en.wiktionary.org/wiki/typus#Latin
+# - 'gid', 'g' (globum) + 'id' (identicum)
+#   - 'globum'
+#     - https://en.wiktionary.org/wiki/globus#Latin
+#   - 'identicum'
+#     - https://en.wiktionary.org/wiki/identicus#Latin
+# - 'lid', 'l' (locum) + 'id' (identicum)
+#   - 'locum'
+#     - https://en.wiktionary.org/wiki/locum#Latin
+#   - 'identicum'
+#     - https://en.wiktionary.org/wiki/identicus#Latin
+# - 'nōmen'
+#   - https://en.wiktionary.org/wiki/nomen#Latin
+# - 'dēscrīptiōnem'
+#   - https://en.wiktionary.org/wiki/descriptio#Latin
+# - x-temporarium, 'x-', + 'temporārium'
+#   - https://en.wiktionary.org/wiki/temporarius#Latin
+# - 'dēprecātum'
+#   - https://en.wiktionary.org/wiki/deprecatus#Latin
+
+
+### dēprecātum _________________________________________________________________
+
+# title -> namen
+# description -> descriptionem
+# noindex -> x-temporarium.noindex
+# openapi_filum -> x-temporarium.openapi_filum
+
 ### [linguam]/api/UN ___________________________________________________________
 
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/HDX/
-  uid: /mul/api/UN/HDX/
+  # uid: /mul/api/UN/HDX/
   linguam: mul
   typum: api
   gid: UN
@@ -13,7 +48,7 @@
   noindex: true
 
 - x-default: /mul/api/UN/HDX/
-  uid: /eng/api/UN/humanitarian-data-exchange/
+  # uid: /eng/api/UN/humanitarian-data-exchange/
   linguam: eng
   typum: api
   gid: UN
@@ -26,7 +61,7 @@
 # Note: this is just a test to check if non US-ASCII characters can work with
 #       Hapi toolchain
 - x-default: /mul/api/UN/HDX/
-  uid: /arb/api/UN/اختبارات/
+  # uid: /arb/api/UN/اختبارات/
   linguam: arb
   typum: api
   gid: UN
@@ -37,7 +72,7 @@
 
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/reliefweb/
-  uid: /mul/api/UN/reliefweb/
+  # uid: /mul/api/UN/reliefweb/
   linguam: mul
   typum: api
   gid: UN
@@ -46,7 +81,7 @@
   noindex: true
 
 - x-default: /mul/api/UN/reliefweb/
-  uid: /eng/api/UN/reliefweb/
+  # uid: /eng/api/UN/reliefweb/
   linguam: eng
   typum: api
   gid: UN
@@ -59,7 +94,7 @@
 
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/CODV2API/
-  uid: /mul/api/UN/CODV2API/
+  # uid: /mul/api/UN/CODV2API/
   linguam: mul
   typum: api
   gid: UN
@@ -68,7 +103,7 @@
   noindex: true
 
 - x-default: /mul/api/UN/CODV2API/
-  uid: /eng/api/UN/common-operational-datasets-api/
+  # uid: /eng/api/UN/common-operational-datasets-api/
   linguam: eng
   typum: api
   gid: UN
@@ -82,7 +117,7 @@
 
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/XZ/HXL-Proxy/
-  uid: /mul/api/XZ/HXL-Proxy/
+  # uid: /mul/api/XZ/HXL-Proxy/
   linguam: mul
   typum: api
   gid: XZ
@@ -91,7 +126,7 @@
   noindex: true
 
 - x-default: /mul/api/XZ/HXL-Proxy/
-  uid: /eng/api/XZ/HXL-Proxy/
+  # uid: /eng/api/XZ/HXL-Proxy/
   linguam: eng
   typum: api
   gid: XZ
@@ -105,7 +140,7 @@
 
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/BR/portais-ckan-brasil/
-  uid: /mul/api/BR/portais-ckan-brasil/
+  # uid: /mul/api/BR/portais-ckan-brasil/
   linguam: mul
   typum: api
   gid: BR
@@ -114,7 +149,7 @@
   noindex: true
 
 - x-default: /mul/api/BR/portais-ckan-brasil/
-  uid: /eng/api/BR/brazilian-ckan-portals/
+  # uid: /eng/api/BR/brazilian-ckan-portals/
   linguam: eng
   typum: api
   gid: BR
@@ -127,7 +162,7 @@
   noindex: true
 
 - x-default: /mul/api/BR/portais-ckan-brasil/
-  uid: /por/api/BR/dados-abertos-ckan-brasil/
+  # uid: /por/api/BR/dados-abertos-ckan-brasil/
   linguam: por
   typum: api
   gid: BR
@@ -141,7 +176,7 @@
 
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/BR/portais-arcgis-brasil/
-  uid: /mul/api/BR/portais-arcgis-brasil/
+  # uid: /mul/api/BR/portais-arcgis-brasil/
   linguam: mul
   typum: api
   gid: BR
@@ -150,7 +185,7 @@
   noindex: true
 
 - x-default: /mul/api/BR/portais-arcgis-brasil/
-  uid: /por/api/BR/portais-arcgis-brasil/
+  # uid: /por/api/BR/portais-arcgis-brasil/
   linguam: por
   typum: api
   gid: BR
