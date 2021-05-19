@@ -45,14 +45,17 @@ module HapiApi
 
       site.data['api'].each do |api|
         @debug_est = @debug_all or api['debug']
-        @template_est = 'api'
+        # @template_est = 'api'
+        @jekyll_datum = {
+          'template' => 'api'
+        }
         # puts api
         # puts 'oi'
-        @teste = ApiPaginam.new(site, site.source, api['dir'], api['lid'], @template_est, @debug_est)
+        # @teste = ApiPaginam.new(site, site.source, api['dir'], api['lid'], @template_est, @debug_est)
         # debug @teste
         # puts 'oi2'
         # puts @teste.inspect
-        site.pages << ApiPaginam.new(site, site.source, api['dir'], api['lid'], @template_est, @debug_est)
+        site.pages << ApiPaginam.new(site, api, @jekyll_datum, @debug_est)
         # break
       end
 
@@ -81,19 +84,22 @@ module HapiApi
 
     # Initialize a new Page.
     #
-    # site - The Site object.
-    # base - The String path to the source.
-    # dir  - The String path between the source and the file.
-    # name - The String filename of the file.
-    # debug - Output more information about this item
-    def initialize(site, base, dir, name, template, debug)
+    # site          - The Site object.
+    # api_datum     - API Datum
+    # jekyll_datum  - Jekyll Datum
+    # debug         - Debug est?
+    def initialize(site, api_datum, jekyll_datum, debug)
       # def initialize(site)
       # warning:Lint/MissingSuper
       # super()
-      @site = site             # the current site instance.
-      @base = base             # path to the source directory.
-      @dir  = dir              # the directory the page will reside in.
-      @name = name
+      @site = site              # the current site instance.
+      @base = site.source       # path to the source directory.
+      @dir  = api_datum['dir']  # the directory the page will reside in.
+      @name = api_datum['lid']
+      template = jekyll_datum['template']
+
+      puts 'oi_1'
+      puts data
 
       # @path = site.in_source_dir(base, dir, name)
       # @path = File.join(@site.layouts[template].path, @site.layouts[template].name)
@@ -132,14 +138,24 @@ module HapiApi
       base_path.slice! @site.layouts[template].name
       self.read_yaml(base_path, @site.layouts[template].name)
 
-
       generate_excerpt if site.config['page_excerpts']
 
+      # _[por] Não estamos usando Jekyll defaults [por]_
       data.default_proc = proc do |_, key|
         site.frontmatter_defaults.find(relative_path, type, key)
       end
 
+
+      # self.data, rubocop complaints about self.
+      data['datum'] = api_datum
+      # data.merge!(api_datum)
+
+      puts 'oi_2'
+      puts data
       Jekyll::Hooks.trigger :pages, :post_init, self
+
+      puts 'oi_3'
+      puts data
 
       # return nil
 
