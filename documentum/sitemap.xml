@@ -83,7 +83,7 @@ sitemap:
     typum: api
   -->
   {% for api in site.pages -%}
-    {%- if api.typum == 'api' %}
+    {%- if api.tags contains 'api' %}
   <url>
     <loc>{{ site.url }}{{ api.url }}</loc>
     {% if api.sitemap.lastmod %}
@@ -103,7 +103,7 @@ sitemap:
     {% else %}
     <priority>0.3</priority>
     {% endif %}
-    {% if api.x-default %}
+    {%- if api.tags contains 'api-x-default' %}
     <xhtml:link
       rel="alternate"
       hreflang="x-default"

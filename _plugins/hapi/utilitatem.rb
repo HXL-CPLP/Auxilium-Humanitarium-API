@@ -79,9 +79,7 @@ module HapiApi
       @tags = ['api']
       @tags.append("api-linguam-#{api['linguam']}") if api.key?('linguam')
       @tags.append("api-#{api['linguam']}") if api.key?('linguam')
-
-      # if api.key?('linguam')
-      #   @tags.append('api-' + api['linguam'])
+      @tags.append('api-x-default') if xdefault_est(api)
 
       @tags
     end
@@ -107,6 +105,25 @@ module HapiApi
         'mul' => 'pt'
       }
       @referens[linguam]
+    end
+
+    # _[eng] Is this an x-default API? [eng]_
+    # _[por] Esta é uma API x-default? [por]_
+    def xdefault_est(api)
+      api['linguam'] == 'mul'
+    end
+
+    # _[eng] Is this an x-default API? [eng]_
+    # _[por] Esta é uma API x-default? [por]_
+    def xalternate_totale(api, apis)
+      @totale = []
+      @apis_est = apis.nil? ? site.data['api'] : apis
+
+      @apis_est.each do |api_ref|
+        @totale.append(api_ref['x-default']) if api['x-default'] == api_ref['x-default']
+      end
+
+      @xalternate_tatale
     end
   end
 end
