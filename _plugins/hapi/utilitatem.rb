@@ -23,19 +23,24 @@ module HapiApi
   module Utilitatem
     module_function
 
-    # _[eng] To do: document [eng]_
-    # _[por] Por ser feito: documentar [por]_
-    def sanitize_filename_i18n(name)
-      return name.to_s if name.is_a? Integer
+    # _[eng] Non-cryptographic finterprint (a checksum) [eng]_
+    # _[por] Assinatura simples não criptográfica [por]_
+    # Trivia:
+    # - 'digitum', https://en.wiktionary.org/wiki/digitus#Latin
+    # - 'premendum', https://en.wiktionary.org/wiki/premo#Latin
+    def digitum_premendum(item)
+      return if item.nil?
 
-      # TODO: _[eng] investigate usage of  /[[:word:]]/ [eng]_
-      name.strip
-          # Whitespace character ([:blank:], newline, carriage return, etc.)
-          # replaced by -
-          .gsub(/[[:space:]]/, '-')
-          # /[[:cntrl:]]/ - Control character
-          # remove any one present
-          .gsub(/[[:cntrl:]]/, '')
+      require 'zlib'
+      @resultatum = Zlib.adler32(item).to_s(16)
+
+      puts item
+      puts @resultatum
+
+      @resultatum
+      # data = 'foo'
+      # puts "Adler32 checksum: #{Zlib.adler32(data).to_s(16)}"
+      # aa
     end
 
     # _[eng] Macro to 'expand' user written api data to new variables  [eng]_
@@ -45,6 +50,7 @@ module HapiApi
         # puts api['uid']
         api['uid'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
         api['dir'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/"
+        api['trivium'] = digitum_premendum(api['x-default'])
 
         # puts api['uid']
         # api['openapi_filum'] = openapi_filum_de_api(api)
@@ -67,21 +73,44 @@ module HapiApi
         'tags' => tags_de_api(api),
         'openapi_filum2' => openapi_filum_de_api(api),
         'template' => 'api',
-        'layout' => 'api'
+        'layout' => 'api',
+        'trivium' => digitum_premendum(api['x-default'])
       }
 
       api
     end
 
-    # _[eng] Jekyll Tags from an API item [eng]_
-    # _[por] Tags Jekyll de item de API [por]_
-    def tags_de_api(api)
-      @tags = ['api']
-      @tags.append("api-linguam-#{api['linguam']}") if api.key?('linguam')
-      @tags.append("api-#{api['linguam']}") if api.key?('linguam')
-      @tags.append('api-x-default') if xdefault_est(api)
+    # _[eng] We use ISO 639-3, but HTML lang wants BCP-47 [eng]_
+    # _[por] Usamos ISO 639-3, porém HTML lang deseja BCP-47 [por]_
+    def linguam_to_html_lang(linguam)
+      @referens = {
+        'eng' => 'en',
+        'eng-Latn' => 'en',
+        'por' => 'pt',
+        'por-Latn' => 'pt',
+        'lat' => 'la',
+        'lat-Latn' => 'la',
+        'mul' => 'pt'
+      }
+      @referens[linguam]
+    end
 
-      @tags
+    # _[eng] Clean control chars and white space from names [eng]_
+    # _[por] Remove caracteres de controle e espaços em branco de nomes [por]_
+    # Trivia:
+    # - 'nomen', https://en.wiktionary.org/wiki/nomen#Latin
+    # - 'pūrissimum', https://en.wiktionary.org/wiki/purissimus#Latin
+    def nomen_purissimum(name)
+      return name.to_s if name.is_a? Integer
+
+      # TODO: _[eng] investigate usage of  /[[:word:]]/ [eng]_
+      name.strip
+          # Whitespace character ([:blank:], newline, carriage return, etc.)
+          # replaced by -
+          .gsub(/[[:space:]]/, '-')
+          # /[[:cntrl:]]/ - Control character
+          # remove any one present
+          .gsub(/[[:cntrl:]]/, '')
     end
 
     # _[eng] Jekyll Tags from an API item [eng]_
@@ -95,16 +124,15 @@ module HapiApi
       end
     end
 
-    # _[eng] We use ISO 639-3, but HTML lang wants BCP-47 [eng]_
-    # _[por] Usamos ISO 639-3, porém HTML lang deseja BCP-47 [por]_
-    def linguam_to_html_lang(linguam)
-      @referens = {
-        'eng' => 'en',
-        'por' => 'pt',
-        'lat' => 'la',
-        'mul' => 'pt'
-      }
-      @referens[linguam]
+    # _[eng] Jekyll Tags from an API item [eng]_
+    # _[por] Tags Jekyll de item de API [por]_
+    def tags_de_api(api)
+      @tags = ['api']
+      @tags.append("api-linguam-#{api['linguam']}") if api.key?('linguam')
+      @tags.append("api-#{api['linguam']}") if api.key?('linguam')
+      @tags.append("api-trivium-#{api['trivium']}") if api['trivium']
+
+      @tags
     end
 
     # _[eng] Is this an x-default API? [eng]_
@@ -113,9 +141,22 @@ module HapiApi
       api['linguam'] == 'mul'
     end
 
-    # _[eng] Is this an x-default API? [eng]_
-    # _[por] Esta é uma API x-default? [por]_
-    def xalternate_totale(api, apis)
+    # _[eng] Return list of hreflang alternate of an API [eng]_
+    # _[por] Retorna lista de 'hreflan alternate' de uma API [por]_
+    def xalternate_api_totale(api, apis)
+      @totale = []
+      @apis_est = apis.nil? ? site.data['api'] : apis
+
+      @apis_est.each do |api_ref|
+        @totale.append(api_ref['x-default']) if api['x-default'] == api_ref['x-default']
+      end
+
+      @totale
+    end
+
+    # _[eng] Return list of hreflang alternate of an Jekyll Page [eng]_
+    # _[por] Retorna lista de 'hreflan alternate' de uma Jekyll Page [por]_
+    def xalternate_jekyll_page(_page)
       @totale = []
       @apis_est = apis.nil? ? site.data['api'] : apis
 
