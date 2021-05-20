@@ -4,39 +4,63 @@
 
 # Jekyll::Hooks.register :site, :after_init do |site|
 Jekyll::Hooks.register :site, :post_read do |site|
-    # code to call after Jekyll renders a page
-    print "jekyll-hapi-hooks: hi!"
-    # print site.data.api
-    # print site.data.linguam
-    # puts site.data
-    # puts site.posts.docs
-    # puts site.collections
-    # puts site.pages
-    # puts site.data['api']
+  # code to call after Jekyll renders a page
+  print 'jekyll-hapi-hooks: hi!'
+  # print site.data.api
+  # print site.data.linguam
+  # puts site.data
+  # puts site.posts.docs
+  # puts site.collections
+  # puts site.pages
+  # puts site.data['api']
 
-    site.data['api'].map do |api|
+  site.data['api'].map do |api|
+    # Is possible to change title, description,
+    # but locale may be overriden.
 
-        # Is possible to change title, description,
-        # but locale may be overriden.
-
-        # api["title"] = "teste teste " + api["title"]
-        # api["description"] = "test desc"
-        # api["x-default"] = api["x-default"] + "oioioioi"
-        # if api["linguam"] == "eng"
-        #     api["locale"] = "en"
-        # end
-        case api["linguam"]
-        when "eng"
-            api["locale"] = "en"
-        when "por"
-            api["locale"] = "pt"
-        when "lat"
-            api["locale"] = "la"
-        when "mul"
-            api["locale"] = "pt"
-        end
+    # api["title"] = "teste teste " + api["title"]
+    # api["description"] = "test desc"
+    # api["x-default"] = api["x-default"] + "oioioioi"
+    # if api["linguam"] == "eng"
+    #     api["locale"] = "en"
+    # end
+    case api['linguam']
+    when 'eng'
+      api['locale'] = 'en'
+    when 'por'
+      api['locale'] = 'pt'
+    when 'lat'
+      api['locale'] = 'la'
+    default
+      api['locale'] = 'pt'
     end
+  end
 
-
-    puts "jekyll-hapi-hooks: bye!"
+  puts 'jekyll-hapi-hooks: bye!'
 end
+
+# TODO: fechar sitemap e menus
+
+# Jekyll::Hooks.register :pages, :post_init do |page|
+#   # code to call after Jekyll renders a page
+#   puts page
+# end
+
+# # Jekyll::Hooks.register :site, :after_init do |site|
+# Jekyll::Hooks.register :site, :post_read do |site|
+#   # code to call after Jekyll renders a page
+#   print 'jekyll-hapi-hooks: hi!'
+#   # print site.data.api
+#   # print site.data.linguam
+#   # puts site.data
+#   # puts site.posts.docs
+#   # puts site.collections
+#   # puts site.pages
+#   # puts site.data['api']
+
+#   site.pages.map do |page|
+#     puts page.docs
+#   end
+
+#   puts 'jekyll-hapi-hooks: bye!'
+# end

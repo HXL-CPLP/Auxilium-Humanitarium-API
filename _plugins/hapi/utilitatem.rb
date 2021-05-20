@@ -123,7 +123,7 @@ module HapiApi
         @totale.append(api_ref['x-default']) if api['x-default'] == api_ref['x-default']
       end
 
-      @xalternate_tatale
+      @totale
     end
   end
 end

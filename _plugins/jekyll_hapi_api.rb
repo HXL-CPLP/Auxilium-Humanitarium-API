@@ -47,7 +47,7 @@ module HapiApi
     # site          - Jekyll site obiectum
     # api_datum     - API Datum
     # debug         - Debug est?
-    def initialize(site, api_datum, debug)
+    def initialize(site, api_datum, _debug)
       # super()
       @site = site              # the current site instance.
       @base = site.source       # path to the source directory.
@@ -104,6 +104,24 @@ module HapiApi
     # end
   end
 end
+
+# module Jekyll
+#   # HapiApiAlternate (...)
+#   class HapiApiAlternate < Liquid::Tag
+#     def initialize(tag_name, text, tokens)
+#       super
+#       @text = text
+#     end
+
+#     def render(_context)
+#       "#{@text} #{Time.now}"
+#     end
+#   end
+# end
+
+# # <p>{% render_time page rendered at: %}</p>
+# Liquid::Template.register_tag('render_time', Jekyll::HapiApiAlternate)
+
 
 # _[por] rubocop é tão racista que obriga re-habilitar
 # AsciiComments [por]_
