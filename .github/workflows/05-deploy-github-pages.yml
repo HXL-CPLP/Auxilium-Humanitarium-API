@@ -12,7 +12,7 @@ on:
 
 jobs:
   deploy-github-pages:
-    name: Build
+    name: deploy-github-pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -94,6 +94,25 @@ jobs:
           cname: 'hapi.etica.ai'                # Default is to not use a cname
           actor: 'eticaaibot'                   # Default is the GITHUB_ACTOR
 
+      # TODO: create prebuild actions
+      # @see https://github.com/jeffreytse/jekyll-deploy-action/issues/15#issuecomment-810989660
+      # @see https://github.com/helaili/jekyll-action
+
 # Another strategy to deploy github pages with even more control
 # @see https://github.com/avillafiorita/jekyll-datapage_gen/issues/71#issuecomment-625532769
 # @see https://github.com/JamesIves/github-pages-deploy-action
+
+# ____________________________________________________________________________ #
+#### _[por] Como executar localmente o html-proofer [por]_
+## @see https://github.com/gjtorikian/html-proofer
+# sudo gem install html-proofer
+#
+# htmlproofer --as-links https://hapi.etica.ai/
+# htmlproofer --as-links https://hapi.etica.ai/,https://hapi.etica.ai/por/
+#
+# htmlproofer --as-links http://127.0.0.1:4000/
+# htmlproofer --as-links http://127.0.0.1:4000/,http://127.0.0.1:4000/por/,http://127.0.0.1:4000/eng-Latn/api/UN/reliefweb/
+
+
+### ./_site/
+# htmlproofer --allow-hash-href ./_site/

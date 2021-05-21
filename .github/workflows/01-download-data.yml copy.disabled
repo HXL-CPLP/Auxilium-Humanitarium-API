@@ -1,0 +1,22 @@
+# FILE:            .github/workflows/01-download-data.yml
+#
+# @see .github/workflows/05-deploy-github-pages.yml
+
+name: Download data (draft)
+on:
+  push:
+    branches:
+      # - main
+      - disabled-action
+jobs:
+  download-data:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+# - 2021-05-21 :(
+#   - https://github.community/t/reusing-sharing-inheriting-steps-between-jobs-declarations/16851/23
+#     - https://github.com/actions/runner/issues/438
+#       - https://github.com/actions/runner/issues/646#issuecomment-673404712
+#   - Ok.
+#     - 01-download-data.yml -> 01-download-data.yml.disabled

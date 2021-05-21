@@ -1,0 +1,62 @@
+# FILUM:           .github/workflows/03-salvum-testem.yml
+# DESCRIPTIONEM:   _[eng] Safety tests before deploy. [eng]_
+#                  _[eng] Testes de segurança antes de publicar [eng]_
+#
+# @see             https://jekyllrb.com/docs/continuous-integration/github-actions/
+
+
+# @see .github/workflows/05-deploy-github-pages.yml
+
+name: Download data (draft)
+on:
+  push:
+    branches:
+      - main
+jobs:
+  salvum-testem:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download community-contributed translations via Google Sheets from HXL-CPLP
+        run: bash _systema/programma/download-hxl-datum.sh
+
+      - name: "Steps before Jekyll: CNAME"
+        run: echo "hapi.etica.ai" > ./CNAME
+
+      # On the GitHub deploy, we explicity want it publish generated assets
+      - name: "Steps before Jekyll: rm .gitignore"
+        run: rm .gitignore
+
+      # # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: vendor/bundle
+      #     key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-gems-
+
+      # https://github.com/ruby/setup-ruby
+      - uses: ruby/setup-ruby@v1
+        with:
+          # ruby-version: 2.6 # Not needed with a .ruby-version file
+          ruby-version: 3.0
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      # On the GitHub deploy, we explicity want it publish generated assets
+      - name: "which ruby"
+        run: which ruby
+
+      # @see https://github.com/helaili/jekyll-action
+      # @see https://jekyllrb.com/docs/continuous-integration/github-actions/
+      - uses:  helaili/jekyll-action@master
+        with:
+          # token: ${{ secrets.GH_TOKEN }}
+          build_only: true
+          jekyll_src: './'
+          target_branch: 'gh-pages'
+          pre_build_commands: |
+            apt install tree -y
+            tree
+
+# https://github.com/ruby/setup-ruby
