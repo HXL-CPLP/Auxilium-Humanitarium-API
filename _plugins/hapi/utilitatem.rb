@@ -17,6 +17,12 @@
 #   - https://en.wiktionary.org/wiki/expando#Latin
 # frozen_string_literal: true
 
+# TODO: _[por] Alguma estratégia para redirecionar. Podemos usar como
+#              referência https://github.com/jekyll/jekyll-redirect-from
+#              porém provavelmente vamos ter que implementar em Ruby pra
+#              permitir customização bem especifica para nossas necessidades
+#       [por]_
+
 module HapiApi
   # _[eng] Generic utils [eng]_
   # _[por] Utilitários diversos [por]_
@@ -34,13 +40,7 @@ module HapiApi
       require 'zlib'
       @resultatum = Zlib.adler32(item).to_s(16)
 
-      # puts item
-      # puts @resultatum
-
       @resultatum
-      # data = 'foo'
-      # puts "Adler32 checksum: #{Zlib.adler32(data).to_s(16)}"
-      # aa
     end
 
     # _[eng] Macro to 'expand' user written api data to new variables  [eng]_
@@ -95,10 +95,6 @@ module HapiApi
         return nil
       end
 
-      # puts referens['linguam'][linguam]['BCP47']
-
-      # puts linguam
-      # puts @referens[linguam]
       referens['linguam'][linguam]['BCP47']
     end
 
@@ -112,11 +108,12 @@ module HapiApi
 
       # TODO: _[eng] investigate usage of  /[[:word:]]/ [eng]_
       name.strip
-          # Whitespace character ([:blank:], newline, carriage return, etc.)
-          # replaced by -
+          # _[eng] Whitespace character ([:blank:], newline, carriage return,
+          #        etc.) replaced by -
+          # [eng]_
           .gsub(/[[:space:]]/, '-')
-          # /[[:cntrl:]]/ - Control character
-          # remove any one present
+          # _[eng] /[[:cntrl:]]/ - Control character remove any one present
+          # [eng]_
           .gsub(/[[:cntrl:]]/, '')
     end
 

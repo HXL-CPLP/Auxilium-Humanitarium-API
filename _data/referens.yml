@@ -21,7 +21,9 @@ linguam:
   ## _[por] Em geral, vamos usar Português (genérico) e evitar usar pt_BR
   ##        ou pt_PT. Isso faz sentido em outras línguas onde a diferença é
   ##        muito mais significativa, porém português escrito tem pouca
-  ##        variações
+  ##        variações. Saiba mais em
+  ##        https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/11
+  ##        (Emerson Rocha, 2021-05-21 02:22 UTC)
   ## [por]_
   por-Latn:
     BCP47: pt
@@ -30,6 +32,8 @@ linguam:
   por-PT:
     BCP47: pt-PT
   mul-Zyyy:
+    BCP47: ''
+  mul:
     BCP47: ''
 
 

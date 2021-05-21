@@ -1,0 +1,15 @@
+---
+layout: null
+title: deinsectum
+permalink: deinsectum.json
+
+## Trivia
+# - `deinsectum`, `de-` + `insectum`
+#   - `de-`, https://en.wiktionary.org/wiki/de-#Latin
+#   - `insectum`, https://en.wiktionary.org/wiki/insectum
+#   - Lingua Anglica
+#     -  `debug`, https://en.wiktionary.org/wiki/debug#English
+#     -  `debugging`, https://en.wiktionary.org/wiki/debugging#English
+
+# > TODO: https://stackoverflow.com/questions/14759827/jekyll-generating-json-files-alongside-the-html-files
+---
