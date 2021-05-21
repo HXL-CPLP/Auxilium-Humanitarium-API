@@ -1,7 +1,7 @@
 ---
 layout: null
+permalink: /deinsectum.json
 title: deinsectum
-permalink: deinsectum.json
 
 ## Trivia
 # - `deinsectum`, `de-` + `insectum`
@@ -13,3 +13,4 @@ permalink: deinsectum.json
 
 # > TODO: https://stackoverflow.com/questions/14759827/jekyll-generating-json-files-alongside-the-html-files
 ---
+{% hapi_deinsectum page rendered at: %}
