@@ -1,5 +1,5 @@
 # https://jekyllrb.com/docs/plugins/hooks/
-
+# frozen_string_literal: true
 ## https://womanonrails.com/ruby-iterators
 
 # Jekyll::Hooks.register :site, :after_init do |site|
@@ -31,15 +31,13 @@ Jekyll::Hooks.register :site, :post_read do |site|
       api['locale'] = 'pt'
     when 'lat'
       api['locale'] = 'la'
-    default
+    when 'mul'
       api['locale'] = 'pt'
     end
   end
 
   puts 'jekyll-hapi-hooks: bye!'
 end
-
-# TODO: fechar sitemap e menus
 
 # Jekyll::Hooks.register :pages, :post_init do |page|
 #   # code to call after Jekyll renders a page

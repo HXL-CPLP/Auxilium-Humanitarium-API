@@ -22,8 +22,8 @@ module HapiApi
 
     def generate(site)
       @debug_all = false
-
-      @apis = Utilitatem.expandendum_api_datum(site.data['api'])
+      # puts site.data['referens']
+      @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
 
       # _[eng] We override site.data.api [eng]_
       # _[por] Sobrescrevemos o site.data.api [por]_

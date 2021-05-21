@@ -45,7 +45,7 @@ module HapiApi
 
     # _[eng] Macro to 'expand' user written api data to new variables  [eng]_
     # _[por] Macro para 'expandir' o que usuário escreveu [por]_
-    def expandendum_api_datum(apis)
+    def expandendum_api_datum(apis, referens)
       apis.map do |api|
         # puts api['uid']
         api['uid'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
@@ -55,7 +55,7 @@ module HapiApi
         # puts api['uid']
         # api['openapi_filum'] = openapi_filum_de_api(api)
         # api = expandendum_api_datum_jekyll_page(api)
-        expandendum_api_datum_jekyll_page(api)
+        expandendum_api_datum_jekyll_page(api, referens)
       end
 
       apis
@@ -63,17 +63,17 @@ module HapiApi
 
     # _[eng] Macro to 'expand' user written api data to new variables [eng]_
     # _[por] Macro para 'expandir' o que usuário escreveu [por]_
-    def expandendum_api_datum_jekyll_page(api)
+    def expandendum_api_datum_jekyll_page(api, referens)
       @hreflang = if xdefault_est(api)
                     'x-default'
                   else
-                    linguam_to_html_lang(api['linguam'])
+                    linguam_to_html_lang(api['linguam'], referens)
                   end
       puts @hreflang
       api['jekyll-page'] = {
         # 'locale' => Utilitatem.linguam_to_html_lang(api['linguam']),
         'linguam' => api['linguam'],
-        'lang' => linguam_to_html_lang(api['linguam']),
+        'lang' => linguam_to_html_lang(api['linguam'], referens),
         'hreflang' => @hreflang,
         'title' => api['namen'] || api['title'],
         'description' => api['description'] || api['descriptionem'],
@@ -89,21 +89,17 @@ module HapiApi
 
     # _[eng] We use ISO 639-3, but HTML lang wants BCP-47 [eng]_
     # _[por] Usamos ISO 639-3, porém HTML lang deseja BCP-47 [por]_
-    def linguam_to_html_lang(linguam)
-      @referens = {
-        'arb' => 'ar',
-        'arb-Arab' => 'ar',
-        'eng' => 'en',
-        'eng-Latn' => 'en',
-        'por' => 'pt',
-        'por-Latn' => 'pt',
-        'lat' => 'la',
-        'lat-Latn' => 'la',
-        'mul' => 'pt'
-      }
+    def linguam_to_html_lang(linguam, referens)
+      if referens['linguam'][linguam].nil?
+        puts "ERROR! linguam_to_html_lang referens #{linguam}!"
+        return nil
+      end
+
+      # puts referens['linguam'][linguam]['BCP47']
+
       # puts linguam
       # puts @referens[linguam]
-      @referens[linguam]
+      referens['linguam'][linguam]['BCP47']
     end
 
     # _[eng] Clean control chars and white space from names [eng]_

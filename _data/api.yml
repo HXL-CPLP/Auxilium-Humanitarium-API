@@ -1,6 +1,3 @@
-# https://github.com/avillafiorita/jekyll-datapage_gen
-
-
 # Trivia
 # - 'x-default':
 #   - https://en.wikipedia.org/wiki/Hreflang
@@ -40,7 +37,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/HDX/
   uid: /mul/api/UN/HDX/
-  linguam: mul
+  linguam: mul-Zyyy
   typum: api
   gid: UN
   lid: HDX
@@ -49,7 +46,7 @@
 
 - x-default: /mul/api/UN/HDX/
   # uid: /eng/api/UN/humanitarian-data-exchange/
-  linguam: eng
+  linguam: eng-Latn
   typum: api
   gid: UN
   lid: HDX
@@ -62,7 +59,7 @@
 #       Hapi toolchain
 - x-default: /mul/api/UN/HDX/
   # uid: /arb/api/UN/اختبارات/
-  linguam: arb
+  linguam: arb-Arab
   typum: api
   gid: UN
   lid: 'اختبارات'
@@ -73,7 +70,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/reliefweb/
   # uid: /mul/api/UN/reliefweb/
-  linguam: mul
+  linguam: mul-Zyyy
   typum: api
   gid: UN
   lid: reliefweb
@@ -82,7 +79,7 @@
 
 - x-default: /mul/api/UN/reliefweb/
   # uid: /eng/api/UN/reliefweb/
-  linguam: eng
+  linguam: eng-Latn
   typum: api
   gid: UN
   lid: reliefweb
@@ -95,7 +92,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/CODV2API/
   # uid: /mul/api/UN/CODV2API/
-  linguam: mul
+  linguam: mul-Zyyy
   typum: api
   gid: UN
   lid: CODV2API
@@ -104,7 +101,7 @@
 
 - x-default: /mul/api/UN/CODV2API/
   # uid: /eng/api/UN/common-operational-datasets-api/
-  linguam: eng
+  linguam: eng-Latn
   typum: api
   gid: UN
   lid: common-operational-datasets-api
@@ -118,7 +115,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/XZ/HXL-Proxy/
   # uid: /mul/api/XZ/HXL-Proxy/
-  linguam: mul
+  linguam: mul-Zyyy
   typum: api
   gid: XZ
   lid: hxl-proxy
@@ -127,7 +124,7 @@
 
 - x-default: /mul/api/XZ/HXL-Proxy/
   # uid: /eng/api/XZ/HXL-Proxy/
-  linguam: eng
+  linguam: eng-Latn
   typum: api
   gid: XZ
   lid: hxl-proxy
@@ -141,7 +138,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/BR/portais-ckan-brasil/
   # uid: /mul/api/BR/portais-ckan-brasil/
-  linguam: mul
+  linguam: mul-Zyyy
   typum: api
   gid: BR
   lid: portais-ckan-brasil
@@ -150,7 +147,7 @@
 
 - x-default: /mul/api/BR/portais-ckan-brasil/
   # uid: /eng/api/BR/brazilian-ckan-portals/
-  linguam: eng
+  linguam: eng-Latn
   typum: api
   gid: BR
   lid: brazilian-ckan-portals
@@ -163,7 +160,7 @@
 
 - x-default: /mul/api/BR/portais-ckan-brasil/
   # uid: /por/api/BR/dados-abertos-ckan-brasil/
-  linguam: por
+  linguam: por-Latn
   typum: api
   gid: BR
   lid: dados-abertos-ckan-brasil
@@ -177,7 +174,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/BR/portais-arcgis-brasil/
   # uid: /mul/api/BR/portais-arcgis-brasil/
-  linguam: mul
+  linguam: mul-Zyyy
   typum: api
   gid: BR
   lid: portais-arcgis-brasil
@@ -186,7 +183,7 @@
 
 - x-default: /mul/api/BR/portais-arcgis-brasil/
   # uid: /por/api/BR/portais-arcgis-brasil/
-  linguam: por
+  linguam: por-Latn
   typum: api
   gid: BR
   lid: portais-arcgis-brasil
@@ -200,7 +197,7 @@
 # Note: jekyll-datapage-generator.rb needs fix for non-latin alphabet
 # - gid: api/UN
 #   lid: ReliefWeb
-#   linguam: eng
+#   linguam: eng-Latn
 #   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
 #   slug: "اختبارات"
 #   noindex: true
