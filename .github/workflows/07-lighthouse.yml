@@ -4,7 +4,10 @@
 # @TODO: https://github.com/pa11y/pa11y
 
 name: Audit live site (lighthouse)
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   audit:
