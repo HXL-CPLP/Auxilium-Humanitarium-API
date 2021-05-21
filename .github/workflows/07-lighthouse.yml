@@ -1,0 +1,20 @@
+# Veja https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/12
+
+# @TODO: https://www.adrianbolonio.com/en/accessibility-github-actions/
+
+name: Audit live site (lighthouse)
+on: push
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Audit live URL, https://hapi.etica.ai/
+      uses: jakejarvis/lighthouse-action@master
+      with:
+        url: 'https://hapi.etica.ai/'
+    - name: Upload results as an artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: report
+        path: './report'

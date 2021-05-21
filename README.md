@@ -145,10 +145,10 @@ sera completamente ignorada.
 
 ### (rascunho) por ser feito
 
+**Importante: criar issue sobre integração com ferramentas de localização,
+citando este post aqui https://opensource.com/article/17/6/open-source-localization-tools.**
+
 > TODOs:
-> - https://forestry.io/blog/creating-a-multilingual-blog-with-jekyll/
-> - https://jekyllcodex.org/without-plugins/
-> - http://hamishwillee.github.io/2014/11/13/jekyll-includes-are-functions/
 > - https://en.m.wikipedia.org/wiki/Translation_memory
 >   - https://en.m.wikipedia.org/wiki/Translation_Memory_eXchange
 >   - https://en.m.wikipedia.org/wiki/OAXAL
@@ -159,7 +159,24 @@ sera completamente ignorada.
 > - Update boostrap
 >   - https://github.com/twbs/bootstrap/releases/tag/v5.0.1
 >     - https://github.com/twbs/bootstrap/pull/33709
+> - Contribuições
+>   - https://github.com/all-contributors/all-contributors
+> - GitHub actions:
+>   - https://github.com/actions/cache
+>   - https://docs.github.com/pt/actions/reference/events-that-trigger-workflows
+>   - Acessibilidade/Usabilidade
+>     - https://github.com/jakejarvis/lighthouse-action
+>     - https://www.adrianbolonio.com/en/accessibility-github-actions/
+>     - https://github.com/dequelabs/axe-core
+> - Ferramentas de tradução/localização
+>   - http://docs.translatehouse.org/projects/translate-toolkit/en/latest/commands/index.html
+>   - https://github.com/translate/translate
 
+
+<!--
+TEMP
+
+-->
 
 <!--
 # VSCode

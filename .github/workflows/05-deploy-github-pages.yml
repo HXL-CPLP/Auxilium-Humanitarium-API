@@ -3,7 +3,7 @@
 # @see https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 # @see https://github.com/marketplace/actions/github-pages-action
 
-name: Build
+name: Deploy GitHub Pages
 
 on:
   push:
