@@ -78,15 +78,18 @@ jobs:
           # pre_build_commands: |
           #   apt install tree -y
           #   tree
+      # helaili/jekyll-action-> Destination: /github/jekyll_build
 
-      - run: sudo apt-get install tree
+      # - run: sudo apt-get install tree
 
-      - run: tree
+      # - run: tree
 
-      - run: pa11y ./_site/
+      # - run: pa11y ./_site/
+      - run: pa11y /github/jekyll_build/
         continue-on-error: true
 
-      - run: htmlproofer --allow-hash-href ./_site/
+      # - run: htmlproofer --allow-hash-href ./_site/
+      - run: htmlproofer --allow-hash-href /github/jekyll_build/
         continue-on-error: true
 
 #### Temp, ignore

@@ -11,7 +11,7 @@ on:
 
 jobs:
   audit:
-    needs: deploy-github-pages
+    # needs: deploy-github-pages
     runs-on: ubuntu-latest
     steps:
 
