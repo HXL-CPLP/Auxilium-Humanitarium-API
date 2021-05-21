@@ -1,81 +1,52 @@
-# https://jekyllrb.com/docs/plugins/hooks/
+# @see https://jekyllrb.com/docs/plugins/hooks/
+# @see https://github.com/jekyll/jekyll/blob/master/features/hooks.feature
 # frozen_string_literal: true
+
+# rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
+#   @see https://github.com/rubocop/ruby-style-guide/issues/301
+#   @see https://github.com/rubocop/ruby-style-guide/issues/137
+
+require 'json'
+
+# rubocop:disable Style/GlobalVars
+# TODO: _[por] Implementar algum logging mais decente em vez de variaveis
+#              globais, vide
+#              https://www.mslinn.com/blog/2020/12/28/custom-logging-in-jekyll-plugins.html
+#       [por]_
+$HAPI_DI = {
+  'noticia' => [],
+  'reload_numerum' => 0
+}
 
 ## https://womanonrails.com/ruby-iterators
 
 # TODO: https://github.com/jekyll/jekyll/blob/master/features/hooks.feature
 
-# Jekyll::Hooks.register :site, :after_init do |site|
-Jekyll::Hooks.register :site, :post_read do |site|
-  # # code to call after Jekyll renders a page
-  # print 'jekyll-hapi-hooks: hi!'
-  # # print site.data.api
-  # # print site.data.linguam
-  # # puts site.data
-  # # puts site.posts.docs
-  # # puts site.collections
-  # # puts site.pages
-  # # puts site.data['api']
+#### /deinsectum.json _________________________________________________________
+# @see https://github.com/jekyll/jekyll/blob/master/features/hooks.feature
 
-  # site.data['api'].map do |api|
-  #   # Is possible to change title, description,
-  #   # but locale may be overriden.
+# Scenario: Work with the site files after they've been written to disk
+Jekyll::Hooks.register :site, :post_write do |site|
+  $HAPI_DI['reload_numerum'] += 1
 
-  #   # api["title"] = "teste teste " + api["title"]
-  #   # api["description"] = "test desc"
-  #   # api["x-default"] = api["x-default"] + "oioioioi"
-  #   # if api["linguam"] == "eng"
-  #   #     api["locale"] = "en"
-  #   # end
-  #   case api['linguam']
-  #   when 'eng'
-  #     api['locale'] = 'en'
-  #   when 'por'
-  #     api['locale'] = 'pt'
-  #   when 'lat'
-  #     api['locale'] = 'la'
-  #   when 'mul'
-  #     api['locale'] = 'pt'
-  #   end
-  # end
-
-  # puts 'jekyll-hapi-hooks: bye!'
+  @deinsectum = {
+    'deinsectum' => $HAPI_DI,
+    'data' => site.data
+  }
+  @content = JSON.pretty_generate(@deinsectum)
+  puts 'jekyll_hapi_hooks: deinsectum.json'
+  File.write(File.join(site.dest, 'deinsectum.json'), @content)
 end
 
-# Jekyll::Hooks.register :site, :after_init do |site|
-Jekyll::Hooks.register :site, :post_render do |site|
-  # # code to call after Jekyll renders a page
-  puts 'jekyll-hapi-hooks: site post_render hi!'
+# TODO: _[por] Talvez considerar gerar versão CSV de arquivos JSON (inclusive)
+#              os com itens aninhados. Vide
+#              https://stackoverflow.com/questions/7845015/convert-json-to-csv-in-ruby
+#       [por]_
+# TODO: _[por] Yaml
+#              https://github.com/ruby/psych
+#       [por]_
 
-  # site.pages.each do |page|
-  #   puts page.docs
-  # end
-
-  puts site.source
-
-  puts 'jekyll-hapi-hooks: site post_render bye!'
-end
-
-# Jekyll::Hooks.register :pages, :post_init do |page|
-#   # code to call after Jekyll renders a page
-#   puts page
-# end
-
-# # Jekyll::Hooks.register :site, :after_init do |site|
-# Jekyll::Hooks.register :site, :post_read do |site|
-#   # code to call after Jekyll renders a page
-#   print 'jekyll-hapi-hooks: hi!'
-#   # print site.data.api
-#   # print site.data.linguam
-#   # puts site.data
-#   # puts site.posts.docs
-#   # puts site.collections
-#   # puts site.pages
-#   # puts site.data['api']
-
-#   site.pages.map do |page|
-#     puts page.docs
-#   end
-
-#   puts 'jekyll-hapi-hooks: bye!'
-# end
+# rubocop:enable Style/GlobalVars
+# _[por] rubocop é tão racista que obriga re-habilitar
+# AsciiComments [por]_
+# rubocop:enable RubocopIsRacistAndIcanProveIt/AsciiComments
