@@ -34,8 +34,8 @@ module HapiApi
       require 'zlib'
       @resultatum = Zlib.adler32(item).to_s(16)
 
-      puts item
-      puts @resultatum
+      # puts item
+      # puts @resultatum
 
       @resultatum
       # data = 'foo'
@@ -64,10 +64,17 @@ module HapiApi
     # _[eng] Macro to 'expand' user written api data to new variables [eng]_
     # _[por] Macro para 'expandir' o que usuário escreveu [por]_
     def expandendum_api_datum_jekyll_page(api)
+      @hreflang = if xdefault_est(api)
+                    'x-default'
+                  else
+                    linguam_to_html_lang(api['linguam'])
+                  end
+      puts @hreflang
       api['jekyll-page'] = {
         # 'locale' => Utilitatem.linguam_to_html_lang(api['linguam']),
         'linguam' => api['linguam'],
-        'lang' => Utilitatem.linguam_to_html_lang(api['linguam']),
+        'lang' => linguam_to_html_lang(api['linguam']),
+        'hreflang' => @hreflang,
         'title' => api['namen'] || api['title'],
         'description' => api['description'] || api['descriptionem'],
         'tags' => tags_de_api(api),
@@ -84,6 +91,8 @@ module HapiApi
     # _[por] Usamos ISO 639-3, porém HTML lang deseja BCP-47 [por]_
     def linguam_to_html_lang(linguam)
       @referens = {
+        'arb' => 'ar',
+        'arb-Arab' => 'ar',
         'eng' => 'en',
         'eng-Latn' => 'en',
         'por' => 'pt',
@@ -92,6 +101,8 @@ module HapiApi
         'lat-Latn' => 'la',
         'mul' => 'pt'
       }
+      # puts linguam
+      # puts @referens[linguam]
       @referens[linguam]
     end
 

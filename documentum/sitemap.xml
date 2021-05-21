@@ -86,13 +86,13 @@ sitemap:
     {%- if api.tags contains 'api' %}
   <url>
     <loc>{{ site.url }}{{ api.url }}</loc>
-    {% if api.sitemap.lastmod %}
+    {%- if api.sitemap.lastmod -%}
     <lastmod>{{ api.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
     {% elsif api.date %}
     <lastmod>{{ api.date | date_to_xmlschema }}</lastmod>
     {% else %}
     <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
-    {% endif %}
+    {%- endif -%}
     {%- if api.sitemap.changefreq -%}
     <changefreq>{{ api.sitemap.changefreq }}</changefreq>
     {% else %}
@@ -100,25 +100,19 @@ sitemap:
     {% endif %}
     {%- if api.sitemap.priority -%}
     <priority>{{ api.sitemap.priority }}</priority>
-    {% else %}
+    {%- elsif api.hreflang == 'x-default' -%}
+    <priority>0.1</priority>
+    {%- else -%}
     <priority>0.3</priority>
     {% endif %}
-    {%- if api.tags contains 'api-x-default' %}
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="{{ site.url | append: api.x-default }}" />
-    {%- endif %}
     {%- if api.trivium %}
-      {% for api_trivium_paginam in site.pages -%}
+      {%- for api_trivium_paginam in site.pages -%}
         {% capture api_trivium_tag %}api-trivium-{{ api.trivium }}{% endcapture %}
-        {%- if api.tags contains api_trivium_tag %}
-    <!-- TODO 
-      <xhtml:link
-        rel="alternate"
-        hreflang="{{ api_trivium_paginam.lang }}"
-        href="{{ site.url }}/por/" /> -->
-        {% endif %}
+        {%- if api_trivium_paginam.tags contains api_trivium_tag %}
+    <xhtml:link
+      rel="alternate" hreflang="{{ api_trivium_paginam.hreflang }}"
+      href="{{ site.url | append: api_trivium_paginam.url }}" />
+        {%- endif %}
       {%- endfor %}
     {%- endif %}
   </url>
