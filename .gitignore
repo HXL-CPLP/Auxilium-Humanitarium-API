@@ -19,6 +19,7 @@ Gemfile.lock
 
 ### Specific from Hapi
 _systema/node_modules/
+_systema/lighthouse-reports/
 _systema/package-lock.json
 openapitools.json
 .gqlconfig
