@@ -19,18 +19,19 @@
 
 ## English
 
-**Important: you can open a issue in English in this project!**
-
-- Click here:
-  - Bing: <https://www.translatetheweb.com/?from=pt-PT&to=en&dl=en&ref=trb&a=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md>
-  - Google: <https://translate.google.com/translate?sl=pt&tl=en&u=https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/blob/main/.github/CONTRIBUTING.md>
-  - Яндекс.Переводчик:
-    - <https://translate.yandex.com/translate?lang=pt-en&url=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md>
-  - 百度翻译: <http://fanyi.baidu.com/transpage?query=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md&from=pt&to=en&source=url&render=1>
+> - **Important: you can open a issue also in English in this project!**
+> - **Click one of the options below to use some computer assisted translation tool**:
+>   - [百度翻译 <sup>`ISO15924:Latn`+`ISO369-3:eng`: "Baidu Translate"</sup>](http://fanyi.baidu.com/transpage?query=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md&from=pt&to=en&source=url&render=1)
+>   - [Google Translator <sup>`ISO15924:Cyrl`: "Гугл"; `ISO15924:Hans`: "谷歌"</sup>;](https://translate.google.com/translate?sl=pt&tl=en&u=https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/blob/main/.github/CONTRIBUTING.md)
+>   - [Microsoft Translator <sup>`ISO15924:Hans`: "微软翻译"</sup>](https://www.translatetheweb.com/?from=pt-PT&to=en&dl=en&ref=trb&a=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md)
+>   - [Яндекс.Переводчик <sup>`ISO15924:Hans`: "燕基科斯"(?); `ISO15924:Latn`: "Yandex"</sup>](https://translate.yandex.com/translate?lang=pt-en&url=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md)
 
 <!--
+- Google:
+  - https://zh.wikipedia.org/wiki/Google
 - Baidu Translate, https://zh.wikipedia.org/wiki/%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91
 - Tradutor yandex, Яндекс.Переводчик, https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81.%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA
+- https://zh.wikipedia.org/wiki/%E5%BE%AE%E8%BD%AF%E7%BF%BB%E8%AF%91
 -->
 
 ### What if I speak an creole language based on English?
@@ -43,8 +44,16 @@
 
 ## Español
 
-- Haga clic aquí:
-  - <https://translate.google.com/translate?sl=pt&tl=es&u=https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/blob/main/.github/CONTRIBUTING.md>
+> - **Importante: ¡se puede abrir un tema también en Inglés en este proyecto!**
+> - **Haga clic en una de las opciones siguientes para utilizar alguna
+>     herramienta de traducción asistida por computadora**:
+>   - [百度翻译 <sup>`ISO15924:Latn`+`ISO369-3:eng`: "Baidu Translate"</sup>](http://fanyi.baidu.com/transpage?query=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md&from=pt&to=es&source=url&render=1)
+>   - [Google Translator <sup>`ISO15924:Cyrl`: "Гугл"; `ISO15924:Hans`: "谷歌"</sup>;](https://translate.google.com/translate?sl=pt&tl=es&u=https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/blob/main/.github/CONTRIBUTING.md)
+>   - [Microsoft Translator <sup>`ISO15924:Hans`: "微软翻译"</sup>](https://www.translatetheweb.com/?from=pt-PT&to=es&dl=en&ref=trb&a=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md)
+>   - [Яндекс.Переводчик <sup>`ISO15924:Hans`: "燕基科斯"(?); `ISO15924:Latn`: "Yandex"</sup>](https://translate.yandex.com/translate?lang=pt-es&url=https%3A%2F%2Fgithub.com%2FHXL-CPLP%2FAuxilium-Humanitarium-API%2Fblob%2Fmain%2F.github%2FCONTRIBUTING.md)
+
+
+- <https://translate.google.com/translate?sl=pt&tl=es&u=https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/blob/main/.github/CONTRIBUTING.md>
 
 > (TODO: finish this draft)
 
