@@ -1,0 +1,19 @@
+{%- comment -%}
+_[por] Este arquivo, que eventualmente pode substituir o jekyll-seo-tag, serve
+       para evitar que colaboradores que não tenham interesse de criar um
+       hardfork do https://github.com/HXL-CPLP/Auxilium-Humanitarium-API
+       (isto é, criar uma comunidade inteira), não acidentamente publiquem
+       no Google e outros mecanismos de busca os seus sites de teste.
+[por]_
+
+@see https://github.com/jekyll/jekyll-seo-tag/blob/master/lib/template.html
+{%- endcomment -%}
+
+{%- seo -%}
+
+{% if site.url %}
+  {%- unless site.url contains 'https://hapi.etica.ai' -%}
+<!-- Test site != https://hapi.etica.ai, robots noindex,nofollow -->
+<meta name="robots" content="noindex,nofollow">
+  {%- endunless -%}
+{%- endif -%}

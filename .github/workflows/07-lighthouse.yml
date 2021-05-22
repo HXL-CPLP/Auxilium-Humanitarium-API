@@ -19,11 +19,13 @@ jobs:
       uses: jakejarvis/lighthouse-action@master
       with:
         url: 'https://hapi.etica.ai/'
+      continue-on-error: true
 
     - name: Audit live URL, https://hapi.etica.ai/por/
       uses: jakejarvis/lighthouse-action@master
       with:
         url: 'https://hapi.etica.ai/por/'
+      continue-on-error: true
 
     # - name: Audit live URL, https://hapi.etica.ai/por-Latn/
     #   uses: jakejarvis/lighthouse-action@master
@@ -34,11 +36,13 @@ jobs:
       uses: jakejarvis/lighthouse-action@master
       with:
         url: 'https://hapi.etica.ai/api/UN/HDX/eng/'
+      continue-on-error: true
 
     - name: Audit live URL, https://hapi.etica.ai/eng-Latn/api/UN/reliefweb/
       uses: jakejarvis/lighthouse-action@master
       with:
         url: 'https://hapi.etica.ai/eng-Latn/api/UN/reliefweb/'
+      continue-on-error: true
 
     - name: Upload results as an artifact
       uses: actions/upload-artifact@master

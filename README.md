@@ -108,15 +108,16 @@ HXL-CPLP.
 ### Executar o Jekyll localmente
 
 ```bash
-JEKYLL_ENV=development bundle exec jekyll serve
+bundle exec jekyll serve --config _config.yml,_config_dev.yml
+
 # JEKYLL_ENV=development bundle exec jekyll serve --incremental
 # Server address: http://127.0.0.1:4000/
 
 ## Debug
-JEKYLL_ENV=development bundle exec jekyll build --trace --watch
+bundle exec jekyll serve --config _config.yml,_config_dev.yml --trace --watch
 
 ## Velocidade
-JEKYLL_ENV=development bundle exec jekyll serve --profile
+bundle exec jekyll serve --config _config.yml,_config_dev.yml --profile
 
 ```
 
@@ -171,7 +172,9 @@ citando este post aqui https://opensource.com/article/17/6/open-source-localizat
 > - Ferramentas de tradução/localização
 >   - http://docs.translatehouse.org/projects/translate-toolkit/en/latest/commands/index.html
 >   - https://github.com/translate/translate
-
+> - Glitch.com
+>    - https://glitch.com/~jekyll-starter
+>    - https://support.glitch.com/search?q=jekyll
 
 <!--
 TEMP

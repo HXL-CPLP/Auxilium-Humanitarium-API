@@ -5,15 +5,25 @@ sitemap:
   exclude: yes
 ---
 
-# 2021-05-08 (draft)
-
 User-agent: *
 
-# Preffer html files over markdown ones
+# Prefer html files over markdown ones
 Disallow: *.md
 
 ## openapi-generator-cli, Disallow a few verbose pages
 Disallow: /api/*/*/*/html
 Disallow: /api/*/*/*/html2
+
+{% if site.url -%}
+{%- unless site.url contains 'https://hapi.etica.ai' %}
+# Test site != https://hapi.etica.ai: Disallow
+Disallow: *
+{% endunless -%}
+{%- endif %}
+
+{%- if jekyll.environment != "production" -%}
+# jekyll.environment != "production": Disallow
+Disallow: *
+{% endif %}
 
 Sitemap: https://hapi.etica.ai/sitemap.xml

@@ -8,7 +8,7 @@ gem 'jekyll', '~> 4.2'
 group :jekyll_plugins do
   # @see https://github.com/toshimaru/jekyll-toc
   gem 'jekyll-toc'
-  gem 'jekyll-feed'
+  # gem 'jekyll-feed'
   gem 'jekyll-seo-tag'
   ## Notitia: [por] O jekyll-spaceship foi desabilitado no momento, 2021-05-16,
   ## Pois deixou o GitHub actions em torno de 3 minutos mais lento. E ainda
