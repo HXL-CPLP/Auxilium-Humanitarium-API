@@ -74,3 +74,19 @@ Temp_licença_aviso_por: |
   Na medida do possível sob a lei, as pessoas autoras de
   [HXL-CPLP](https://github.com/HXL-CPLP) renunciam todos os direitos autorais e
   direitos conexos ou vizinhos a este trabalho para o [domínio público](https://unlicense.org/).
+
+
+dominium_publicum_nomen_referens:
+  - https://la.wikipedia.org/wiki/Dominium_publicum
+  - https://www.wikidata.org/wiki/Q19652
+dominium_publicum_nomen_lat: "Dominium publicum"
+dominium_publicum_nomen_eng: "Public domain"
+dominium_publicum_nomen_por: "Domínio público"
+
+licentiam_nomen_referens:
+  - https://la.wikipedia.org/wiki/Licentia
+  - https://en.wiktionary.org/wiki/licentia#Latin
+  - https://www.wikidata.org/wiki/Q79719
+licentiam_nomen_lat: "Licentiam"
+licentiam_nomen_eng: "License"
+licentiam_nomen_por: "Licença"

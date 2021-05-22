@@ -25,54 +25,6 @@
 
 > @TODO: [por] adicionar mais links
 
-## Voluntarius Auxilio Tuo
-
-<!--
-Trivia:
-- fundātōrem
-  - https://en.wiktionary.org/wiki/fundator#Latin
-- "pictūram"
-  - https://en.wiktionary.org/wiki/pictura#Latin
-- "opus"
-  - https://en.wiktionary.org/wiki/opus#Latin
-- "trānslātiōnem"
-  - https://en.wiktionary.org/wiki/translatio#Latin
-- "commūnitātem"
-  - https://en.wiktionary.org/wiki/communitas
-- "auxilium"
-  - https://en.wiktionary.org/wiki/auxilium
--->
-
-```yaml
-
-- namen: Thalles Augusto
-  opus:
-    - fundatarem
-  picturam: https://avatars.githubusercontent.com/u/61105850?v=4
-  iri: https://github.com/ThesllaDev
-  github: https://github.com/ThesllaDev
-  linkedin: https://www.linkedin.com/in/thalles-augusto/
-
-- namen: Emerson Rocha
-  opus:
-    - fundatarem
-  picturam: https://avatars.githubusercontent.com/u/812299?v=4
-  iri: https://github.com/fititnt
-  github: https://github.com/fititnt
-  linkedin: https://www.linkedin.com/in/fititnt/
-
-- namen: Sine nomine (multis clanculum civibus)
-  opus:
-    - translationem
-    - commanitatem-auxilium
-  picturam: https://avatars.githubusercontent.com/u/50434491?v=4
-  iri: https://github.com/eticaaibot
-  github:
-  gitee:
-  linkedin:
-
-```
-
 ## English
 
 ### Note to maintainers in English
@@ -137,12 +89,71 @@ porém qualquer customização, mesmo que commitada neste repositório, caso
 não esteja também em _GSheets: HXL-CPLP-Vocab_Auxilium-Humanitarium-API_L10n_
 sera completamente ignorada.
 
-
+<!--
 ### Licença
-<!--TODO: o texto em português da licença é um rascunho. Ainda precisa ser revisado -->
+--TODO: o texto em português da licença é um rascunho. Ainda precisa ser revisado
 
 [![Public Domain Dedication](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
 
 Na medida do possível sob a lei, as pessoas autoras de
 [HXL-CPLP](https://github.com/HXL-CPLP) renunciam todos os direitos autorais e
 direitos conexos ou vizinhos a este trabalho para o [domínio público](https://unlicense.org/).
+-->
+
+## Voluntarius Auxilio Tuo
+
+<!--
+Trivia:
+- fundātōrem
+  - https://en.wiktionary.org/wiki/fundator#Latin
+- "pictūram"
+  - https://en.wiktionary.org/wiki/pictura#Latin
+- "opus"
+  - https://en.wiktionary.org/wiki/opus#Latin
+- "trānslātiōnem"
+  - https://en.wiktionary.org/wiki/translatio#Latin
+- "commūnitātem"
+  - https://en.wiktionary.org/wiki/communitas
+- "auxilium"
+  - https://en.wiktionary.org/wiki/auxilium
+-->
+
+```yaml
+
+- namen: Thalles Augusto
+  opus:
+    - fundatarem
+  picturam: https://avatars.githubusercontent.com/u/61105850?v=4
+  iri: https://github.com/ThesllaDev
+  github: https://github.com/ThesllaDev
+  linkedin: https://www.linkedin.com/in/thalles-augusto/
+
+- namen: Emerson Rocha
+  opus:
+    - fundatarem
+  picturam: https://avatars.githubusercontent.com/u/812299?v=4
+  iri: https://github.com/fititnt
+  github: https://github.com/fititnt
+  linkedin: https://www.linkedin.com/in/fititnt/
+
+- namen: Sine nomine (multis clanculum civibus)
+  opus:
+    - translationem
+    - commanitatem-auxilium
+  picturam: https://avatars.githubusercontent.com/u/50434491?v=4
+  iri: https://github.com/eticaaibot
+  github:
+  gitee:
+  linkedin:
+
+```
+
+# Licentiam
+
+<!--
+- https://www.sqlite.org/copyright.html
+-->
+
+[![Dominium publicum](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
+
+Licentiam: [Dominium publicum](https://unlicense.org/).

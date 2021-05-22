@@ -40,6 +40,7 @@
 citando este post aqui https://opensource.com/article/17/6/open-source-localization-tools.**
 
 > TODOs:
+> - https://github.com/kmindi/special-files-in-repository-root
 > - https://en.m.wikipedia.org/wiki/Translation_memory
 >   - https://en.m.wikipedia.org/wiki/Translation_Memory_eXchange
 >   - https://en.m.wikipedia.org/wiki/OAXAL
