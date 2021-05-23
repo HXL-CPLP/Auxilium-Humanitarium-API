@@ -14,3 +14,5 @@ layout: defallo-ltr
 ---
 
 /por-Latn/ defallo-ltr
+
+{%- include api-corporeum-ltr.html -%}
