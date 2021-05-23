@@ -1,0 +1,80 @@
+# _data/navigationem.yml
+#
+# Trivia:
+# - 'nāvigātiōnem'
+#   - https://en.wiktionary.org/wiki/navigatio#Latin
+# - 'dēscendēns'
+#   - https://en.wiktionary.org/wiki/descendens#Latin
+# - 'ISO 15924'
+#   - https://en.wikipedia.org/wiki/ISO_15924
+
+# https://mycyberuniverse.com/jekyll-bootstrap-dynamic-navigation-highlighting-active-element.html
+
+# _[por] Zyyy é um rascunho rapido, apenas para fazer navegação HTML funcionar.
+#        A ideia é que esses menus sejam gerados implicitamente a partir de
+#        outras fontes de dados (ou seja, para evitar repetição) e a gente
+#        possa oferecer os menus mais apropriados para o que o usuário final
+#        quer! (Emerson Rocha, 2021-05-23 20:40)
+# [por]_
+Zyyy:
+  # - namen: Hapi
+  #   linguam: lat-Latn
+  #   url: /
+
+  - namen: API UN 🇺🇳
+    url: "#"
+    descendens:
+      - namen: <span lang="en" dir="ltr">HDX - The Humanitarian Data Exchange</span>
+        linguam: eng-Latn
+        url: /api/UN/HDX/eng/
+
+      - namen: <span lang="en" dir="ltr">ReliefWeb - Informing humanitarians worldwide</span>
+        linguam: eng-Latn
+        url: /api/UN/CODV2API/eng/
+
+      - namen: <span lang="en" dir="ltr">COD Version 2 API <sup>beta</sup></span>
+        linguam: eng-Latn
+        url: /api/UN/CODV2API/eng/
+
+  - namen: API XZ 🌐
+    url: "#"
+    descendens:
+      - namen: <span lang="en" dir="ltr">HXL-Proxy - Proxy of the Humanitarian Exchange Language</span>
+        linguam: eng-Latn
+        url: /api/XZ/HXL-Proxy/eng/
+
+  - namen: API BR 🇧🇷
+    url: "#"
+    descendens:
+      - namen: <span lang="pt" dir="ltr">Portais CKAN de dados abertos no Brasil</span>
+        linguam: por-Latn
+        url: /api/BR/portais-ckan-brasil/por/
+
+      - namen: <span lang="pt" dir="ltr">Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></span>
+        linguam: por-Latn
+        url: /api/BR/portais-arcgis-brasil/por/
+
+  - namen: Data Schema
+    linguam: lat-Latn
+    url: /eng#schema
+
+
+  - html: |
+      <!-- Search form -->
+
+  - html: |
+      <!-- Language swich -->
+
+
+  # - title: Support
+  #   url: /support.html
+  #   sublinks:
+  #     - title: FAQ
+  #       url: /faq.html
+  #     - title: Documentation
+  #       url: /documentation.html
+  #     - title: separator
+  #     - title: Customer Support
+  #       url: /customer-support.html
+
+Latn:
