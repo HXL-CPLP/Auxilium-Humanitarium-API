@@ -16,12 +16,12 @@
 #        possa oferecer os menus mais apropriados para o que o usuário final
 #        quer! (Emerson Rocha, 2021-05-23 20:40)
 # [por]_
-Zyyy:
+Zyyy: &idZyyy
   # - namen: Hapi
   #   linguam: lat-Latn
   #   url: /
 
-  - namen: API UN 🇺🇳
+  - namen: UN 🇺🇳
     url: "#"
     descendens:
       - namen: <span lang="en" dir="ltr">HDX - The Humanitarian Data Exchange</span>
@@ -36,14 +36,14 @@ Zyyy:
         linguam: eng-Latn
         url: /api/UN/CODV2API/eng/
 
-  - namen: API XZ 🌐
+  - namen: XZ 🌐
     url: "#"
     descendens:
       - namen: <span lang="en" dir="ltr">HXL-Proxy - Proxy of the Humanitarian Exchange Language</span>
         linguam: eng-Latn
         url: /api/XZ/HXL-Proxy/eng/
 
-  - namen: API BR 🇧🇷
+  - namen: BR 🇧🇷
     url: "#"
     descendens:
       - namen: <span lang="pt" dir="ltr">Portais CKAN de dados abertos no Brasil</span>
@@ -58,12 +58,11 @@ Zyyy:
     linguam: lat-Latn
     url: /eng#schema
 
+  # - html: |
+  #     <!-- Search form -->
 
-  - html: |
-      <!-- Search form -->
-
-  - html: |
-      <!-- Language swich -->
+  # - html: |
+  #     <!-- Language swich -->
 
 
   # - title: Support
@@ -77,4 +76,6 @@ Zyyy:
   #     - title: Customer Support
   #       url: /customer-support.html
 
-Latn:
+eng-Latn: *idZyyy
+
+por-Latn: *idZyyy
