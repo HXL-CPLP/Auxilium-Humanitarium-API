@@ -21,7 +21,7 @@
     - [Can I use `ISO 639-3:eng` English as my prefered working language, even if is not my mother language?](#can-i-use-iso-639-3eng-english-as-my-prefered-working-language-even-if-is-not-my-mother-language)
 - [Español](#español)
 - [Português](#português)
-    - [Não quero ler esse documento todo, apenas tenho uma dúvida!](#não-quero-ler-esse-documento-todo-apenas-tenho-uma-dúvida)
+    - [Eu não quero ler esse documento todo, eu apenas tenho uma dúvida!](#eu-não-quero-ler-esse-documento-todo-eu-apenas-tenho-uma-dúvida)
 
 <!-- /TOC -->
 
@@ -58,17 +58,26 @@
 - Link to 'creole' filter: https://iso639-3.sil.org/code_tables/639/data?name_3=pidgin
 -->
 
-That's fantastic!
+That's fantastic! Please inform at least one founding member of this project in
+private about all languages you do speak, so it's easier to deal when people
+try to "correct" what is not the same language.
 
 If you plan to help with datasets: our collaborators will try to find an
-existing ISO 639-3 code of your language.
-
+existing ISO 639-3 code of your language or start to work at medium term to
+get a new one when viable.
 
 ### Can I use `ISO 639-3:eng` English as my prefered working language, even if is not my mother language?
 > - https://en.wikipedia.org/wiki/Working_language
 > - https://en.wikipedia.org/wiki/First_language
 
-Yes. It's ok to use `ISO 639-3:eng` English on HXL-CPLP.
+Yes. It's ok to use `ISO 639-3:eng` English (or any other natural language that
+others could use machine assisted translation) on HXL-CPLP.
+
+Note that for final published content (not just for internal usage on
+HXL-CPLP) _the ideal_ scenario is text being proofread. And even an average
+software developer who is native speaker of `ISO 639-3:eng` English tends
+to make mistakes. So don't waste your time not doing software or first versions
+of terms for datasets.
 
 ## Español
 
@@ -84,13 +93,13 @@ Yes. It's ok to use `ISO 639-3:eng` English on HXL-CPLP.
 
 ## Português
 
-> Este arquivo é um rascunho.
+> AVISO: **Este arquivo é um rascunho.**
 
-### Não quero ler esse documento todo, apenas tenho uma dúvida!
+### Eu não quero ler esse documento todo, eu apenas tenho uma dúvida!
 
 Tente entrar em contato por WhatsApp, Facebook messager, Twitter ou e-mail
 com alguma pessoa que já tenha colaborado no projeto. É mais fácil ajudar
 você dessa forma!
 
-Se a pessoa não responder (ou você não souber como contactar), então pode fazer
-primeiro contato por aqui!
+Se a pessoa não responder (ou você não souber como contactar colaborador
+anterior), então pode fazer primeiro contato por aqui!

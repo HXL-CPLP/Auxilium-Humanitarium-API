@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'la' }}">
+
+{%- include meta-caput.html -%}
+
+<body>
+
+  {%- include caput.html -%}
+
+  <main class="page-content" aria-label="Content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  {%- include pedem.html -%}
+
+</body>
+
+</html>
