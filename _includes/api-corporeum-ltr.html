@@ -13,10 +13,10 @@
       <p lang="en">👷🏽 Work in progress 👷🏽</p>
       <p lang="pt">👷🏽 Trabalho em progresso 👷🏽</p>
     </div>
-    {{ "teste" | asset_url }}
+
     <!-- Talvez algo como https://afeld.github.io/bootstrap-toc/ ? -->
     <nav>
-      <h2>Index</h2>
+      <h2>{% gettext Temp_TOC %}</h2>
       <ul class="list-unstyled">
         <li>
           <a href="#api">API</a>
@@ -117,14 +117,7 @@
   </aside>
 
   <footer>
-    <h2 id="licentiam">Licentiam</h2>
-    <p>👷🏽 TODO 👷🏽</p>
+    <h2 id="licentiam">{% gettext licentiam_nomen %}</h2>
+    {% gettext Temp_licença_aviso %}
   </footer>
 </article>
-
-<!-- https://learn.cloudcannon.com/jekyll/output-json/ -->
-<!-- 
-<script>
-  var colors = {{ page.title | jsonify }};
-  console.log(colors)
-</script> -->

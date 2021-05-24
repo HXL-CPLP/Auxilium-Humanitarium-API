@@ -69,7 +69,7 @@ module HapiApi
                   else
                     linguam_to_html_lang(api['linguam'], referens)
                   end
-      puts @hreflang
+      # puts @hreflang
       api['jekyll-page'] = {
         # 'locale' => Utilitatem.linguam_to_html_lang(api['linguam']),
         'linguam' => api['linguam'],

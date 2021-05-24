@@ -17,8 +17,14 @@ $HAPI_DI = {
   'noticia' => [],
   'reload_numerum' => 0
 }
+# $SITE = nil
+# $PAGE = nil
 
 ## https://womanonrails.com/ruby-iterators
+
+# Jekyll::Hooks.register :site, :pre_render do |site|
+#   $SITE = site
+# end
 
 # TODO: https://github.com/jekyll/jekyll/blob/master/features/hooks.feature
 
