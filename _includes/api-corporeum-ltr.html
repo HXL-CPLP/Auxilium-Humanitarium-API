@@ -1,14 +1,10 @@
 <!-- _includes/api-corporeum-ltr.html -->
 <!-- trivia: corporeum, https://en.wiktionary.org/wiki/corporeus#Latin -->
 
-TODO: _includes/api-corporeum-ltr.html
-
 <article>
   <header>
-    <h1>{{ page.title | markdownify }}</h1>
-    <p>
-      {{ page.description | markdownify }}
-    </p>
+    <h1>{{ page.title }}</h1>
+    {{ page.description | markdownify }}
   </header>
 
   <article>
@@ -22,9 +18,19 @@ TODO: _includes/api-corporeum-ltr.html
   </article>
 
   <aside>
-    <h2 id="gratias">Grātiās agere</h2>
+    <h2 id="agnitionem">Agnitiōnem</h2>
     <h3>Voluntarius Auxilio Tuo</h3>
-    <p>TODO</p>
+    <ul>
+    {% for humanum in site.data.agnitionem.humanum -%}
+      <li>{{ humanum.namen.baptismum }}</li>
+    {%- endfor %}
+    </ul>
+    <h3>Communitatem</h3>
+    <ul>
+    {% for communitatem in site.data.agnitionem.communitatem -%}
+      <li>{{ communitatem.namen.baptismum }}</li>
+    {%- endfor %}
+    </ul>
   </aside>
 
   <footer>

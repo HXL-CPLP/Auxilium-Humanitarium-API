@@ -1,24 +1,4 @@
-# _data/operarium/index.yml
-
-# Trivia:
-# - fundātōrem
-#   - https://en.wiktionary.org/wiki/fundator#Latin
-# - "pictūram"
-#   - https://en.wiktionary.org/wiki/pictura#Latin
-# - "opus"
-#   - https://en.wiktionary.org/wiki/opus#Latin
-# - "trānslātiōnem"
-#   - https://en.wiktionary.org/wiki/translatio#Latin
-# - "baptismum"
-#   - https://en.wiktionary.org/wiki/translatio#Latin
-# - "abecedāriam"
-#   - https://en.wiktionary.org/wiki/abecedaria
-# - "trānslātiōnem"
-#   - https://en.wiktionary.org/wiki/translatio#Latin
-# - "commūnitātem"
-#   - https://en.wiktionary.org/wiki/communitas
-# - "auxilium"
-#   - https://en.wiktionary.org/wiki/auxilium
+# _data/agnitionem/humanum.yml
 
 - namen:
     abecedariam: Latn
@@ -29,6 +9,7 @@
   iri: https://github.com/ThesllaDev
   github: https://github.com/ThesllaDev
   linkedin: https://www.linkedin.com/in/thalles-augusto/
+  typum: humanum
 
 - namen:
     abecedariam: Latn
@@ -39,6 +20,7 @@
   iri: https://github.com/fititnt
   github: https://github.com/fititnt
   linkedin: https://www.linkedin.com/in/fititnt/
+  typum: humanum
 
 - namen:
     abecedariam: Latn
@@ -56,3 +38,4 @@
   github:
   gitee:
   linkedin:
+  typum: sine-nomine

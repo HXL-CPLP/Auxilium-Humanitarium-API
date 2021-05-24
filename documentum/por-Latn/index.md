@@ -13,6 +13,4 @@ layout: defallo-ltr
 # toc: true
 ---
 
-/por-Latn/ defallo-ltr
-
 {%- include api-corporeum-ltr.html -%}

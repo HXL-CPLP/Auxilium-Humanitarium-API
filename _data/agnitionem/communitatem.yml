@@ -1,0 +1,16 @@
+# _data/agnitionem/communitatem.yml
+
+# https://la.wiktionary.org/wiki/Victionarium
+- namen:
+    abecedariam: Latn
+    baptismum: Victiōnārium (multis clanculum civibus)
+    translatianem:
+      Deva: विक्षनरी
+      hin-Deva: विक्षनरी
+      hin-Latn: Vikṣanrī
+      # TODO: _[por] Adicionar demais nomes do Wikcionário [por]_
+  opus:
+    - translationem
+  picturam: https://la.wiktionary.org/static/images/project-logos/lawiktionary.png
+  iri: https://la.wiktionary.org/
+  typum: communitatem
