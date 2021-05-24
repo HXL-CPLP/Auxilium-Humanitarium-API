@@ -23,7 +23,7 @@
 #              permitir customização bem especifica para nossas necessidades
 #       [por]_
 
-module HapiApi
+module Hapi
   # _[eng] Generic utils [eng]_
   # _[por] Utilitários diversos [por]_
   module Utilitatem

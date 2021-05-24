@@ -15,7 +15,7 @@
 #   - https://en.wiktionary.org/wiki/expando#Latin
 # frozen_string_literal: true
 
-module HapiApi
+module Hapi
   # HapiApiGenerator is (TODO: document)
   class HapiApiGenerator < Jekyll::Generator
     safe true
