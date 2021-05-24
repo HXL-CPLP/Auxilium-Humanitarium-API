@@ -52,22 +52,22 @@
           </ul>
         </li>
         <li>
-          <a href="#agnitionem">Agnitiōnem</a>
+          <a href="#agnitionem">{% gettext agnitionem_et_gratiam_nomen %}</a>
           <ul>
             <li>
               <a href="#agnitionem-voluntarius">
-                Voluntarius Auxilio Tuo
+                {% gettext voluntarius_auxilio_tuo_nomen %}
               </a>
             </li>
             <li>
               <a href="#agnitionem-communitatem">
-                Communitatem
+                {% gettext agnitionem_communitatem_nomen %}
               </a>
             </li>
           </ul>
         </li>
         <li>
-          <a href="#licentiam">Licentiam</a>
+          <a href="#licentiam">{% gettext licentiam_nomen %}</a>
         </li>
       </ul>
     </nav>
@@ -101,14 +101,14 @@
   </article>
 
   <aside>
-    <h2 id="agnitionem">Agnitiōnem</h2>
-    <h3 id="agnitionem-voluntarius">Voluntarius Auxilio Tuo</h3>
+    <h2 id="agnitionem">{% gettext agnitionem_et_gratiam_nomen %}</h2>
+    <h3 id="agnitionem-voluntarius">{% gettext voluntarius_auxilio_tuo_nomen %}</h3>
     <ul>
     {% for humanum in site.data.agnitionem.humanum -%}
       <li>{{ humanum.namen.baptismum }}</li>
     {%- endfor %}
     </ul>
-    <h3 id="agnitionem-communitatem">Communitatem</h3>
+    <h3 id="agnitionem-communitatem">{% gettext agnitionem_communitatem_nomen %}</h3>
     <ul>
     {% for communitatem in site.data.agnitionem.communitatem -%}
       <li>{{ communitatem.namen.baptismum }}</li>
@@ -118,6 +118,6 @@
 
   <footer>
     <h2 id="licentiam">{% gettext licentiam_nomen %}</h2>
-    {% gettext Temp_licença_aviso %}
+    {% gettext Temp_licença_aviso de_markdown %}
   </footer>
 </article>

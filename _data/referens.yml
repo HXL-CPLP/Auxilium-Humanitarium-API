@@ -42,8 +42,15 @@ gid:
 linguam:
   arb-Arab:
     BCP47: ar
+    hxlattrs:
+      - "+i_arb"
+      - "+i_ara"
+      - "+i_ar"
   eng-Latn:
     BCP47: en
+    hxlattrs:
+      - "+i_eng"
+      - "+i_en"
   ## Noticia:
   ## _[por] Em geral, vamos usar Português (genérico) e evitar usar pt_BR
   ##        ou pt_PT. Isso faz sentido em outras línguas onde a diferença é
@@ -54,14 +61,25 @@ linguam:
   ## [por]_
   por-Latn:
     BCP47: pt
+    hxlattrs:
+      - "+i_por"
+      - "+i_pt"
   por-BR:
     BCP47: pt-BR
+    hxlattrs:
+      - "+i_por"
+      - "+i_pt"
   por-PT:
     BCP47: pt-PT
+    hxlattrs:
+      - "+i_por"
+      - "+i_pt"
   mul-Zyyy:
     BCP47: ''
+    hxlattrs: []
   mul:
     BCP47: ''
+    hxlattrs: []
 
 
 ### Temp

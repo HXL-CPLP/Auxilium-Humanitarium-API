@@ -90,3 +90,21 @@ licentiam_nomen_referens:
 licentiam_nomen_lat: "Licentiam"
 licentiam_nomen_eng: "License"
 licentiam_nomen_por: "Licença"
+
+
+# https://en.wikipedia.org/wiki/Acknowledgment_(creative_arts_and_sciences)
+# "Receiving credit by way of acknowledgement rather than authorship indicates
+# that the person or organization did not have a direct hand in producing the
+# work in question, but may have contributed funding, criticism, or
+# encouragement to the author(s).""
+agnitionem_et_gratiam_nomen_lat: "Agnitiōnem et grātiam"
+agnitionem_et_gratiam_nomen_eng: "Acknowledgments and thanks"
+agnitionem_et_gratiam_nomen_por: "Reconhecimentos e agradecimentos"
+
+voluntarius_auxilio_tuo_nomen_lat: "Voluntarius Auxilio Tuo"
+voluntarius_auxilio_tuo_nomen_eng: "Volunteer helpers"
+voluntarius_auxilio_tuo_nomen_por: "Ajudantes voluntários"
+
+agnitionem_communitatem_nomen_lat: "Agnitiōnem Communitatem"
+agnitionem_communitatem_nomen_eng: "Acknowledging the community"
+agnitionem_communitatem_nomen_por: "Reconhecendo a comunidade"
