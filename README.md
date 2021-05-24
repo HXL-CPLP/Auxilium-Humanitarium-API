@@ -102,6 +102,8 @@ direitos conexos ou vizinhos a este trabalho para o [domínio público](https://
 
 ## Voluntarius Auxilio Tuo
 
+- [_data/operarium/index.yml](_data/operarium/index.yml)
+
 <!--
 Trivia:
 - fundātōrem
@@ -112,15 +114,25 @@ Trivia:
   - https://en.wiktionary.org/wiki/opus#Latin
 - "trānslātiōnem"
   - https://en.wiktionary.org/wiki/translatio#Latin
+- "baptismum"
+  - https://en.wiktionary.org/wiki/translatio#Latin
+- "abecedāriam"
+  - https://en.wiktionary.org/wiki/abecedaria
+- "trānslātiōnem"
+  - https://en.wiktionary.org/wiki/translatio#Latin
 - "commūnitātem"
   - https://en.wiktionary.org/wiki/communitas
 - "auxilium"
   - https://en.wiktionary.org/wiki/auxilium
+- "Grātiās agere"
+  - https://en.wiktionary.org/wiki/gratias_ago#Latin
 -->
 
 ```yaml
 
-- namen: Thalles Augusto
+- namen:
+    abecedariam: Latn
+    baptismum: Thalles Augusto
   opus:
     - fundatarem
   picturam: https://avatars.githubusercontent.com/u/61105850?v=4
@@ -128,7 +140,9 @@ Trivia:
   github: https://github.com/ThesllaDev
   linkedin: https://www.linkedin.com/in/thalles-augusto/
 
-- namen: Emerson Rocha
+- namen:
+    abecedariam: Latn
+    baptismum: Emerson Rocha
   opus:
     - fundatarem
   picturam: https://avatars.githubusercontent.com/u/812299?v=4
@@ -136,7 +150,14 @@ Trivia:
   github: https://github.com/fititnt
   linkedin: https://www.linkedin.com/in/fititnt/
 
-- namen: Sine nomine (multis clanculum civibus)
+- namen:
+    abecedariam: Latn
+    baptismum: Sine nomine (multis clanculum civibus)
+    translatianem:
+      Arab:
+      Cyrl:
+      Hans:
+      # Latn:
   opus:
     - translationem
     - commanitatem-auxilium

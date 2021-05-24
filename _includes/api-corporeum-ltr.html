@@ -1,8 +1,41 @@
 <!-- _includes/api-corporeum-ltr.html -->
 <!-- trivia: corporeum, https://en.wiktionary.org/wiki/corporeus#Latin -->
 
-
 TODO: _includes/api-corporeum-ltr.html
 
+<article>
+  <header>
+    <h1>{{ page.title | markdownify }}</h1>
+    <p>
+      {{ page.description | markdownify }}
+    </p>
+  </header>
 
-{{ site.data.navigationem['Zyyy'] | inspect }}
+  <article>
+    <h2 id="api">API</h2>
+    <p>TODO</p>
+  </article>
+
+  <article>
+    <h2 id="schema">Schema</h2>
+    <p>TODO</p>
+  </article>
+
+  <aside>
+    <h2 id="gratias">Grātiās agere</h2>
+    <h3>Voluntarius Auxilio Tuo</h3>
+    <p>TODO</p>
+  </aside>
+
+  <footer>
+    <h2 id="licentiam">Licentiam</h2>
+    <p>TODO</p>
+  </footer>
+</article>
+
+<!-- https://learn.cloudcannon.com/jekyll/output-json/ -->
+<!-- 
+<script>
+  var colors = {{ page.title | jsonify }};
+  console.log(colors)
+</script> -->
