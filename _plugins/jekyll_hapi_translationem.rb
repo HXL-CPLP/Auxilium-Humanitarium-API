@@ -35,6 +35,41 @@ module Hapi
       nil
     end
 
+    def datum_l10n_de_textum(textum, context, linguam_fontem, linguam_objectivum = nil)
+      linguam_objectivum = linguam_objectivum.nil? ? context['page']['linguam'] : linguam_objectivum
+      hxlattrs_fontem = context['site']['data']['referens']['linguam'][linguam_fontem]['hxlattrs']
+      hxlattrs_objectivum = context['site']['data']['referens']['linguam'][linguam_objectivum]['hxlattrs']
+
+      # puts 'datum_l10n_de_textum'
+      # puts 'linguam_fontem ' + linguam_fontem
+      # puts 'linguam_objectivum ' + linguam_objectivum
+      # puts 'hxlattrs_fontem ' + hxlattrs_fontem.to_s
+      # puts 'hxlattrs_objectivum ' + hxlattrs_objectivum.to_s
+
+      # puts hxlattrs
+      # puts context['site']['data']['L10nhxl']
+      context['site']['data']['L10nhxl'].each do |line|
+        # if line['#item+code'] == l10n_codice
+        # puts "#item+l10n#{hxlattrs_fontem}"
+
+        hxlattrs_fontem.each do |hxlattr_fon|
+          next if line["#item+l10n#{hxlattr_fon}"] != textum
+
+          hxlattrs_objectivum.each do |hxlattr_obj|
+            # puts hxlattr
+            next unless line["#item+l10n#{hxlattr_obj}"]
+
+            # puts hxlattr
+            # puts line["#item+l10n#{hxlattr}"]
+
+            return line["#item+l10n#{hxlattr_obj}"]
+          end
+        end
+      end
+
+      nil
+    end
+
     def datum_temporarium(context)
       context['site']['data']['Temporarium']
     end
@@ -206,6 +241,60 @@ module Hapi
       end
     end
 
+    # _[eng] The {% de_por_Latn_in (...) %} implementation [eng]_
+    # _[por] A implementação de {% de_por_Latn_in (...) %} [por]_
+    #
+    # @exemplum Exemplum I
+    #   linguam: por-Latn
+    #   # por-Latn 'Frase em português' -> por-Latn ? = nil
+    #   ---
+    #   {% de_por_Latn_in Frase em português %}
+    # @resultatum Exemplum I
+    #   Frase em português
+    #
+    # @exemplum Exemplum II
+    #   linguam: eng-Latn
+    #   # por-Latn 'Frase em português' -> eng-Latn ? = nil
+    #   ---
+    #   {% de_por_Latn_in eng-Latn Tradução %}
+    # @resultatum Exemplum II
+    #   <!--de_linguam:por-Latn-->Frase em português<!--por-Latn:de_linguam-->
+    #
+    # @exemplum Exemplum III
+    #   linguam: eng-Latn
+    #   # por-Latn 'Tradução' -> eng-Latn ? = Translation
+    #   ---
+    #   {% de_por_Latn_in eng-Latn Tradução %}
+    # @resultatum Exemplum III
+    #   Translation
+    #
+    class DePorLatnIn < Liquid::Tag
+      def initialize(tag_name, text, tokens)
+        super
+
+        @tokens = text.strip.split
+        @linguam_fontem = 'por-Latn'
+        @linguam_objectivum = @tokens.shift
+        @textum = @tokens.join(' ')
+
+        # puts @linguam_fontem
+        # puts @linguam_objectivum
+
+        # @iso6393 = 'por'
+        # @iso15924 = 'por-Latn'
+      end
+
+      def render(context)
+        return @textum unless @linguam_fontem != @linguam_objectivum
+
+        l10nvalextum = Translationem.datum_l10n_de_textum(@textum, context, @linguam_fontem, @linguam_objectivum)
+
+        return l10nvalextum if l10nvalextum
+
+        "<!--de_linguam:#{@linguam_fontem}-->#{@textum}<!--#{@linguam_fontem}:de_linguam-->"
+      end
+    end
+
     # _[eng] Generate HTML from markdown inside this block [eng]_
     # @exemplum Primum exemplum
     #   {% de_markdown %}
@@ -238,7 +327,9 @@ end
 
 # Liquid::Template.register_tag('gettext', HapiApi::TranslationemDeLatCodicem)
 Liquid::Template.register_tag('de_lat_codicem', Hapi::Translationem::DeLatCodicem)
-
 Liquid::Template.register_tag('de_lat_codicem_in', Hapi::Translationem::DeLatCodicemIn)
+
+# Liquid::Template.register_tag('de_por_Latn', Hapi::Translationem::DePorLatn)
+Liquid::Template.register_tag('de_por_Latn_in', Hapi::Translationem::DePorLatnIn)
 
 Liquid::Template.register_tag('de_markdown', Hapi::Translationem::DeMarkdownBlock)
