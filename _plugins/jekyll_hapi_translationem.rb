@@ -134,6 +134,24 @@ module Hapi
       nil
     end
 
+    # @see https://iso639-3.sil.org/code_tables/639/data
+    # @see https://www.wikidata.org/wiki/Property:P220
+    def iso6391_de_linguam(linguam, referens_praeiudico)
+      return nil if linguam.length != 8
+
+      @parts = linguam.split('-')
+
+      return nil if @parts[0].nil? || @parts[0].length != 3
+
+      @iso6393 = @parts[0]
+
+      # return nil if referens_praeiudico['iso3693'].nil?
+      return nil if referens_praeiudico['iso3693'][@iso6393].nil?
+      return nil if referens_praeiudico['iso3693'][@iso6393]['iso6391'].nil?
+
+      referens_praeiudico['iso3693'][@iso6393]['iso6391']
+    end
+
     # @see https://www.wikidata.org/wiki/Property:P506
     # @see https://unicode.org/iso15924/iso15924-codes.html
     def iso15924_de_linguam(linguam)
@@ -146,6 +164,39 @@ module Hapi
       return @parts[1] if @parts[1].length == 4
 
       nil
+    end
+
+    # _[por] Forma preconceituosa de assumir direção de escrita apenas pelo
+    #        idioma ISO 639-3 + sistema de escrita ISO 15924.
+    # [por]_
+    #
+    # @exemplum Exemplum I
+    #   Translationem.praeiudico_htmldir_de_linguam('por-Latn', referens_praeiudico)
+    # @resultatum Exemplum I
+    #   ltr
+    #
+    # @exemplum Exemplum II
+    #   Translationem.praeiudico_htmldir_de_linguam('ara-Arab', referens_praeiudico)
+    # @resultatum Exemplum II
+    #   rtl
+    #
+    # Trivia:
+    # - 'praeiudico'
+    #   - https://en.wiktionary.org/wiki/praeiudico
+    #     - https://en.wiktionary.org/wiki/prejudge
+    # - https://en.wikipedia.org/wiki/Linguistic_discrimination
+    def praeiudico_htmldir_de_linguam(linguam, referens_praeiudico)
+      return nil if linguam.length != 8
+
+      @parts = linguam.split('-')
+
+      return nil if @parts[0].nil? || @parts[0].length != 3
+
+      # return nil if referens_praeiudico['iso3693'].nil?
+      return nil if referens_praeiudico['iso3693'][@parts[0]].nil?
+      return nil if referens_praeiudico['iso3693'][@parts[0]]['htmldir'].nil?
+
+      referens_praeiudico['iso3693'][@parts[0]]['htmldir']
     end
 
     # _[por] Forma preconceituosa de assumir script do idioma. Note que vários
@@ -186,28 +237,28 @@ module Hapi
         super
 
         @tokens = text.strip.split
-        @text = @tokens.shift
+        @textum = @tokens.shift
         @variant1 = @tokens.shift if @tokens
         # @datum = 123
       end
 
       def render(context)
         temp = Translationem.datum_temporarium(context)
-        l10nval = Translationem.datum_l10n(@text, context)
+        l10nval = Translationem.datum_l10n(@textum, context)
 
         return l10nval if l10nval
 
-        return temp[@text] if temp && temp[@text]
+        return temp[@textum] if temp && temp[@textum]
 
         suffixes = Translationem.datum_temporarium_suffix(context)
 
         suffixes.each do |suffix|
           # puts "#{@text}#{suffix}"
           # puts temp["#{@text}#{suffix}"]
-          return Translationem.de(temp["#{@text}#{suffix}"]) if temp && temp["#{@text}#{suffix}"]
+          return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
         end
 
-        "!?[gettext[#{@text}]gettext]?!"
+        "<!--[de_linguam:[lat-Latn]]-->#{@textum}<!--[[lat-Latn]:de_linguam]-->"
       end
     end
 
@@ -223,16 +274,16 @@ module Hapi
         super
 
         @tokens = text.strip.split
-        @linguam = @tokens.shift
+        @linguam_fontem = @tokens.shift
         @textum = @tokens.shift
 
-        @iso6393 = Translationem.iso6393_de_linguam(@linguam)
-        @iso15924 = Translationem.iso15924_de_linguam(@linguam)
+        # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
+        # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
       end
 
       def render(context)
         temp = Translationem.datum_temporarium(context)
-        l10nval = Translationem.datum_l10n(@textum, context, @linguam)
+        l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
 
         return l10nval if l10nval
 
@@ -248,7 +299,7 @@ module Hapi
           return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
         end
 
-        "!?[gettext[#{@textum}]gettext]?!"
+        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
       end
     end
 
@@ -307,7 +358,7 @@ module Hapi
 
         return l10nvalextum if l10nvalextum
 
-        "<!--de_linguam:#{@linguam_fontem}-->#{@textum}<!--#{@linguam_fontem}:de_linguam-->"
+        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
       end
     end
 
@@ -363,7 +414,7 @@ module Hapi
 
         return l10nvalextum if l10nvalextum
 
-        "<!--de_linguam:#{@linguam_fontem}-->#{@textum}<!--#{@linguam_fontem}:de_linguam-->"
+        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
       end
     end
 
@@ -415,7 +466,7 @@ module Hapi
 
         return l10nvalextum if l10nvalextum
 
-        "<!--de_linguam:#{@linguam_fontem}-->#{@textum}<!--#{@linguam_fontem}:de_linguam-->"
+        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
       end
     end
 
@@ -457,20 +508,56 @@ module Hapi
     class IncognitumPhrasimEstBlock < Liquid::Block
       def render(context)
         text = super
+
+        return text unless text.include? '<!--[de_linguam:['
+
         # # "<p>#{text} #{Time.now}</p>"
         # require 'kramdown'
         # Kramdown::Document.new(text).to_html.to_s
 
+        # @see https://regexr.com/
         # @testum = text.match(/\<\!\-\-(?:.|\n|\r)*?-->/)
-        @testum = text.scan(/\<\!\-\-(?:.|\n|\r)*?-->/)
+        # @testum = text.scan(/<!--\[(?:.)*?\]-->/)
+        # @testum = text.scan(/<!--\[(?:.)*?\[(?:.)*?\]-->/)
+        @testum = text.scan(/<!--\[(?:.)*?\[(?:.)*?\](?:.)*?\]-->/)
+        # @testum = text.scan(/<!--\[(.)*\[(?:.)*?\](.)*\]-->/)
 
-        puts @testum
-
-        if text.match?(/<!--de_linguam/)
-          puts 'tem!'
+        # @see https://rollbar.com/guides/ruby-raising-exceptions/
+        if @testum.length != 2
+          # raise StandardError.new "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
+          raise "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
         end
 
-        text
+        # @linguam_fontem = @tokens.shift
+
+        # puts 'text antes' + text
+
+        @textum_notags = text.gsub(@testum[0], '').gsub(@testum[1], '')
+        @linguam_fontem = @testum[0].gsub('<!--[de_linguam:[', '').gsub(']]-->', '')
+
+        # in: <!--[de_linguam:[por-Latn]]-->
+        # out: por-Latn
+        # if @linguam_fontem.length != 8
+        #   raise "IncognitumPhrasimEstBlock ERROR! linguam_fontem [#{@linguam_fontem}] text #{@@testum}"
+        # end
+
+        # puts context['site']['data']['referens']['praeiudico']
+
+        # @linguam_fontem = @testum[0].gsub('<!--[de_linguam:[', '')
+        @iso6391 = Translationem.iso6391_de_linguam(
+          @linguam_fontem, context['site']['data']['referens']['praeiudico']
+        )
+        @htmldir = Translationem.praeiudico_htmldir_de_linguam(
+          @linguam_fontem, context['site']['data']['referens']['praeiudico']
+        )
+
+        # puts 'testeeee'
+        # puts Translationem.praeiudico_htmldir_de_linguam('por-Latn', context['site']['data']['referens']['praeiudico'])
+        # puts Translationem.praeiudico_htmldir_de_linguam('ara-Arab', context['site']['data']['referens']['praeiudico'])
+
+        "<span lang='#{@iso6391}' dir='#{@htmldir}' class='incognitum-phrasim'>#{@textum_notags}</span>"
+
+        # text
       end
     end
   end
