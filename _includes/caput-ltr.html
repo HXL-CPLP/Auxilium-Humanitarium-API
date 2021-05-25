@@ -71,7 +71,15 @@
             {% endif %}
           {% endfor %}
         </ul>
-        <form  method="GET"
+        <!--
+          _[eng] About dir="auto", check:
+                   - https://www.w3.org/International/questions/qa-html-dir
+                   - https://www.w3.org/International/tutorials/bidi-xhtml/
+                 A visitor may be using a page in LTR but try to search with an
+                 RTL script.
+          [eng]_
+        -->
+        <form  method="GET" dir="auto"
           action="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/search?q=">
           <input class="form-control" type="text" name="q"
             placeholder="Investīgātiōnem..."

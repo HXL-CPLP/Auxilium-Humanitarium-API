@@ -108,18 +108,12 @@ module Hapi
       text
     end
 
-    # _[eng] what page.linguam temos no contexto? [eng]_
-    # _[lat] Quod Jekyll page.linguam nunc? [lat]_
-    # _[por] Qual page.linguam temos no contexto? [por]_
-    #
-    # @exemplum Exemplum I
-    #   linguam = por-Latn
-    #   ---
-    #   puts Translationem.quod_linguam_nunc(context)
-    # @resultatum Exemplum I
-    #   por-Latn
-    def quod_linguam_nunc(context)
-      context['page']['linguam']
+    # TODO: esta meio feio isso. Melhorar. Um problema é que cria
+    #       tags <p> mesmo em elementos inline.
+    # @deprecated
+    def de_markdown(text)
+      require 'kramdown'
+      Kramdown::Document.new(text).to_html.to_s
     end
 
     # @see https://iso639-3.sil.org/code_tables/639/data
@@ -164,6 +158,34 @@ module Hapi
       return @parts[1] if @parts[1].length == 4
 
       nil
+    end
+
+    # _[eng] what page.linguam temos no contexto? [eng]_
+    # _[lat] Quod Jekyll page.linguam nunc? [lat]_
+    # _[por] Qual page.linguam temos no contexto? [por]_
+    #
+    # @exemplum Exemplum I
+    #   linguam = por-Latn
+    #   ---
+    #   puts Translationem.quod_linguam_nunc(context)
+    # @resultatum Exemplum I
+    #   por-Latn
+    def quod_linguam_nunc(context)
+      context['page']['linguam']
+    end
+
+    # _[eng] Which HTML markup to add for this text, if not same as the page? [eng]_
+    # _[lat] Quod HTML5 markup nunc? [lat]_
+    # _[por] Quais atributos HTML adicionar para este elemento, se diferente da página? [por]_
+    #
+    def quod_html_markup_nunc(textum_signif, contextum_signif)
+      @markups = []
+
+      @markups.append("lang='#{textum_signif['iso6391']}'") if textum_signif['iso6391'] != contextum_signif['iso6391']
+
+      @markups.append("dir='#{textum_signif['htmldir']}'") if textum_signif['htmldir'] != contextum_signif['htmldir']
+
+      @markups.append('class=\'incognitum-phrasim\'').join(' ') if @markups.length.positive?
     end
 
     # _[por] Forma preconceituosa de assumir direção de escrita apenas pelo
@@ -223,12 +245,64 @@ module Hapi
       referens_praeiudico['iso3693'][iso6393]['iso15924']
     end
 
-    # TODO: esta meio feio isso. Melhorar. Um problema é que cria
-    #       tags <p> mesmo em elementos inline.
-    # @deprecated
-    def de_markdown(text)
-      require 'kramdown'
-      Kramdown::Document.new(text).to_html.to_s
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/MethodLength
+
+    # Trivia:
+    # - 'significātiōnem'
+    #   - https://en.wiktionary.org/wiki/significatio
+    # - 'incognitum'
+    #   - https://en.wiktionary.org/wiki/incognitus#Latin
+    # - 'pūrum'
+    #   - https://en.wiktionary.org/wiki/purus#Latin
+    # - 'orīgināle'
+    #   - https://en.wiktionary.org/wiki/originalis#Latin
+    # - 'htmldir'
+    #   - https://www.w3.org/International/questions/qa-html-dir
+    def significationem_incognitum_textum(textum, context)
+      # @see https://regexr.com/
+      @regex = textum.scan(/<!--\[(?:.)*?\[(?:.)*?\](?:.)*?\]-->/)
+
+      # @see https://rollbar.com/guides/ruby-raising-exceptions/
+      if @regex.length != 2
+        # raise StandardError.new "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
+        raise "IncognitumPhrasimEstBlock ERROR! regex [#{@textum}] text #{@@textum}"
+      end
+
+      @linguam_fontem = @regex[0].gsub('<!--[de_linguam:[', '').gsub(']]-->', '')
+
+      {
+        'textum_originale' => textum,
+        'textum_purum' => textum.gsub(@regex[0], '').gsub(@regex[1], ''),
+        'linguam' => @linguam_fontem,
+        'iso6391' => Translationem.iso6391_de_linguam(
+          @linguam_fontem, context['site']['data']['referens']['praeiudico']
+        ),
+        'htmldir' => Translationem.praeiudico_htmldir_de_linguam(
+          @linguam_fontem, context['site']['data']['referens']['praeiudico']
+        )
+      }
+    end
+
+    # rubocop:enable Metrics/MethodLength
+    # rubocop:enable Metrics/AbcSize
+
+    # Trivia:
+    # - 'significātiōnem'
+    #   - https://en.wiktionary.org/wiki/significatio
+    # - 'contextum'
+    #   - https://en.wiktionary.org/wiki/contextus#Latin
+    # - 'htmldir'
+    #   - https://www.w3.org/International/questions/qa-html-dir
+    #   - https://www.w3.org/International/articles/inline-bidi-markup/
+    def significationem_contextum(contextum)
+      {
+        'linguam' => contextum['page']['linguam'], # Exemplum: por-Latn
+        'htmldir' => contextum['page']['htmldir'], # Exemplum: ltr
+        'iso6391' => contextum['page']['iso6391'], # Exemplum: pt
+        'iso6393' => contextum['page']['iso6393'], # Exemplum: por
+        'iso15924' => contextum['page']['iso15924'] # Exemplum: Latn
+      }
     end
 
     # HapiApiGenerator is (TODO: document)
@@ -497,8 +571,6 @@ module Hapi
     end
 
     # Trivia:
-    # - 'retractum'
-    #   - https://en.wiktionary.org/wiki/retractus#Latin
     # - 'incognitum'
     #   - https://en.wiktionary.org/wiki/incognitus#Latin
     # - 'phrasim'
@@ -511,53 +583,52 @@ module Hapi
 
         return text unless text.include? '<!--[de_linguam:['
 
-        # # "<p>#{text} #{Time.now}</p>"
-        # require 'kramdown'
-        # Kramdown::Document.new(text).to_html.to_s
+        @textum_signif = Translationem.significationem_incognitum_textum(text, context)
 
-        # @see https://regexr.com/
-        # @testum = text.match(/\<\!\-\-(?:.|\n|\r)*?-->/)
-        # @testum = text.scan(/<!--\[(?:.)*?\]-->/)
-        # @testum = text.scan(/<!--\[(?:.)*?\[(?:.)*?\]-->/)
-        @testum = text.scan(/<!--\[(?:.)*?\[(?:.)*?\](?:.)*?\]-->/)
-        # @testum = text.scan(/<!--\[(.)*\[(?:.)*?\](.)*\]-->/)
+        @markup = Translationem.quod_html_markup_nunc(
+          @textum_signif,
+          Translationem.significationem_contextum(context)
+        )
 
-        # @see https://rollbar.com/guides/ruby-raising-exceptions/
-        if @testum.length != 2
-          # raise StandardError.new "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
-          raise "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
-        end
+        @htmlmarkup ? "<span #{@markup}>#{@textum_signif['textum_purum']}</span>" : @textum_signif['textum_purum']
 
-        # @linguam_fontem = @tokens.shift
+        # return if
 
-        # puts 'text antes' + text
+        # # puts @htmlmarkup
 
-        @textum_notags = text.gsub(@testum[0], '').gsub(@testum[1], '')
-        @linguam_fontem = @testum[0].gsub('<!--[de_linguam:[', '').gsub(']]-->', '')
-
-        # in: <!--[de_linguam:[por-Latn]]-->
-        # out: por-Latn
-        # if @linguam_fontem.length != 8
-        #   raise "IncognitumPhrasimEstBlock ERROR! linguam_fontem [#{@linguam_fontem}] text #{@@testum}"
+        # if @htmlmarkup
+        #   "<span #{@htmlmarkup}>#{@significationem_textum['textum_purum']}</span>"
+        # else
+        #   @significationem_textum['textum_purum']
         # end
 
-        # puts context['site']['data']['referens']['praeiudico']
+        # puts 'teste2'
+        # # @see https://regexr.com/
 
-        # @linguam_fontem = @testum[0].gsub('<!--[de_linguam:[', '')
-        @iso6391 = Translationem.iso6391_de_linguam(
-          @linguam_fontem, context['site']['data']['referens']['praeiudico']
-        )
-        @htmldir = Translationem.praeiudico_htmldir_de_linguam(
-          @linguam_fontem, context['site']['data']['referens']['praeiudico']
-        )
+        # puts 'significationem_incognitum_textum'
+        # puts Translationem.significationem_incognitum_textum(text, context)
+        # puts 'significationem_contextum'
+        # puts Translationem.significationem_contextum(context)
 
-        # puts 'testeeee'
-        # puts Translationem.praeiudico_htmldir_de_linguam('por-Latn', context['site']['data']['referens']['praeiudico'])
-        # puts Translationem.praeiudico_htmldir_de_linguam('ara-Arab', context['site']['data']['referens']['praeiudico'])
+        # @testum = text.scan(/<!--\[(?:.)*?\[(?:.)*?\](?:.)*?\]-->/)
 
-        "<span lang='#{@iso6391}' dir='#{@htmldir}' class='incognitum-phrasim'>#{@textum_notags}</span>"
+        # # @see https://rollbar.com/guides/ruby-raising-exceptions/
+        # if @testum.length != 2
+        #   # raise StandardError.new "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
+        #   raise "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
+        # end
 
-        # text
+        # @textum_notags = text.gsub(@testum[0], '').gsub(@testum[1], '')
+        # @linguam_fontem = @testum[0].gsub('<!--[de_linguam:[', '').gsub(']]-->', '')
+
+        # @iso6391 = Translationem.iso6391_de_linguam(
+        #   @linguam_fontem, context['site']['data']['referens']['praeiudico']
+        # )
+        # @htmldir = Translationem.praeiudico_htmldir_de_linguam(
+        #   @linguam_fontem, context['site']['data']['referens']['praeiudico']
+        # )
+
+        # "<span lang='#{@iso6391}' dir='#{@htmldir}' class='incognitum-phrasim'>#{@textum_notags}</span>"
       end
     end
   end
@@ -577,3 +648,8 @@ Liquid::Template.register_tag('de_phrasim', Hapi::Translationem::DeTextum)
 
 Liquid::Template.register_tag('incognitum_phrasim_est', Hapi::Translationem::IncognitumPhrasimEstBlock)
 Liquid::Template.register_tag('de_markdown', Hapi::Translationem::DeMarkdownBlock)
+
+# rubocop:enable RubocopIsRacistAndIcanProveIt/AsciiComments
+#   @see https://github.com/rubocop/ruby-style-guide/issues/301
+#   @see https://github.com/rubocop/ruby-style-guide/issues/137
+#

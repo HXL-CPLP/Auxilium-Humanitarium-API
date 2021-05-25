@@ -74,6 +74,8 @@ module Hapi
         # 'locale' => Utilitatem.linguam_to_html_lang(api['linguam']),
         'linguam' => api['linguam'],
         'lang' => linguam_to_html_lang(api['linguam'], referens),
+        # @see https://www.w3.org/International/questions/qa-html-dir, dir="auto"
+        'htmldir' => 'ltr', # FIXME: _[eng] Use _data/referens.yml for non-LTR [eng]-
         'hreflang' => @hreflang,
         'title' => api['namen'] || api['title'],
         'description' => api['description'] || api['descriptionem'],
