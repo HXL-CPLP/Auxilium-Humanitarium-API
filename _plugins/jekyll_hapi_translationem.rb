@@ -108,6 +108,20 @@ module Hapi
       text
     end
 
+    # _[eng] what page.linguam temos no contexto? [eng]_
+    # _[lat] Quod Jekyll page.linguam nunc? [lat]_
+    # _[por] Qual page.linguam temos no contexto? [por]_
+    #
+    # @exemplum Exemplum I
+    #   linguam = por-Latn
+    #   ---
+    #   puts Translationem.quod_linguam_nunc(context)
+    # @resultatum Exemplum I
+    #   por-Latn
+    def quod_linguam_nunc(context)
+      context['page']['linguam']
+    end
+
     # @see https://iso639-3.sil.org/code_tables/639/data
     # @see https://www.wikidata.org/wiki/Property:P220
     def iso6393_de_linguam(linguam)
@@ -125,13 +139,10 @@ module Hapi
     def iso15924_de_linguam(linguam)
       return nil if linguam.length < 4
 
-      # return nil unless linguam.length != 3
-
       @parts = linguam.split('-')
 
       return nil if @parts[1].nil?
 
-      # return @parts[1].capitalize if @parts[1].length == 4
       return @parts[1] if @parts[1].length == 4
 
       nil
@@ -142,9 +153,9 @@ module Hapi
     #        com frequência línguas que não usam latin.)
     # [por]_
     #
-    # @exemplum Primum exemplum
+    # @exemplum Exemplum I
     #   Translationem.praeiudico_iso15924_de_iso6393('por', referens_praeiudico)
-    # @resultatum Primum exemplum
+    # @resultatum Exemplum I
     #   Latn
     #
     # Trivia:
@@ -241,6 +252,65 @@ module Hapi
       end
     end
 
+    # _[eng] The {% de_por_Latn (...) %} implementation [eng]_
+    # _[por] A implementação de {% de_por_Latn (...) %} [por]_
+    #
+    # @exemplum Exemplum I
+    #   linguam: por-Latn
+    #   # por-Latn 'Frase em português' -> por-Latn ? = nil
+    #   ---
+    #   {% de_por_Latn Frase em português %}
+    # @resultatum Exemplum I
+    #   Frase em português
+    #
+    # @exemplum Exemplum II
+    #   linguam: eng-Latn
+    #   # por-Latn 'Frase em português' -> eng-Latn ? = nil
+    #   ---
+    #   {% de_por_Latn Tradução %}
+    # @resultatum Exemplum II
+    #  <!--de_linguam:por-Latn-->Frase em português<!--por-Latn:de_linguam-->
+    #
+    # @exemplum Exemplum III
+    #   linguam: eng-Latn
+    #   # por-Latn 'Tradução' -> eng-Latn ? = Translation
+    #   ---
+    #   {% de_por_Latn Tradução %}
+    # @resultatum Exemplum III
+    #   Translation
+    #
+    class DePorLatn < Liquid::Tag
+      def initialize(tag_name, text, tokens)
+        super
+
+        # @tokens = text.strip.split
+        @linguam_fontem = 'por-Latn'
+        @linguam_objectivum = nil
+        # @textum = @tokens.join(' ')
+        @textum = text.strip
+
+        # puts @linguam_fontem
+        # puts @linguam_objectivum
+
+        # @iso6393 = 'por'
+        # @iso15924 = 'por-Latn'
+      end
+
+      def render(context)
+        @linguam_objectivum = Translationem.quod_linguam_nunc(context)
+
+        return @textum unless @linguam_fontem != @linguam_objectivum
+
+        l10nvalextum = Translationem.datum_l10n_de_textum(
+          @textum, context, @linguam_fontem, @linguam_objectivum
+        )
+
+        return l10nvalextum if l10nvalextum
+
+        "<!--de_linguam:#{@linguam_fontem}-->#{@textum}<!--#{@linguam_fontem}:de_linguam-->"
+      end
+    end
+
     # _[eng] The {% de_por_Latn_in (...) %} implementation [eng]_
     # _[por] A implementação de {% de_por_Latn_in (...) %} [por]_
     #
@@ -248,7 +318,7 @@ module Hapi
     #   linguam: por-Latn
     #   # por-Latn 'Frase em português' -> por-Latn ? = nil
     #   ---
-    #   {% de_por_Latn_in Frase em português %}
+    #   {% de_por_Latn_in por-Latn Frase em português %}
     # @resultatum Exemplum I
     #   Frase em português
     #
@@ -287,7 +357,61 @@ module Hapi
       def render(context)
         return @textum unless @linguam_fontem != @linguam_objectivum
 
-        l10nvalextum = Translationem.datum_l10n_de_textum(@textum, context, @linguam_fontem, @linguam_objectivum)
+        l10nvalextum = Translationem.datum_l10n_de_textum(
+          @textum, context, @linguam_fontem, @linguam_objectivum
+        )
+
+        return l10nvalextum if l10nvalextum
+
+        "<!--de_linguam:#{@linguam_fontem}-->#{@textum}<!--#{@linguam_fontem}:de_linguam-->"
+      end
+    end
+
+    # _[eng] The {% de_textum (...) %} implementation [eng]_
+    # _[por] A implementação de {% de_textum (...) %} [por]_
+    #
+    # @exemplum Exemplum I
+    #   linguam: por-Latn
+    #   # por-Latn 'Frase em português' -> por-Latn ? = nil
+    #   ---
+    #   {% de_textum por-Latn Frase em português %}
+    # @resultatum Exemplum I
+    #   Frase em português
+    #
+    # @exemplum Exemplum II
+    #   linguam: eng-Latn
+    #   # por-Latn 'Frase em português' -> eng-Latn ? = nil
+    #   ---
+    #   {% de_textum Tradução %}
+    # @resultatum Exemplum II
+    #  <!--de_linguam:por-Latn-->Frase em português<!--por-Latn:de_linguam-->
+    #
+    # @exemplum Exemplum III
+    #   linguam: eng-Latn
+    #   # por-Latn 'Tradução' -> eng-Latn ? = Translation
+    #   ---
+    #   {% de_textum por-Latn Tradução %}
+    # @resultatum Exemplum III
+    #   Translation
+    #
+    class DeTextum < Liquid::Tag
+      def initialize(tag_name, text, tokens)
+        super
+
+        @tokens = text.strip.split
+        @linguam_fontem = @tokens.shift
+        @linguam_objectivum = nil
+        @textum = @tokens.join(' ')
+      end
+
+      def render(context)
+        @linguam_objectivum = Translationem.quod_linguam_nunc(context)
+
+        return @textum unless @linguam_fontem != @linguam_objectivum
+
+        l10nvalextum = Translationem.datum_l10n_de_textum(
+          @textum, context, @linguam_fontem, @linguam_objectivum
+        )
 
         return l10nvalextum if l10nvalextum
 
@@ -320,6 +444,35 @@ module Hapi
         Kramdown::Document.new(text).to_html.to_s
       end
     end
+
+    # Trivia:
+    # - 'retractum'
+    #   - https://en.wiktionary.org/wiki/retractus#Latin
+    # - 'incognitum'
+    #   - https://en.wiktionary.org/wiki/incognitus#Latin
+    # - 'phrasim'
+    #   - https://en.wiktionary.org/wiki/incognitus#Latin
+    # - 'est'
+    #   - https://en.wiktionary.org/wiki/est#Latin
+    class IncognitumPhrasimEstBlock < Liquid::Block
+      def render(context)
+        text = super
+        # # "<p>#{text} #{Time.now}</p>"
+        # require 'kramdown'
+        # Kramdown::Document.new(text).to_html.to_s
+
+        # @testum = text.match(/\<\!\-\-(?:.|\n|\r)*?-->/)
+        @testum = text.scan(/\<\!\-\-(?:.|\n|\r)*?-->/)
+
+        puts @testum
+
+        if text.match?(/<!--de_linguam/)
+          puts 'tem!'
+        end
+
+        text
+      end
+    end
   end
 end
 
@@ -329,7 +482,11 @@ end
 Liquid::Template.register_tag('de_lat_codicem', Hapi::Translationem::DeLatCodicem)
 Liquid::Template.register_tag('de_lat_codicem_in', Hapi::Translationem::DeLatCodicemIn)
 
-# Liquid::Template.register_tag('de_por_Latn', Hapi::Translationem::DePorLatn)
+Liquid::Template.register_tag('de_por_Latn', Hapi::Translationem::DePorLatn)
 Liquid::Template.register_tag('de_por_Latn_in', Hapi::Translationem::DePorLatnIn)
 
+Liquid::Template.register_tag('de_textum', Hapi::Translationem::DeTextum)
+Liquid::Template.register_tag('de_phrasim', Hapi::Translationem::DeTextum)
+
+Liquid::Template.register_tag('incognitum_phrasim_est', Hapi::Translationem::IncognitumPhrasimEstBlock)
 Liquid::Template.register_tag('de_markdown', Hapi::Translationem::DeMarkdownBlock)

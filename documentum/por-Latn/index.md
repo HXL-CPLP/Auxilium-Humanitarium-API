@@ -5,7 +5,8 @@ description: |
   com [OpenAPI](https://www.openapis.org/), o padrão de mercado aberto de
   fato para documentar APIs REST.
 # locale: pt
-linguam: por-Latn
+# linguam: por-Latn
+linguam: eng-Latn
 permalink: /por-Latn/
 # categories: [ index ]
 # layout: defallo
