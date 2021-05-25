@@ -6,7 +6,8 @@ description: |
   fato para documentar APIs REST.
 # locale: pt
 # linguam: por-Latn
-linguam: por-Latn
+# linguam: por-Latn
+linguam: spa-Latn
 permalink: /por-Latn/
 # categories: [ index ]
 # layout: defallo
@@ -17,8 +18,10 @@ layout: defallo-ltr
 #               (Emerson Rocha, 2021-05-25 04:30 UTC)
 #          [eng]_
 htmldir: ltr
-iso6391: pt
-iso6393: por
+# iso6391: pt
+iso6391: es
+# iso6393: por
+iso6393: spa
 iso15924: Latn
 ---
 

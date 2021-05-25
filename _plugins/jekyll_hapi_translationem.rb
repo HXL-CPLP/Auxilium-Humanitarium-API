@@ -179,13 +179,14 @@ module Hapi
     # _[por] Quais atributos HTML adicionar para este elemento, se diferente da página? [por]_
     #
     def quod_html_markup_nunc(textum_signif, contextum_signif)
-      @markups = []
+      @attrs = []
 
-      @markups.append("lang='#{textum_signif['iso6391']}'") if textum_signif['iso6391'] != contextum_signif['iso6391']
+      # puts "textum_signif [#{textum_signif}] \ncontextum_signif [#{contextum_signif}]"
+      @attrs.append("lang='#{textum_signif['iso6391']}'") if textum_signif['iso6391'] != contextum_signif['iso6391']
+      @attrs.append("dir='#{textum_signif['htmldir']}'") if textum_signif['htmldir'] != contextum_signif['htmldir']
+      @markup = @attrs.append('class=\'incognitum-phrasim\'').join(' ') if @attrs.length.positive?
 
-      @markups.append("dir='#{textum_signif['htmldir']}'") if textum_signif['htmldir'] != contextum_signif['htmldir']
-
-      @markups.append('class=\'incognitum-phrasim\'').join(' ') if @markups.length.positive?
+      @markup
     end
 
     # _[por] Forma preconceituosa de assumir direção de escrita apenas pelo
@@ -408,17 +409,9 @@ module Hapi
       def initialize(tag_name, text, tokens)
         super
 
-        # @tokens = text.strip.split
         @linguam_fontem = 'por-Latn'
         @linguam_objectivum = nil
-        # @textum = @tokens.join(' ')
         @textum = text.strip
-
-        # puts @linguam_fontem
-        # puts @linguam_objectivum
-
-        # @iso6393 = 'por'
-        # @iso15924 = 'por-Latn'
       end
 
       def render(context)
@@ -527,9 +520,45 @@ module Hapi
         @linguam_fontem = @tokens.shift
         @linguam_objectivum = nil
         @textum = @tokens.join(' ')
+
+        @error_text = nil
+
+        # TODO: implementar sistema de ERROR e WARNING se estiver rodando
+        #       localmente e se estiver em produção. No caso de produção
+        #       tolerar exibindo mensagem de erro em vez de bloquear tudo.
+        if @linguam_fontem.length != 8 || @textum.length.zero?
+          # warn "WARNING {% de_textum #{text}%}"
+          @error_text = "!?ERROR{% #{tag_name} #{text}%}ERROR?!"
+
+          # puts ENV.keys
+          if ENV['JEKYLL_ENV'] == 'development'
+            raise @error_text
+          else
+            puts caller
+            warn @error_text
+          end
+          # puts ENV['JEKYLL_ENV']
+          # warn @error_text
+        end
+
+        # puts 'aaa'
+        # puts text
+
+        # validate
       end
 
+      # def errorem
+      # def validate
+      #   # if @linguam_fontem.length != 8
+      #   raise "{% de_textum [LINGUAN ERROR] (...) %} [#{@linguam_fontem}" if @linguam_fontem.length != 8
+      #   raise "{% de_textum #{@linguam_fontem} [ERROR] %} [#{@textum}" unless @textum
+      #   # raise 'error'
+      #   raise "Mensagem de erro aqui tag_name[#{tag_name}] text[#{text}] tokens[#{tokens}]"
+      # end
+
       def render(context)
+        return @error_text if @error_text
+
         @linguam_objectivum = Translationem.quod_linguam_nunc(context)
 
         return @textum unless @linguam_fontem != @linguam_objectivum
@@ -545,20 +574,20 @@ module Hapi
     end
 
     # _[eng] Generate HTML from markdown inside this block [eng]_
-    # @exemplum Primum exemplum
+    # @exemplum Exemplum I
     #   {% de_markdown %}
     #     Referens: [HXLStandard](https://hxlstandard.org/).
     #   {% endde_markdown %}
     #
-    # @resultatum Primum exemplum
+    # @resultatum Exemplum I
     #   <p>Referens: <a href="https://hxlstandard.org/">HXLStandard</a>.</p>
     #
-    # @exemplum Secundum exemplum
+    # @exemplum Exemplum II
     #   {% de_markdown %}
     #     {% de_eng Referens: [HXLStandard](https://hxlstandard.org/). %}
     #   {% endde_markdown %}
     #
-    # @resultatum Secundum exemplum
+    # @resultatum Exemplum II
     #   <p>Referens: <a href="https://hxlstandard.org/">HXLStandard</a>.</p>
     #
     class DeMarkdownBlock < Liquid::Block
@@ -570,6 +599,46 @@ module Hapi
       end
     end
 
+    # _[eng] This is the {% incognitum_phrasim_est}(...){% %} implementation eng]_
+    # _[por] Implementação do {% incognitum_phrasim_est %} (...){% %} [por]_
+    #
+    # @exemplum Exemplum I
+    #   linguam: por-Latn
+    #   # eng-Latn 'Unknow translation' -> por-Latn ? = nil
+    #   ---
+    #   {% incognitum_phrasim_est %}
+    #   <!--[de_linguam:[eng-Latn]]-->Unknow translation<!--[[eng-Latn]:de_linguam]-->
+    #   {% endincognitum_phrasim_est %}
+    #
+    # @resultatum Exemplum I
+    #   <span lang="en" class="incognitum-phrasim">Unknow translation</span>
+    #
+    # @exemplum Exemplum II
+    #   linguam: eng-Latn
+    #   # eng-Latn 'Unknow translation' -> por-Latn ? = nil
+    #   ---
+    #   {% incognitum_phrasim_est %}
+    #   <!--[de_linguam:[eng-Latn]]-->Unknow translation<!--[[eng-Latn]:de_linguam]-->
+    #   {% endincognitum_phrasim_est %}
+    #
+    # @resultatum Exemplum II
+    #   Unknow translation
+    #
+    #
+    # @exemplum Exemplum III
+    #   linguam: arb-Arab
+    #   htmldir: rtl
+    #   # iso6391: ar
+    #   # iso15924: Arab
+    #   # eng-Latn 'Unknow translation' -> arb-Arab ? = nil
+    #   ---
+    #   {% incognitum_phrasim_est %}
+    #   <!--[de_linguam:[eng-Latn]]-->Unknow translation<!--[[eng-Latn]:de_linguam]-->
+    #   {% endincognitum_phrasim_est %}
+    #
+    # @resultatum Exemplum III
+    #   <span lang="en" dir="ltr" class="incognitum-phrasim">Unknow translation</span>
+    #
     # Trivia:
     # - 'incognitum'
     #   - https://en.wiktionary.org/wiki/incognitus#Latin
@@ -590,45 +659,10 @@ module Hapi
           Translationem.significationem_contextum(context)
         )
 
-        @htmlmarkup ? "<span #{@markup}>#{@textum_signif['textum_purum']}</span>" : @textum_signif['textum_purum']
+        @r = @markup ? "<span #{@markup}>#{@textum_signif['textum_purum']}</span>" : @textum_signif['textum_purum']
 
-        # return if
-
-        # # puts @htmlmarkup
-
-        # if @htmlmarkup
-        #   "<span #{@htmlmarkup}>#{@significationem_textum['textum_purum']}</span>"
-        # else
-        #   @significationem_textum['textum_purum']
-        # end
-
-        # puts 'teste2'
-        # # @see https://regexr.com/
-
-        # puts 'significationem_incognitum_textum'
-        # puts Translationem.significationem_incognitum_textum(text, context)
-        # puts 'significationem_contextum'
-        # puts Translationem.significationem_contextum(context)
-
-        # @testum = text.scan(/<!--\[(?:.)*?\[(?:.)*?\](?:.)*?\]-->/)
-
-        # # @see https://rollbar.com/guides/ruby-raising-exceptions/
-        # if @testum.length != 2
-        #   # raise StandardError.new "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
-        #   raise "IncognitumPhrasimEstBlock ERROR! regex [#{@testum}] text #{@@testum}"
-        # end
-
-        # @textum_notags = text.gsub(@testum[0], '').gsub(@testum[1], '')
-        # @linguam_fontem = @testum[0].gsub('<!--[de_linguam:[', '').gsub(']]-->', '')
-
-        # @iso6391 = Translationem.iso6391_de_linguam(
-        #   @linguam_fontem, context['site']['data']['referens']['praeiudico']
-        # )
-        # @htmldir = Translationem.praeiudico_htmldir_de_linguam(
-        #   @linguam_fontem, context['site']['data']['referens']['praeiudico']
-        # )
-
-        # "<span lang='#{@iso6391}' dir='#{@htmldir}' class='incognitum-phrasim'>#{@textum_notags}</span>"
+        # puts 'IncognitumPhrasimEstBlock> @markup ' + @markup.to_s + ' @r' +  @r
+        @r
       end
     end
   end
@@ -637,17 +671,33 @@ end
 # Liquid::Template.register_filter(HapiApi::Translationem)
 
 # Liquid::Template.register_tag('gettext', HapiApi::TranslationemDeLatCodicem)
-Liquid::Template.register_tag('de_lat_codicem', Hapi::Translationem::DeLatCodicem)
-Liquid::Template.register_tag('de_lat_codicem_in', Hapi::Translationem::DeLatCodicemIn)
+Liquid::Template.register_tag(
+  'de_lat_codicem', Hapi::Translationem::DeLatCodicem
+)
+Liquid::Template.register_tag(
+  'de_lat_codicem_in', Hapi::Translationem::DeLatCodicemIn
+)
 
-Liquid::Template.register_tag('de_por_Latn', Hapi::Translationem::DePorLatn)
-Liquid::Template.register_tag('de_por_Latn_in', Hapi::Translationem::DePorLatnIn)
+Liquid::Template.register_tag(
+  'de_por_Latn', Hapi::Translationem::DePorLatn
+)
+Liquid::Template.register_tag(
+  'de_por_Latn_in', Hapi::Translationem::DePorLatnIn
+)
 
-Liquid::Template.register_tag('de_textum', Hapi::Translationem::DeTextum)
-Liquid::Template.register_tag('de_phrasim', Hapi::Translationem::DeTextum)
+Liquid::Template.register_tag(
+  'de_textum', Hapi::Translationem::DeTextum
+)
+Liquid::Template.register_tag(
+  'de_phrasim', Hapi::Translationem::DeTextum
+)
 
-Liquid::Template.register_tag('incognitum_phrasim_est', Hapi::Translationem::IncognitumPhrasimEstBlock)
-Liquid::Template.register_tag('de_markdown', Hapi::Translationem::DeMarkdownBlock)
+Liquid::Template.register_tag(
+  'incognitum_phrasim_est', Hapi::Translationem::IncognitumPhrasimEstBlock
+)
+Liquid::Template.register_tag(
+  'de_markdown', Hapi::Translationem::DeMarkdownBlock
+)
 
 # rubocop:enable RubocopIsRacistAndIcanProveIt/AsciiComments
 #   @see https://github.com/rubocop/ruby-style-guide/issues/301

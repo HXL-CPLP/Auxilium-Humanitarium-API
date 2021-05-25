@@ -51,6 +51,11 @@ linguam:
     hxlattrs:
       - "+i_eng"
       - "+i_en"
+  spa-Latn:
+    BCP47: es
+    hxlattrs:
+      - "+i_spa"
+      - "+i_es"
   ## Noticia:
   ## _[por] Em geral, vamos usar Português (genérico) e evitar usar pt_BR
   ##        ou pt_PT. Isso faz sentido em outras línguas onde a diferença é
@@ -104,7 +109,7 @@ praeiudico:
       iso15924: Arab
       iso6391: ar
       htmldir: rtl
-    spa:
+    spa: &id_praeiudico_iso3693_spa
       iso15924: Latn
       iso6391: es
       htmldir: ltr
@@ -120,6 +125,7 @@ praeiudico:
   iso3691:
     ar: *id_praeiudico_iso3693_ara
     en: *id_praeiudico_iso3693_eng
+    es: *id_praeiudico_iso3693_spa
 
 
 ### Temp

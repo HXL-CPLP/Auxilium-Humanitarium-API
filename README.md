@@ -60,13 +60,13 @@ HXL-CPLP.
 ### Executar o Jekyll localmente
 
 ```bash
-bundle exec jekyll serve --config _config.yml,_config_dev.yml
+JEKYLL_ENV=development bundle exec jekyll serve --config _config.yml,_config_dev.yml
 
 # JEKYLL_ENV=development bundle exec jekyll serve --incremental
 # Server address: http://127.0.0.1:4000/
 
 ## Debug
-bundle exec jekyll serve --config _config.yml,_config_dev.yml --trace --watch
+JEKYLL_ENV=development bundle exec jekyll serve --config _config.yml,_config_dev.yml --trace --watch
 
 ## Velocidade
 bundle exec jekyll serve --config _config.yml,_config_dev.yml --profile
