@@ -64,16 +64,16 @@ linguam:
     hxlattrs:
       - "+i_por"
       - "+i_pt"
-  por-BR:
-    BCP47: pt-BR
-    hxlattrs:
-      - "+i_por"
-      - "+i_pt"
-  por-PT:
-    BCP47: pt-PT
-    hxlattrs:
-      - "+i_por"
-      - "+i_pt"
+  # por-BR:
+  #   BCP47: pt-BR
+  #   hxlattrs:
+  #     - "+i_por"
+  #     - "+i_pt"
+  # por-PT:
+  #   BCP47: pt-PT
+  #   hxlattrs:
+  #     - "+i_por"
+  #     - "+i_pt"
   mul-Zyyy:
     BCP47: ''
     hxlattrs: []
@@ -85,6 +85,8 @@ linguam:
 #        idiomas podem ser escritos em mais de um alfabeto (e isso ocorre
 #        com frequência línguas que não usam latin.)
 # [por]_
+#
+# @see https://en.wikipedia.org/wiki/Linguistic_discrimination
 #
 # Trivia:
 # - 'praeiudico'

@@ -39,25 +39,28 @@ module Hapi
       context['site']['data']['Temporarium']
     end
 
-    def datum_temporarium_suffix(context)
+    def datum_temporarium_suffix(context, linguam = nil)
+      linguam = linguam.nil? ? context['page']['linguam'] : linguam
       @resultatum = []
 
       # exemplum: por-Latn
-      if context['page']['linguam']
-        # exemplum: _por-Latn
-        @resultatum.append("_#{context['page']['linguam']}")
-        # @resultatum.append("_#{context['page']['linguam']}")
-        @parts = context['page']['linguam'].split('-')
+      # if context['page']['linguam']
+      # exemplum: _por-Latn
+      @resultatum.append("_#{linguam}")
+      # @resultatum.append("_#{context['page']['linguam']}")
+      @parts = linguam.split('-')
 
-        # exemplum = _por
-        @resultatum.append("_#{@parts.shift}")
+      # exemplum = _por
+      @resultatum.append("_#{@parts.shift}")
 
-        # exemplum = _Latn
-        # if @parts
-        #   @resultatum.append("_#{@parts.shift}") if @parts
-        # end
-        @resultatum.append("_#{@parts.shift}") if @parts
-      end
+      # exemplum = _Latn
+      # if @parts
+      #   @resultatum.append("_#{@parts.shift}") if @parts
+      # end
+      @resultatum.append("_#{@parts.shift}") if @parts
+      # end
+
+      # puts @resultatum
 
       @resultatum
     end
@@ -103,12 +106,24 @@ module Hapi
     #        idiomas podem ser escritos em mais de um alfabeto (e isso ocorre
     #        com frequência línguas que não usam latin.)
     # [por]_
+    #
+    # @exemplum Primum exemplum
+    #   Translationem.praeiudico_iso15924_de_iso6393('por', referens_praeiudico)
+    # @resultatum Primum exemplum
+    #   Latn
+    #
     # Trivia:
     # - 'praeiudico'
     #   - https://en.wiktionary.org/wiki/praeiudico
     #     - https://en.wiktionary.org/wiki/prejudge
-    def praeiudico_iso15924_de_iso6393(iso6393, _referens_praeiudico)
+    # - https://en.wikipedia.org/wiki/Linguistic_discrimination
+    def praeiudico_iso15924_de_iso6393(iso6393, referens_praeiudico)
       return nil if iso6393.length != 3
+      return nil if referens_praeiudico['iso3693'].nil?
+      return nil if referens_praeiudico['iso3693'][iso6393].nil?
+      return nil if referens_praeiudico['iso3693'][iso6393]['iso15924'].nil?
+
+      referens_praeiudico['iso3693'][iso6393]['iso15924']
     end
 
     # TODO: esta meio feio isso. Melhorar. Um problema é que cria
@@ -141,6 +156,8 @@ module Hapi
         suffixes = Translationem.datum_temporarium_suffix(context)
 
         suffixes.each do |suffix|
+          # puts "#{@text}#{suffix}"
+          # puts temp["#{@text}#{suffix}"]
           return Translationem.de(temp["#{@text}#{suffix}"]) if temp && temp["#{@text}#{suffix}"]
         end
 
@@ -148,7 +165,13 @@ module Hapi
       end
     end
 
-    # HapiApiGenerator is (TODO: document)
+    # _[eng] The {% de_lat_codicem_in (...) %} implementation [eng]_
+    # _[por] A implementação de {% de_lat_codicem_in (...) %} [por]_
+    #
+    # @exemplum Primum exemplum
+    #   {% de_lat_codicem_in por-Latn licentiam_nomen %}
+    # @resultatum Primum exemplum
+    #   Licença
     class DeLatCodicemIn < Liquid::Tag
       def initialize(tag_name, text, tokens)
         super
@@ -157,38 +180,29 @@ module Hapi
         @linguam = @tokens.shift
         @textum = @tokens.shift
 
-        puts @linguam
-
         @iso6393 = Translationem.iso6393_de_linguam(@linguam)
         @iso15924 = Translationem.iso15924_de_linguam(@linguam)
-        # @datum = 123
       end
 
-      def render(_context)
-        puts 'oioi1'
-        puts @textum
-        puts 'oioi1'
-        puts 'oioi2'
-        puts @iso6393
-        puts 'oioi2'
-        puts 'oioi2'
-        puts @iso15924
-        puts 'oioi2'
+      def render(context)
+        temp = Translationem.datum_temporarium(context)
+        l10nval = Translationem.datum_l10n(@textum, context, @linguam)
 
-        # temp = Translationem.datum_temporarium(context)
-        # l10nval = Translationem.datum_l10n(@text, context)
+        return l10nval if l10nval
 
-        # return l10nval if l10nval
+        return temp[@textum] if temp && temp[@textum]
 
-        # return temp[@text] if temp && temp[@text]
+        suffixes = Translationem.datum_temporarium_suffix(context)
 
-        # suffixes = Translationem.datum_temporarium_suffix(context)
+        suffixes.each do |suffix|
+          # puts 'oooooooooi'
+          # puts suffix
+          # puts "#{@textum}#{suffix}"
+          # puts temp["#{@textum}#{suffix}"]
+          return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
+        end
 
-        # suffixes.each do |suffix|
-        #   return Translationem.de(temp["#{@text}#{suffix}"]) if temp && temp["#{@text}#{suffix}"]
-        # end
-
-        "!?[gettext[#{@text}]gettext]?!"
+        "!?[gettext[#{@textum}]gettext]?!"
       end
     end
 

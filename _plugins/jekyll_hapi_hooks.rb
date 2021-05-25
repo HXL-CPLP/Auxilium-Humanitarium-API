@@ -40,7 +40,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     'data' => site.data
   }
   @content = JSON.pretty_generate(@deinsectum)
-  puts 'jekyll_hapi_hooks: deinsectum.json'
+  # puts 'jekyll_hapi_hooks: deinsectum.json'
   File.write(File.join(site.dest, 'deinsectum.json'), @content)
 end
 
