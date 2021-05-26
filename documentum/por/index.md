@@ -26,28 +26,28 @@ toc: true
 -->
 
 ##### ReliefWeb-eng
-- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: <https://hapi.etica.ai/api/UN/reliefweb/eng/>
-- **{% include fn/L10n vocab="L10n_openapi_filum" %}**: [/api/UN/reliefweb/eng/openapi.yaml](/api/UN/reliefweb/eng/openapi.yaml)
+- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/UN/reliefweb/eng/>
+- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/UN/reliefweb/eng/openapi.yaml](/api/UN/reliefweb/eng/openapi.yaml)
 
 #### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
-- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: <https://hapi.etica.ai/api/UN/HDX/eng>
-- **{% include fn/L10n vocab="L10n_openapi_filum" %}**: [/api/UN/HDX/eng/openapi.yaml](/api/UN/HDX/eng/openapi.yaml)
+- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/UN/HDX/eng>
+- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/UN/HDX/eng/openapi.yaml](/api/UN/HDX/eng/openapi.yaml)
 
 #### CODV2API <sup>(beta)</sup>
 
 ##### CODV2API-eng
-- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: <https://hapi.etica.ai/api/UN/CODV2API/eng>
-- **{% include fn/L10n vocab="L10n_openapi_filum" %}**: [/api/UN/CODV2API/eng/openapi.yaml](/api/UN/CODV2API/eng/openapi.yaml)
+- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/UN/CODV2API/eng>
+- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/UN/CODV2API/eng/openapi.yaml](/api/UN/CODV2API/eng/openapi.yaml)
 
 ### XZ
 
 #### HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária
 
 ##### HXL-Proxy
-- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng>
-- **{% include fn/L10n vocab="L10n_openapi_filum" %}**: [/api/XZ/HXL-Proxy/eng/openapi.yaml](/api/XZ/HXL-Proxy/eng/openapi.yaml)
+- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng>
+- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/XZ/HXL-Proxy/eng/openapi.yaml](/api/XZ/HXL-Proxy/eng/openapi.yaml)
 
 ### BR
 
@@ -55,18 +55,18 @@ toc: true
 
 ##### brazilian-ckan-portals-eng
 
-- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng>
-- **{% include fn/L10n vocab="L10n_openapi_filum" %}**: [/api/BR/brazilian-ckan-portals/eng/openapi.yaml](/api/BR/brazilian-ckan-portals/eng/openapi.yaml)
+- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng>
+- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/BR/brazilian-ckan-portals/eng/openapi.yaml](/api/BR/brazilian-ckan-portals/eng/openapi.yaml)
 
 ##### portais-ckan-brasil-por
 
-- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por>
-- **{% include fn/L10n vocab="L10n_openapi_filum" %}**: [/api/BR/portais-ckan-brasil/por/openapi.yaml](/api/BR/portais-ckan-brasil/por/openapi.yaml)
+- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por>
+- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/BR/portais-ckan-brasil/por/openapi.yaml](/api/BR/portais-ckan-brasil/por/openapi.yaml)
 
 ##### portais-arcgis-brasil-por
 
-- **{% include fn/L10n vocab="L10n_canonicum_catanam" %}**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por>
-- **{% include fn/L10n vocab="L10n_openapi_filum" %}**: [/api/BR/portais-arcgis-brasil/por/openapi.yaml](/api/BR/portais-arcgis-brasil/por/openapi.yaml)
+- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por>
+- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/BR/portais-arcgis-brasil/por/openapi.yaml](/api/BR/portais-arcgis-brasil/por/openapi.yaml)
 
 ## Schema
 

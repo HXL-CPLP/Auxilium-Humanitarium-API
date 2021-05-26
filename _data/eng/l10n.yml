@@ -1,9 +1,0 @@
-# FILE:            _data/eng/l10n.yml
-
-l10n_API: "API"
-l10n_API_UN: "API UN 🇺🇳"
-l10n_API_XZ: "API XZ 🌐"
-l10n_API_BR: "API BR 🇧🇷"
-l10n_schema: "Schema"
-l10n_openapi_filum: "OpenAPI file"
-l10n_vicipaediam: "Wikipedia"

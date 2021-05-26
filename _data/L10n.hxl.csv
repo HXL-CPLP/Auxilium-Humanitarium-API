@@ -1,29 +1,28 @@
 #item+code,#meta+url+list,#item+l10n+i_lat,#item+l10n+i_eng,#item+l10n+i_por
-L10n_HAPI_namen,,Auxilium Humanitarium API documentōrum,Augmented documentation for Humanitarian APIs,Documentação interativa para APIs humanitárias
-L10n_HAPI_linguam_ego,,Lingua Latina (Abecedarium Latinum),English language (Latin script),Língua portuguesa (alfabeto latino)
-L10n_API,,API,API,API
-L10n_API_UN,,API UN 🇺🇳,API UN 🇺🇳,API UN 🇺🇳
-L10n_API_XZ,,API XZ 🌐,API XZ 🌐,API XZ 🌐
-L10n_API_BR,,API BR 🇧🇷,API BR 🇧🇷,API BR 🇧🇷
-L10n_schema,,Schēmam,Schema,Schema
-L10n_openapi_filum,,OpenAPI Fīlum,OpenAPI file,Arquivo OpenAPI
-L10n_vicipaediam,,Vicipaediam,Wikipedia,Wikipédia
-L10n_canonicum_catanam,,Canonicum catēnam,Canonical URL,URL canônica
-L10N,,L10N,L10N,L10N
-L10N_namen,,Localization [neolatīnum; de eng],Localization,Localização
-T9N,,T9N,T9N,T9N
-T9N_namen,,Trānslātiōnem,Translation,Tradução
-I10N,,I10N,I10N,I10N
-I10N_namen,,Internationalisation [neolatīnum; de fra],Internationalization,Internacionalização
-dominium_publicum_nomen,https://www.wikidata.org/wiki/Q19652|https://la.wikipedia.org/wiki/Dominium_publicum,Dominium publicum,Public domain,Domínio público
-licentiam_nomen,https://www.wikidata.org/wiki/Q79719|https://la.wikipedia.org/wiki/Licentia|https://en.wiktionary.org/wiki/licentia#Latin,Licentiam,License,Licença
-agnitionem_et_gratiam_nomen,https://en.wikipedia.org/wiki/Acknowledgment_(creative_arts_and_sciences),Agnitiōnem et grātiam,Acknowledgments and thanks,Reconhecimentos e agradecimentos
-voluntarius_auxilio_tuo_nomen,,Voluntarius Auxilio Tuo,Volunteer helpers,Ajudantes voluntário
-agnitionem_communitatem_nomen,,Agnitiōnem Communitatem,Acknowledging the community,Reconhecendo a comunidade
-mensam_de_contentis_in_eodem,https://www.wikidata.org/wiki/Q1456936,Mensam de contentis in eodem,Table of contents,Índice de conteúdo
-Temp_hapi_api_salvar_como_pdf,,,Salvar como PDF,Save as PDF
-Temp_hapi_api_titulo_h2,,,Interactive API documented in English,API interativa documentada em português
-Temp_hapi_api_aviso_de_isencao_p1,,,"Note: this section allows you to interactively preview OpenAPI files and even execute requests from your browser without leaving the hapi.etica.ai website (some APIs even documented in more than one language!). Some documentation, either by the original API or by using the original description of the site, may be written in the first person, but obviously this is not the volunteers compiling the documentation.","Nota: esta seção permite pré- visualizar de forma interativa arquivos OpenAPI e até mesmo executar requisições do seu navegador sem sair do site hapi.etica.ai (algumas API inclusive documentadas em mais de um idioma!). Algumas documentações, seja pela API original ou por usarmos descrição original do site, podem ser escritas em primeira pessoa que, **obviamente**, não se trata de voluntários em compilar as documentações."
-Temp_hapi_api_aviso_de_isencao_p2,,,"Exceptions to this rule are translation errors and / or failures in relation to updates but APIs reported here. In this case is our fault, not the API provider, so let us know!",Exceção a esta regra são erros de tradução e/ou falhas em relação a atualizações mas APIs informadas aqui. Nesse caso nos avise!
-Temp_hapi_api_salvar_como_pdf,,,Save as PDF,Salvar como PDF
+HAPI_namen,,Auxilium Humanitarium API documentōrum,Augmented documentation for Humanitarian APIs,Documentação interativa para APIs humanitárias
+HAPI_linguam_ego,,Lingua Latina (Abecedarium Latinum),English language (Latin script),Língua portuguesa (alfabeto latino)
 HAPI_licentiam_descriptionem,,,"The [HXL-CPLP](https://github.com/HXL-CPLP) and outside volunteers dedicated this work to the [public domain](https://unlicense.org/) by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.<!--TODO: This license terms are a draft; Need to be reviewned -->","Na medida do possível sob a lei, as pessoas autoras de [HXL-CPLP](https://github.com/HXL-CPLP) e demais colaboradores voluntários renunciam todos os direitos autorais e direitos conexos ou vizinhos a este trabalho para o [domínio público](https://unlicense.org/).<!--TODO: o texto em português da licença é um rascunho. Ainda precisa ser revisado -->"
+HAPI_paginam_API_commentarium_p1,,,"Note: this section allows you to interactively preview OpenAPI files and even execute requests from your browser without leaving the hapi.etica.ai website (some APIs even documented in more than one language!). Some documentation, either by the original API or by using the original description of the site, may be written in the first person, but obviously this is not the volunteers compiling the documentation.","Nota: esta seção permite pré- visualizar de forma interativa arquivos OpenAPI e até mesmo executar requisições do seu navegador sem sair do site hapi.etica.ai (algumas API inclusive documentadas em mais de um idioma!). Algumas documentações, seja pela API original ou por usarmos descrição original do site, podem ser escritas em primeira pessoa que, **obviamente**, não se trata de voluntários em compilar as documentações."
+HAPI_paginam_API_commentarium_p2,,,"Exceptions to this rule are translation errors and / or failures in relation to updates but APIs reported here. In this case is our fault, not the API provider, so let us know!",Exceção a esta regra são erros de tradução e/ou falhas em relação a atualizações mas APIs informadas aqui. Nesse caso nos avise!
+HAPI_paginam_API_titulum_I,,Documenta API (latine scripsit),Interactive API documented in English,API interativa documentada em português
+agnitionem_communitatem_nomen,,Agnitiōnem Communitatem,Acknowledging the community,Reconhecendo a comunidade
+agnitionem_et_gratiam_nomen,https://en.wikipedia.org/wiki/Acknowledgment_(creative_arts_and_sciences),Agnitiōnem et grātiam,Acknowledgments and thanks,Reconhecimentos e agradecimentos
+API_abbreviationem,,API,API,API
+API_BR_abbreviationem,,API BR 🇧🇷,API BR 🇧🇷,API BR 🇧🇷
+API_UN_abbreviationem,,API UN 🇺🇳,API UN 🇺🇳,API UN 🇺🇳
+API_XZ_abbreviationem,,API XZ 🌐,API XZ 🌐,API XZ 🌐
+canonicum_catanam_namen,,Canonicum catēnam,Canonical URL,URL canônica
+dominium_publicum_nomen,https://www.wikidata.org/wiki/Q19652|https://la.wikipedia.org/wiki/Dominium_publicum,Dominium publicum,Public domain,Domínio público
+I10N_abbreviationem,,I10N,I10N,I10N
+I10N_namen,,Internationalisation [neolatīnum; de fra],Internationalization,Internacionalização
+L10N_abbreviationem,,L10N,L10N,L10N
+L10N_namen,,Localization [neolatīnum; de eng],Localization,Localização
+licentiam_nomen,https://www.wikidata.org/wiki/Q79719|https://la.wikipedia.org/wiki/Licentia|https://en.wiktionary.org/wiki/licentia#Latin,Licentiam,License,Licença
+mensam_de_contentis_in_eodem_nomen,https://www.wikidata.org/wiki/Q1456936,Mensam de contentis in eodem,Table of contents,Índice de conteúdo
+openapi_filum_namen,,OpenAPI Fīlum,OpenAPI file,Arquivo OpenAPI
+salvandum_PDF_archivum_namen,,Salvandum PDF archīvum,Save as PDF archive,Salvar como arquivo PDF
+schema_namen,,Schēmam,Schema,Schema
+T9N_abbreviationem,,T9N,T9N,T9N
+T9N_namen,,Trānslātiōnem,Translation,Tradução
+vicipaediam_namen,,Vicipaediam,Wikipedia,Wikipédia
+voluntarius_auxilio_tuo_nomen,,Voluntarius Auxilio Tuo,Volunteer helpers,Ajudantes voluntário
