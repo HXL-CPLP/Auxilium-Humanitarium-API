@@ -103,3 +103,15 @@ você dessa forma!
 
 Se a pessoa não responder (ou você não souber como contactar colaborador
 anterior), então pode fazer primeiro contato por aqui!
+
+<!--
+
+- ## FAQ
+
+- ### Ferramentas de auxílio a tradutores e revisões de textos
+
+- https://gengo.com/community/15-online-translation-tools-translators/
+- https://mymemory.translated.net/
+- https://languagetool.org/pt-BR
+
+-->

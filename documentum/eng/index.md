@@ -5,12 +5,24 @@ description: |
   [OpenAPI](https://www.openapis.org/), the _de facto_ open industry standard
   to document REST APIs.
 locale: en
-linguam: eng
+# linguam: eng-Latn
+linguam: spa-Latn
 permalink: /eng/
 categories: [index]
 tags: [index]
 layout: index
 toc: true
+
+# FIXME: _[eng] Inject the next attriutes based on  _data/referens.yml, like
+#                we would do with automatically generated API pages.
+#               (Emerson Rocha, 2021-05-25 04:30 UTC)
+#          [eng]_
+htmldir: ltr
+# iso6391: en
+iso6391: es
+# iso6393: eng
+iso6393: spa
+iso15924: Latn
 ---
 
 ## API
@@ -120,4 +132,12 @@ toc: true
 
 ## License
 
-{% include fn/Conatum prefix='Temp_licença_aviso' %}
+[![{% de_lat_codicem dominium_publicum_nomen %}](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
+
+{% de_lat_codicem HAPI_licentiam_descriptionem %}
+
+{%- incognitum_phrasim_est -%}{% de_lat_codicem HAPI_licentiam_descriptionem %}{%- endincognitum_phrasim_est -%}
+
+
+{% de_markdown %}{%- incognitum_phrasim_est -%}{% de_lat_codicem HAPI_licentiam_descriptionem %}{%- endincognitum_phrasim_est -%}{% endde_markdown %}
+

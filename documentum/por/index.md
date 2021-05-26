@@ -5,12 +5,23 @@ description: |
   com [OpenAPI](https://www.openapis.org/), o padrão de mercado aberto de
   fato para documentar APIs REST.
 locale: pt
-linguam: por
+linguam: por-Latn
 permalink: /por/
 categories: [ index ]
 # layout: defallo
 layout: index
 toc: true
+
+# FIXME: _[eng] Inject the next attriutes based on  _data/referens.yml, like
+#                we would do with automatically generated API pages.
+#               (Emerson Rocha, 2021-05-25 04:30 UTC)
+#          [eng]_
+htmldir: ltr
+iso6391: pt
+# iso6391: es
+iso6393: por
+# iso6393: spa
+iso15924: Latn
 ---
 
 > - **[Documentation in English here](/eng/)**

@@ -13,10 +13,10 @@ module Hapi
 
     def datum_l10n(l10n_codice, context, linguam = nil)
       linguam = linguam.nil? ? context['page']['linguam'] : linguam
+      # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
+      #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
+      #       [por]_ 
       hxlattrs = context['site']['data']['referens']['linguam'][linguam]['hxlattrs']
-      # puts linguam
-      # puts hxlattrs
-      # puts context['site']['data']['L10nhxl']
       context['site']['data']['L10nhxl'].each do |line|
         # if line['#item+code'] == l10n_codice
         next if line['#item+code'] != l10n_codice
@@ -306,7 +306,15 @@ module Hapi
       }
     end
 
-    # HapiApiGenerator is (TODO: document)
+    # _[eng] The {% de_lat_codicem (...) %} implementation [eng]_
+    # _[por] A implementação de {% de_lat_codicem (...) %} [por]_
+    #
+    # @exemplum Primum exemplum
+    #   linguam: por-Latn
+    #   ---
+    #   {% de_lat_codicem licentiam_nomen %}
+    # @resultatum Primum exemplum
+    #   Licença
     class DeLatCodicem < Liquid::Tag
       def initialize(tag_name, text, tokens)
         super
@@ -330,7 +338,8 @@ module Hapi
         suffixes.each do |suffix|
           # puts "#{@text}#{suffix}"
           # puts temp["#{@text}#{suffix}"]
-          return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
+          # return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
+          return temp["#{@textum}#{suffix}"] if temp && temp["#{@textum}#{suffix}"]
         end
 
         "<!--[de_linguam:[lat-Latn]]-->#{@textum}<!--[[lat-Latn]:de_linguam]-->"
