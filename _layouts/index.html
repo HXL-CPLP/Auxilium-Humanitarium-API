@@ -9,7 +9,11 @@ layout: defallo
   </header>
   <hr>
   <nav id="table-of-contents">
-    <h2 style="font-size: 1.2em;">{% de_lat_codicem mensam_de_contentis_in_eodem_nomen %}</h2>
+    <h2 style="font-size: 1.2em;">
+      {%- incognitum_phrasim_est -%}
+        {%- de_lat_codicem mensam_de_contentis_in_eodem_nomen -%}
+      {%- endincognitum_phrasim_est -%}
+    </h2>
     {{ content | toc_only }}
   </nav>
   <hr>

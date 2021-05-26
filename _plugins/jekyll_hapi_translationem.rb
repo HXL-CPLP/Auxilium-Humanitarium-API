@@ -15,7 +15,7 @@ module Hapi
       linguam = linguam.nil? ? context['page']['linguam'] : linguam
       # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
       #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
-      #       [por]_ 
+      #       [por]_
       hxlattrs = context['site']['data']['referens']['linguam'][linguam]['hxlattrs']
       context['site']['data']['L10nhxl'].each do |line|
         # if line['#item+code'] == l10n_codice
@@ -602,9 +602,29 @@ module Hapi
     class DeMarkdownBlock < Liquid::Block
       def render(context)
         text = super
-        # "<p>#{text} #{Time.now}</p>"
         require 'kramdown'
         Kramdown::Document.new(text).to_html.to_s
+      end
+    end
+
+    # _[eng] Remove HTML, if any (example: HTML comments of missing
+    #         translations)
+    # [eng]_
+    #
+    # @exemplum Exemplum I
+    #   {%- de_non_html -%}
+    #     <!--de_linguam:por-Latn-->Frase em português<!--por-Latn:de_linguam-->
+    #   {%- endde_non_html -%}
+    #
+    # @resultatum Exemplum I
+    #   Frase em português
+    #
+    class DeNonHtmlBlock < Liquid::Block
+      def render(context)
+        text = super
+        require 'nokogiri'
+        doc = Nokogiri::HTML::DocumentFragment.parse(text)
+        doc.xpath('text()')
       end
     end
 
@@ -706,6 +726,9 @@ Liquid::Template.register_tag(
 )
 Liquid::Template.register_tag(
   'de_markdown', Hapi::Translationem::DeMarkdownBlock
+)
+Liquid::Template.register_tag(
+  'de_non_html', Hapi::Translationem::DeNonHtmlBlock
 )
 
 # rubocop:enable RubocopIsRacistAndIcanProveIt/AsciiComments

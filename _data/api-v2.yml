@@ -1,4 +1,6 @@
-# _data/api.yml
+# _data/api-v2.yml
+
+# TODO: quebrar em mais de uma planilha o HXL-CPLP-Vocab_Auxilium-Humanitarium-API
 
 # Trivia
 # - 'x-default':

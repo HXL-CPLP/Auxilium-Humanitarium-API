@@ -5,8 +5,8 @@ description: |
   [OpenAPI](https://www.openapis.org/), the _de facto_ open industry standard
   to document REST APIs.
 locale: en
-# linguam: eng-Latn
-linguam: spa-Latn
+linguam: eng-Latn
+# linguam: spa-Latn
 permalink: /eng/
 categories: [index]
 tags: [index]
@@ -18,10 +18,10 @@ toc: true
 #               (Emerson Rocha, 2021-05-25 04:30 UTC)
 #          [eng]_
 htmldir: ltr
-# iso6391: en
-iso6391: es
-# iso6393: eng
-iso6393: spa
+iso6391: en
+# iso6391: es
+iso6393: eng
+# iso6393: spa
 iso15924: Latn
 ---
 
@@ -37,28 +37,28 @@ iso15924: Latn
 
 
 ##### ReliefWeb-eng
-- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: </api/UN/reliefweb/eng/>
-- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/UN/reliefweb/eng/openapi.yaml](/api/UN/reliefweb/eng/openapi.yaml)
+- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/UN/reliefweb/eng/>
+- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/UN/reliefweb/eng/openapi.yaml](/api/UN/reliefweb/eng/openapi.yaml)
 
 #### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
-- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/UN/HDX/eng/>
-- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/UN/HDX/eng/openapi.yaml](/api/UN/HDX/eng/openapi.yaml)
+- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/UN/HDX/eng/>
+- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/UN/HDX/eng/openapi.yaml](/api/UN/HDX/eng/openapi.yaml)
 
 #### CODV2API <sup>(beta)</sup>
 
 ##### CODV2API-eng
-- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/UN/CODV2API/eng/>
-- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/UN/CODV2API/eng/openapi.yaml](/api/UN/CODV2API/eng/openapi.yaml)
+- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/UN/CODV2API/eng/>
+- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/UN/CODV2API/eng/openapi.yaml](/api/UN/CODV2API/eng/openapi.yaml)
 
 ### XZ
 
 #### HXL-Proxy - Humanitarian Exchange Language Proxy
 
 ##### HXL-Proxy
-- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/>
-- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/XZ/HXL-Proxy/eng/openapi.yaml](/api/XZ/HXL-Proxy/eng/openapi.yaml)
+- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/>
+- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/XZ/HXL-Proxy/eng/openapi.yaml](/api/XZ/HXL-Proxy/eng/openapi.yaml)
 
 ### BR
 
@@ -66,19 +66,19 @@ iso15924: Latn
 
 ##### portais-ckan-brasil-por
 
-- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/>
-- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/BR/portais-ckan-brasil/por/openapi.yaml](/api/BR/portais-ckan-brasil/por/openapi.yaml)
+- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/>
+- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/BR/portais-ckan-brasil/por/openapi.yaml](/api/BR/portais-ckan-brasil/por/openapi.yaml)
 
 ##### portais-arcgis-brasil-por
 
-- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/>
-- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/BR/portais-arcgis-brasil/por/openapi.yaml](/api/BR/portais-arcgis-brasil/por/openapi.yaml)
+- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/>
+- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/BR/portais-arcgis-brasil/por/openapi.yaml](/api/BR/portais-arcgis-brasil/por/openapi.yaml)
 
 
 ##### brazilian-ckan-portals-eng
 
-- **{% include fn/L10n vocab="canonicum_catanam_namen" %}**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/>
-- **{% include fn/L10n vocab="openapi_filum_namen" %}**: [/api/BR/brazilian-ckan-portals/eng/openapi.yaml](/api/BR/brazilian-ckan-portals/eng/openapi.yaml)
+- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/>
+- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/BR/brazilian-ckan-portals/eng/openapi.yaml](/api/BR/brazilian-ckan-portals/eng/openapi.yaml)
 
 ## Schema
 
@@ -132,12 +132,8 @@ iso15924: Latn
 
 ## License
 
-[![{% de_lat_codicem dominium_publicum_nomen %}](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
+[![{% de_non_html %}{% de_lat_codicem dominium_publicum_nomen %}{% endde_non_html %}](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
 
-{% de_lat_codicem HAPI_licentiam_descriptionem %}
-
-{%- incognitum_phrasim_est -%}{% de_lat_codicem HAPI_licentiam_descriptionem %}{%- endincognitum_phrasim_est -%}
-
-
-{% de_markdown %}{%- incognitum_phrasim_est -%}{% de_lat_codicem HAPI_licentiam_descriptionem %}{%- endincognitum_phrasim_est -%}{% endde_markdown %}
-
+{% incognitum_phrasim_est -%}
+  {%- de_lat_codicem HAPI_licentiam_descriptionem -%}
+{%- endincognitum_phrasim_est -%}

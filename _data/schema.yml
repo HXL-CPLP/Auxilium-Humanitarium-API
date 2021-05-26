@@ -1,12 +1,18 @@
 # _data/schema.yml
 
 - x-default: /mul/schema/ISO-639-3
+  linguam: mul  # mul-Zyyy
+  typum: schema
   gid: XZ
+  lid: ISO 639-3
   namen: ISO 639-3
   hashtag: schema-XZ-ISO-639-3
 
-- x-default: /mul/schema/ISO-639-3
+- x-default: /mul/schema/ISO-15924
+  linguam: mul  # mul-Zyyy
+  typum: schema
   gid: XZ
+  lid: ISO 15924
   namen: ISO 15924
   hashtag: schema-XZ-ISO-15924
 
