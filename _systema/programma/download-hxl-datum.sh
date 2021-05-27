@@ -36,10 +36,15 @@
 ### Data pull configurations ---------------------------------------------------
 
 # @see https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279
-HAPI_L10N="https://proxy.hxlstandard.org/data/download/L10n_hxl_csv.csv?dest=data_edit&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1181688279"
+Hapi_L10N="https://proxy.hxlstandard.org/data/download/L10n_hxl_csv.csv?dest=data_edit&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1181688279"
 
 
-HAPI_commune="https://proxy.hxlstandard.org/data.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653"
+Hapi_commune="https://proxy.hxlstandard.org/data.csv?dest=data_edit&filter01=cut&filter-label01=Remove+%23meta&cut-exclude-tags01=%23meta&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653"
+# Hapi_commune_meta="https://proxy.hxlstandard.org/data.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653"
+
+Hapi_schemam="https://proxy.hxlstandard.org/data.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1345709789"
+
+Hapi_api="https://proxy.hxlstandard.org/data.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1680147913"
 
 ROOTDIR="$(pwd)"
 
@@ -51,16 +56,35 @@ ROOTDIR="$(pwd)"
 # TODO: check error codes if download fails
 
 if true ; then
-    echo "HAPI_L10N"
-    echo "   Fontem: [$HAPI_L10N]"
+    echo "Hapi_L10N"
+    echo "   Fontem: [$Hapi_L10N]"
     echo "   Filum:  [${ROOTDIR}/_data/L10n.hxl.csv]"
-    wget -qO- "$HAPI_L10N" > "${ROOTDIR}/_data/L10n.hxl.csv"
+    wget -qO- "$Hapi_L10N" > "${ROOTDIR}/_data/L10n.hxl.csv"
 fi
 if true ; then
-    echo "HAPI_L10N"
-    echo "   Fontem: [$HAPI_commune]"
+    echo "Hapi_commune"
+    echo "   Fontem: [$Hapi_commune]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/commune.tm.hxl.csv"
-    wget -qO- "$HAPI_commune" > "${ROOTDIR}/_data/tm/commune.tm.hxl.csv"
+    wget -qO- "$Hapi_commune" > "${ROOTDIR}/_data/tm/commune.tm.hxl.csv"
+fi
+# if true ; then
+#     echo "Hapi_commune_meta"
+#     echo "   Fontem: [$Hapi_commune_meta]"
+#     echo "   Filum:  [${ROOTDIR}/_data/tm/commune.tm.hxl.csv"
+#     wget -qO- "$Hapi_commune_meta" > "${ROOTDIR}/_data/tm/commune-meta.tm.hxl.csv"
+# fi
+if true ; then
+    echo "Hapi_schemam"
+    echo "   Fontem: [$Hapi_schemam]"
+    echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-schemam.tm.hxl.csv"
+    wget -qO- "$Hapi_schemam" > "${ROOTDIR}/_data/tm/hapi-schemam.tm.hxl.csv"
+fi
+
+if true ; then
+    echo "Hapi_api"
+    echo "   Fontem: [$Hapi_api]"
+    echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
+    wget -qO- "$Hapi_api" > "${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
 fi
 
 exit 0

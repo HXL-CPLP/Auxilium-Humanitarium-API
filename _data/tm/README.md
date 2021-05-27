@@ -7,3 +7,6 @@
 
 - https://www.w3.org/International/questions/qa-scripts.en#which
 - https://www.w3.org/International/questions/qa-scripts.en#directions
+
+
+- https://en.wiktionary.org/wiki/dominium#Latin
