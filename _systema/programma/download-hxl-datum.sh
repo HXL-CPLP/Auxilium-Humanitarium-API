@@ -38,6 +38,9 @@
 # @see https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279
 HAPI_L10N="https://proxy.hxlstandard.org/data/download/L10n_hxl_csv.csv?dest=data_edit&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1181688279"
 
+
+HAPI_commune="https://proxy.hxlstandard.org/data.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653"
+
 ROOTDIR="$(pwd)"
 
 #### DATA PULL _________________________________________________________________
@@ -52,6 +55,12 @@ if true ; then
     echo "   Fontem: [$HAPI_L10N]"
     echo "   Filum:  [${ROOTDIR}/_data/L10n.hxl.csv]"
     wget -qO- "$HAPI_L10N" > "${ROOTDIR}/_data/L10n.hxl.csv"
+fi
+if true ; then
+    echo "HAPI_L10N"
+    echo "   Fontem: [$HAPI_commune]"
+    echo "   Filum:  [${ROOTDIR}/_data/tm/commune.tm.hxl.csv"
+    wget -qO- "$HAPI_commune" > "${ROOTDIR}/_data/tm/commune.tm.hxl.csv"
 fi
 
 exit 0
