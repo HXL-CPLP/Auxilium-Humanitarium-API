@@ -10,6 +10,10 @@
 - https://en.wiktionary.org/wiki/dominium#Latin
 
 
+- https://conferences.unite.un.org/uncorpus
+  - https://www.un.org/sg/en/multilingualism/index.shtml
+
+
 
 # Spreadsheet formulas
 ```

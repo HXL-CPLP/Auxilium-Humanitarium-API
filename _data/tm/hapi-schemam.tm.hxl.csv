@@ -1,35 +1,36 @@
-#item+id,#status,#item+type+lat_dominium+list,#item+item+type+lat_regnum,#item+item+type+lat_divisionem,#item+item+type+lat_classem,#item+item+type+lat_ordinem,#item+item+type+lat_familiam,#item+item+type+lat_genus,#item+item+type+lat_speciem,#item+i_la+i_lat+is_latn,#item+i_pt+i_por+is_latn,#item+i_en+i_eng+is_latn,#item+i_es+i_spa+is_latn
-ISO_639-3_nomen,1,,,ISO,639-3,,,,nomen,ISO 639-3,ISO 639-3,ISO 639-3,
-ISO_639-3_summarius,1,,,ISO,639-3,,,,summarius,,Conjuntos de códigos para um número de sistemas de escrita – Parte 3:códigos Alpha-3 para cobertura abrangente de idiomas,Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages,
-ISO_639-3_optionem_Id_summarius,1,,,ISO,639-3,optionem,Id,,summarius,,,The three-letter 639-3 identifier,
-ISO_639-3_optionem_Id_exemplum,1,,,ISO,639-3,optionem,Id,,exemplum,lat,por,eng,spa
-ISO_639-3_optionem_Part2B_summarius,1,,,ISO,639-3,optionem,Part2B,,summarius,,,"Equivalent 639-2 identifier of the bibliographic applications code set, if there is one",
-ISO_639-3_optionem_Part2B_exemplum,1,,,ISO,639-3,optionem,Part2B,,exemplum,lat,por,eng,spa
-ISO_639-3_optionem_Part2T_summarius,1,,,ISO,639-3,optionem,Part2T,,summarius,,,"Equivalent 639-2 identifier of the terminology applications code set, if there is one",
-ISO_639-3_optionem_Part2T_exemplum,1,,,ISO,639-3,optionem,Part2T,,exemplum,lat,por,eng,spa
-ISO_639-3_optionem_Part1_summarius,1,,,ISO,639-3,optionem,Part1,,summarius,,,"Equivalent 639-1 identifier, if there is one",
-ISO_639-3_optionem_Part1_exemplum,1,,,ISO,639-3,optionem,Part1,,exemplum,la,pt,en,es
-ISO_639-3_optionem_Scope_summarius,1,,,ISO,639-3,optionem,Scope,,summarius,,,"I(ndividual), M(acrolanguage), S(pecial)",
-ISO_639-3_optionem_Scope_exemplum,1,,,ISO,639-3,optionem,Scope,,exemplum,I,I,I,I
-ISO_639-3_optionem_Type_summarius,1,,,ISO,639-3,optionem,Type,,summarius,,,"A(ncient), C(onstructed), E(xtinct), H(istorical), L(iving), S(pecial)",
-ISO_639-3_optionem_Type_exemplum,1,,,ISO,639-3,optionem,Type,,exemplum,A,L,L,L
-ISO_639-3_optionem_Ref_Name_summarius,1,,,ISO,639-3,optionem,Ref_Name,,summarius,,,Reference language name,
-ISO_639-3_optionem_Ref_Name_exemplum,1,,,ISO,639-3,optionem,Ref_Name,,exemplum,Latin,Portuguese,English,Spanish
-ISO_639-3_optionem_Comment_summarius,1,,,ISO,639-3,optionem,Comment,,summarius,,,Comment relating to one or more of the columns,
-ISO_639-3_optionem_Comment_exemplum,1,,,ISO,639-3,optionem,Comment,,exemplum,,,,
-ISO_15924_nomen,1,,,ISO,15924,,,,nomen,ISO 15924,ISO 15924,ISO 15924,ISO 15924
-ISO_15924_summarius,1,,,ISO,15924,,,,summarius,,,ISO 15924: Codes for the representation of names of scripts,
-ISO_15924_Code_summarius,0,,,ISO,15924,,Code,,summarius,,,Code,
-ISO_15924_Code_exemplum,0,,,ISO,15924,,Code,,exemplum,Latn,Latn,Latn,Latn
-ISO_15924_Nº_summarius,0,,,ISO,15924,,Nº,,summarius,,,Nº is ... (TODO),
-ISO_15924_Nº_exemplum,0,,,ISO,15924,,Nº,,exemplum,,,,
-ISO_15924_English Name_summarius,0,,,ISO,15924,,English Name,,summarius,,,English Name is ... (TODO),
-ISO_15924_English Name_exemplum,0,,,ISO,15924,,English Name,,exemplum,,,,
-ISO_15924_Nom français_summarius,0,,,ISO,15924,,Nom français,,summarius,,,Nom français is ... (TODO),
-ISO_15924_Nom français_exemplum,0,,,ISO,15924,,Nom français,,exemplum,,,,
-ISO_15924_PVA_summarius,0,,,ISO,15924,,PVA,,summarius,,,PVA is ... (TODO),
-ISO_15924_PVA_exemplum,0,,,ISO,15924,,PVA,,exemplum,,,,
-ISO_15924_Unicode Version_summarius,0,,,ISO,15924,,Unicode Version,,summarius,,,Unicode Version is ... (TODO),
-ISO_15924_Unicode Version_exemplum,0,,,ISO,15924,,Unicode Version,,exemplum,,,,
-ISO_15924_Date_summarius,0,,,ISO,15924,,Date,,summarius,,,Date is ... (TODO),
-ISO_15924_Date_exemplum,0,,,ISO,15924,,Date,,exemplum,,,2004-05-01,
+#item+id,#status,#item+type+lat_dominium+list,#item+item+type+lat_regnum,#item+item+type+lat_divisionem,#item+item+type+lat_classem,#item+item+type+lat_ordinem,#item+item+type+lat_familiam,#item+item+type+lat_genus,#item+item+type+lat_speciem,#item+type+lat_segmentum,#item+wikidata+code,#item+i_la+i_lat+is_latn,#item+i_pt+i_por+is_latn,#item+i_en+i_eng+is_latn,#item+i_es+i_spa+is_latn
+L10N_linguam_ego_summarius,1,L10N,L10N,linguam,,,,ego,summarius,,,Lingua Latina (Abecedarium Latinum),English language (Latin script),Língua portuguesa (alfabeto latino),
+ISO_639-3_nomen,1,,,ISO,639-3,,,,nomen,,,ISO 639-3,ISO 639-3,ISO 639-3,
+ISO_639-3_summarius,1,,,ISO,639-3,,,,summarius,,,,Conjuntos de códigos para um número de sistemas de escrita – Parte 3:códigos Alpha-3 para cobertura abrangente de idiomas,Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages,
+ISO_639-3_optionem_Id_summarius,1,,,ISO,639-3,optionem,Id,,summarius,,,,,The three-letter 639-3 identifier,
+ISO_639-3_optionem_Id_exemplum,1,,,ISO,639-3,optionem,Id,,exemplum,,,lat,por,eng,spa
+ISO_639-3_optionem_Part2B_summarius,1,,,ISO,639-3,optionem,Part2B,,summarius,,,,,"Equivalent 639-2 identifier of the bibliographic applications code set, if there is one",
+ISO_639-3_optionem_Part2B_exemplum,1,,,ISO,639-3,optionem,Part2B,,exemplum,,,lat,por,eng,spa
+ISO_639-3_optionem_Part2T_summarius,1,,,ISO,639-3,optionem,Part2T,,summarius,,,,,"Equivalent 639-2 identifier of the terminology applications code set, if there is one",
+ISO_639-3_optionem_Part2T_exemplum,1,,,ISO,639-3,optionem,Part2T,,exemplum,,,lat,por,eng,spa
+ISO_639-3_optionem_Part1_summarius,1,,,ISO,639-3,optionem,Part1,,summarius,,,,,"Equivalent 639-1 identifier, if there is one",
+ISO_639-3_optionem_Part1_exemplum,1,,,ISO,639-3,optionem,Part1,,exemplum,,,la,pt,en,es
+ISO_639-3_optionem_Scope_summarius,1,,,ISO,639-3,optionem,Scope,,summarius,,,,,"I(ndividual), M(acrolanguage), S(pecial)",
+ISO_639-3_optionem_Scope_exemplum,1,,,ISO,639-3,optionem,Scope,,exemplum,,,I,I,I,I
+ISO_639-3_optionem_Type_summarius,1,,,ISO,639-3,optionem,Type,,summarius,,,,,"A(ncient), C(onstructed), E(xtinct), H(istorical), L(iving), S(pecial)",
+ISO_639-3_optionem_Type_exemplum,1,,,ISO,639-3,optionem,Type,,exemplum,,,A,L,L,L
+ISO_639-3_optionem_Ref_Name_summarius,1,,,ISO,639-3,optionem,Ref_Name,,summarius,,,,,Reference language name,
+ISO_639-3_optionem_Ref_Name_exemplum,1,,,ISO,639-3,optionem,Ref_Name,,exemplum,,,Latin,Portuguese,English,Spanish
+ISO_639-3_optionem_Comment_summarius,1,,,ISO,639-3,optionem,Comment,,summarius,,,,,Comment relating to one or more of the columns,
+ISO_639-3_optionem_Comment_exemplum,1,,,ISO,639-3,optionem,Comment,,exemplum,,,,,,
+ISO_15924_nomen,1,,,ISO,15924,,,,nomen,,,ISO 15924,ISO 15924,ISO 15924,ISO 15924
+ISO_15924_summarius,1,,,ISO,15924,,,,summarius,,,,,ISO 15924: Codes for the representation of names of scripts,
+ISO_15924_Code_summarius,0,,,ISO,15924,,Code,,summarius,,,,,Code,
+ISO_15924_Code_exemplum,0,,,ISO,15924,,Code,,exemplum,,,Latn,Latn,Latn,Latn
+ISO_15924_Nº_summarius,0,,,ISO,15924,,Nº,,summarius,,,,,Nº is ... (TODO),
+ISO_15924_Nº_exemplum,0,,,ISO,15924,,Nº,,exemplum,,,,,,
+ISO_15924_English Name_summarius,0,,,ISO,15924,,English Name,,summarius,,,,,English Name is ... (TODO),
+ISO_15924_English Name_exemplum,0,,,ISO,15924,,English Name,,exemplum,,,,,,
+ISO_15924_Nom français_summarius,0,,,ISO,15924,,Nom français,,summarius,,,,,Nom français is ... (TODO),
+ISO_15924_Nom français_exemplum,0,,,ISO,15924,,Nom français,,exemplum,,,,,,
+ISO_15924_PVA_summarius,0,,,ISO,15924,,PVA,,summarius,,,,,PVA is ... (TODO),
+ISO_15924_PVA_exemplum,0,,,ISO,15924,,PVA,,exemplum,,,,,,
+ISO_15924_Unicode Version_summarius,0,,,ISO,15924,,Unicode Version,,summarius,,,,,Unicode Version is ... (TODO),
+ISO_15924_Unicode Version_exemplum,0,,,ISO,15924,,Unicode Version,,exemplum,,,,,,
+ISO_15924_Date_summarius,0,,,ISO,15924,,Date,,summarius,,,,,Date is ... (TODO),
+ISO_15924_Date_exemplum,0,,,ISO,15924,,Date,,exemplum,,,,,2004-05-01,
