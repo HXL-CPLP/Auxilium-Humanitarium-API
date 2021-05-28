@@ -353,6 +353,48 @@ module Hapi
     #   {% de_lat_codicem_in por-Latn licentiam_nomen %}
     # @resultatum Primum exemplum
     #   Licença
+    class DeL10n < Liquid::Tag
+      def initialize(tag_name, text, tokens)
+        super
+
+        @tokens = text.strip.split
+        @linguam_fontem = @tokens.shift
+        @textum = @tokens.shift
+
+        # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
+        # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
+      end
+
+      def render(context)
+        temp = Translationem.datum_temporarium(context)
+        # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
+        l10nval = nil
+
+        return l10nval if l10nval
+
+        return temp[@textum] if temp && temp[@textum]
+
+        suffixes = Translationem.datum_temporarium_suffix(context)
+
+        suffixes.each do |suffix|
+          # puts 'oooooooooi'
+          # puts suffix
+          # puts "#{@textum}#{suffix}"
+          # puts temp["#{@textum}#{suffix}"]
+          return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
+        end
+
+        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
+      end
+    end
+
+    # _[eng] The {% de_lat_codicem_in (...) %} implementation [eng]_
+    # _[por] A implementação de {% de_lat_codicem_in (...) %} [por]_
+    #
+    # @exemplum Primum exemplum
+    #   {% de_lat_codicem_in por-Latn licentiam_nomen %}
+    # @resultatum Primum exemplum
+    #   Licença
     class DeLatCodicemIn < Liquid::Tag
       def initialize(tag_name, text, tokens)
         super
@@ -698,6 +740,10 @@ module Hapi
 end
 
 # Liquid::Template.register_filter(HapiApi::Translationem)
+
+Liquid::Template.register_tag(
+  '__', Hapi::Translationem::DeL10n
+)
 
 # Liquid::Template.register_tag('gettext', HapiApi::TranslationemDeLatCodicem)
 Liquid::Template.register_tag(

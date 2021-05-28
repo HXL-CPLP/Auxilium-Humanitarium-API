@@ -113,5 +113,6 @@ anterior), então pode fazer primeiro contato por aqui!
 - https://gengo.com/community/15-online-translation-tools-translators/
 - https://mymemory.translated.net/
 - https://languagetool.org/pt-BR
+- https://github.com/killalau/vscode-liquid-snippets
 
 -->

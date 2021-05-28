@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "{{ site.url }}{{ page.url }}",
+    "title": "{% __ ISO_639-3_nomen %}",
+    "description": "Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages",
+    "$comment": "See https://iso639-3.sil.org/code_tables/download_tables \n https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab \n https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso639-3_table_definition.txt",
+    "type": "object",
+    "required": [
+        "Id",
+        "Scope",
+        "Type",
+        "Ref_Name"
+    ],
+    "properties": {
+        "Id": {
+            "description": "The three-letter 639-3 identifier",
+            "type": "string",
+            "length": 3,
+            "example": "por"
+        },
+        "Part2B": {
+            "description": "Equivalent 639-2 identifier of the bibliographic applications code set, if there is one",
+            "type": "string",
+            "length": 3,
+            "example": "por"
+        },
+        "Part2T": {
+            "description": "Equivalent 639-2 identifier of the terminology applications code set, if there is one",
+            "type": "string",
+            "length": 3,
+            "example": "por"
+        },
+        "Part1": {
+            "description": "Equivalent 639-1 identifier, if there is one",
+            "type": "string",
+            "length": 2,
+            "example": "pt"
+        },
+        "Scope": {
+            "description": "I(ndividual), M(acrolanguage), S(pecial)",
+            "type": "string",
+            "length": 1,
+            "enum": [
+                "I",
+                "M",
+                "S"
+            ]
+        },
+        "Type": {
+            "description": "A(ncient), C(onstructed), E(xtinct), H(istorical), L(iving), S(pecial)",
+            "type": "string",
+            "length": 1,
+            "enum": [
+                "A",
+                "C",
+                "E",
+                "H",
+                "L",
+                "S"
+            ]
+        },
+        "Ref_Name": {
+            "description": "Reference language name",
+            "type": "string",
+            "maxLengh": 150
+        },
+        "Comment": {
+            "description": "Comment relating to one or more of the columns",
+            "type": "string",
+            "maxLengh": 150
+        }
+    }
+}
