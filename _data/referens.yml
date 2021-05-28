@@ -4,16 +4,21 @@
 # - "referēns"
 #   - https://en.wiktionary.org/wiki/referens#Latin
 #   - https://en.wiktionary.org/wiki/reference#English
+# - 'HXL'
+#   - https://hxlstandard.org/
 # - "scopum"
 #   - https://en.wiktionary.org/wiki/scopus#Latin
 #   - https://en.wiktionary.org/wiki/scope#English
-# - "front-matter-defaults"
-#   - https://jekyllrb.com/docs/configuration/front-matter-defaults/
 # - BCP47
 #   - https://en.wikipedia.org/wiki/IETF_language_tag
 #   - https://www.rfc-editor.org/info/bcp47
 #     - https://datatracker.ietf.org/doc/html/rfc4647
 #     - https://datatracker.ietf.org/doc/html/rfc5646
+# - 'attribūtum'
+#   - https://en.wiktionary.org/wiki/attributus#Latin
+# - 'ignōrandum'
+#   - https://en.wiktionary.org/wiki/ignoro#Latin
+
 
 api_gid:
   - "UN"
@@ -39,27 +44,55 @@ gid:
       api: "api-BR"
       schema: "schema-BR"
 
+hxl:
+  linguam:
+    # attributum: [] # @see linguam.zzz-Zzz.hxl.attributum
+    hashtag:
+      - '#item'
+    ignorandum:
+      hashtag:
+        - '#meta'
+      attributum:
+        - '+meta'
+
 linguam:
   arb-Arab:
     BCP47: ar
-    hxlattrs:
+    hxlattrs: # deprecated
       - "+i_arb+is_arab"
       - "+i_arb"
       - "+i_ara+is_arab"
       - "+i_ara"
       - "+i_ar"
+    hxl:
+      attributum:
+        - "+i_arb+is_arab"
+        - "+i_arb"
+        - "+i_ara+is_arab"
+        - "+i_ara"
+        - "+i_ar"
   eng-Latn:
     BCP47: en
-    hxlattrs:
+    hxlattrs: # deprecated
       - "+i_eng+is_latn"
       - "+i_eng"
       - "+i_en"
+    hxl:
+      attributum:
+        - "+i_eng+is_latn"
+        - "+i_eng"
+        - "+i_en"
   spa-Latn:
     BCP47: es
-    hxlattrs:
+    hxlattrs: # deprecated
       - "+i_spa+is_latn"
       - "+i_spa"
       - "+i_es"
+    hxl:
+      attributum:
+        - "+i_spa+is_latn"
+        - "+i_spa"
+        - "+i_es"
   ## Noticia:
   ## _[por] Em geral, vamos usar Português (genérico) e evitar usar pt_BR
   ##        ou pt_PT. Isso faz sentido em outras línguas onde a diferença é
@@ -70,7 +103,12 @@ linguam:
   ## [por]_
   por-Latn:
     BCP47: pt
-    hxlattrs:
+    hxlattrs: # deprecated
+      - "+i_por+is_latn"
+      - "+i_por"
+      - "+i_pt"
+    hxl:
+      attributum:
       - "+i_por+is_latn"
       - "+i_por"
       - "+i_pt"
@@ -87,9 +125,13 @@ linguam:
   mul-Zyyy:
     BCP47: ''
     hxlattrs: []
+    hxl:
+      attributum: []
   mul:
     BCP47: ''
     hxlattrs: []
+    hxl:
+      attributum: []
 
 # _[por] Forma preconceituosa de assumir script do idioma. Note que vários
 #        idiomas podem ser escritos em mais de um alfabeto (e isso ocorre

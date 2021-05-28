@@ -17,7 +17,6 @@
 # - 'archīvum'
 #   - https://en.wiktionary.org/wiki/archivum#Latin
 
-
 # _[lat] Hapi est programma de Auxilium Humanitarium API documentōrum. [lat]_
 module Hapi
   # _[lat] Hapi.Translationem de Auxilium Humanitarium API documentōrum. [lat]_
@@ -316,22 +315,26 @@ module Hapi
       contextum['site']['data']['tm']
     end
 
-    def translationem_memoriam_rememorandum(contextum, codicem, linguam = nil)
+    def translationem_memoriam_rememorandum(contextum, _codicem, linguam = nil)
       tm_collectionem = translationem_memoriam_collectionem(contextum)
-      hxlattrs = HXL.hxlattrs_de_linguam(contextum, linguam)
+      # hxlattrs = HXL.hxlattrs_de_linguam(contextum, linguam)
+      hxloptionem = HXL.optionem_de_linguam(contextum, linguam)
 
       # tm_collectionem.do |archivum|
       tm_collectionem.each do |archivum|
-        next unless HXL.quod_obiectum_attributum_existendum(archivum[0], hxlattrs)
+        # puts 'puts'
+        # puts archivum[0]
+        # puts tm_collectionem[archivum]
+        next unless HXL.quod_obiectum_optionem_existendum(archivum[0], hxloptionem)
 
         archivum.each do |tm_item|
           # puts hxlattr
-          next unless HXL.testum(tm_item, hxlattrs)
+          next unless HXL.testum(tm_item, hxloptionem)
 
           # puts hxlattr
           # puts line["#item+l10n#{hxlattr}"]
 
-          return HXL.testum(tm_item, hxlattrs)
+          return HXL.testum(tm_item, hxloptionem)
         end
       end
 

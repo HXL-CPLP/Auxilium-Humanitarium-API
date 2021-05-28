@@ -30,27 +30,38 @@ module Hapi
   module HXL
     module_function
 
-    def hxlattrs_de_linguam(contextum, linguam = nil)
+    # def hxlattrs_de_linguam(contextum, linguam = nil)
+    def optionem_de_linguam(contextum, linguam = nil)
       linguam = linguam.nil? ? contextum['page']['linguam'] : linguam
-      # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
-      #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
-      #       [por]_
-      # hxlattrs = contextum['site']['data']['referens']['linguam'][linguam]['hxlattrs']
-      #
-      # hxlattrs
+      ref = contextum['site']['data']['referens']
+      # resultatum = Struct.new(:attributum, :hashtag, :ignorandum)
 
-      contextum['site']['data']['referens']['linguam'][linguam]['hxlattrs']
+      # TODO: _[por] Mover isto para alguma subrotina para o rubocop parar de reclamar [por]_
+      raise "_data/referens.yml: Non linguam [#{linguam}]!" if ref['linguam'][linguam].nil?
+      raise '_data/referens.yml: Non hxl.linguam!' if ref['hxl']['linguam'].nil?
+
+      Struct.new(:attributum, :hashtag, :ignorandum).new(
+        ref['linguam'][linguam]['hxlattrs'],
+        ref['hxl']['linguam']['hashtag'],
+        ref['hxl']['linguam']['ignorandum']
+      )
     end
 
     # TODO: 'quod obiectum attribūtum existendum?' tá mal traduzido
-    def quod_obiectum_attributum_existendum(obiectum, hxlattrs)
-      puts hxlattrs
+    def quod_obiectum_optionem_existendum(obiectum, hxloptionem)
+      puts 'hxloptionem obiectum'
+
+      puts hxloptionem
       puts obiectum
+      puts ''
+      puts 'oiiiiii'
+      # puts hxloptionem.dig(':attributum')
+      puts hxloptionem['attributum']
+      # puts obiectum
       true
     end
 
     def testum(obiectum, hxlattrs)
-
       puts 'testum'
       puts obiectum
       puts hxlattrs
