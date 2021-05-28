@@ -5,6 +5,19 @@
 # trānslātiōnem, https://en.wiktionary.org/wiki/translatio#Latin
 # frozen_string_literal: true
 
+# Trivia:
+# - 'datum'
+#   - https://en.wiktionary.org/wiki/datum#Latin
+# - 'pāginam'
+#   - https://en.wiktionary.org/wiki/pagina#Latin
+# - ūtilitātem
+#   - https://en.wiktionary.org/wiki/utilitas#Latin
+# - 'expandendum'
+#   - https://en.wiktionary.org/wiki/expando#Latin
+# - 'archīvum'
+#   - https://en.wiktionary.org/wiki/archivum#Latin
+
+
 # _[lat] Hapi est programma de Auxilium Humanitarium API documentōrum. [lat]_
 module Hapi
   # _[lat] Hapi.Translationem de Auxilium Humanitarium API documentōrum. [lat]_
@@ -115,6 +128,18 @@ module Hapi
       require 'kramdown'
       Kramdown::Document.new(text).to_html.to_s
     end
+
+    # def hxlattrs_de_linguam(contextum, linguam = nil)
+    #   linguam = linguam.nil? ? contextum['page']['linguam'] : linguam
+    #   # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
+    #   #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
+    #   #       [por]_
+    #   # hxlattrs = contextum['site']['data']['referens']['linguam'][linguam]['hxlattrs']
+    #   #
+    #   # hxlattrs
+
+    #   contextum['site']['data']['referens']['linguam'][linguam]['hxlattrs']
+    # end
 
     # @see https://iso639-3.sil.org/code_tables/639/data
     # @see https://www.wikidata.org/wiki/Property:P220
@@ -287,13 +312,31 @@ module Hapi
 
     def translationem_memoriam_collectionem(contextum)
       # puts 'test'
-      puts contextum['site']['data']['tm'].keys
+      # puts contextum['site']['data']['tm'].keys
+      contextum['site']['data']['tm']
     end
 
-    def translationem_memoriam_rememorandum(codicem, linguam, contextum)
+    def translationem_memoriam_rememorandum(contextum, codicem, linguam = nil)
       tm_collectionem = translationem_memoriam_collectionem(contextum)
+      hxlattrs = HXL.hxlattrs_de_linguam(contextum, linguam)
 
-      # puts 'test'
+      # tm_collectionem.do |archivum|
+      tm_collectionem.each do |archivum|
+        next unless HXL.quod_obiectum_attributum_existendum(archivum[0], hxlattrs)
+
+        archivum.each do |tm_item|
+          # puts hxlattr
+          next unless HXL.testum(tm_item, hxlattrs)
+
+          # puts hxlattr
+          # puts line["#item+l10n#{hxlattr}"]
+
+          return HXL.testum(tm_item, hxlattrs)
+        end
+      end
+
+      # puts 'hxlattrs'
+      # puts hxlattrs
       # puts contextum['site']['data'].keys
     end
 
@@ -392,7 +435,8 @@ module Hapi
         # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
         l10nval = nil
 
-        Translationem.translationem_memoriam_collectionem(context)
+        # Translationem.translationem_memoriam_collectionem(context)
+        puts Translationem.translationem_memoriam_rememorandum(context, @textum)
 
         return l10nval if l10nval
 
@@ -410,7 +454,7 @@ module Hapi
 
         # "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
         # "_[#{@linguam_fontem}]#{@textum}[#{@linguam_fontem}]_"
-        "#{@textum}"
+        @textum.to_s
       end
     end
 

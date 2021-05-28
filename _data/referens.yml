@@ -43,17 +43,21 @@ linguam:
   arb-Arab:
     BCP47: ar
     hxlattrs:
+      - "+i_arb+is_arab"
       - "+i_arb"
+      - "+i_ara+is_arab"
       - "+i_ara"
       - "+i_ar"
   eng-Latn:
     BCP47: en
     hxlattrs:
+      - "+i_eng+is_latn"
       - "+i_eng"
       - "+i_en"
   spa-Latn:
     BCP47: es
     hxlattrs:
+      - "+i_spa+is_latn"
       - "+i_spa"
       - "+i_es"
   ## Noticia:
@@ -67,6 +71,7 @@ linguam:
   por-Latn:
     BCP47: pt
     hxlattrs:
+      - "+i_por+is_latn"
       - "+i_por"
       - "+i_pt"
   # por-BR:
