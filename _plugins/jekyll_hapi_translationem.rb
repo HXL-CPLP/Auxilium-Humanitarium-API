@@ -285,6 +285,18 @@ module Hapi
       }
     end
 
+    def translationem_memoriam_collectionem(contextum)
+      # puts 'test'
+      puts contextum['site']['data']['tm'].keys
+    end
+
+    def translationem_memoriam_rememorandum(codicem, linguam, contextum)
+      tm_collectionem = translationem_memoriam_collectionem(contextum)
+
+      # puts 'test'
+      # puts contextum['site']['data'].keys
+    end
+
     # rubocop:enable Metrics/MethodLength
     # rubocop:enable Metrics/AbcSize
 
@@ -346,19 +358,29 @@ module Hapi
       end
     end
 
-    # _[eng] The {% de_lat_codicem_in (...) %} implementation [eng]_
-    # _[por] A implementação de {% de_lat_codicem_in (...) %} [por]_
+    # _[por]  Converte '#item +id' da coleção de memórias de tradução para
+    #         o idioma requisitado pelo contexto da página atual.
+    #         Para simplificar documentação com uso em sistemas de escrita
+    #         direita-para-esquerda intencionamente tanto início como
+    #         final do método repetem a função.
+    #         Ou seja:
+    #         {% _ TERMO _ %}
+    #         {% __ TERMO __ %}
+    #         {% ___ TERMO ___ %}
+    # [por]_
     #
     # @exemplum Primum exemplum
-    #   {% de_lat_codicem_in por-Latn licentiam_nomen %}
+    #   linguam: por-Latn
+    #   ---
+    #   {% _ dominium_publicum_nomen _ %}
     # @resultatum Primum exemplum
-    #   Licença
+    #   Domínio público
     class DeL10n < Liquid::Tag
       def initialize(tag_name, text, tokens)
         super
 
         @tokens = text.strip.split
-        @linguam_fontem = @tokens.shift
+        # @linguam_fontem = @tokens.shift
         @textum = @tokens.shift
 
         # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
@@ -369,6 +391,8 @@ module Hapi
         temp = Translationem.datum_temporarium(context)
         # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
         l10nval = nil
+
+        Translationem.translationem_memoriam_collectionem(context)
 
         return l10nval if l10nval
 
@@ -384,7 +408,9 @@ module Hapi
           return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
         end
 
-        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
+        # "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
+        # "_[#{@linguam_fontem}]#{@textum}[#{@linguam_fontem}]_"
+        "#{@textum}"
       end
     end
 
@@ -742,7 +768,13 @@ end
 # Liquid::Template.register_filter(HapiApi::Translationem)
 
 Liquid::Template.register_tag(
+  '_', Hapi::Translationem::DeL10n
+)
+Liquid::Template.register_tag(
   '__', Hapi::Translationem::DeL10n
+)
+Liquid::Template.register_tag(
+  '___', Hapi::Translationem::DeL10n
 )
 
 # Liquid::Template.register_tag('gettext', HapiApi::TranslationemDeLatCodicem)
