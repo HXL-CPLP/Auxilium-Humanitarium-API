@@ -54,6 +54,8 @@ hxl:
         - '#meta'
       attributum:
         - '+meta'
+    referens:
+      - '#item+id'
 
 linguam:
   arb-Arab:

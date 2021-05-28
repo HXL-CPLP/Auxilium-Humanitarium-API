@@ -316,26 +316,40 @@ module Hapi
     end
 
     def translationem_memoriam_rememorandum(contextum, _codicem, linguam = nil)
-      tm_collectionem = translationem_memoriam_collectionem(contextum)
+      tm = translationem_memoriam_collectionem(contextum)
       # hxlattrs = HXL.hxlattrs_de_linguam(contextum, linguam)
       hxloptionem = HXL.optionem_de_linguam(contextum, linguam)
-
+      # return 'n'
+      # puts '    hxloptionem.hashtag_exemplum'
+      # puts hxloptionem.hashtag_exemplum
+      # return true
       # tm_collectionem.do |archivum|
-      tm_collectionem.each do |archivum|
+      # tm.each do |archivum|
+      tm.each do |archivum|
         # puts 'puts'
         # puts archivum[0]
-        # puts tm_collectionem[archivum]
-        next unless HXL.quod_obiectum_optionem_existendum(archivum[0], hxloptionem)
+        # puts tm[archivum]
+        # puts archivum
+        # puts tm[archivum[0]][0]
+        # # puts tm[archivum[0]]
+        # puts ''
+        # puts ''
+        # puts ''
+        # puts tm[archivum]
+        # puts tm[archivum].first
+        # raise 'stop'
+        # raise 'stop'
+        next unless hxloptionem.quod_obiectum_optionem_existendum(tm[archivum[0]][0])
 
-        archivum.each do |tm_item|
-          # puts hxlattr
-          next unless HXL.testum(tm_item, hxloptionem)
+        # archivum.each do |tm_item|
+        #   # puts hxlattr
+        #   next unless HXL.testum(tm_item, hxloptionem)
 
-          # puts hxlattr
-          # puts line["#item+l10n#{hxlattr}"]
+        #   # puts hxlattr
+        #   # puts line["#item+l10n#{hxlattr}"]
 
-          return HXL.testum(tm_item, hxloptionem)
-        end
+        #   return HXL.testum(tm_item, hxloptionem)
+        # end
       end
 
       # puts 'hxlattrs'
@@ -436,10 +450,11 @@ module Hapi
       def render(context)
         temp = Translationem.datum_temporarium(context)
         # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
-        l10nval = nil
+        # l10nval = nil
 
         # Translationem.translationem_memoriam_collectionem(context)
-        puts Translationem.translationem_memoriam_rememorandum(context, @textum)
+        # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
+        l10nval = Translationem.translationem_memoriam_rememorandum(context, @textum)
 
         return l10nval if l10nval
 

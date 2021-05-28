@@ -40,7 +40,7 @@ module Hapi
       raise "_data/referens.yml: Non linguam [#{linguam}]!" if ref['linguam'][linguam].nil?
       raise '_data/referens.yml: Non hxl.linguam!' if ref['hxl']['linguam'].nil?
 
-      Struct.new(:attributum, :hashtag, :ignorandum).new(
+      HXLOptionem.new(
         ref['linguam'][linguam]['hxlattrs'],
         ref['hxl']['linguam']['hashtag'],
         ref['hxl']['linguam']['ignorandum']
@@ -49,24 +49,64 @@ module Hapi
 
     # TODO: 'quod obiectum attribūtum existendum?' tá mal traduzido
     def quod_obiectum_optionem_existendum(obiectum, hxloptionem)
-      puts 'hxloptionem obiectum'
+      # puts 'hxloptionem obiectum'
 
-      puts hxloptionem
-      puts obiectum
-      puts ''
-      puts 'oiiiiii'
-      # puts hxloptionem.dig(':attributum')
-      puts hxloptionem['attributum']
+      # puts hxloptionem
+      # puts obiectum
+      # puts ''
+      # puts 'oiiiiii'
+      # puts ''
+      # # puts hxloptionem.dig(':attributum')
+      # puts hxloptionem.attributum
+      # puts '     quod_columnam'
+      # puts hxloptionem.quod_columnam(obiectum)
       # puts obiectum
       true
     end
 
     def testum(obiectum, hxlattrs)
-      puts 'testum'
-      puts obiectum
-      puts hxlattrs
+      # puts 'testum'
+      # puts obiectum
+      # puts hxlattrs
 
       "TODO #{hxlattrs}"
+    end
+
+    # _[eng] A quick helper to , for a guiven linguam, make inferences from
+    #        _data/referens.yml to what is likely to be desired column
+    # [eng]_
+    class HXLOptionem
+      attr_accessor :attributum, :hashtag, :ignorandum, :referens
+
+      def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+id'] )
+        @attributum = attributum
+        @hashtag = hashtag
+        @ignorandum = ignorandum
+        @referens = referens
+      end
+
+      def hashtag_exemplum
+        prefix = @hashtag.nil? ? [''] : @hashtag
+        suffix = @attributum.nil? ? [''] : @attributum
+        resultatum = []
+        prefix.each do |pre|
+          suffix.each do |suf|
+            resultatum.append("#{pre}#{suf}")
+          end
+        end
+        resultatum
+      end
+
+      # Trivia:
+      # - 'columnam'
+      #   - https://en.wiktionary.org/wiki/columna#Latin
+      # def quod_columnam(obiectum)
+      def quod_obiectum_optionem_existendum(obiectum)
+        puts 'quod_columnam'
+        puts obiectum.keys
+        # puts obiectum
+        false
+      end
     end
   end
 end
