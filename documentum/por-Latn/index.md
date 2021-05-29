@@ -7,7 +7,7 @@ description: |
 # locale: pt
 linguam: por-Latn
 # linguam: por-Latn
-# linguam: spa-Latn
+# linguam: lat-Latn
 permalink: /por-Latn/
 # categories: [ index ]
 # layout: defallo
@@ -23,6 +23,13 @@ iso6391: pt
 iso6393: por
 # iso6393: spa
 iso15924: Latn
+
+
+translationem_modum: html
+# translationem_modum: markdown
+# translationem_modum: json
+# translationem_modum: strict
+translationem_debug: true
 ---
 
 {%- include api-corporeum-ltr.html -%}

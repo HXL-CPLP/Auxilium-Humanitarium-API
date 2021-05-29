@@ -19,7 +19,6 @@
 # - 'ignōrandum'
 #   - https://en.wiktionary.org/wiki/ignoro#Latin
 
-
 api_gid:
   - "UN"
   - "XZ"
@@ -59,7 +58,7 @@ hxl:
       - '#item+id'
 
 linguam:
-  arb-Arab:
+  arb-Arab: &id_linguam_arb-Arab
     BCP47: ar
     hxlattrs: # deprecated
       - "+i_arb+is_arab"
@@ -76,7 +75,7 @@ linguam:
         - "+i_ara+is_arab"
         - "+i_ara"
         - "+i_ar"
-  eng-Latn:
+  eng-Latn: &id_linguam_eng-Latn
     BCP47: en
     hxlattrs: # deprecated
       - "+i_en+i_eng+is_latn"
@@ -89,7 +88,37 @@ linguam:
         - "+i_eng+is_latn"
         - "+i_eng"
         - "+i_en"
-  spa-Latn:
+
+  # https://en.wikipedia.org/wiki/Interlingua
+  ina-Latn: &id_linguam_ina-Latn
+    BCP47: ia
+    hxlattrs: # deprecated
+      - "+i_ia+i_ina+is_latn"
+      - "+i_ina+is_latn"
+      - "+i_ina"
+      - "+i_ia"
+    hxl:
+      attributum:
+        - "+i_ia+i_ina+is_latn"
+        - "+i_ina+is_latn"
+        - "+i_ina"
+        - "+i_ia"
+    wikidata: Q35934
+
+  lat-Latn: &id_linguam_lat-Latn
+    BCP47: la
+    hxlattrs: # deprecated
+      - "+i_la+i_lat+is_latn"
+      - "+i_lat+is_latn"
+      - "+i_lat"
+      - "+i_la"
+    hxl:
+      attributum:
+        - "+i_la+i_lat+is_latn"
+        - "+i_lat+is_latn"
+        - "+i_lat"
+        - "+i_la"
+  spa-Latn: &id_linguam_spa-Latn
     BCP47: es
     hxlattrs: # deprecated
       - "+i_es+i_spa+is_latn"
@@ -110,7 +139,7 @@ linguam:
   ##        https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/11
   ##        (Emerson Rocha, 2021-05-21 02:22 UTC)
   ## [por]_
-  por-Latn:
+  por-Latn: &id_linguam_por-Latn
     BCP47: pt
     hxlattrs: # deprecated
       - "+i_pt+i_por+is_latn"
@@ -186,6 +215,37 @@ praeiudico:
     en: *id_praeiudico_iso3693_eng
     es: *id_praeiudico_iso3693_spa
 
+alternandum:
+  Arab: [] # TODO Arab
+  Cyrl: [] # TODO Cyrl
+  Hans: [] # TODO Hans
+  Hant: [] # TODO Hant
+
+  # @see https://en.wikipedia.org/wiki/Romance_languages
+  # _[eng] Italian is the closest national language to Latin, followed by
+  #        Spanish, Romanian, Portuguese, and the most divergent being French.
+  #        Taking into account all the Romance languages, including national
+  #        and regional languages, Sardinian, Italian and Spanish are together
+  #        the three least differentiated from Latin and Occitan is closer to
+  #        Latin than French.
+  # [eng]_
+  Latn:
+    # Interlingua
+    - *id_linguam_ina-Latn
+    # Latin
+    - *id_linguam_lat-Latn
+    # Italian
+    # >>> (TODO Italian)
+    # Español
+    - *id_linguam_spa-Latn
+    # Romanian
+    # >>> (TODO Romanian)
+    # Português
+    - *id_linguam_por-Latn
+    # Français
+    # >>> (TODO Français)
+    # English
+    - *id_linguam_eng-Latn
 
 ### Temp
 # - https://en.wikipedia.org/wiki/IETF_language_tag

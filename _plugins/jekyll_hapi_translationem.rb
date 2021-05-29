@@ -128,6 +128,44 @@ module Hapi
       Kramdown::Document.new(text).to_html.to_s
     end
 
+    # TODO: _[por] Terminar a farmatum_alternandum, de modo que exiba
+    #              informações também de depuração
+    #       [por]_
+    #
+    # Trivia:
+    # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
+    # - 'alternandum', https://en.wiktionary.org/wiki/alternandus#Latin
+    def farmatum_alternandum(contextum, trns_codicem, trns_resultatum, _trns_resultatum_linguam)
+      html_est = contextum['page']['translationem_modum']
+      linguam = contextum['page']['linguam']
+      debug_est = contextum['page']['translationem_debug']
+      # print 'oooi'
+      if html_est == 'html'
+        return "<span data-l10n-c='#{trns_codicem}' data-l10n-linguam='#{linguam}'" \
+               " class='incognitum-phrasim'>#{trns_resultatum}</span>"
+      end
+      return "_[#{linguam}]#{trns_resultatum}[#{linguam}]_" if debug_est
+
+      trns_resultatum
+    end
+
+    # Trivia:
+    # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
+    # - 'praefectum', https://en.wiktionary.org/wiki/praefectus#Latin
+    def farmatum_praefectum(contextum, trns_codicem, trns_resultatum)
+      html_est = contextum['page']['translationem_modum']
+      linguam = contextum['page']['linguam']
+      debug_est = contextum['page']['translationem_debug']
+
+      if html_est == 'html' && debug_est
+        return "<span data-l10n-c='#{trns_codicem}' data-l10n-linguam='#{linguam}'>#{trns_resultatum}</span>"
+      end
+      return "<span data-l10n-c='#{trns_codicem}'>#{trns_resultatum}</span>" if html_est == 'html'
+      return "_[#{linguam}]#{trns_resultatum}[#{linguam}]_" if debug_est
+
+      trns_resultatum
+    end
+
     # def hxlattrs_de_linguam(contextum, linguam = nil)
     #   linguam = linguam.nil? ? contextum['page']['linguam'] : linguam
     #   # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
@@ -467,7 +505,17 @@ module Hapi
         l10nval = Translationem.translationem_memoriam_rememorandum(context, @textum)
         # l10nval = 'tes'
         # raise l10nval if l10nval
-        return l10nval if l10nval != false
+        # return l10nval if l10nval != false
+        return Translationem.farmatum_praefectum(context, @textum, l10nval) if l10nval != false
+
+        l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, @textum, 'eng-Latn')
+        return Translationem.farmatum_alternandum(context, @textum, l10nval_eng, 'eng-Latn') if l10nval_eng != false
+
+        l10nval_por = Translationem.translationem_memoriam_rememorandum(context, @textum, 'por-Latn')
+        return Translationem.farmatum_alternandum(context, @textum, l10nval_por, 'por-Latn') if l10nval_por != false
+
+        l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, @textum, 'spa-Latn')
+        return Translationem.farmatum_alternandum(context, @textum, l10nval_spa, 'spa-Latn') if l10nval_spa != false
 
         "[?#{@textum}?]"
       end
