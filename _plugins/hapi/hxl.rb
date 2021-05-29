@@ -24,6 +24,8 @@
 # - 'existendum'
 #   - https://en.wiktionary.org/wiki/existo#Latin
 
+# require 'logger'
+
 module Hapi
   # _[eng] Rudimentar HXL utils for Hapi. [eng]_
   # _[por] Utilitários HXL para Hapi. [por]_
@@ -48,7 +50,7 @@ module Hapi
     end
 
     # TODO: 'quod obiectum attribūtum existendum?' tá mal traduzido
-    def quod_obiectum_optionem_existendum(obiectum, hxloptionem)
+    def quod_obiectum_optionem_existendum(_obiectum, _hxloptionem)
       # puts 'hxloptionem obiectum'
 
       # puts hxloptionem
@@ -64,7 +66,7 @@ module Hapi
       true
     end
 
-    def testum(obiectum, hxlattrs)
+    def testum(_obiectum, hxlattrs)
       # puts 'testum'
       # puts obiectum
       # puts hxlattrs
@@ -76,12 +78,15 @@ module Hapi
     #        _data/referens.yml to what is likely to be desired column
     # [eng]_
     class HXLOptionem
-      attr_accessor :attributum, :hashtag, :ignorandum, :referens
+      attr_accessor :attributum, :hashtag, :ignorandum_hashtag, :ignorandum_attributum, :referens
 
-      def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+id'] )
+      def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+id'])
         @attributum = attributum
         @hashtag = hashtag
-        @ignorandum = ignorandum
+        @ignorandum_hashtag = ignorandum.nil? || ignorandum['hashtag'].nil? ? nil : ignorandum['hashtag']
+        @ignorandum_attributum = ignorandum.nil? || ignorandum['attributum'].nil? ? nil : ignorandum['attributum']
+        # @ignorandum_attributum = ignorandum&.attributum
+        # @ignorandum = ignorandum
         @referens = referens
       end
 
@@ -102,10 +107,113 @@ module Hapi
       #   - https://en.wiktionary.org/wiki/columna#Latin
       # def quod_columnam(obiectum)
       def quod_obiectum_optionem_existendum(obiectum)
-        puts 'quod_columnam'
-        puts obiectum.keys
-        # puts obiectum
-        false
+        opts = _chaves_relevantes(obiectum)
+        uglyhack = hashtag_exemplum
+        # puts 'quod_columnam'
+        # puts ''
+        # puts ''
+        # puts ''
+        # puts '  referens'
+        # puts @referens
+        # puts '  opts'
+        # puts opts
+        # puts '  uglyhack'
+        # puts uglyhack
+        # # puts obiectum.keys
+        # # puts opt
+        # # puts obiectum
+
+        # puts '  opts.any?'
+        # # puts opts.any? @referens
+
+        unless @referens.any? { |ref| opts.include?(ref) }
+          # log.debug("Created Logger")
+          puts "Hapi.HXL.HXLOptionem: non referens [#{referens}]"
+          return false
+        end
+        unless uglyhack.any? { |ref| opts.include?(ref) }
+          # puts "Hapi.HXL.HXLOptionem: non obiectum_optionem [#{uglyhack}]"
+          puts "Hapi.HXL.HXLOptionem: non obiectum_optionem [#{uglyhack}][#{opts}]"
+          # log.debug("Created Logger")
+          return false
+        end
+
+        # puts 'encontrou'
+        true
+      end
+
+      # Trivia:
+      # - 'valendum'
+      #   - https://en.wiktionary.org/wiki/valeo#Latin
+      def quod_obiectum_valendum(obiectum, referens)
+        # opts = _chaves_relevantes(obiectum)
+
+        @referens.each do |key|
+          # unless obiectum[key].nil? || obiectum[key] != referens
+          #   return true
+          # end
+          return obiectum[key] unless obiectum[key].nil? || obiectum[key] != referens
+
+          # TODO: agora procure a chave certa, nao retorne a mesma key :)
+        end
+
+        return false
+
+        # uglyhack = hashtag_exemplum
+        # # puts 'quod_columnam'
+        # # puts ''
+        # # puts ''
+        # # puts ''
+        # # puts '  referens'
+        # # puts @referens
+        # # puts '  opts'
+        # # puts opts
+        # # puts '  uglyhack'
+        # # puts uglyhack
+        # # # puts obiectum.keys
+        # # # puts opt
+        # # # puts obiectum
+
+        # # puts '  opts.any?'
+        # # # puts opts.any? @referens
+
+        # unless @referens.any? { |ref| opts.include?(ref) }
+        #   # log.debug("Created Logger")
+        #   puts "Hapi.HXL.HXLOptionem: non referens [#{referens}]"
+        #   return false
+        # end
+        # unless uglyhack.any? { |ref| opts.include?(ref) }
+        #   # puts "Hapi.HXL.HXLOptionem: non obiectum_optionem [#{uglyhack}]"
+        #   puts "Hapi.HXL.HXLOptionem: non obiectum_optionem [#{uglyhack}][#{opts}]"
+        #   # log.debug("Created Logger")
+        #   return false
+        # end
+
+        # # puts 'encontrou'
+        # true
+        "TODO retorna valor exato se existir"
+      end
+
+      private
+
+      def _chaves_relevantes(obiectum)
+        obiectum.keys
+
+        # obiectum.keys.select do |item|
+        #   unless @ignorandum_hashtag.nil?
+        #     @ignorandum_hashtag.each do |ig_hash|
+        #       # puts "   #{item}"
+        #       return false if item.start_with?(ig_hash)
+        #     end
+        #   end
+        #   unless @ignorandum_attributum.nil?
+        #     @ignorandum_attributum.each do |ig_attr|
+        #       return false if item.include?(ig_attr)
+        #     end
+        #   end
+
+        #   true
+        # end
       end
     end
   end

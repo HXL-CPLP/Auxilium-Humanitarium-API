@@ -52,8 +52,9 @@ hxl:
     ignorandum:
       hashtag:
         - '#meta'
+        # - '#status'
       attributum:
-        - '+meta'
+        # - '+meta'
     referens:
       - '#item+id'
 
@@ -68,8 +69,10 @@ linguam:
       - "+i_ar"
     hxl:
       attributum:
+        - "+i_ar+i_arb+is_arab"
         - "+i_arb+is_arab"
         - "+i_arb"
+        - "+i_ar+i_ara+is_arab"
         - "+i_ara+is_arab"
         - "+i_ara"
         - "+i_ar"
@@ -81,6 +84,7 @@ linguam:
       - "+i_en"
     hxl:
       attributum:
+        - "+i_en+i_eng+is_latn"
         - "+i_eng+is_latn"
         - "+i_eng"
         - "+i_en"
@@ -92,6 +96,7 @@ linguam:
       - "+i_es"
     hxl:
       attributum:
+        - "+i_es+i_spa+is_latn"
         - "+i_spa+is_latn"
         - "+i_spa"
         - "+i_es"
@@ -106,11 +111,14 @@ linguam:
   por-Latn:
     BCP47: pt
     hxlattrs: # deprecated
+      - "+i_pt+i_por+is_latn"
       - "+i_por+is_latn"
       - "+i_por"
       - "+i_pt"
     hxl:
       attributum:
+      #item+i_pt+i_por+is_latn
+      - "+i_pt+i_por+is_latn"
       - "+i_por+is_latn"
       - "+i_por"
       - "+i_pt"

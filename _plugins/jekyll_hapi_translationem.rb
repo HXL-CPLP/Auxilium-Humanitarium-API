@@ -315,7 +315,7 @@ module Hapi
       contextum['site']['data']['tm']
     end
 
-    def translationem_memoriam_rememorandum(contextum, _codicem, linguam = nil)
+    def translationem_memoriam_rememorandum(contextum, codicem, linguam = nil)
       tm = translationem_memoriam_collectionem(contextum)
       # hxlattrs = HXL.hxlattrs_de_linguam(contextum, linguam)
       hxloptionem = HXL.optionem_de_linguam(contextum, linguam)
@@ -341,6 +341,15 @@ module Hapi
         # raise 'stop'
         next unless hxloptionem.quod_obiectum_optionem_existendum(tm[archivum[0]][0])
 
+        puts 'valido, continuando...'
+
+        tm[archivum[0]].each do |tm_item|
+          val = hxloptionem.quod_obiectum_valendum(tm_item, codicem)
+          # puts 'val'
+          puts "#{codicem}, #{linguam}: #{val}" unless val == false
+          return val unless val == false
+        end
+
         # archivum.each do |tm_item|
         #   # puts hxlattr
         #   next unless HXL.testum(tm_item, hxloptionem)
@@ -350,6 +359,8 @@ module Hapi
 
         #   return HXL.testum(tm_item, hxloptionem)
         # end
+
+        false
       end
 
       # puts 'hxlattrs'
