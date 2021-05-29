@@ -1,5 +1,5 @@
 #item+id,#status,#item+type+lat_dominium+list,#item+type+lat_regnum,#item+type+lat_divisionem,#item+type+lat_classem,#item+type+lat_ordinem,#item+type+lat_familiam,#item+type+lat_genus,#item+type+lat_speciem,#item+type+lat_segmentum,#item+wikidata+code,#item+i_la+i_lat+is_latn,#item+i_pt+i_por+is_latn,#item+i_en+i_eng+is_latn,#item+i_es+i_spa+is_latn
-L10N_linguam_ego_summarius,1,L10N,L10N,linguam,,,,ego,summarius,,,Lingua Latina (Abecedarium Latinum),English language (Latin script),Língua portuguesa (alfabeto latino),
+L10N_linguam_ego_summarius,1,L10N,L10N,linguam,,,,ego,summarius,,,Lingua Latina (Abecedarium Latinum),Língua portuguesa (alfabeto latino),English language (Latin script),
 Hapi_api_UN_HDX_titulum,1,,Hapi,api,UN,HDX,,,titulum,,,,HDX - Intercâmbio de Dados Humanitários,HDX - The Humanitarian Data Exchange API,
 Hapi_api_UN_HDX_slug,1,,Hapi,api,UN,HDX,,,slug,,,,humanitarian-data-exchange,humanitarian-data-exchange,
 Hapi_api_UN_CODV2API_titulum,1,,Hapi,api,UN,CODV2API,,,titulum,,,,COD API versão,COD Version 2 API,
