@@ -79,6 +79,7 @@ linguam:
   eng-Latn:
     BCP47: en
     hxlattrs: # deprecated
+      - "+i_en+i_eng+is_latn"
       - "+i_eng+is_latn"
       - "+i_eng"
       - "+i_en"
@@ -91,6 +92,7 @@ linguam:
   spa-Latn:
     BCP47: es
     hxlattrs: # deprecated
+      - "+i_es+i_spa+is_latn"
       - "+i_spa+is_latn"
       - "+i_spa"
       - "+i_es"

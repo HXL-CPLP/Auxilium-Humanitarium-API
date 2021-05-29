@@ -346,7 +346,7 @@ module Hapi
         tm[archivum[0]].each do |tm_item|
           val = hxloptionem.quod_obiectum_valendum(tm_item, codicem)
           # puts 'val'
-          puts "#{codicem}, #{linguam}: #{val}" unless val == false
+          # puts "#{codicem}, #{linguam}: #{val}" unless val == false
           return val unless val == false
         end
 
@@ -359,13 +359,12 @@ module Hapi
 
         #   return HXL.testum(tm_item, hxloptionem)
         # end
-
-        false
       end
-
       # puts 'hxlattrs'
       # puts hxlattrs
       # puts contextum['site']['data'].keys
+
+      false
     end
 
     # rubocop:enable Metrics/MethodLength
@@ -459,31 +458,18 @@ module Hapi
       end
 
       def render(context)
-        temp = Translationem.datum_temporarium(context)
+        # temp = Translationem.datum_temporarium(context)
         # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
         # l10nval = nil
 
         # Translationem.translationem_memoriam_collectionem(context)
         # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
         l10nval = Translationem.translationem_memoriam_rememorandum(context, @textum)
+        # l10nval = 'tes'
+        # raise l10nval if l10nval
+        return l10nval if l10nval != false
 
-        return l10nval if l10nval
-
-        return temp[@textum] if temp && temp[@textum]
-
-        suffixes = Translationem.datum_temporarium_suffix(context)
-
-        suffixes.each do |suffix|
-          # puts 'oooooooooi'
-          # puts suffix
-          # puts "#{@textum}#{suffix}"
-          # puts temp["#{@textum}#{suffix}"]
-          return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
-        end
-
-        # "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
-        # "_[#{@linguam_fontem}]#{@textum}[#{@linguam_fontem}]_"
-        @textum.to_s
+        "[?#{@textum}?]"
       end
     end
 
