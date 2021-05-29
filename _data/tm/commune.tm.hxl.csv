@@ -1,28 +1,28 @@
-#item+id,#status,#item+type+lat_dominium+list,#item+type+lat_regnum,#item+type+lat_divisionem,#item+type+lat_classem,#item+type+lat_ordinem,#item+type+lat_familiam,#item+type+lat_genus,#item+type+lat_speciem,#item+type+lat_segmentum,#item+wikidata+code,#item+i_la+i_lat+is_latn,#item+i_pt+i_por+is_latn,#item+i_en+i_eng+is_latn,#item+i_es+i_spa+is_latn
-linguam_ego_summarius,1,L10N,,linguam,,,,ego,summarius,,,Lingua Latina (Abecedarium Latinum),Língua portuguesa (alfabeto latino),English language (Latin script),
-linguam_nomen,1,L10N,,linguam,,,,,nomen,,,Linguam,Língua,Language,
-scriptum_Latn_nomen,1,L10N,,scriptum,Latn,,,,nomen,,Q8229,Abecedarium Latinum,Alfabeto latino,Latin script,
-linguam_macrum_nomen,1,L10N,,linguam,macrum,,,,nomen,,Q152559,Macro linguam,Macrolíngua,Macrolanguage,
-licentiam_nomen,1,L10N|legem,,,,,licentiam,,nomen,,Q79719,Licentiam,Licença,License,
-dominium_publicum_nomen,1,L10N|legem,,,,,dominium_publicum,,nomen,,Q19652,Dominium publicum,Domínio público,Public domain,
-abbreviationem_XZ_API_abbreviationem,1,,,abbreviationem,XZ,,API,,abbreviationem,,Q165194,API,API,API,
-abbreviationem_XZ_API_nomen,1,,,abbreviationem,XZ,,API,,nomen,,Q165194,,Interface de Programação de Aplicações,Application Programming Interface,Interfaz de Programación de Aplicaciones
-abbreviationem_XZ_I10N_abbreviationem,1,,,abbreviationem,XZ,,I10N,,abbreviationem,,,I10N,I10N,I10N,
-abbreviationem_XZ_L10N_abbreviationem,1,,,abbreviationem,XZ,,L10N,,abbreviationem,,Q130543,L10N,L10N,L10N,
-abbreviationem_XZ_T9N_abbreviationem,1,,,abbreviationem,XZ,,T9N,,abbreviationem,,,T9N,T9N,T9N,
-abbreviationem_XZ_URL_canonicum_nomen,1,,,abbreviationem,XZ,,URL,canonicum,nomen,,,Canonicum URL,URL canônica,Canonical URL,
-commune_agnitionem_communitatem_nomen,1,,commune,,,,agnitionem_communitatem,,nomen,,,Agnitiōnem Communitatem,Reconhecendo a comunidade,Acknowledging the community,
-commune_agnitionem_et_gratiam_nomen,1,,commune,,,,agnitionem_et_gratiam,,nomen,,,Agnitiōnem et grātiam,Reconhecimentos e agradecimentos,Acknowledgments and thanks,
-abbreviationem_XZ_L10N_nomen,1,,,abbreviationem,XZ,,L10N,,nomen,,,Localization [neolatīnum; de eng],Localização,Localization,
-abbreviationem_XZ_T9N_nomen,1,,,abbreviationem,XZ,,T9N,,nomen,,,Trānslātiōnem,Tradução,Translation,
-abbreviationem_XZ_I10N_nomen,1,,,abbreviationem,XZ,,I10N,,nomen,,,Internationalisation [neolatīnum; de fra],Internacionalização,Internationalization,
-situs_interretialis_nomen,1,,,,,,situs_interretialis,,nomen,,Q35127,Situs interretialis,Website,Website,
-mensam_de_contentis_in_eodem_nomen,1,,,,,,mensam_de_contentis_in_eodem,,nomen,,Q1456936,Mensam de contentis in eodem,Índice de conteúdo,Table of contents,Índice de contenido
-vicipaediam_nomen,1,,,,,,vicipaediam,,nomen,,,Vicipaediam,Wikipédia,Wikipedia,
-commune_voluntarius_auxilio_tuo_nomen,1,,commune,,,,voluntarius_auxilio_tuo,,nomen,,,Voluntarius Auxilio Tuo,Ajudantes voluntário,Volunteer helpers,
-schemam_nomen,1,,,,,,schemam,,nomen,,,Schēmam,Schema,Schema,
-OpenAPI_archivum_nomen,1,,,,,,OpenAPI,archivum,nomen,,,Archīvum OpenAPI,Arquivo OpenAPI,OpenAPI file,
-PDF_archivum_salvandum_nomen,1,,,,,,PDF,archivum_salvandum,nomen,,,Salvandum PDF archīvum,Salvar como arquivo PDF,Save as PDF archive,
-L10N_linguam_Q436240_nomen,1,L10N,L10N,linguam,Q436240,,,,nomen,,Q436240,,Língua antiga,Ancient language,
-L10N_linguam_Q33215_nomen,1,L10N,L10N,linguam,Q33215,,,,nomen,,Q33215,,Língua artificial,Constructed language,
-L10N_linguam_Q38058796_nomen,1,L10N,L10N,linguam,Q38058796,,,,nomen,,Q38058796,,Língua extinta,Extinct language,
+#item+id,#status,#item+type+lat_dominium+list,#item+type+lat_regnum,#item+type+lat_divisionem,#item+type+lat_classem,#item+type+lat_ordinem,#item+type+lat_familiam,#item+type+lat_genus,#item+type+lat_speciem,#item+type+lat_segmentum,#item+wikidata+code,#item+i_la+i_lat+is_latn,#item+i_la+i_lat+is_latn+alt+list,#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#item+i_en+i_eng+is_latn,#item+i_en+i_eng+is_latn+alt+list,#item+i_es+i_spa+is_latn,#item+i_es+i_spa+is_latn+alt+list
+linguam_ego_summarius,1,L10N,,linguam,,,,ego,summarius,,,Lingua Latina (Abecedarium Latinum),[(_)],Língua portuguesa (alfabeto latino),[(_)],English language (Latin script),[(_)],,[(_)]
+linguam_nomen,1,L10N,,linguam,,,,,nomen,,,Linguam,[(_)],Língua,[(_)],Language,[(_)],,[(_)]
+scriptum_Latn_nomen,1,L10N,,scriptum,Latn,,,,nomen,,Q8229,Abecedarium Latinum,[(_)],Alfabeto latino,[(_)],Latin script,[(_)],,[(_)]
+linguam_macrum_nomen,1,L10N,,linguam,macrum,,,,nomen,,Q152559,Macro linguam,[(_)],Macrolíngua,[(_)],Macrolanguage,[(_)],,[(_)]
+licentiam_nomen,1,L10N|legem,,,,,licentiam,,nomen,,Q79719,Licentiam,[(_)],Licença,[(_)],License,[(_)],,[(_)]
+dominium_publicum_nomen,1,L10N|legem,,,,,dominium_publicum,,nomen,,Q19652,Dominium publicum,[(_)],Domínio público,[(_)],Public domain,[(_)],,[(_)]
+abbreviationem_XZ_API_abbreviationem,1,,,abbreviationem,XZ,,API,,abbreviationem,,Q165194,API,[(_)],API,[(_)],API,[(_)],,[(_)]
+abbreviationem_XZ_API_nomen,1,,,abbreviationem,XZ,,API,,nomen,,Q165194,,[(_)],Interface de Programação de Aplicações,[(_)],Application Programming Interface,[(_)],Interfaz de Programación de Aplicaciones,[(_)]
+abbreviationem_XZ_I10N_abbreviationem,1,,,abbreviationem,XZ,,I10N,,abbreviationem,,,I10N,[(_)],I10N,[(_)],I10N,[(_)],,[(_)]
+abbreviationem_XZ_L10N_abbreviationem,1,,,abbreviationem,XZ,,L10N,,abbreviationem,,Q130543,L10N,[(_)],L10N,[(_)],L10N,[(_)],,[(_)]
+abbreviationem_XZ_T9N_abbreviationem,1,,,abbreviationem,XZ,,T9N,,abbreviationem,,,T9N,[(_)],T9N,[(_)],T9N,[(_)],,[(_)]
+abbreviationem_XZ_URL_canonicum_nomen,1,,,abbreviationem,XZ,,URL,canonicum,nomen,,,Canonicum URL,[(_)],URL canônica,[(_)],Canonical URL,[(_)],,[(_)]
+commune_agnitionem_communitatem_nomen,1,,commune,,,,agnitionem_communitatem,,nomen,,,Agnitiōnem Communitatem,[(_)],Reconhecendo a comunidade,[(_)],Acknowledging the community,[(_)],,[(_)]
+commune_agnitionem_et_gratiam_nomen,1,,commune,,,,agnitionem_et_gratiam,,nomen,,,Agnitiōnem et grātiam,[(_)],Reconhecimentos e agradecimentos,[(_)],Acknowledgments and thanks,[(_)],,[(_)]
+abbreviationem_XZ_L10N_nomen,1,,,abbreviationem,XZ,,L10N,,nomen,,,Localization [neolatīnum; de eng],[(_)],Localização,[(_)],Localization,[(_)],,[(_)]
+abbreviationem_XZ_T9N_nomen,1,,,abbreviationem,XZ,,T9N,,nomen,,,Trānslātiōnem,[(_)],Tradução,[(_)],Translation,[(_)],,[(_)]
+abbreviationem_XZ_I10N_nomen,1,,,abbreviationem,XZ,,I10N,,nomen,,,Internationalisation [neolatīnum; de fra],[(_)],Internacionalização,[(_)],Internationalization,[(_)],,[(_)]
+situs_interretialis_nomen,1,,,,,,situs_interretialis,,nomen,,Q35127,Situs interretialis,[(_)],Website,[(_)],Website,[(_)],,[(_)]
+mensam_de_contentis_in_eodem_nomen,1,,,,,,mensam_de_contentis_in_eodem,,nomen,,Q1456936,Mensam de contentis in eodem,[(_)],Índice de conteúdo,[(_)],Table of contents,[(_)],Índice de contenido,[(_)]
+vicipaediam_nomen,1,,,,,,vicipaediam,,nomen,,,Vicipaediam,[(_)],Wikipédia,[(_)],Wikipedia,[(_)],,[(_)]
+commune_voluntarius_auxilio_tuo_nomen,1,,commune,,,,voluntarius_auxilio_tuo,,nomen,,,Voluntarius Auxilio Tuo,[(_)],Ajudantes voluntário,[(_)],Volunteer helpers,[(_)],,[(_)]
+schemam_nomen,1,,,,,,schemam,,nomen,,,Schēmam,[(_)],Schema,[(_)],Schema,[(_)],,[(_)]
+OpenAPI_archivum_nomen,1,,,,,,OpenAPI,archivum,nomen,,,Archīvum OpenAPI,[(_)],Arquivo OpenAPI,[(_)],OpenAPI file,[(_)],,[(_)]
+PDF_archivum_salvandum_nomen,1,,,,,,PDF,archivum_salvandum,nomen,,,Salvandum PDF archīvum,[(_)],Salvar como arquivo PDF,[(_)],Save as PDF archive,[(_)],,[(_)]
+L10N_linguam_Q436240_nomen,1,L10N,L10N,linguam,Q436240,,,,nomen,,Q436240,,[(_)],Língua antiga,[(_)],Ancient language,[(_)],,[(_)]
+L10N_linguam_Q33215_nomen,1,L10N,L10N,linguam,Q33215,,,,nomen,,Q33215,,[(_)],Língua artificial,[(_)],Constructed language,[(_)],,[(_)]
+L10N_linguam_Q38058796_nomen,1,L10N,L10N,linguam,Q38058796,,,,nomen,,Q38058796,,[(_)],Língua extinta,[(_)],Extinct language,[(_)],,[(_)]
