@@ -91,19 +91,88 @@ sitemap:
         </dl>
       </p>
       <h3>Alternative 2</h3>
+      <h3>Typical usage</h3>
       <p>
         <dl>
 
-          <dt>{% raw %}<code>{% _ L10N_ego_summarius _ %}</code>{% endraw %}</dt>
-          <dd><output>{% _ L10N_ego_summarius _ %}</output></dd>
-
           <dt>{% raw %}<code>{% _🗣️ L10N_ego_summarius 🗣️_ %}</code>{% endraw %}</dt>
           <dd><output>{% _🗣️ L10N_ego_summarius 🗣️_ %}</output></dd>
-          <dt>{% raw %}<code>{% _🗣️🗣️ L10N_ego_summarius 🗣️🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>{% _🗣️🗣️ L10N_ego_summarius 🗣️🗣️_ %}</output></dd>
 
         </dl>
       </p>
+      <h3>Strict enforced</h3>
+      <p>
+        <dl>
+
+          <dt>{% raw %}<code>{% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}</output></dd>
+
+        </dl>
+      </p>
+      <h3>Debug enforced</h3>
+      <p>
+        <dl>
+
+          <dt>{% raw %}<code>{% _🗣️🚫🐛 L10N_ego_summarius 🐛🚫🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️🚫🐛 L10N_ego_summarius 🐛🚫🗣️_ %}</output></dd>
+
+        </dl>
+      </p>
+      <h3>Debug context</h3>
+      <p>
+        <dl>
+
+          <dt>{% raw %}<code>{% __🆘__ %}</code>{% endraw %}</dt>
+          <dd><output>{% __🆘__ %}</output></dd>
+
+        </dl>
+      </p>
+
+      <h2>Emoji (uso interno do CPLP para decidir os comandos)</h2>
+
+      {% raw %}
+      <ul>
+        <li>🗣️ https://emojipedia.org/speaking-head/</li>
+        <li>📣 https://emojipedia.org/megaphone/</li>
+        <li>🔈 https://emojipedia.org/speaker-low-volume/</li>
+        <li>🔉 https://emojipedia.org/speaker-medium-volume/</li>
+        <li>🔊 https://emojipedia.org/speaker-high-volume/</li>
+        <li>🔇 https://emojipedia.org/muted-speaker/</li>
+        <li>👁️ https://emojipedia.org/eye/</li>
+        <li>👀 https://emojipedia.org/eyes/</li>
+        <li>🔍 https://emojipedia.org/magnifying-glass-tilted-left/</li>
+        <li>🔎 https://emojipedia.org/magnifying-glass-tilted-right/</li>
+        <li>🐛 https://emojipedia.org/bug/</li>
+        <li>🚫 https://emojipedia.org/prohibited/</li>
+      </ul>
+      <p>
+        https://blog.emojipedia.org/unicode-behind-the-curtain/
+      </p>
+      <p>
+        https://blog.emojipedia.org/whatsapps-new-refugee-nation-flag/
+      </p>
+      <p>
+        <img style="max-width: 600px;"src="https://blog.emojipedia.org/content/images/size/w2000/2017/04/xkcd-emoji.jpeg">
+      </p>
+      <pre>
+        // Padrão (usa informações do contexto)
+        {% _🗣️ L10N_ego_summarius 🗣️_ %}
+
+        // Desabilitado (nem tenta falhar procurando a string)
+        // Talvez usar para proteger alterações novas em produção
+        {% _🗣️🔇 L10N_ego_summarius 🔇🗣️_ %}
+
+        // Desabilitado (nem tenta falhar procurando a string)
+        // Talvez usar para proteger alterações novas em produção
+        {% _🗣️🔇 L10N_ego_summarius 🔇🗣️_ %}
+  
+        // Habilitar modo debug (aceita ambos os 🔍🔍)
+        {% __🗣️🔍🐛 L10N_ego_summarius 🗣️🔍🐛__ %}
+        {% __🗣️🔎🐛 L10N_ego_summarius 🗣️🔎🐛__ %}
+        {% __🗣️🔎🐛 L10N_ego_summarius 🗣️🔍🐛__ %}
+      </pre>
+      {% endraw %}
+
       <!-- TEST CODE -->
     </div>
   </main>

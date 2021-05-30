@@ -379,7 +379,7 @@ module Hapi
         # raise 'stop'
         next unless hxloptionem.quod_obiectum_optionem_existendum(tm[archivum[0]][0])
 
-        puts 'valido, continuando...'
+        # puts 'valido, continuando...'
 
         tm[archivum[0]].each do |tm_item|
           val = hxloptionem.quod_obiectum_valendum(tm_item, codicem)
@@ -491,8 +491,15 @@ module Hapi
         # @linguam_fontem = @tokens.shift
         @textum = @tokens.shift
 
-        puts '    DeL10n'
-        puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
+        if @textum.include?('🗣️') && @textum.length < 8
+          tag_name = "#{tag_name}#{@textum}"
+          @textum = @tokens.shift
+        end
+
+        @l10n_typum = L10n_typum_requisitum(tag_name)
+
+        # puts '    DeL10n'
+        # puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
         # puts  @textum
 
         # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
@@ -522,6 +529,57 @@ module Hapi
         return Translationem.farmatum_alternandum(context, @textum, l10nval_spa, 'spa-Latn') if l10nval_spa != false
 
         "[?#{@textum} #{@tokens}?]"
+      end
+
+      private
+
+      # Trivia: requīsītum, https://en.wiktionary.org/wiki/requisitus#Latin
+      def L10n_typum_requisitum(tagname)
+        puts '_L10Ntypum'
+        # {% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}
+        resultatum = ('minimum' if @textum.include?('#️⃣'))
+
+        puts tagname
+      end
+    end
+
+    # {% __🆘__ %}
+    class DeL10nDebug < Liquid::Tag
+      def initialize(tag_name, text, tokens)
+        super
+
+        @tokens = text.strip.split
+        # @linguam_fontem = @tokens.shift
+        @textum = @tokens.shift
+
+        if @textum.include?('🗣️') && @textum.length < 8
+          tag_name = "#{tag_name}#{@textum}"
+          @textum = @tokens.shift
+        end
+
+        puts '   DeL10nDebug'
+        puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
+        # puts  @textum
+
+        # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
+        # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
+      end
+
+      def render(context)
+        # "[?#{@textum} #{@tokens}?]"
+        {
+          page: {
+            linguam: context['page']['linguam']
+          },
+          site: {
+            linguam: context['site']['linguam']
+          },
+          translationem: {
+            errors: [
+              '_[por]Funcionalidade ainda não implementada[por]_'
+            ]
+          }
+        }
       end
     end
 
@@ -878,12 +936,22 @@ end
 
 # Liquid::Template.register_filter(HapiApi::Translationem)
 
+# {% __🆘__ %}
+Liquid::Template.register_tag(
+  '__', Hapi::Translationem::DeL10nDebug
+)
+# _ deprecated
 Liquid::Template.register_tag(
   '_', Hapi::Translationem::DeL10n
 )
-Liquid::Template.register_tag(
-  '__', Hapi::Translationem::DeL10n
-)
+
+# __ Ok, same as %{ _1 ...  1_ %}
+# Liquid::Template.register_tag(
+#   '_1', Hapi::Translationem::DeL10n
+# )
+# Liquid::Template.register_tag(
+#   '1__', Hapi::Translationem::DeL10n
+# )
 
 ### Normal usage (html output, except as tag attribute)
 ## @exemplum:

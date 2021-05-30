@@ -122,7 +122,7 @@ module Hapi
           return false
         end
 
-        puts 'encontrou'
+        # puts 'encontrou'
         true
       end
 
@@ -146,7 +146,7 @@ module Hapi
 
           # return obiectum[key] unless obiectum[key].nil? || obiectum[key] != referens
 
-          puts "quod_obiectum_valendum #{referens_valendum} #{referens}: #{obiectum}"
+          # puts "quod_obiectum_valendum #{referens_valendum} #{referens}: #{obiectum}"
 
           # TODO: agora procure a chave certa, nao retorne a mesma key :)
           return _chave_com_resultado_de_objeto_certo(obiectum)
@@ -160,7 +160,7 @@ module Hapi
       def _chave_com_resultado_de_objeto_certo(obiectum)
         uglyhack = hashtag_exemplum
         uglyhack.each do |hxlkey|
-          puts 'ENCONTRADO!' if obiectum.key?(hxlkey)
+          # puts 'ENCONTRADO!' if obiectum.key?(hxlkey)
           return obiectum[hxlkey] if obiectum.key?(hxlkey)
         end
         raise "_chave_com_resultado_de_objeto_certo: non resultatum [#{uglyhack}] [#{obiectum}]"
