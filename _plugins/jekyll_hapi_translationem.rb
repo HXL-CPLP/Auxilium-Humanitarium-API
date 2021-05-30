@@ -26,24 +26,80 @@ module Hapi
     # TODO: document L10nTag
     # temp https://www.shopify.com/partners/shopify-cheat-sheet
     # see https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers
+    # @see https://github.com/ticky/ruby-emoji-regex
+    # @see https://github.com/janlelis/unicode-emoji
     class AuxiliumTagProcessum
-      attr_accessor :tag_nomen, :argumentum, :ignorandum_hashtag, :ignorandum_attributum, :referens
+      attr_accessor :tag_nomen, :initiale_argumentum, :fontem_linguam,
+                    :objectivum_linguam, :ignorandum_hashtag,
+                    :ignorandum_attributum, :textum, :referens
 
-      def initialize(initiale_tag_nomen, initiale_argumentum, initiale_processum)
-        puts initiale_tag_nomen
-        puts initiale_argumentum
-        puts initiale_processum
+      FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
+      OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
+
+      def initialize(initiale_tag_nomen, initiale_argumentum, _initiale_processum)
+        @initiale_argumentum = initiale_argumentum.strip.split
+        # argumentum_parts = initiale_argumentum.strip.split
+        if initiale_tag_nomen.include?('🗣️')
+          @tag_nomen = initiale_tag_nomen
+        else
+          @tag_nomen = "#{initiale_tag_nomen}#{@initiale_argumentum.shift}"
+          # puts '    argumentum_parts1'
+          # puts argumentum_parts
+          @initiale_argumentum.tap(&:pop)
+          # puts '    argumentum_parts2'
+          # puts argumentum_parts
+        end
+
+        @fontem_linguam = quod_fontem_linguam_de_initiale_argumentum_et_textum
+        @objectivum_linguam = quod_objectivum_linguam_de_initiale_argumentum_et_textum
+        @textum = quod_textum_de_initiale_argumentum_et_textum
+
+        puts '    AuxiliumTagProcessum: initialize'
+        puts @tag_nomen
+        puts @fontem_linguam
+        puts @objectivum_linguam
       end
 
-      # def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+id'])
-      #   @attributum = attributum
-      #   @hashtag = hashtag
-      #   @ignorandum_hashtag = ignorandum.nil? || ignorandum['hashtag'].nil? ? nil : ignorandum['hashtag']
-      #   @ignorandum_attributum = ignorandum.nil? || ignorandum['attributum'].nil? ? nil : ignorandum['attributum']
-      #   # @ignorandum_attributum = ignorandum&.attributum
-      #   # @ignorandum = ignorandum
-      #   @referens = referens
-      # end
+      def quod_fontem_linguam_de_initiale_argumentum_et_textum
+        return nil unless @initiale_argumentum.length > 1
+
+        print 'oi oi oi'
+        print @fontem_linguam_emoji.to_s
+        print @fontem_linguam_emoji.inspect
+        quod_optionem_est(FONTEM_LINGUAM_EMOJI)
+      end
+
+      def quod_objectivum_linguam_de_initiale_argumentum_et_textum
+        return nil unless @initiale_argumentum.length > 1
+
+        quod_optionem_est(OBJECTIVUM_LINGUAM_EMOJI)
+      end
+
+      def quod_optionem_est(emojis)
+        return nil unless @initiale_argumentum.length > 1
+
+        valere = nil
+        tags = []
+        @initiale_argumentum.each do |arg|
+          # puts '  quod_optionem_est'
+          # puts arg
+          # print arg[0, 1]
+          # print arg[-1]
+          if emojis.include?(arg[0, 1]) && emojis.include?(arg[-1])
+            valere = arg[1, (arg.length - 2)]
+            tags.append(arg)
+          end
+        end
+
+        {
+          valere: valere,
+          tags: tags
+        }
+      end
+
+      def quod_textum_de_initiale_argumentum_et_textum
+        return @initiale_argumentum[0] if @initiale_argumentum.length == 1
+      end
 
       def hashtag_exemplum
         prefix = @hashtag.nil? ? [''] : @hashtag
@@ -583,6 +639,7 @@ module Hapi
       end
     end
 
+    # TODO: document DeL10nEmoji
     class DeL10nEmoji < Liquid::Tag
       # @see https://www.rubydoc.info/gems/liquid/Liquid/ParseContext
       # @see https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers#arguments-and-initialization
@@ -592,7 +649,9 @@ module Hapi
         # puts 'tokens'
         # puts initiale_processum.inspect
 
-        @L10nTAux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
+        if argumentum.include?('🗣️ ')
+          @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
+        end
         # puts tokens.locale
         # puts token['line_numbers']
 
