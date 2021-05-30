@@ -6,8 +6,10 @@
 # frozen_string_literal: true
 
 # Trivia:
+# - 'auxilium'
+#   - https://en.wiktionary.org/wiki/auxilium#Latin
 # - 'datum'
-#   - https://en.wiktionary.org/wiki/datum#Latin
+#   - https://en.wiktionary.org/wiki/auxilium
 # - 'pāginam'
 #   - https://en.wiktionary.org/wiki/pagina#Latin
 # - ūtilitātem
@@ -19,6 +21,44 @@
 
 # _[lat] Hapi est programma de Auxilium Humanitarium API documentōrum. [lat]_
 module Hapi
+  # TODO: document TranslationemNeo
+  module TranslationemNeo
+    # TODO: document L10nTag
+    # temp https://www.shopify.com/partners/shopify-cheat-sheet
+    # see https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers
+    class AuxiliumTagProcessum
+      attr_accessor :tag_nomen, :argumentum, :ignorandum_hashtag, :ignorandum_attributum, :referens
+
+      def initialize(initiale_tag_nomen, initiale_argumentum, initiale_processum)
+        puts initiale_tag_nomen
+        puts initiale_argumentum
+        puts initiale_processum
+      end
+
+      # def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+id'])
+      #   @attributum = attributum
+      #   @hashtag = hashtag
+      #   @ignorandum_hashtag = ignorandum.nil? || ignorandum['hashtag'].nil? ? nil : ignorandum['hashtag']
+      #   @ignorandum_attributum = ignorandum.nil? || ignorandum['attributum'].nil? ? nil : ignorandum['attributum']
+      #   # @ignorandum_attributum = ignorandum&.attributum
+      #   # @ignorandum = ignorandum
+      #   @referens = referens
+      # end
+
+      def hashtag_exemplum
+        prefix = @hashtag.nil? ? [''] : @hashtag
+        suffix = @attributum.nil? ? [''] : @attributum
+        resultatum = []
+        prefix.each do |pre|
+          suffix.each do |suf|
+            resultatum.append("#{pre}#{suf}")
+          end
+        end
+        resultatum
+      end
+    end
+  end
+
   # _[lat] Hapi.Translationem de Auxilium Humanitarium API documentōrum. [lat]_
   module Translationem
     module_function
@@ -544,25 +584,34 @@ module Hapi
     end
 
     class DeL10nEmoji < Liquid::Tag
-      def initialize(tag_name, text, tokens)
+      # @see https://www.rubydoc.info/gems/liquid/Liquid/ParseContext
+      # @see https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers#arguments-and-initialization
+      def initialize(tag_nomen, argumentum, initiale_processum)
         super
+
+        # puts 'tokens'
+        # puts initiale_processum.inspect
+
+        @L10nTAux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
+        # puts tokens.locale
+        # puts token['line_numbers']
 
         # l10n_contextum_de_tag()
 
-        @tokens = text.strip.split
+        @tokens = argumentum.strip.split
         # @linguam_fontem = @tokens.shift
         @textum = @tokens.shift
 
         if @textum.include?('🗣️') && @textum.length < 8
-          tag_name = "#{tag_name}#{@textum}"
+          tag_nomen = "#{tag_nomen}#{@textum}"
           @textum = @tokens.shift
         end
 
-        @l10n_in = L10n_typum_requisitum(tag_name)
-        @tag_name = tag_name
+        @l10n_in = L10n_typum_requisitum(tag_nomen)
+        @tag_nomen = tag_nomen
 
         # puts '    DeL10n'
-        # puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
+        # puts "   tag_nomen [#{tag_nomen}] @tokens [#{@tokens}] @textum [#{@textum}]"
         # puts  @textum
 
         # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
@@ -600,13 +649,12 @@ module Hapi
 
       private
 
-      def l10n_contextum_de_tag(tag_tokens)
-      end
+      def l10n_contextum_de_tag(tag_tokens); end
 
       def L10n_contextum_init(contextum)
         @ego_sos = (contextum['ego'] && contextum['ego'] == '🆘')
         if @ego_sos
-          puts "!!! [DeL10nEmoji 🆘 de tag [#{@tag_name}], de textum [#{@textum}], \
+          puts "!!! [DeL10nEmoji 🆘 de tag [#{@tag_nomen}], de textum [#{@textum}], \
             de site.page [#{contextum['site']['page']}] ]!!!"
         end
       end
@@ -651,7 +699,7 @@ module Hapi
             linguam: context['page']['linguam'],
             url: context['page']['url'],
             dir: context['page']['dir'],
-            path: context['page']['path'],
+            path: context['page']['path']
           },
           # layout: {
           #   ___: context['layout']

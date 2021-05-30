@@ -76,36 +76,21 @@ sitemap:
       <h3>Alternative 1</h3>
       <p>
         <dl>
-
-          <dt>{% raw %}<code>{% _ L10N_ego_summarius _ %}</code>{% endraw %}</dt>
-          <dd><output>{% _ L10N_ego_summarius _ %}</output></dd>
-
-          <dt>{% raw %}<code>{% _ L10N_ego_codicem _ %}</code>{% endraw %}</dt>
-          <dd><output>{% _ L10N_ego_codicem _ %}</output></dd>
-
-          <dt>{% raw %}<code>{% _ L10N_ego_linguam_nomen _ %}</code>{% endraw %}</dt>
-          <dd><output>{% _ L10N_ego_linguam_nomen _ %}</output></dd>
-
-          <dt>{% raw %}<code>{% _ I18N_إختبار_טעסט_测试_테스트_испытание_I18N _ %}</code>{% endraw %}</dt>
-          <dd><output>{% _ I18N_إختبار_טעסט_测试_테스트_испытание_I18N _ %}</output></dd>
-        </dl>
-      </p>
-      <h3>Alternative 2</h3>
-      <h3>Typical usage</h3>
-      <p>
-        <dl>
-
+          <dt>Padrão (usa informações do contexto)</dt>
           <dt>{% raw %}<code>{% _🗣️ L10N_ego_summarius 🗣️_ %}</code>{% endraw %}</dt>
           <dd><output>{% _🗣️ L10N_ego_summarius 🗣️_ %}</output></dd>
 
-        </dl>
-      </p>
-      <h3>Strict enforced</h3>
-      <p>
-        <dl>
+          <dt>Explicitamente escreva em por-Latn, independente do contexto da página</dt>
+          <dt>{% raw %}<code>{% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}</output></dd>
 
-          <dt>{% raw %}<code>{% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>{% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}</output></dd>
+          <dt>Imprima no idioma do contexto, porém a variável de entrada é spa-Latn, não um código</dt>
+          <dt>{% raw %}<code>{% _🗣️ 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️ 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 🗣️_ %}</output></dd>
+
+          <dt>Conversa de spa-Latn para por-Latn</dt>
+          <dt>{% raw %}<code>{% _🗣️ 📝por-Latn📝 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 📝por-Latn📝 🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️ 📝por-Latn📝 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 📝por-Latn📝 🗣️_ %}</output></dd>
 
         </dl>
       </p>
@@ -113,9 +98,16 @@ sitemap:
       <p>
         <dl>
 
-          <dt>{% raw %}<code>{% _🗣️🚫🐛 L10N_ego_summarius 🐛🚫🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>{% _🗣️🚫🐛 L10N_ego_summarius 🐛🚫🗣️_ %}</output></dd>
+          <dt>Debug habilitado</dt>
+          <dt>{% raw %}<code>{% _🗣️🔎🐛 L10N_ego_summarius 🐛🔍🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️🔎🐛 L10N_ego_summarius 🐛🔍🗣️_ %}</output></dd>
+          <dt>Debug habilitado</dt>
+          <dt>{% raw %}<code>{% _🗣️🔍🐛 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🐛🔍🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️🔍🐛 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🐛🔍🗣️_ %}</output></dd>
 
+          <dt>Strings padrões de software (não deve ser usado para testes externos)</dt>
+          <dt>{% raw %}<code>{% _ I18N_إختبار_טעסט_测试_테스트_испытание_I18N _ %}</code>{% endraw %}</dt>
+          <dd><output>{% _ I18N_إختبار_טעסט_测试_테스트_испытание_I18N _ %}</output></dd>
         </dl>
       </p>
       <h3>Debug context</h3>
@@ -180,9 +172,9 @@ sitemap:
         {% _🗣️ 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🗣️_ %}
 
         /// Debug habilitado
-        {% _🗣️🔍🐛 L10N_ego_summarius 🔍🐛🗣️_ %}
-        {% _🗣️🔎🐛 L10N_ego_summarius 🔎🐛🗣️_ %}
-        {% _🗣️🔎🐛 L10N_ego_summarius 🔍🐛🗣️_ %}
+        {% _🗣️🔍🐛 L10N_ego_summarius 🐛🔍🗣️_ %}
+        {% _🗣️🔎🐛 L10N_ego_summarius 🐛🔎🗣️_ %}
+        {% _🗣️🔎🐛 L10N_ego_summarius 🐛🔍🗣️_ %}
 
         (...)
         {% _🗣️🔍🐛 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🐛🔍🗣️_ %}
