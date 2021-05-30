@@ -33,7 +33,8 @@ module Hapi
       attr_accessor :tag_fontem, :tag_nomen, :initiale_argumentum, :fontem_linguam,
                     :objectivum_linguam, :ignorandum_hashtag,
                     :ignorandum_attributum, :textum, :error,
-                    :initiale_processum, :venandum_insectum_est, :sos_est, :referens
+                    :initiale_processum, :venandum_insectum_est, :sos_est,
+                    :paginam_contextum, :referens
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
@@ -56,21 +57,26 @@ module Hapi
           # puts argumentum_parts
         end
 
+        # @fontem_linguam = 'etc-Latn'
+
         @error = []
         @initiale_processum = initiale_processum
 
         @venandum_insectum_est = quod_venandum_insectum_est?
+        # puts ' werwerwerwer'
+        # puts @venandum_insectum_est
         @sos_est = quod_sos_est?
         @fontem_linguam = quod_fontem_linguam_de_initiale_argumentum_et_textum
         @objectivum_linguam = quod_objectivum_linguam_de_initiale_argumentum_et_textum
         @textum = quod_textum_de_initiale_argumentum_et_textum
 
-        puts '    AuxiliumTagProcessum: initialize'
-        puts @tag_fontem
-        puts @fontem_linguam
-        puts @objectivum_linguam
+        # @fontem_linguam = 'etc-Latn'
+        # puts '    AuxiliumTagProcessum: initialize'
+        # puts @tag_fontem
+        puts "                 [[[#{@fontem_linguam}]]]" if @venandum_insectum_est || @sos_est
+        # puts @objectivum_linguam
 
-        ad_absurdum_l10n_tag
+        # ad_absurdum_l10n_tag
       end
 
       # @see https://en.wikipedia.org/wiki/List_of_Latin_phrases_(full)
@@ -78,7 +84,29 @@ module Hapi
         # TODO: pegar linha do  @initiale_processum
         puts "Ad absurdum L10N tag: @tag_nomen [#{tag_nomen}], @initiale_argumentum " \
             "[#{@initiale_argumentum}], @initiale_argumentum [#{@initiale_argumentum}], " \
-            "error [#{@error}], @initiale_processum.line_numbers [#{@initiale_processum['line_numbers']}]"
+            "error [#{@error}], @initiale_processum.line_numbers " \
+            "[#{@initiale_processum['line_numbers']}], @venandum_insectum_est [#{venandum_insectum_est}]"
+      end
+
+      def requisitum_explanandum_est?
+        # return true
+
+        true if @sos_est
+        # true if @venandum_insectum_est && paginam_contextum.nil? || paginam_contextum['ego'] != '🔇'
+        true if @venandum_insectum_est
+
+        false
+      end
+
+      def explanandum_resultatum
+        {
+          tag_fontem: @tag_fontem,
+          fontem_linguam: @fontem_linguam,
+          objectivum_linguam: @objectivum_linguam,
+          textum: @textum,
+          venandum_insectum_est: @venandum_insectum_est,
+          sos_est: @sos_est
+        }
       end
 
       def quod_fontem_linguam_de_initiale_argumentum_et_textum
@@ -89,12 +117,17 @@ module Hapi
         # print @fontem_linguam_emoji.inspect
         resultatum = quod_optionem_est?(FONTEM_LINGUAM_EMOJI)
 
-        # puts 'ooooooooooooooi'
-        # puts resultatum
-        unless resultatum.nil? || resultatum['valere'].nil?
-          @initiale_argumentum.delete_if { |item| item.include?(resultatum['tags']) }
+        # puts '  ttttttttttttttt  quod_fontem_linguam_de_initiale_argumentum_et_textum' if @venandum_insectum_est || @sos_est
+        # puts "       #{tag_fontem}" if @venandum_insectum_est || @sos_est
+        # puts @initiale_argumentum if @venandum_insectum_est || @sos_est
+        # puts '[' if @venandum_insectum_est || @sos_est
+        # puts resultatum.inspect if @venandum_insectum_est || @sos_est
+        # puts ']' if @venandum_insectum_est || @sos_est
+        # unless resultatum.nil? || resultatum['valere'].nil?
+        unless resultatum.nil? || resultatum[0].nil?
+          @initiale_argumentum.delete_if { |item| item.include?(resultatum[1][0]) || item.include?(resultatum[1][1]) }
 
-          @initiale_argumentum
+          resultatum[0]
         end
       end
 
@@ -102,37 +135,66 @@ module Hapi
         return nil unless @initiale_argumentum.length > 1
 
         resultatum = quod_optionem_est?(OBJECTIVUM_LINGUAM_EMOJI)
-        unless resultatum.nil? || resultatum['valere'].nil?
-          @initiale_argumentum.delete_if { |item| item.include?(resultatum['tags']) }
 
-          @initiale_argumentum
+        # puts '  jjjjjjjjjjjjj  quod_objectivum_linguam_de_initiale_argumentum_et_textum' if @venandum_insectum_est || @sos_est
+        # puts "       #{tag_fontem}" if @venandum_insectum_est || @sos_est
+        # puts @initiale_argumentum if @venandum_insectum_est || @sos_est
+        # puts '[' if @venandum_insectum_est || @sos_est
+        # puts resultatum.inspect if @venandum_insectum_est || @sos_est
+        # puts ']' if @venandum_insectum_est || @sos_est
+
+        unless resultatum.nil? || resultatum[0].nil?
+          print "#{@initiale_argumentum}  item"
+          @initiale_argumentum.delete_if { |item| item.include?(resultatum[1][0]) || item.include?(resultatum[1][1]) }
+
+          resultatum[0]
         end
       end
 
       def quod_optionem_est?(emojis)
         return nil unless @initiale_argumentum.length > 1
 
+        # valere = 'errorrrrrrrrrrrrrrrrvalere'
         valere = nil
         tags = []
         @initiale_argumentum.each do |arg|
-          # puts '  quod_optionem_est'
-          # puts arg
+          puts '  rrrrrrrrrrrrrrr quod_optionem_est' if @venandum_insectum_est || @sos_est
+          # puts arg if @venandum_insectum_est || @sos_est
           # print arg[0, 1]
           # print arg[-1]
-          if emojis.include?(arg[0, 1]) && emojis.include?(arg[-1])
-            valere = arg[1, (arg.length - 2)]
-            tags.append(arg)
-          end
+          next unless emojis.include?(arg[0, 1]) && emojis.include?(arg[-1])
+
+          puts ' >>> yes' if @venandum_insectum_est || @sos_est
+          valere = arg[1, (arg.length - 2)]
+          # valere = arg
+          tags.append(arg)
+          puts [valere, tags] if @venandum_insectum_est || @sos_est
+          # puts tags if @venandum_insectum_est || @sos_est
         end
 
-        {
-          valere: valere,
-          tags: tags
-        }
+        [valere, tags]
+
+        # {
+        #   valere: valere,
+        #   tags: tags
+        # }
+      end
+
+      # @see https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
+      # @see https://jekyllrb.com/docs/configuration/environments/
+      def quod_situs_interretialis_testum_est?
+        # puts ENV['JEKYLL_ENV']
+        ENV['JEKYLL_ENV'] != 'production'
       end
 
       def quod_venandum_insectum_est?
+        # puts '   ooooooooooooi   quod_venandum_insectum_est? '
+        # puts VENANDUM_INSECTUM_EMOJI
+        # puts '@initiale_argumentum'
+        # puts @initiale_argumentum
         VENANDUM_INSECTUM_EMOJI.each do |item|
+          # puts 'siiiiim'
+          # puts item
           return true if @initiale_argumentum.include?(item)
           # if @initiale_argumentum.include?(item)
         end
@@ -693,6 +755,8 @@ module Hapi
 
     # TODO: document DeL10nEmoji
     class DeL10nEmoji < Liquid::Tag
+      attr_accessor :tag_aux, :textum
+
       # @see https://www.rubydoc.info/gems/liquid/Liquid/ParseContext
       # @see https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers#arguments-and-initialization
       def initialize(tag_nomen, argumentum, initiale_processum)
@@ -700,8 +764,9 @@ module Hapi
 
         # puts 'tokens'
         # puts initiale_processum.inspect
-
-        if argumentum.include?('🗣️ ')
+        # print 'ooooooooooooooooooi'
+        # if argumentum.include?('🗣️ ')
+        if argumentum.include?('🗣️ 🔎🐛🔍')
           @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
         end
         # puts tokens.locale
@@ -734,6 +799,19 @@ module Hapi
         # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
         # l10nval = nil
 
+        if @tag_aux
+          # @tag_aux.requisitum_explanandum_est?
+          # puts 'ooooi111323423'
+          # puts @tag_aux&.requisitum_explanandum_est?.inspect
+
+          puts ''
+          puts '    >>>>>>>>>> explanandum_resultatum' if @tag_aux&.requisitum_explanandum_est?
+          puts @tag_aux.explanandum_resultatum if @tag_aux&.requisitum_explanandum_est?
+          puts @tag_aux.explanandum_resultatum
+          # puts caller if @tag_aux&.quod_sos_est?
+          # puts caller
+        end
+
         # puts 'context[\'ego\']'
         # puts context['ego'] if context['ego']
         L10n_contextum_init(context)
@@ -764,10 +842,10 @@ module Hapi
 
       def L10n_contextum_init(contextum)
         @ego_sos = (contextum['ego'] && contextum['ego'] == '🆘')
-        if @ego_sos
-          puts "!!! [DeL10nEmoji 🆘 de tag [#{@tag_nomen}], de textum [#{@textum}], \
-            de site.page [#{contextum['site']['page']}] ]!!!"
-        end
+        # if @ego_sos
+        #   puts "!!! [DeL10nEmoji 🆘 de tag [#{@tag_nomen}], de textum [#{@textum}], \
+        #     de site.page [#{contextum['site']['page']}] ]!!!"
+        # end
       end
 
       # Trivia: requīsītum, https://en.wiktionary.org/wiki/requisitus#Latin
@@ -794,8 +872,8 @@ module Hapi
           @textum = @tokens.shift
         end
 
-        puts '   DeL10nDebug'
-        puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
+        # puts '   DeL10nDebug'
+        # puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
         # puts  @textum
 
         # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
