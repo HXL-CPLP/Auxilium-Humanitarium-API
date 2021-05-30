@@ -28,16 +28,22 @@ module Hapi
     # see https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers
     # @see https://github.com/ticky/ruby-emoji-regex
     # @see https://github.com/janlelis/unicode-emoji
+    # @see https://github.com/harttle/liquidjs
     class AuxiliumTagProcessum
-      attr_accessor :tag_nomen, :initiale_argumentum, :fontem_linguam,
+      attr_accessor :tag_fontem, :tag_nomen, :initiale_argumentum, :fontem_linguam,
                     :objectivum_linguam, :ignorandum_hashtag,
-                    :ignorandum_attributum, :textum, :referens
+                    :ignorandum_attributum, :textum, :error,
+                    :initiale_processum, :venandum_insectum_est, :sos_est, :referens
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
+      VENANDUM_INSECTUM_EMOJI = ['🔎🐛🔍'].freeze
+      SOS_EMOJI = ['🔎🆘🔍'].freeze
 
-      def initialize(initiale_tag_nomen, initiale_argumentum, _initiale_processum)
+      def initialize(initiale_tag_nomen, initiale_argumentum, initiale_processum)
         @initiale_argumentum = initiale_argumentum.strip.split
+
+        @tag_fontem = "{% #{initiale_tag_nomen}#{initiale_argumentum}%}"
         # argumentum_parts = initiale_argumentum.strip.split
         if initiale_tag_nomen.include?('🗣️')
           @tag_nomen = initiale_tag_nomen
@@ -50,32 +56,60 @@ module Hapi
           # puts argumentum_parts
         end
 
+        @error = []
+        @initiale_processum = initiale_processum
+
+        @venandum_insectum_est = quod_venandum_insectum_est?
+        @sos_est = quod_sos_est?
         @fontem_linguam = quod_fontem_linguam_de_initiale_argumentum_et_textum
         @objectivum_linguam = quod_objectivum_linguam_de_initiale_argumentum_et_textum
         @textum = quod_textum_de_initiale_argumentum_et_textum
 
         puts '    AuxiliumTagProcessum: initialize'
-        puts @tag_nomen
+        puts @tag_fontem
         puts @fontem_linguam
         puts @objectivum_linguam
+
+        ad_absurdum_l10n_tag
+      end
+
+      # @see https://en.wikipedia.org/wiki/List_of_Latin_phrases_(full)
+      def ad_absurdum_l10n_tag
+        # TODO: pegar linha do  @initiale_processum
+        puts "Ad absurdum L10N tag: @tag_nomen [#{tag_nomen}], @initiale_argumentum " \
+            "[#{@initiale_argumentum}], @initiale_argumentum [#{@initiale_argumentum}], " \
+            "error [#{@error}], @initiale_processum.line_numbers [#{@initiale_processum['line_numbers']}]"
       end
 
       def quod_fontem_linguam_de_initiale_argumentum_et_textum
         return nil unless @initiale_argumentum.length > 1
 
-        print 'oi oi oi'
-        print @fontem_linguam_emoji.to_s
-        print @fontem_linguam_emoji.inspect
-        quod_optionem_est(FONTEM_LINGUAM_EMOJI)
+        # print 'oi oi oi'
+        # print @fontem_linguam_emoji.to_s
+        # print @fontem_linguam_emoji.inspect
+        resultatum = quod_optionem_est?(FONTEM_LINGUAM_EMOJI)
+
+        # puts 'ooooooooooooooi'
+        # puts resultatum
+        unless resultatum.nil? || resultatum['valere'].nil?
+          @initiale_argumentum.delete_if { |item| item.include?(resultatum['tags']) }
+
+          @initiale_argumentum
+        end
       end
 
       def quod_objectivum_linguam_de_initiale_argumentum_et_textum
         return nil unless @initiale_argumentum.length > 1
 
-        quod_optionem_est(OBJECTIVUM_LINGUAM_EMOJI)
+        resultatum = quod_optionem_est?(OBJECTIVUM_LINGUAM_EMOJI)
+        unless resultatum.nil? || resultatum['valere'].nil?
+          @initiale_argumentum.delete_if { |item| item.include?(resultatum['tags']) }
+
+          @initiale_argumentum
+        end
       end
 
-      def quod_optionem_est(emojis)
+      def quod_optionem_est?(emojis)
         return nil unless @initiale_argumentum.length > 1
 
         valere = nil
@@ -97,8 +131,26 @@ module Hapi
         }
       end
 
+      def quod_venandum_insectum_est?
+        VENANDUM_INSECTUM_EMOJI.each do |item|
+          return true if @initiale_argumentum.include?(item)
+          # if @initiale_argumentum.include?(item)
+        end
+        false
+      end
+
+      def quod_sos_est?
+        SOS_EMOJI.each do |item|
+          return true if @initiale_argumentum.include?(item)
+          # if @initiale_argumentum.include?(item)
+        end
+        false
+      end
+
       def quod_textum_de_initiale_argumentum_et_textum
         return @initiale_argumentum[0] if @initiale_argumentum.length == 1
+
+        @initiale_argumentum.join(' ')
       end
 
       def hashtag_exemplum
