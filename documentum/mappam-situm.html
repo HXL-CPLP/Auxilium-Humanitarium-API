@@ -127,12 +127,23 @@ sitemap:
 
         </dl>
       </p>
+      <p>
+        <dl>
+
+          <dt>{% raw %}<code>{% assign ego = '🆘' %}{% _🗣️ L10N_ego_summarius 🗣️_ %}{% assign ego = '' %}</code>{% endraw %}</dt>
+          <dd><output>{% assign my_variable = false %}</output></dd>
+          <dd><output>{% assign ego = '🆘' %}{% _🗣️ L10N_ego_summarius 🗣️_ %}{% assign ego = '' %}</output></dd>
+        </dl>
+      </p>
 
       <h2>Emoji (uso interno do CPLP para decidir os comandos)</h2>
 
       {% raw %}
       <ul>
         <li>🗣️ https://emojipedia.org/speaking-head/</li>
+        <li>🖊️ https://emojipedia.org/pen/</li>
+        <li>✏️ https://emojipedia.org/pencil/</li>
+        <li>📝 https://emojipedia.org/memo/</li>
         <li>📣 https://emojipedia.org/megaphone/</li>
         <li>🔈 https://emojipedia.org/speaker-low-volume/</li>
         <li>🔉 https://emojipedia.org/speaker-medium-volume/</li>
@@ -158,18 +169,32 @@ sitemap:
         // Padrão (usa informações do contexto)
         {% _🗣️ L10N_ego_summarius 🗣️_ %}
 
-        // Desabilitado (nem tenta falhar procurando a string)
-        // Talvez usar para proteger alterações novas em produção
+        // Explicitamente escreva em por-Latn, independente do contexto da página
+        {% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}
+
+        // Imprima no idioma do contexto, porém a variável de entrada é spa-Latn, não um código
+        {% _🗣️ 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 🗣️_ %}
+
+        // Conversa de spa-Latn para por-Latn
+        {% _🗣️ 📝por-Latn📝 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 📝por-Latn📝 🗣️_ %}
+        {% _🗣️ 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🗣️_ %}
+
+        /// Debug habilitado
+        {% _🗣️🔍🐛 L10N_ego_summarius 🔍🐛🗣️_ %}
+        {% _🗣️🔎🐛 L10N_ego_summarius 🔎🐛🗣️_ %}
+        {% _🗣️🔎🐛 L10N_ego_summarius 🔍🐛🗣️_ %}
+
+        (...)
+        {% _🗣️🔍🐛 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🐛🔍🗣️_ %}
+        {% _🗣️🔎🐛 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🐛🔍🗣️_ %}
+        {% _🗣️🔎🐛 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🐛🔎🗣️_ %}
+
+
+        (...)
+        // Inverso de debug (tente tolerar errors o máximo possível)
+        // Talvez usar para proteger alterações novas em produção com termos que sabe que vão falhar
         {% _🗣️🔇 L10N_ego_summarius 🔇🗣️_ %}
 
-        // Desabilitado (nem tenta falhar procurando a string)
-        // Talvez usar para proteger alterações novas em produção
-        {% _🗣️🔇 L10N_ego_summarius 🔇🗣️_ %}
-  
-        // Habilitar modo debug (aceita ambos os 🔍🔍)
-        {% __🗣️🔍🐛 L10N_ego_summarius 🗣️🔍🐛__ %}
-        {% __🗣️🔎🐛 L10N_ego_summarius 🗣️🔎🐛__ %}
-        {% __🗣️🔎🐛 L10N_ego_summarius 🗣️🔍🐛__ %}
       </pre>
       {% endraw %}
 

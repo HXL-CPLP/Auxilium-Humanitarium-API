@@ -534,12 +534,90 @@ module Hapi
       private
 
       # Trivia: requīsītum, https://en.wiktionary.org/wiki/requisitus#Latin
-      def L10n_typum_requisitum(tagname)
-        puts '_L10Ntypum'
+      def L10n_typum_requisitum(_tagname)
+        # puts '_L10Ntypum'
         # {% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}
         resultatum = ('minimum' if @textum.include?('#️⃣'))
 
-        puts tagname
+        # puts tagname
+      end
+    end
+
+    class DeL10nEmoji < Liquid::Tag
+      def initialize(tag_name, text, tokens)
+        super
+
+        # l10n_contextum_de_tag()
+
+        @tokens = text.strip.split
+        # @linguam_fontem = @tokens.shift
+        @textum = @tokens.shift
+
+        if @textum.include?('🗣️') && @textum.length < 8
+          tag_name = "#{tag_name}#{@textum}"
+          @textum = @tokens.shift
+        end
+
+        @l10n_in = L10n_typum_requisitum(tag_name)
+        @tag_name = tag_name
+
+        # puts '    DeL10n'
+        # puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
+        # puts  @textum
+
+        # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
+        # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
+      end
+
+      def render(context)
+        # temp = Translationem.datum_temporarium(context)
+        # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
+        # l10nval = nil
+
+        # puts 'context[\'ego\']'
+        # puts context['ego'] if context['ego']
+        L10n_contextum_init(context)
+
+        # Translationem.translationem_memoriam_collectionem(context)
+        # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
+        l10nval = Translationem.translationem_memoriam_rememorandum(context, @textum)
+        # l10nval = 'tes'
+        # raise l10nval if l10nval
+        # return l10nval if l10nval != false
+        return Translationem.farmatum_praefectum(context, @textum, l10nval) if l10nval != false
+
+        l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, @textum, 'eng-Latn')
+        return Translationem.farmatum_alternandum(context, @textum, l10nval_eng, 'eng-Latn') if l10nval_eng != false
+
+        l10nval_por = Translationem.translationem_memoriam_rememorandum(context, @textum, 'por-Latn')
+        return Translationem.farmatum_alternandum(context, @textum, l10nval_por, 'por-Latn') if l10nval_por != false
+
+        l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, @textum, 'spa-Latn')
+        return Translationem.farmatum_alternandum(context, @textum, l10nval_spa, 'spa-Latn') if l10nval_spa != false
+
+        "[?#{@textum} #{@tokens}?]"
+      end
+
+      private
+
+      def l10n_contextum_de_tag(tag_tokens)
+      end
+
+      def L10n_contextum_init(contextum)
+        @ego_sos = (contextum['ego'] && contextum['ego'] == '🆘')
+        if @ego_sos
+          puts "!!! [DeL10nEmoji 🆘 de tag [#{@tag_name}], de textum [#{@textum}], \
+            de site.page [#{contextum['site']['page']}] ]!!!"
+        end
+      end
+
+      # Trivia: requīsītum, https://en.wiktionary.org/wiki/requisitus#Latin
+      def L10n_typum_requisitum(_tagname)
+        # puts '_L10Ntypum'
+        # {% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}
+        resultatum = ('minimum' if @textum.include?('#️⃣'))
+
+        # puts tagname
       end
     end
 
@@ -567,10 +645,17 @@ module Hapi
 
       def render(context)
         # "[?#{@textum} #{@tokens}?]"
+        # @see https://jekyllrb.com/docs/variables/#global-variables
         {
           page: {
-            linguam: context['page']['linguam']
+            linguam: context['page']['linguam'],
+            url: context['page']['url'],
+            dir: context['page']['dir'],
+            path: context['page']['path'],
           },
+          # layout: {
+          #   ___: context['layout']
+          # },
           site: {
             linguam: context['site']['linguam']
           },
@@ -942,7 +1027,7 @@ Liquid::Template.register_tag(
 )
 # _ deprecated
 Liquid::Template.register_tag(
-  '_', Hapi::Translationem::DeL10n
+  '_', Hapi::Translationem::DeL10nEmoji
 )
 
 # __ Ok, same as %{ _1 ...  1_ %}
@@ -957,30 +1042,30 @@ Liquid::Template.register_tag(
 ## @exemplum:
 #    {% _🗣️ L10N_ego_summarius 🗣️_ %}
 Liquid::Template.register_tag(
-  '_🗣️', Hapi::Translationem::DeL10n
+  '_🗣️', Hapi::Translationem::DeL10nEmoji
 )
 Liquid::Template.register_tag(
-  '🗣️_', Hapi::Translationem::DeL10n
+  '🗣️_', Hapi::Translationem::DeL10nEmoji
 )
 
 ### HTML attribute output or JSON with no room for output messages
 ## @exemplum:
 #    <a href="#" title="{% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}">Text</a>
 Liquid::Template.register_tag(
-  '_🗣️#️⃣', Hapi::Translationem::DeL10n
+  '_🗣️#️⃣', Hapi::Translationem::DeL10nEmoji
 )
 Liquid::Template.register_tag(
-  '#️⃣🗣️_', Hapi::Translationem::DeL10n
+  '#️⃣🗣️_', Hapi::Translationem::DeL10nEmoji
 )
 
 ### Debug
 ## @exemplum:
 #    {% _🗣️🚫🐛 L10N_ego_summarius 🐛🚫🗣️_ %}
 Liquid::Template.register_tag(
-  '_🗣️🚫🐛', Hapi::Translationem::DeL10n
+  '_🗣️🚫🐛', Hapi::Translationem::DeL10nEmoji
 )
 Liquid::Template.register_tag(
-  '🐛🚫🗣️_', Hapi::Translationem::DeL10n
+  '🐛🚫🗣️_', Hapi::Translationem::DeL10nEmoji
 )
 
 # 🐛
