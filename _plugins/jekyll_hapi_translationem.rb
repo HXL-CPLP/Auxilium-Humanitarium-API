@@ -491,6 +491,10 @@ module Hapi
         # @linguam_fontem = @tokens.shift
         @textum = @tokens.shift
 
+        puts '    DeL10n'
+        puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
+        # puts  @textum
+
         # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
         # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
       end
@@ -517,7 +521,7 @@ module Hapi
         l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, @textum, 'spa-Latn')
         return Translationem.farmatum_alternandum(context, @textum, l10nval_spa, 'spa-Latn') if l10nval_spa != false
 
-        "[?#{@textum}?]"
+        "[?#{@textum} #{@tokens}?]"
       end
     end
 
@@ -880,6 +884,44 @@ Liquid::Template.register_tag(
 Liquid::Template.register_tag(
   '__', Hapi::Translationem::DeL10n
 )
+
+### Normal usage (html output, except as tag attribute)
+## @exemplum:
+#    {% _🗣️ L10N_ego_summarius 🗣️_ %}
+Liquid::Template.register_tag(
+  '_🗣️', Hapi::Translationem::DeL10n
+)
+Liquid::Template.register_tag(
+  '🗣️_', Hapi::Translationem::DeL10n
+)
+
+### HTML attribute output or JSON with no room for output messages
+## @exemplum:
+#    <a href="#" title="{% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}">Text</a>
+Liquid::Template.register_tag(
+  '_🗣️#️⃣', Hapi::Translationem::DeL10n
+)
+Liquid::Template.register_tag(
+  '#️⃣🗣️_', Hapi::Translationem::DeL10n
+)
+
+### Debug
+## @exemplum:
+#    {% _🗣️🚫🐛 L10N_ego_summarius 🐛🚫🗣️_ %}
+Liquid::Template.register_tag(
+  '_🗣️🚫🐛', Hapi::Translationem::DeL10n
+)
+Liquid::Template.register_tag(
+  '🐛🚫🗣️_', Hapi::Translationem::DeL10n
+)
+
+# 🐛
+# Liquid::Template.register_tag(
+#   '_🗣️_', Hapi::Translationem::DeL10n
+# )
+# Liquid::Template.register_tag(
+#   '🗣️', Hapi::Translationem::DeL10n
+# )
 Liquid::Template.register_tag(
   '___', Hapi::Translationem::DeL10n
 )

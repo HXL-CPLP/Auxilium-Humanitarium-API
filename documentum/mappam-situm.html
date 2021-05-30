@@ -1,5 +1,6 @@
 ---
 layout: null
+linguam: lat-Latn
 permalink: /mappam-situm.html
 title: Mappam Situm - Auxilium Humanitarium API documentōrum
 description: |
@@ -70,6 +71,40 @@ sitemap:
         {% endfor %}
       </ul>
       </pre>
+      <h2>L10N</h2>
+      <!-- TEST CODE -->
+      <h3>Alternative 1</h3>
+      <p>
+        <dl>
+
+          <dt>{% raw %}<code>{% _ L10N_ego_summarius _ %}</code>{% endraw %}</dt>
+          <dd><output>{% _ L10N_ego_summarius _ %}</output></dd>
+
+          <dt>{% raw %}<code>{% _ L10N_ego_codicem _ %}</code>{% endraw %}</dt>
+          <dd><output>{% _ L10N_ego_codicem _ %}</output></dd>
+
+          <dt>{% raw %}<code>{% _ L10N_ego_linguam_nomen _ %}</code>{% endraw %}</dt>
+          <dd><output>{% _ L10N_ego_linguam_nomen _ %}</output></dd>
+
+          <dt>{% raw %}<code>{% _ I18N_إختبار_טעסט_测试_테스트_испытание_I18N _ %}</code>{% endraw %}</dt>
+          <dd><output>{% _ I18N_إختبار_טעסט_测试_테스트_испытание_I18N _ %}</output></dd>
+        </dl>
+      </p>
+      <h3>Alternative 2</h3>
+      <p>
+        <dl>
+
+          <dt>{% raw %}<code>{% _ L10N_ego_summarius _ %}</code>{% endraw %}</dt>
+          <dd><output>{% _ L10N_ego_summarius _ %}</output></dd>
+
+          <dt>{% raw %}<code>{% _🗣️ L10N_ego_summarius 🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️ L10N_ego_summarius 🗣️_ %}</output></dd>
+          <dt>{% raw %}<code>{% _🗣️🗣️ L10N_ego_summarius 🗣️🗣️_ %}</code>{% endraw %}</dt>
+          <dd><output>{% _🗣️🗣️ L10N_ego_summarius 🗣️🗣️_ %}</output></dd>
+
+        </dl>
+      </p>
+      <!-- TEST CODE -->
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

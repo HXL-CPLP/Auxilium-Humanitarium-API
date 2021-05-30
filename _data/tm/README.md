@@ -40,6 +40,9 @@
 
 --- Agora com links, parte 2, mas sem "[(ℹ️)]" no wikidata
 =IF(ISBLANK(C20), IF(ISBLANK(D20), "", HYPERLINK(INDEX(SPLIT(D20, "|"), 0, 1), "[(ℹ️)]")), CONCAT("https://www.wikidata.org/wiki/", C20))
+
+--- Agora com links, parte 3
+=IF(ISBLANK(C20), IF(ISBLANK(D20), "", HYPERLINK(INDEX(SPLIT(D20, "|"), 0, 1), "[(ℹ️)]")), HYPERLINK(CONCAT("https://www.wikidata.org/wiki/", C20), "[(ℹ️)]")
 ```
 - `ISBLANK(A2)`
   - https://support.google.com/docs/answer/3093290
@@ -49,13 +52,5 @@
   - https://support.google.com/docs/answer/3093313
 
 
-
-
-
-=IF(ISBLANK(C21), IF(ISBLANK(C22), ""), "C21"), "")
-=INDEX(SPLIT(D20, "|"), 0, 1)
-
-
-
-
-=HYPERLINK(IFERROR(CONCAT("https://www.wikidata.org/wiki/", C20), ""), "[(ℹ️)]")
+## Copy conditional formating
+- https://spreadsheetpoint.com/copy-conditional-formatting-in-google-sheets/
