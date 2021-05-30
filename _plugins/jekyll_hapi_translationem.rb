@@ -117,14 +117,27 @@ module Hapi
         # print @fontem_linguam_emoji.inspect
         resultatum = quod_optionem_est?(FONTEM_LINGUAM_EMOJI)
 
-        # puts '  ttttttttttttttt  quod_fontem_linguam_de_initiale_argumentum_et_textum' if @venandum_insectum_est || @sos_est
+        if @venandum_insectum_est || @sos_est
+          puts '  ttttttttttttttt  quod_fontem_linguam_de_initiale_argumentum_et_textum'
+        end
         # puts "       #{tag_fontem}" if @venandum_insectum_est || @sos_est
         # puts @initiale_argumentum if @venandum_insectum_est || @sos_est
         # puts '[' if @venandum_insectum_est || @sos_est
         # puts resultatum.inspect if @venandum_insectum_est || @sos_est
         # puts ']' if @venandum_insectum_est || @sos_est
         # unless resultatum.nil? || resultatum['valere'].nil?
-        unless resultatum.nil? || resultatum[0].nil?
+        if resultatum.nil? || resultatum[0].nil?
+          # puts caller
+          print '                ontem     nao encontrado !!!!!!!!!!!!!!!!!!!!!!['
+          print FONTEM_LINGUAM_EMOJI
+          print ']                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
+          print '                resultatum     nao encontrado !!!!!!!!!!!!!!!!!!!!!!['
+          print resultatum
+          print ']                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
+          print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
+          print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
+        else
+          # print "#{@initiale_argumentum}  item"
           @initiale_argumentum.delete_if { |item| item.include?(resultatum[1][0]) || item.include?(resultatum[1][1]) }
 
           resultatum[0]
@@ -136,21 +149,31 @@ module Hapi
 
         resultatum = quod_optionem_est?(OBJECTIVUM_LINGUAM_EMOJI)
 
-        # puts '  jjjjjjjjjjjjj  quod_objectivum_linguam_de_initiale_argumentum_et_textum' if @venandum_insectum_est || @sos_est
+        puts '  jjjjjjjjjjjjj  quod_objectivum_linguam_de_initiale_argumentum_et_textum'
+        if @venandum_insectum_est || @sos_est
+          puts '  jjjjjjjjjjjjj  quod_objectivum_linguam_de_initiale_argumentum_et_textum'
+        end
         # puts "       #{tag_fontem}" if @venandum_insectum_est || @sos_est
         # puts @initiale_argumentum if @venandum_insectum_est || @sos_est
         # puts '[' if @venandum_insectum_est || @sos_est
         # puts resultatum.inspect if @venandum_insectum_est || @sos_est
         # puts ']' if @venandum_insectum_est || @sos_est
 
-        unless resultatum.nil? || resultatum[0].nil?
-          print "#{@initiale_argumentum}  item"
+        if resultatum.nil? || resultatum[0].nil?
+          print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
+          print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
+          print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
+          print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
+        else
+          print "#{@initiale_argumentum}  item jjjjjjjjjjjjjjjjjjj"
+          print "#{resultatum}  item jjjjjjjjjjjjjjjjjjj resultatum"
           @initiale_argumentum.delete_if { |item| item.include?(resultatum[1][0]) || item.include?(resultatum[1][1]) }
 
           resultatum[0]
         end
       end
 
+      # @see https://www.justinweiss.com/articles/3-steps-to-fix-encoding-problems-in-ruby/
       def quod_optionem_est?(emojis)
         return nil unless @initiale_argumentum.length > 1
 
@@ -158,13 +181,48 @@ module Hapi
         valere = nil
         tags = []
         @initiale_argumentum.each do |arg|
-          puts '  rrrrrrrrrrrrrrr quod_optionem_est' if @venandum_insectum_est || @sos_est
+          puts "   > . >>>quod_optionem_est #{arg} #{arg.length} #{arg.strip.length}"
+          # puts arg
+          # puts arg.length
+          # puts arg.strip
+          # puts arg.strip.length
+          # puts 'arg[0, 1]'
+          # puts arg[0, 1]
+          # puts 'arg[-1]'
+          # puts arg[-1]
+          # puts 'arg[0, 2]'
+          # puts arg[0, 2]
+          # puts 'arg[-2]'
+          # puts arg[-2]
+          # puts 'arg[0, 3]'
+          # puts arg[0, 3]
+          # puts 'arg[-3]'
+          # puts arg[-3]
+          # puts '  rrrrrrrrrrrrrrr quod_optionem_est' if @venandum_insectum_est || @sos_est
           # puts arg if @venandum_insectum_est || @sos_est
           # print arg[0, 1]
           # print arg[-1]
-          next unless emojis.include?(arg[0, 1]) && emojis.include?(arg[-1])
+          emojis.each do |emoji|
+            puts "    > emoji emoji encoding #{emoji.encoding}"
+            puts "    > emoji emoji encoding #{emoji.encoding}"
+            puts "    > emoji arg encoding #{arg.encoding}"
+            puts "    > emoji emojisize length #{emoji.length}"
+            puts "    > emoji emoji.chars.length #{emoji.chars.length}"
+            puts "    > emoji emoji.bytes.length #{emoji.bytes.length}"
+            puts "    > emoji emojisize bytes #{emoji.bytes}"
+            puts "    > arg [0, x] #{arg [0, emoji.length]}"
+            puts "    > arg [-x] #{arg[- emoji.length]}"
+            puts "    > arg [-3] #{arg[-3]}"
+          end
 
-          puts ' >>> yes' if @venandum_insectum_est || @sos_est
+          next unless emojis.include?(arg[0,
+                                          1]) && emojis.include?(arg[-1]) || emojis.include?(arg[0,
+                                                                                                 2]) && emojis.include?(arg[-2])
+
+          # next unless emojis.include?(arg.first) && emojis.include?(arg.last)
+
+          # puts ' >>> yes' if @venandum_insectum_est || @sos_est
+          puts emojis if @venandum_insectum_est || @sos_est
           valere = arg[1, (arg.length - 2)]
           # valere = arg
           tags.append(arg)
