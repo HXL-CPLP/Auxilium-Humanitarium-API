@@ -6,7 +6,8 @@
 # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll.rb
 
 module Hapi
-  require_relative 'hapi/datum/l10ntag'
+  # require_relative 'hapi/datum/l10ntag'
+  require_relative 'hapi/datum'
   require_relative 'hapi/utilitatem'
   require_relative 'hapi/hxl'
 end

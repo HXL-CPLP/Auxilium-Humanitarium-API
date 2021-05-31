@@ -76,7 +76,7 @@ module Hapi
         # @fontem_linguam = 'etc-Latn'
         # puts '    AuxiliumTagProcessum: initialize'
         # puts @tag_fontem
-        puts "                 [[[#{@fontem_linguam}]]]" if @venandum_insectum_est || @sos_est
+        # puts "                 [[[#{@fontem_linguam}]]]" if @venandum_insectum_est || @sos_est
         # puts @objectivum_linguam
 
         # ad_absurdum_l10n_tag
@@ -101,35 +101,27 @@ module Hapi
         false
       end
 
-      def explanandum_resultatum
-        # resultatum = Hapi::Datum.L10nTag
-
-        # include Hapi.Datum
-
-        # puts Hapi::Datum.inspect
-        # puts Hapi::Datum::L10nTag.inspect
-
-        # resultatum = Hapi::Datum::L10nTag.new
-        # # resultatum = Hapi.Datum.L10nTag
-
-        # puts resultatum.inspect
-        # # puts resultatum['color'].inspect
-        # puts resultatum.tag_fontem.inspect
-
-        # puts resultatum
-        # # resultatum = TranslationemNeo::L10nTag.new
-        # resultatum
-
-        Hapi::Datum::L10nTag.new(
+      def explanandum_resultatum # rubocop:disable Metrics/MethodLength
+        resultatum = Hapi::Datum::L10nTag.new(
           {
-            tag_fontem => @tag_fontem,
-            fontem_linguam => @fontem_linguam,
-            objectivum_linguam => @objectivum_linguam,
-            textum => @textum,
-            venandum_insectum_est => @venandum_insectum_est,
-            sos_est => @sos_est
+            # crudum => @tag_fontem,
+            'crudum' => @tag_fontem,
+            # tag_fontem => 'teste',
+            # crudum => 'teste',
+            'fontem_linguam' => @fontem_linguam,
+            'objectivum_linguam' => @objectivum_linguam,
+            'textum' => @textum,
+            'venandum_insectum_est' => @venandum_insectum_est,
+            'sos_est' => @sos_est
           }
         )
+
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @fontem_linguam [#{@fontem_linguam}]"
+        puts "\n\n\t[🔎🐛 #{self.class.name}] [#{resultatum.inspect}]"
+        puts "\n\n\t[🔎🐛 #{self.class.name}] @tag_fontem [#{@tag_fontem.inspect}]"
+        puts "\n\n\t[🔎🐛 #{self.class.name}] crudum [#{resultatum.crudum.inspect}]"
+
+        resultatum
       end
 
       def quod_fontem_linguam_de_initiale_argumentum_et_textum
@@ -920,36 +912,66 @@ module Hapi
         # l10nval = nil
 
         if @tag_aux
-          puts "DeL10nEmoji @tag_aux [#{@tag_aux}]"
-          puts "DeL10nEmoji @tag_aux tag_aux.tag_fontem [#{@tag_aux.tag_fontem}]"
+          res = @tag_aux.explanandum_resultatum
+          puts "\n\n\t[🔎🐛 #{self.class.name}] [#{@tag_aux.inspect}]"
+          puts "\n\n\t[🔎🐛 #{self.class.name}] [#{res.inspect}]"
+
+          L10n_contextum_init(context)
+
+          # Translationem.translationem_memoriam_collectionem(context)
+          # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
+          l10nval = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum)
+          # l10nval = 'tes'
+          # raise l10nval if l10nval
+          # return l10nval if l10nval != false
+          return Translationem.farmatum_praefectum(context, res.fontem_textum, l10nval) if l10nval != false
+
+          l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'eng-Latn')
+          if l10nval_eng != false
+            return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_eng,
+                                                      'eng-Latn')
+          end
+
+          l10nval_por = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'por-Latn')
+          if l10nval_por != false
+            return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_por,
+                                                      'por-Latn')
+          end
+
+          l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'spa-Latn')
+          if l10nval_spa != false
+            return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_spa,
+                                                      'spa-Latn')
+          end
+
+          return "[?#{@textum} #{@tokens}?]"
+
+          # puts "DeL10nEmoji @tag_aux tag_aux.tag_fontem [#{@tag_aux.tag_fontem}]"
           # puts 'oioioi'
           # @tag_aux.requisitum_explanandum_est?
           # puts 'ooooi111323423'
           # puts @tag_aux&.requisitum_explanandum_est?.inspect
 
-          puts ''
-          # puts '    >>>>>>>>>> explanandum_resultatum' if @tag_aux&.requisitum_explanandum_est?
-          # puts @tag_aux.explanandum_resultatum if @tag_aux&.requisitum_explanandum_est?
-          # puts @tag_aux.explanandum_resultatum
-          # if @tag_aux.explanandum_resultatum['fontem_linguam']
-          # if @tag_aux.explanandum_resultatum.fontem_linguam
-          unless @tag_aux.explanandum_resultatum.fontem_linguam.nil?
-            puts 'oooookay'
-            # puts @tag_aux.explanandum_resultatum
-            # puts @tag_aux.explanandum_resultatum[':fontem_linguam']
-            # puts @tag_aux.explanandum_resultatum.key(':fontem_linguam')
-            # puts "keys #{@tag_aux.explanandum_resultatum.keys}"
-            puts "keys #{@tag_aux.explanandum_resultatum}"
-            # puts @tag_aux.explanandum_resultatum['fontem_linguam']
-            # puts @tag_aux.explanandum_resultatum['tag_fontem']
-            # puts @tag_aux.explanandum_resultatum.tag_fontem
-          else
-            puts '  🚧 fontem_linguam'
-          #   return "[🚧fontem_linguam not implemented🚧] #{textum} [🚧fontem_linguam not implemented🚧]"
-          end
-
-          # puts caller if @tag_aux&.quod_sos_est?
-          # puts caller
+          # puts ''
+          # # puts '    >>>>>>>>>> explanandum_resultatum' if @tag_aux&.requisitum_explanandum_est?
+          # # puts @tag_aux.explanandum_resultatum if @tag_aux&.requisitum_explanandum_est?
+          # # puts @tag_aux.explanandum_resultatum
+          # # if @tag_aux.explanandum_resultatum['fontem_linguam']
+          # # if @tag_aux.explanandum_resultatum.fontem_linguam
+          # if @tag_aux.explanandum_resultatum.fontem_linguam.nil?
+          #   puts '  not fontem_linguam'
+          #   #   return "[🚧fontem_linguam not implemented🚧] #{textum} [🚧fontem_linguam not implemented🚧]"
+          # else
+          #   puts 'oooookay'
+          #   # puts @tag_aux.explanandum_resultatum
+          #   # puts @tag_aux.explanandum_resultatum[':fontem_linguam']
+          #   # puts @tag_aux.explanandum_resultatum.key(':fontem_linguam')
+          #   # puts "keys #{@tag_aux.explanandum_resultatum.keys}"
+          #   puts "keys #{@tag_aux.explanandum_resultatum}"
+          #   # puts @tag_aux.explanandum_resultatum['fontem_linguam']
+          #   # puts @tag_aux.explanandum_resultatum['tag_fontem']
+          #   # puts @tag_aux.explanandum_resultatum.tag_fontem
+          # end
         end
 
         # puts 'context[\'ego\']'
