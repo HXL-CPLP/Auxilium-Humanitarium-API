@@ -23,21 +23,45 @@ module Hapi
                     :fontem_textum, :venandum_insectum_est, :sos_est
 
       def initialize(argumentum = {})
-        optionem = initiale_datum.merge(argumentum)
 
+        # puts "antes"
+        # puts initiale_datum
+        optionem = initiale_datum.merge(argumentum)
+        # puts "depis"
+        # puts optionem
+
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @class keys [#{argumentum.keys}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @class [#{argumentum.class}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @class  initiale_datum [#{initiale_datum.class}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @class  initiale_datum keys [#{initiale_datum.keys}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}] @argumentum [#{argumentum.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}] initiale_datum [#{initiale_datum.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}] result [#{optionem.inspect}]"
 
-        @crudum = optionem.fetch(:crudum)
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @sssssssssssssssss [#{argumentum['fontem_textum'].inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @sssssssssssssssss [#{argumentum.fetch(:fontem_textum).inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @sssssssssssssssss [#{optionem.fetch(:crudum).inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] @sssssssssssssssss [#{optionem.fetch(:crudum).inspect}]"
+
+        # @crudum = optionem.fetch(:crudum)
+        @crudum = argumentum['crudum']
         # @tag_nomen = optionem.fetch(:tag_nomen)
-        @fontem_linguam = optionem.fetch(:fontem_linguam)
-        @objectivum_linguam = optionem.fetch(:objectivum_linguam)
-        @fontem_textum = optionem.fetch(:fontem_textum)
-        @venandum_insectum_est = optionem.fetch(:venandum_insectum_est)
-        @sos_est = optionem.fetch(:sos_est)
+        # @fontem_linguam = optionem.fetch(:fontem_linguam)
+        @fontem_linguam = argumentum['fontem_linguam']
+        @objectivum_linguam = argumentum['objectivum_linguam']
+        @fontem_textum = argumentum['fontem_textum']
+        @venandum_insectum_est = argumentum['venandum_insectum_est']
+        @sos_est = argumentum['sos_est']
 
         # puts "\n\n\t[🔎🐛 #{self.class.name}] self [#{inspect}]"
+
+        # puts "final"
+        # puts argumentum['crudum']
+        # puts initiale_datum['crudum'].inspect
+        # puts optionem['crudum'].inspect
+        # puts @crudum
+        # puts @fontem_linguam
+        # puts 'fin'
         # puts "\n\n\t[🔎🐛 #{self.class.name}] self [#{inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}] optionem.fetch(:fontem_linguam) [#{optionem.fetch(:fontem_linguam)}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}] optionem.fetch('fontem_textum') [#{optionem.fetch('fontem_textum')}]"

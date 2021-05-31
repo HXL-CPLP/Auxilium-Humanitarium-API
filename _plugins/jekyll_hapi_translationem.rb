@@ -66,11 +66,11 @@ module Hapi
         @initiale_processum = initiale_processum
 
         @venandum_insectum_est = quod_venandum_insectum_est?
-        # puts ' werwerwerwer'
-        # puts @venandum_insectum_est
         @sos_est = quod_sos_est?
         @fontem_linguam = quod_fontem_linguam_de_initiale_argumentum_et_textum
         @objectivum_linguam = quod_objectivum_linguam_de_initiale_argumentum_et_textum
+
+        purgatum_optionem # _[eng] required before get the text [eng]_
         @textum = quod_textum_de_initiale_argumentum_et_textum
 
         # @fontem_linguam = 'etc-Latn'
@@ -110,16 +110,17 @@ module Hapi
             # crudum => 'teste',
             'fontem_linguam' => @fontem_linguam,
             'objectivum_linguam' => @objectivum_linguam,
-            'textum' => @textum,
+            'fontem_textum' => @textum,
             'venandum_insectum_est' => @venandum_insectum_est,
             'sos_est' => @sos_est
           }
         )
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @fontem_linguam [#{@fontem_linguam}]"
-        puts "\n\n\t[🔎🐛 #{self.class.name}] [#{resultatum.inspect}]"
-        puts "\n\n\t[🔎🐛 #{self.class.name}] @tag_fontem [#{@tag_fontem.inspect}]"
-        puts "\n\n\t[🔎🐛 #{self.class.name}] crudum [#{resultatum.crudum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @fontem_linguam [#{@fontem_linguam}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} resultatum [#{resultatum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @tag_fontem [#{@tag_fontem.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @textum [#{@textum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @fontem_linguam [#{@fontem_linguam.inspect}]"
 
         resultatum
       end
@@ -127,36 +128,19 @@ module Hapi
       def quod_fontem_linguam_de_initiale_argumentum_et_textum
         return nil unless @initiale_argumentum.length > 1
 
-        # print 'oi oi oi'
-        # print @fontem_linguam_emoji.to_s
-        # print @fontem_linguam_emoji.inspect
         resultatum = quod_optionem_est?(FONTEM_LINGUAM_EMOJI)
 
-        # if @venandum_insectum_est || @sos_est
-        #   puts '  ttttttttttttttt  quod_fontem_linguam_de_initiale_argumentum_et_textum'
-        # end
-        # puts "       #{tag_fontem}" if @venandum_insectum_est || @sos_est
-        # puts @initiale_argumentum if @venandum_insectum_est || @sos_est
-        # puts '[' if @venandum_insectum_est || @sos_est
-        # puts resultatum.inspect if @venandum_insectum_est || @sos_est
-        # puts ']' if @venandum_insectum_est || @sos_est
-        # unless resultatum.nil? || resultatum['valere'].nil?
-        if resultatum.nil? || resultatum[0].nil?
-          # puts caller
-          if @venandum_insectum_est || @sos_est
-            print '                fontem     nao encontrado !!!!!!!!!!!!!!!!!!!!!!['
-          end
-          # print FONTEM_LINGUAM_EMOJI
-          # print ']                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
-          # print '                resultatum     nao encontrado !!!!!!!!!!!!!!!!!!!!!!['
-          # print resultatum
-          # print ']                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
-          # print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
-          # print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
-        else
-          # print "#{@initiale_argumentum}  item"
-          @initiale_argumentum.delete_if { |item| item.include?(resultatum[1][0]) || item.include?(resultatum[1][1]) }
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} resultatum [#{@initiale_argumentum.inspect}]"
 
+        unless resultatum.nil? || resultatum[0].nil?
+          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} initiale_argumentum [#{@initiale_argumentum.inspect}]"
+          # print "#{@initiale_argumentum}  item"
+          @initiale_argumentum.delete_if do |item|
+            item.include?(resultatum[1][0]) || item.include?(resultatum[1][1])
+          end
+
+          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} resultatum [#{@resultatum.inspect}]"
+          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} initiale_argumentum [#{@initiale_argumentum.inspect}]"
           resultatum[0]
         end
       end
@@ -166,28 +150,46 @@ module Hapi
 
         resultatum = quod_optionem_est?(OBJECTIVUM_LINGUAM_EMOJI)
 
-        # puts '  jjjjjjjjjjjjj  quod_objectivum_linguam_de_initiale_argumentum_et_textum'
-        # if @venandum_insectum_est || @sos_est
-        #   puts '  jjjjjjjjjjjjj  quod_objectivum_linguam_de_initiale_argumentum_et_textum'
-        # end
-        # puts "       #{tag_fontem}" if @venandum_insectum_est || @sos_est
-        # puts @initiale_argumentum if @venandum_insectum_est || @sos_est
-        # puts '[' if @venandum_insectum_est || @sos_est
-        # puts resultatum.inspect if @venandum_insectum_est || @sos_est
-        # puts ']' if @venandum_insectum_est || @sos_est
-
-        if resultatum.nil? || resultatum[0].nil?
-          print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!' if @venandum_insectum_est || @sos_est
-          # print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
-          # print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
-          # print '                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
-        else
-          # print "#{@initiale_argumentum}  item jjjjjjjjjjjjjjjjjjj"
-          # print "#{resultatum}  item jjjjjjjjjjjjjjjjjjj resultatum"
-          # @initiale_argumentum.delete_if { |item| item.include?(resultatum[1][0]) || item.include?(resultatum[1][1]) }
-
+        unless resultatum.nil? || resultatum[0].nil?
+          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} initiale_argumentum [#{@initiale_argumentum.inspect}]"
+          @initiale_argumentum.delete_if do |item|
+            item.include?(resultatum[1][0]) || item.include?(resultatum[1][1])
+          end
           resultatum[0]
         end
+      end
+
+      # _[eng] remove 🐛 / 🆘 before detect what is real text[eng]_
+      # _[eng] remove 🐛 / 🆘 antes de descobrir o que realmente é texto [eng]_
+      def purgatum_optionem
+        # return nil unless @initiale_argumentum.length > 1
+
+        delvals = VENANDUM_INSECTUM_EMOJI + SOS_EMOJI
+
+        est = false
+        est_items = []
+
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{@initiale_argumentum.inspect}]"
+
+        @initiale_argumentum.each do |arg|
+          delvals.each do |emoji|
+            next unless emoji.bytes == arg.bytes[0, emoji.bytes.length] && \
+                        emoji.bytes == arg.bytes[- emoji.bytes.length, emoji.bytes.length]
+
+            est_items.append(arg)
+            est = true
+          end
+        end
+        # print 'ooooi222'
+        if est_items.length.positive?
+          # print 'ooooi222'
+          @initiale_argumentum.delete_if do |arg_item|
+            # print 'ooooi'
+            est_items.include?(arg_item)
+          end
+        end
+
+        est
       end
 
       # @see https://www.justinweiss.com/articles/3-steps-to-fix-encoding-problems-in-ruby/
@@ -266,6 +268,8 @@ module Hapi
             break
           end
 
+          # puts 'yesss'
+
           # next unless emojis.include?(arg.first) && emojis.include?(arg.last)
 
           # puts ' >>> yes' if @venandum_insectum_est || @sos_est
@@ -276,6 +280,8 @@ module Hapi
           # puts [valere, tags] if @venandum_insectum_est || @sos_est
           # puts tags if @venandum_insectum_est || @sos_est
         end
+
+        # puts 'puts final'
 
         [valere, tags]
         # [valere_arr, tags]
@@ -324,6 +330,7 @@ module Hapi
       def quod_textum_de_initiale_argumentum_et_textum
         return @initiale_argumentum[0] if @initiale_argumentum.length == 1
 
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{@initiale_argumentum.inspect}]"
         @initiale_argumentum.join(' ')
       end
 
@@ -878,9 +885,14 @@ module Hapi
         # puts initiale_processum.inspect
         # print 'ooooooooooooooooooi'
         # if argumentum.include?('🗣️ ')
+
+
         if argumentum.include?('🗣️ 🔎🐛🔍')
           @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
         end
+
+        # @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
+
         # puts tokens.locale
         # puts token['line_numbers']
 
@@ -913,8 +925,9 @@ module Hapi
 
         if @tag_aux
           res = @tag_aux.explanandum_resultatum
-          puts "\n\n\t[🔎🐛 #{self.class.name}] [#{@tag_aux.inspect}]"
-          puts "\n\n\t[🔎🐛 #{self.class.name}] [#{res.inspect}]"
+          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{@tag_aux.inspect}]"
+          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{res.inspect}]"
+          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{res.inspect}]"
 
           L10n_contextum_init(context)
 
@@ -943,6 +956,8 @@ module Hapi
             return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_spa,
                                                       'spa-Latn')
           end
+
+          puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} FALHOU [#{res.inspect}]"
 
           return "[?#{@textum} #{@tokens}?]"
 
