@@ -34,12 +34,15 @@ module Hapi
                     :objectivum_linguam, :ignorandum_hashtag,
                     :ignorandum_attributum, :textum, :error,
                     :initiale_processum, :venandum_insectum_est, :sos_est,
-                    :paginam_contextum, :referens
+                    :paginam_contextum, :referens,
+                    :contextum_archivum_extensionem, :contextum_ego
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
       VENANDUM_INSECTUM_EMOJI = ['🔎🐛🔍'].freeze
       SOS_EMOJI = ['🔎🆘🔍'].freeze
+      SOS_EMOJI = ['🔎🆘🔍'].freeze
+      SILENTIUM_EMOJI = ['🔇'].freeze
 
       # include Hapi.Datum
       # include Hapi.Datum
@@ -101,9 +104,11 @@ module Hapi
         false
       end
 
-      def explanandum_resultatum # rubocop:disable Metrics/MethodLength
-        resultatum = Hapi::Datum::L10nTag.new(
+      def explanandum_resultatum
+        Hapi::Datum::L10nTag.new(
           {
+            'contextum_archivum_extensionem' => @contextum_archivum_extensionem,
+            'contextum_sos' => @contextum_sos,
             # crudum => @tag_fontem,
             'crudum' => @tag_fontem,
             # tag_fontem => 'teste',
@@ -121,8 +126,19 @@ module Hapi
         # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @tag_fontem [#{@tag_fontem.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @textum [#{@textum.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @fontem_linguam [#{@fontem_linguam.inspect}]"
+      end
 
-        resultatum
+      def investigationem_contextum(contextum)
+        # puts contextum['site']
+        # puts 'todo'
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{contextum['site'].inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{contextum['page'].inspect}]"
+        # ego = contextum['page']['ego']
+        @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
+        @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
+        # puts contextum['page'].keys
+        # puts contextum['page']['url']
+        # puts File.extname(contextum['page']['url'])
       end
 
       def quod_fontem_linguam_de_initiale_argumentum_et_textum
@@ -886,7 +902,6 @@ module Hapi
         # print 'ooooooooooooooooooi'
         # if argumentum.include?('🗣️ ')
 
-
         if argumentum.include?('🗣️ 🔎🐛🔍')
           @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
         end
@@ -924,6 +939,9 @@ module Hapi
         # l10nval = nil
 
         if @tag_aux
+          # puts context
+          @tag_aux.investigationem_contextum(context)
+
           res = @tag_aux.explanandum_resultatum
           # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{@tag_aux.inspect}]"
           # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{res.inspect}]"
@@ -933,7 +951,9 @@ module Hapi
 
           # Translationem.translationem_memoriam_collectionem(context)
           # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
-          l10nval = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum)
+          l10nval = Translationem.translationem_memoriam_rememorandum(
+            context, res.fontem_textum, res.objectivum_linguam
+          )
           # l10nval = 'tes'
           # raise l10nval if l10nval
           # return l10nval if l10nval != false
@@ -957,36 +977,18 @@ module Hapi
                                                       'spa-Latn')
           end
 
-          puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} FALHOU [#{res.inspect}]"
+          puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Nenhuma traducao disponivel [#{res.inspect}]"
 
-          return "[?#{@textum} #{@tokens}?]"
+          output = if res.contextum_sos && SILENTIUM_EMOJI.contains?(res.contextum_sos)
+                     ''
+                   elsif res.contextum_archivum_extensionem == '.html' && res.contextum_sos
+                     require 'json'
+                     "[?🆘 #{res.to_json} 🆘?]"
+                   else
+                    "[?🆘 #{res.to_json} 🆘?]"
+                   end
 
-          # puts "DeL10nEmoji @tag_aux tag_aux.tag_fontem [#{@tag_aux.tag_fontem}]"
-          # puts 'oioioi'
-          # @tag_aux.requisitum_explanandum_est?
-          # puts 'ooooi111323423'
-          # puts @tag_aux&.requisitum_explanandum_est?.inspect
-
-          # puts ''
-          # # puts '    >>>>>>>>>> explanandum_resultatum' if @tag_aux&.requisitum_explanandum_est?
-          # # puts @tag_aux.explanandum_resultatum if @tag_aux&.requisitum_explanandum_est?
-          # # puts @tag_aux.explanandum_resultatum
-          # # if @tag_aux.explanandum_resultatum['fontem_linguam']
-          # # if @tag_aux.explanandum_resultatum.fontem_linguam
-          # if @tag_aux.explanandum_resultatum.fontem_linguam.nil?
-          #   puts '  not fontem_linguam'
-          #   #   return "[🚧fontem_linguam not implemented🚧] #{textum} [🚧fontem_linguam not implemented🚧]"
-          # else
-          #   puts 'oooookay'
-          #   # puts @tag_aux.explanandum_resultatum
-          #   # puts @tag_aux.explanandum_resultatum[':fontem_linguam']
-          #   # puts @tag_aux.explanandum_resultatum.key(':fontem_linguam')
-          #   # puts "keys #{@tag_aux.explanandum_resultatum.keys}"
-          #   puts "keys #{@tag_aux.explanandum_resultatum}"
-          #   # puts @tag_aux.explanandum_resultatum['fontem_linguam']
-          #   # puts @tag_aux.explanandum_resultatum['tag_fontem']
-          #   # puts @tag_aux.explanandum_resultatum.tag_fontem
-          # end
+          return output
         end
 
         # puts 'context[\'ego\']'

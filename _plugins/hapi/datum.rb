@@ -20,7 +20,8 @@ module Hapi
     # _[por] Conteiner de dados de uma tag L10n [por]_
     class L10nTag
       attr_accessor :crudum, :fontem_linguam, :objectivum_linguam,
-                    :fontem_textum, :venandum_insectum_est, :sos_est
+                    :fontem_textum, :venandum_insectum_est, :sos_est,
+                    :contextum_archivum_extensionem, :contextum_sos
 
       def initialize(argumentum = {})
 
@@ -30,30 +31,32 @@ module Hapi
         # puts "depis"
         # puts optionem
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @class keys [#{argumentum.keys}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @class [#{argumentum.class}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @class  initiale_datum [#{initiale_datum.class}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @class  initiale_datum keys [#{initiale_datum.keys}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @argumentum [#{argumentum.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] initiale_datum [#{initiale_datum.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] result [#{optionem.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @class keys [#{argumentum.keys}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @class [#{argumentum.class}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @class  initiale_datum [#{initiale_datum.class}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @class  initiale_datum keys [#{initiale_datum.keys}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @argumentum [#{argumentum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} initiale_datum [#{initiale_datum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} result [#{optionem.inspect}]"
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @sssssssssssssssss [#{argumentum['fontem_textum'].inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @sssssssssssssssss [#{argumentum.fetch(:fontem_textum).inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @sssssssssssssssss [#{optionem.fetch(:crudum).inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] @sssssssssssssssss [#{optionem.fetch(:crudum).inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @sssssssssssssssss [#{argumentum['fontem_textum'].inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @sssssssssssssssss [#{argumentum.fetch(:fontem_textum).inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @sssssssssssssssss [#{optionem.fetch(:crudum).inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @sssssssssssssssss [#{optionem.fetch(:crudum).inspect}]"
 
         # @crudum = optionem.fetch(:crudum)
-        @crudum = argumentum['crudum']
+        @contextum_archivum_extensionem = optionem['contextum_archivum_extensionem']
+        @contextum_sos = optionem['contextum_sos']
+        @crudum = optionem['crudum']
         # @tag_nomen = optionem.fetch(:tag_nomen)
         # @fontem_linguam = optionem.fetch(:fontem_linguam)
-        @fontem_linguam = argumentum['fontem_linguam']
-        @objectivum_linguam = argumentum['objectivum_linguam']
-        @fontem_textum = argumentum['fontem_textum']
-        @venandum_insectum_est = argumentum['venandum_insectum_est']
-        @sos_est = argumentum['sos_est']
+        @fontem_linguam = optionem['fontem_linguam']
+        @objectivum_linguam = optionem['objectivum_linguam']
+        @fontem_textum = optionem['fontem_textum']
+        @venandum_insectum_est = optionem['venandum_insectum_est']
+        @sos_est = optionem['sos_est']
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] self [#{inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} self [#{inspect}]"
 
         # puts "final"
         # puts argumentum['crudum']
@@ -62,9 +65,9 @@ module Hapi
         # puts @crudum
         # puts @fontem_linguam
         # puts 'fin'
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] self [#{inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] optionem.fetch(:fontem_linguam) [#{optionem.fetch(:fontem_linguam)}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] optionem.fetch('fontem_textum') [#{optionem.fetch('fontem_textum')}]"
+        puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} self [#{inspect}]" if @sos_est || @contextum_sos
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} optionem.fetch(:fontem_linguam) [#{optionem.fetch(:fontem_linguam)}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} optionem.fetch('fontem_textum') [#{optionem.fetch('fontem_textum')}]"
       end
 
       def initiale_datum
@@ -79,6 +82,8 @@ module Hapi
           objectivum_linguam: nil,
           # @exemplum Idioma español (Alfabeto latino)
           fontem_textum: nil,
+          contextum_archivum_extensionem: '.html', # .csv, .json, ...
+          contextum_sos: nil,
           venandum_insectum_est: false,
           sos_est: false
         }
