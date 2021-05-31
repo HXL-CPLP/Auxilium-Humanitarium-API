@@ -106,28 +106,30 @@ module Hapi
 
         # include Hapi.Datum
 
-        puts Hapi::Datum.inspect
-        puts Hapi::Datum::L10nTag.inspect
+        # puts Hapi::Datum.inspect
+        # puts Hapi::Datum::L10nTag.inspect
 
-        resultatum = Hapi::Datum::L10nTag.new
-        # resultatum = Hapi.Datum.L10nTag
+        # resultatum = Hapi::Datum::L10nTag.new
+        # # resultatum = Hapi.Datum.L10nTag
 
-        puts resultatum.inspect
-        # puts resultatum['color'].inspect
-        puts resultatum.type.inspect
+        # puts resultatum.inspect
+        # # puts resultatum['color'].inspect
+        # puts resultatum.tag_fontem.inspect
 
         # puts resultatum
         # # resultatum = TranslationemNeo::L10nTag.new
         # resultatum
 
-        {
-          tag_fontem => @tag_fontem,
-          fontem_linguam => @fontem_linguam,
-          objectivum_linguam => @objectivum_linguam,
-          textum => @textum,
-          venandum_insectum_est => @venandum_insectum_est,
-          sos_est => @sos_est
-        }
+        Hapi::Datum::L10nTag.new(
+          {
+            tag_fontem => @tag_fontem,
+            fontem_linguam => @fontem_linguam,
+            objectivum_linguam => @objectivum_linguam,
+            textum => @textum,
+            venandum_insectum_est => @venandum_insectum_est,
+            sos_est => @sos_est
+          }
+        )
       end
 
       def quod_fontem_linguam_de_initiale_argumentum_et_textum
@@ -918,7 +920,8 @@ module Hapi
         # l10nval = nil
 
         if @tag_aux
-          # puts 'oioioi'
+          puts "DeL10nEmoji @tag_aux [#{@tag_aux}]"
+          puts "DeL10nEmoji @tag_aux tag_aux.tag_fontem [#{@tag_aux.tag_fontem}]"
           # puts 'oioioi'
           # @tag_aux.requisitum_explanandum_est?
           # puts 'ooooi111323423'
@@ -930,18 +933,19 @@ module Hapi
           # puts @tag_aux.explanandum_resultatum
           # if @tag_aux.explanandum_resultatum['fontem_linguam']
           # if @tag_aux.explanandum_resultatum.fontem_linguam
-          if @tag_aux.explanandum_resultatum['fontem_linguam'].nil?
+          unless @tag_aux.explanandum_resultatum.fontem_linguam.nil?
             puts 'oooookay'
             # puts @tag_aux.explanandum_resultatum
             # puts @tag_aux.explanandum_resultatum[':fontem_linguam']
             # puts @tag_aux.explanandum_resultatum.key(':fontem_linguam')
-            puts "keys #{@tag_aux.explanandum_resultatum.keys}"
-            puts @tag_aux.explanandum_resultatum['fontem_linguam']
-            puts @tag_aux.explanandum_resultatum['tag_fontem']
+            # puts "keys #{@tag_aux.explanandum_resultatum.keys}"
+            puts "keys #{@tag_aux.explanandum_resultatum}"
+            # puts @tag_aux.explanandum_resultatum['fontem_linguam']
+            # puts @tag_aux.explanandum_resultatum['tag_fontem']
             # puts @tag_aux.explanandum_resultatum.tag_fontem
           else
             puts '  🚧 fontem_linguam'
-            return "[🚧fontem_linguam not implemented🚧] #{textum} [🚧fontem_linguam not implemented🚧]"
+          #   return "[🚧fontem_linguam not implemented🚧] #{textum} [🚧fontem_linguam not implemented🚧]"
           end
 
           # puts caller if @tag_aux&.quod_sos_est?

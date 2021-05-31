@@ -33,27 +33,43 @@ module Hapi
     # module_function
 
     class L10nTag
-      attr_accessor :color, :type
+      attr_accessor :crudum, :tag_nomen, :fontem_linguam, :objectivum_linguam,
+                    :fontem_textum, :venandum_insectum_est, :sos_est
 
-      def initialize(args = {})
-        options = defaults.merge(args)
+      def initialize(argumentum = {})
+        optionem = initiale_datum.merge(argumentum)
 
-        @color = options.fetch(:color)
-        @type  = options.fetch(:type)
+        @crudum = optionem.fetch(:crudum)
+        @tag_nomen = optionem.fetch(:tag_nomen)
+        @fontem_linguam = optionem.fetch(:fontem_linguam)
+        @objectivum_linguam = optionem.fetch(:objectivum_linguam)
+        @fontem_textum = optionem.fetch(:fontem_textum)
+        @venandum_insectum_est = optionem.fetch(:venandum_insectum_est)
+        @sos_est = optionem.fetch(:sos_est)
       end
 
-      def defaults
+      def initiale_datum
         {
-          color: 'green',
-          type: 'pear'
+          # @exemplum {% _🗣️ 📝por-Latn📝 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 📝por-Latn📝 🗣️_ %}
+          crudum: nil,
+          # @exemplum _🗣️
+          tag_nomen: nil,
+          # @exemplum spa-Latn
+          fontem_linguam: nil,
+          # @exemplum por-Latn
+          objectivum_linguam: nil,
+          # @exemplum Idioma español (Alfabeto latino)
+          fontem_textum: nil,
+          venandum_insectum_est: false,
+          sos_est: false
         }
       end
     end
-      # # TODO: L10nTag
-      # class L10nTag
-      #   attr_accessor :tag_fontem, :fontem_linguam, :objectivum_linguam,
-      #                 :textum, :venandum_insectum_est, :sos_est
-      # end
+    # # TODO: L10nTag
+    # class L10nTag
+    #   attr_accessor :tag_fontem, :fontem_linguam, :objectivum_linguam,
+    #                 :textum, :venandum_insectum_est, :sos_est
+    # end
   end
 end
 
