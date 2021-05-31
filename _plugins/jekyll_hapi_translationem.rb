@@ -41,6 +41,9 @@ module Hapi
       VENANDUM_INSECTUM_EMOJI = ['🔎🐛🔍'].freeze
       SOS_EMOJI = ['🔎🆘🔍'].freeze
 
+      # include Hapi.Datum
+      # include Hapi.Datum
+
       def initialize(initiale_tag_nomen, initiale_argumentum, initiale_processum)
         @initiale_argumentum = initiale_argumentum.strip.split
 
@@ -99,13 +102,31 @@ module Hapi
       end
 
       def explanandum_resultatum
+        # resultatum = Hapi::Datum.L10nTag
+
+        # include Hapi.Datum
+
+        puts Hapi::Datum.inspect
+        puts Hapi::Datum::L10nTag.inspect
+
+        resultatum = Hapi::Datum::L10nTag.new
+        # resultatum = Hapi.Datum.L10nTag
+
+        puts resultatum.inspect
+        # puts resultatum['color'].inspect
+        puts resultatum.type.inspect
+
+        # puts resultatum
+        # # resultatum = TranslationemNeo::L10nTag.new
+        # resultatum
+
         {
-          tag_fontem: @tag_fontem,
-          fontem_linguam: @fontem_linguam,
-          objectivum_linguam: @objectivum_linguam,
-          textum: @textum,
-          venandum_insectum_est: @venandum_insectum_est,
-          sos_est: @sos_est
+          tag_fontem => @tag_fontem,
+          fontem_linguam => @fontem_linguam,
+          objectivum_linguam => @objectivum_linguam,
+          textum => @textum,
+          venandum_insectum_est => @venandum_insectum_est,
+          sos_est => @sos_est
         }
       end
 
@@ -128,7 +149,9 @@ module Hapi
         # unless resultatum.nil? || resultatum['valere'].nil?
         if resultatum.nil? || resultatum[0].nil?
           # puts caller
-          print '                fontem     nao encontrado !!!!!!!!!!!!!!!!!!!!!!['  if @venandum_insectum_est || @sos_est
+          if @venandum_insectum_est || @sos_est
+            print '                fontem     nao encontrado !!!!!!!!!!!!!!!!!!!!!!['
+          end
           # print FONTEM_LINGUAM_EMOJI
           # print ']                     nao encontrado !!!!!!!!!!!!!!!!!!!!!!'
           # print '                resultatum     nao encontrado !!!!!!!!!!!!!!!!!!!!!!['
@@ -234,22 +257,20 @@ module Hapi
             #   puts " nooop termina diferente"
             # end
 
-            if emoji.bytes == arg.bytes[0, emoji.bytes.length] && \
-               emoji.bytes == arg.bytes[- emoji.bytes.length, emoji.bytes.length]
-              # puts "Ok"
-              tags.append(arg)
-              valere = arg.gsub(emoji, '')
+            next unless emoji.bytes == arg.bytes[0, emoji.bytes.length] && \
+                        emoji.bytes == arg.bytes[- emoji.bytes.length, emoji.bytes.length]
 
-              # print 'valere'
-              # puts "[#{valere}]"
-              # valere = arg.gsub(emoji.bytes, '')
-              # valere = arg.bytes.gsub(emoji.bytes, '')
-              valere_arr.append(valere)
-              break
-            end
+            # puts "Ok"
+            tags.append(arg)
+            valere = arg.gsub(emoji, '')
 
+            # print 'valere'
+            # puts "[#{valere}]"
+            # valere = arg.gsub(emoji.bytes, '')
+            # valere = arg.bytes.gsub(emoji.bytes, '')
+            valere_arr.append(valere)
+            break
           end
-
 
           # next unless emojis.include?(arg.first) && emojis.include?(arg.last)
 
@@ -270,6 +291,12 @@ module Hapi
         #   tags: tags
         # }
       end
+
+      # # TODO: L10nTag
+      # class L10nTag
+      #   attr_accessor :tag_fontem, :fontem_linguam, :objectivum_linguam,
+      #                 :textum, :venandum_insectum_est, :sos_est
+      # end
 
       # @see https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
       # @see https://jekyllrb.com/docs/configuration/environments/
@@ -891,14 +918,32 @@ module Hapi
         # l10nval = nil
 
         if @tag_aux
+          # puts 'oioioi'
+          # puts 'oioioi'
           # @tag_aux.requisitum_explanandum_est?
           # puts 'ooooi111323423'
           # puts @tag_aux&.requisitum_explanandum_est?.inspect
 
           puts ''
-          puts '    >>>>>>>>>> explanandum_resultatum' if @tag_aux&.requisitum_explanandum_est?
-          puts @tag_aux.explanandum_resultatum if @tag_aux&.requisitum_explanandum_est?
-          puts @tag_aux.explanandum_resultatum
+          # puts '    >>>>>>>>>> explanandum_resultatum' if @tag_aux&.requisitum_explanandum_est?
+          # puts @tag_aux.explanandum_resultatum if @tag_aux&.requisitum_explanandum_est?
+          # puts @tag_aux.explanandum_resultatum
+          # if @tag_aux.explanandum_resultatum['fontem_linguam']
+          # if @tag_aux.explanandum_resultatum.fontem_linguam
+          if @tag_aux.explanandum_resultatum['fontem_linguam'].nil?
+            puts 'oooookay'
+            # puts @tag_aux.explanandum_resultatum
+            # puts @tag_aux.explanandum_resultatum[':fontem_linguam']
+            # puts @tag_aux.explanandum_resultatum.key(':fontem_linguam')
+            puts "keys #{@tag_aux.explanandum_resultatum.keys}"
+            puts @tag_aux.explanandum_resultatum['fontem_linguam']
+            puts @tag_aux.explanandum_resultatum['tag_fontem']
+            # puts @tag_aux.explanandum_resultatum.tag_fontem
+          else
+            puts '  🚧 fontem_linguam'
+            return "[🚧fontem_linguam not implemented🚧] #{textum} [🚧fontem_linguam not implemented🚧]"
+          end
+
           # puts caller if @tag_aux&.quod_sos_est?
           # puts caller
         end
