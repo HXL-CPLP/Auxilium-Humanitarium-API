@@ -37,28 +37,28 @@ iso15924: Latn
 
 
 ##### ReliefWeb-eng
-- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/UN/reliefweb/eng/>
-- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/UN/reliefweb/eng/openapi.yaml](/api/UN/reliefweb/eng/openapi.yaml)
+- **{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}**: <https://hapi.etica.ai/api/UN/reliefweb/eng/>
+- **{% _🗣️ OpenAPI_archivum_nomen 🗣️_ %}**: [/api/UN/reliefweb/eng/openapi.yaml](/api/UN/reliefweb/eng/openapi.yaml)
 
 #### HDX - The Humanitarian Data Exchange
 
 ##### HDX-eng
-- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/UN/HDX/eng/>
-- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/UN/HDX/eng/openapi.yaml](/api/UN/HDX/eng/openapi.yaml)
+- **{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}**: <https://hapi.etica.ai/api/UN/HDX/eng/>
+- **{% _🗣️ OpenAPI_archivum_nomen 🗣️_ %}**: [/api/UN/HDX/eng/openapi.yaml](/api/UN/HDX/eng/openapi.yaml)
 
 #### CODV2API <sup>(beta)</sup>
 
 ##### CODV2API-eng
-- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/UN/CODV2API/eng/>
-- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/UN/CODV2API/eng/openapi.yaml](/api/UN/CODV2API/eng/openapi.yaml)
+- **{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}**: <https://hapi.etica.ai/api/UN/CODV2API/eng/>
+- **{% _🗣️ OpenAPI_archivum_nomen 🗣️_ %}**: [/api/UN/CODV2API/eng/openapi.yaml](/api/UN/CODV2API/eng/openapi.yaml)
 
 ### XZ
 
 #### HXL-Proxy - Humanitarian Exchange Language Proxy
 
 ##### HXL-Proxy
-- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/>
-- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/XZ/HXL-Proxy/eng/openapi.yaml](/api/XZ/HXL-Proxy/eng/openapi.yaml)
+- **{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}**: <https://hapi.etica.ai/api/XZ/HXL-Proxy/eng/>
+- **{% _🗣️ OpenAPI_archivum_nomen 🗣️_ %}**: [/api/XZ/HXL-Proxy/eng/openapi.yaml](/api/XZ/HXL-Proxy/eng/openapi.yaml)
 
 ### BR
 
@@ -66,19 +66,19 @@ iso15924: Latn
 
 ##### portais-ckan-brasil-por
 
-- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/>
-- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/BR/portais-ckan-brasil/por/openapi.yaml](/api/BR/portais-ckan-brasil/por/openapi.yaml)
+- **{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}**: <https://hapi.etica.ai/api/BR/portais-ckan-brasil/por/>
+- **{% _🗣️ OpenAPI_archivum_nomen 🗣️_ %}**: [/api/BR/portais-ckan-brasil/por/openapi.yaml](/api/BR/portais-ckan-brasil/por/openapi.yaml)
 
 ##### portais-arcgis-brasil-por
 
-- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/>
-- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/BR/portais-arcgis-brasil/por/openapi.yaml](/api/BR/portais-arcgis-brasil/por/openapi.yaml)
+- **{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}**: <https://hapi.etica.ai/api/BR/portais-arcgis-brasil/por/>
+- **{% _🗣️ OpenAPI_archivum_nomen 🗣️_ %}**: [/api/BR/portais-arcgis-brasil/por/openapi.yaml](/api/BR/portais-arcgis-brasil/por/openapi.yaml)
 
 
 ##### brazilian-ckan-portals-eng
 
-- **{%- de_lat_codicem canonicum_catanam_namen -%}**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/>
-- **{%- de_lat_codicem openapi_filum_namen -%}**: [/api/BR/brazilian-ckan-portals/eng/openapi.yaml](/api/BR/brazilian-ckan-portals/eng/openapi.yaml)
+- **{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}**: <https://hapi.etica.ai/api/BR/brazilian-ckan-portals/eng/>
+- **{% _🗣️ OpenAPI_archivum_nomen 🗣️_ %}**: [/api/BR/brazilian-ckan-portals/eng/openapi.yaml](/api/BR/brazilian-ckan-portals/eng/openapi.yaml)
 
 ## Schema
 
@@ -132,8 +132,6 @@ iso15924: Latn
 
 ## License
 
-[![{% de_non_html %}{% de_lat_codicem dominium_publicum_nomen %}{% endde_non_html %}](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
+[![{% _🗣️ dominium_publicum_nomen 🗣️_ %}](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://unlicense.org/)
 
-{% incognitum_phrasim_est -%}
-  {%- de_lat_codicem HAPI_licentiam_descriptionem -%}
-{%- endincognitum_phrasim_est -%}
+{% de_markdown %}{% _🗣️ Hapi_licentiam_Hapi_descriptionem 🗣️_ %}{% endde_markdown %}

@@ -74,14 +74,6 @@ module Hapi
 
         purgatum_optionem # _[eng] required before get the text [eng]_
         @textum = quod_textum_de_initiale_argumentum_et_textum
-
-        # @fontem_linguam = 'etc-Latn'
-        # puts '    AuxiliumTagProcessum: initialize'
-        # puts @tag_fontem
-        # puts "                 [[[#{@fontem_linguam}]]]" if @venandum_insectum_est || @sos_est
-        # puts @objectivum_linguam
-
-        # ad_absurdum_l10n_tag
       end
 
       # @see https://en.wikipedia.org/wiki/List_of_Latin_phrases_(full)
@@ -103,7 +95,7 @@ module Hapi
         false
       end
 
-      def explanandum_resultatum
+      def explanandum_resultatum # rubocop:disable Metrics/MethodLength
         Hapi::Datum::L10nTag.new(
           {
             'contextum_archivum_extensionem' => @contextum_archivum_extensionem,
@@ -128,11 +120,6 @@ module Hapi
       end
 
       def investigationem_contextum(contextum)
-        # puts contextum['site']
-        # puts 'todo'
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{contextum['site'].inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{contextum['page'].inspect}]"
-        # ego = contextum['page']['ego']
         @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
         # puts contextum['page'].keys
@@ -217,57 +204,8 @@ module Hapi
         # valere = []
         tags = []
         @initiale_argumentum.each do |arg|
-          # puts "   > . >>>quod_optionem_est #{arg} #{arg.length} #{arg.strip.length}"
-          # puts arg
-          # puts arg.length
-          # puts arg.strip
-          # puts arg.strip.length
-          # puts 'arg[0, 1]'
-          # puts arg[0, 1]
-          # puts 'arg[-1]'
-          # puts arg[-1]
-          # puts 'arg[0, 2]'
-          # puts arg[0, 2]
-          # puts 'arg[-2]'
-          # puts arg[-2]
-          # puts 'arg[0, 3]'
-          # puts arg[0, 3]
-          # puts 'arg[-3]'
-          # puts arg[-3]
-          # puts '  rrrrrrrrrrrrrrr quod_optionem_est' if @venandum_insectum_est || @sos_est
-          # puts arg if @venandum_insectum_est || @sos_est
-          # print arg[0, 1]
-          # print arg[-1]
-
           # emoje_est = false
           emojis.each do |emoji|
-            # puts "    > emoji emoji encoding #{emoji.encoding}"
-            # puts "    > emoji arg encoding #{arg.encoding}"
-            # puts "    > emoji.length #{emoji.length}"
-            # puts "    > emoji.chars.length #{emoji.chars.length}"
-            # puts "    > emoji.bytes.length #{emoji.bytes.length}"
-            # puts "    > emoji #{emoji}"
-            # puts "    > emoji.bytes #{emoji.bytes}"
-            # puts "    > arg #{arg}"
-            # puts "    >   arg.bytes #{arg.bytes}"
-            # puts "    > arg.bytes[0, emoji.bytes.length] #{arg.bytes[0, emoji.bytes.length]}"
-            # puts "    > arg.bytes[- emoji.bytes.length] #{arg.bytes[- emoji.bytes.length]}"
-            # puts "    > arg.bytes[- emoji.bytes.length, emoji.bytes.length] #{arg.bytes[- emoji.bytes.length, emoji.bytes.length]}"
-            # puts "    > arg [0, x] #{arg [0, emoji.length]}"
-            # puts "    > arg [-x] #{arg[- emoji.length]}"
-            # puts "    > arg [-3] #{arg[-3]}"
-
-            # if emoji.bytes == arg.bytes[0, emoji.bytes.length]
-            #   puts " 🆘🆘COMECA IGUAL _________________________________________________"
-            # else
-            #   puts " nooop comeca diferente"
-            # end
-            # if emoji.bytes == arg.bytes[- emoji.bytes.length, emoji.bytes.length]
-            #   puts " 🆘🆘termina IGUAL _____________________________________________"
-            # else
-            #   puts " nooop termina diferente"
-            # end
-
             next unless emoji.bytes == arg.bytes[0, emoji.bytes.length] && \
                         emoji.bytes == arg.bytes[- emoji.bytes.length, emoji.bytes.length]
 
@@ -282,29 +220,11 @@ module Hapi
             valere_arr.append(valere)
             break
           end
-
-          # puts 'yesss'
-
-          # next unless emojis.include?(arg.first) && emojis.include?(arg.last)
-
-          # puts ' >>> yes' if @venandum_insectum_est || @sos_est
-          # puts emojis if @venandum_insectum_est || @sos_est
-          # valere = arg[1, (arg.length - 2)]
-          # # valere = arg
-          # tags.append(arg)
-          # puts [valere, tags] if @venandum_insectum_est || @sos_est
-          # puts tags if @venandum_insectum_est || @sos_est
         end
 
         # puts 'puts final'
 
         [valere, tags]
-        # [valere_arr, tags]
-
-        # {
-        #   valere: valere,
-        #   tags: tags
-        # }
       end
 
       # # TODO: L10nTag
@@ -424,44 +344,6 @@ module Hapi
       end
 
       nil
-    end
-
-    def datum_temporarium(context)
-      context['site']['data']['Temporarium']
-    end
-
-    def datum_temporarium_suffix(context, linguam = nil)
-      linguam = linguam.nil? ? context['page']['linguam'] : linguam
-      @resultatum = []
-
-      # exemplum: por-Latn
-      # if context['page']['linguam']
-      # exemplum: _por-Latn
-      @resultatum.append("_#{linguam}")
-      # @resultatum.append("_#{context['page']['linguam']}")
-      @parts = linguam.split('-')
-
-      # exemplum = _por
-      @resultatum.append("_#{@parts.shift}")
-
-      # exemplum = _Latn
-      # if @parts
-      #   @resultatum.append("_#{@parts.shift}") if @parts
-      # end
-      @resultatum.append("_#{@parts.shift}") if @parts
-      # end
-
-      # puts @resultatum
-
-      @resultatum
-    end
-
-    def de(text)
-      # print @tokens
-      # print @variant1
-      return de_markdown(text) if @variant1 && @variant1 == 'de_markdown'
-
-      text
     end
 
     # TODO: esta meio feio isso. Melhorar. Um problema é que cria
@@ -984,7 +866,7 @@ module Hapi
                      require 'json'
                      "[?🆘 #{res.to_json} 🆘?]"
                    else
-                    "[?🆘 #{res.to_json} 🆘?]"
+                     "[?🆘 #{res.to_json} 🆘?]"
                    end
 
           return output
@@ -1083,242 +965,6 @@ module Hapi
       end
     end
 
-    # _[eng] The {% de_lat_codicem_in (...) %} implementation [eng]_
-    # _[por] A implementação de {% de_lat_codicem_in (...) %} [por]_
-    #
-    # @exemplum Primum exemplum
-    #   {% de_lat_codicem_in por-Latn licentiam_nomen %}
-    # @resultatum Primum exemplum
-    #   Licença
-    class DeLatCodicemIn < Liquid::Tag
-      def initialize(tag_name, text, tokens)
-        super
-
-        @tokens = text.strip.split
-        @linguam_fontem = @tokens.shift
-        @textum = @tokens.shift
-
-        # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
-        # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
-      end
-
-      def render(context)
-        temp = Translationem.datum_temporarium(context)
-        l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
-
-        return l10nval if l10nval
-
-        return temp[@textum] if temp && temp[@textum]
-
-        suffixes = Translationem.datum_temporarium_suffix(context)
-
-        suffixes.each do |suffix|
-          # puts 'oooooooooi'
-          # puts suffix
-          # puts "#{@textum}#{suffix}"
-          # puts temp["#{@textum}#{suffix}"]
-          return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
-        end
-
-        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
-      end
-    end
-
-    # _[eng] The {% de_por_Latn (...) %} implementation [eng]_
-    # _[por] A implementação de {% de_por_Latn (...) %} [por]_
-    #
-    # @exemplum Exemplum I
-    #   linguam: por-Latn
-    #   # por-Latn 'Frase em português' -> por-Latn ? = nil
-    #   ---
-    #   {% de_por_Latn Frase em português %}
-    # @resultatum Exemplum I
-    #   Frase em português
-    #
-    # @exemplum Exemplum II
-    #   linguam: eng-Latn
-    #   # por-Latn 'Frase em português' -> eng-Latn ? = nil
-    #   ---
-    #   {% de_por_Latn Tradução %}
-    # @resultatum Exemplum II
-    #  <!--de_linguam:por-Latn-->Frase em português<!--por-Latn:de_linguam-->
-    #
-    # @exemplum Exemplum III
-    #   linguam: eng-Latn
-    #   # por-Latn 'Tradução' -> eng-Latn ? = Translation
-    #   ---
-    #   {% de_por_Latn Tradução %}
-    # @resultatum Exemplum III
-    #   Translation
-    #
-    class DePorLatn < Liquid::Tag
-      def initialize(tag_name, text, tokens)
-        super
-
-        @linguam_fontem = 'por-Latn'
-        @linguam_objectivum = nil
-        @textum = text.strip
-      end
-
-      def render(context)
-        @linguam_objectivum = Translationem.quod_linguam_nunc(context)
-
-        return @textum unless @linguam_fontem != @linguam_objectivum
-
-        l10nvalextum = Translationem.datum_l10n_de_textum(
-          @textum, context, @linguam_fontem, @linguam_objectivum
-        )
-
-        return l10nvalextum if l10nvalextum
-
-        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
-      end
-    end
-
-    # _[eng] The {% de_por_Latn_in (...) %} implementation [eng]_
-    # _[por] A implementação de {% de_por_Latn_in (...) %} [por]_
-    #
-    # @exemplum Exemplum I
-    #   linguam: por-Latn
-    #   # por-Latn 'Frase em português' -> por-Latn ? = nil
-    #   ---
-    #   {% de_por_Latn_in por-Latn Frase em português %}
-    # @resultatum Exemplum I
-    #   Frase em português
-    #
-    # @exemplum Exemplum II
-    #   linguam: eng-Latn
-    #   # por-Latn 'Frase em português' -> eng-Latn ? = nil
-    #   ---
-    #   {% de_por_Latn_in eng-Latn Tradução %}
-    # @resultatum Exemplum II
-    #   <!--de_linguam:por-Latn-->Frase em português<!--por-Latn:de_linguam-->
-    #
-    # @exemplum Exemplum III
-    #   linguam: eng-Latn
-    #   # por-Latn 'Tradução' -> eng-Latn ? = Translation
-    #   ---
-    #   {% de_por_Latn_in eng-Latn Tradução %}
-    # @resultatum Exemplum III
-    #   Translation
-    #
-    class DePorLatnIn < Liquid::Tag
-      def initialize(tag_name, text, tokens)
-        super
-
-        @tokens = text.strip.split
-        @linguam_fontem = 'por-Latn'
-        @linguam_objectivum = @tokens.shift
-        @textum = @tokens.join(' ')
-
-        # puts @linguam_fontem
-        # puts @linguam_objectivum
-
-        # @iso6393 = 'por'
-        # @iso15924 = 'por-Latn'
-      end
-
-      def render(context)
-        return @textum unless @linguam_fontem != @linguam_objectivum
-
-        l10nvalextum = Translationem.datum_l10n_de_textum(
-          @textum, context, @linguam_fontem, @linguam_objectivum
-        )
-
-        return l10nvalextum if l10nvalextum
-
-        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
-      end
-    end
-
-    # _[eng] The {% de_textum (...) %} implementation [eng]_
-    # _[por] A implementação de {% de_textum (...) %} [por]_
-    #
-    # @exemplum Exemplum I
-    #   linguam: por-Latn
-    #   # por-Latn 'Frase em português' -> por-Latn ? = nil
-    #   ---
-    #   {% de_textum por-Latn Frase em português %}
-    # @resultatum Exemplum I
-    #   Frase em português
-    #
-    # @exemplum Exemplum II
-    #   linguam: eng-Latn
-    #   # por-Latn 'Frase em português' -> eng-Latn ? = nil
-    #   ---
-    #   {% de_textum Tradução %}
-    # @resultatum Exemplum II
-    #  <!--de_linguam:por-Latn-->Frase em português<!--por-Latn:de_linguam-->
-    #
-    # @exemplum Exemplum III
-    #   linguam: eng-Latn
-    #   # por-Latn 'Tradução' -> eng-Latn ? = Translation
-    #   ---
-    #   {% de_textum por-Latn Tradução %}
-    # @resultatum Exemplum III
-    #   Translation
-    #
-    class DeTextum < Liquid::Tag
-      def initialize(tag_name, text, tokens)
-        super
-
-        @tokens = text.strip.split
-        @linguam_fontem = @tokens.shift
-        @linguam_objectivum = nil
-        @textum = @tokens.join(' ')
-
-        @error_text = nil
-
-        # TODO: implementar sistema de ERROR e WARNING se estiver rodando
-        #       localmente e se estiver em produção. No caso de produção
-        #       tolerar exibindo mensagem de erro em vez de bloquear tudo.
-        if @linguam_fontem.length != 8 || @textum.length.zero?
-          # warn "WARNING {% de_textum #{text}%}"
-          @error_text = "!?ERROR{% #{tag_name} #{text}%}ERROR?!"
-
-          # puts ENV.keys
-          if ENV['JEKYLL_ENV'] == 'development'
-            raise @error_text
-          else
-            puts caller
-            warn @error_text
-          end
-          # puts ENV['JEKYLL_ENV']
-          # warn @error_text
-        end
-
-        # puts 'aaa'
-        # puts text
-
-        # validate
-      end
-
-      # def errorem
-      # def validate
-      #   # if @linguam_fontem.length != 8
-      #   raise "{% de_textum [LINGUAN ERROR] (...) %} [#{@linguam_fontem}" if @linguam_fontem.length != 8
-      #   raise "{% de_textum #{@linguam_fontem} [ERROR] %} [#{@textum}" unless @textum
-      #   # raise 'error'
-      #   raise "Mensagem de erro aqui tag_name[#{tag_name}] text[#{text}] tokens[#{tokens}]"
-      # end
-
-      def render(context)
-        return @error_text if @error_text
-
-        @linguam_objectivum = Translationem.quod_linguam_nunc(context)
-
-        return @textum unless @linguam_fontem != @linguam_objectivum
-
-        l10nvalextum = Translationem.datum_l10n_de_textum(
-          @textum, context, @linguam_fontem, @linguam_objectivum
-        )
-
-        return l10nvalextum if l10nvalextum
-
-        "<!--[de_linguam:[#{@linguam_fontem}]]-->#{@textum}<!--[[#{@linguam_fontem}]:de_linguam]-->"
-      end
-    end
-
     # _[eng] Generate HTML from markdown inside this block [eng]_
     # @exemplum Exemplum I
     #   {% de_markdown %}
@@ -1364,73 +1010,6 @@ module Hapi
         doc.xpath('text()')
       end
     end
-
-    # _[eng] This is the {% incognitum_phrasim_est}(...){% %} implementation eng]_
-    # _[por] Implementação do {% incognitum_phrasim_est %} (...){% %} [por]_
-    #
-    # @exemplum Exemplum I
-    #   linguam: por-Latn
-    #   # eng-Latn 'Unknow translation' -> por-Latn ? = nil
-    #   ---
-    #   {% incognitum_phrasim_est %}
-    #   <!--[de_linguam:[eng-Latn]]-->Unknow translation<!--[[eng-Latn]:de_linguam]-->
-    #   {% endincognitum_phrasim_est %}
-    #
-    # @resultatum Exemplum I
-    #   <span lang="en" class="incognitum-phrasim">Unknow translation</span>
-    #
-    # @exemplum Exemplum II
-    #   linguam: eng-Latn
-    #   # eng-Latn 'Unknow translation' -> por-Latn ? = nil
-    #   ---
-    #   {% incognitum_phrasim_est %}
-    #   <!--[de_linguam:[eng-Latn]]-->Unknow translation<!--[[eng-Latn]:de_linguam]-->
-    #   {% endincognitum_phrasim_est %}
-    #
-    # @resultatum Exemplum II
-    #   Unknow translation
-    #
-    #
-    # @exemplum Exemplum III
-    #   linguam: arb-Arab
-    #   htmldir: rtl
-    #   # iso6391: ar
-    #   # iso15924: Arab
-    #   # eng-Latn 'Unknow translation' -> arb-Arab ? = nil
-    #   ---
-    #   {% incognitum_phrasim_est %}
-    #   <!--[de_linguam:[eng-Latn]]-->Unknow translation<!--[[eng-Latn]:de_linguam]-->
-    #   {% endincognitum_phrasim_est %}
-    #
-    # @resultatum Exemplum III
-    #   <span lang="en" dir="ltr" class="incognitum-phrasim">Unknow translation</span>
-    #
-    # Trivia:
-    # - 'incognitum'
-    #   - https://en.wiktionary.org/wiki/incognitus#Latin
-    # - 'phrasim'
-    #   - https://en.wiktionary.org/wiki/incognitus#Latin
-    # - 'est'
-    #   - https://en.wiktionary.org/wiki/est#Latin
-    class IncognitumPhrasimEstBlock < Liquid::Block
-      def render(context)
-        text = super
-
-        return text unless text.include? '<!--[de_linguam:['
-
-        @textum_signif = Translationem.significationem_incognitum_textum(text, context)
-
-        @markup = Translationem.quod_html_markup_nunc(
-          @textum_signif,
-          Translationem.significationem_contextum(context)
-        )
-
-        @r = @markup ? "<span #{@markup}>#{@textum_signif['textum_purum']}</span>" : @textum_signif['textum_purum']
-
-        # puts 'IncognitumPhrasimEstBlock> @markup ' + @markup.to_s + ' @r' +  @r
-        @r
-      end
-    end
   end
 end
 
@@ -1445,14 +1024,6 @@ Liquid::Template.register_tag(
   '_', Hapi::Translationem::DeL10nEmoji
 )
 
-# __ Ok, same as %{ _1 ...  1_ %}
-# Liquid::Template.register_tag(
-#   '_1', Hapi::Translationem::DeL10n
-# )
-# Liquid::Template.register_tag(
-#   '1__', Hapi::Translationem::DeL10n
-# )
-
 ### Normal usage (html output, except as tag attribute)
 ## @exemplum:
 #    {% _🗣️ L10N_ego_summarius 🗣️_ %}
@@ -1463,65 +1034,11 @@ Liquid::Template.register_tag(
   '🗣️_', Hapi::Translationem::DeL10nEmoji
 )
 
-### HTML attribute output or JSON with no room for output messages
-## @exemplum:
-#    <a href="#" title="{% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}">Text</a>
-Liquid::Template.register_tag(
-  '_🗣️#️⃣', Hapi::Translationem::DeL10nEmoji
-)
-Liquid::Template.register_tag(
-  '#️⃣🗣️_', Hapi::Translationem::DeL10nEmoji
-)
-
-### Debug
-## @exemplum:
-#    {% _🗣️🚫🐛 L10N_ego_summarius 🐛🚫🗣️_ %}
-Liquid::Template.register_tag(
-  '_🗣️🚫🐛', Hapi::Translationem::DeL10nEmoji
-)
-Liquid::Template.register_tag(
-  '🐛🚫🗣️_', Hapi::Translationem::DeL10nEmoji
-)
-
-# 🐛
-# Liquid::Template.register_tag(
-#   '_🗣️_', Hapi::Translationem::DeL10n
-# )
-# Liquid::Template.register_tag(
-#   '🗣️', Hapi::Translationem::DeL10n
-# )
-Liquid::Template.register_tag(
-  '___', Hapi::Translationem::DeL10n
-)
-
-# Liquid::Template.register_tag('gettext', HapiApi::TranslationemDeLatCodicem)
-Liquid::Template.register_tag(
-  'de_lat_codicem', Hapi::Translationem::DeLatCodicem
-)
-Liquid::Template.register_tag(
-  'de_lat_codicem_in', Hapi::Translationem::DeLatCodicemIn
-)
-
-Liquid::Template.register_tag(
-  'de_por_Latn', Hapi::Translationem::DePorLatn
-)
-Liquid::Template.register_tag(
-  'de_por_Latn_in', Hapi::Translationem::DePorLatnIn
-)
-
-Liquid::Template.register_tag(
-  'de_textum', Hapi::Translationem::DeTextum
-)
-Liquid::Template.register_tag(
-  'de_phrasim', Hapi::Translationem::DeTextum
-)
-
-Liquid::Template.register_tag(
-  'incognitum_phrasim_est', Hapi::Translationem::IncognitumPhrasimEstBlock
-)
+# _[eng]We still using de_markdown [eng]_
 Liquid::Template.register_tag(
   'de_markdown', Hapi::Translationem::DeMarkdownBlock
 )
+# _[eng]We may still use de_non_html until the 🗣️ supports _[eng]_
 Liquid::Template.register_tag(
   'de_non_html', Hapi::Translationem::DeNonHtmlBlock
 )

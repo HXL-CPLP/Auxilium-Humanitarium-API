@@ -3,7 +3,6 @@
 
 {% assign r_gid = site.data.referens['gid'] %}
 
-
 <article>
   <header>
     <h1>{{ page.title }}</h1>
@@ -13,7 +12,6 @@
       <p lang="en">👷🏽 Work in progress 👷🏽</p>
       <p lang="pt">👷🏽 Trabalho em progresso 👷🏽</p>
     </div>
-
     <!-- Talvez algo como https://afeld.github.io/bootstrap-toc/ ? -->
     <nav>
       <h2>{% _🗣️ mensam_de_contentis_in_eodem_nomen 🗣️_ %}</h2>
@@ -58,15 +56,13 @@
               <a href="#agnitionem-voluntarius">
                 {% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}
               </a>
+            </li>
             <li>
               <a href="#agnitionem-communitatem">
                 {% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}
               </a>
             </li>
           </ul>
-        </li>
-        <li>
-          <a href="#licentiam">{% _🗣️ licentiam_nomen 🗣️_ %}</a>
         </li>
       </ul>
     </nav>
@@ -114,10 +110,8 @@
     {%- endfor %}
     </ul>
   </aside>
-
   <footer>
     <h2 id="licentiam">{% _🗣️ licentiam_nomen 🗣️_ %}</h2>
-    {% _🗣️ Hapi_licentiam_Hapi_descriptionem 🗣️_ %}
     {% de_markdown %}{% _🗣️ Hapi_licentiam_Hapi_descriptionem 🗣️_ %}{% endde_markdown %}
   </footer>
 </article>
