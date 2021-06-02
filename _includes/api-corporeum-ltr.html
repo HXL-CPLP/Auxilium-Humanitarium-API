@@ -16,10 +16,7 @@
 
     <!-- Talvez algo como https://afeld.github.io/bootstrap-toc/ ? -->
     <nav>
-      <h2>{%- incognitum_phrasim_est -%}{% de_lat_codicem mensam_de_contentis_in_eodem_nomen %}{%- endincognitum_phrasim_est -%}</h2>
-      <h2>{% _ mensam_de_contentis_in_eodem_nomen _ %}</h2>
-      <h2>{% _ ISO_639-3_nomen _ %}</h2>
-      <h2>{% _ ISO_639-3_summarius _ %}</h2>
+      <h2>{% _🗣️ mensam_de_contentis_in_eodem_nomen 🗣️_ %}</h2>
       <ul class="list-unstyled">
         <li>
           <a href="#api">API</a>
@@ -55,22 +52,21 @@
           </ul>
         </li>
         <li>
-          <a href="#agnitionem">{% de_lat_codicem agnitionem_et_gratiam_nomen %}</a>
+          <a href="#agnitionem">{% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}</a>
           <ul>
             <li>
               <a href="#agnitionem-voluntarius">
-                {% de_lat_codicem voluntarius_auxilio_tuo_nomen %}
+                {% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}
               </a>
-            </li>
             <li>
               <a href="#agnitionem-communitatem">
-                {% de_lat_codicem agnitionem_communitatem_nomen %}
+                {% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}
               </a>
             </li>
           </ul>
         </li>
         <li>
-          <a href="#licentiam">{% de_lat_codicem licentiam_nomen %}</a>
+          <a href="#licentiam">{% _🗣️ licentiam_nomen 🗣️_ %}</a>
         </li>
       </ul>
     </nav>
@@ -104,14 +100,14 @@
   </article>
 
   <aside>
-    <h2 id="agnitionem">{% de_lat_codicem agnitionem_et_gratiam_nomen %}</h2>
-    <h3 id="agnitionem-voluntarius">{% de_lat_codicem voluntarius_auxilio_tuo_nomen %}</h3>
+    <h2 id="agnitionem">{% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}</h2>
+    <h3 id="agnitionem-voluntarius">{% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}</h3>
     <ul>
     {% for humanum in site.data.agnitionem.humanum -%}
       <li>{{ humanum.namen.baptismum }}</li>
     {%- endfor %}
     </ul>
-    <h3 id="agnitionem-communitatem">{% de_lat_codicem agnitionem_communitatem_nomen %}</h3>
+    <h3 id="agnitionem-communitatem">{% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}</h3>
     <ul>
     {% for communitatem in site.data.agnitionem.communitatem -%}
       <li>{{ communitatem.namen.baptismum }}</li>
@@ -120,24 +116,8 @@
   </aside>
 
   <footer>
-    <h2 id="licentiam">{% de_lat_codicem licentiam_nomen %}</h2>
-    {% de_markdown %}{% de_lat_codicem Temp_licença_aviso de_markdown %}{% endde_markdown %}
+    <h2 id="licentiam">{% _🗣️ licentiam_nomen 🗣️_ %}</h2>
+    {% _🗣️ Hapi_licentiam_Hapi_descriptionem 🗣️_ %}
+    {% de_markdown %}{% _🗣️ Hapi_licentiam_Hapi_descriptionem 🗣️_ %}{% endde_markdown %}
   </footer>
 </article>
-
-
-{% _ Hapi_nomen _ %}
-
-[{% incognitum_phrasim_est -%}{% de_textum eng-Latn Unknow translation %}{%- endincognitum_phrasim_est %}]
-
-[{% de_textum eng-Latn Unknow translation %}]
-
-[{% de_lat_codicem HAPI_licentiam_descriptionem %}]
-
-[[[{%- incognitum_phrasim_est -%}<!--[de_linguam:[eng-Latn]]-->Unknow translation<!--[[eng-Latn]:de_linguam]-->{%- endincognitum_phrasim_est -%}]]]
-
-----
-
-{%- incognitum_phrasim_est -%}
-{% de_markdown %}{% de_lat_codicem Temp_licença_aviso de_markdown %}{% endde_markdown %}
-{%- endincognitum_phrasim_est -%}

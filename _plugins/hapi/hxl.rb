@@ -117,7 +117,7 @@ module Hapi
         end
         unless uglyhack.any? { |ref| opts.include?(ref) }
           # puts "Hapi.HXL.HXLOptionem: non obiectum_optionem [#{uglyhack}]"
-          puts " > Hapi.HXL.HXLOptionem: non obiectum_optionem [#{uglyhack}][#{opts}]"
+          # puts " > Hapi.HXL.HXLOptionem: non obiectum_optionem [#{uglyhack}][#{opts}]"
           # log.debug("Created Logger")
           return false
         end

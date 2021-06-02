@@ -41,7 +41,6 @@ module Hapi
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
       VENANDUM_INSECTUM_EMOJI = ['🔎🐛🔍'].freeze
       SOS_EMOJI = ['🔎🆘🔍'].freeze
-      SOS_EMOJI = ['🔎🆘🔍'].freeze
       SILENTIUM_EMOJI = ['🔇'].freeze
 
       # include Hapi.Datum

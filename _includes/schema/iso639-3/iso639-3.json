@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "{{ site.url }}{{ page.url }}",
-    "title": "{% _ ISO_639-3_nomen _ %}",
-    "description": "{% _ ISO_639-3_summarius _ %}",
+    "title": "{% _🗣️ ISO_639-3_nomen 🗣️_ %}",
+    "description": "{% _🗣️ ISO_639-3_summarius 🗣️_ %}",
     "$comment": "See https://iso639-3.sil.org/code_tables/download_tables \n https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab \n https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso639-3_table_definition.txt",
     "type": "object",
     "required": [
@@ -13,31 +13,31 @@
     ],
     "properties": {
         "Id": {
-            "description": "{% _ ISO_639-3_optionem_Id_summarius _ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Id_summarius 🗣️_ %}",
             "type": "string",
             "length": 3,
-            "example": "{% _ ISO_639-3_optionem_Id_exemplum _ %}"
+            "example": "{% _🗣️ ISO_639-3_optionem_Id_exemplum 🗣️_ %}"
         },
         "Part2B": {
-            "description": "{% _ ISO_639-3_optionem_Part2B_summarius _ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Part2B_summarius 🗣️_ %}",
             "type": "string",
             "length": 3,
-            "example": "{% _ ISO_639-3_optionem_Part2B_exemplum _ %}"
+            "example": "{% _🗣️ ISO_639-3_optionem_Part2B_exemplum 🗣️_ %}"
         },
         "Part2T": {
-            "description": "{% _ ISO_639-3_optionem_Part2T_summarius _ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Part2T_summarius 🗣️_ %}",
             "type": "string",
             "length": 3,
-            "example": "{% _ ISO_639-3_optionem_Part2T_exemplum %}"
+            "example": "{% _🗣️ ISO_639-3_optionem_Part2T_exemplum %}"
         },
         "Part1": {
-            "description": "{% _ ISO_639-3_optionem_Part1_summarius _ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Part1_summarius 🗣️_ %}",
             "type": "string",
             "length": 2,
-            "example": "{% _ ISO_639-3_optionem_Part1_exemplum _ %}"
+            "example": "{% _🗣️ ISO_639-3_optionem_Part1_exemplum 🗣️_ %}"
         },
         "Scope": {
-            "description": "{% _ ISO_639-3_optionem_Scope_summarius _ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Scope_summarius 🗣️_ %}",
             "type": "string",
             "length": 1,
             "enum": [
@@ -45,10 +45,10 @@
                 "M",
                 "S"
             ],
-            "example": "{% _ ISO_639-3_optionem_Scope_exemplum _ %}"
+            "example": "{% _🗣️ ISO_639-3_optionem_Scope_exemplum 🗣️_ %}"
         },
         "Type": {
-            "description": "{% _ ISO_639-3_optionem_Type_summarius _ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Type_summarius 🗣️_ %}",
             "type": "string",
             "length": 1,
             "enum": [
@@ -59,18 +59,18 @@
                 "L",
                 "S"
             ],
-            "example": "{% _ ISO_639-3_optionem_Type_exemplum _ %}"
+            "example": "{% _🗣️ ISO_639-3_optionem_Type_exemplum 🗣️_ %}"
         },
         "Ref_Name": {
-            "description": "{% _ ISO_639-3_optionem_Ref_Name_summarius _ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Ref_Name_summarius 🗣️_ %}",
             "type": "string",
             "maxLengh": 150
         },
         "Comment": {
-            "description": "{% _ ISO_639-3_optionem_Ref_Name_summarius _ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Ref_Name_summarius 🗣️_ %}",
             "type": "string",
             "maxLengh": 150,
-            "example": "{% _ ISO_639-3_optionem_Ref_Name_exemplum _ %}"
+            "example": "{% _🗣️ ISO_639-3_optionem_Ref_Name_exemplum 🗣️_ %}"
         }
     }
 }
