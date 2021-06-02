@@ -32,9 +32,11 @@ sitemap:
   <header>
     <div class="container">
       <h1>Mappam Situm - Auxilium Humanitarium API documentōrum</h1>
-      <div class="alert alert-danger" role="alert">
-        <p lang="en">👷🏽 Work in progress</p>
-        <p lang="pt">👷🏽 Trabalho em progresso</p>
+      <div class="alert alert-warning" role="alert">
+        <p>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_%}</p>
+        <p>{% _🗣️ 📝por-Latn📝 opus_in_progressu_emoji_nomen 📝por-Latn📝 🗣️_%}</p>
+        <p>{% _🗣️ 📝eng-Latn📝 opus_in_progressu_emoji_nomen 📝eng-Latn📝 🗣️_%}</p>
+        <p>{% _🗣️ 📝spa-Latn📝 opus_in_progressu_emoji_nomen 📝spa-Latn📝 🗣️_%}</p>
       </div>
     </div>
   </header>
@@ -70,125 +72,6 @@ sitemap:
           </li>
         {% endfor %}
       </ul>
-      </pre>
-      <h2>L10N</h2>
-      <!-- TEST CODE -->
-      <h3>🗣️📝💾 Localization [neolatīnum; de ISO639-3:eng] 💾📝🗣️</h3>
-      <p>
-        <dl>
-          <dt>Padrão (usa informações do contexto)</dt>
-          <dt>{% raw %}<code>{% _🗣️ L10N_ego_summarius 🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>{% _🗣️ L10N_ego_summarius 🗣️_ %}</output></dd>
-
-          <dt>Explicitamente escreva em por-Latn, independente do contexto da página</dt>
-          <dt>{% raw %}<code>{% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>{% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}</output></dd>
-
-          <dt>Imprima no idioma do contexto, porém a variável de entrada é spa-Latn, não um código</dt>
-          <dt>{% raw %}<code>{% _🗣️ 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>{% _🗣️ 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 🗣️_ %}</output></dd>
-
-          <dt>Conversa de spa-Latn para por-Latn</dt>
-          <dt>{% raw %}<code>{% _🗣️ 📝por-Latn📝 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 📝por-Latn📝 🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>{% _🗣️ 📝por-Latn📝 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 📝por-Latn📝 🗣️_ %}</output></dd>
-
-        </dl>
-      </p>
-      <h3>🔎🐛💾Vēnandum īnsectum 💾🐛🔍</h3>
-      <p>
-        <dl>
-
-          <dt>Exemplum I</dt>
-          <dt>{% raw %}<code>{% _🗣️ 🔎🐛🔍 🔎🆘🔍 L10N_ego_summarius 🔎🆘🔍 🔎🐛🔍 🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>(...)</output></dd>
-          <dt>Exemplum II</dt>
-          <dt>{% raw %}<code>{% _🗣️ 🔎🐛🔍 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🔎🐛🔍 🗣️_ %}</code>{% endraw %}</dt>
-          <dd><output>TODO: implementar caso mais complexo (de idioma, nao apenas de código)</output></dd>
-
-          <dt>Exemplum III</dt>
-          <dt>_[por]Strings padrões de software (não deve ser usado para testes externos)[por]_</dt>
-          <!-- <dt>{% raw %}<code>{% _ I18N_إختبار_טעסט_测试_테스트_испытание_I18N _ %}</code>{% endraw %}</dt> -->
-          <dd><output>{% _ I18N_إختبار_טעסט_测试_테스트_испытание_I18N _ %}</output></dd>
-        </dl>
-      </p>
-      <h3>Debug context</h3>
-      <p>
-        <dl>
-
-          <dt>{% raw %}<code>{% __🆘__ %}</code>{% endraw %}</dt>
-          <dd><output>{% __🆘__ %}</output></dd>
-
-        </dl>
-      </p>
-      <p>
-        <dl>
-
-          <dt>{% raw %}<code>{% assign ego = '🆘' %}{% _🗣️ L10N_ego_summarius 🗣️_ %}{% assign ego = '' %}</code>{% endraw %}</dt>
-          <dd><output>{% assign my_variable = false %}</output></dd>
-          <dd><output>{% assign ego = '🆘' %}{% _🗣️ L10N_ego_summarius 🗣️_ %}{% assign ego = '' %}</output></dd>
-        </dl>
-      </p>
-
-      <h2>Emoji (uso interno do CPLP para decidir os comandos)</h2>
-
-      {% raw %}
-      <ul>
-        <li>🗣️ https://emojipedia.org/speaking-head/</li>
-        <li>🖊️ https://emojipedia.org/pen/</li>
-        <li>✏️ https://emojipedia.org/pencil/</li>
-        <li>📝 https://emojipedia.org/memo/</li>
-        <li>📣 https://emojipedia.org/megaphone/</li>
-        <li>🔈 https://emojipedia.org/speaker-low-volume/</li>
-        <li>🔉 https://emojipedia.org/speaker-medium-volume/</li>
-        <li>🔊 https://emojipedia.org/speaker-high-volume/</li>
-        <li>🔇 https://emojipedia.org/muted-speaker/</li>
-        <li>👁️ https://emojipedia.org/eye/</li>
-        <li>👀 https://emojipedia.org/eyes/</li>
-        <li>🔍 https://emojipedia.org/magnifying-glass-tilted-left/</li>
-        <li>🔎 https://emojipedia.org/magnifying-glass-tilted-right/</li>
-        <li>🐛 https://emojipedia.org/bug/</li>
-        <li>🚫 https://emojipedia.org/prohibited/</li>
-      </ul>
-      <p>
-        https://blog.emojipedia.org/unicode-behind-the-curtain/
-      </p>
-      <p>
-        https://blog.emojipedia.org/whatsapps-new-refugee-nation-flag/
-      </p>
-      <p>
-        <img style="max-width: 600px;"src="https://blog.emojipedia.org/content/images/size/w2000/2017/04/xkcd-emoji.jpeg">
-      </p>
-      <pre>
-        // Padrão (usa informações do contexto)
-        {% _🗣️ L10N_ego_summarius 🗣️_ %}
-
-        // Explicitamente escreva em por-Latn, independente do contexto da página
-        {% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}
-
-        // Imprima no idioma do contexto, porém a variável de entrada é spa-Latn, não um código
-        {% _🗣️ 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 🗣️_ %}
-
-        // Conversa de spa-Latn para por-Latn
-        {% _🗣️ 📝por-Latn📝 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 📝por-Latn📝 🗣️_ %}
-        {% _🗣️ 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🗣️_ %}
-
-        /// Debug habilitado
-        {% _🗣️🔍🐛 L10N_ego_summarius 🐛🔍🗣️_ %}
-        {% _🗣️🔎🐛 L10N_ego_summarius 🐛🔎🗣️_ %}
-        {% _🗣️🔎🐛 L10N_ego_summarius 🐛🔍🗣️_ %}
-
-        (...)
-        {% _🗣️ 🔎🐛🔍 👁️spa-Latn👁️ 📝por-Latn📝 Idioma español (Alfabeto latino) 📝por-Latn📝 👁️spa-Latn👁️ 🔎🐛🔍 🗣️_ %}
-
-        (...)
-        // Inverso de debug (tente tolerar errors o máximo possível)
-        // Talvez usar para proteger alterações novas em produção com termos que sabe que vão falhar
-        {% _🗣️🔇 L10N_ego_summarius 🔇🗣️_ %}
-
-      </pre>
-      {% endraw %}
-
-      <!-- TEST CODE -->
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

@@ -783,11 +783,11 @@ module Hapi
         # print 'ooooooooooooooooooi'
         # if argumentum.include?('🗣️ ')
 
-        if argumentum.include?('🗣️ 🔎🐛🔍')
-          @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
-        end
+        # if argumentum.include?('🗣️')
+        #   @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
+        # end
 
-        # @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
+        @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
 
         # puts tokens.locale
         # puts token['line_numbers']
