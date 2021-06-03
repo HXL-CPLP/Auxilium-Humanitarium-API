@@ -12,8 +12,10 @@
   {% if page.noindex %}<meta name="robots" content="noindex,nofollow">{% endif %}
 
   {% if page.layout contains 'api' or page.openapi_filum != nil %}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.17.0/swagger-ui.css"
-  integrity="sha384-EsNi7oBa+y4MD5KbpC28MUDGgPo3qn7XURKXTbKQwPyzE/vkRHg+1LEJAnuWqe8g" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@3.49.0/swagger-ui.css"
+  integrity="sha384-cV2XOZCR++vwjNcnG56raZiJn/a7fw78X9BkQ8S4Rgj5BAI1XfOvAMbRm9KmARdg"
+  crossorigin="anonymous">
+
   <style>
     /* Hide some strange SVG not loading */
     .swagger-ui>div>svg {

@@ -2,15 +2,28 @@
 layout: defallo
 ---
 
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">
+    {% _🗣️ Hapi_ad_agendum_MMXXI_titulum 🗣️_ %}
+  </h1>
+  <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">
+        {% _🗣️ Hapi_ad_agendum_MMXXI_commentarium 🗣️_ %}
+      </p>
+  </div>
+</div>
+
 <div style="border-style: dotted; border-width: 2px; border-color: #ccc">
 
-  <h2 style="text-align: center;">{% include fn/Conatum prefix='Temp_hapi_api_titulo_h2' %}</h2>
+  <h2 style="text-align: center;">
+    {% _🗣️ Hapi_paginam_API_I_titulum 🗣️_ %}
+  </h2>
 
   <div id="swagger-ui"></div>
 
   <aside style="max-width: 800px; margin: 0 auto;">
     <h3>{% _🗣️ PDF_archivum_salvandum_nomen 🗣️_ %}</h3>
-    <rapi-pdf style="width:700px; height:40px; font-size:18px;" spec-url="{{ openapi_filum }}"
+    <rapi-pdf style="width:700px; height:40px; font-size:18px;" spec-url="{{ page.openapi_filum | default: page.datum.openapi_filum }}"
         button-bg="#b44646">
     </rapi-pdf>
   </aside>

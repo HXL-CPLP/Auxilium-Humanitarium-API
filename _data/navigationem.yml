@@ -76,17 +76,18 @@ Zyyy: &idZyyy
   - namen: "🇺🇳 UN 🇺🇳"
     url: "#"
     descendens:
-      - namen: <span lang="en" dir="ltr">HDX - The Humanitarian Data Exchange</span>
-        linguam: eng-Latn
-        url: /api/UN/HDX/eng/
+      - namen: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
+        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
+        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/'
 
-      - namen: <span lang="en" dir="ltr">ReliefWeb - Informing humanitarians worldwide</span>
-        linguam: eng-Latn
-        url: /api/UN/CODV2API/eng/
+      - namen: '{% _🗣️ Hapi_api_UN_reliefweb_titulum 🗣️_ %}'
+        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
+        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_reliefweb_slug 🗣️_ %}/'
 
-      - namen: <span lang="en" dir="ltr">COD Version 2 API <sup>beta</sup></span>
-        linguam: eng-Latn
-        url: /api/UN/CODV2API/eng/
+      - namen: '{% _🗣️ Hapi_api_UN_CODV2API_titulum 🗣️_ %}'
+        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
+        # url: /api/UN/CODV2API/eng/
+        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_CODV2API_slug 🗣️_ %}/'
 
       - namen: <span lang="en" dir="ltr">UNSD SDG API</span>
         debile: true
@@ -94,9 +95,11 @@ Zyyy: &idZyyy
   - namen: "🌐 XZ 🌐"
     url: "#"
     descendens:
-      - namen: <span lang="en" dir="ltr">HXL-Proxy - Proxy of the Humanitarian Exchange Language</span>
-        linguam: eng-Latn
-        url: /api/XZ/HXL-Proxy/eng/
+      # - namen: <span lang="en" dir="ltr">HXL-Proxy - Proxy of the Humanitarian Exchange Language</span>
+      - namen: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
+        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
+        # url: /api/XZ/HXL-Proxy/eng/
+        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/XZ/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/'
 
       - namen: <span lang="en" dir="ltr">Worldbank</span>
         debile: true
@@ -112,9 +115,9 @@ Zyyy: &idZyyy
         linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
         url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/BR/{% _🗣️ Hapi_api_BR_portais-arcgis-brasil_slug 🗣️_ %}/'
 
-  - namen: Data Schema
+  - namen: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
     linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-    url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}#schemam'
+    url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/#{% _🗣️ schemam_slug 🗣️_ %}'
 
   # - html: |
   #     <!-- Search form -->
