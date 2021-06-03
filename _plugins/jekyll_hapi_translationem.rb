@@ -36,7 +36,8 @@ module Hapi
                     :initiale_processum, :venandum_insectum_est, :sos_est,
                     :paginam_contextum, :referens,
                     :contextum_archivum_extensionem, :contextum_linguam,
-                    :contextum_ego, :paratum_est, :referens_praeiudico
+                    :contextum_ego, :paratum_est, :referens_praeiudico,
+                    :alternandum_linguam
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
@@ -96,7 +97,7 @@ module Hapi
         false
       end
 
-      def explanandum_resultatum # rubocop:disable Metrics/MethodLength,Metrics/AbcSize)
+      def explanandum_resultatum # rubocop:disable Metrics/MethodLength,)
         contextum_linguam = Hapi::Datum::Linguam.new(
           { 'linguam' => @contextum_linguam, 'referens' => @referens }
         )
@@ -107,39 +108,47 @@ module Hapi
           { 'linguam' => @objectivum_linguam, 'referens' => @referens }
         )
 
+        alternandum_linguam = Hapi::Datum::Linguam.new(
+          { 'linguam' => @alternandum_linguam, 'referens' => @referens }
+        )
+
         Hapi::Datum::L10nTag.new(
           {
             'crudum' => @tag_fontem,
             'contextum_archivum_extensionem' => @contextum_archivum_extensionem,
             'contextum_sos' => @contextum_sos,
-            'contextum_linguam' => @contextum_linguam,
+            #     'contextum_linguam' => @contextum_linguam,
+            'contextum_linguam' => contextum_linguam,
             # 'contextum_htmldir' => Translationem.praeiudico_htmldir_de_linguam(
             #   @contextum_linguam, @referens_praeiudico
             # ),
             # crudum => @tag_fontem,
             # tag_fontem => 'teste',
             # crudum => 'teste',
-            'fontem_linguam' => @fontem_linguam,
-            'fontem_bcp47' => if @fontem_linguam.nil?
-                                nil
-                              else
-                                Translationem.iso6391_de_linguam(
-                                  @fontem_linguam,
-                                  @referens_praeiudico
-                                )
-                              end,
-            'objectivum_linguam' => @objectivum_linguam,
-            'objectivum_bcp47' => unless @objectivum_linguam.nil?
-                                    Translationem.iso6391_de_linguam(
-                                      @objectivum_linguam,
-                                      @referens_praeiudico
-                                    )
-                                  end,
-            'objectivum_htmldir' => unless @objectivum_linguam.nil?
-                                      Translationem.praeiudico_htmldir_de_linguam(
-                                        @objectivum_linguam, @referens_praeiudico
-                                      )
-                                    end,
+            #  'fontem_linguam' => @fontem_linguam,
+            'fontem_linguam' => fontem_linguam,
+            # 'fontem_bcp47' => if @fontem_linguam.nil?
+            #                     nil
+            #                   else
+            #                     Translationem.iso6391_de_linguam(
+            #                       @fontem_linguam,
+            #                       @referens_praeiudico
+            #                     )
+            #                   end,
+            #  'objectivum_linguam' => @objectivum_linguam,
+            'objectivum_linguam' => objectivum_linguam,
+            # 'objectivum_bcp47' => unless @objectivum_linguam.nil?
+            #                         Translationem.iso6391_de_linguam(
+            #                           @objectivum_linguam,
+            #                           @referens_praeiudico
+            #                         )
+            #                       end,
+            # 'objectivum_htmldir' => unless @objectivum_linguam.nil?
+            #                           Translationem.praeiudico_htmldir_de_linguam(
+            #                             @objectivum_linguam, @referens_praeiudico
+            #                           )
+            #                         end,
+            'alternandum_linguam' => alternandum_linguam,
             'fontem_textum' => @textum,
             'venandum_insectum_est' => @venandum_insectum_est,
             'sos_est' => @sos_est,
@@ -427,52 +436,20 @@ module Hapi
     # - 'ultima mundi quo steterit', https://es.wikipedia.org/wiki/%C3%9Altima_defensa
     # - 'rem', https://en.wiktionary.org/wiki/res#Latin
     def farmatum_ultima_mundi_quo_steterit(rem)
-      puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Non-L10N :( [#{rem.inspect}]"
+      # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos? || rem.est_venandum_insectum?
 
+      # @see https://stackoverflow.com/questions/18705373/ruby-equivalent-for-pythons-try
+      # "try" block
       if rem.est_html?
-        return "<span lang='#{rem.fontem_bcp47}' data-l10n-fontem-textum='#{rem.fontem_textum}' " \
-               "data-l10n-fontem-linguam='#{rem.fontem_linguam}' " \
-               "data-l10n-errorem='1' data-l10n-objectivum-linguam='#{rem.objectivum_linguam}'>#{rem.fontem_textum}</span>"
+        return "<span lang='#{rem.fontem_linguam.bcp47}' data-l10n-fontem-textum='#{rem.fontem_textum}' " \
+               "data-l10n-fontem-linguam='#{rem.fontem_linguam.linguam}' " \
+               "data-l10n-errorem='1' data-l10n-objectivum-linguam='#{rem.objectivum_linguam.linguam}'>" \
+               "#{rem.fontem_textum}</span>"
       end
-      # puts rem.est_html?
       rem.fontem_textum
-      # html_est = contextum['page']['translationem_modum']
-      # linguam = contextum['page']['linguam']
-      # debug_est = contextum['page']['translationem_debug']
-
-      # if html_est == 'html' && debug_est
-      #   return "<span data-l10n-c='#{trns_codicem}' data-l10n-linguam='#{linguam}'>#{trns_resultatum}</span>"
-      # end
-      # return "<span data-l10n-c='#{trns_codicem}'>#{trns_resultatum}</span>" if html_est == 'html'
-      # return "_[#{linguam}]#{trns_resultatum}[#{linguam}]_" if debug_est
-
-      # trns_resultatum
+    rescue StandardError => e
+      puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{e}] [#{rem.inspect}]"
     end
-    # def farmatum_ultima_mundi_quo_steterit(contextum, trns_codicem, trns_resultatum)
-    #   html_est = contextum['page']['translationem_modum']
-    #   linguam = contextum['page']['linguam']
-    #   debug_est = contextum['page']['translationem_debug']
-
-    #   if html_est == 'html' && debug_est
-    #     return "<span data-l10n-c='#{trns_codicem}' data-l10n-linguam='#{linguam}'>#{trns_resultatum}</span>"
-    #   end
-    #   return "<span data-l10n-c='#{trns_codicem}'>#{trns_resultatum}</span>" if html_est == 'html'
-    #   return "_[#{linguam}]#{trns_resultatum}[#{linguam}]_" if debug_est
-
-    #   trns_resultatum
-    # end
-
-    # def hxlattrs_de_linguam(contextum, linguam = nil)
-    #   linguam = linguam.nil? ? contextum['page']['linguam'] : linguam
-    #   # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
-    #   #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
-    #   #       [por]_
-    #   # hxlattrs = contextum['site']['data']['referens']['linguam'][linguam]['hxlattrs']
-    #   #
-    #   # hxlattrs
-
-    #   contextum['site']['data']['referens']['linguam'][linguam]['hxlattrs']
-    # end
 
     # @see https://iso639-3.sil.org/code_tables/639/data
     # @see https://www.wikidata.org/wiki/Property:P220
@@ -851,7 +828,7 @@ module Hapi
         # Translationem.translationem_memoriam_collectionem(context)
         # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
         l10nval = Translationem.translationem_memoriam_rememorandum(
-          context, res.fontem_textum, res.objectivum_linguam
+          context, res.fontem_textum, res.objectivum_linguam.linguam
         )
         # l10nval = 'tes'
         # raise l10nval if l10nval

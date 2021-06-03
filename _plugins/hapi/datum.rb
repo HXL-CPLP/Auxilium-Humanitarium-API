@@ -19,13 +19,11 @@ module Hapi
   module Datum
     # _[por] Conteiner de dados de uma tag L10n [por]_
     class L10nTag
-      attr_accessor :crudum, :fontem_linguam, :fontem_bcp47, :objectivum_linguam,
+      attr_accessor :crudum, :fontem_linguam, :objectivum_linguam,
                     :fontem_textum, :venandum_insectum_est, :sos_est,
                     :contextum_archivum_extensionem, :objectivum_textum,
                     :contextum_linguam, :contextum_sos, :paratum_est,
-                    :contextum_url, :alternandum_textum, :alternandum_linguam,
-                    :contextum_htmldir, :objectivum_htmldir,
-                    :alternandum_htmldir, :objectivum_bcp47
+                    :contextum_url, :alternandum_textum, :alternandum_linguam
 
       # :initiale_processum
 
@@ -42,9 +40,10 @@ module Hapi
         # @tag_nomen = optionem.fetch(:tag_nomen)
         # @fontem_linguam = optionem.fetch(:fontem_linguam)
         @fontem_linguam = optionem['fontem_linguam']
-        @fontem_bcp47 = optionem['fontem_bcp47']
+        @alternandum_linguam = optionem['alternandum_linguam']
+        # @fontem_bcp47 = optionem['fontem_bcp47']
         @objectivum_linguam = optionem['objectivum_linguam']
-        @objectivum_bcp47 = optionem['objectivum_bcp47']
+        # @objectivum_bcp47 = optionem['objectivum_bcp47']
         @fontem_textum = optionem['fontem_textum']
         @venandum_insectum_est = optionem['venandum_insectum_est']
         @sos_est = optionem['sos_est']
@@ -71,16 +70,16 @@ module Hapi
           # @exemplum Idioma español (Alfabeto latino)
           fontem_textum: nil,
           objectivum_textum: nil,
-          objectivum_bcp47: nil,
+          # objectivum_bcp47: nil,
           alternandum_textum: nil,
           alternandum_linguam: nil,
           contextum_archivum_extensionem: '.html', # .csv, .json, ...
           contextum_linguam: nil, # .csv, .json, ...
           contextum_sos: nil,
-          contextum_htmldir: nil,
-          objectivum_htmldir: nil,
-          alternandum_htmldir: nil,
-          fontem_htmldir: nil,
+          # contextum_htmldir: nil,
+          # objectivum_htmldir: nil,
+          # alternandum_htmldir: nil,
+          # fontem_htmldir: nil,
           venandum_insectum_est: false,
           sos_est: false,
           contextum_url: nil,
@@ -150,13 +149,14 @@ module Hapi
           referens = optionem['referens']
           @iso15924 = Utilitatem.iso15924_de_linguam(@linguam)
           @iso6391 = Utilitatem.iso6391_de_linguam(@linguam, referens['praeiudico'])
+          @bcp47 = @iso6391
           @htmldir = Utilitatem.praeiudico_htmldir_de_linguam(@linguam, referens['praeiudico'])
         end
 
         # TODO: linguam.zzz-Zzzz.BCP47
         # TODO: linguam.zzz-Zzzz.hxl.attributum
 
-        puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] self [#{inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] self [#{inspect}]"
       end
 
       def initiale_datum

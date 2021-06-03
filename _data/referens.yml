@@ -209,6 +209,10 @@ praeiudico:
       iso15924: Latn
       iso6391: pt
       htmldir: ltr
+    lat:
+      iso15924: Latn
+      iso6391: la
+      htmldir: ltr
 
   iso3691:
     ar: *id_praeiudico_iso3693_ara
