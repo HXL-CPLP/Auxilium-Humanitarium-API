@@ -36,7 +36,7 @@ module Hapi
                     :initiale_processum, :venandum_insectum_est, :sos_est,
                     :paginam_contextum, :referens,
                     :contextum_archivum_extensionem, :contextum_linguam,
-                    :contextum_ego, :paratum_est
+                    :contextum_ego, :paratum_est, :referens_praeiudico
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
@@ -107,6 +107,7 @@ module Hapi
             # tag_fontem => 'teste',
             # crudum => 'teste',
             'fontem_linguam' => @fontem_linguam,
+            'fontem_bcp47' => @fontem_linguam.nil? ? nil : Translationem.iso6391_de_linguam(@fontem_linguam, referens_praeiudico),
             'objectivum_linguam' => @objectivum_linguam,
             'fontem_textum' => @textum,
             'venandum_insectum_est' => @venandum_insectum_est,
@@ -131,8 +132,10 @@ module Hapi
       end
 
       def investigationem_contextum(contextum)
-        @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
+        # @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
+        @contextum_archivum_extensionem = File.extname(contextum['page']['url']) || contextum['ego_ext']
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
+        @referens_praeiudico = contextum['site']['data']['referens']['praeiudico']
         @paginam_contextum = contextum['page']
         @contextum_linguam = if contextum['ego_linguam']
                                contextum['ego_linguam']
@@ -394,6 +397,12 @@ module Hapi
     def farmatum_ultima_mundi_quo_steterit(rem)
       puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Non-L10N :( [#{rem.inspect}]"
 
+      if rem.est_html?
+        return "<span lang='#{rem.fontem_bcp47}' data-l10n-fontem-textum='#{rem.fontem_textum}' " \
+               "data-l10n-fontem-linguam='#{rem.fontem_linguam}' " \
+               "data-l10n-errorem='1' data-l10n-objectivum-linguam='#{rem.objectivum_linguam}'>#{rem.fontem_textum}</span>"
+      end
+      # puts rem.est_html?
       rem.fontem_textum
       # html_est = contextum['page']['translationem_modum']
       # linguam = contextum['page']['linguam']
@@ -809,6 +818,8 @@ module Hapi
         # raise l10nval if l10nval
         # return l10nval if l10nval != false
         if l10nval != false
+          res.objectivum_textum = l10nval
+
           return Translationem.farmatum_praefectum(
             context, res.fontem_textum, l10nval
           )
@@ -818,6 +829,9 @@ module Hapi
           context, res.fontem_textum, 'eng-Latn'
         )
         if l10nval_eng != false
+          res.alternandum_textum = l10nval_eng
+          res.alternandum_linguam = 'eng-Latn'
+
           return Translationem.farmatum_alternandum(
             context, res.fontem_textum, l10nval_eng,
             'eng-Latn'
@@ -828,6 +842,8 @@ module Hapi
           context, res.fontem_textum, 'por-Latn'
         )
         if l10nval_por != false
+          res.alternandum_textum = l10nval_por
+          res.alternandum_linguam = 'por-Latn'
           return Translationem.farmatum_alternandum(
             context, res.fontem_textum, l10nval_por,
             'por-Latn'
@@ -838,6 +854,8 @@ module Hapi
           context, res.fontem_textum, 'spa-Latn'
         )
         if l10nval_spa != false
+          res.alternandum_textum = l10nval_spa
+          res.alternandum_linguam = 'spa-Latn'
           return Translationem.farmatum_alternandum(
             context, res.fontem_textum, l10nval_spa,
             'spa-Latn'

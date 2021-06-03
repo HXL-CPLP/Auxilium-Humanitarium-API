@@ -19,11 +19,11 @@ module Hapi
   module Datum
     # _[por] Conteiner de dados de uma tag L10n [por]_
     class L10nTag
-      attr_accessor :crudum, :fontem_linguam, :objectivum_linguam,
+      attr_accessor :crudum, :fontem_linguam, :fontem_bcp47, :objectivum_linguam,
                     :fontem_textum, :venandum_insectum_est, :sos_est,
-                    :contextum_archivum_extensionem,
+                    :contextum_archivum_extensionem, :objectivum_textum,
                     :contextum_linguam, :contextum_sos, :paratum_est,
-                    :contextum_url
+                    :contextum_url, :alternandum_textum, :alternandum_linguam
 
       # :initiale_processum
 
@@ -40,6 +40,7 @@ module Hapi
         # @tag_nomen = optionem.fetch(:tag_nomen)
         # @fontem_linguam = optionem.fetch(:fontem_linguam)
         @fontem_linguam = optionem['fontem_linguam']
+        @fontem_bcp47 = optionem['fontem_bcp47']
         @objectivum_linguam = optionem['objectivum_linguam']
         @fontem_textum = optionem['fontem_textum']
         @venandum_insectum_est = optionem['venandum_insectum_est']
@@ -61,10 +62,14 @@ module Hapi
           # tag_nomen: nil, # TODO: deprecated
           # @exemplum spa-Latn
           fontem_linguam: nil,
+          fontem_bcp47: nil,
           # @exemplum por-Latn
           objectivum_linguam: nil,
           # @exemplum Idioma español (Alfabeto latino)
           fontem_textum: nil,
+          objectivum_textum: nil,
+          alternandum_textum: nil,
+          alternandum_linguam: nil,
           contextum_archivum_extensionem: '.html', # .csv, .json, ...
           contextum_linguam: nil, # .csv, .json, ...
           contextum_sos: nil,
@@ -74,6 +79,27 @@ module Hapi
           # initiale_processum: nil,
           paratum_est: false
         }
+      end
+
+      def est_html?
+        @contextum_archivum_extensionem == '.html'
+      end
+
+      # Trivia:
+      # - 'est'
+      #   - https://en.wiktionary.org/wiki/est#Latin
+      # - 'idem'
+      #   - https://en.wiktionary.org/wiki/idem#Latin
+      # - 'linguam'
+      #   - https://en.wiktionary.org/wiki/lingua#Latin
+      # - 'contextum'
+      #   - https://en.wiktionary.org/wiki/contextus#Latin
+      def est_idem_linguam_contextum?
+        @contextum_linguam == if @objectivum_textum.nil?
+                                @fontem_linguam
+                              else
+                                @objectivum_linguam
+                              end
       end
 
       # Trivia:
