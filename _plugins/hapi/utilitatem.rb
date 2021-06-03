@@ -1,4 +1,4 @@
-# FILUM:           _lugins/hapi/utilitatem.rb
+# FILUM:           _plugins/hapi/utilitatem.rb
 # DESCRIPTIONEM:   _[eng] Generic utils [eng]_
 #                  _[por] Utilitários diversos [por]_
 #
@@ -89,6 +89,38 @@ module Hapi
       api
     end
 
+    # @see https://iso639-3.sil.org/code_tables/639/data
+    # @see https://www.wikidata.org/wiki/Property:P220
+    def iso6391_de_linguam(linguam, referens_praeiudico)
+      return nil if linguam.length != 8
+
+      @parts = linguam.split('-')
+
+      return nil if @parts[0].nil? || @parts[0].length != 3
+
+      @iso6393 = @parts[0]
+
+      # return nil if referens_praeiudico['iso3693'].nil?
+      return nil if referens_praeiudico['iso3693'][@iso6393].nil?
+      return nil if referens_praeiudico['iso3693'][@iso6393]['iso6391'].nil?
+
+      referens_praeiudico['iso3693'][@iso6393]['iso6391']
+    end
+
+    # @see https://www.wikidata.org/wiki/Property:P506
+    # @see https://unicode.org/iso15924/iso15924-codes.html
+    def iso15924_de_linguam(linguam)
+      return nil if linguam.length < 4
+
+      @parts = linguam.split('-')
+
+      return nil if @parts[1].nil?
+
+      return @parts[1] if @parts[1].length == 4
+
+      nil
+    end
+
     # _[eng] We use ISO 639-3, but HTML lang wants BCP-47 [eng]_
     # _[por] Usamos ISO 639-3, porém HTML lang deseja BCP-47 [por]_
     def linguam_to_html_lang(linguam, referens)
@@ -139,6 +171,63 @@ module Hapi
       @tags.append("api-trivium-#{api['trivium']}") if api['trivium']
 
       @tags
+    end
+
+    # _[por] Forma preconceituosa de assumir direção de escrita apenas pelo
+    #        idioma ISO 639-3 + sistema de escrita ISO 15924.
+    # [por]_
+    #
+    # @exemplum Exemplum I
+    #   Translationem.praeiudico_htmldir_de_linguam('por-Latn', referens_praeiudico)
+    # @resultatum Exemplum I
+    #   ltr
+    #
+    # @exemplum Exemplum II
+    #   Translationem.praeiudico_htmldir_de_linguam('ara-Arab', referens_praeiudico)
+    # @resultatum Exemplum II
+    #   rtl
+    #
+    # Trivia:
+    # - 'praeiudico'
+    #   - https://en.wiktionary.org/wiki/praeiudico
+    #     - https://en.wiktionary.org/wiki/prejudge
+    # - https://en.wikipedia.org/wiki/Linguistic_discrimination
+    def praeiudico_htmldir_de_linguam(linguam, referens_praeiudico)
+      return nil if linguam.length != 8
+
+      @parts = linguam.split('-')
+
+      return nil if @parts[0].nil? || @parts[0].length != 3
+
+      # return nil if referens_praeiudico['iso3693'].nil?
+      return nil if referens_praeiudico['iso3693'][@parts[0]].nil?
+      return nil if referens_praeiudico['iso3693'][@parts[0]]['htmldir'].nil?
+
+      referens_praeiudico['iso3693'][@parts[0]]['htmldir']
+    end
+
+    # _[por] Forma preconceituosa de assumir script do idioma. Note que vários
+    #        idiomas podem ser escritos em mais de um alfabeto (e isso ocorre
+    #        com frequência línguas que não usam latin.)
+    # [por]_
+    #
+    # @exemplum Exemplum I
+    #   Translationem.praeiudico_iso15924_de_iso6393('por', referens_praeiudico)
+    # @resultatum Exemplum I
+    #   Latn
+    #
+    # Trivia:
+    # - 'praeiudico'
+    #   - https://en.wiktionary.org/wiki/praeiudico
+    #     - https://en.wiktionary.org/wiki/prejudge
+    # - https://en.wikipedia.org/wiki/Linguistic_discrimination
+    def praeiudico_iso15924_de_iso6393(iso6393, referens_praeiudico)
+      return nil if iso6393.length != 3
+      return nil if referens_praeiudico['iso3693'].nil?
+      return nil if referens_praeiudico['iso3693'][iso6393].nil?
+      return nil if referens_praeiudico['iso3693'][iso6393]['iso15924'].nil?
+
+      referens_praeiudico['iso3693'][iso6393]['iso15924']
     end
 
     # _[eng] Is this an x-default API? [eng]_

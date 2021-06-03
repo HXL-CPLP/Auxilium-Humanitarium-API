@@ -96,19 +96,50 @@ module Hapi
         false
       end
 
-      def explanandum_resultatum # rubocop:disable Metrics/MethodLength
+      def explanandum_resultatum # rubocop:disable Metrics/MethodLength,Metrics/AbcSize)
+        contextum_linguam = Hapi::Datum::Linguam.new(
+          { 'linguam' => @contextum_linguam, 'referens' => @referens }
+        )
+        fontem_linguam = Hapi::Datum::Linguam.new(
+          { 'linguam' => @fontem_linguam, 'referens' => @referens }
+        )
+        objectivum_linguam = Hapi::Datum::Linguam.new(
+          { 'linguam' => @objectivum_linguam, 'referens' => @referens }
+        )
+
         Hapi::Datum::L10nTag.new(
           {
             'crudum' => @tag_fontem,
             'contextum_archivum_extensionem' => @contextum_archivum_extensionem,
             'contextum_sos' => @contextum_sos,
             'contextum_linguam' => @contextum_linguam,
+            # 'contextum_htmldir' => Translationem.praeiudico_htmldir_de_linguam(
+            #   @contextum_linguam, @referens_praeiudico
+            # ),
             # crudum => @tag_fontem,
             # tag_fontem => 'teste',
             # crudum => 'teste',
             'fontem_linguam' => @fontem_linguam,
-            'fontem_bcp47' => @fontem_linguam.nil? ? nil : Translationem.iso6391_de_linguam(@fontem_linguam, referens_praeiudico),
+            'fontem_bcp47' => if @fontem_linguam.nil?
+                                nil
+                              else
+                                Translationem.iso6391_de_linguam(
+                                  @fontem_linguam,
+                                  @referens_praeiudico
+                                )
+                              end,
             'objectivum_linguam' => @objectivum_linguam,
+            'objectivum_bcp47' => unless @objectivum_linguam.nil?
+                                    Translationem.iso6391_de_linguam(
+                                      @objectivum_linguam,
+                                      @referens_praeiudico
+                                    )
+                                  end,
+            'objectivum_htmldir' => unless @objectivum_linguam.nil?
+                                      Translationem.praeiudico_htmldir_de_linguam(
+                                        @objectivum_linguam, @referens_praeiudico
+                                      )
+                                    end,
             'fontem_textum' => @textum,
             'venandum_insectum_est' => @venandum_insectum_est,
             'sos_est' => @sos_est,
@@ -135,6 +166,7 @@ module Hapi
         # @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
         @contextum_archivum_extensionem = File.extname(contextum['page']['url']) || contextum['ego_ext']
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
+        @referens = contextum['site']['data']['referens']
         @referens_praeiudico = contextum['site']['data']['referens']['praeiudico']
         @paginam_contextum = contextum['page']
         @contextum_linguam = if contextum['ego_linguam']
@@ -454,6 +486,7 @@ module Hapi
       nil
     end
 
+    # TODO: _[por] terminar de mover para _plugins/hapi/utilitatem.rb [por]_
     # @see https://iso639-3.sil.org/code_tables/639/data
     # @see https://www.wikidata.org/wiki/Property:P220
     def iso6391_de_linguam(linguam, referens_praeiudico)
@@ -472,6 +505,8 @@ module Hapi
       referens_praeiudico['iso3693'][@iso6393]['iso6391']
     end
 
+    # TODO: _[por] terminar de mover para _plugins/hapi/utilitatem.rb [por]_
+    #
     # @see https://www.wikidata.org/wiki/Property:P506
     # @see https://unicode.org/iso15924/iso15924-codes.html
     def iso15924_de_linguam(linguam)
@@ -515,6 +550,8 @@ module Hapi
       @markup
     end
 
+    # TODO: _[por] terminar de mover para _plugins/hapi/utilitatem.rb [por]_
+    #
     # _[por] Forma preconceituosa de assumir direção de escrita apenas pelo
     #        idioma ISO 639-3 + sistema de escrita ISO 15924.
     # [por]_
@@ -548,6 +585,8 @@ module Hapi
       referens_praeiudico['iso3693'][@parts[0]]['htmldir']
     end
 
+    # TODO: _[por] terminar de mover para _plugins/hapi/utilitatem.rb [por]_
+    #
     # _[por] Forma preconceituosa de assumir script do idioma. Note que vários
     #        idiomas podem ser escritos em mais de um alfabeto (e isso ocorre
     #        com frequência línguas que não usam latin.)
@@ -861,6 +900,11 @@ module Hapi
             'spa-Latn'
           )
         end
+
+        # item1 = Hapi::Datum::Linguam.new({'linguam' => 'por-Latn', 'referens' => context['site']['data']['referens']})
+        # item2 = Hapi::Datum::Linguam.new({'linguam' => 'eng-Latn', 'referens' => context['site']['data']['referens']})
+
+        # puts item1 == item2
 
         puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Non-L10N :( [#{rem.inspect}]" if res.sos_est
 

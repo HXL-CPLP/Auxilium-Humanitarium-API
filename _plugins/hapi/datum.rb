@@ -23,7 +23,9 @@ module Hapi
                     :fontem_textum, :venandum_insectum_est, :sos_est,
                     :contextum_archivum_extensionem, :objectivum_textum,
                     :contextum_linguam, :contextum_sos, :paratum_est,
-                    :contextum_url, :alternandum_textum, :alternandum_linguam
+                    :contextum_url, :alternandum_textum, :alternandum_linguam,
+                    :contextum_htmldir, :objectivum_htmldir,
+                    :alternandum_htmldir, :objectivum_bcp47
 
       # :initiale_processum
 
@@ -42,6 +44,7 @@ module Hapi
         @fontem_linguam = optionem['fontem_linguam']
         @fontem_bcp47 = optionem['fontem_bcp47']
         @objectivum_linguam = optionem['objectivum_linguam']
+        @objectivum_bcp47 = optionem['objectivum_bcp47']
         @fontem_textum = optionem['fontem_textum']
         @venandum_insectum_est = optionem['venandum_insectum_est']
         @sos_est = optionem['sos_est']
@@ -68,11 +71,16 @@ module Hapi
           # @exemplum Idioma español (Alfabeto latino)
           fontem_textum: nil,
           objectivum_textum: nil,
+          objectivum_bcp47: nil,
           alternandum_textum: nil,
           alternandum_linguam: nil,
           contextum_archivum_extensionem: '.html', # .csv, .json, ...
           contextum_linguam: nil, # .csv, .json, ...
           contextum_sos: nil,
+          contextum_htmldir: nil,
+          objectivum_htmldir: nil,
+          alternandum_htmldir: nil,
+          fontem_htmldir: nil,
           venandum_insectum_est: false,
           sos_est: false,
           contextum_url: nil,
@@ -126,6 +134,52 @@ module Hapi
       def est_venandum_insectum?
         @venandum_insectum_est
       end
+    end
+
+    class Linguam
+      attr_accessor :bcp47, :htmldir, :iso6391, :iso15924, :linguam, :macro_est
+
+      # :referens
+
+      def initialize(argumentum = {})
+        optionem = initiale_datum.merge(argumentum)
+
+        @linguam = optionem['linguam']
+
+        unless @linguam.nil?
+          referens = optionem['referens']
+          @iso15924 = Utilitatem.iso15924_de_linguam(@linguam)
+          @iso6391 = Utilitatem.iso6391_de_linguam(@linguam, referens['praeiudico'])
+          @htmldir = Utilitatem.praeiudico_htmldir_de_linguam(@linguam, referens['praeiudico'])
+        end
+
+        # TODO: linguam.zzz-Zzzz.BCP47
+        # TODO: linguam.zzz-Zzzz.hxl.attributum
+
+        puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] self [#{inspect}]"
+      end
+
+      def initiale_datum
+        {
+          bcp47: nil,
+          htmldir: nil,
+          iso6391: nil,
+          iso15924: nil,
+          linguam: nil,
+          macro_est: false
+        }
+      end
+
+      # @see https://www.rubyguides.com/2017/03/ruby-equality/
+      def ==(other)
+        @linguam == other.linguam
+        # self.name  == other.name &&
+        # self.price == other.price
+      end
+
+      # def to_s
+      #   "#{@linguam} #{@iso6391}"
+      # end
     end
   end
 end
