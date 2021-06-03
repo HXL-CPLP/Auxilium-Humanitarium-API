@@ -25,28 +25,12 @@ module Hapi
                     :contextum_linguam, :contextum_sos, :paratum_est,
                     :contextum_url
 
-                    # :initiale_processum
+      # :initiale_processum
 
-      def initialize(argumentum = {})
-
+      def initialize(argumentum = {}) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
         # puts "antes"
         # puts initiale_datum
         optionem = initiale_datum.merge(argumentum)
-        # puts "depis"
-        # puts optionem
-
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @class keys [#{argumentum.keys}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @class [#{argumentum.class}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @class  initiale_datum [#{initiale_datum.class}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @class  initiale_datum keys [#{initiale_datum.keys}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @argumentum [#{argumentum.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] initiale_datum [#{initiale_datum.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] result [#{optionem.inspect}]"
-
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @sssssssssssssssss [#{argumentum['fontem_textum'].inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @sssssssssssssssss [#{argumentum.fetch(:fontem_textum).inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @sssssssssssssssss [#{optionem.fetch(:crudum).inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @sssssssssssssssss [#{optionem.fetch(:crudum).inspect}]"
 
         # @crudum = optionem.fetch(:crudum)
         @contextum_archivum_extensionem = optionem['contextum_archivum_extensionem']
@@ -64,21 +48,12 @@ module Hapi
         # @initiale_processum = optionem['initiale_processum']
         @paratum_est = optionem['paratum_est']
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] self [#{inspect}]"
-
-        # puts "final"
-        # puts argumentum['crudum']
-        # puts initiale_datum['crudum'].inspect
-        # puts optionem['crudum'].inspect
-        # puts @crudum
-        # puts @fontem_linguam
-        # puts 'fin'
         puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] self [#{inspect}]" if @sos_est || @contextum_sos
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] optionem.fetch(:fontem_linguam) [#{optionem.fetch(:fontem_linguam)}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] optionem.fetch('fontem_textum') [#{optionem.fetch('fontem_textum')}]"
       end
 
-      def initiale_datum
+      def initiale_datum # rubocop:disable Metrics/MethodLength
         {
           # @exemplum {% _🗣️ 📝por-Latn📝 👁️spa-Latn👁️ Idioma español (Alfabeto latino) 👁️spa-Latn👁️ 📝por-Latn📝 🗣️_ %}
           crudum: nil,
@@ -99,6 +74,31 @@ module Hapi
           # initiale_processum: nil,
           paratum_est: false
         }
+      end
+
+      # Trivia:
+      # - 'est'
+      #   - https://en.wiktionary.org/wiki/est#Latin
+      # - 'SOS'
+      #   - https://en.wiktionary.org/wiki/venor#Latin
+      def est_sos?
+        @sos_est || @contextum_sos
+      end
+
+      # _[lat] Est venandum insectum? [lat]_
+      # _[por] Modo depuração de erros? [por]_
+      #
+      # Trivia:
+      # - 'est'
+      #   - https://en.wiktionary.org/wiki/est#Latin
+      # - 'vēnandum'
+      #   - https://en.wiktionary.org/wiki/venor#Latin
+      # - 'īnsectum'
+      #   - https://en.wiktionary.org/wiki/insectum#Latin
+      # - 'Q845566'
+      #   - https://www.wikidata.org/wiki/Q845566
+      def est_venandum_insectum?
+        @venandum_insectum_est
       end
     end
   end

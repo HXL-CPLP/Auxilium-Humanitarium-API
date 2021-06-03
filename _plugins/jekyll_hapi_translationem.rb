@@ -139,11 +139,6 @@ module Hapi
                              elsif contextum['page']['linguam']
                                contextum['page']['linguam']
                              end
-
-        # @contextum_linguam = contextum['page']['ego'] unless contextum['page']['ego'].nil?
-        # puts contextum['page'].keys
-        # puts contextum['page']['url']
-        # puts File.extname(contextum['page']['url'])
       end
 
       def quod_fontem_linguam_de_initiale_argumentum_et_textum
@@ -217,7 +212,6 @@ module Hapi
       def quod_optionem_est?(emojis)
         return nil unless @initiale_argumentum.length > 1
 
-        # valere = 'errorrrrrrrrrrrrrrrrvalere'
         valere = nil
         valere_arr = []
         # valere = []
@@ -228,14 +222,8 @@ module Hapi
             next unless emoji.bytes == arg.bytes[0, emoji.bytes.length] && \
                         emoji.bytes == arg.bytes[- emoji.bytes.length, emoji.bytes.length]
 
-            # puts "Ok"
             tags.append(arg)
             valere = arg.gsub(emoji, '')
-
-            # print 'valere'
-            # puts "[#{valere}]"
-            # valere = arg.gsub(emoji.bytes, '')
-            # valere = arg.bytes.gsub(emoji.bytes, '')
             valere_arr.append(valere)
             break
           end
@@ -245,12 +233,6 @@ module Hapi
 
         [valere, tags]
       end
-
-      # # TODO: L10nTag
-      # class L10nTag
-      #   attr_accessor :tag_fontem, :fontem_linguam, :objectivum_linguam,
-      #                 :textum, :venandum_insectum_est, :sos_est
-      # end
 
       # @see https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
       # @see https://jekyllrb.com/docs/configuration/environments/
@@ -335,14 +317,6 @@ module Hapi
       hxlattrs_fontem = context['site']['data']['referens']['linguam'][linguam_fontem]['hxlattrs']
       hxlattrs_objectivum = context['site']['data']['referens']['linguam'][linguam_objectivum]['hxlattrs']
 
-      # puts 'datum_l10n_de_textum'
-      # puts 'linguam_fontem ' + linguam_fontem
-      # puts 'linguam_objectivum ' + linguam_objectivum
-      # puts 'hxlattrs_fontem ' + hxlattrs_fontem.to_s
-      # puts 'hxlattrs_objectivum ' + hxlattrs_objectivum.to_s
-
-      # puts hxlattrs
-      # puts context['site']['data']['L10nhxl']
       context['site']['data']['L10nhxl'].each do |line|
         # if line['#item+code'] == l10n_codice
         # puts "#item+l10n#{hxlattrs_fontem}"
@@ -410,6 +384,42 @@ module Hapi
 
       trns_resultatum
     end
+
+    # _[eng] The 'last stand' output format (if no translation availible) [eng]_
+    # _[por] A formatação de 'ultima defesa' (caso não haja traduções) [por]_
+    # Trivia:
+    # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
+    # - 'ultima mundi quo steterit', https://es.wikipedia.org/wiki/%C3%9Altima_defensa
+    # - 'rem', https://en.wiktionary.org/wiki/res#Latin
+    def farmatum_ultima_mundi_quo_steterit(rem)
+      puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Non-L10N :( [#{rem.inspect}]"
+
+      rem.fontem_textum
+      # html_est = contextum['page']['translationem_modum']
+      # linguam = contextum['page']['linguam']
+      # debug_est = contextum['page']['translationem_debug']
+
+      # if html_est == 'html' && debug_est
+      #   return "<span data-l10n-c='#{trns_codicem}' data-l10n-linguam='#{linguam}'>#{trns_resultatum}</span>"
+      # end
+      # return "<span data-l10n-c='#{trns_codicem}'>#{trns_resultatum}</span>" if html_est == 'html'
+      # return "_[#{linguam}]#{trns_resultatum}[#{linguam}]_" if debug_est
+
+      # trns_resultatum
+    end
+    # def farmatum_ultima_mundi_quo_steterit(contextum, trns_codicem, trns_resultatum)
+    #   html_est = contextum['page']['translationem_modum']
+    #   linguam = contextum['page']['linguam']
+    #   debug_est = contextum['page']['translationem_debug']
+
+    #   if html_est == 'html' && debug_est
+    #     return "<span data-l10n-c='#{trns_codicem}' data-l10n-linguam='#{linguam}'>#{trns_resultatum}</span>"
+    #   end
+    #   return "<span data-l10n-c='#{trns_codicem}'>#{trns_resultatum}</span>" if html_est == 'html'
+    #   return "_[#{linguam}]#{trns_resultatum}[#{linguam}]_" if debug_est
+
+    #   trns_resultatum
+    # end
 
     # def hxlattrs_de_linguam(contextum, linguam = nil)
     #   linguam = linguam.nil? ? contextum['page']['linguam'] : linguam
@@ -553,9 +563,6 @@ module Hapi
       referens_praeiudico['iso3693'][iso6393]['iso15924']
     end
 
-    # rubocop:disable Metrics/AbcSize
-    # rubocop:disable Metrics/MethodLength
-
     # Trivia:
     # - 'significātiōnem'
     #   - https://en.wiktionary.org/wiki/significatio
@@ -567,7 +574,7 @@ module Hapi
     #   - https://en.wiktionary.org/wiki/originalis#Latin
     # - 'htmldir'
     #   - https://www.w3.org/International/questions/qa-html-dir
-    def significationem_incognitum_textum(textum, context)
+    def significationem_incognitum_textum(textum, context) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       # @see https://regexr.com/
       @regex = textum.scan(/<!--\[(?:.)*?\[(?:.)*?\](?:.)*?\]-->/)
 
@@ -602,56 +609,18 @@ module Hapi
       tm = translationem_memoriam_collectionem(contextum)
       # hxlattrs = HXL.hxlattrs_de_linguam(contextum, linguam)
       hxloptionem = HXL.optionem_de_linguam(contextum, linguam)
-      # return 'n'
-      # puts '    hxloptionem.hashtag_exemplum'
-      # puts hxloptionem.hashtag_exemplum
-      # return true
-      # tm_collectionem.do |archivum|
-      # tm.each do |archivum|
       tm.each do |archivum|
-        # puts 'puts'
-        # puts archivum[0]
-        # puts tm[archivum]
-        # puts archivum
-        # puts tm[archivum[0]][0]
-        # # puts tm[archivum[0]]
-        # puts ''
-        # puts ''
-        # puts ''
-        # puts tm[archivum]
-        # puts tm[archivum].first
-        # raise 'stop'
-        # raise 'stop'
         next unless hxloptionem.quod_obiectum_optionem_existendum(tm[archivum[0]][0])
-
-        # puts 'valido, continuando...'
 
         tm[archivum[0]].each do |tm_item|
           val = hxloptionem.quod_obiectum_valendum(tm_item, codicem)
-          # puts 'val'
-          # puts "#{codicem}, #{linguam}: #{val}" unless val == false
+
           return val unless val == false
         end
-
-        # archivum.each do |tm_item|
-        #   # puts hxlattr
-        #   next unless HXL.testum(tm_item, hxloptionem)
-
-        #   # puts hxlattr
-        #   # puts line["#item+l10n#{hxlattr}"]
-
-        #   return HXL.testum(tm_item, hxloptionem)
-        # end
       end
-      # puts 'hxlattrs'
-      # puts hxlattrs
-      # puts contextum['site']['data'].keys
 
       false
     end
-
-    # rubocop:enable Metrics/MethodLength
-    # rubocop:enable Metrics/AbcSize
 
     # Trivia:
     # - 'significātiōnem'
@@ -788,7 +757,9 @@ module Hapi
       end
     end
 
-    # TODO: document DeL10nEmoji
+    # _[eng] The L10n emoji entrypoint [eng]_
+    # _[por] O ponto de entrada L10n emoji [por]_
+    # @see https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/wiki
     class DeL10nEmoji < Liquid::Tag
       attr_accessor :tag_aux, :textum
 
@@ -797,29 +768,12 @@ module Hapi
       def initialize(tag_nomen, argumentum, initiale_processum)
         super
 
-        @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
-
-        @tokens = argumentum.strip.split
-        # @linguam_fontem = @tokens.shift
-        @textum = @tokens.shift
-
-        if @textum.include?('🗣️') && @textum.length < 8
-          tag_nomen = "#{tag_nomen}#{@textum}"
-          @textum = @tokens.shift
-        end
-
-        @l10n_in = L10n_typum_requisitum(tag_nomen)
-        @tag_nomen = tag_nomen
-
-        # puts '    DeL10n'
-        # puts "   tag_nomen [#{tag_nomen}] @tokens [#{@tokens}] @textum [#{@textum}]"
-        # puts  @textum
-
-        # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
-        # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
+        @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(
+          tag_nomen, argumentum, initiale_processum
+        )
       end
 
-      def render(context)
+      def render(context) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity
         # temp = Translationem.datum_temporarium(context)
         # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
         # l10nval = nil
@@ -835,9 +789,13 @@ module Hapi
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{res.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{res.inspect}]"
 
-        return Translationem.farmatum_praefectum(context, res.fontem_textum, res.fontem_textum) if res.paratum_est
+        if res.paratum_est
+          return Translationem.farmatum_praefectum(
+            context, res.fontem_textum, res.fontem_textum
+          )
+        end
 
-        L10n_contextum_init(context)
+        l10n_contextum_init(context)
 
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  oi #{res.paratum_est}" if res.venandum_insectum_est
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  oi #{res.inspect}" if res.venandum_insectum_est
@@ -850,69 +808,53 @@ module Hapi
         # l10nval = 'tes'
         # raise l10nval if l10nval
         # return l10nval if l10nval != false
-        return Translationem.farmatum_praefectum(context, res.fontem_textum, l10nval) if l10nval != false
+        if l10nval != false
+          return Translationem.farmatum_praefectum(
+            context, res.fontem_textum, l10nval
+          )
+        end
 
-        l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'eng-Latn')
+        l10nval_eng = Translationem.translationem_memoriam_rememorandum(
+          context, res.fontem_textum, 'eng-Latn'
+        )
         if l10nval_eng != false
-          return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_eng,
-                                                    'eng-Latn')
+          return Translationem.farmatum_alternandum(
+            context, res.fontem_textum, l10nval_eng,
+            'eng-Latn'
+          )
         end
 
-        l10nval_por = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'por-Latn')
+        l10nval_por = Translationem.translationem_memoriam_rememorandum(
+          context, res.fontem_textum, 'por-Latn'
+        )
         if l10nval_por != false
-          return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_por,
-                                                    'por-Latn')
+          return Translationem.farmatum_alternandum(
+            context, res.fontem_textum, l10nval_por,
+            'por-Latn'
+          )
         end
 
-        l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'spa-Latn')
+        l10nval_spa = Translationem.translationem_memoriam_rememorandum(
+          context, res.fontem_textum, 'spa-Latn'
+        )
         if l10nval_spa != false
-          return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_spa,
-                                                    'spa-Latn')
+          return Translationem.farmatum_alternandum(
+            context, res.fontem_textum, l10nval_spa,
+            'spa-Latn'
+          )
         end
 
-        puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Non-L10N :( [#{res.inspect}]"
+        puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Non-L10N :( [#{rem.inspect}]" if res.sos_est
 
-        if res.contextum_sos && SILENTIUM_EMOJI.contains?(res.contextum_sos)
-          ''
-        elsif res.contextum_archivum_extensionem == '.html' && res.contextum_sos
-          require 'json'
-          "[?🆘 html #{res.to_json} 🆘?]"
-        else
-          require 'json'
-          "[?🆘 non-html #{res.to_json} 🆘?]"
-        end
-
-        # end
-
-        # # puts 'context[\'ego\']'
-        # # puts context['ego'] if context['ego']
-        # L10n_contextum_init(context)
-
-        # # Translationem.translationem_memoriam_collectionem(context)
-        # # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
-        # l10nval = Translationem.translationem_memoriam_rememorandum(context, @textum)
-        # # l10nval = 'tes'
-        # # raise l10nval if l10nval
-        # # return l10nval if l10nval != false
-        # return Translationem.farmatum_praefectum(context, @textum, l10nval) if l10nval != false
-
-        # l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, @textum, 'eng-Latn')
-        # return Translationem.farmatum_alternandum(context, @textum, l10nval_eng, 'eng-Latn') if l10nval_eng != false
-
-        # l10nval_por = Translationem.translationem_memoriam_rememorandum(context, @textum, 'por-Latn')
-        # return Translationem.farmatum_alternandum(context, @textum, l10nval_por, 'por-Latn') if l10nval_por != false
-
-        # l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, @textum, 'spa-Latn')
-        # return Translationem.farmatum_alternandum(context, @textum, l10nval_spa, 'spa-Latn') if l10nval_spa != false
-
-        # "[?#{@textum} #{@tokens}?]"
+        Translationem.farmatum_ultima_mundi_quo_steterit(res)
+        # Translationem.farmatum_ultima_mundi_quo_steterit(
+        #   context, res.fontem_textum, res.fontem_textum
+        # )
       end
 
       private
 
-      def l10n_contextum_de_tag(tag_tokens); end
-
-      def L10n_contextum_init(contextum)
+      def l10n_contextum_init(contextum)
         @ego_sos = (contextum['ego'] && contextum['ego'] == '🆘')
         # if @ego_sos
         #   puts "!!! [DeL10nEmoji 🆘 de tag [#{@tag_nomen}], de textum [#{@textum}], \
