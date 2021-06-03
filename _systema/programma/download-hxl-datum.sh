@@ -37,15 +37,15 @@
 
 # @see https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279
 Hapi_L10N="https://proxy.hxlstandard.org/data/download/L10n_hxl_csv.csv?dest=data_edit&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1181688279"
-Hapi_miniman="https://proxy.hxlstandard.org/data/download/hapi-miniman_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D816634241"
+Hapi_miniman="https://proxy.hxlstandard.org/data/download/hapi-miniman_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D816634241"
 
 
-Hapi_commune="https://proxy.hxlstandard.org/data.csv?dest=data_edit&filter01=cut&filter-label01=Remove+%23meta&cut-exclude-tags01=%23meta&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653"
+Hapi_commune="https://proxy.hxlstandard.org/data/download/commune_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Remove+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653"
 # Hapi_commune_meta="https://proxy.hxlstandard.org/data.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653"
 
-Hapi_schemam="https://proxy.hxlstandard.org/data.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1345709789"
+Hapi_schemam="https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1345709789"
 
-Hapi_api="https://proxy.hxlstandard.org/data.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1680147913"
+Hapi_api="https://proxy.hxlstandard.org/data/download/hapi-api_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1680147913"
 
 ROOTDIR="$(pwd)"
 
@@ -86,7 +86,7 @@ if true ; then
     echo "Hapi_schemam"
     echo "   Fontem: [$Hapi_schemam]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-schemam.tm.hxl.csv"
-    wget -qO- "$Hapi_schemam" > "${ROOTDIR}/_data/tm/hapi-schemam.tm.hxl.csv"
+    wget -qO- "$Hapi_schemam" > "${ROOTDIR}/_data/tm/schemam.tm.hxl.csv"
 fi
 
 if true ; then

@@ -107,6 +107,18 @@ module Hapi
       referens_praeiudico['iso3693'][@iso6393]['iso6391']
     end
 
+    # @see https://iso639-3.sil.org/code_tables/639/data
+    # @see https://www.wikidata.org/wiki/Property:P220
+    def iso6393_de_linguam(linguam)
+      return linguam unless linguam.length != 3
+
+      @parts = linguam.split('-')
+
+      return @parts[0] unless @parts[0].length != 3
+
+      nil
+    end
+
     # @see https://www.wikidata.org/wiki/Property:P506
     # @see https://unicode.org/iso15924/iso15924-codes.html
     def iso15924_de_linguam(linguam)

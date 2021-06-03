@@ -117,43 +117,14 @@ module Hapi
             'crudum' => @tag_fontem,
             'contextum_archivum_extensionem' => @contextum_archivum_extensionem,
             'contextum_sos' => @contextum_sos,
-            #     'contextum_linguam' => @contextum_linguam,
             'contextum_linguam' => contextum_linguam,
-            # 'contextum_htmldir' => Translationem.praeiudico_htmldir_de_linguam(
-            #   @contextum_linguam, @referens_praeiudico
-            # ),
-            # crudum => @tag_fontem,
-            # tag_fontem => 'teste',
-            # crudum => 'teste',
-            #  'fontem_linguam' => @fontem_linguam,
             'fontem_linguam' => fontem_linguam,
-            # 'fontem_bcp47' => if @fontem_linguam.nil?
-            #                     nil
-            #                   else
-            #                     Translationem.iso6391_de_linguam(
-            #                       @fontem_linguam,
-            #                       @referens_praeiudico
-            #                     )
-            #                   end,
-            #  'objectivum_linguam' => @objectivum_linguam,
             'objectivum_linguam' => objectivum_linguam,
-            # 'objectivum_bcp47' => unless @objectivum_linguam.nil?
-            #                         Translationem.iso6391_de_linguam(
-            #                           @objectivum_linguam,
-            #                           @referens_praeiudico
-            #                         )
-            #                       end,
-            # 'objectivum_htmldir' => unless @objectivum_linguam.nil?
-            #                           Translationem.praeiudico_htmldir_de_linguam(
-            #                             @objectivum_linguam, @referens_praeiudico
-            #                           )
-            #                         end,
             'alternandum_linguam' => alternandum_linguam,
             'fontem_textum' => @textum,
             'venandum_insectum_est' => @venandum_insectum_est,
             'sos_est' => @sos_est,
             'contextum_url' => @paginam_contextum['url'],
-            # 'initiale_processum' => @initiale_processum,
             'paratum_est' => if @fontem_linguam.nil?
                                false
                              elsif @objectivum_linguam.nil?
@@ -451,6 +422,7 @@ module Hapi
       puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{e}] [#{rem.inspect}]"
     end
 
+    # TODO: _[por] terminar de mover para _plugins/hapi/utilitatem.rb [por]_
     # @see https://iso639-3.sil.org/code_tables/639/data
     # @see https://www.wikidata.org/wiki/Property:P220
     def iso6393_de_linguam(linguam)
@@ -459,41 +431,6 @@ module Hapi
       @parts = linguam.split('-')
 
       return @parts[0] unless @parts[0].length != 3
-
-      nil
-    end
-
-    # TODO: _[por] terminar de mover para _plugins/hapi/utilitatem.rb [por]_
-    # @see https://iso639-3.sil.org/code_tables/639/data
-    # @see https://www.wikidata.org/wiki/Property:P220
-    def iso6391_de_linguam(linguam, referens_praeiudico)
-      return nil if linguam.length != 8
-
-      @parts = linguam.split('-')
-
-      return nil if @parts[0].nil? || @parts[0].length != 3
-
-      @iso6393 = @parts[0]
-
-      # return nil if referens_praeiudico['iso3693'].nil?
-      return nil if referens_praeiudico['iso3693'][@iso6393].nil?
-      return nil if referens_praeiudico['iso3693'][@iso6393]['iso6391'].nil?
-
-      referens_praeiudico['iso3693'][@iso6393]['iso6391']
-    end
-
-    # TODO: _[por] terminar de mover para _plugins/hapi/utilitatem.rb [por]_
-    #
-    # @see https://www.wikidata.org/wiki/Property:P506
-    # @see https://unicode.org/iso15924/iso15924-codes.html
-    def iso15924_de_linguam(linguam)
-      return nil if linguam.length < 4
-
-      @parts = linguam.split('-')
-
-      return nil if @parts[1].nil?
-
-      return @parts[1] if @parts[1].length == 4
 
       nil
     end
@@ -615,10 +552,10 @@ module Hapi
         'textum_originale' => textum,
         'textum_purum' => textum.gsub(@regex[0], '').gsub(@regex[1], ''),
         'linguam' => @linguam_fontem,
-        'iso6391' => Translationem.iso6391_de_linguam(
+        'iso6391' => Utilitatem.iso6391_de_linguam(
           @linguam_fontem, context['site']['data']['referens']['praeiudico']
         ),
-        'htmldir' => Translationem.praeiudico_htmldir_de_linguam(
+        'htmldir' => Utilitatem.praeiudico_htmldir_de_linguam(
           @linguam_fontem, context['site']['data']['referens']['praeiudico']
         )
       }

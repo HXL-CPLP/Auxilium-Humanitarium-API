@@ -47,14 +47,14 @@
                       <li class="nav-item">
                         <a class="nav-link disabled" tabindex="-1"
                           aria-disabled="true" href="#">
-                          {{ sublink.namen }}
+                          {{ sublink.namen | liquify }}
                         </a>
                       </li>
                       {% else %}
                         <li>
                           <a class="dropdown-item"
-                            href="{{ site.url }}{{ site.baseurl }}{{ sublink.url }}">
-                            {{ sublink.namen }}
+                            href="{{ site.url }}{{ site.baseurl }}{{ sublink.url | liquify }}">
+                            {{ sublink.namen | liquify }}
                           </a>
                         </li>
                       {% endif %}
@@ -64,8 +64,8 @@
             {% else %}
               <li class="nav-item {{ class }}">
                 <a class="nav-link"
-                  href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">
-                  {{ link.namen }}
+                  href="{{ site.url }}{{ site.baseurl }}{{ link.url | liquify }}">
+                  {{ link.namen | liquify }}
                 </a>
               </li>
             {% endif %}
