@@ -22,7 +22,10 @@ module Hapi
       attr_accessor :crudum, :fontem_linguam, :objectivum_linguam,
                     :fontem_textum, :venandum_insectum_est, :sos_est,
                     :contextum_archivum_extensionem,
-                    :contextum_linguam, :contextum_sos
+                    :contextum_linguam, :contextum_sos, :paratum_est,
+                    :contextum_url
+
+                    # :initiale_processum
 
       def initialize(argumentum = {})
 
@@ -57,6 +60,9 @@ module Hapi
         @fontem_textum = optionem['fontem_textum']
         @venandum_insectum_est = optionem['venandum_insectum_est']
         @sos_est = optionem['sos_est']
+        @contextum_url = optionem['contextum_url']
+        # @initiale_processum = optionem['initiale_processum']
+        @paratum_est = optionem['paratum_est']
 
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] self [#{inspect}]"
 
@@ -88,7 +94,10 @@ module Hapi
           contextum_linguam: nil, # .csv, .json, ...
           contextum_sos: nil,
           venandum_insectum_est: false,
-          sos_est: false
+          sos_est: false,
+          contextum_url: nil,
+          # initiale_processum: nil,
+          paratum_est: false
         }
       end
     end

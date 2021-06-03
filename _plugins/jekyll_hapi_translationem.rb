@@ -36,7 +36,7 @@ module Hapi
                     :initiale_processum, :venandum_insectum_est, :sos_est,
                     :paginam_contextum, :referens,
                     :contextum_archivum_extensionem, :contextum_linguam,
-                    :contextum_ego
+                    :contextum_ego, :paratum_est
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
@@ -99,18 +99,27 @@ module Hapi
       def explanandum_resultatum # rubocop:disable Metrics/MethodLength
         Hapi::Datum::L10nTag.new(
           {
+            'crudum' => @tag_fontem,
             'contextum_archivum_extensionem' => @contextum_archivum_extensionem,
             'contextum_sos' => @contextum_sos,
             'contextum_linguam' => @contextum_linguam,
             # crudum => @tag_fontem,
-            'crudum' => @tag_fontem,
             # tag_fontem => 'teste',
             # crudum => 'teste',
             'fontem_linguam' => @fontem_linguam,
             'objectivum_linguam' => @objectivum_linguam,
             'fontem_textum' => @textum,
             'venandum_insectum_est' => @venandum_insectum_est,
-            'sos_est' => @sos_est
+            'sos_est' => @sos_est,
+            'contextum_url' => @paginam_contextum['url'],
+            # 'initiale_processum' => @initiale_processum,
+            'paratum_est' => if @fontem_linguam.nil?
+                               false
+                             elsif @objectivum_linguam.nil?
+                               @contextum_linguam == @fontem_linguam
+                             else
+                               @objectivum_linguam == @fontem_linguam
+                             end
           }
         )
 
@@ -124,6 +133,7 @@ module Hapi
       def investigationem_contextum(contextum)
         @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
+        @paginam_contextum = contextum['page']
         @contextum_linguam = if contextum['ego_linguam']
                                contextum['ego_linguam']
                              elsif contextum['page']['linguam']
@@ -825,9 +835,12 @@ module Hapi
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{res.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{res.inspect}]"
 
+        return Translationem.farmatum_praefectum(context, res.fontem_textum, res.fontem_textum) if res.paratum_est
+
         L10n_contextum_init(context)
 
-        puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  oi #{res.inspect}" if res.venandum_insectum_est
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  oi #{res.paratum_est}" if res.venandum_insectum_est
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  oi #{res.inspect}" if res.venandum_insectum_est
 
         # Translationem.translationem_memoriam_collectionem(context)
         # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
@@ -857,7 +870,7 @@ module Hapi
                                                     'spa-Latn')
         end
 
-        puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Nenhuma traducao disponivel [#{res.inspect}]"
+        puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Non-L10N :( [#{res.inspect}]"
 
         if res.contextum_sos && SILENTIUM_EMOJI.contains?(res.contextum_sos)
           ''
