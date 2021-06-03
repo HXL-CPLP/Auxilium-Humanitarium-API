@@ -28,7 +28,7 @@
             "description": "{% _🗣️ ISO_639-3_optionem_Part2T_summarius 🗣️_ %}",
             "type": "string",
             "length": 3,
-            "example": "{% _🗣️ ISO_639-3_optionem_Part2T_exemplum %}"
+            "example": "{% _🗣️ ISO_639-3_optionem_Part2T_exemplum 🗣️_ %}"
         },
         "Part1": {
             "description": "{% _🗣️ ISO_639-3_optionem_Part1_summarius 🗣️_ %}",

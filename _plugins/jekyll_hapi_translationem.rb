@@ -35,7 +35,8 @@ module Hapi
                     :ignorandum_attributum, :textum, :error,
                     :initiale_processum, :venandum_insectum_est, :sos_est,
                     :paginam_contextum, :referens,
-                    :contextum_archivum_extensionem, :contextum_ego
+                    :contextum_archivum_extensionem, :contextum_linguam,
+                    :contextum_ego
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
@@ -100,6 +101,7 @@ module Hapi
           {
             'contextum_archivum_extensionem' => @contextum_archivum_extensionem,
             'contextum_sos' => @contextum_sos,
+            'contextum_linguam' => @contextum_linguam,
             # crudum => @tag_fontem,
             'crudum' => @tag_fontem,
             # tag_fontem => 'teste',
@@ -112,16 +114,23 @@ module Hapi
           }
         )
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @fontem_linguam [#{@fontem_linguam}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} resultatum [#{resultatum.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @tag_fontem [#{@tag_fontem.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @textum [#{@textum.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} @fontem_linguam [#{@fontem_linguam.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @fontem_linguam [#{@fontem_linguam}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] resultatum [#{resultatum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @tag_fontem [#{@tag_fontem.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @textum [#{@textum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @fontem_linguam [#{@fontem_linguam.inspect}]"
       end
 
       def investigationem_contextum(contextum)
         @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
+        @contextum_linguam = if contextum['ego_linguam']
+                               contextum['ego_linguam']
+                             elsif contextum['page']['linguam']
+                               contextum['page']['linguam']
+                             end
+
+        # @contextum_linguam = contextum['page']['ego'] unless contextum['page']['ego'].nil?
         # puts contextum['page'].keys
         # puts contextum['page']['url']
         # puts File.extname(contextum['page']['url'])
@@ -132,17 +141,17 @@ module Hapi
 
         resultatum = quod_optionem_est?(FONTEM_LINGUAM_EMOJI)
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} resultatum [#{@initiale_argumentum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] resultatum [#{@initiale_argumentum.inspect}]"
 
         unless resultatum.nil? || resultatum[0].nil?
-          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} initiale_argumentum [#{@initiale_argumentum.inspect}]"
+          # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] initiale_argumentum [#{@initiale_argumentum.inspect}]"
           # print "#{@initiale_argumentum}  item"
           @initiale_argumentum.delete_if do |item|
             item.include?(resultatum[1][0]) || item.include?(resultatum[1][1])
           end
 
-          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} resultatum [#{@resultatum.inspect}]"
-          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} initiale_argumentum [#{@initiale_argumentum.inspect}]"
+          # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] resultatum [#{@resultatum.inspect}]"
+          # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] initiale_argumentum [#{@initiale_argumentum.inspect}]"
           resultatum[0]
         end
       end
@@ -153,7 +162,7 @@ module Hapi
         resultatum = quod_optionem_est?(OBJECTIVUM_LINGUAM_EMOJI)
 
         unless resultatum.nil? || resultatum[0].nil?
-          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} initiale_argumentum [#{@initiale_argumentum.inspect}]"
+          # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] initiale_argumentum [#{@initiale_argumentum.inspect}]"
           @initiale_argumentum.delete_if do |item|
             item.include?(resultatum[1][0]) || item.include?(resultatum[1][1])
           end
@@ -171,7 +180,7 @@ module Hapi
         est = false
         est_items = []
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{@initiale_argumentum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{@initiale_argumentum.inspect}]"
 
         @initiale_argumentum.each do |arg|
           delvals.each do |emoji|
@@ -265,7 +274,7 @@ module Hapi
       def quod_textum_de_initiale_argumentum_et_textum
         return @initiale_argumentum[0] if @initiale_argumentum.length == 1
 
-        # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{@initiale_argumentum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{@initiale_argumentum.inspect}]"
         @initiale_argumentum.join(' ')
       end
 
@@ -778,21 +787,7 @@ module Hapi
       def initialize(tag_nomen, argumentum, initiale_processum)
         super
 
-        # puts 'tokens'
-        # puts initiale_processum.inspect
-        # print 'ooooooooooooooooooi'
-        # if argumentum.include?('🗣️ ')
-
-        # if argumentum.include?('🗣️')
-        #   @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
-        # end
-
         @tag_aux = TranslationemNeo::AuxiliumTagProcessum.new(tag_nomen, argumentum, initiale_processum)
-
-        # puts tokens.locale
-        # puts token['line_numbers']
-
-        # l10n_contextum_de_tag()
 
         @tokens = argumentum.strip.split
         # @linguam_fontem = @tokens.shift
@@ -819,81 +814,85 @@ module Hapi
         # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
         # l10nval = nil
 
-        if @tag_aux
-          # puts context
-          @tag_aux.investigationem_contextum(context)
+        raise "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  Non @tag_aux!]" unless @tag_aux
 
-          res = @tag_aux.explanandum_resultatum
-          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{@tag_aux.inspect}]"
-          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{res.inspect}]"
-          # puts "\n\n\t[🔎🐛 #{self.class.name}] #{__LINE__} [#{res.inspect}]"
+        # if @tag_aux
+        # puts context
+        @tag_aux.investigationem_contextum(context)
 
-          L10n_contextum_init(context)
+        res = @tag_aux.explanandum_resultatum
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{@tag_aux.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{res.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{res.inspect}]"
 
-          # Translationem.translationem_memoriam_collectionem(context)
-          # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
-          l10nval = Translationem.translationem_memoriam_rememorandum(
-            context, res.fontem_textum, res.objectivum_linguam
-          )
-          # l10nval = 'tes'
-          # raise l10nval if l10nval
-          # return l10nval if l10nval != false
-          return Translationem.farmatum_praefectum(context, res.fontem_textum, l10nval) if l10nval != false
-
-          l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'eng-Latn')
-          if l10nval_eng != false
-            return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_eng,
-                                                      'eng-Latn')
-          end
-
-          l10nval_por = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'por-Latn')
-          if l10nval_por != false
-            return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_por,
-                                                      'por-Latn')
-          end
-
-          l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'spa-Latn')
-          if l10nval_spa != false
-            return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_spa,
-                                                      'spa-Latn')
-          end
-
-          puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Nenhuma traducao disponivel [#{res.inspect}]"
-
-          output = if res.contextum_sos && SILENTIUM_EMOJI.contains?(res.contextum_sos)
-                     ''
-                   elsif res.contextum_archivum_extensionem == '.html' && res.contextum_sos
-                     require 'json'
-                     "[?🆘 #{res.to_json} 🆘?]"
-                   else
-                     "[?🆘 #{res.to_json} 🆘?]"
-                   end
-
-          return output
-        end
-
-        # puts 'context[\'ego\']'
-        # puts context['ego'] if context['ego']
         L10n_contextum_init(context)
+
+        puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  oi #{res.inspect}" if res.venandum_insectum_est
 
         # Translationem.translationem_memoriam_collectionem(context)
         # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
-        l10nval = Translationem.translationem_memoriam_rememorandum(context, @textum)
+        l10nval = Translationem.translationem_memoriam_rememorandum(
+          context, res.fontem_textum, res.objectivum_linguam
+        )
         # l10nval = 'tes'
         # raise l10nval if l10nval
         # return l10nval if l10nval != false
-        return Translationem.farmatum_praefectum(context, @textum, l10nval) if l10nval != false
+        return Translationem.farmatum_praefectum(context, res.fontem_textum, l10nval) if l10nval != false
 
-        l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, @textum, 'eng-Latn')
-        return Translationem.farmatum_alternandum(context, @textum, l10nval_eng, 'eng-Latn') if l10nval_eng != false
+        l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'eng-Latn')
+        if l10nval_eng != false
+          return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_eng,
+                                                    'eng-Latn')
+        end
 
-        l10nval_por = Translationem.translationem_memoriam_rememorandum(context, @textum, 'por-Latn')
-        return Translationem.farmatum_alternandum(context, @textum, l10nval_por, 'por-Latn') if l10nval_por != false
+        l10nval_por = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'por-Latn')
+        if l10nval_por != false
+          return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_por,
+                                                    'por-Latn')
+        end
 
-        l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, @textum, 'spa-Latn')
-        return Translationem.farmatum_alternandum(context, @textum, l10nval_spa, 'spa-Latn') if l10nval_spa != false
+        l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, res.fontem_textum, 'spa-Latn')
+        if l10nval_spa != false
+          return Translationem.farmatum_alternandum(context, res.fontem_textum, l10nval_spa,
+                                                    'spa-Latn')
+        end
 
-        "[?#{@textum} #{@tokens}?]"
+        puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} Nenhuma traducao disponivel [#{res.inspect}]"
+
+        if res.contextum_sos && SILENTIUM_EMOJI.contains?(res.contextum_sos)
+          ''
+        elsif res.contextum_archivum_extensionem == '.html' && res.contextum_sos
+          require 'json'
+          "[?🆘 html #{res.to_json} 🆘?]"
+        else
+          require 'json'
+          "[?🆘 non-html #{res.to_json} 🆘?]"
+        end
+
+        # end
+
+        # # puts 'context[\'ego\']'
+        # # puts context['ego'] if context['ego']
+        # L10n_contextum_init(context)
+
+        # # Translationem.translationem_memoriam_collectionem(context)
+        # # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
+        # l10nval = Translationem.translationem_memoriam_rememorandum(context, @textum)
+        # # l10nval = 'tes'
+        # # raise l10nval if l10nval
+        # # return l10nval if l10nval != false
+        # return Translationem.farmatum_praefectum(context, @textum, l10nval) if l10nval != false
+
+        # l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, @textum, 'eng-Latn')
+        # return Translationem.farmatum_alternandum(context, @textum, l10nval_eng, 'eng-Latn') if l10nval_eng != false
+
+        # l10nval_por = Translationem.translationem_memoriam_rememorandum(context, @textum, 'por-Latn')
+        # return Translationem.farmatum_alternandum(context, @textum, l10nval_por, 'por-Latn') if l10nval_por != false
+
+        # l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, @textum, 'spa-Latn')
+        # return Translationem.farmatum_alternandum(context, @textum, l10nval_spa, 'spa-Latn') if l10nval_spa != false
+
+        # "[?#{@textum} #{@tokens}?]"
       end
 
       private
