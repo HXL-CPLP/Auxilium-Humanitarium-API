@@ -107,10 +107,28 @@
   linguam: eng-Latn
   typum: api
   gid: UN
-  lid: common-operational-datasets-api
+  # lid: common-operational-datasets-api
+  # lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_slug 📝eng-Latn📝 🗣️_ %}'
+  lid: 'Hapi_api_UN_HDX_slug'
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
   # slug: common-operational-datasets-api
-  title: Common Operational Datasets Services 2 (COD Services)
+  # title: Common Operational Datasets Services 2 (COD Services)
+  # title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}'
+  title: Hapi_api_UN_CODV2API_titulum
+  noindex: true
+
+- x-default: /mul/api/UN/CODV2API/
+  # uid: /eng/api/UN/common-operational-datasets-api/
+  linguam: por-Latn
+  typum: api
+  gid: UN
+  # lid: common-operational-datasets-api
+  # lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_HDX_slug 📝por-Latn📝 🗣️_ %}'
+  lid: Hapi_api_UN_HDX_slug
+  openapi_filum: /api/UN/CODV2API/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
+  # slug: common-operational-datasets-api
+  # title: '{% _🗣️ por-Latn📝 Hapi_api_UN_CODV2API_titulum por-Latn📝 🗣️_ %}'
+  title: Hapi_api_UN_CODV2API_titulum
   noindex: true
 
 ### [linguam]/api/ZX ___________________________________________________________

@@ -28,18 +28,18 @@ sitemap:
       <xhtml:link
         rel="alternate"
         hreflang="en"
-        href="{{ site.url }}/eng/" />
+        href="{{ site.url }}/eng-Latn/" />
       <xhtml:link
         rel="alternate"
         hreflang="pt"
-        href="{{ site.url }}/por/" />
+        href="{{ site.url }}/por-Latn/" />
   </url>
 
   <!--
     /eng/
   -->
   <url>
-      <loc>{{ site.url }}/eng/</loc>
+      <loc>{{ site.url }}/eng-Latn/</loc>
       <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
@@ -50,18 +50,18 @@ sitemap:
       <xhtml:link
         rel="alternate"
         hreflang="en"
-        href="{{ site.url }}/eng/" />
+        href="{{ site.url }}/eng-Latn/" />
       <xhtml:link
         rel="alternate"
         hreflang="pt"
-        href="{{ site.url }}/por/" />
+        href="{{ site.url }}/por-Latn/" />
   </url>
 
   <!--
     /por/
   -->
   <url>
-      <loc>{{ site.url }}/por/</loc>
+      <loc>{{ site.url }}/por-Latn/</loc>
       <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
@@ -72,11 +72,11 @@ sitemap:
       <xhtml:link
         rel="alternate"
         hreflang="en"
-        href="{{ site.url }}/eng/" />
+        href="{{ site.url }}/eng-Latn/" />
       <xhtml:link
         rel="alternate"
         hreflang="pt"
-        href="{{ site.url }}/por/" />
+        href="{{ site.url }}/por-Latn/" />
   </url>
 
   <!--
