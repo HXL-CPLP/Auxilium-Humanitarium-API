@@ -186,6 +186,19 @@ module Hapi
       end
     end
 
+    # _[eng] The attributes of HTML markup right now? [eng]_
+    # _[lat] quod html attribūtum markup nunc? [lat]_
+    # _[lat] Qual marcação HTML neste momento [lat]_
+    def quod_html_attributum_markup_nunc?(attrs)
+      markup = ''
+      non_vacuum_attr = []
+      attrs.each do |k, v|
+        non_vacuum_attr.append("#{k}='#{v}'") if v
+      end
+      markup = non_vacuum_attr.join(' ') if non_vacuum_attr.length.positive?
+      markup
+    end
+
     # _[eng] Jekyll Tags from an API item [eng]_
     # _[por] Tags Jekyll de item de API [por]_
     def tags_de_api(api)

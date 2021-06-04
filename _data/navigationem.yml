@@ -74,16 +74,16 @@ Zyyy: &idZyyy
     url: "#"
     descendens:
       - namen: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
-        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/'
+        linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/'
 
       - namen: '{% _🗣️ Hapi_api_UN_reliefweb_titulum 🗣️_ %}'
-        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_reliefweb_slug 🗣️_ %}/'
+        linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 🗣️_ %}/'
 
       - namen: '{% _🗣️ Hapi_api_UN_CODV2API_titulum 🗣️_ %}'
-        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_CODV2API_slug 🗣️_ %}/'
+        linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 🗣️_ %}/'
 
       - namen: <span lang="en" dir="ltr">UNSD SDG API</span>
         debile: true
@@ -92,8 +92,8 @@ Zyyy: &idZyyy
     url: "#"
     descendens:
       - namen: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
-        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/XZ/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/'
+        linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/XZ/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 🗣️_ %}/'
 
       - namen: <span lang="en" dir="ltr">Worldbank</span>
         debile: true
@@ -102,18 +102,18 @@ Zyyy: &idZyyy
     url: '#'
     descendens:
       - namen: '{% _🗣️ Hapi_api_BR_portais-ckan-brasil_titulum 🗣️_ %}'
-        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/BR/{% _🗣️ Hapi_api_BR_portais-ckan-brasil_slug 🗣️_ %}/'
+        linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/BR/{% _🗣️ 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 🗣️_ %}/'
 
       - namen: '{% _🗣️ Hapi_api_BR_portais-arcgis-brasil_titulum 🗣️_ %}'
-        linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-        url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/BR/{% _🗣️ Hapi_api_BR_portais-arcgis-brasil_slug 🗣️_ %}/'
+        linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/BR/{% _🗣️ 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 🗣️_ %}/'
 
   # - namen: '💾🧱🧮 <!-- TODO: RtL -->'
   #   titulum: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
   - namen: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
-    linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-    url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/#{% _🗣️ schemam_slug 🗣️_ %}'
+    linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+    url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 schemam_slug 🔎🔕🔍 🗣️_ %}'
 
   - namen: "💾🗣️💭 <!-- TODO: RtL -->"
     titulum: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %}'

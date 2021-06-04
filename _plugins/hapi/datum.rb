@@ -23,7 +23,8 @@ module Hapi
                     :fontem_textum, :venandum_insectum_est, :sos_est,
                     :contextum_archivum_extensionem, :objectivum_textum,
                     :contextum_linguam, :contextum_sos, :paratum_est,
-                    :contextum_url, :alternandum_textum, :alternandum_linguam
+                    :contextum_url, :alternandum_textum, :alternandum_linguam,
+                    :textum_solum_est, :contextum_textum_solum_est
 
       # :initiale_processum
 
@@ -47,6 +48,8 @@ module Hapi
         @fontem_textum = optionem['fontem_textum']
         @venandum_insectum_est = optionem['venandum_insectum_est']
         @sos_est = optionem['sos_est']
+        @contextum_textum_solum_est = optionem['contextum_textum_solum_est']
+        @textum_solum_est = optionem['textum_solum_est']
         @contextum_url = optionem['contextum_url']
         # @initiale_processum = optionem['initiale_processum']
         @paratum_est = optionem['paratum_est']
@@ -81,6 +84,8 @@ module Hapi
           # alternandum_htmldir: nil,
           # fontem_htmldir: nil,
           venandum_insectum_est: false,
+          contextum_textum_solum_est: nil,
+          textum_solum_est: nil,
           sos_est: false,
           contextum_url: nil,
           # initiale_processum: nil,
@@ -116,6 +121,17 @@ module Hapi
       #   - https://en.wiktionary.org/wiki/venor#Latin
       def est_sos?
         @sos_est || @contextum_sos
+      end
+
+      # Trivia:
+      # - 'est'
+      #   - https://en.wiktionary.org/wiki/est#Latin
+      # - 'textum'
+      #   - https://en.wiktionary.org/wiki/textus#Latin
+      # - 'sōlum'
+      #   - https://en.wiktionary.org/wiki/solus#Latin
+      def est_textum_solum_est?
+        @textum_solum_est || @contextum_textum_solum_est
       end
 
       # _[lat] Est venandum insectum? [lat]_
