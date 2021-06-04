@@ -48,14 +48,23 @@
   # HAPI_api_UN_HDX
 
 - x-default: /mul/api/UN/HDX/
-  # uid: /eng/api/UN/humanitarian-data-exchange/
   linguam: eng-Latn
   typum: api
   gid: UN
-  lid: HDX
+  lid: humanitarian-data-exchange
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
-  slug: humanitarian-data-exchange
-  title: HDX - The Humanitarian Data Exchange API
+  # title: HDX - The Humanitarian Data Exchange API
+  title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}'
+  noindex: true
+
+- x-default: /mul/api/UN/HDX/
+  linguam: por-Latn
+  typum: api
+  gid: UN
+  lid: humanitarian-data-exchange
+  openapi_filum: /api/UN/HDX/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
+  # title: HDX - The Humanitarian Data Exchange API
+  title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_HDX_titulum 📝por-Latn📝 🗣️_ %}'
   noindex: true
 
 # Note: this is just a test to check if non US-ASCII characters can work with
@@ -81,15 +90,23 @@
   noindex: true
 
 - x-default: /mul/api/UN/reliefweb/
-  # uid: /eng/api/UN/reliefweb/
   linguam: eng-Latn
   typum: api
   gid: UN
   lid: reliefweb
   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
-  slug: reliefweb
-  title: ReliefWeb - Informing humanitarians worldwide
   # title: ReliefWeb - Informing humanitarians worldwide
+  title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}'
+  noindex: true
+
+- x-default: /mul/api/UN/reliefweb/
+  linguam: por-Latn
+  typum: api
+  gid: UN
+  lid: reliefweb
+  openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
+  # title: ReliefWeb - Informing humanitarians worldwide
+  title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_reliefweb_titulum 📝por-Latn📝 🗣️_ %}'
   noindex: true
 
 ## -----------------------------------------------------------------------------
@@ -103,32 +120,24 @@
   noindex: true
 
 - x-default: /mul/api/UN/CODV2API/
-  # uid: /eng/api/UN/common-operational-datasets-api/
   linguam: eng-Latn
   typum: api
   gid: UN
-  # lid: common-operational-datasets-api
-  # lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_slug 📝eng-Latn📝 🗣️_ %}'
-  lid: 'Hapi_api_UN_HDX_slug'
+  lid: common-operational-datasets-api
+  lid_l10n: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_slug 📝eng-Latn📝 🗣️_ %}'
+  # lid_l10n_crudum: 'Hapi_api_UN_HDX_slug'
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
-  # slug: common-operational-datasets-api
   # title: Common Operational Datasets Services 2 (COD Services)
-  # title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}'
-  title: Hapi_api_UN_CODV2API_titulum
+  title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}'
   noindex: true
 
 - x-default: /mul/api/UN/CODV2API/
-  # uid: /eng/api/UN/common-operational-datasets-api/
   linguam: por-Latn
   typum: api
   gid: UN
-  # lid: common-operational-datasets-api
-  # lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_HDX_slug 📝por-Latn📝 🗣️_ %}'
-  lid: Hapi_api_UN_HDX_slug
+  lid: common-operational-datasets-api
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
-  # slug: common-operational-datasets-api
-  # title: '{% _🗣️ por-Latn📝 Hapi_api_UN_CODV2API_titulum por-Latn📝 🗣️_ %}'
-  title: Hapi_api_UN_CODV2API_titulum
+  title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_CODV2API_titulum 📝por-Latn📝 🗣️_ %}'
   noindex: true
 
 ### [linguam]/api/ZX ___________________________________________________________
@@ -144,14 +153,23 @@
   noindex: true
 
 - x-default: /mul/api/XZ/HXL-Proxy/
-  # uid: /eng/api/XZ/HXL-Proxy/
   linguam: eng-Latn
   typum: api
   gid: XZ
   lid: hxl-proxy
   openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml
-  # slug: hxl-proxy
-  title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
+  # title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
+  title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}'
+  noindex: true
+
+- x-default: /mul/api/XZ/HXL-Proxy/
+  linguam: por-Latn
+  typum: api
+  gid: XZ
+  lid: hxl-proxy
+  openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
+  # title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
+  title: '{% _🗣️ 📝por-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝por-Latn📝 🗣️_ %}'
   noindex: true
 
 ### [linguam]/api/BR ___________________________________________________________
@@ -173,8 +191,8 @@
   gid: BR
   lid: brazilian-ckan-portals
   openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
-  slug: brazilian-ckan-portals
-  title: Brazilian CKAN Open Data Portals
+  # title: Brazilian CKAN Open Data Portals
+  title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}'
   description: |
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
   noindex: true
@@ -186,8 +204,8 @@
   gid: BR
   lid: dados-abertos-ckan-brasil
   openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
-  # slug: dados-abertos-ckan-brasil
-  title: Portais CKAN de dados abertos do Brasil
+  # title: Portais CKAN de dados abertos do Brasil
+  title: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝por-Latn📝 🗣️_ %}'
   description: |
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
   noindex: true
@@ -204,13 +222,24 @@
 
 - x-default: /mul/api/BR/portais-arcgis-brasil/
   # uid: /por/api/BR/portais-arcgis-brasil/
+  linguam: eng-Latn
+  typum: api
+  gid: BR
+  lid: brazilian-arcgis-portals
+  openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
+  # title: Portais ArcGIS de dados abertos do Brasil
+  title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝eng-Latn📝 🗣️_ %}'
+  noindex: true
+
+- x-default: /mul/api/BR/portais-arcgis-brasil/
+  # uid: /por/api/BR/portais-arcgis-brasil/
   linguam: por-Latn
   typum: api
   gid: BR
   lid: portais-arcgis-brasil
   openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml
-  slug: dados-abertos-arcgis-brasil
-  title: Portais ArcGIS de dados abertos do Brasil
+  # title: Portais ArcGIS de dados abertos do Brasil
+  title: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}'
   noindex: true
   # namen:
   # descriptionen:

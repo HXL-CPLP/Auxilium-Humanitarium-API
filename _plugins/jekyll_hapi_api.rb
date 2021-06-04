@@ -15,6 +15,8 @@
 #   - https://en.wiktionary.org/wiki/expando#Latin
 # frozen_string_literal: true
 
+require 'json'
+
 module Hapi
   # HapiApiGenerator is (TODO: document)
   class HapiApiGenerator < Jekyll::Generator
@@ -25,6 +27,8 @@ module Hapi
       # puts site.data['referens']
       @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
 
+      @apis = liquify(site, @apis)
+
       # _[eng] We override site.data.api [eng]_
       # _[por] Sobrescrevemos o site.data.api [por]_
       site.data['api'] = @apis
@@ -33,6 +37,22 @@ module Hapi
         @debug_est = @debug_all or api_datum['debug']
         site.pages << ApiPaginam.new(site, api_datum, @debug_est)
       end
+    end
+
+    def liquify(site, apis)
+      puts 'TODO liquify(site, apis)'
+      # @see https://gist.github.com/dgopstein/7fcb514d163f7b090edd5a98b9f3f9a7
+      context = Liquid::Context.new({}, {}, { site: site })
+
+      # puts site.inspect
+      # ruby = JSON.parse(apis)
+      json_as_json = JSON.generate(apis)
+      json_liquified = Liquid::Template.parse(json_as_json).render(context)
+
+      apisfromjsonliquified = JSON.parse(json_liquified)
+
+      # apis
+      apisfromjsonliquified
     end
   end
 
@@ -121,7 +141,6 @@ end
 
 # # <p>{% render_time page rendered at: %}</p>
 # Liquid::Template.register_tag('render_time', Jekyll::HapiApiAlternate)
-
 
 # _[por] rubocop é tão racista que obriga re-habilitar
 # AsciiComments [por]_

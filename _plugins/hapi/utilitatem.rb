@@ -144,17 +144,17 @@ module Hapi
       referens['linguam'][linguam]['BCP47']
     end
 
-    # @see https://fettblog.eu/snippets/jekyll/liquid-in-frontmatter/
-    # @see https://rubydoc.info/gems/liquid
-    def quod_liquid_resultatum(textum)
-      puts 'TODO'
-      textum = 'Hi {{ tagname }}'
-      @context = {
-        'tagname' => 'value name'
-      }
+    # # @see https://fettblog.eu/snippets/jekyll/liquid-in-frontmatter/
+    # # @see https://rubydoc.info/gems/liquid
+    # def quod_liquid_resultatum(textum)
+    #   puts 'TODO'
+    #   textum = 'Hi {{ tagname }}'
+    #   @context = {
+    #     'tagname' => 'value name'
+    #   }
 
-      Liquid::Template.parse(textum).render(@context)
-    end
+    #   Liquid::Template.parse(textum).render(@context)
+    # end
 
     # _[eng] Clean control chars and white space from names [eng]_
     # _[por] Remove caracteres de controle e espaços em branco de nomes [por]_
