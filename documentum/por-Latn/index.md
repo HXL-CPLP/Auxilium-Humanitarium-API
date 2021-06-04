@@ -33,3 +33,11 @@ translationem_debug: true
 ---
 
 {%- include api-corporeum-ltr.html -%}
+
+
+{{ site.data['api'] | jsonify }}
+
+{% raw %}
+{{ '{% _  Hapi_api_UN_HDX_titulum  _ %}' | liquify }}
+{{ site.data['api'] | jsonify | liquify }}
+{% endraw %}

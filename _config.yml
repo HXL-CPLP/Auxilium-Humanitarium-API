@@ -72,8 +72,8 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "defallo"
-      linguam: "lat"
-      linguam_alternum: "lat"
+      linguam: "lat-Latn"
+      linguam_alternum: "lat-Latn"
   - scope:
       path: "api/*/*/*/html"
     values:

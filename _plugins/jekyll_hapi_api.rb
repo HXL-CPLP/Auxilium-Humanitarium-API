@@ -27,7 +27,7 @@ module Hapi
       # puts site.data['referens']
       @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
 
-      @apis = liquify(site, @apis)
+      @apis = liquify2(site, @apis)
 
       # _[eng] We override site.data.api [eng]_
       # _[por] Sobrescrevemos o site.data.api [por]_
@@ -49,10 +49,56 @@ module Hapi
       json_as_json = JSON.generate(apis)
       json_liquified = Liquid::Template.parse(json_as_json).render(context)
 
-      apisfromjsonliquified = JSON.parse(json_liquified)
+      JSON.parse(json_liquified)
 
       # apis
-      apisfromjsonliquified
+    end
+
+    def liquify2(site, apis)
+
+      # Debuging liquid
+      # @see https://github.com/Shopify/liquid#error-modes
+      Liquid::Template.error_mode = :strict # Raises a SyntaxError when invalid syntax is used
+
+      # puts Jekyll.inspect
+      # puts Jekyll.sites.inspect
+      # puts Jekyll.sites.last.inspect
+      # site1 Jekyll.sites.last
+      # puts Jekyll.sites.last.data.inspect
+      puts Jekyll.sites.last.time
+      # puts 'TODO liquify(site, apis)'
+      # # @see https://gist.github.com/dgopstein/7fcb514d163f7b090edd5a98b9f3f9a7
+      context = Liquid::Context.new({}, {}, { site: site })
+
+      json_as_json = JSON.generate(apis)
+      template = Liquid::Template.parse(json_as_json)
+
+      rendered = template.render(context)
+
+      # puts rendered
+
+      # puts Liquid::Template.parse('hello {{ x }} world!').render!(context)
+      # puts Liquid::Template.parse('hello {{ x }} world!').render!('x' => 5)
+
+      @user = 'teste'
+
+      @template = Liquid::Template.parse("{{ 'style.css' | asset_url }}")
+      # @template = Liquid::Template.parse('{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}')
+      # @template = Liquid::Template.parse('{% _ Hapi_api_UN_HDX_titulum _ %}')
+      @template = Liquid::Template.parse("{{ site.pages }}")
+      puts @template.render({}, registers: { user: @user })
+      puts @template.render({}, registers: site)
+
+      puts '@template.errors'
+      puts @template.errors
+
+      # puts site.inspect
+      # ruby = JSON.parse(apis)
+      json_liquified = Liquid::Template.parse(json_as_json).render(context)
+
+      JSON.parse(json_liquified)
+
+      # apis
     end
   end
 
