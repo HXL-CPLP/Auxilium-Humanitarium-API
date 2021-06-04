@@ -69,9 +69,6 @@
 #     url: /eng#schema
 
 Zyyy: &idZyyy
-  # - namen: Hapi
-  #   linguam: lat-Latn
-  #   url: /
 
   - namen: "🇺🇳 UN 🇺🇳"
     url: "#"
@@ -86,7 +83,6 @@ Zyyy: &idZyyy
 
       - namen: '{% _🗣️ Hapi_api_UN_CODV2API_titulum 🗣️_ %}'
         linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-        # url: /api/UN/CODV2API/eng/
         url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_CODV2API_slug 🗣️_ %}/'
 
       - namen: <span lang="en" dir="ltr">UNSD SDG API</span>
@@ -95,10 +91,8 @@ Zyyy: &idZyyy
   - namen: "🌐 XZ 🌐"
     url: "#"
     descendens:
-      # - namen: <span lang="en" dir="ltr">HXL-Proxy - Proxy of the Humanitarian Exchange Language</span>
       - namen: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
         linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
-        # url: /api/XZ/HXL-Proxy/eng/
         url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/XZ/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/'
 
       - namen: <span lang="en" dir="ltr">Worldbank</span>
@@ -115,9 +109,24 @@ Zyyy: &idZyyy
         linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
         url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/api/BR/{% _🗣️ Hapi_api_BR_portais-arcgis-brasil_slug 🗣️_ %}/'
 
+  # - namen: '💾🧱🧮 <!-- TODO: RtL -->'
+  #   titulum: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
   - namen: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
     linguam: '{% _🗣️ L10N_ego_codicem 🗣️_ %}'
     url: '/{% _🗣️ L10N_ego_codicem 🗣️_ %}/#{% _🗣️ schemam_slug 🗣️_ %}'
+
+  - namen: "💾🗣️💭 <!-- TODO: RtL -->"
+    titulum: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %}'
+    url: "#"
+    descendens:
+      - namen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : hapi-api.tm.hxl'
+        url: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1680147913
+
+      - namen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : schemam.tm.hxl'
+        url: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1345709789
+
+      - namen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : commune.tm.hxl'
+        url: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=355011653
 
   # - html: |
   #     <!-- Search form -->
