@@ -28,6 +28,16 @@ task :openapi_exportandum do
   sh '_systema/programma/openapi-exportandum.sh'
 end
 
+# @see https://github.com/gjtorikian/html-proofer#using-with-jekyll
+require 'html-proofer'
+
+task :test do
+  sh "bundle exec jekyll build"
+  options = { :assume_extension => true }
+  HTMLProofer.check_directory("./_site", options).run
+end
+
+
 # _[por] Messages on user language [por]_
 # _[por] Mensagem no idioma do usuário [por]_
 # @exemplum

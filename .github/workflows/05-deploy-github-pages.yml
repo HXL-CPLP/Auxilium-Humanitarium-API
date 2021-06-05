@@ -53,6 +53,9 @@ jobs:
       # - run: bundle exec rake
 
       # 🐉 hic sunt dracones 🐉
+      # _[por] Explicação em português, com imagens:
+      #        - https://github.com/HXL-CPLP/forum/issues/58#issuecomment-854233567
+      # [por]_
       # To allow use liquid variables _even_ on data files, we
       #   1. build site once, and copy data to from
       #        _site/data/*.l10n.json =>  _data/*.l10n.json
@@ -60,6 +63,11 @@ jobs:
       #      source files
       - name: "Steps before Jekyll: bundle exec jekyll build"
         run: bundle exec jekyll build
+        continue-on-error: true
+
+      # @see https://github.com/gjtorikian/html-proofer#using-with-jekyll
+      - name: "Steps before Jekyll: rake test (html-proofer tests)"
+        run: rake test
         continue-on-error: true
 
       ### GitHub pages, alternative 1 __________________________________________

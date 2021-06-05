@@ -19,6 +19,8 @@ noindex: true
   <p lang="pt">[por]👷🏽 Trabalho em progresso</p>
 </div>
 
+<!--
+
 <h2>TODO</h2>
 <p>https://en.wikipedia.org/wiki/Hreflang</p>
 <p>https://www.semrush.com/blog/the-most-common-hreflang-mistakes-infographic/</p>
@@ -33,3 +35,4 @@ noindex: true
     </article>
   {% endfor %}
 </section>
+-->
