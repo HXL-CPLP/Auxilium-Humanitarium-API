@@ -157,6 +157,13 @@ module Hapi
                 File.join(@site.layouts[template].path, @site.layouts[template].name)
               end
 
+      #  Hapi::HapiApiGenerator.quod_datum_api_liquify(site, '/data/api.json')
+      # HapiApiGenerator.quod_datum_api_liquify(site, '/data/api.json')
+
+      # site.pages.each do |paginam|
+      #   puts JSON.parse(paginam.content) if paginam.url == '/data/api.json'
+      # end
+
       process(name)
       # read_yaml(PathManager.join(base, dir), name)
 

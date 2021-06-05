@@ -1,2 +1,9 @@
 # _config_dev.yml
 url: ""
+
+# @see https://jekyllrb.com/docs/configuration/liquid/
+liquid:
+  # error_mode: warn
+  error_mode: strict
+  # strict_variables: true
+  strict_filters: true
