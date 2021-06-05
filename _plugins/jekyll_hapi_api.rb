@@ -24,8 +24,14 @@ module Hapi
 
     def generate(site)
       @debug_all = false
-      # puts site.data['referens']
+
       @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
+
+      # api_liquified = quod_datum_api_liquify(site, '/data/api.json')
+      # referens_liquified = quod_datum_api_liquify(site, '/data/referens.json')
+      # # puts site.data['referens']
+
+      # @apis = Utilitatem.expandendum_api_datum(api_liquified, referens_liquified)
 
       # @apis = liquify2(site, @apis)
 
@@ -37,6 +43,27 @@ module Hapi
         @debug_est = @debug_all or api_datum['debug']
         site.pages << ApiPaginam.new(site, api_datum, @debug_est)
       end
+    end
+
+    def quod_datum_api_liquify(site, path)
+      # datum_api = nil
+      site.pages.each do |paginam|
+        # return JSON.parse(paginam.content) if paginam.url == path
+        next unless paginam.url == path
+
+        # content = File.read(site.in_source_dir(dir, filename))
+        content = paginam.content
+        template = Liquid::Template.parse(content)
+
+        context = Liquid::Context.new({}, {}, { site: site })
+        rendered = template.render(context)
+
+        puts rendered
+
+        # return JSON.parse(paginam.content)
+        return JSON.parse(rendered)
+      end
+      raise "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} #{path} ?"
     end
 
     # def liquify(site, apis)

@@ -1021,9 +1021,9 @@ Liquid::Template.register_tag(
 Liquid::Template.register_tag(
   'l10n', Hapi::Translationem::DeL10nEmoji
 )
-Liquid::Template.register_tag(
-  'n10l', Hapi::Translationem::DeL10nEmoji
-)
+# Liquid::Template.register_tag(
+#   'n10l', Hapi::Translationem::DeL10nEmoji
+# )
 
 # _[eng]We still using de_markdown [eng]_
 Liquid::Template.register_tag(

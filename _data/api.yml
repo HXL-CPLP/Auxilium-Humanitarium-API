@@ -55,6 +55,7 @@
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   # title: HDX - The Humanitarian Data Exchange API
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}'
+  title_l10n: '{% l10n 🔎🆘🔍 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🔎🆘🔍 l10n %}'
   title_testin0123: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
   title_testin01234: '{% __ Hapi_api_UN_HDX_titulum __ %}'
   #title_testing0: '{% l10n 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 n01l %}'

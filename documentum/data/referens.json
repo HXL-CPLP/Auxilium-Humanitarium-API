@@ -1,6 +1,7 @@
 ---
 layout: null
-permalink: /data/api.json
+title: /data/referens.json
+permalink: /data/referens.json
 sitemap:
   exclude: 'yes'
 linguam: por-Latn
@@ -9,5 +10,4 @@ iso6391: pt
 iso6393: por
 iso15924: Latn
 ---
-{{ site.data['api'] | jsonify }}
-
+{{- site.data['referens'] | jsonify | liquify -}}
