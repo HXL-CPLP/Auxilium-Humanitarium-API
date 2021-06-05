@@ -46,6 +46,21 @@ jobs:
       - name: "Steps before Jekyll: rm .gitignore"
         run: rm .gitignore
 
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      # - run: bundle exec rake
+
+      # 🐉 hic sunt dracones 🐉
+      # To allow use liquid variables _even_ on data files, we
+      #   1. build site once, and copy data to from
+      #        _site/data/*.l10n.json =>  _data/*.l10n.json
+      #   2. Then the real build will use the *.l10n.json, and ignore the
+      #      source files
+      - name: "Steps before Jekyll: bundle exec jekyll build"
+        run: bundle exec jekyll build
+        continue-on-error: true
 
       ### GitHub pages, alternative 1 __________________________________________
       ## If not using customizations beyond GitHub Pages default plugins,
