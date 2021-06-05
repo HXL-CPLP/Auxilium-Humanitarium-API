@@ -51,7 +51,7 @@
   linguam: eng-Latn
   typum: api
   gid: UN
-  lid: humanitarian-data-exchange
+  lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_slug 📝eng-Latn📝 🗣️_ %}'
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   # title: HDX - The Humanitarian Data Exchange API
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}'
@@ -61,7 +61,7 @@
   linguam: por-Latn
   typum: api
   gid: UN
-  lid: humanitarian-data-exchange
+  lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_HDX_slug 📝por-Latn📝 🗣️_ %}'
   openapi_filum: /api/UN/HDX/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
   # title: HDX - The Humanitarian Data Exchange API
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_HDX_titulum 📝por-Latn📝 🗣️_ %}'
@@ -124,7 +124,7 @@
   typum: api
   gid: UN
   # lid: common-operational-datasets-api
-  lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_slug 📝eng-Latn📝 🗣️_ %}'
+  lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_slug 📝eng-Latn📝 🗣️_ %}'
   # lid_l10n_crudum: 'Hapi_api_UN_HDX_slug'
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
   # title: Common Operational Datasets Services 2 (COD Services)
@@ -136,7 +136,7 @@
   typum: api
   gid: UN
   # lid: common-operational-datasets-api
-  lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_HDX_slug 📝por-Latn📝 🗣️_ %}'
+  lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_CODV2API_slug 📝por-Latn📝 🗣️_ %}'
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_CODV2API_titulum 📝por-Latn📝 🗣️_ %}'
   noindex: true
@@ -149,8 +149,8 @@
   linguam: mul  # mul-Zyyy
   typum: api
   gid: XZ
-  lid: hxl-proxy
-  title: "Index: HXL-Proxy"
+  lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_slug 📝eng-Latn📝 🗣️_ %}'
+  title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
 
 - x-default: /mul/api/XZ/HXL-Proxy/
@@ -181,7 +181,7 @@
   linguam: mul  # mul-Zyyy
   typum: api
   gid: BR
-  lid: portais-ckan-brasil
+  lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-ckan-brasil_slug 📝por-Latn📝 🗣️_ %}'
   title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
 
@@ -217,7 +217,7 @@
   linguam: mul  # mul-Zyyy
   typum: api
   gid: BR
-  lid: portais-arcgis-brasil
+  lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_slug 📝por-Latn📝 🗣️_ %}'
   title: "Index: {% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}"
   noindex: true
 

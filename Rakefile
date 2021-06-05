@@ -32,11 +32,34 @@ end
 require 'html-proofer'
 
 task :test do
-  sh "bundle exec jekyll build"
-  options = { :assume_extension => true }
-  HTMLProofer.check_directory("./_site", options).run
+  sh 'bundle exec jekyll build'
+  options = {
+    assume_extension: true,
+    # If true, does not run the external link checker, which can take a lot of time.
+    disable_external: true,
+    # If true, ignores the href="#".
+    allow_hash_href: true,
+    # Enables HTML validation errors from Nokogumbo
+    check_html: true,
+    # An array of Strings or RegExps containing file paths that are safe to ignore.
+    # Note; the graphql-doc generate malformated HTML, so we put exception here.
+    # TODO: discover what regex html-proofer use. Copy all files is bizarre.
+    file_ignore: [
+      './_site/schema/iso/iso639-3/eng/graphql-doc/comment.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/i_id.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/i_status.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/id.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/m_id.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/part1.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/part2b.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/part2t.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/ref_name.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/scope.doc.html',
+      './_site/schema/iso/iso639-3/eng/graphql-doc/type.doc.html'
+    ]
+  }
+  HTMLProofer.check_directory('./_site', options).run
 end
-
 
 # _[por] Messages on user language [por]_
 # _[por] Mensagem no idioma do usuário [por]_
