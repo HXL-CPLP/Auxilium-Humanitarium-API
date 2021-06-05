@@ -1,0 +1,6 @@
+# api.yml => api.l10n.json
+# navigationem.yml => navigationem.l10n.json
+# referens.yml => referens.l10n.json
+# schema.yml => schema.l10n.json
+
+*.l10n.json

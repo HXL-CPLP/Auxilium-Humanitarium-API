@@ -40,6 +40,13 @@ exclude:
   - schema/iso/iso639-3/eng/README.md
   - schema/iso/iso15924/eng/README.md
   - README-old.md
+  # _[por] Evitar loop infinito com _plugins/jekyll_hapi_hooks.rb e
+  #        jekyll serve --watch
+  # [por]_
+  - _data/api.l10n.json
+  - _data/navigationem.l10n.json
+  - _data/referens.l10n.json
+  - _data/schema.l10n.json
 
 keep_files:
   - _assets/

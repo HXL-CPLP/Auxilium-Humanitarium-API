@@ -1,7 +1,7 @@
 ---
 layout: null
-title: /data/api.json
-permalink: /data/api.json
+title: /data/api.l10n.json
+permalink: /data/api.l10n.json
 sitemap:
   exclude: 'yes'
 linguam: por-Latn

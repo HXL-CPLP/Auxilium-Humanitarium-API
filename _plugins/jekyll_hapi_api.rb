@@ -25,6 +25,9 @@ module Hapi
     def generate(site)
       @debug_all = false
 
+      puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] site.data.keys [#{@fontem_linguam}]"
+      puts site.data.keys
+
       @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
 
       # api_liquified = quod_datum_api_liquify(site, '/data/api.json')
