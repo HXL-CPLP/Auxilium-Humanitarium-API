@@ -23,9 +23,25 @@ $HAPI_DI = {
 
 ## https://womanonrails.com/ruby-iterators
 
-# Jekyll::Hooks.register :site, :pre_render do |site|
-#   $SITE = site
-# end
+Jekyll::Hooks.register :site, :after_reset do |site|
+  puts 'site.tags'
+  puts site.tags
+  puts 'site.categories'
+  puts site.categories
+end
+Jekyll::Hooks.register :site, :post_read do |site|
+  puts 'site.tags'
+  puts site.tags
+  puts 'site.categories'
+  puts site.categories
+end
+
+Jekyll::Hooks.register :site, :pre_render do |site|
+  puts 'site.tags'
+  puts site.tags
+  puts 'site.categories'
+  puts site.categories
+end
 
 # TODO: https://github.com/jekyll/jekyll/blob/master/features/hooks.feature
 
@@ -61,6 +77,11 @@ Jekyll::Hooks.register :site, :post_write do |site| # rubocop:disable Metrics/Bl
   #     f_api_data
   #   )
   # end
+
+  puts 'site.tags'
+  puts site.tags
+  puts 'site.categories'
+  puts site.categories
 
   if File.file?(File.join(site.dest, '/data/api.l10n.json')) && \
      (!File.file?(File.join(site.source, '/_data/l10n/api.l10n.json')) || !FileUtils.compare_file(

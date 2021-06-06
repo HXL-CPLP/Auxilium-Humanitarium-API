@@ -4,7 +4,8 @@ title: "Plures linguae index - Auxilium Humanitarium API documentōrum"
 description: Plures linguae index - Auxilium Humanitarium API documentōrum
 linguam: mul-Zyyy
 permalink: /mul/
-categories: [ index ]
+categories: ['work', 'code']
+tags: ['work', 'code']
 noindex: true
 sitemap:
   exclude: 'yes'
@@ -126,17 +127,22 @@ sitemap:
             {% endfor %}
           </ul>
         </div>
-
-
+      <h2>Debug</h2>
+      <h3>etc</h3>
+      
+      <p>https://talk.jekyllrb.com/t/category-page-need-a-page-with-a-link-to-all-posts-of-a-category/2997/2<p>
+      <p>https://talk.jekyllrb.com/t/collect-items-from-multiple-collections-and-organize-by-tag/1645/5<p>
+      <pre>{{ site.categories }}</pre>
+      <pre>{{ site.categories }}</pre>
+      <pre>{{ page.categories }}</pre>
+      <pre>{{ site.tags }}</pre>
+      <pre>{{ page.tags }}</pre>
+      <pre>{{ site.keys | bellum_json }}</pre>
+      <h3>mappam-situm.l10n</h3>
       <pre>{{ site.data.l10n.mappam-situml10n.grupum | bellum_json }}</pre>
+      <h3>mappam-situm</h3>
+      <pre>{{ site.data.mappam-situm.grupum | bellum_json }}</pre>
       <h2>Pāginam</h2>
-      <ul>
-        {% for post in site.pages %}
-          <li>
-            <a href="{{ post.url }}" title='{{ post.datum | jsonify }}'>{{ post.title | default: 'incognitum nomen' }}</a>
-          </li>
-        {% endfor %}
-      </ul>
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

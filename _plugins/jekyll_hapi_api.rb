@@ -100,8 +100,8 @@ module Hapi
       end
 
       # self.data, rubocop complaints about self.
-      data['datum'] = api_datum
-      data.merge!(api_datum['jekyll-page'])
+      # data['datum'] = api_datum
+      # data.merge!(api_datum['jekyll-page'])
 
       Jekyll::Hooks.trigger :pages, :post_init, self
     end

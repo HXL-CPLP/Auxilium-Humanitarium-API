@@ -21,6 +21,7 @@
 #   - Langue française: https://en.wiktionary.org/wiki/%C3%A9valuation#French
 #     - English language: https://en.wiktionary.org/wiki/eval#English
 #       - https://en.wiktionary.org/wiki/eval#Etymology_2
+#   - ?? https://latin.stackexchange.com/questions/6035/how-to-translate-evaluate ??
 # English: tag, see
 #  https://en.wiktionary.org/wiki/label#English, https://en.wiktionary.org/wiki/%C3%A9tiquette#French
 
@@ -59,7 +60,16 @@ grupum:
   categoriam:
     aevum:
       codicem: "{{ site.categories | jsonify }}"
+      codicem2: |
+        {% capture resultatum %}
+            {{ site.categories | jsonify }}
+        {% endcapture %}
+        {{ resultatum | capitalize }}
+
+        {% _🗣️ 🔎🔕🔍 Hapi_api_UN_HDX_titulum 🔎🔕🔍 🗣️_ %}
+      # codicem2: '{% \{\{ site.categories | jsonify \}\} %}'
 
   pittacium:
     aevum:
       codicem: "{{ site.tags | jsonify }}"
+      codicem2: "{{ 'aaaa' }}"

@@ -4,10 +4,15 @@ title: /data/mappam-situm.l10n.json
 permalink: /data/mappam-situm.l10n.json
 sitemap:
   exclude: 'yes'
-linguam: mul-Zyyy
+# linguam: mul-Zyyy
+# htmldir: ltr
+# iso6391: mul
+# iso6393: mul
+# iso15924: Zyyy
+linguam: por-Latn
 htmldir: ltr
-iso6391: mul
-iso6393: mul
-iso15924: Zyyy
+iso6391: pt
+iso6393: por
+iso15924: Latn
 ---
 {{- site.data['mappam-situm'] | bellum_json | liquify -}}
