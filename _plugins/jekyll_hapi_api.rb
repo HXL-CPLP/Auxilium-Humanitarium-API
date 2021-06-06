@@ -35,7 +35,7 @@ module Hapi
         site.data['l10n']['apil10n'],
         site.data['l10n']['referensl10n']
       )
-
+      # puts 'oooooi'
       # _[eng] We override site.data.api [eng]_
       # _[por] Sobrescrevemos o site.data.api [por]_
       site.data['api'] = @apis
@@ -50,6 +50,8 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
+    attr_accessor :datum
+
     # rubocop:disable Lint/MissingSuper
 
     # _[eng] Initialize a new page [eng]_
@@ -75,6 +77,11 @@ module Hapi
               else
                 File.join(@site.layouts[template].path, @site.layouts[template].name)
               end
+
+      # @datum = api_datum
+      # puts '              api_datum'
+      # puts api_datum
+      # @trivum = 'teste'
 
       #  Hapi::HapiApiGenerator.quod_datum_api_liquify(site, '/data/api.json')
       # HapiApiGenerator.quod_datum_api_liquify(site, '/data/api.json')
@@ -105,8 +112,18 @@ module Hapi
 
       Jekyll::Hooks.trigger :pages, :post_init, self
     end
-
     # rubocop:enable Lint/MissingSuper
+
+    # _[eng] Returns the object as a debug String [eng]_
+    # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
+    # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
+    # # .
+    def inspect
+      puts 'datum'
+      puts @datum
+
+      "#<#{self.class} @relative_path=#{relative_path.inspect} @x-default=#{@trivum}>"
+    end
   end
 end
 

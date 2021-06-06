@@ -23,25 +23,104 @@ $HAPI_DI = {
 
 ## https://womanonrails.com/ruby-iterators
 
-Jekyll::Hooks.register :site, :after_reset do |site|
-  puts 'site.tags'
-  puts site.tags
-  puts 'site.categories'
-  puts site.categories
-end
-Jekyll::Hooks.register :site, :post_read do |site|
-  puts 'site.tags'
-  puts site.tags
-  puts 'site.categories'
-  puts site.categories
-end
+# @see https://github.com/jekyll/jekyll/issues/6291
+Jekyll::Hooks.register :site, :pre_render do |site, _payload|
+  # puts 'site.inspect'
+  # puts site.inspect
+  # # puts site.docs.inspect
+  # # tags = {}
+  # puts 'teste'
 
-Jekyll::Hooks.register :site, :pre_render do |site|
-  puts 'site.tags'
-  puts site.tags
-  puts 'site.categories'
-  puts site.categories
+  # return nil
+
+  categoriam = {}
+  pittacium = {}
+
+  site.pages.each do |post|
+    # unless post['tags'].nil?
+    #   post['tags'].each do |tag|
+    #     pittacium[tag] = [] if pittacium[tag].nil?
+    #     pittacium[tag].append(post)
+    #   end
+    # end
+    break
+
+    puts 'post.class'
+    # puts post.class
+    puts post.instance_of?(Hapi::ApiPaginam)
+
+    if post.instance_of?(Hapi::ApiPaginam)
+      puts 'todo post Hapi::ApiPaginam'
+      puts ''
+    end
+
+    # post.dig(:slug)
+    # post&['tags']
+    # a = [[1, [2, 3]]]
+
+    # a.dig(0, 1, 1)                    #=> 3
+
+    # post&.dig(:tags) do |tag|
+    # post.dig(:tags) do |tag|
+    #   pittacium[tag] = [] if pittacium[tag].nil?
+    #   pittacium[tag].append(post)
+    # end
+    # pittacium&.dig(:tags) do |tag|
+    #   pittacium[tag] = [] if pittacium[tag].nil?
+    #   pittacium[tag].append(post)
+    # end
+    # post&['tags']&.each do |tag|
+    #   pittacium[tag] = [] if pittacium[tag].nil?
+    #   pittacium[tag].append(post)
+    # end
+    # post['categories'].each do |cat|
+    #   categoriam[tag] = [] if categoriam[cat].nil?
+    #   categoriam[cat].append(post)
+    # end
+
+    # puts 'do something'
+    # puts post.inspect
+    # puts post['tags'].inspect
+  end
+  # site.posts.docs.each do |post|
+  #   puts 'do something'
+  # end
+  # puts 'site.pages.inspect'
+  # puts site.pages.inspect
+  # puts 'site.posts.inspect'
+  # puts site.posts.inspect
+  # puts 'site.documents.inspect'
+  # puts site.documents.inspect
+  # site.posts.docs.each do |post|
+  # site.posts.each do |post|
+  #   puts 'post.inspect'
+  #   puts post.inspect
+  #   post.tags.each do |post_tag|
+  #     puts post_tag
+  #   end
+  # end
+
+  # puts 'site.tags.inspect'
+  # puts site.tags.inspect
+  # # site['tags'] = %w[um ois]
+  # # site['categories'] = ['tres', 'quatro']
+  # puts payload.keys
+  # puts payload.content
+  # puts payload.jekyll
 end
+# Jekyll::Hooks.register :site, :post_read do |site|
+#   puts 'site.tags'
+#   puts site.tags
+#   puts 'site.categories'
+#   puts site.categories
+# end
+
+# Jekyll::Hooks.register :site, :pre_render do |site|
+#   puts 'site.tags'
+#   puts site.tags
+#   puts 'site.categories'
+#   puts site.categories
+# end
 
 # TODO: https://github.com/jekyll/jekyll/blob/master/features/hooks.feature
 
@@ -77,11 +156,6 @@ Jekyll::Hooks.register :site, :post_write do |site| # rubocop:disable Metrics/Bl
   #     f_api_data
   #   )
   # end
-
-  puts 'site.tags'
-  puts site.tags
-  puts 'site.categories'
-  puts site.categories
 
   if File.file?(File.join(site.dest, '/data/api.l10n.json')) && \
      (!File.file?(File.join(site.source, '/_data/l10n/api.l10n.json')) || !FileUtils.compare_file(
