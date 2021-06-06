@@ -1,13 +1,5 @@
 <!-- _includes/caput-ltr.html -->
 <!-- Trivia: 'caput', https://en.wiktionary.org/wiki/caput#Latin -->
-
-
-<!--
-  TODO: este arquivo está verboso demais. Eventualmente será transformado
-        em https://jekyllrb.com/docs/step-by-step/06-data-files/ em vez
-        de requerer editar HTML diretamente.
--->
-
 <header class="site-header">
   <nav aria-label="Main navbar of site"
     class="navbar navbar-expand-lg navbar-light"
@@ -25,7 +17,7 @@
 
       <div class="collapse navbar-collapse" id="caput-ltr-navigationem">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          {% assign links = site.data.navigationem['por-Latn'] %}
+          {% assign links = site.data.navigationem[page.linguam] %}
           {% for link in links %}
             {% assign class = nil %}
             {% if page.url contains link.url %}

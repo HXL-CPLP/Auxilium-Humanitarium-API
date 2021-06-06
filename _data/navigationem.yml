@@ -148,4 +148,8 @@ Zyyy: &idZyyy
 
 eng-Latn: *idZyyy
 
+mul-Zyyy: *idZyyy
+
+lat-Latn: *idZyyy
+
 por-Latn: *idZyyy

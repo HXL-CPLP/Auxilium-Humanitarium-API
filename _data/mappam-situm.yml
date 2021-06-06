@@ -1,11 +1,65 @@
 # ARCHIVUM:        _data/mappam-situm.yml
 
 # Trivia:
-#  - mappam
-#    - https://en.wiktionary.org/wiki/mappa#Latin
-#  - situm
-#    - https://en.wiktionary.org/wiki/situs#Latin
-#  - pāginam
-#    - https://en.wiktionary.org/wiki/pagina#Latin
-#  - '🌐'
-#    - https://emojipedia.org/globe-with-meridians/
+# - mappam
+#   - https://en.wiktionary.org/wiki/mappa#Latin
+# - situm
+#   - https://en.wiktionary.org/wiki/situs#Latin
+# - pāginam
+#   - https://en.wiktionary.org/wiki/pagina#Latin
+# - '🌐'
+#   - https://emojipedia.org/globe-with-meridians/
+# - 'catēgoriam'
+#   - Lingua Latina: https://https://en.wiktionary.org/wiki/categoria#Latin.wiktionary.org/wiki/pittacium#Latin
+# - 'pittacium'
+#   - Latin: https://en.wiktionary.org/wiki/pittacium#Latin
+#     - https://en.wiktionary.org/wiki/%C3%A9tiquette#French
+#     - https://en.wiktionary.org/wiki/label#English
+#       - https://en.wiktionary.org/wiki/tag#English
+# - 'aevum'
+#   - Lingua Latina: https://en.wiktionary.org/wiki/aevum#Latin
+#   - Langue française: https://en.wiktionary.org/wiki/%C3%A9valuation#French
+#     - English language: https://en.wiktionary.org/wiki/eval#English
+#       - https://en.wiktionary.org/wiki/eval#Etymology_2
+# English: tag, see
+#  https://en.wiktionary.org/wiki/label#English, https://en.wiktionary.org/wiki/%C3%A9tiquette#French
+
+nav: &id_nav
+  - namen: "🇺🇳 UN 🇺🇳"
+    url: "#"
+    descendens:
+      - namen: "{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}"
+        linguam: "{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}"
+        url: "/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/"
+
+      - namen: "{% _🗣️ Hapi_api_UN_reliefweb_titulum 🗣️_ %}"
+        linguam: "{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}"
+        url: "/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 🗣️_ %}/"
+
+      - namen: "{% _🗣️ Hapi_api_UN_CODV2API_titulum 🗣️_ %}"
+        linguam: "{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}"
+        url: "/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 🗣️_ %}/"
+
+      - namen: <span lang="en" dir="ltr">UNSD SDG API</span>
+        debile: true
+
+  - namen: "🌐 XZ 🌐"
+    url: "#"
+    descendens:
+      - namen: "{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}"
+        linguam: "{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}"
+        url: "/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/XZ/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 🗣️_ %}/"
+
+      - namen: <span lang="en" dir="ltr">Worldbank</span>
+        debile: true
+
+grupum:
+  api: *id_nav
+
+  categoriam:
+    aevum:
+      codicem: "{{ site.categories | jsonify }}"
+
+  pittacium:
+    aevum:
+      codicem: "{{ site.tags | jsonify }}"

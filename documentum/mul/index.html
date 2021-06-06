@@ -1,4 +1,5 @@
 ---
+layout: null
 title: "Plures linguae index - Auxilium Humanitarium API documentōrum"
 description: Plures linguae index - Auxilium Humanitarium API documentōrum
 linguam: mul-Zyyy
@@ -8,7 +9,6 @@ noindex: true
 sitemap:
   exclude: 'yes'
 
-# See http://www.independent-software.com/generating-a-sitemap-xml-with-jekyll-without-a-plugin.html
 # Trivia:
 #  - mappam
 #    - https://en.wiktionary.org/wiki/mappa#Latin
@@ -17,7 +17,7 @@ sitemap:
 ---
 
 <!doctype html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang | default: 'mul' }}">
 
 <head>
   <meta charset="utf-8">
@@ -28,10 +28,10 @@ sitemap:
   <meta name="robots" content="noindex,nofollow">
 </head>
 
-<body>aaaa
+<body>
   <header>
     <div class="container">
-      <h1>Mappam Situm - Auxilium Humanitarium API documentōrum</h1>
+      <h1 lang="la">Mappam Situm - Auxilium Humanitarium API documentōrum</h1>
       <div class="alert alert-warning" role="alert">
         <p>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_%}</p>
         <p>{% _🗣️ 📝eng-Latn📝 opus_in_progressu_emoji_nomen 📝eng-Latn📝 🗣️_%}</p>
@@ -63,6 +63,72 @@ sitemap:
           </ul>
         </p>
       </article>
+      <div>
+        <h2>Testum</h2>
+        <div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% assign links = site.data.l10n.mappam-situml10n.grupum %}
+            {% for link in links %}
+              {% assign class = nil %}
+              {% if page.url contains link.url %}
+                  {% assign class = 'active' %}
+              {% endif %}
+              {% if link.descendens %}
+                <li class="nav-item dropdown {{ class }}">
+                  <a class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false"
+                    id="navigationem-descendens-{{ forloop.index0 }}" href="#">
+                    {% if link.titulum %}
+                      <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.namen }}</abbr>
+                    {% else %}
+                      {{ link.namen | liquify }}
+                    {% endif %}
+                  </a>
+                  <ul class="dropdown-menu"
+                    aria-labelledby="navigationem-descendens-{{ forloop.index0 }}">
+                    {% for sublink in link.descendens %}
+                        {% if sublink.namen == 'separator' %}
+                          <li role="separator" class="divider"></li>
+                        {% elsif sublink.debile %}
+                        <li class="nav-item">
+                          <a class="nav-link disabled" tabindex="-1"
+                            aria-disabled="true" href="#">
+                            {{ sublink.namen | liquify }}
+                          </a>
+                        </li>
+                        {% else %}
+                          <li>
+                            <a class="dropdown-item"
+                              href="{{ site.url }}{{ site.baseurl }}{{ sublink.url | liquify | strip_html }}">
+                              {% if sublink.titulum %}
+                                <abbr title="{{ sublink.titulum | liquify | strip_html }}">{{ sublink.namen }}</abbr>
+                              {% else %}
+                                {{ sublink.namen | liquify }}
+                              {% endif %}
+                            </a>
+                          </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                  </li>
+              {% else %}
+                <li class="nav-item {{ class }}">
+                  <a class="nav-link"
+                    href="{{ site.url }}{{ site.baseurl }}{{ link.url | liquify | strip_html }}">
+                    {% if link.titulum %}
+                      <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.namen }}</abbr>
+                    {% else %}
+                      {{ link.namen | liquify }}
+                    {% endif %}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+
+
+      <pre>{{ site.data.l10n.mappam-situml10n.grupum | bellum_json }}</pre>
       <h2>Pāginam</h2>
       <ul>
         {% for post in site.pages %}
