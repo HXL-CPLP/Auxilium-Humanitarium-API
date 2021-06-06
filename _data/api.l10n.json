@@ -1,0 +1,590 @@
+[
+  {
+    "x-default": "/mul/api/UN/HDX/",
+    "linguam": "mul",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "HDX",
+    "title": "Index: HDX",
+    "noindex": true,
+    "uid": "/mul/api/UN/HDX/",
+    "dir": "/mul/api/UN/",
+    "trivium": "2d0a04fb",
+    "jekyll-page": {
+      "linguam": "mul",
+      "lang": "mul",
+      "htmldir": "ltr",
+      "hreflang": "x-default",
+      "title": "Index: HDX",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-mul",
+        "api-mul",
+        "api-trivium-2d0a04fb"
+      ],
+      "openapi_filum2": "/api/UN/HDX//mul/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "2d0a04fb"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/HDX/",
+    "linguam": "eng-Latn",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "humanitarian-data-exchange",
+    "openapi_filum": "/api/UN/HDX/eng/openapi.yaml",
+    "title": "HDX - The Humanitarian Data Exchange API",
+    "title_l10n": "HDX - The Humanitarian Data Exchange API",
+    "title_testing": "2021-06-05 02:00:56 -0300",
+    "noindex": true,
+    "uid": "/eng-Latn/api/UN/humanitarian-data-exchange/",
+    "dir": "/eng-Latn/api/UN/",
+    "trivium": "2d0a04fb",
+    "jekyll-page": {
+      "linguam": "eng-Latn",
+      "lang": "en",
+      "htmldir": "ltr",
+      "hreflang": "en",
+      "title": "HDX - The Humanitarian Data Exchange API",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-eng-Latn",
+        "api-eng-Latn",
+        "api-trivium-2d0a04fb"
+      ],
+      "openapi_filum2": "/api/UN/HDX/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "2d0a04fb"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/HDX/",
+    "linguam": "por-Latn",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "humanitarian-data-exchange",
+    "openapi_filum": "/api/UN/HDX/eng/openapi.yaml",
+    "title": "HDX - Intercâmbio de Dados Humanitários",
+    "noindex": true,
+    "uid": "/por-Latn/api/UN/humanitarian-data-exchange/",
+    "dir": "/por-Latn/api/UN/",
+    "trivium": "2d0a04fb",
+    "jekyll-page": {
+      "linguam": "por-Latn",
+      "lang": "pt",
+      "htmldir": "ltr",
+      "hreflang": "pt",
+      "title": "HDX - Intercâmbio de Dados Humanitários",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-por-Latn",
+        "api-por-Latn",
+        "api-trivium-2d0a04fb"
+      ],
+      "openapi_filum2": "/api/UN/HDX/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "2d0a04fb"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/HDX/",
+    "linguam": "arb-Arab",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "اختبارات",
+    "openapi_filum": "/api/UN/HDX/eng/openapi.yaml",
+    "title": "اختبارات",
+    "noindex": true,
+    "uid": "/arb-Arab/api/UN/اختبارات/",
+    "dir": "/arb-Arab/api/UN/",
+    "trivium": "2d0a04fb",
+    "jekyll-page": {
+      "linguam": "arb-Arab",
+      "lang": "ar",
+      "htmldir": "ltr",
+      "hreflang": "ar",
+      "title": "اختبارات",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-arb-Arab",
+        "api-arb-Arab",
+        "api-trivium-2d0a04fb"
+      ],
+      "openapi_filum2": "/api/UN/HDX/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "2d0a04fb"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/reliefweb/",
+    "linguam": "mul",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "reliefweb",
+    "title": "Index: ReliefWeb",
+    "noindex": true,
+    "uid": "/mul/api/UN/reliefweb/",
+    "dir": "/mul/api/UN/",
+    "trivium": "584907cc",
+    "jekyll-page": {
+      "linguam": "mul",
+      "lang": "mul",
+      "htmldir": "ltr",
+      "hreflang": "x-default",
+      "title": "Index: ReliefWeb",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-mul",
+        "api-mul",
+        "api-trivium-584907cc"
+      ],
+      "openapi_filum2": "/api/UN/reliefweb//mul/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "584907cc"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/reliefweb/",
+    "linguam": "eng-Latn",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "reliefweb",
+    "openapi_filum": "/api/UN/reliefweb/eng/openapi.yaml",
+    "title": "ReliefWeb - Informing humanitarians worldwide",
+    "noindex": true,
+    "uid": "/eng-Latn/api/UN/reliefweb/",
+    "dir": "/eng-Latn/api/UN/",
+    "trivium": "584907cc",
+    "jekyll-page": {
+      "linguam": "eng-Latn",
+      "lang": "en",
+      "htmldir": "ltr",
+      "hreflang": "en",
+      "title": "ReliefWeb - Informing humanitarians worldwide",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-eng-Latn",
+        "api-eng-Latn",
+        "api-trivium-584907cc"
+      ],
+      "openapi_filum2": "/api/UN/reliefweb/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "584907cc"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/reliefweb/",
+    "linguam": "por-Latn",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "reliefweb",
+    "openapi_filum": "/api/UN/reliefweb/eng/openapi.yaml",
+    "title": "ReliefWeb - Informando humanitários em todo o mundo",
+    "noindex": true,
+    "uid": "/por-Latn/api/UN/reliefweb/",
+    "dir": "/por-Latn/api/UN/",
+    "trivium": "584907cc",
+    "jekyll-page": {
+      "linguam": "por-Latn",
+      "lang": "pt",
+      "htmldir": "ltr",
+      "hreflang": "pt",
+      "title": "ReliefWeb - Informando humanitários em todo o mundo",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-por-Latn",
+        "api-por-Latn",
+        "api-trivium-584907cc"
+      ],
+      "openapi_filum2": "/api/UN/reliefweb/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "584907cc"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/CODV2API/",
+    "linguam": "mul",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "CODV2API",
+    "title": "Index: CODV2API",
+    "noindex": true,
+    "uid": "/mul/api/UN/CODV2API/",
+    "dir": "/mul/api/UN/",
+    "trivium": "4a29064f",
+    "jekyll-page": {
+      "linguam": "mul",
+      "lang": "mul",
+      "htmldir": "ltr",
+      "hreflang": "x-default",
+      "title": "Index: CODV2API",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-mul",
+        "api-mul",
+        "api-trivium-4a29064f"
+      ],
+      "openapi_filum2": "/api/UN/CODV2API//mul/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "4a29064f"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/CODV2API/",
+    "linguam": "eng-Latn",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "common-operational-datasets-api",
+    "lid_l10n": "humanitarian-data-exchange",
+    "openapi_filum": "/api/UN/CODV2API/eng/openapi.yaml",
+    "title": "Common Operational Datasets Services 2 (COD Services)",
+    "noindex": true,
+    "uid": "/eng-Latn/api/UN/common-operational-datasets-api/",
+    "dir": "/eng-Latn/api/UN/",
+    "trivium": "4a29064f",
+    "jekyll-page": {
+      "linguam": "eng-Latn",
+      "lang": "en",
+      "htmldir": "ltr",
+      "hreflang": "en",
+      "title": "Common Operational Datasets Services 2 (COD Services)",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-eng-Latn",
+        "api-eng-Latn",
+        "api-trivium-4a29064f"
+      ],
+      "openapi_filum2": "/api/UN/CODV2API/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "4a29064f"
+    }
+  },
+  {
+    "x-default": "/mul/api/UN/CODV2API/",
+    "linguam": "por-Latn",
+    "typum": "api",
+    "gid": "UN",
+    "lid": "common-operational-datasets-api",
+    "openapi_filum": "/api/UN/CODV2API/eng/openapi.yaml",
+    "title": "COD API versão 2",
+    "noindex": true,
+    "uid": "/por-Latn/api/UN/common-operational-datasets-api/",
+    "dir": "/por-Latn/api/UN/",
+    "trivium": "4a29064f",
+    "jekyll-page": {
+      "linguam": "por-Latn",
+      "lang": "pt",
+      "htmldir": "ltr",
+      "hreflang": "pt",
+      "title": "COD API versão 2",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-por-Latn",
+        "api-por-Latn",
+        "api-trivium-4a29064f"
+      ],
+      "openapi_filum2": "/api/UN/CODV2API/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "4a29064f"
+    }
+  },
+  {
+    "x-default": "/mul/api/XZ/HXL-Proxy/",
+    "linguam": "mul",
+    "typum": "api",
+    "gid": "XZ",
+    "lid": "hxl-proxy",
+    "title": "Index: HXL-Proxy",
+    "noindex": true,
+    "uid": "/mul/api/XZ/hxl-proxy/",
+    "dir": "/mul/api/XZ/",
+    "trivium": "54480761",
+    "jekyll-page": {
+      "linguam": "mul",
+      "lang": "mul",
+      "htmldir": "ltr",
+      "hreflang": "x-default",
+      "title": "Index: HXL-Proxy",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-mul",
+        "api-mul",
+        "api-trivium-54480761"
+      ],
+      "openapi_filum2": "/api/XZ/HXL-Proxy//mul/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "54480761"
+    }
+  },
+  {
+    "x-default": "/mul/api/XZ/HXL-Proxy/",
+    "linguam": "eng-Latn",
+    "typum": "api",
+    "gid": "XZ",
+    "lid": "hxl-proxy",
+    "openapi_filum": "/api/XZ/HXL-Proxy/eng/openapi.yaml",
+    "title": "HXL-Proxy - Proxy of the Humanitarian Exchange Language",
+    "noindex": true,
+    "uid": "/eng-Latn/api/XZ/hxl-proxy/",
+    "dir": "/eng-Latn/api/XZ/",
+    "trivium": "54480761",
+    "jekyll-page": {
+      "linguam": "eng-Latn",
+      "lang": "en",
+      "htmldir": "ltr",
+      "hreflang": "en",
+      "title": "HXL-Proxy - Proxy of the Humanitarian Exchange Language",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-eng-Latn",
+        "api-eng-Latn",
+        "api-trivium-54480761"
+      ],
+      "openapi_filum2": "/api/XZ/HXL-Proxy/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "54480761"
+    }
+  },
+  {
+    "x-default": "/mul/api/XZ/HXL-Proxy/",
+    "linguam": "por-Latn",
+    "typum": "api",
+    "gid": "XZ",
+    "lid": "hxl-proxy",
+    "openapi_filum": "/api/XZ/HXL-Proxy/eng/openapi.yaml",
+    "title": "HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária",
+    "noindex": true,
+    "uid": "/por-Latn/api/XZ/hxl-proxy/",
+    "dir": "/por-Latn/api/XZ/",
+    "trivium": "54480761",
+    "jekyll-page": {
+      "linguam": "por-Latn",
+      "lang": "pt",
+      "htmldir": "ltr",
+      "hreflang": "pt",
+      "title": "HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-por-Latn",
+        "api-por-Latn",
+        "api-trivium-54480761"
+      ],
+      "openapi_filum2": "/api/XZ/HXL-Proxy/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "54480761"
+    }
+  },
+  {
+    "x-default": "/mul/api/BR/portais-ckan-brasil/",
+    "linguam": "mul",
+    "typum": "api",
+    "gid": "BR",
+    "lid": "portais-ckan-brasil",
+    "title": "Index: Portais CKAN de dados abertos do Brasil",
+    "noindex": true,
+    "uid": "/mul/api/BR/portais-ckan-brasil/",
+    "dir": "/mul/api/BR/",
+    "trivium": "ba7b0b7e",
+    "jekyll-page": {
+      "linguam": "mul",
+      "lang": "mul",
+      "htmldir": "ltr",
+      "hreflang": "x-default",
+      "title": "Index: Portais CKAN de dados abertos do Brasil",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-mul",
+        "api-mul",
+        "api-trivium-ba7b0b7e"
+      ],
+      "openapi_filum2": "/api/BR/portais-ckan-brasil//mul/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "ba7b0b7e"
+    }
+  },
+  {
+    "x-default": "/mul/api/BR/portais-ckan-brasil/",
+    "linguam": "eng-Latn",
+    "typum": "api",
+    "gid": "BR",
+    "lid": "brazilian-ckan-portals",
+    "openapi_filum": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml",
+    "title": "Brazilian CKAN open data portals",
+    "description": "Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4\n",
+    "noindex": true,
+    "uid": "/eng-Latn/api/BR/brazilian-ckan-portals/",
+    "dir": "/eng-Latn/api/BR/",
+    "trivium": "ba7b0b7e",
+    "jekyll-page": {
+      "linguam": "eng-Latn",
+      "lang": "en",
+      "htmldir": "ltr",
+      "hreflang": "en",
+      "title": "Brazilian CKAN open data portals",
+      "description": "Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4\n",
+      "tags": [
+        "api",
+        "api-linguam-eng-Latn",
+        "api-eng-Latn",
+        "api-trivium-ba7b0b7e"
+      ],
+      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "ba7b0b7e"
+    }
+  },
+  {
+    "x-default": "/mul/api/BR/portais-ckan-brasil/",
+    "linguam": "por-Latn",
+    "typum": "api",
+    "gid": "BR",
+    "lid": "dados-abertos-ckan-brasil",
+    "openapi_filum": "/api/BR/portais-ckan-brasil/por/openapi.yaml",
+    "title": "Portais CKAN de dados abertos no Brasil",
+    "description": "Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4\n",
+    "noindex": true,
+    "uid": "/por-Latn/api/BR/dados-abertos-ckan-brasil/",
+    "dir": "/por-Latn/api/BR/",
+    "trivium": "ba7b0b7e",
+    "jekyll-page": {
+      "linguam": "por-Latn",
+      "lang": "pt",
+      "htmldir": "ltr",
+      "hreflang": "pt",
+      "title": "Portais CKAN de dados abertos no Brasil",
+      "description": "Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4\n",
+      "tags": [
+        "api",
+        "api-linguam-por-Latn",
+        "api-por-Latn",
+        "api-trivium-ba7b0b7e"
+      ],
+      "openapi_filum2": "/api/BR/portais-ckan-brasil/por/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "ba7b0b7e"
+    }
+  },
+  {
+    "x-default": "/mul/api/BR/portais-arcgis-brasil/",
+    "linguam": "mul",
+    "typum": "api",
+    "gid": "BR",
+    "lid": "portais-arcgis-brasil",
+    "title": "Index: Portais ArcGIS de dados abertos do Brasil",
+    "noindex": true,
+    "uid": "/mul/api/BR/portais-arcgis-brasil/",
+    "dir": "/mul/api/BR/",
+    "trivium": "d3f40c5a",
+    "jekyll-page": {
+      "linguam": "mul",
+      "lang": "mul",
+      "htmldir": "ltr",
+      "hreflang": "x-default",
+      "title": "Index: Portais ArcGIS de dados abertos do Brasil",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-mul",
+        "api-mul",
+        "api-trivium-d3f40c5a"
+      ],
+      "openapi_filum2": "/api/BR/portais-arcgis-brasil//mul/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "d3f40c5a"
+    }
+  },
+  {
+    "x-default": "/mul/api/BR/portais-arcgis-brasil/",
+    "linguam": "eng-Latn",
+    "typum": "api",
+    "gid": "BR",
+    "lid": "brazilian-arcgis-portals",
+    "openapi_filum": "/api/BR/portais-arcgis-brasil/por/openapi.yaml",
+    "title": "Brazilian ArcGIS open data portals",
+    "noindex": true,
+    "uid": "/eng-Latn/api/BR/brazilian-arcgis-portals/",
+    "dir": "/eng-Latn/api/BR/",
+    "trivium": "d3f40c5a",
+    "jekyll-page": {
+      "linguam": "eng-Latn",
+      "lang": "en",
+      "htmldir": "ltr",
+      "hreflang": "en",
+      "title": "Brazilian ArcGIS open data portals",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-eng-Latn",
+        "api-eng-Latn",
+        "api-trivium-d3f40c5a"
+      ],
+      "openapi_filum2": "/api/BR/portais-arcgis-brasil/por/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "d3f40c5a"
+    }
+  },
+  {
+    "x-default": "/mul/api/BR/portais-arcgis-brasil/",
+    "linguam": "por-Latn",
+    "typum": "api",
+    "gid": "BR",
+    "lid": "portais-arcgis-brasil",
+    "openapi_filum": "/api/BR/portais-arcgis-brasil/por/openapi.yaml",
+    "title": "Portais ArcGIS de dados abertos do Brasil",
+    "noindex": true,
+    "uid": "/por-Latn/api/BR/portais-arcgis-brasil/",
+    "dir": "/por-Latn/api/BR/",
+    "trivium": "d3f40c5a",
+    "jekyll-page": {
+      "linguam": "por-Latn",
+      "lang": "pt",
+      "htmldir": "ltr",
+      "hreflang": "pt",
+      "title": "Portais ArcGIS de dados abertos do Brasil",
+      "description": null,
+      "tags": [
+        "api",
+        "api-linguam-por-Latn",
+        "api-por-Latn",
+        "api-trivium-d3f40c5a"
+      ],
+      "openapi_filum2": "/api/BR/portais-arcgis-brasil/por/openapi.yaml",
+      "template": "api",
+      "layout": "api",
+      "trivium": "d3f40c5a"
+    }
+  }
+]

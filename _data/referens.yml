@@ -118,6 +118,19 @@ linguam:
         - "+i_lat+is_latn"
         - "+i_lat"
         - "+i_la"
+
+  mul-Zyyy: &id_linguam_mul-Zyyy
+    BCP47: 'mul'
+    hxlattrs: # deprecated
+      - "i_mul+is_zyyy"
+      - "+i_mul"
+    hxl:
+      - "i_mul+is_zyyy"
+      - "+i_mul"
+
+  # TODO: remover necessidade disto
+  mul: *id_linguam_mul-Zyyy
+
   spa-Latn: &id_linguam_spa-Latn
     BCP47: es
     hxlattrs: # deprecated
@@ -163,16 +176,7 @@ linguam:
   #   hxlattrs:
   #     - "+i_por"
   #     - "+i_pt"
-  mul-Zyyy:
-    BCP47: ''
-    hxlattrs: []
-    hxl:
-      attributum: []
-  mul:
-    BCP47: ''
-    hxlattrs: []
-    hxl:
-      attributum: []
+
 
 # _[por] Forma preconceituosa de assumir script do idioma. Note que vários
 #        idiomas podem ser escritos em mais de um alfabeto (e isso ocorre

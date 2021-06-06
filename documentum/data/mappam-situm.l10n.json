@@ -1,0 +1,13 @@
+---
+layout: null
+title: /data/mappam-situm.l10n.json
+permalink: /data/mappam-situm.l10n.json
+sitemap:
+  exclude: 'yes'
+linguam: mul-Zyyy
+htmldir: ltr
+iso6391: mul
+iso6393: mul
+iso15924: Zyyy
+---
+{{- site.data['mappam-situm'] | bellum_json | liquify -}}

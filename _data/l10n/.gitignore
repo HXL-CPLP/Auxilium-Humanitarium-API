@@ -1,0 +1,7 @@
+# _data/api.yml => _data/l10n/api.l10n.json
+# _data/navigationem.yml => _data/l10n/navigationem.l10n.json
+# _data/mappam-situm.yml => _data/l10n/mappam-situm.l10n.json
+# _data/referens.yml => _data/l10n/referens.l10n.json
+# _data/schema.yml => _data/l10n/schema.l10n.json
+
+*.l10n.json

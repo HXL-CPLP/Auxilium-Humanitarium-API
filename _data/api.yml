@@ -39,7 +39,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/HDX/
   # uid: /mul/api/UN/HDX/
-  linguam: mul  # mul-Zyyy
+  linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: UN
   lid: HDX
@@ -82,7 +82,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/reliefweb/
   # uid: /mul/api/UN/reliefweb/
-  linguam: mul  # mul-Zyyy
+  linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: UN
   lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_slug 📝eng-Latn📝 🗣️_ %}'
@@ -112,7 +112,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/UN/CODV2API/
   # uid: /mul/api/UN/CODV2API/
-  linguam: mul  # mul-Zyyy
+  linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: UN
   lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_slug 📝eng-Latn📝 🗣️_ %}'
@@ -146,7 +146,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/XZ/HXL-Proxy/
   # uid: /mul/api/XZ/HXL-Proxy/
-  linguam: mul  # mul-Zyyy
+  linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: XZ
   lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_slug 📝eng-Latn📝 🗣️_ %}'
@@ -178,7 +178,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/BR/portais-ckan-brasil/
   # uid: /mul/api/BR/portais-ckan-brasil/
-  linguam: mul  # mul-Zyyy
+  linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: BR
   lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-ckan-brasil_slug 📝por-Latn📝 🗣️_ %}'
@@ -214,7 +214,7 @@
 ## -----------------------------------------------------------------------------
 - x-default: /mul/api/BR/portais-arcgis-brasil/
   # uid: /mul/api/BR/portais-arcgis-brasil/
-  linguam: mul  # mul-Zyyy
+  linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: BR
   lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_slug 📝por-Latn📝 🗣️_ %}'

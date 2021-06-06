@@ -22,24 +22,19 @@ module Hapi
   class HapiApiGenerator < Jekyll::Generator
     safe true
 
-    def generate(site)
+    def generate(site) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       @debug_all = false
 
-      unless site.data['apil10n'] && site.data['referensl10n']
+      unless site.data['l10n']['apil10n'] && site.data['l10n']['referensl10n']
         puts "\n\n\t[🔎ℹ️ #{self.class.name}:#{__LINE__}] requīrendum: 'bundle exec jekyll build' !!!"
         return nil
       end
 
       # @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
-      @apis = Utilitatem.expandendum_api_datum(site.data['apil10n'], site.data['referensl10n'])
-
-      # api_liquified = quod_datum_api_liquify(site, '/data/api.json')
-      # referens_liquified = quod_datum_api_liquify(site, '/data/referens.json')
-      # # puts site.data['referens']
-
-      # @apis = Utilitatem.expandendum_api_datum(api_liquified, referens_liquified)
-
-      # @apis = liquify2(site, @apis)
+      @apis = Utilitatem.expandendum_api_datum(
+        site.data['l10n']['apil10n'],
+        site.data['l10n']['referensl10n']
+      )
 
       # _[eng] We override site.data.api [eng]_
       # _[por] Sobrescrevemos o site.data.api [por]_
@@ -49,27 +44,6 @@ module Hapi
         @debug_est = @debug_all or api_datum['debug']
         site.pages << ApiPaginam.new(site, api_datum, @debug_est)
       end
-    end
-
-    def quod_datum_api_liquify(site, path)
-      # datum_api = nil
-      site.pages.each do |paginam|
-        # return JSON.parse(paginam.content) if paginam.url == path
-        next unless paginam.url == path
-
-        # content = File.read(site.in_source_dir(dir, filename))
-        content = paginam.content
-        template = Liquid::Template.parse(content)
-
-        context = Liquid::Context.new({}, {}, { site: site })
-        rendered = template.render(context)
-
-        puts rendered
-
-        # return JSON.parse(paginam.content)
-        return JSON.parse(rendered)
-      end
-      raise "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} #{path} ?"
     end
   end
 
@@ -84,7 +58,7 @@ module Hapi
     # site          - Jekyll site obiectum
     # api_datum     - API Datum
     # debug         - Debug est?
-    def initialize(site, api_datum, _debug)
+    def initialize(site, api_datum, _debug) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       # super()
       @site = site              # the current site instance.
       @base = site.source       # path to the source directory.
@@ -129,8 +103,6 @@ module Hapi
       data['datum'] = api_datum
       data.merge!(api_datum['jekyll-page'])
 
-      # puts 'oi_2'
-      # puts data
       Jekyll::Hooks.trigger :pages, :post_init, self
     end
 
