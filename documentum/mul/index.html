@@ -42,7 +42,7 @@ sitemap:
   </header>
   <main>
     <div class="container">
-      <article>
+      <aside>
         <h2>Trivia</h2>
         <p>
           <ul>
@@ -63,25 +63,51 @@ sitemap:
             </li>
           </ul>
         </p>
-      </article>
-      <article>
+      </aside>
+      <section>
+        <article>
         <h2>API</h2>
-
-        {% for xdefallo in site.data.hapi.api_xdefallo %}
+        {% for item_group in site.data.hapi.api_xdefallo %}
           <article>
-            <h3>1 {{ xdefallo.title | default: xdefallo.uid }}</h3>
-            <h3>1 {{ xdefallo.docs  }}</h3>
-            {{ xdefallo | inspect }}
+            <h3>{{ item_group.title }}</h3>
+            <dl>
+              <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
+              <dd><a href="{{ item_group.url }}">{{ item_group.url }}</a></dd>
+            </dl>
+            {% for item_alt in item_group.alternativum  %}
+              {% if item_alt.url != item_group.url %}
+                <article>
+                  <h4>{{ item_alt.title | default: item_alt.namen }}</h4>
+                  <dl>
+                    <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
+                    <dd><a href="{{ item_alt.url }}">{{ item_alt.url }}</a></dd>
+                  </dl>
+                </article>
+              {% endif %}
+            {% endfor %}
           </article>
         {% endfor %}
+        </article>
 
-        {{ site.data.hapi.api_xdefallo | inspect }}
+        <article>
+          <h2>Categoriam</h2>
+          {% for cat in site.data.hapi.categoriam %}
+            <article>
+              <h3>{{ cat.title }}</h3>
+            </article>
+          {% endfor %}
+        </article>
 
-        <!-- {{ site.data.collectionem | jsonify }}
-        {{ site.data.collectionem | inspect }} -->
-
-
-      </article>
+        <article>
+          <h2>Tags</h2>
+          {% for tag in site.data.hapi.pittacium %}
+            <article>
+              <h3>{{ tag.title }}</h3>
+            </article>
+          {% endfor %}
+        </article>
+      
+      </section>
       <div>
         <h2>Testum</h2>
 

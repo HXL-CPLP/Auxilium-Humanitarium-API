@@ -36,7 +36,8 @@ module Hapi
     #     Hapi::HSD.initiale_pre_render
     #   end
     def initiale_pre_render # rubocop:disable Metrics/AbcSize, Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
-      api = {}
+      # api = {}
+      api = []
       categoriam = {}
       pittacium = {}
       # api
@@ -44,7 +45,8 @@ module Hapi
       HSD.pages?.each do |page|
         if page.instance_of?(Hapi::ApiPaginam)
 
-          api[page.digitum_signaturum] = page
+          # [page.digitum_signaturum] = page
+          api.append(page)
         elsif page.instance_of?(Jekyll::Page)
           # puts 'Generic pages do not have any special feature'
         end
@@ -80,7 +82,11 @@ module Hapi
     end
 
     def api?
-      Jekyll.sites.last.data['api']
+      Jekyll.sites.last.data['api'] # apil10n ?
+    end
+
+    def api_paginam?
+      Jekyll.sites.last.data['hapi']['api']
     end
 
     def api!(api)
@@ -90,20 +96,12 @@ module Hapi
 
     def api_xdefallo?(api_collectionem = nil)
       apis = api_collectionem || api?
-      resultatum = {}
+      # resultatum = {}
+      resultatum = []
 
-      apis&.each do |clavem, valendum|
-        # puts 'teste'
-        # puts clavem
-        # puts valendum
-        # puts valendum.xdefallo_est?
-        # puts valendum.methods
-        # resultatum[clavem] = valendum if apis[clavem].xdefallo_est?
-
-        resultatum[clavem] = valendum if valendum.xdefallo_est?
-      rescue StandardError => e
-        puts "TODO: resolve this later #{e}"
-        # puts "TODO: resolve this later #{exception} [#{clavem}]"
+      apis&.each do |api|
+        resultatum.append(api) if api.xdefallo_est?
+        # resultatum[clavem] = valendum
       end
 
       # TODO: order by UN, XZ, then others

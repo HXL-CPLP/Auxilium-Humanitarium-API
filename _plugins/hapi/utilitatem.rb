@@ -79,7 +79,7 @@ module Hapi
         # puts api['uid']
         api['uid'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
         api['dir'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/"
-        api['trivium'] = digitum_premendum(api['x-default'])
+        api['trivium'] = digitum_premendum(api['xdefallo'])
 
         # puts api['uid']
         # api['openapi_filum'] = openapi_filum_de_api(api)
@@ -112,7 +112,7 @@ module Hapi
         'openapi_filum2' => openapi_filum_de_api(api),
         'template' => 'api',
         'layout' => 'api',
-        'trivium' => digitum_premendum(api['x-default'])
+        'trivium' => digitum_premendum(api['xdefallo'])
       }
 
       api
@@ -208,7 +208,7 @@ module Hapi
     # _[por] Tags Jekyll de item de API [por]_
     def openapi_filum_de_api(api)
       if api['openapi_filum'].nil?
-        @filum = "#{api['x-default'].gsub('/mul/', '/')}/#{api['linguam']}/openapi.yaml"
+        @filum = "#{api['xdefallo'].gsub('/mul/', '/')}/#{api['linguam']}/openapi.yaml"
         @filum
       else
         api['openapi_filum']
@@ -296,8 +296,8 @@ module Hapi
       referens_praeiudico['iso3693'][iso6393]['iso15924']
     end
 
-    # _[eng] Is this an x-default API? [eng]_
-    # _[por] Esta é uma API x-default? [por]_
+    # _[eng] Is this an xdefallo API? [eng]_
+    # _[por] Esta é uma API xdefallo? [por]_
     def xdefault_est(api)
       api['linguam'] == 'mul' || api['linguam'] == 'mul-Zyyy'
     end
@@ -309,7 +309,7 @@ module Hapi
       @apis_est = apis.nil? ? site.data['api'] : apis
 
       @apis_est.each do |api_ref|
-        @totale.append(api_ref['x-default']) if api['x-default'] == api_ref['x-default']
+        @totale.append(api_ref['xdefallo']) if api['xdefallo'] == api_ref['xdefallo']
       end
 
       @totale
@@ -322,7 +322,7 @@ module Hapi
       @apis_est = apis.nil? ? site.data['api'] : apis
 
       @apis_est.each do |api_ref|
-        @totale.append(api_ref['x-default']) if api['x-default'] == api_ref['x-default']
+        @totale.append(api_ref['xdefallo']) if api['xdefallo'] == api_ref['xdefallo']
       end
 
       @totale

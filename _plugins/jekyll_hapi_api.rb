@@ -50,7 +50,19 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-    attr_accessor :datum, :uid, :xdefallo
+    attr_accessor :datum, :uid, :xdefallo, :alternativum
+
+    # Attributes for Liquid templates
+    ATTRIBUTES_FOR_LIQUID = %w[
+      alternativum
+      xdefallo
+      content
+      dir
+      excerpt
+      name
+      path
+      url
+    ].freeze
 
     # rubocop:disable Lint/MissingSuper
 
@@ -80,7 +92,7 @@ module Hapi
 
       @datum = api_datum
       @uid = api_datum['uid']
-      @xdefallo = api_datum['x-default']
+      @xdefallo = api_datum['xdefallo']
       # puts '              api_datum'
       # puts api_datum
       # @trivum = 'teste'
@@ -109,8 +121,8 @@ module Hapi
       end
 
       # self.data, rubocop complaints about self.
-      # data['datum'] = api_datum
-      # data.merge!(api_datum['jekyll-page'])
+      data['datum'] = api_datum
+      data.merge!(api_datum['jekyll-page'])
 
       Jekyll::Hooks.trigger :pages, :post_init, self
     end
@@ -120,7 +132,15 @@ module Hapi
     # - 'alternātīvum'
     #   - https://en.wiktionary.org/wiki/alternativus#Latin
     def alternativum
-      Utilitatem.digitum_premendum(relative_path)
+      # Utilitatem.digitum_premendum(relative_path)
+      resultatum = []
+      apis = Hapi::HSD.api_paginam?
+      apis&.each do |api|
+        # puts api.class
+        resultatum.append(api) if @xdefallo == api.xdefallo
+      end
+
+      resultatum
     end
 
     # Trivia
@@ -135,7 +155,7 @@ module Hapi
     # Trivia
     # - 'trivium'
     #   - https://en.wiktionary.org/wiki/trivium#Latin
-    # - 'x-default'
+    # - 'xdefallo'
     #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
     def trivium
       @datum
@@ -153,12 +173,28 @@ module Hapi
       "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
     end
 
-    # _[eng] Is this an x-default API? [eng]_
-    # _[por] Esta é uma API x-default? [por]_
+    # _[eng] Returns the object as a debug String [eng]_
+    # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
+    # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
+    # # .
+    def to_s
+      # puts 'datum'
+      # puts @datum
+
+      # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
+      "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
+    end
+
+    def xdefallo
+      @xdefallo
+    end
+
+    # _[eng] Is this an xdefallo API? [eng]_
+    # _[por] Esta é uma API xdefallo? [por]_
     # Trivia
     # - 'trivium'
     #   - https://en.wiktionary.org/wiki/trivium#Latin
-    # - 'x-default'
+    # - 'xdefallo'
     #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
     def xdefallo_est?
       # @datum['linguam'] == 'mul' || @datum['linguam'] == 'mul-Zyyy'

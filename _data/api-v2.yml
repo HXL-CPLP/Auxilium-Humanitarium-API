@@ -3,7 +3,7 @@
 # TODO: quebrar em mais de uma planilha o HXL-CPLP-Vocab_Auxilium-Humanitarium-API
 
 # Trivia
-# - 'x-default':
+# - 'xdefallo':
 #   - https://en.wikipedia.org/wiki/Hreflang
 # - 'linguam':
 #   - https://en.wiktionary.org/wiki/lingua#Latin
@@ -39,7 +39,7 @@
 ### [linguam]/api/UN ___________________________________________________________
 
 ## -----------------------------------------------------------------------------
-- x-default: /mul/api/UN/HDX/
+- xdefallo: /mul/api/UN/HDX/
   # uid: /mul/api/UN/HDX/
   linguam: mul  # mul-Zyyy
   typum: api
@@ -49,7 +49,7 @@
   noindex: true
   # HAPI_api_UN_HDX
 
-- x-default: /mul/api/UN/HDX/
+- xdefallo: /mul/api/UN/HDX/
   # uid: /eng/api/UN/humanitarian-data-exchange/
   linguam: eng-Latn
   typum: api
@@ -62,7 +62,7 @@
 
 # Note: this is just a test to check if non US-ASCII characters can work with
 #       Hapi toolchain
-- x-default: /mul/api/UN/HDX/
+- xdefallo: /mul/api/UN/HDX/
   # uid: /arb/api/UN/اختبارات/
   linguam: arb-Arab
   typum: api
@@ -73,7 +73,7 @@
   noindex: true
 
 ## -----------------------------------------------------------------------------
-- x-default: /mul/api/UN/reliefweb/
+- xdefallo: /mul/api/UN/reliefweb/
   # uid: /mul/api/UN/reliefweb/
   linguam: mul  # mul-Zyyy
   typum: api
@@ -82,7 +82,7 @@
   title: "Index: ReliefWeb"
   noindex: true
 
-- x-default: /mul/api/UN/reliefweb/
+- xdefallo: /mul/api/UN/reliefweb/
   # uid: /eng/api/UN/reliefweb/
   linguam: eng-Latn
   typum: api
@@ -95,7 +95,7 @@
   noindex: true
 
 ## -----------------------------------------------------------------------------
-- x-default: /mul/api/UN/CODV2API/
+- xdefallo: /mul/api/UN/CODV2API/
   # uid: /mul/api/UN/CODV2API/
   linguam: mul  # mul-Zyyy
   typum: api
@@ -104,7 +104,7 @@
   title: "Index: CODV2API"
   noindex: true
 
-- x-default: /mul/api/UN/CODV2API/
+- xdefallo: /mul/api/UN/CODV2API/
   # uid: /eng/api/UN/common-operational-datasets-api/
   linguam: eng-Latn
   typum: api
@@ -118,7 +118,7 @@
 ### [linguam]/api/ZX ___________________________________________________________
 
 ## -----------------------------------------------------------------------------
-- x-default: /mul/api/XZ/HXL-Proxy/
+- xdefallo: /mul/api/XZ/HXL-Proxy/
   # uid: /mul/api/XZ/HXL-Proxy/
   linguam: mul  # mul-Zyyy
   typum: api
@@ -127,7 +127,7 @@
   title: "Index: HXL-Proxy"
   noindex: true
 
-- x-default: /mul/api/XZ/HXL-Proxy/
+- xdefallo: /mul/api/XZ/HXL-Proxy/
   # uid: /eng/api/XZ/HXL-Proxy/
   linguam: eng-Latn
   typum: api
@@ -141,7 +141,7 @@
 ### [linguam]/api/BR ___________________________________________________________
 
 ## -----------------------------------------------------------------------------
-- x-default: /mul/api/BR/portais-ckan-brasil/
+- xdefallo: /mul/api/BR/portais-ckan-brasil/
   # uid: /mul/api/BR/portais-ckan-brasil/
   linguam: mul  # mul-Zyyy
   typum: api
@@ -150,7 +150,7 @@
   title: "Index: Portais CKAN de dados abertos do Brasil"
   noindex: true
 
-- x-default: /mul/api/BR/portais-ckan-brasil/
+- xdefallo: /mul/api/BR/portais-ckan-brasil/
   # uid: /eng/api/BR/brazilian-ckan-portals/
   linguam: eng-Latn
   typum: api
@@ -163,7 +163,7 @@
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
   noindex: true
 
-- x-default: /mul/api/BR/portais-ckan-brasil/
+- xdefallo: /mul/api/BR/portais-ckan-brasil/
   # uid: /por/api/BR/dados-abertos-ckan-brasil/
   linguam: por-Latn
   typum: api
@@ -177,7 +177,7 @@
   noindex: true
 
 ## -----------------------------------------------------------------------------
-- x-default: /mul/api/BR/portais-arcgis-brasil/
+- xdefallo: /mul/api/BR/portais-arcgis-brasil/
   # uid: /mul/api/BR/portais-arcgis-brasil/
   linguam: mul  # mul-Zyyy
   typum: api
@@ -186,7 +186,7 @@
   title: "Index: Portais ArcGIS de dados abertos do Brasil"
   noindex: true
 
-- x-default: /mul/api/BR/portais-arcgis-brasil/
+- xdefallo: /mul/api/BR/portais-arcgis-brasil/
   # uid: /por/api/BR/portais-arcgis-brasil/
   linguam: por-Latn
   typum: api

@@ -21,7 +21,7 @@ Jekyll::Hooks.register :site, :pre_render do |_site, _payload|
   # @see _plugins/hapi/hic_sunt_dracones.rb
   Hapi::HSD.initiale_pre_render
 
-  puts Hapi::HSD.api_xdefallo?
+  # puts Hapi::HSD.api_xdefallo?
 end
 
 # Jekyll::Hooks.register :site, :post_read do |site|
