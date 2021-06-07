@@ -33,99 +33,40 @@ Jekyll::Hooks.register :site, :pre_render do |site, _payload|
 
   # return nil
 
-  categoriam = {}
-  pittacium = {}
-  # api
+  Hapi::HSD.initiale_pre_render
 
-  site.pages.each do |page|
-    if page.instance_of?(Hapi::ApiPaginam)
-      # puts 'todo page Hapi::ApiPaginam'
-      # puts ''
-    elsif page.instance_of?(Jekyll::Page)
-      # puts 'todo page Page'
-      # puts ''
-    end
+  # categoriam = {}
+  # pittacium = {}
+  # # api
 
-    unless page['tags'].nil? # rubocop:disable Style/SafeNavigation
-      page['tags'].each do |tag|
-        pittacium[tag] = [] if pittacium[tag].nil?
-        pittacium[tag].append(page)
-      end
-    end
-    next if page['categories'].nil?
-
-    page['categories'].each do |cat|
-      pittacium[cat] = [] if pittacium[cat].nil?
-      pittacium[cat].append(page)
-    end
-
-    # puts 'categoriam'
-    # puts categoriam
-    # puts 'pittacium'
-    # puts pittacium
-
-    # page.dig(:slug)
-    # page&['tags']
-    # a = [[1, [2, 3]]]
-
-    # a.dig(0, 1, 1)                    #=> 3
-
-    # page&.dig(:tags) do |tag|
-    # page.dig(:tags) do |tag|
-    #   pittacium[tag] = [] if pittacium[tag].nil?
-    #   pittacium[tag].append(page)
-    # end
-    # pittacium&.dig(:tags) do |tag|
-    #   pittacium[tag] = [] if pittacium[tag].nil?
-    #   pittacium[tag].append(page)
-    # end
-    # page&['tags']&.each do |tag|
-    #   pittacium[tag] = [] if pittacium[tag].nil?
-    #   pittacium[tag].append(page)
-    # end
-    # page['categories'].each do |cat|
-    #   categoriam[tag] = [] if categoriam[cat].nil?
-    #   categoriam[cat].append(page)
-    # end
-
-    # puts 'do something'
-    # puts page.inspect
-    # puts page['tags'].inspect
-  end
-  # site.pages.docs.each do |page|
-  #   puts 'do something'
-  # end
-  # puts 'site.pages.inspect'
-  # puts site.pages.inspect
-  # puts 'site.pages.inspect'
-  # puts site.pages.inspect
-  # puts 'site.documents.inspect'
-  # puts site.documents.inspect
-  # site.pages.docs.each do |page|
   # site.pages.each do |page|
-  #   puts 'page.inspect'
-  #   puts page.inspect
-  #   page.tags.each do |page_tag|
-  #     puts page_tag
+  #   if page.instance_of?(Hapi::ApiPaginam)
+  #     # puts 'todo page Hapi::ApiPaginam'
+  #     # puts ''
+  #   elsif page.instance_of?(Jekyll::Page)
+  #     # puts 'todo page Page'
+  #     # puts ''
+  #   end
+
+  #   unless page['tags'].nil? # rubocop:disable Style/SafeNavigation
+  #     page['tags'].each do |tag|
+  #       pittacium[tag] = [] if pittacium[tag].nil?
+  #       pittacium[tag].append(page)
+  #     end
+  #   end
+  #   next if page['categories'].nil?
+
+  #   page['categories'].each do |cat|
+  #     pittacium[cat] = [] if pittacium[cat].nil?
+  #     pittacium[cat].append(page)
   #   end
   # end
 
-  # puts 'site.tags.inspect'
-  # puts site.tags.inspect
-  # # site['tags'] = %w[um ois]
-  # # site['categories'] = ['tres', 'quatro']
-  # puts payload.keys
-  # puts payload.content
-  # puts payload.jekyll
+  # site.data['collectionem'] = {
+  #   categoriam: categoriam,
+  #   pittacium: pittacium
+  # }
 
-  site.data['collectionem'] = {
-    categoriam: categoriam,
-    pittacium: pittacium
-  }
-
-  # site.data['categoriam'] = categoriam
-  # site.data['pittacium'] = pittacium
-  # puts site.inspect
 end
 # Jekyll::Hooks.register :site, :post_read do |site|
 #   puts 'site.tags'
@@ -170,7 +111,7 @@ Jekyll::Hooks.register :site, :post_write do |site| # rubocop:disable Metrics/Bl
   # puts 'Jekyll.sites.last.inspect'
   # puts Jekyll.sites.last.inspect
 
-  puts Hapi::HicSuntDracones.testum
+  puts Hapi::HSD.testum
 
   require 'fileutils'
 
