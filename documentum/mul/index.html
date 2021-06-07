@@ -42,7 +42,6 @@ sitemap:
   </header>
   <main>
     <div class="container">
-      <article> {{ site.data.collectionem }}
       <article>
         <h2>Trivia</h2>
         <p>
@@ -65,8 +64,18 @@ sitemap:
           </ul>
         </p>
       </article>
+      <article>
+        <h2>API</h2>
+
+        {{ site.data.collectionem.api }}
+        {{ site.data.collectionem }}
+
+
+      </article>
       <div>
         <h2>Testum</h2>
+
+
         <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {% assign links = site.data.l10n.mappam-situml10n.grupum %}

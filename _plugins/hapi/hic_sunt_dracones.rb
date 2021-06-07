@@ -42,7 +42,6 @@ module Hapi
       # api
 
       HSD.pages?.each do |page|
-
         if page.instance_of?(Hapi::ApiPaginam)
           # puts 'todo page Hapi::ApiPaginam'
           # puts ''
@@ -68,21 +67,52 @@ module Hapi
         end
       end
 
+      api_xdefallo = api_xdefallo?(api)
+
       jekyll_data = HSD.data?
 
-      jekyll_data['collectionem'] = {
-        api: api,
-        categoriam: categoriam,
-        pittacium: pittacium
-      }
+      jekyll_data['collectionem'] = Hapi::Datum::Collectionem.new(
+        {
+          api: api,
+          api_xdefallo: api_xdefallo,
+          categoriam: categoriam,
+          scheman: { TODO: '_[eng] To be implemented also here [eng]_' },
+          pittacium: pittacium
+        }
+      )
       HSD.data!(jekyll_data)
     end
 
     def api?
+      Jekyll.sites.last.data['api']
     end
 
-    def api!
-      puts 'TODO'
+    def api!(api)
+      idx = Jekyll.sites.length - 1
+      Jekyll.sites[idx].data['api'] = api
+    end
+
+    def api_xdefallo?(api_collectionem = nil)
+      apis = api_collectionem || api?
+      resultatum = {}
+
+      apis&.each do |clavem, valendum|
+        # puts 'teste'
+        # puts clavem
+        # puts valendum
+        # puts valendum.xdefallo_est?
+        # puts valendum.methods
+        # resultatum[clavem] = valendum if apis[clavem].xdefallo_est?
+
+        resultatum[clavem] = valendum if valendum.xdefallo_est?
+      rescue StandardError => e
+        puts "TODO: resolve this later #{e}"
+        # puts "TODO: resolve this later #{exception} [#{clavem}]"
+      end
+
+      # TODO: order by UN, XZ, then others
+
+      resultatum
     end
 
     def data?
@@ -113,9 +143,9 @@ module Hapi
     end
 
     def testum
-      puts 'okay'
-      puts 'Hapi.HSD.site?.inspect'
-      puts Hapi::HSD.site?.inspect
+      # puts 'okay'
+      # puts 'Hapi.HSD.site?.inspect'
+      # puts Hapi::HSD.site?.inspect
 
       # puts 'Hapi.HSD.data?.inspect'
       # puts Hapi::HSD.data?.inspect

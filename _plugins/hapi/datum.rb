@@ -17,6 +17,38 @@ module Hapi
   # _[eng] Hapi ruby Data classes [eng]_
   # _[por] Hapi ruby, classes de dados [por]_
   module Datum
+    # _[por] Conteiner de coleções de dados [por]_
+    # @see https://github.com/Shopify/liquid/wiki/Introduction-to-Drops
+    # class Collectionem < Liquid::Drop
+    class Collectionem < Jekyll::Drops::Drop
+      attr_accessor :api, :api_xdefallo, :categoriam, :scheman, :pittacium
+
+      def initialize(argumentum = {}) # rubocop:disable Lint/MissingSuper
+        @api = argumentum['api']
+        @api_xdefallo = argumentum['api_xdefallo']
+        @categoriam = argumentum['categoriam']
+        @scheman = argumentum['scheman']
+        @pittacium = argumentum['pittacium']
+
+        # super
+      end
+
+      def api
+        @api
+      end
+
+      def inspect
+        # Liquid uses 'self.class.to_s'
+        # @see https://github.com/Shopify/liquid/blob/master/lib/liquid/drop.rb#L47
+        require 'json'
+        JSON.pretty_generate(self)
+      end
+
+      def to_liquid
+        self
+      end
+    end
+
     # _[por] Conteiner de dados de uma tag L10n [por]_
     class L10nTag
       attr_accessor :crudum, :fontem_linguam, :objectivum_linguam,

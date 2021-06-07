@@ -117,6 +117,13 @@ module Hapi
     # rubocop:enable Lint/MissingSuper
 
     # Trivia
+    # - 'alternātīvum'
+    #   - https://en.wiktionary.org/wiki/alternativus#Latin
+    def alternativum
+      Utilitatem.digitum_premendum(relative_path)
+    end
+
+    # Trivia
     # - 'digitum'
     #   - https://en.wiktionary.org/wiki/digitus#Latin
     # - 'signātūrum'
@@ -153,8 +160,11 @@ module Hapi
     #   - https://en.wiktionary.org/wiki/trivium#Latin
     # - 'x-default'
     #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
-    def xdefallo_est
+    def xdefallo_est?
       # @datum['linguam'] == 'mul' || @datum['linguam'] == 'mul-Zyyy'
+      # puts "#{@uid} == #{@xdefallo}"
+      # puts @uid == @xdefallo
+      # puts ''
       @uid == @xdefallo
     end
   end
