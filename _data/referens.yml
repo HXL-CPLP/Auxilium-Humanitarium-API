@@ -28,20 +28,28 @@ schema_gid:
 
 gid:
   UN:
+    gid: UN
     namen: "🇺🇳 UN 🇺🇳"
     hashtag:
       api: "api-UN"
       schema: "schema-UN"
+    api_xdefallo: [] # _data/api.yml / _data/l10n/api.l10n.json
+
   XZ:
+    gid: XZ
     namen: "🌐 XZ 🌐"
     hashtag:
       api: "api-XZ"
       schema: "schema-XZ"
+    api_xdefallo: [] # _data/api.yml / _data/l10n/api.l10n.json
+
   BR:
+    gid: BR
     namen: "🇧🇷 BR 🇧🇷"
     hashtag:
       api: "api-BR"
       schema: "schema-BR"
+    api_xdefallo: [] # _data/api.yml / _data/l10n/api.l10n.json
 
 hxl:
   linguam:

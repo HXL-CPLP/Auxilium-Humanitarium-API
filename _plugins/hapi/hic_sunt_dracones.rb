@@ -94,6 +94,22 @@ module Hapi
       Jekyll.sites[idx].data['api'] = api
     end
 
+    def api_gid_xdefallo?(api_collectionem = nil, referens_gid = nil)
+      apis = api_collectionem || api?
+      referens_gid ||= referens_gid?
+      # resultatum = {}
+      resultatum = []
+
+      apis&.each do |api|
+        resultatum.append(api) if api.xdefallo_est?
+        # resultatum[clavem] = valendum
+      end
+
+      # TODO: order by UN, XZ, then others
+
+      resultatum
+    end
+
     def api_xdefallo?(api_collectionem = nil)
       apis = api_collectionem || api?
       # resultatum = {}
@@ -134,6 +150,14 @@ module Hapi
     def pages!(pages)
       idx = Jekyll.sites.length - 1
       Jekyll.sites[idx].pages = pages
+    end
+
+    def referens_gid? # rubocop:disable Metrics/AbcSize
+      return [] unless Jekyll.sites.last.data['l10n'] && \
+                       Jekyll.sites.last.data['l10n']['apil10n']['gid'] && \
+                       Jekyll.sites.last.data['l10n']['apil10n']['gid']
+
+      Jekyll.sites.last.data['l10n']['apil10n']['gid']
     end
 
     def testum
