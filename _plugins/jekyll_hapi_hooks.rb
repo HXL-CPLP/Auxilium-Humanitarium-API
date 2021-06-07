@@ -35,68 +35,78 @@ Jekyll::Hooks.register :site, :pre_render do |site, _payload|
 
   categoriam = {}
   pittacium = {}
+  # api
 
-  site.pages.each do |post|
-    # unless post['tags'].nil?
-    #   post['tags'].each do |tag|
-    #     pittacium[tag] = [] if pittacium[tag].nil?
-    #     pittacium[tag].append(post)
-    #   end
-    # end
-    break
-
-    puts 'post.class'
-    # puts post.class
-    puts post.instance_of?(Hapi::ApiPaginam)
-
-    if post.instance_of?(Hapi::ApiPaginam)
-      puts 'todo post Hapi::ApiPaginam'
-      puts ''
+  site.pages.each do |page|
+    if page.instance_of?(Hapi::ApiPaginam)
+      # puts 'todo page Hapi::ApiPaginam'
+      # puts ''
+    elsif page.instance_of?(Jekyll::Page)
+      # puts 'todo page Page'
+      # puts ''
     end
 
-    # post.dig(:slug)
-    # post&['tags']
+    unless page['tags'].nil? # rubocop:disable Style/SafeNavigation
+      page['tags'].each do |tag|
+        pittacium[tag] = [] if pittacium[tag].nil?
+        pittacium[tag].append(page)
+      end
+    end
+    next if page['categories'].nil?
+
+    page['categories'].each do |cat|
+      pittacium[cat] = [] if pittacium[cat].nil?
+      pittacium[cat].append(page)
+    end
+
+    # puts 'categoriam'
+    # puts categoriam
+    # puts 'pittacium'
+    # puts pittacium
+
+    # page.dig(:slug)
+    # page&['tags']
     # a = [[1, [2, 3]]]
 
     # a.dig(0, 1, 1)                    #=> 3
 
-    # post&.dig(:tags) do |tag|
-    # post.dig(:tags) do |tag|
+    # page&.dig(:tags) do |tag|
+    # page.dig(:tags) do |tag|
     #   pittacium[tag] = [] if pittacium[tag].nil?
-    #   pittacium[tag].append(post)
+    #   pittacium[tag].append(page)
     # end
     # pittacium&.dig(:tags) do |tag|
     #   pittacium[tag] = [] if pittacium[tag].nil?
-    #   pittacium[tag].append(post)
+    #   pittacium[tag].append(page)
     # end
-    # post&['tags']&.each do |tag|
+    # page&['tags']&.each do |tag|
     #   pittacium[tag] = [] if pittacium[tag].nil?
-    #   pittacium[tag].append(post)
+    #   pittacium[tag].append(page)
     # end
-    # post['categories'].each do |cat|
+    # page['categories'].each do |cat|
     #   categoriam[tag] = [] if categoriam[cat].nil?
-    #   categoriam[cat].append(post)
+    #   categoriam[cat].append(page)
     # end
 
     # puts 'do something'
-    # puts post.inspect
-    # puts post['tags'].inspect
+    # puts page.inspect
+    # puts page['tags'].inspect
   end
-  # site.posts.docs.each do |post|
+  # site.pages.docs.each do |page|
   #   puts 'do something'
   # end
   # puts 'site.pages.inspect'
   # puts site.pages.inspect
-  # puts 'site.posts.inspect'
-  # puts site.posts.inspect
+  # puts 'site.pages.inspect'
+  # puts site.pages.inspect
   # puts 'site.documents.inspect'
   # puts site.documents.inspect
-  # site.posts.docs.each do |post|
-  # site.posts.each do |post|
-  #   puts 'post.inspect'
-  #   puts post.inspect
-  #   post.tags.each do |post_tag|
-  #     puts post_tag
+  # site.pages.docs.each do |page|
+  # site.pages.each do |page|
+  #   puts 'page.inspect'
+  #   puts page.inspect
+  #   page.tags.each do |page_tag|
+  #     puts page_tag
   #   end
   # end
 
@@ -107,6 +117,15 @@ Jekyll::Hooks.register :site, :pre_render do |site, _payload|
   # puts payload.keys
   # puts payload.content
   # puts payload.jekyll
+
+  site.data['collectionem'] = {
+    categoriam: categoriam,
+    pittacium: pittacium
+  }
+
+  # site.data['categoriam'] = categoriam
+  # site.data['pittacium'] = pittacium
+  # puts site.inspect
 end
 # Jekyll::Hooks.register :site, :post_read do |site|
 #   puts 'site.tags'
@@ -138,6 +157,20 @@ Jekyll::Hooks.register :site, :post_write do |site| # rubocop:disable Metrics/Bl
   # @content = JSON.pretty_generate(@deinsectum)
   # puts 'jekyll_hapi_hooks: deinsectum.json'
   # File.write(File.join(site.dest, 'deinsectum.json'), @content)
+
+  # puts 'site.data.collectionem.keys'
+  # puts site.data['collectionem']&.keys
+
+  # puts Hapi::Utilitatem.digitum_identicum('')
+  # puts 'site.data.collectionem'
+  # puts site.data['collectionem']
+
+  # puts 'Jekyll.inspect'
+  # puts Jekyll.inspect
+  # puts 'Jekyll.sites.last.inspect'
+  # puts Jekyll.sites.last.inspect
+
+  puts Hapi::HicSuntDracones.testum
 
   require 'fileutils'
 

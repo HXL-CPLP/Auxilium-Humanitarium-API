@@ -43,6 +43,35 @@ module Hapi
       @resultatum
     end
 
+    # _[eng] Cryptographic finterprint (secure as year, 2021)[eng]_
+    # _[por] Assinatura criptográfica (segura no ano de 2021) [por]_
+
+    # @exemplum I
+    #    Hapi::Utilitatem.digitum_identicum('testum')
+    # @resultatum I
+    #    f55b79e9eb848d587d7e9869b6582c0f9ab0504a8786cfa39854e583ec1bf71b92d47e02535a4e21b61166ae441431df
+    # @exemplum II
+    #    Hapi::Utilitatem.digitum_identicum(nil)
+    # @resultatum II
+    #    nil
+    # @exemplum III
+    #    Hapi::Utilitatem.digitum_identicum('')
+    # @resultatum III
+    #    0c63a75b845e4f7d01107d852e4c2485c51a50aaaa94fc61995e71bbee983a2ac3713831264adb47fb6bd1e058d5f004
+    # Trivia:
+    # - ruby SHA-3, https://github.com/johanns/sha3
+    # - 'digitum', https://en.wiktionary.org/wiki/digitus#Latin
+    # - 'identicum', https://en.wiktionary.org/wiki/identicus#Latin
+    def digitum_identicum(item)
+      return if item.nil?
+
+      require 'sha3'
+
+      @resultatum = SHA3::Digest::SHA384.digest(item)
+
+      @resultatum.unpack1('H*')
+    end
+
     # _[eng] Macro to 'expand' user written api data to new variables  [eng]_
     # _[por] Macro para 'expandir' o que usuário escreveu [por]_
     def expandendum_api_datum(apis, referens)

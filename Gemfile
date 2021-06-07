@@ -10,6 +10,9 @@ group :jekyll_plugins do
   gem 'jekyll-toc'
   # gem 'jekyll-feed'
   gem 'jekyll-seo-tag'
+
+  # https://github.com/johanns/sha3
+  gem 'sha3'
   ## Notitia: [por] O jekyll-spaceship foi desabilitado no momento, 2021-05-16,
   ## Pois deixou o GitHub actions em torno de 3 minutos mais lento. E ainda
   ## não está sendo usado para justificar isso.
