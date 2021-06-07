@@ -19,35 +19,84 @@ module Hapi
   module Datum
     # _[por] Conteiner de coleções de dados [por]_
     # @see https://github.com/Shopify/liquid/wiki/Introduction-to-Drops
-    # class Collectionem < Liquid::Drop
-    class Collectionem < Jekyll::Drops::Drop
-      attr_accessor :api, :api_xdefallo, :categoriam, :scheman, :pittacium
+    # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/drops/jekyll_drop.rb
+    class HapiDrop < Liquid::Drop
+      attr_accessor :argumentum
+
+      # TODO: _[eng] No idea if this is necessary. Maybe remove later [eng]_
+      class << self
+        def global
+          @global ||= HapiDrop.new
+        end
+      end
 
       def initialize(argumentum = {}) # rubocop:disable Lint/MissingSuper
-        @api = argumentum['api']
-        @api_xdefallo = argumentum['api_xdefallo']
-        @categoriam = argumentum['categoriam']
-        @scheman = argumentum['scheman']
-        @pittacium = argumentum['pittacium']
-
-        # super
+        # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{argumentum.inspect}]"
+        # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{argumentum.keys}]"
+        # # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{argumentum['api'].inspect}]"
+        # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{argumentum.fetch('api').inspect}]"
+        # # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{argumentum.fetch(':api').inspect}]"
+        @optionem = argumentum
       end
 
       def api
-        @api
+        @optionem['api']
+      end
+
+      def api_xdefallo
+        @optionem['api_xdefallo']
+      end
+
+      def categoriam
+        @optionem['categoriam']
       end
 
       def inspect
         # Liquid uses 'self.class.to_s'
         # @see https://github.com/Shopify/liquid/blob/master/lib/liquid/drop.rb#L47
         require 'json'
-        JSON.pretty_generate(self)
+        JSON.pretty_generate(@optionem)
       end
 
-      def to_liquid
-        self
+      def to_s
+        "#{HapiDrop} @collectionem=#{@optionem.keys}"
+      end
+
+      def scheman
+        @optionem['scheman']
+      end
+
+      def pittacium
+        @optionem['pittacium']
       end
     end
+
+    # # class Collectionem < Liquid::Drop
+    # class Collectionem < Jekyll::Drops::Drop
+    #   attr_accessor :api, :api_xdefallo, :categoriam, :scheman, :pittacium
+
+    #   #   @api = argumentum['api']
+    #   #   @api_xdefallo = argumentum['api_xdefallo']
+    #   #   @categoriam = argumentum['categoriam']
+    #   #   @scheman = argumentum['scheman']
+    #   #   @pittacium = argumentum['pittacium']
+
+    #   #   # super
+    #   # end
+
+    #   attr_reader :api
+
+    #   def inspect
+    #     # Liquid uses 'self.class.to_s'
+    #     # @see https://github.com/Shopify/liquid/blob/master/lib/liquid/drop.rb#L47
+    #     require 'json'
+    #     JSON.pretty_generate(self)
+    #   end
+
+    #   def to_liquid
+    #     self
+    #   end
+    # end
 
     # _[por] Conteiner de dados de uma tag L10n [por]_
     class L10nTag
@@ -230,8 +279,90 @@ module Hapi
       # end
     end
   end
+
+  class MembersDrop < Liquid::Drop
+    def before_method(method)
+      user = User.find_by_name(method)
+      user ? UserDrop.new(user) : nil
+    end
+  end
 end
 
-# _[por] rubocop é tão racista que obriga re-habilitar
-# AsciiComments [por]_
-# rubocop:enable RubocopIsRacistAndIcanProveIt/AsciiComments
+# module Jekyll
+#   module Drops
+#     # ...
+#     class HapiDrop < Liquid::Drop
+#       attr_accessor :api, :api_xdefallo, :categoriam, :scheman, :pittacium
+
+#       class << self
+#         def global
+#           @global ||= HapiDrop.new
+#         end
+#       end
+
+#       # Create a new Drop
+#       #
+#       # obj - the Jekyll Site, Collection, or Document required by the
+#       # drop.
+#       #
+#       # Returns nothing
+#         @obj = obj
+#       end
+
+#       def api
+#         @obj.api
+#       end
+
+#       def version
+#         Jekyll::VERSION
+#       end
+
+#       def environment
+#         Jekyll.env
+#       end
+
+#       def inspect
+#         # puts 'datum'
+#         # puts @datum
+
+#         # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
+#         # "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
+#         "#<#{self.class}>"
+#       end
+
+#       # Generates a list of keys with user content as their values.
+#       # This gathers up the Drop methods and keys of the mutations and
+#       # underlying data hashes and performs a set union to ensure a list
+#       # of unique keys for the Drop.
+#       #
+#       # Returns an Array of unique keys for content for the Drop.
+#       def keys
+#         ['api']
+#       end
+
+#       # Generate a Hash representation of the Drop by resolving each key's
+#       # value. It includes Drop methods, mutations, and the underlying object's
+#       # data. See the documentation for Drop#keys for more.
+#       #
+#       # Returns a Hash with all the keys and values resolved.
+#       def to_h
+#         # keys.each_with_object({}) do |(key, _), result|
+#         #   result[key] = self[key]
+#         # end
+#         @obj
+#       end
+#       alias to_hash to_h
+
+#       # def to_h
+#       #   @to_h ||= {
+#       #     'version' => version,
+#       #     'environment' => environment
+#       #   }
+#       # end
+
+#       def to_json(state = nil)
+#         JSON.generate(to_h, state)
+#       end
+#     end
+#   end
+# end

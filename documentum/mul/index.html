@@ -67,8 +67,18 @@ sitemap:
       <article>
         <h2>API</h2>
 
-        {{ site.data.collectionem.api }}
-        {{ site.data.collectionem }}
+        {% for xdefallo in site.data.hapi.api_xdefallo %}
+          <article>
+            <h3>1 {{ xdefallo.title | default: xdefallo.uid }}</h3>
+            <h3>1 {{ xdefallo.docs  }}</h3>
+            {{ xdefallo | inspect }}
+          </article>
+        {% endfor %}
+
+        {{ site.data.hapi.api_xdefallo | inspect }}
+
+        <!-- {{ site.data.collectionem | jsonify }}
+        {{ site.data.collectionem | inspect }} -->
 
 
       </article>

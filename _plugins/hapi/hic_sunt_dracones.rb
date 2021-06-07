@@ -43,11 +43,7 @@ module Hapi
 
       HSD.pages?.each do |page|
         if page.instance_of?(Hapi::ApiPaginam)
-          # puts 'todo page Hapi::ApiPaginam'
-          # puts ''
-          # puts page.methods.sort
-          # puts page.object_id
-          # raise 'ok'
+
           api[page.digitum_signaturum] = page
         elsif page.instance_of?(Jekyll::Page)
           # puts 'Generic pages do not have any special feature'
@@ -71,13 +67,13 @@ module Hapi
 
       jekyll_data = HSD.data?
 
-      jekyll_data['collectionem'] = Hapi::Datum::Collectionem.new(
+      jekyll_data['hapi'] = Hapi::Datum::HapiDrop.new(
         {
-          api: api,
-          api_xdefallo: api_xdefallo,
-          categoriam: categoriam,
-          scheman: { TODO: '_[eng] To be implemented also here [eng]_' },
-          pittacium: pittacium
+          'api' => api,
+          'api_xdefallo' => api_xdefallo,
+          'categoriam' => categoriam,
+          'scheman' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
+          'pittacium' => pittacium
         }
       )
       HSD.data!(jekyll_data)
