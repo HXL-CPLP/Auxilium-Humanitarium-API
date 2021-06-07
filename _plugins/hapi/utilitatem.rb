@@ -120,7 +120,7 @@ module Hapi
 
     # @see https://iso639-3.sil.org/code_tables/639/data
     # @see https://www.wikidata.org/wiki/Property:P220
-    def iso6391_de_linguam(linguam, referens_praeiudico)
+    def iso6391_de_linguam(linguam, referens_praeiudico) # rubocop:disable Metrics/AbcSize
       return nil if linguam.length != 8
 
       @parts = linguam.split('-')
@@ -258,7 +258,7 @@ module Hapi
     #   - https://en.wiktionary.org/wiki/praeiudico
     #     - https://en.wiktionary.org/wiki/prejudge
     # - https://en.wikipedia.org/wiki/Linguistic_discrimination
-    def praeiudico_htmldir_de_linguam(linguam, referens_praeiudico)
+    def praeiudico_htmldir_de_linguam(linguam, referens_praeiudico) # rubocop:disable Metrics/AbcSize
       return nil if linguam.length != 8
 
       @parts = linguam.split('-')
@@ -299,7 +299,7 @@ module Hapi
     # _[eng] Is this an x-default API? [eng]_
     # _[por] Esta é uma API x-default? [por]_
     def xdefault_est(api)
-      api['linguam'] == 'mul'
+      api['linguam'] == 'mul' || api['linguam'] == 'mul-Zyyy'
     end
 
     # _[eng] Return list of hreflang alternate of an API [eng]_

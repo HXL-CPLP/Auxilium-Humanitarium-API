@@ -50,7 +50,7 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-    attr_accessor :datum
+    attr_accessor :datum, :uid, :xdefallo
 
     # rubocop:disable Lint/MissingSuper
 
@@ -78,7 +78,9 @@ module Hapi
                 File.join(@site.layouts[template].path, @site.layouts[template].name)
               end
 
-      # @datum = api_datum
+      @datum = api_datum
+      @uid = api_datum['uid']
+      @xdefallo = api_datum['x-default']
       # puts '              api_datum'
       # puts api_datum
       # @trivum = 'teste'
@@ -114,15 +116,46 @@ module Hapi
     end
     # rubocop:enable Lint/MissingSuper
 
+    # Trivia
+    # - 'digitum'
+    #   - https://en.wiktionary.org/wiki/digitus#Latin
+    # - 'signātūrum'
+    #   - https://en.wiktionary.org/wiki/signaturus#Latin
+    def digitum_signaturum
+      Utilitatem.digitum_premendum(relative_path)
+    end
+
+    # Trivia
+    # - 'trivium'
+    #   - https://en.wiktionary.org/wiki/trivium#Latin
+    # - 'x-default'
+    #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
+    def trivium
+      @datum
+    end
+
     # _[eng] Returns the object as a debug String [eng]_
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
     # # .
     def inspect
-      puts 'datum'
-      puts @datum
+      # puts 'datum'
+      # puts @datum
 
-      "#<#{self.class} @relative_path=#{relative_path.inspect} @x-default=#{@trivum}>"
+      # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
+      "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
+    end
+
+    # _[eng] Is this an x-default API? [eng]_
+    # _[por] Esta é uma API x-default? [por]_
+    # Trivia
+    # - 'trivium'
+    #   - https://en.wiktionary.org/wiki/trivium#Latin
+    # - 'x-default'
+    #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
+    def xdefallo_est
+      # @datum['linguam'] == 'mul' || @datum['linguam'] == 'mul-Zyyy'
+      @uid == @xdefallo
     end
   end
 end

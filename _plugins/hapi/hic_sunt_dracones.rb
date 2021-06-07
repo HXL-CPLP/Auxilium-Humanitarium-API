@@ -36,18 +36,22 @@ module Hapi
     #     Hapi::HSD.initiale_pre_render
     #   end
     def initiale_pre_render # rubocop:disable Metrics/AbcSize, Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
-      # api = {}
+      api = {}
       categoriam = {}
       pittacium = {}
       # api
 
       HSD.pages?.each do |page|
+
         if page.instance_of?(Hapi::ApiPaginam)
           # puts 'todo page Hapi::ApiPaginam'
           # puts ''
+          # puts page.methods.sort
+          # puts page.object_id
+          # raise 'ok'
+          api[page.digitum_signaturum] = page
         elsif page.instance_of?(Jekyll::Page)
-          # puts 'todo page Page'
-          # puts ''
+          # puts 'Generic pages do not have any special feature'
         end
 
         unless page['tags'].nil? # rubocop:disable Style/SafeNavigation
@@ -67,6 +71,7 @@ module Hapi
       jekyll_data = HSD.data?
 
       jekyll_data['collectionem'] = {
+        api: api,
         categoriam: categoriam,
         pittacium: pittacium
       }
