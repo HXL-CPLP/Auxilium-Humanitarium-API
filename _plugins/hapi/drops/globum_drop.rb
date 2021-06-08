@@ -72,6 +72,10 @@ module Hapi
         @optionem['namen']
       end
 
+      def descriptionem
+        @optionem['descriptionem']
+      end
+
       def collectionem_api
         @optionem['collectionem_api'] || []
       end

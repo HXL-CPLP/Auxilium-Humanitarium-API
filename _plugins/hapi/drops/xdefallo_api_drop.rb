@@ -45,6 +45,11 @@ module Hapi
         "<#{self.class} @item=#{@optionem.keys}>"
       end
 
+      def lid
+        puts 'lid'
+        @optionem['lid'] || @optionem['datum']['lid']
+      end
+
       def gid
         @optionem['gid']
       end

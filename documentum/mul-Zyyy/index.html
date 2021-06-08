@@ -38,83 +38,75 @@ sitemap:
         <p>{% _🗣️ 📝eng-Latn📝 opus_in_progressu_emoji_nomen 📝eng-Latn📝 🗣️_%}</p>
         <p>{% _🗣️ 📝spa-Latn📝 opus_in_progressu_emoji_nomen 📝spa-Latn📝 🗣️_%}</p>
       </div>
+      <nav>
+        <h2>{% _🗣️ mensam_de_contentis_in_eodem_nomen 🗣️_ %}</h2>
+        <ol class="list-unstyled">
+          <li>
+            <a href="#api">API</a>
+            <ul>
+              {% for globum in site.data.hapi.globum %}
+              <li>
+                <a href="#api-{{ globum.gid | slugify }}">{{ globum.namen }}</a>
+                <ul>
+                  {% for xapi in globum.collectionem_xapi %}
+                  <li>
+                    <a href="#{{ xapi.url | slugify }}">{{ xapi.lid | default: xapi['datum']['lid'] }}</a>
+                    <ul>
+                      {% for api_alt in xapi.alternativum %}
+                      <li>
+                        <a href="#{{ api_alt.url | slugify }}">{{ api_alt.title }}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+
+              {% endfor %}
+            </ul>
+          </li>
+        </ol>
+      </nav>
     </div>
   </header>
   <main>
     <div class="container">
-      <aside>
-        <h2>Trivia</h2>
-        <p>
-          <ul>
-            <li><samp>situm</samp>
-              <ul>
-                <li><a href="https://en.wiktionary.org/wiki/situs#Latin">https://en.wiktionary.org/wiki/situs#Latin</a></li>
-              </ul>
-            </li>
-            <li><samp>mappam</samp>
-              <ul>
-                <li><a href="https://en.wiktionary.org/wiki/mappa#Latin">https://en.wiktionary.org/wiki/mappa#Latin</a></li>
-              </ul>
-            </li>
-            <li><samp>pāginam</samp>
-              <ul>
-                <li><a href="https://en.wiktionary.org/wiki/pagina#Latin">https://en.wiktionary.org/wiki/pagina#Latin</a></li>
-              </ul>
-            </li>
-          </ul>
-        </p>
-      </aside>
       <section>
         <article>
-          <h2>API</h2>
-          {% for item_group in site.data.hapi.api_xdefallo %}
-          <article>
-            <h3>{{ item_group.title }}</h3>
-            <dl>
-              <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
-              <dd><a href="{{ item_group.url }}">{{ item_group.url }}</a></dd>
-            </dl>
-            {% for item_alt in item_group.alternativum  %}
-              {% if item_alt.url != item_group.url %}
-                <article>
-                  <h4>{{ item_alt.title | default: item_alt.namen }}</h4>
-                  <dl>
-                    <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
-                    <dd><a href="{{ item_alt.url }}">{{ item_alt.url }}</a></dd>
-                  </dl>
-                </article>
-              {% endif %}
-            {% endfor %}
-          </article>
-          {% endfor %}
-        </article>
-        <article>
-          <h2>API per gid</h2>
+          <h2 id="api">API</h2>
           {% for globum in site.data.hapi.globum %}
           <article>
-            <h3 id="api-{{ globum.gid | slugify }}">
-              <a href="#api-{{ globum.gid | slugify }}">🔗</a>
-              {{ globum.namen }}
-            </h3>
+            <header>
+              <h3 id="api-{{ globum.gid | slugify }}">
+                {{ globum.namen }}
+              </h3>
+              {{ globum.descriptionem | default: '<mark>_[lat] Ignotum textum. Adiuva me 🥺[lat]_</small> '}}
+            </header>
+
             {% for xapi in globum.collectionem_xapi %}
-            <article style="padding-right: 2em; padding-left: 2em;">
+            <article style="padding: 1em">
             <h4 id="{{ xapi.url | slugify }}">
               <a href="#{{ xapi.url | slugify }}">🔗</a>
-              {{ xapi.uid }}
+              {{ xapi.lid | default: xapi['datum']['lid'] }}
             </h4>
-              {% for api_alt in xapi.alternativum %}
-              <article style="padding-right: 1em; padding-left: 1em;">
-              <h5 id="{{ api_alt.url | slugify }}">
-                <a href="#{{ api_alt.url | slugify }}">🔗</a>
-                {{ api_alt.title }}
-              </h5>
-              <dl>
-                <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
-                <dd><a href="{{ api_alt.url }}">{{ api_alt.url }}</a></dd>
-              </dl>
-              <!-- {{ api_alt | inspect }} -->
-              </article>
-              {% endfor %}
+              <div class="list-group">
+                {% for api_alt in xapi.alternativum %}
+                <a href="{{ api_alt.url }}" hreflang="{{ api_alt.hreflang }}"
+                  class="list-group-item list-group-item-action">
+                <article>
+                  <div  class="d-flex w-100 justify-content-between">
+                    <h5 id="{{ api_alt.url | slugify }}" class="mb-1">
+                      {{ api_alt.title }}
+                    </h5>
+                    <small>{{ api_alt.linguam }}</small>
+                  </div>
+                  <p class="mb-1">{{ api_alt.description | default: "<mark>_[por] TODO: adicionar descrição [por]_</mark>" }}</p>
+                  <small>{% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}: <mark>_[por] TODO: adicionar lista de colaboradores [por]_</small></small>
+                </article>
+                </a>
+                {% endfor %}
+            </div>
             <!-- {{ xapi | inspect }} -->
 
             </article>
@@ -124,107 +116,7 @@ sitemap:
           </article>
           {% endfor %}
         </article>
-
-        <article>
-          <h2>Categoriam</h2>
-          {% for cat in site.data.hapi.categoriam %}
-            <article>
-              <h3>{{ cat.title }}</h3>
-            </article>
-          {% endfor %}
-        </article>
-
-        <article>
-          <h2>Tags</h2>
-          {% for tag in site.data.hapi.pittacium %}
-            <article>
-              <h3>{{ tag.title }}</h3>
-            </article>
-          {% endfor %}
-        </article>
-      
       </section>
-      <div>
-        <h2>Testum</h2>
-
-
-        <div>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            {% assign links = site.data.l10n.mappam-situml10n.grupum %}
-            {% for link in links %}
-              {% assign class = nil %}
-              {% if page.url contains link.url %}
-                  {% assign class = 'active' %}
-              {% endif %}
-              {% if link.descendens %}
-                <li class="nav-item dropdown {{ class }}">
-                  <a class="nav-link dropdown-toggle"
-                    data-bs-toggle="dropdown" aria-expanded="false"
-                    id="navigationem-descendens-{{ forloop.index0 }}" href="#">
-                    {% if link.titulum %}
-                      <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.namen }}</abbr>
-                    {% else %}
-                      {{ link.namen | liquify }}
-                    {% endif %}
-                  </a>
-                  <ul class="dropdown-menu"
-                    aria-labelledby="navigationem-descendens-{{ forloop.index0 }}">
-                    {% for sublink in link.descendens %}
-                        {% if sublink.namen == 'separator' %}
-                          <li role="separator" class="divider"></li>
-                        {% elsif sublink.debile %}
-                        <li class="nav-item">
-                          <a class="nav-link disabled" tabindex="-1"
-                            aria-disabled="true" href="#">
-                            {{ sublink.namen | liquify }}
-                          </a>
-                        </li>
-                        {% else %}
-                          <li>
-                            <a class="dropdown-item"
-                              href="{{ site.url }}{{ site.baseurl }}{{ sublink.url | liquify | strip_html }}">
-                              {% if sublink.titulum %}
-                                <abbr title="{{ sublink.titulum | liquify | strip_html }}">{{ sublink.namen }}</abbr>
-                              {% else %}
-                                {{ sublink.namen | liquify }}
-                              {% endif %}
-                            </a>
-                          </li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
-                  </li>
-              {% else %}
-                <li class="nav-item {{ class }}">
-                  <a class="nav-link"
-                    href="{{ site.url }}{{ site.baseurl }}{{ link.url | liquify | strip_html }}">
-                    {% if link.titulum %}
-                      <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.namen }}</abbr>
-                    {% else %}
-                      {{ link.namen | liquify }}
-                    {% endif %}
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      <h2>Debug</h2>
-      <h3>etc</h3>
-      
-      <p>https://talk.jekyllrb.com/t/category-page-need-a-page-with-a-link-to-all-posts-of-a-category/2997/2<p>
-      <p>https://talk.jekyllrb.com/t/collect-items-from-multiple-collections-and-organize-by-tag/1645/5<p>
-      <pre>{{ site.categories }}</pre>
-      <pre>{{ site.categories }}</pre>
-      <pre>{{ page.categories }}</pre>
-      <pre>{{ site.tags }}</pre>
-      <pre>{{ page.tags }}</pre>
-      <pre>{{ site.keys | bellum_json }}</pre>
-      <h3>mappam-situm.l10n</h3>
-      <pre>{{ site.data.l10n.mappam-situml10n.grupum | bellum_json }}</pre>
-      <h3>mappam-situm</h3>
-      <pre>{{ site.data.mappam-situm.grupum | bellum_json }}</pre>
-      <h2>Pāginam</h2>
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

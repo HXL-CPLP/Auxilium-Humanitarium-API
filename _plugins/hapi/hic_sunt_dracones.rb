@@ -115,13 +115,14 @@ module Hapi
 
       referens_gid.each do |clavem_gid, valendum|
         puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
+        puts ''
         res = valendum
         res['collectionem_api'] = []
         apis.each do |api|
           res['collectionem_api'].append(api) if api.xdefallo_est? && api.gid_est?(clavem_gid)
           # resultatum[clavem] = valendum
         end
-        resultatum.append(res)
+        # resultatum.append(res)
         drop = Hapi::Drops::HapiGlobumDrop.new(res)
         resultatum.append(drop)
       end
@@ -207,7 +208,7 @@ module Hapi
       resultatum = []
 
       referens_gid.each do |clavem_gid, valendum|
-        puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
+        # puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
         res = valendum
         res['collectionem_api'] = []
         res['collectionem_xapi'] = []
@@ -216,7 +217,7 @@ module Hapi
           res['collectionem_xapi'].append(api) if api.xdefallo_est? && api.gid_est?(clavem_gid)
           # resultatum[clavem] = valendum
         end
-        resultatum.append(res)
+        # resultatum.append(res)
         drop = Hapi::Drops::HapiGlobumDrop.new(res)
         resultatum.append(drop)
       end
