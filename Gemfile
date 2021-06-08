@@ -30,6 +30,10 @@ end
 
 gem 'html-proofer'
 
+## vscode-solargraph
+# @see https://github.com/castwide/vscode-solargraph
+#     gem install --user-install solargraph
+
 # _[por] rubocop é tão racista que obriga re-habilitar
 # AsciiComments [por]_
 # rubocop:enable RubocopIsRacistAndIcanProveIt/AsciiComments

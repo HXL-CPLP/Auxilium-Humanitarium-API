@@ -90,43 +90,37 @@ sitemap:
         </article>
         <article>
           <h2>API per gid</h2>
-          {{ site.data.hapi }}
-          <br>
-          <br>
-          <br>
-          site.data.hapi.api_xdefallo
-          {{ site.data.hapi.api_xdefallo | inspect }}
-          <br>
-          <br>
-          site.data.hapi['api_gid_xdefallo']
-          {{ site.data.hapi['api_gid_xdefallo'] | inspect }}
-          <br>
-          <br>
-          <br>
-          site.data.hapi.api_gid_xdefallo
-
-          {{ site.data.hapi.api_gid_xdefallo | inspect }}
-          <br>
-          <br>
-          <br>
-          {% for api_gid in site.data.hapi.api_gid_xdefallo %}
+          {% for globum in site.data.hapi.globum %}
           <article>
-            <h3>{{ api_gid.gid }}</h3>
-            <dl>
-              <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
-              <dd><a href="{{ item_group.url }}">{{ item_group.url }}</a></dd>
-            </dl>
-            {% for item_alt in item_group.alternativum  %}
-              {% if item_alt.url != item_group.url %}
-                <article>
-                  <h4>{{ item_alt.title | default: item_alt.namen }}</h4>
-                  <dl>
-                    <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
-                    <dd><a href="{{ item_alt.url }}">{{ item_alt.url }}</a></dd>
-                  </dl>
-                </article>
-              {% endif %}
+            <h3 id="api-{{ globum.gid | slugify }}">
+              <a href="#api-{{ globum.gid | slugify }}">🔗</a>
+              {{ globum.namen }}
+            </h3>
+            {% for xapi in globum.collectionem_xapi %}
+            <article style="padding-right: 2em; padding-left: 2em;">
+            <h4 id="{{ xapi.url | slugify }}">
+              <a href="#{{ xapi.url | slugify }}">🔗</a>
+              {{ xapi.uid }}
+            </h4>
+              {% for api_alt in xapi.alternativum %}
+              <article style="padding-right: 1em; padding-left: 1em;">
+              <h5 id="{{ api_alt.url | slugify }}">
+                <a href="#{{ api_alt.url | slugify }}">🔗</a>
+                {{ api_alt.title }}
+              </h5>
+              <dl>
+                <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
+                <dd><a href="{{ api_alt.url }}">{{ api_alt.url }}</a></dd>
+              </dl>
+              <!-- {{ api_alt | inspect }} -->
+              </article>
+              {% endfor %}
+            <!-- {{ xapi | inspect }} -->
+
+            </article>
             {% endfor %}
+            <!-- {{ globum | inspect }} -->
+            <br>
           </article>
           {% endfor %}
         </article>

@@ -67,7 +67,7 @@ module Hapi
 
       # api_xdefallo = api_xdefallo?(api)
       api_gid_xdefallo = api_gid_xdefallo?(api)
-      globum = globum_api_et_scheman?(api)
+      globum = globum?(api)
 
       jekyll_data = HSD.data?
 
@@ -183,6 +183,7 @@ module Hapi
     end
 
     # @deprecated
+    # @see _data/referens.yml#gid
     def referens_gid? # rubocop:disable Metrics/AbcSize
       return [] if Jekyll.sites.last.data['l10n'].nil? || \
                    Jekyll.sites.last.data['l10n']['referensl10n'].nil? || \
@@ -191,19 +192,36 @@ module Hapi
       Jekyll.sites.last.data['l10n']['referensl10n']['gid']
     end
 
-    # @see _data/referens.yml#gid
-    def globum? # rubocop:disable Metrics/AbcSize
-      return [] if Jekyll.sites.last.data['l10n'].nil? || \
-                   Jekyll.sites.last.data['l10n']['referensl10n'].nil? || \
-                   Jekyll.sites.last.data['l10n']['referensl10n']['gid'].nil?
-
-      Jekyll.sites.last.data['l10n']['referensl10n']['gid']
-    end
-
-    def globum_api_et_scheman?(api_collectionem = nil, _schemam_collectionem = nil)
+    def globum?(api_collectionem = nil, _schemam_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       apis = api_collectionem || api?
+      referens_gid = referens_gid?
 
-      api_gid_xdefallo?(api_collectionem)
+      # puts 'oi oi '
+      # puts referens_gid.empty?
+      # puts apis.empty?
+      return [] if referens_gid.empty? || apis.empty?
+
+      # puts 'oi oi 2'
+
+      # resultatum = {}
+      resultatum = []
+
+      referens_gid.each do |clavem_gid, valendum|
+        puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
+        res = valendum
+        res['collectionem_api'] = []
+        res['collectionem_xapi'] = []
+        apis.each do |api|
+          res['collectionem_api'].append(api) if api.gid_est?(clavem_gid)
+          res['collectionem_xapi'].append(api) if api.xdefallo_est? && api.gid_est?(clavem_gid)
+          # resultatum[clavem] = valendum
+        end
+        resultatum.append(res)
+        drop = Hapi::Drops::HapiGlobumDrop.new(res)
+        resultatum.append(drop)
+      end
+
+      resultatum
     end
 
     def testum

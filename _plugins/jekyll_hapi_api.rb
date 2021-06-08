@@ -57,6 +57,8 @@ module Hapi
       alternativum
       gid
       uid
+      titulum
+      namen
       xdefallo
       content
       dir
@@ -164,6 +166,15 @@ module Hapi
 
     def keys
       ATTRIBUTES_FOR_LIQUID
+    end
+
+    # TODO: remove obsolete parts
+    def titulum
+      @titulum|| @namen || @title
+    end
+
+    def namen
+      @titulum|| @namen || @title
     end
 
     # Trivia

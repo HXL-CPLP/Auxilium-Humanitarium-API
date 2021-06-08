@@ -41,28 +41,28 @@ module Hapi
         JSON.pretty_generate(@optionem)
       end
 
-      def to_s
-        # optionem_explanandum = []
-        # @optionem.each_key do |clavem|
-        #   optionem_item = ''
-        #   if @optionem[clavem].length.positive? && @optionem[clavem][0] && @optionem[clavem][0].keys
-        #     optionem_item = @optionem[clavem][0].keys.join(', ')
-        #     # puts @optionem[clavem][0].inspect
-        #     optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}, optionem => #{optionem_item}}")
-        #   else
-        #     optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}}")
-        #   end
-        #   # optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}, optionem => #{optionem_item}}")
-        # end
+      # def to_s
+      #   # optionem_explanandum = []
+      #   # @optionem.each_key do |clavem|
+      #   #   optionem_item = ''
+      #   #   if @optionem[clavem].length.positive? && @optionem[clavem][0] && @optionem[clavem][0].keys
+      #   #     optionem_item = @optionem[clavem][0].keys.join(', ')
+      #   #     # puts @optionem[clavem][0].inspect
+      #   #     optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}, optionem => #{optionem_item}}")
+      #   #   else
+      #   #     optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}}")
+      #   #   end
+      #   #   # optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}, optionem => #{optionem_item}}")
+      #   # end
 
-        # puts @optionem['api_gid_xdefallo']
-        # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
-        # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
+      #   # puts @optionem['api_gid_xdefallo']
+      #   # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
+      #   # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
 
-        # "#{HapiDrop} @item=#{@optionem.keys} #{optionem_num}"
-        "<{#{self.class} @item=[#{@optionem.keys}]}>"
-        # "#{HapiDrop} @item=[#{optionem_explanandum.join(', ')}]"
-      end
+      #   # "#{HapiDrop} @item=#{@optionem.keys} #{optionem_num}"
+      #   "[\# aaaaaaaaaa #{self.class} @item=[#{@optionem.keys}]]"
+      #   # "#{HapiDrop} @item=[#{optionem_explanandum.join(', ')}]"
+      # end
 
       def gid
         @optionem['gid']

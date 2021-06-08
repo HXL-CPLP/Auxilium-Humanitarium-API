@@ -4,6 +4,6 @@ url: ""
 # @see https://jekyllrb.com/docs/configuration/liquid/
 liquid:
   # error_mode: warn
-  error_mode: strict
+  # error_mode: strict
   # strict_variables: true
   strict_filters: true
