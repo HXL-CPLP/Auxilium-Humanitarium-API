@@ -34,18 +34,6 @@ module Hapi
         @optionem = argumentum
       end
 
-      # def api
-      #   @optionem['api']
-      # end
-
-      # def api_xdefallo
-      #   @optionem['api_xdefallo']
-      # end
-
-      # def categoriam
-      #   @optionem['categoriam']
-      # end
-
       def inspect
         # Liquid uses 'self.class.to_s'
         # @see https://github.com/Shopify/liquid/blob/master/lib/liquid/drop.rb#L47
@@ -72,7 +60,7 @@ module Hapi
         # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
 
         # "#{HapiDrop} @item=#{@optionem.keys} #{optionem_num}"
-        "#{HapiDrop} @item=#{@optionem.keys}"
+        "<{#{self.class} @item=[#{@optionem.keys}]}>"
         # "#{HapiDrop} @item=[#{optionem_explanandum.join(', ')}]"
       end
 
@@ -88,8 +76,18 @@ module Hapi
         @optionem['collectionem_api'] || []
       end
 
-      def collectionem_api_xdefallo
-        @optionem['collectionem_api_xdefallo'] || []
+      # @see _plugins/hapi/drops/xdefallo_api_drop.rb
+      # @see https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
+      def collectionem_xapi
+        @optionem['collectionem_xapi'] || []
+      end
+
+      def collectionem_schemam
+        @optionem['schemam'] || []
+      end
+
+      def collectionem_schemam_xdefallo
+        @optionem['schemam_xdefallo'] || []
       end
     end
   end

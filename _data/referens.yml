@@ -26,6 +26,7 @@ api_gid:
 schema_gid:
   - "XZ"
 
+# @see _plugins/hapi/drops/globum_drop.rb
 gid:
   UN:
     gid: UN
@@ -34,6 +35,9 @@ gid:
       api: "api-UN"
       schema: "schema-UN"
     # collectionem_api: [] # _data/api.yml / _data/l10n/api.l10n.json
+    # collectionem_xapi: [] # _data/api.yml / _data/l10n/api.l10n.json
+    # collectionem_schemam: [] # _data/api.yml / _data/l10n/api.l10n.json
+    # collectionem_xschemam: [] # _data/api.yml / _data/l10n/api.l10n.json
 
   XZ:
     gid: XZ
@@ -41,7 +45,6 @@ gid:
     hashtag:
       api: "api-XZ"
       schema: "schema-XZ"
-   # collectionem_api: [] # _data/api.yml / _data/l10n/api.l10n.json
 
   BR:
     gid: BR
@@ -49,7 +52,6 @@ gid:
     hashtag:
       api: "api-BR"
       schema: "schema-BR"
-    # collectionem_api: [] # _data/api.yml / _data/l10n/api.l10n.json
 
 hxl:
   linguam:

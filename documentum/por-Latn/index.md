@@ -13,6 +13,9 @@ permalink: /por-Latn/
 # layout: defallo
 layout: defallo-ltr
 
+categories: ['index', 'linguam-por-Latn']
+tags: ['index', 'linguam-por-Latn']
+
 # FIXME: _[eng] Inject the next attriutes based on  _data/referens.yml, like
 #                we would do with automatically generated API pages.
 #               (Emerson Rocha, 2021-05-25 04:30 UTC)

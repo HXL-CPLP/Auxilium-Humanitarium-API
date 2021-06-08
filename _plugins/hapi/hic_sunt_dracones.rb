@@ -10,12 +10,12 @@
 #   - https://en.wikipedia.org/wiki/Here_be_dragons
 # frozen_string_literal: true
 
-require 'singleton'
+# require 'singleton'
 
 module Hapi
   # _[lat] HSD, 'HicSuntDracones', Hic Sunt Dracones [lat]_
   # @see https://en.wikipedia.org/wiki/Here_be_dragons
-  module HSD
+  module HSD # rubocop:disable Metrics/ModuleLength
     module_function
 
     # # _[eng] Global Anti-pattern of global variable without global variable [eng]_
@@ -65,7 +65,7 @@ module Hapi
         end
       end
 
-      api_xdefallo = api_xdefallo?(api)
+      # api_xdefallo = api_xdefallo?(api)
       api_gid_xdefallo = api_gid_xdefallo?(api)
 
       jekyll_data = HSD.data?
@@ -73,8 +73,9 @@ module Hapi
       jekyll_data['hapi'] = Hapi::Drops::HapiDrop.new(
         {
           'api' => api,
-          'api_xdefallo' => api_xdefallo,
+          # 'api_xdefallo' => api_xdefallo,
           'api_gid_xdefallo' => api_gid_xdefallo,
+          'globum' => api_gid_xdefallo,
           'categoriam' => categoriam,
           'scheman' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
           'pittacium' => pittacium
@@ -136,6 +137,7 @@ module Hapi
       resultatum
     end
 
+    # @deprecated remover
     def api_xdefallo?(api_collectionem = nil)
       apis = api_collectionem || api?
       # resultatum = {}
@@ -178,10 +180,20 @@ module Hapi
       Jekyll.sites[idx].pages = pages
     end
 
+    # @deprecated
     def referens_gid? # rubocop:disable Metrics/AbcSize
       return [] if Jekyll.sites.last.data['l10n'].nil? || \
-                       Jekyll.sites.last.data['l10n']['referensl10n'].nil? || \
-                       Jekyll.sites.last.data['l10n']['referensl10n']['gid'].nil?
+                   Jekyll.sites.last.data['l10n']['referensl10n'].nil? || \
+                   Jekyll.sites.last.data['l10n']['referensl10n']['gid'].nil?
+
+      Jekyll.sites.last.data['l10n']['referensl10n']['gid']
+    end
+
+    # @see _data/referens.yml#gid
+    def globum? # rubocop:disable Metrics/AbcSize
+      return [] if Jekyll.sites.last.data['l10n'].nil? || \
+                   Jekyll.sites.last.data['l10n']['referensl10n'].nil? || \
+                   Jekyll.sites.last.data['l10n']['referensl10n']['gid'].nil?
 
       Jekyll.sites.last.data['l10n']['referensl10n']['gid']
     end

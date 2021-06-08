@@ -13,7 +13,7 @@ module Hapi
   module Drops
     # _[lat] Hapi Collectionem [lat]_
     class HapiDrop < Liquid::Drop
-      attr_accessor :argumentum
+      attr_accessor :optionem
 
       # TODO: _[eng] No idea if this is necessary. Maybe remove later [eng]_
       class << self
@@ -35,9 +35,12 @@ module Hapi
         @optionem['api']
       end
 
-      def api_xdefallo
-        @optionem['api_xdefallo']
+      def xapi
+        @optionem['xapi']
       end
+      # def api_xdefallo
+      #   @optionem['api_xdefallo']
+      # end
 
       def categoriam
         @optionem['categoriam']
@@ -69,11 +72,14 @@ module Hapi
         # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
 
         # "#{HapiDrop} @item=#{@optionem.keys} #{optionem_num}"
-        # "#{HapiDrop} @item=[#{optionem_explanandum.join(', ')}]"
+        "<{#{self.class} @item=[#{optionem_explanandum.join(', ')}]}>"
       end
 
       def scheman
         @optionem['scheman']
+      end
+      def xscheman
+        @optionem['xscheman']
       end
 
       def pittacium
