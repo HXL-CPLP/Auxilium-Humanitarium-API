@@ -70,7 +70,7 @@ module Hapi
 
       jekyll_data = HSD.data?
 
-      jekyll_data['hapi'] = Hapi::Datum::HapiDrop.new(
+      jekyll_data['hapi'] = Hapi::Drops::HapiDrop.new(
         {
           'api' => api,
           'api_xdefallo' => api_xdefallo,
@@ -119,7 +119,7 @@ module Hapi
           # resultatum[clavem] = valendum
         end
         resultatum.append(res)
-        drop = Hapi::Datum::HapiGidDrop.new(res)
+        drop = Hapi::Drops::HapiGlobumDrop.new(res)
         resultatum.append(drop)
       end
 
