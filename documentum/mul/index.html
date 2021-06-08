@@ -92,12 +92,26 @@ sitemap:
           <h2>API per gid</h2>
           {{ site.data.hapi }}
           <br>
+          <br>
+          <br>
+          site.data.hapi.api_xdefallo
+          {{ site.data.hapi.api_xdefallo | inspect }}
+          <br>
+          <br>
+          site.data.hapi['api_gid_xdefallo']
+          {{ site.data.hapi['api_gid_xdefallo'] | inspect }}
+          <br>
+          <br>
+          <br>
+          site.data.hapi.api_gid_xdefallo
+
           {{ site.data.hapi.api_gid_xdefallo | inspect }}
           <br>
-
-          {% for item_gid in site.data.hapi.api_gid_xdefallo %}
+          <br>
+          <br>
+          {% for api_gid in site.data.hapi.api_gid_xdefallo %}
           <article>
-            <h3>{{ item_gid.namen }}</h3>
+            <h3>{{ api_gid.gid }}</h3>
             <dl>
               <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
               <dd><a href="{{ item_group.url }}">{{ item_group.url }}</a></dd>

@@ -56,14 +56,15 @@ module Hapi
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
       gid
+      uid
       xdefallo
       content
       dir
-      excerpt
-      name
       path
       url
     ].freeze
+    # excerpt
+    # name
 
     # rubocop:disable Lint/MissingSuper
 
@@ -159,6 +160,10 @@ module Hapi
     #   - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
     def gid_est?(gid)
       @gid == gid
+    end
+
+    def keys
+      ATTRIBUTES_FOR_LIQUID
     end
 
     # Trivia

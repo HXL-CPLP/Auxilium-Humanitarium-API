@@ -96,7 +96,7 @@ module Hapi
       Jekyll.sites[idx].data['api'] = api
     end
 
-    def api_gid_xdefallo?(api_collectionem = nil, referens_gid = nil)
+    def api_gid_xdefallo?(api_collectionem = nil, referens_gid = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
       apis = api_collectionem || api?
       referens_gid ||= referens_gid?
 
@@ -112,10 +112,15 @@ module Hapi
 
       referens_gid.each do |clavem_gid, valendum|
         puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
+        res = valendum
+        res['collectionem_api'] = []
         apis.each do |api|
-          resultatum.append(api) if api.xdefallo_est? && api.gid_est?(clavem_gid)
+          res['collectionem_api'].append(api) if api.xdefallo_est? && api.gid_est?(clavem_gid)
           # resultatum[clavem] = valendum
         end
+        resultatum.append(res)
+        drop = Hapi::Datum::HapiGidDrop.new(res)
+        resultatum.append(drop)
       end
 
       # apis&.each do |api|
