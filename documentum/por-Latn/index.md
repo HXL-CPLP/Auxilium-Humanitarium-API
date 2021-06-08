@@ -1,5 +1,5 @@
 ---
-title: "Documentação interativa para APIs humanitárias"
+title: 'Documentação interativa para APIs humanitárias<sup style="white-space: nowrap;">(👩‍🔬<em>alpha</em>👨‍🔬)</sup>'
 description: |
   Documentação argumentada de APIs comuns para ajuda humanitária
   com [OpenAPI](https://www.openapis.org/), o padrão de mercado aberto de

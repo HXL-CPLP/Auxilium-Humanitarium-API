@@ -1,5 +1,5 @@
 ---
-title: "Augmented documentation for Humanitarian APIs"
+title: 'Augmented documentation for Humanitarian APIs<sup style="white-space: nowrap;">(👩‍🔬<em>alpha</em>👨‍🔬)</sup>'
 description: |
   Argumented documentation of common APIs for humanitarian aid with
   [OpenAPI](https://www.openapis.org/), the _de facto_ open industry standard

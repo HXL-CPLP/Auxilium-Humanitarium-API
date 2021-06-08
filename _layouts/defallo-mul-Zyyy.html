@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="mul" dir="ltr" translate="yes">
+<!--
+  TODO: _[eng] The dir="ltr" on defallo-mul-Zyyy should ideally be somewhat
+               dynamically based on the user browser. Or at least allow user
+               select both site directionality and language so all strings
+               are loaded based on user preferences.
+               This definitely would need some help of web developers from other
+               world regions than western ones
+               (Emerson Rocha, 2021-06-08 07:30 UTC)
+        [eng]_
+        _[lat] GitHub pittacium '✏<-✏':
+               https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/labels/✏<-✏
+               Adjuva nos 🥺 
+        [lat]_
+-->
+{% include meta-caput.html -%}
+
+<body>
+  <header class="container">
+    <h1>{{ page.titulum | default: page.title }}</h1>
+    {% if page.speciale_html %}
+    {{ page.speciale_html | liquify }}
+    {% endif %}
+    {% if page.toc %}
+    <nav id="mensam-de-contentis-in-eode">
+      <h2 style="font-size: 1.2em;" lang="la">
+        {% _🗣️ 📝lat-Latn📝 mensam_de_contentis_in_eodem_nomen 📝lat-Latn📝 🗣️_ %}
+      </h2>
+      {{ content | toc_only }}
+    </nav>
+    {% endif %}
+    
+  </header>
+  <main class="page-content" aria-label="Content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  {%- include pedem-mul-Zyyy.html -%}
+
+  <a href='https://github.com/HXL-CPLP/Auxilium-Humanitarium-API' 
+    style='box-sizing:unset;position:fixed;padding:5px 45px;width:128px;bottom:50px;right:-50px;-webkit-transform:rotate(315deg);-moz-transform:rotate(315deg);-ms-transform:rotate(315deg);transform:rotate(315deg);box-shadow:0 0 0 3px #333333;text-shadow:0 0 0 #e5e5e5;background-color:#333333;color:#e5e5e5;font-size:13px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #e5e5e5;-webkit-backface-visibility:hidden;letter-spacing:.5px;'>
+    🍴 🖥️ GitHub
+  </a>
+</body>
+
+</html>
