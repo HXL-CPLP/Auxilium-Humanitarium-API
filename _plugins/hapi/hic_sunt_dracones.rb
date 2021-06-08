@@ -60,13 +60,14 @@ module Hapi
         next if page['categories'].nil?
 
         page['categories'].each do |cat|
-          pittacium[cat] = [] if pittacium[cat].nil?
-          pittacium[cat].append(page)
+          categoriam[cat] = [] if categoriam[cat].nil?
+          categoriam[cat].append(page)
         end
       end
 
       # api_xdefallo = api_xdefallo?(api)
       api_gid_xdefallo = api_gid_xdefallo?(api)
+      globum = globum_api_et_scheman?(api)
 
       jekyll_data = HSD.data?
 
@@ -74,10 +75,11 @@ module Hapi
         {
           'api' => api,
           # 'api_xdefallo' => api_xdefallo,
-          'api_gid_xdefallo' => api_gid_xdefallo,
-          'globum' => api_gid_xdefallo,
+          'xapi' => api_gid_xdefallo,
+          'globum' => globum,
           'categoriam' => categoriam,
           'scheman' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
+          'xscheman' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
           'pittacium' => pittacium
         }
       )
@@ -97,9 +99,9 @@ module Hapi
       Jekyll.sites[idx].data['api'] = api
     end
 
-    def api_gid_xdefallo?(api_collectionem = nil, referens_gid = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+    def api_gid_xdefallo?(api_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
       apis = api_collectionem || api?
-      referens_gid ||= referens_gid?
+      referens_gid = referens_gid?
 
       # puts 'oi oi '
       # puts referens_gid.empty?
@@ -123,16 +125,6 @@ module Hapi
         drop = Hapi::Drops::HapiGlobumDrop.new(res)
         resultatum.append(drop)
       end
-
-      # apis&.each do |api|
-      #   resultatum.append(api) if api.xdefallo_est?
-      #   # resultatum[clavem] = valendum
-      # end
-
-      # TODO: order by UN, XZ, then others
-
-      # puts 'resultatum'
-      # puts resultatum
 
       resultatum
     end
@@ -160,6 +152,16 @@ module Hapi
     def data!(data)
       idx = Jekyll.sites.length - 1
       Jekyll.sites[idx].data = data
+    end
+
+    # _[eng] Not implemented yet with this strategy [eng]_
+    def schemam?
+      []
+    end
+
+    # _[eng] Not implemented yet with this strategy [eng]_
+    def xschemam?
+      []
     end
 
     def site?
@@ -196,6 +198,12 @@ module Hapi
                    Jekyll.sites.last.data['l10n']['referensl10n']['gid'].nil?
 
       Jekyll.sites.last.data['l10n']['referensl10n']['gid']
+    end
+
+    def globum_api_et_scheman?(api_collectionem = nil, _schemam_collectionem = nil)
+      apis = api_collectionem || api?
+
+      api_gid_xdefallo?(api_collectionem)
     end
 
     def testum

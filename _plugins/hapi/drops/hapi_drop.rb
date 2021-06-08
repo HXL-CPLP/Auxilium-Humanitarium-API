@@ -31,17 +31,35 @@ module Hapi
         @optionem = argumentum
       end
 
+      # _[eng] List of all APIs, no special sorting or selection [eng]_
+      #
+      # @see _plugins/jekyll_hapi_api.rb
       def api
         @optionem['api']
       end
 
+      # _[eng] List of all x-default APIs [eng]_
+      #
+      # @see _plugins/hapi/drops/xdefallo_api_drop.rb
       def xapi
         @optionem['xapi']
       end
+
+      # _[eng] List of APIs & Schemas per Region [eng]_
+      #
+      # @see _plugins/hapi/drops/globum_drop.rb
+      def globum
+        @optionem['globum']
+      end
+
       # def api_xdefallo
       #   @optionem['api_xdefallo']
       # end
 
+      # _[eng] Generic list of Jekyll Pages, APIs, Schemas by category.
+      #        Warning: this is a draft and may not be used. Consider this a
+      #        draft.
+      # [eng]_
       def categoriam
         @optionem['categoriam']
       end
@@ -75,13 +93,20 @@ module Hapi
         "<{#{self.class} @item=[#{optionem_explanandum.join(', ')}]}>"
       end
 
+      # TODO: abstract scheman
       def scheman
         @optionem['scheman']
       end
+
+      # TODO: abstract xscheman
       def xscheman
         @optionem['xscheman']
       end
 
+      # _[eng] Generic list of Jekyll Pages, APIs, Schemas by tag.
+      #        Warning: this is a draft and may not be used. Consider this a
+      #        draft.
+      # [eng]_
       def pittacium
         @optionem['pittacium']
       end
