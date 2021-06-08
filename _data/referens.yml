@@ -33,7 +33,7 @@ gid:
     hashtag:
       api: "api-UN"
       schema: "schema-UN"
-    api_xdefallo: [] # _data/api.yml / _data/l10n/api.l10n.json
+    # collectionem_api: [] # _data/api.yml / _data/l10n/api.l10n.json
 
   XZ:
     gid: XZ
@@ -41,7 +41,7 @@ gid:
     hashtag:
       api: "api-XZ"
       schema: "schema-XZ"
-    api_xdefallo: [] # _data/api.yml / _data/l10n/api.l10n.json
+   # collectionem_api: [] # _data/api.yml / _data/l10n/api.l10n.json
 
   BR:
     gid: BR
@@ -49,7 +49,7 @@ gid:
     hashtag:
       api: "api-BR"
       schema: "schema-BR"
-    api_xdefallo: [] # _data/api.yml / _data/l10n/api.l10n.json
+    # collectionem_api: [] # _data/api.yml / _data/l10n/api.l10n.json
 
 hxl:
   linguam:

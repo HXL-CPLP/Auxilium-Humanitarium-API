@@ -1,5 +1,7 @@
-# FILUM:           _plugins/jekyll_liquify.rb
-#
+# ARCHĪVUM:        _plugins/jekyll_liquify.rb
+# LICENTIAM:       Dominium publicum
+# frozen_string_literal: true
+
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
 #   @see https://github.com/rubocop/ruby-style-guide/issues/301
 #   @see https://github.com/rubocop/ruby-style-guide/issues/137

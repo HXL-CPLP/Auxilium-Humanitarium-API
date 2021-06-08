@@ -59,7 +59,21 @@ module Hapi
       end
 
       def to_s
-        "#{HapiDrop} @collectionem=#{@optionem.keys}"
+        optionem_explanandum = []
+        @optionem.each_key do |clavem|
+          if @optionem[clavem].length.positive?
+            optionem_explanandum.append("'#{clavem}' => '#{@optionem[clavem].length} dēscendēns'")
+          else
+            optionem_explanandum.append("'#{clavem}' => 'deprædantes pupillos'")
+          end
+        end
+
+        # puts @optionem['api_gid_xdefallo']
+        # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
+        # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
+
+        # "#{HapiDrop} @item=#{@optionem.keys} #{optionem_num}"
+        "#{HapiDrop} @item=[#{optionem_explanandum.join(', ')}]"
       end
 
       def scheman

@@ -66,6 +66,7 @@ module Hapi
       end
 
       api_xdefallo = api_xdefallo?(api)
+      api_gid_xdefallo = api_gid_xdefallo?(api)
 
       jekyll_data = HSD.data?
 
@@ -73,6 +74,7 @@ module Hapi
         {
           'api' => api,
           'api_xdefallo' => api_xdefallo,
+          'api_gid_xdefallo' => api_gid_xdefallo,
           'categoriam' => categoriam,
           'scheman' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
           'pittacium' => pittacium
@@ -82,11 +84,11 @@ module Hapi
     end
 
     def api?
-      Jekyll.sites.last.data['api'] # apil10n ?
+      Jekyll.sites.last.data['api'] || [] # apil10n ?
     end
 
     def api_paginam?
-      Jekyll.sites.last.data['hapi']['api']
+      Jekyll.sites.last.data['hapi']['api'] || []
     end
 
     def api!(api)
@@ -97,15 +99,34 @@ module Hapi
     def api_gid_xdefallo?(api_collectionem = nil, referens_gid = nil)
       apis = api_collectionem || api?
       referens_gid ||= referens_gid?
+
+      # puts 'oi oi '
+      # puts referens_gid.empty?
+      # puts apis.empty?
+      return [] if referens_gid.empty? || apis.empty?
+
+      # puts 'oi oi 2'
+
       # resultatum = {}
       resultatum = []
 
-      apis&.each do |api|
-        resultatum.append(api) if api.xdefallo_est?
-        # resultatum[clavem] = valendum
+      referens_gid.each do |clavem_gid, valendum|
+        puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
+        apis.each do |api|
+          resultatum.append(api) if api.xdefallo_est? && api.gid_est?(clavem_gid)
+          # resultatum[clavem] = valendum
+        end
       end
 
+      # apis&.each do |api|
+      #   resultatum.append(api) if api.xdefallo_est?
+      #   # resultatum[clavem] = valendum
+      # end
+
       # TODO: order by UN, XZ, then others
+
+      # puts 'resultatum'
+      # puts resultatum
 
       resultatum
     end
@@ -153,11 +174,11 @@ module Hapi
     end
 
     def referens_gid? # rubocop:disable Metrics/AbcSize
-      return [] unless Jekyll.sites.last.data['l10n'] && \
-                       Jekyll.sites.last.data['l10n']['apil10n']['gid'] && \
-                       Jekyll.sites.last.data['l10n']['apil10n']['gid']
+      return [] if Jekyll.sites.last.data['l10n'].nil? || \
+                       Jekyll.sites.last.data['l10n']['referensl10n'].nil? || \
+                       Jekyll.sites.last.data['l10n']['referensl10n']['gid'].nil?
 
-      Jekyll.sites.last.data['l10n']['apil10n']['gid']
+      Jekyll.sites.last.data['l10n']['referensl10n']['gid']
     end
 
     def testum

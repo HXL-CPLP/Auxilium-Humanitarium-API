@@ -66,8 +66,8 @@ sitemap:
       </aside>
       <section>
         <article>
-        <h2>API</h2>
-        {% for item_group in site.data.hapi.api_xdefallo %}
+          <h2>API</h2>
+          {% for item_group in site.data.hapi.api_xdefallo %}
           <article>
             <h3>{{ item_group.title }}</h3>
             <dl>
@@ -86,7 +86,35 @@ sitemap:
               {% endif %}
             {% endfor %}
           </article>
-        {% endfor %}
+          {% endfor %}
+        </article>
+        <article>
+          <h2>API per gid</h2>
+          {{ site.data.hapi }}
+          <br>
+          {{ site.data.hapi.api_gid_xdefallo | inspect }}
+          <br>
+
+          {% for item_gid in site.data.hapi.api_gid_xdefallo %}
+          <article>
+            <h3>{{ item_gid.namen }}</h3>
+            <dl>
+              <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
+              <dd><a href="{{ item_group.url }}">{{ item_group.url }}</a></dd>
+            </dl>
+            {% for item_alt in item_group.alternativum  %}
+              {% if item_alt.url != item_group.url %}
+                <article>
+                  <h4>{{ item_alt.title | default: item_alt.namen }}</h4>
+                  <dl>
+                    <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
+                    <dd><a href="{{ item_alt.url }}">{{ item_alt.url }}</a></dd>
+                  </dl>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </article>
+          {% endfor %}
         </article>
 
         <article>

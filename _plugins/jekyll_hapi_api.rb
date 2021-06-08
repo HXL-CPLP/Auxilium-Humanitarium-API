@@ -1,4 +1,4 @@
-# FILUM:           _lugins/hapi/utilitatem.rb
+# ARCHĪVUM:           _lugins/hapi/utilitatem.rb
 #
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
 #   @see https://github.com/rubocop/ruby-style-guide/issues/301
@@ -50,11 +50,12 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-    attr_accessor :datum, :uid, :xdefallo, :alternativum
+    attr_accessor :datum, :gid, :uid, :xdefallo, :alternativum
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
+      gid
       xdefallo
       content
       dir
@@ -91,6 +92,7 @@ module Hapi
               end
 
       @datum = api_datum
+      @gid = api_datum['gid']
       @uid = api_datum['uid']
       @xdefallo = api_datum['xdefallo']
       # puts '              api_datum'
@@ -153,6 +155,13 @@ module Hapi
     end
 
     # Trivia
+    # - 'gid'
+    #   - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+    def gid_est?(gid)
+      @gid == gid
+    end
+
+    # Trivia
     # - 'trivium'
     #   - https://en.wiktionary.org/wiki/trivium#Latin
     # - 'xdefallo'
@@ -165,13 +174,13 @@ module Hapi
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
     # # .
-    def inspect
-      # puts 'datum'
-      # puts @datum
+    # def inspect
+    #   # puts 'datum'
+    #   # puts @datum
 
-      # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
-      "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
-    end
+    #   # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
+    #   "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
+    # end
 
     # _[eng] Returns the object as a debug String [eng]_
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
@@ -185,9 +194,7 @@ module Hapi
       "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
     end
 
-    def xdefallo
-      @xdefallo
-    end
+    attr_reader :xdefallo
 
     # _[eng] Is this an xdefallo API? [eng]_
     # _[por] Esta é uma API xdefallo? [por]_

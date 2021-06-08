@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
+#   @see https://github.com/rubocop/ruby-style-guide/issues/301
+#   @see https://github.com/rubocop/ruby-style-guide/issues/137
+
 # gem "github-pages", group: :jekyll_plugins
 # gem "jekyll", "~> 3.9"
 
@@ -25,3 +29,7 @@ group :jekyll_plugins do
 end
 
 gem 'html-proofer'
+
+# _[por] rubocop é tão racista que obriga re-habilitar
+# AsciiComments [por]_
+# rubocop:enable RubocopIsRacistAndIcanProveIt/AsciiComments
