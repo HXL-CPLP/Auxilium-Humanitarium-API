@@ -125,5 +125,22 @@ speciale_html: |
 
     {% include temporarium/tm.html %}
   </article>
+
+  <aside>
+    <h2 id="agnitionem">{% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}</h2>
+    <h3 id="agnitionem-voluntarius">{% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}</h3>
+    <ul>
+    {% for humanum in site.data.agnitionem.humanum -%}
+      <li>{{ humanum.namen.baptismum }}</li>
+    {%- endfor %}
+    </ul>
+    <h3 id="agnitionem-communitatem">{% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}</h3>
+    <ul>
+    {% for communitatem in site.data.agnitionem.communitatem -%}
+      <li>{{ communitatem.namen.baptismum }}</li>
+    {%- endfor %}
+    </ul>
+  </aside>
+
 </section>
 

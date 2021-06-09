@@ -27,6 +27,7 @@ iso6393: por
 # iso6393: spa
 iso15924: Latn
 
+toc: true
 
 translationem_modum: html
 # translationem_modum: markdown

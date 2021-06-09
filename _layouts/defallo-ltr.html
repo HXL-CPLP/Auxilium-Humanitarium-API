@@ -7,6 +7,21 @@
 
   {%- include caput-ltr.html -%}
 
+  <header class="container">
+    <h1>{{ page.titulum | default: page.title }}</h1>
+    {% if page.speciale_html %}
+    {{ page.speciale_html | liquify }}
+    {% endif %}
+    {% if page.toc %}
+    <nav id="mensam-de-contentis-in-eode">
+      <h2 style="font-size: 1.2em;" lang="la">
+        {% _🗣️ mensam_de_contentis_in_eodem_nomen 🗣️_ %}
+      </h2>
+      {{ content | toc_only }}
+    </nav>
+    {% endif %}
+  </header>
+
   <main class="page-content" aria-label="Content">
     <div class="container">
       {{ content }}
@@ -14,6 +29,8 @@
   </main>
 
   {%- include pedem.html -%}
+
+  {%- include peritum-modum/instrumentum-balteum.html -%}
 
 </body>
 

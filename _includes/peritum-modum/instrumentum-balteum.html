@@ -1,0 +1,31 @@
+<!-- _includes/peritum-modum/instrumentum-balteum.html -->
+<aside class="container">
+  <hr>
+  <h2 style="font-size: 1em;">Peritum modum</h2>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><h3 style="font-size: 0.8em;">Instrumentum balteum</h3></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link"
+          href="https://wave.webaim.org/report#/{{ page.url | absolute_url }}">
+          WAVE?
+        </a>
+        <a class="nav-item nav-link"
+          href="https://validator.w3.org/nu/?showoutline=yes&showimagereport=yes&doc={{ page.url | absolute_url | url_encode }}">
+          HTML5?
+        </a>
+        <a class="nav-item nav-link"
+          href="https://search.google.com/structured-data/testing-tool/u/0/#url={{ page.url | absolute_url | url_encode }}">
+          Schema?
+        </a>
+        </a>
+        <a class="nav-item nav-link"
+          href="https://developers.google.com/speed/pagespeed/insights/?url={{ page.url | absolute_url | url_encode }}">
+          PageSpeed?
+        </a>
+    </div>
+  </nav>
+</aside>
