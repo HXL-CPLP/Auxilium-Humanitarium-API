@@ -38,11 +38,11 @@
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/UN/HDX/
-  # uid: /mul/api/UN/HDX/
+  xdefallo_est: 1
   linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: UN
-  lid: HDX
+  lid: HDX # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
   # HAPI_api_UN_HDX
@@ -81,11 +81,11 @@
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/UN/reliefweb/
-  # uid: /mul/api/UN/reliefweb/
+  xdefallo_est: 1
   linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: UN
-  lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_slug 📝eng-Latn📝 🗣️_ %}'
+  lid: reliefweb # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
  
@@ -111,11 +111,11 @@
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/UN/CODV2API/
-  # uid: /mul/api/UN/CODV2API/
+  xdefallo_est: 1
   linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: UN
-  lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_slug 📝eng-Latn📝 🗣️_ %}'
+  lid: CODV2API # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
 
@@ -145,11 +145,11 @@
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
-  # uid: /mul/api/XZ/HXL-Proxy/
+  xdefallo_est: 1
   linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: XZ
-  lid: '{% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_slug 📝eng-Latn📝 🗣️_ %}'
+  lid: HXL-Proxy # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
 
@@ -177,16 +177,15 @@
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
-  # uid: /mul/api/BR/portais-ckan-brasil/
+  xdefallo_est: 1
   linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: BR
-  lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-ckan-brasil_slug 📝por-Latn📝 🗣️_ %}'
+  lid: portais-ckan-brasil # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
-  # uid: /eng/api/BR/brazilian-ckan-portals/
   linguam: eng-Latn
   typum: api
   gid: BR
@@ -199,7 +198,6 @@
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
-  # uid: /por/api/BR/dados-abertos-ckan-brasil/
   linguam: por-Latn
   typum: api
   gid: BR
@@ -213,16 +211,15 @@
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
-  # uid: /mul/api/BR/portais-arcgis-brasil/
+  xdefallo_est: 1
   linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: BR
-  lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_slug 📝por-Latn📝 🗣️_ %}'
+  lid:  portais-arcgis-brasil # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Index: {% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}"
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
-  # uid: /por/api/BR/portais-arcgis-brasil/
   linguam: eng-Latn
   typum: api
   gid: BR
@@ -233,7 +230,6 @@
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
-  # uid: /por/api/BR/portais-arcgis-brasil/
   linguam: por-Latn
   typum: api
   gid: BR

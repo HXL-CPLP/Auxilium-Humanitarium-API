@@ -111,9 +111,11 @@ module Hapi
         'tags' => tags_de_api(api),
         'openapi_filum2' => openapi_filum_de_api(api),
         'template' => 'api',
-        'layout' => 'api',
+        'layout' => api['xdefallo_est'] ? 'xapi' : 'api',
         'trivium' => digitum_premendum(api['xdefallo'])
       }
+
+      # puts api['jekyll-page']
 
       api
     end
@@ -208,7 +210,8 @@ module Hapi
     # _[por] Tags Jekyll de item de API [por]_
     def openapi_filum_de_api(api)
       if api['openapi_filum'].nil?
-        @filum = "#{api['xdefallo'].gsub('/mul/', '/')}/#{api['linguam']}/openapi.yaml"
+        # @filum = "#{api['xdefallo'].gsub('/mul/', '/')}/#{api['linguam']}/openapi.yaml"
+        @filum = "#{api['xdefallo'].gsub('/mul-Zyyyy/', '/')}/#{api['linguam']}/openapi.yaml"
         @filum
       else
         api['openapi_filum']
@@ -299,7 +302,8 @@ module Hapi
     # _[eng] Is this an xdefallo API? [eng]_
     # _[por] Esta é uma API xdefallo? [por]_
     def xdefault_est(api)
-      api['linguam'] == 'mul' || api['linguam'] == 'mul-Zyyy'
+      # api['linguam'] == 'mul' || api['linguam'] == 'mul-Zyyy'
+      !!api['xdefallo_est']
     end
 
     # _[eng] Return list of hreflang alternate of an API [eng]_

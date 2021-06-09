@@ -50,7 +50,7 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-    attr_accessor :datum, :gid, :uid, :xdefallo, :alternativum
+    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :alternativum
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
@@ -60,6 +60,7 @@ module Hapi
       titulum
       namen
       xdefallo
+      xdefallo_est
       content
       dir
       path
@@ -98,6 +99,7 @@ module Hapi
       @gid = api_datum['gid']
       @uid = api_datum['uid']
       @xdefallo = api_datum['xdefallo']
+      @xdefallo_est = !!api_datum['xdefallo_est']
       # puts '              api_datum'
       # puts api_datum
       # @trivum = 'teste'
@@ -219,12 +221,13 @@ module Hapi
     #   - https://en.wiktionary.org/wiki/trivium#Latin
     # - 'xdefallo'
     #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
-    def xdefallo_est?
+    def xdefallo_est
       # @datum['linguam'] == 'mul' || @datum['linguam'] == 'mul-Zyyy'
       # puts "#{@uid} == #{@xdefallo}"
       # puts @uid == @xdefallo
       # puts ''
-      @uid == @xdefallo
+      # @uid == @xdefallo
+      @xdefallo_est
     end
   end
 end

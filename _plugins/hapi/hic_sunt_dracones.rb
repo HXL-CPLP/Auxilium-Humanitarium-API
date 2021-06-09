@@ -114,12 +114,12 @@ module Hapi
       resultatum = []
 
       referens_gid.each do |clavem_gid, valendum|
-        puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
-        puts ''
+        # puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
+        # puts ''
         res = valendum
         res['collectionem_api'] = []
         apis.each do |api|
-          res['collectionem_api'].append(api) if api.xdefallo_est? && api.gid_est?(clavem_gid)
+          res['collectionem_api'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
           # resultatum[clavem] = valendum
         end
         # resultatum.append(res)
@@ -137,7 +137,7 @@ module Hapi
       resultatum = []
 
       apis&.each do |api|
-        resultatum.append(api) if api.xdefallo_est?
+        resultatum.append(api) if api.xdefallo_est
         # resultatum[clavem] = valendum
       end
 
@@ -214,7 +214,7 @@ module Hapi
         res['collectionem_xapi'] = []
         apis.each do |api|
           res['collectionem_api'].append(api) if api.gid_est?(clavem_gid)
-          res['collectionem_xapi'].append(api) if api.xdefallo_est? && api.gid_est?(clavem_gid)
+          res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
           # resultatum[clavem] = valendum
         end
         # resultatum.append(res)
