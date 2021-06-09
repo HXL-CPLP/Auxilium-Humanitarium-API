@@ -1,5 +1,39 @@
 ---
-layout: defallo
+layout: defallo-mul-Zyyy
 ---
 
-(xapi draft)
+<hr>
+
+{% for api_alt in page.alternativum %}
+  {% if api_alt.url == page.url %}
+    {% continue %}
+  {% endif %}
+  <article>
+    <h2>
+      <a href="{{ api_alt.url }}">
+      {{ api_alt.title }}
+      </a>
+    </h2>
+    <dl>
+      <dt><mark la="la">Linguam</mark></dt>
+      <dd>{{ api_alt.linguam }}</dt>
+      <dt><mark la="la">Dēscrīptiōnem</mark></dt>
+      <dd>{{ api_alt.summarius }}</dt>
+      <dt>{% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}</dt>
+      <dd><a href="{{ api_alt.url }}">{{ api_alt.url }}</a></dt>
+      {% if api_alt.openapi_filum %}
+      <dt>{% _🗣️ OpenAPI_archivum_nomen 🗣️_ %}</dt>
+      <dd><a href="{{ api_alt.openapi_filum }}">{{ api_alt.openapi_filum }}</a></dt>
+      {% endif %}
+    </dl>
+  </article>
+{% endfor %}
+
+<hr>
+<div class="alert alert-info" role="alert">
+  <ul>
+    <li>{% de_markdown %}{% _🗣️ 📝lat-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝lat-Latn📝 🗣️_ %}{% endde_markdown %}</li>
+    <li>{% de_markdown %}{% _🗣️ 📝por-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝por-Latn📝 🗣️_ %}{% endde_markdown %}</li>
+    <li>{% de_markdown %}{% _🗣️ 📝eng-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝eng-Latn📝 🗣️_ %}{% endde_markdown %}</li>
+  </ul>
+</div>

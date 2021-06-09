@@ -43,7 +43,8 @@
   typum: api
   gid: UN
   lid: HDX # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-  title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
+  title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
+  # title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
   # HAPI_api_UN_HDX
 
@@ -86,7 +87,7 @@
   typum: api
   gid: UN
   lid: reliefweb # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-  title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}"
+  title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
  
 - xdefallo: /mul-Zyyy/api/UN/reliefweb/
@@ -116,7 +117,7 @@
   typum: api
   gid: UN
   lid: CODV2API # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-  title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}"
+  title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/UN/CODV2API/
@@ -150,7 +151,7 @@
   typum: api
   gid: XZ
   lid: HXL-Proxy # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-  title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}"
+  title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
@@ -182,7 +183,7 @@
   typum: api
   gid: BR
   lid: portais-ckan-brasil # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-  title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}"
+  title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}"
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
@@ -216,7 +217,7 @@
   typum: api
   gid: BR
   lid:  portais-arcgis-brasil # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-  title: "Index: {% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}"
+  title: "Alternātīvum pāginam: {% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}"
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/

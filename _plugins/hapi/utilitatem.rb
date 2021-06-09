@@ -115,6 +115,10 @@ module Hapi
         'trivium' => digitum_premendum(api['xdefallo'])
       }
 
+      # TODO: _[por] Remover referencias a description em inglês [por]_
+      api['jekyll-page']['descriptionem'] = api['jekyll-page']['description']
+      api['jekyll-page']['summarius'] = api['summarius'] || api['jekyll-page']['description']
+
       # puts api['jekyll-page']
 
       api

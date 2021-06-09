@@ -59,6 +59,7 @@ module Hapi
       uid
       titulum
       namen
+      summarius
       xdefallo
       xdefallo_est
       content
@@ -170,13 +171,22 @@ module Hapi
       ATTRIBUTES_FOR_LIQUID
     end
 
+    def openapi_filum
+      # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
+      @datum['jekyll-page']['openapi_filum2']
+    end
+
+    # TODO: remove obsolete parts
+    def summarius
+      @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
+    end
     # TODO: remove obsolete parts
     def titulum
-      @titulum|| @namen || @title
+      @titulum || @namen || @title
     end
 
     def namen
-      @titulum|| @namen || @title
+      @titulum || @namen || @title
     end
 
     # Trivia
