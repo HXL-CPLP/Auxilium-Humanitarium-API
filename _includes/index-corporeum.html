@@ -1,53 +1,113 @@
-<!-- _includes/api-corporeum-ltr.html -->
-<!-- trivia: corporeum, https://en.wiktionary.org/wiki/corporeus#Latin -->
-
-{% assign r_gid = site.data.referens['gid'] %}
-
-<article>
+<!-- _includes/index-corporeum.html -->
+<<div>
   <article>
     <h2 id="api">API</h2>
-    <p>👷🏽 TODO 👷🏽</p>
-    {% for api_gid in site.data.referens['api_gid'] -%}
-      <h3 id="{{ r_gid[api_gid]['hashtag']['api'] }}">
-        {{ api_gid }}
-      </h3>
-    {%- endfor %}
-  </article>
+    {% for globum in site.data.hapi.globum %}
+    <article>
+      <header>
+        <h3 id="api-{{ globum.gid | slugify }}">
+          {{ globum.namen }}
+        </h3>
+        {{ globum.descriptionem | default: '<mark>_[lat] Ignotum textum. Adiuva me 🥺[lat]_</mark> '}}
+      </header>
 
-  <article>
-    <h2 id="schema">Schema</h2>
-    <p>👷🏽 TODO 👷🏽</p>
-    {% for schema_gid in site.data.referens['schema_gid'] -%}
-      <h3 id="#{{ r_gid[schema_gid]['hashtag']['api'] }}">
-        {{ r_gid[schema_gid]['namen'] }}
-      </h3>
-      <article>
-        {% for schema in site.data.schema -%}
-          <h4 id="{{ schema['hashtag'] }}">
-            {{ schema['namen'] }}
-          </h4>
-        {%- endfor %}
+      {% for xapi in globum.collectionem_xapi %}
+      <article style="padding: 1em">
+        <h4 id="{{ xapi.url | slugify }}">
+          <a href="#{{ xapi.url | slugify }}">🔗</a>
+          {{ xapi.lid | default: xapi['datum']['lid'] }}
+        </h4>
+        <div class="row">
+          {% for api_alt in xapi.alternativum %}
+            {% if api_alt.url == xapi.url %}
+              {% continue %}
+            {% endif %}
+          <div class="col-12 col-xxl-6 pb-3">
+            <article class="card">
+              <div class="card-header">
+                <small>🗣{{ api_alt.linguam }}🗣</small>
+                {% if api_alt.opus_in_progressu %}
+                  <small>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}</small>
+                {% endif %}
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" id="{{ api_alt.url | slugify }}" >
+                  {{ api_alt.title }}
+                </h5>
+                <p class="card-text">
+
+                  {{ api_alt.description | default: "<mark>_[por] TODO: adicionar descrição [por]_</mark>" }}
+                </p>
+                <a href="{{ api_alt.url }}" hreflang="{{ api_alt.hreflang }}"
+                  class="btn btn-primary">
+                  API Interativa
+                </a>
+                <a href="{{ api_alt.datum.openapi_filum }}"
+                  hreflang="{{ api_alt.hreflang }}" class="btn btn-default">
+                  OpenAPI
+                </a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">
+                  {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}: <br>
+                  <mark>_[por] TODO: adicionar lista de colaboradores [por]_</mark>
+                </small>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+      </div>
+
       </article>
-    {%- endfor %}
+      {% endfor %}
+      <br>
+    </article>
+    {% endfor %}
+  </article>
+  <article>
+    <h2 id="schemam" lang="la">Schemam</h2>
+    <div class="alert alert-info" role="alert">
+      <p>{% _🗣️ 📝lat-Latn📝 opus_in_progressu_emoji_nomen 📝lat-Latn📝 🗣️_ %}</p>
+      <p>{% _🗣️ 📝eng-Latn📝 opus_in_progressu_emoji_nomen 📝eng-Latn📝 🗣️_ %}</p>
+      <p>{% _🗣️ 📝por-Latn📝 opus_in_progressu_emoji_nomen 📝por-Latn📝 🗣️_ %}</p>
+      <p>{% _🗣️ 📝spa-Latn📝 opus_in_progressu_emoji_nomen 📝spa-Latn📝 🗣️_ %}</p>
+    </div>
+  {% include temporarium/scheman.html %}
+
+
+  </article>
+  <article>
+    <h2 id="tm" lang="la">Trānslātiōnem memoriam</h2>
+    <div class="alert alert-info" role="alert">
+      <p>{% _🗣️ 📝lat-Latn📝 opus_in_progressu_emoji_nomen 📝lat-Latn📝 🗣️_ %}</p>
+      <p>{% _🗣️ 📝eng-Latn📝 opus_in_progressu_emoji_nomen 📝eng-Latn📝 🗣️_ %}</p>
+      <p>{% _🗣️ 📝por-Latn📝 opus_in_progressu_emoji_nomen 📝por-Latn📝 🗣️_ %}</p>
+      <p>{% _🗣️ 📝spa-Latn📝 opus_in_progressu_emoji_nomen 📝spa-Latn📝 🗣️_ %}</p>
+    </div>
+
+    {% include temporarium/tm.html %}
   </article>
 
   <aside>
-    <h2 id="agnitionem">{% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}</h2>
-    <h3 id="agnitionem-voluntarius">{% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}</h3>
+    <h2 id="agnitionem">
+      {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}
+      </h2>
+    <h3 id="agnitionem-voluntarius">
+      {% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}
+      </h3>
     <ul>
     {% for humanum in site.data.agnitionem.humanum -%}
       <li>{{ humanum.namen.baptismum }}</li>
     {%- endfor %}
     </ul>
-    <h3 id="agnitionem-communitatem">{% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}</h3>
+    <h3 id="agnitionem-communitatem">
+      {% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}
+    </h3>
     <ul>
     {% for communitatem in site.data.agnitionem.communitatem -%}
       <li>{{ communitatem.namen.baptismum }}</li>
     {%- endfor %}
     </ul>
   </aside>
-  <footer>
-    <h2 id="licentiam">{% _🗣️ licentiam_nomen 🗣️_ %}</h2>
-    {% de_markdown %}{% _🗣️ Hapi_licentiam_Hapi_descriptionem 🗣️_ %}{% endde_markdown %}
-  </footer>
-</article>
+
+</div>

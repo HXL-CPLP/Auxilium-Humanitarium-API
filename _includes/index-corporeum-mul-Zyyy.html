@@ -1,5 +1,5 @@
 <!-- _includes/index-corporeum-mul-Zyyy.html -->
-<section>
+<div>
   <article>
     <h2 id="api">API</h2>
     {% for globum in site.data.hapi.globum %}
@@ -17,43 +17,49 @@
           <a href="#{{ xapi.url | slugify }}">🔗</a>
           {{ xapi.lid | default: xapi['datum']['lid'] }}
         </h4>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row">
           {% for api_alt in xapi.alternativum %}
             {% if api_alt.url == xapi.url %}
               {% continue %}
             {% endif %}
-          <div class="col">
+          <div class="col-12 col-xxl-6 pb-3">
             <article class="card">
               <div class="card-header">
-                <small>{{ api_alt.linguam }}</small>
+                <small>🗣{{ api_alt.linguam }}🗣</small>
+                {% if api_alt.opus_in_progressu %}
+                  <small>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}</small>
+                {% endif %}
               </div>
               <div class="card-body">
-                <h5 class="card-title" id="{{ api_alt.url | slugify }}" >{{ api_alt.title }}</h5>
+                <h5 class="card-title" id="{{ api_alt.url | slugify }}" >
+                  {{ api_alt.title }}
+                </h5>
                 <p class="card-text">
+
                   {{ api_alt.description | default: "<mark>_[por] TODO: adicionar descrição [por]_</mark>" }}
                 </p>
-                <a href="{{ api_alt.url }}" hreflang="{{ api_alt.hreflang }}" class="btn btn-primary">
+                <a href="{{ api_alt.url }}" hreflang="{{ api_alt.hreflang }}"
+                  class="btn btn-primary">
                   API Interativa
                 </a>
-                <a href="{{ api_alt.datum.openapi_filum }}" hreflang="{{ api_alt.hreflang }}" class="btn btn-default">
+                <a href="{{ api_alt.datum.openapi_filum }}"
+                  hreflang="{{ api_alt.hreflang }}" class="btn btn-default">
                   OpenAPI
                 </a>
               </div>
               <div class="card-footer">
-                  <small class="text-muted">
-                    {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}: <br>
-                    <mark>_[por] TODO: adicionar lista de colaboradores [por]_</mark>
-                  </small>
+                <small class="text-muted">
+                  {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}: <br>
+                  <mark>_[por] TODO: adicionar lista de colaboradores [por]_</mark>
+                </small>
               </div>
             </article>
           </div>
           {% endfor %}
       </div>
-      <!-- {{ xapi | inspect }} -->
 
       </article>
       {% endfor %}
-      <!-- {{ globum | inspect }} -->
       <br>
     </article>
     {% endfor %}
@@ -83,14 +89,20 @@
   </article>
 
   <aside>
-    <h2 id="agnitionem">{% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}</h2>
-    <h3 id="agnitionem-voluntarius">{% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}</h3>
+    <h2 id="agnitionem">
+      {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}
+      </h2>
+    <h3 id="agnitionem-voluntarius">
+      {% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}
+      </h3>
     <ul>
     {% for humanum in site.data.agnitionem.humanum -%}
       <li>{{ humanum.namen.baptismum }}</li>
     {%- endfor %}
     </ul>
-    <h3 id="agnitionem-communitatem">{% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}</h3>
+    <h3 id="agnitionem-communitatem">
+      {% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}
+    </h3>
     <ul>
     {% for communitatem in site.data.agnitionem.communitatem -%}
       <li>{{ communitatem.namen.baptismum }}</li>
@@ -98,4 +110,4 @@
     </ul>
   </aside>
 
-</section>
+</div>

@@ -50,7 +50,8 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :alternativum
+    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :alternativum,
+                   :opus_in_progressu
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
@@ -60,6 +61,7 @@ module Hapi
       titulum
       namen
       summarius
+      opus_in_progressu
       xdefallo
       xdefallo_est
       content
@@ -101,7 +103,8 @@ module Hapi
       @uid = api_datum['uid']
       @xdefallo = api_datum['xdefallo']
       @xdefallo_est = !!api_datum['xdefallo_est']
-      # puts '              api_datum'
+      @opus_in_progressu = !!api_datum['opus_in_progressu']
+      # puts api_datum['opus_in_progressu']
       # puts api_datum
       # @trivum = 'teste'
 
@@ -174,6 +177,10 @@ module Hapi
     def openapi_filum
       # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
       @datum['jekyll-page']['openapi_filum2']
+    end
+
+    def opus_in_progressu
+      !!@opus_in_progressu
     end
 
     # TODO: remove obsolete parts

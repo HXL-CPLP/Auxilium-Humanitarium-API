@@ -84,6 +84,7 @@ module Hapi
         # puts api['uid']
         # api['openapi_filum'] = openapi_filum_de_api(api)
         # api = expandendum_api_datum_jekyll_page(api)
+        # puts api
         expandendum_api_datum_jekyll_page(api, referens)
       end
 

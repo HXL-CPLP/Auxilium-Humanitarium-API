@@ -56,6 +56,7 @@
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   # title: HDX - The Humanitarian Data Exchange API
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}'
+  opus_in_progressu: true
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/UN/HDX/
@@ -70,15 +71,16 @@
 
 # # Note: this is just a test to check if non US-ASCII characters can work with
 # #       Hapi toolchain
-# - xdefallo: /mul-Zyyy/api/UN/HDX/
-#   # uid: /arb/api/UN/اختبارات/
-#   linguam: arb-Arab
-#   typum: api
-#   gid: UN
-#   lid: 'اختبارات'
-#   openapi_filum: /api/UN/HDX/eng/openapi.yaml
-#   title: "اختبارات"
-#   noindex: true
+- xdefallo: /mul-Zyyy/api/UN/HDX/
+  # uid: /arb/api/UN/اختبارات/
+  linguam: arb-Arab
+  typum: api
+  gid: UN
+  lid: 'اختبارات'
+  openapi_filum: /api/UN/HDX/eng/openapi.yaml
+  title: "اختبارات"
+  opus_in_progressu: true
+  noindex: true
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/UN/reliefweb/
@@ -108,6 +110,7 @@
   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
   # title: ReliefWeb - Informing humanitarians worldwide
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_reliefweb_titulum 📝por-Latn📝 🗣️_ %}'
+  opus_in_progressu: true
   noindex: true
 
 ## -----------------------------------------------------------------------------
@@ -140,6 +143,7 @@
   lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_CODV2API_slug 📝por-Latn📝 🗣️_ %}'
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_CODV2API_titulum 📝por-Latn📝 🗣️_ %}'
+  opus_in_progressu: true
   noindex: true
 
 ### [linguam]/api/ZX ___________________________________________________________
@@ -172,6 +176,7 @@
   openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
   # title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝por-Latn📝 🗣️_ %}'
+  opus_in_progressu: true
   noindex: true
 
 ### [linguam]/api/BR ___________________________________________________________
