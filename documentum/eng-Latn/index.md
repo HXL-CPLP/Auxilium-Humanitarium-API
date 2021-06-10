@@ -35,4 +35,4 @@ translationem_modum: html
 translationem_debug: true
 ---
 
-{%- include api-corporeum-ltr.html -%}
+{%- include index-corporeum.html -%}
