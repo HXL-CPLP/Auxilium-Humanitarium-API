@@ -43,3 +43,6 @@ ISO_15924_optionem_Unicode_versionem_summarius,,0,,,ISO,15924,optionem,Unicode,v
 ISO_15924_optionem_Unicode_versionem_exemplum,,0,,,ISO,15924,optionem,Unicode,versionem,exemplum,,,∅,,∅,,∅,,∅
 ISO_15924_optionem_dactylum_summarius,,0,,,ISO,15924,optionem,dactylum,,summarius,,,∅,,∅,Date is ... (TODO),∅,,∅
 ISO_15924_optionem_dactylum_exemplum,,0,,,ISO,15924,optionem,dactylum,,exemplum,,,∅,,∅,2004-05-01,∅,,∅
+json_schemam_nomen,,1,,,,,,json_schemam,,nomen,,JSON Schēmam,∅,Esquema de dados JSON,∅,JSON Schema,∅,,∅
+graphql_schemam_nomen,,1,,,,,,graphql_schemam,,nomen,,GraphQL Schēmam,,Esquema de dados GraphQL,,GraphQL Schema,∅,,∅
+SQL_abbreviationem_nomen,,1,,,,,,SQL,abbreviationem,nomen,,SQL,,SQL,,SQL,,,
