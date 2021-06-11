@@ -37,7 +37,7 @@ module Hapi
                     :paginam_contextum, :referens,
                     :contextum_archivum_extensionem, :contextum_linguam,
                     :contextum_ego, :paratum_est, :referens_praeiudico,
-                    :alternandum_linguam
+                    :alternandum_linguam, :textum_solum_est
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
@@ -128,6 +128,7 @@ module Hapi
             'fontem_textum' => @textum,
             'venandum_insectum_est' => @venandum_insectum_est,
             'sos_est' => @sos_est,
+            'textum_solum_est' => @textum_solum_est,
             'contextum_url' => @paginam_contextum['url'],
             'paratum_est' => if @fontem_linguam.nil?
                                false
@@ -153,6 +154,7 @@ module Hapi
         @referens = contextum['site']['data']['referens']
         @referens_praeiudico = contextum['site']['data']['referens']['praeiudico']
         @paginam_contextum = contextum['page']
+        @textum_solum_est = quod_textum_solum_est?
         @contextum_linguam = if contextum['ego_linguam']
                                contextum['ego_linguam']
                              elsif contextum['page']['linguam']
@@ -374,6 +376,7 @@ module Hapi
       Kramdown::Document.new(text).to_html.to_s
     end
 
+    # @deprecated use farmatum_alternandum_neo
     # TODO: _[por] Terminar a farmatum_alternandum, de modo que exiba
     #              informações também de depuração
     #       [por]_
@@ -381,12 +384,13 @@ module Hapi
     # Trivia:
     # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
     # - 'alternandum', https://en.wiktionary.org/wiki/alternandus#Latin
-    def farmatum_alternandum(contextum, trns_codicem, trns_resultatum, _trns_resultatum_linguam)
+    def farmatum_alternandum(
+          contextum, trns_codicem, trns_resultatum, _trns_resultatum_linguam, textum_solum_est = false)
       html_est = contextum['page']['translationem_modum']
       linguam = contextum['page']['linguam']
       debug_est = contextum['page']['translationem_debug']
       # print 'oooi'
-      if html_est == 'html'
+      if html_est == 'html' && !textum_solum_est
         return "<span data-l10n-c='#{trns_codicem}' data-l10n-linguam='#{linguam}'" \
                " class='incognitum-phrasim'>#{trns_resultatum}</span>"
       end
@@ -411,6 +415,42 @@ module Hapi
       return "_[#{linguam}]#{trns_resultatum}[#{linguam}]_" if debug_est
 
       trns_resultatum
+    end
+
+    # TODO: _[por] Terminar de portar funcionalidades de farmatum_alternandum [por]_
+    # Trivia:
+    # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
+    # - 'alternandum', https://en.wiktionary.org/wiki/alternandus#Latin
+    def farmatum_alternandum_neo(rem)
+      puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
+      # return rem.objectivum_textum + 'so texto' if rem.est_textum_solum_est?
+      return rem.objectivum_textum if rem.est_textum_solum_est? && rem.objectivum_textum
+      return rem.fontem_textum if rem.est_textum_solum_est?
+
+      # attrs = {
+      #   'lang' => rem.fontem_linguam.bcp47,
+      #   'data-l10n-fontem-linguam' => rem.fontem_linguam.linguam,
+      #   'data-l10n-objectivum-linguam' => rem.objectivum_linguam.linguam,
+      # }
+
+      if rem.est_html?
+        attrs_str = Utilitatem.quod_html_attributum_markup_nunc?(
+          {
+            'lang' => rem.fontem_linguam.bcp47,
+            'data-l10n-fontem-linguam' => rem.fontem_linguam.linguam,
+            'data-l10n-objectivum-linguam' => rem.objectivum_linguam.linguam,
+            'class' => 'incognitum-phrasim'
+          }
+        )
+
+        return "<span #{attrs_str}>#{rem.fontem_textum}</span>"
+      end
+
+      # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
+      # _[eng] If not HTML, then likely to be JSON, XML or CSV. If this is
+      #        an error, use 🔎🆘🔍 on the tag
+      # _[eng]
+      rem.objectivum_textum
     end
 
     # Trivia:
@@ -799,8 +839,11 @@ module Hapi
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{rem.inspect}]"
 
         if rem.paratum_est
-          return Translationem.farmatum_praefectum(
-            context, rem.fontem_textum, rem.fontem_textum
+          # return Translationem.farmatum_praefectum(
+          #   context, rem.fontem_textum, rem.fontem_textum
+          # )
+          return Translationem.farmatum_praefectum_neo(
+            rem
           )
         end
 
@@ -828,9 +871,26 @@ module Hapi
           # return Translationem.farmatum_praefectum_neo(
           #   rem
           # )
-          return Translationem.farmatum_praefectum(
-            context, rem.fontem_textum, l10nval
+          # return Translationem.farmatum_praefectum(
+          #   context, rem.fontem_textum, l10nval
+          # )
+          return Translationem.farmatum_praefectum_neo(
+            rem
           )
+        end
+
+        l10nval_por = Translationem.translationem_memoriam_rememorandum(
+          context, rem.fontem_textum, 'por-Latn'
+        )
+        if l10nval_por != false
+          rem.alternandum_textum = l10nval_por
+          rem.alternandum_linguam = 'por-Latn'
+          # puts rem.inspect if rem.est_textum_solum_est?
+          return Translationem.farmatum_alternandum(
+            context, rem.fontem_textum, l10nval_por,
+            'por-Latn', rem.est_textum_solum_est?
+          )
+          # return Translationem.farmatum_alternandum_neo(rem)
         end
 
         l10nval_eng = Translationem.translationem_memoriam_rememorandum(
@@ -842,19 +902,7 @@ module Hapi
 
           return Translationem.farmatum_alternandum(
             context, rem.fontem_textum, l10nval_eng,
-            'eng-Latn'
-          )
-        end
-
-        l10nval_por = Translationem.translationem_memoriam_rememorandum(
-          context, rem.fontem_textum, 'por-Latn'
-        )
-        if l10nval_por != false
-          rem.alternandum_textum = l10nval_por
-          rem.alternandum_linguam = 'por-Latn'
-          return Translationem.farmatum_alternandum(
-            context, rem.fontem_textum, l10nval_por,
-            'por-Latn'
+            'eng-Latn', rem.est_textum_solum_est?
           )
         end
 
@@ -866,7 +914,7 @@ module Hapi
           rem.alternandum_linguam = 'spa-Latn'
           return Translationem.farmatum_alternandum(
             context, rem.fontem_textum, l10nval_spa,
-            'spa-Latn'
+            'spa-Latn', rem.est_textum_solum_est?
           )
         end
 

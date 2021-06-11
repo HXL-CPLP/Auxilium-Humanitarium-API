@@ -11,7 +11,7 @@ sitemap:
   exclude: 'yes'
 toc: true
 
-speciale_html: |
+speciale_html: >
   <div class="alert alert-info" role="alert">
     <nav>
       <h2 style="font-size: 1em">
@@ -33,8 +33,13 @@ speciale_html: |
           </a>
         </li>
         <li class="list-group-item">
+          <a href="/spa-Latn/">
+            {% _🗣️ 📝spa-Latn📝 L10N_ego_summarius 📝spa-Latn📝 🗣️_ %}<sup>👩‍🔬<em>alpha</em>👨‍🔬</sup>
+          </a>
+        </li>
+        <li class="list-group-item">
           <a href="/arb-Arab/">
-            arb-Arab
+            arb-Arab<sup>👩‍🔬<em>alpha</em>👨‍🔬</sup>
             <!--{% _🗣️ 📝arb-Arab📝 L10N_ego_summarius 📝arb-Arab📝 🗣️_ %}👩‍🔬<em>alpha</em>👨‍🔬-->
           </a>
         </li>
