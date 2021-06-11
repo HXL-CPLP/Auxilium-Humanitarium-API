@@ -31,6 +31,12 @@ module Hapi
         @optionem = argumentum
       end
 
+      # def alternativum
+      #   @optionem['alternativum']
+      #   # # []
+      #   # false
+      # end
+
       # _[eng] List of all APIs, no special sorting or selection [eng]_
       #
       # @see _plugins/jekyll_hapi_api.rb

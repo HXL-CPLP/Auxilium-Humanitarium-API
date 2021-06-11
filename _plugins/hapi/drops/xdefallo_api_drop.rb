@@ -32,6 +32,41 @@ module Hapi
         end
       end
 
+      # _[eng] Allow 'create' on the fly keys by language name to allow
+      #        direct access to specific alternative, if exists
+      # [eng]_
+      # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/drops/drop.rb
+      def [](key)
+        if self.class.invokable? key
+          public_send key
+        elsif key != 'url' && @optionem['alternativum']
+          # TODO: _[eng] about the key != 'url'
+          #              sometimes we may try to access URL process, and
+          #              with raw YAML data (not the actuall ApiPaginam)
+          #              this will raise error
+          #       [eng]_
+          @optionem['alternativum'].each do |apt_alt|
+            return apt_alt if apt_alt['linguam'] && apt_alt['linguam'] == key
+          end
+        end
+
+        # if @optionem['alternativum']
+        #   puts @optionem['alternativum'].class
+        #   # @optionem['alternativum'].each do |api|
+        #   #   puts 'oi'
+        #   # end
+
+        # end
+      end
+
+      def alternativum
+        # puts ''
+        # puts  @optionem['alternativum'][1]['linguam']
+        @optionem['alternativum']
+        # []
+        # false
+      end
+
       def initialize(argumentum = {}) # rubocop:disable Lint/MissingSuper
         @optionem = argumentum
       end
@@ -46,15 +81,20 @@ module Hapi
       end
 
       def lid
-        puts 'lid'
+        # puts 'lid'
         @optionem['lid'] || @optionem['datum']['lid']
       end
+
 
       def gid
         @optionem['gid']
       end
 
       def linguam
+        @optionem['linguam']
+      end
+
+      def linguam_est
         @optionem['linguam']
       end
 

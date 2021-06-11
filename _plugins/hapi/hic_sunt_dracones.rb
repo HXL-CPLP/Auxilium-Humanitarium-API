@@ -87,7 +87,8 @@ module Hapi
     end
 
     def api?
-      Jekyll.sites.last.data['api'] || [] # apil10n ?
+      # Jekyll.sites.last.data['api'] || [] # apil10n ?
+      Jekyll.sites.last.data['l10n']['apil10n'] || [] # apil10n ?
     end
 
     def api_paginam?
@@ -213,9 +214,17 @@ module Hapi
         res['collectionem_api'] = []
         res['collectionem_xapi'] = []
         apis.each do |api|
+          # api_drop = Hapi::Drops::HapiXdefalloApiDrop.new(res)
           res['collectionem_api'].append(api) if api.gid_est?(clavem_gid)
-          res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
-          # resultatum[clavem] = valendum
+          # if api.gid_est?(clavem_gid)
+          #   res['collectionem_api'].append(Hapi::Drops::HapiApiDrop.new(api))
+          # end
+          if !!api.xdefallo_est && api.gid_est?(clavem_gid)
+            res['collectionem_xapi'].append(Hapi::Drops::HapiXdefalloApiDrop.new(api))
+          end
+
+          # res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
+          # # resultatum[clavem] = valendum
         end
         # resultatum.append(res)
         drop = Hapi::Drops::HapiGlobumDrop.new(res)
