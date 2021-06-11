@@ -36,19 +36,27 @@ module Hapi
       #        direct access to specific alternative, if exists
       # [eng]_
       # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/drops/drop.rb
-      def [](key)
-        if self.class.invokable? key
-          public_send key
-        elsif key != 'url' && @optionem['alternativum']
-          # TODO: _[eng] about the key != 'url'
-          #              sometimes we may try to access URL process, and
-          #              with raw YAML data (not the actuall ApiPaginam)
-          #              this will raise error
-          #       [eng]_
-          @optionem['alternativum'].each do |apt_alt|
-            return apt_alt if apt_alt['linguam'] && apt_alt['linguam'] == key
-          end
-        end
+      # def [](key)
+      #   # puts key
+      #   # puts !!@optionem['alternativum']
+      #   if self.class.invokable? key
+      #     public_send key
+      #   elsif key == 'url' || key == 'datum'
+      #     # TODO: _[eng] about the key != 'url'
+      #     #              sometimes we may try to access URL process, and
+      #     #              with raw YAML data (not the actuall ApiPaginam)
+      #     #              this will raise error
+      #     #       [eng]_
+      #     nil
+      #   elsif @optionem['alternativum'] && key.length >= 8
+
+      #     puts "[] #{key}"
+      #     @optionem['alternativum'].each do |apt_alt|
+      #       # puts 'achou!'
+      #       puts apt_alt['linguam'] && apt_alt['linguam'] == key
+      #       return apt_alt if apt_alt['linguam'] && apt_alt['linguam'] == key
+      #     end
+      #   end
 
         # if @optionem['alternativum']
         #   puts @optionem['alternativum'].class
@@ -57,7 +65,7 @@ module Hapi
         #   # end
 
         # end
-      end
+      # end
 
       def alternativum
         # puts ''
@@ -92,6 +100,16 @@ module Hapi
 
       def linguam
         @optionem['linguam']
+      end
+
+      def alternativum_linguam
+        resultatum = []
+        @optionem['alternativum'].each do |apt_alt|
+          # puts 'achou!'
+          resultatum.append(apt_alt['linguam'])
+        end
+
+        resultatum
       end
 
       def linguam_est

@@ -13,6 +13,40 @@
 
       {% for xapi in globum.collectionem_xapi %}
       <article style="padding: 1em">
+        {% if xapi.alternativum_linguam contains page.linguam %}
+          {% assign api_alt = xapi.alternativum | where: 'linguam', page.linguam | first %}
+          <article class="card">
+            <div class="card-header">
+              <small>🗣{{ api_alt.linguam }}🗣</small>
+              {% if api_alt.opus_in_progressu %}
+                <small>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}</small>
+              {% endif %}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" id="{{ api_alt.url | slugify }}" >
+                {{ api_alt.title }}
+              </h5>
+              <p class="card-text">
+
+                {{ api_alt.description | default: "<mark>_[por] TODO: adicionar descrição [por]_</mark>" }}
+              </p>
+              <a href="{{ api_alt.url }}" hreflang="{{ api_alt.hreflang }}"
+                class="btn btn-primary">
+                API Interativa
+              </a>
+              <a href="{{ api_alt.datum.openapi_filum }}"
+                hreflang="{{ api_alt.hreflang }}" class="btn btn-default">
+                OpenAPI
+              </a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">
+                {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}: <br>
+                <mark>_[por] TODO: adicionar lista de colaboradores [por]_</mark>
+              </small>
+            </div>
+          </article>
+        {% else %}
         <h4 id="{{ xapi.url | slugify }}">
           <a href="#{{ xapi.url | slugify }}">🔗</a>
           {{ xapi.lid | default: xapi['datum']['lid'] }}
@@ -57,6 +91,7 @@
           </div>
           {% endfor %}
         </div>
+        {% endif %}
       </article>
       {% endfor %}
       <br>
@@ -103,4 +138,12 @@
     </ul>
   </aside>
 
+  <section>
+    <h2>{% _🗣️ licentiam_nomen 🗣️_ %}</h2>
+    <a href="https://unlicense.org/">
+      <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png"
+        alt="{% _🗣️ dominium_publicum_nomen 🗣️_ %}">
+    </a>
+    {% de_markdown %}{% _🗣️ Hapi_licentiam_Hapi_descriptionem 🗣️_ %}{% endde_markdown %}
+  </section>
 </div>
