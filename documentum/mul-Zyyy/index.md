@@ -32,6 +32,12 @@ speciale_html: |
             {% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}
           </a>
         </li>
+        <li class="list-group-item">
+          <a href="/arb-Arab/">
+            arb-Arab
+            <!--{% _🗣️ 📝arb-Arab📝 L10N_ego_summarius 📝arb-Arab📝 🗣️_ %}👩‍🔬<em>alpha</em>👨‍🔬-->
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
