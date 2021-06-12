@@ -15,6 +15,10 @@ group :jekyll_plugins do
   # gem 'jekyll-feed'
   gem 'jekyll-seo-tag'
 
+  # https://github.com/envygeeks/jekyll-assets
+  # gem 'jekyll-assets'
+  # gem "jekyll-assets", git: "https://github.com/envygeeks/jekyll-assets"
+
   # Used only on Utilitatem.digitum_identicum()
   # https://github.com/johanns/sha3
   gem 'sha3'
