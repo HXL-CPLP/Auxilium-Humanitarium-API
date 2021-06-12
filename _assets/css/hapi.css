@@ -6,3 +6,14 @@
  *                 [por]_
  */
 
+/* _[eng] API layoyt; Hide some strange SVG not loading [eng]_ */
+.swagger-ui>div>svg {
+  display: none;
+}
+
+.incognitum-phrasim:after, .incognitum-phrasim:before {
+  content: attr(lang);
+  color:mediumseagreen;
+  font-style: italic;
+  vertical-align: sub;
+}

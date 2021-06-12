@@ -8,6 +8,8 @@
 integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 crossorigin="anonymous"></script>
 
+<script type="module" src="/assets/js/hapi-globum.mjs?{{ 'now' | date: '%s' }}"></script>
+
 {% if page.layout contains 'api' or page.openapi_filum != nil %}
 <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.49.0/swagger-ui-bundle.js"
 integrity="sha384-TsNPQoWzG+yZglf0QyR2pSxpd230yWkR9JJPog0+qnOLds0Y7XT8MH1zdUeVI65/"
@@ -31,4 +33,6 @@ crossorigin="anonymous"></script>
         render()
     }
 </script>
+
+<script type="module" src="/assets/js/hapi-api.mjs?{{ 'now' | date: '%s' }}"></script>
 {% endif %}

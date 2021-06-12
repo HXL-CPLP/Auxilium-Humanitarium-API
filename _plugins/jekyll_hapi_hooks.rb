@@ -49,17 +49,7 @@ Jekyll::Hooks.register :site, :post_write do |site| # rubocop:disable Metrics/Bl
 
   require 'fileutils'
 
-#   if !File.file?(File.join(site.dest, '/assets/css/hapi.css')) || \
-#     (!FileUtils.compare_file(
-#       File.join(site.dest, '/assets/css/hapi.css'),
-#       File.join(site.source, '/_assets/css/hapi.css')
-#     ))
-#    puts 'jekyll_hapi_hooks: cp _assets/css/hapi.css _site/assets/css/hapi.css'
-#    FileUtils.cp(
-#      File.join(site.source, '/_assets/css/hapi.css'),
-#      File.join(site.dest, '/assets/css/hapi.css')
-#    )
-#  end
+  #### /data/ __________________________________________________________________
 
   if File.file?(File.join(site.dest, '/data/api.l10n.json')) && \
      (!File.file?(File.join(site.source, '/_data/l10n/api.l10n.json')) || !FileUtils.compare_file(
@@ -118,6 +108,56 @@ Jekyll::Hooks.register :site, :post_write do |site| # rubocop:disable Metrics/Bl
     FileUtils.cp(
       File.join(site.dest, '/data/schema.l10n.json'),
       File.join(site.source, '/_data/l10n/schema.l10n.json')
+    )
+  end
+
+  #### /assets _________________________________________________________________
+
+  if !File.directory?(File.join(site.dest, '/assets/'))
+    FileUtils.mkdir(File.join(site.dest, '/assets/'))
+  end
+  if !File.directory?(File.join(site.dest, '/assets/css'))
+    FileUtils.mkdir(File.join(site.dest, '/assets/css'))
+  end
+  if !File.directory?(File.join(site.dest, '/assets/js'))
+    FileUtils.mkdir(File.join(site.dest, '/assets/js'))
+  end
+
+  # if !File.file?(File.join(site.dest, '/assets/css/hapi.css'))
+  if !File.file?(File.join(site.dest, '/assets/css/hapi.css')) || \
+    (!FileUtils.compare_file(
+      File.join(site.dest, '/assets/css/hapi.css'),
+      File.join(site.source, '/_assets/css/hapi.css')
+    ))
+    puts 'jekyll_hapi_hooks: cp _assets/css/hapi.css _site/assets/css/hapi.css'
+    FileUtils.cp(
+      File.join(site.source, '/_assets/css/hapi.css'),
+      File.join(site.dest, '/assets/css/hapi.css')
+    )
+  end
+
+  # if !File.file?(File.join(site.dest, '/assets/css/hapi.css'))
+  if !File.file?(File.join(site.dest, '/assets/js/hapi-api.mjs')) || \
+    (!FileUtils.compare_file(
+      File.join(site.dest, '/assets/js/hapi-api.mjs'),
+      File.join(site.source, '/_assets/js/hapi-api.mjs')
+    ))
+    puts 'jekyll_hapi_hooks: cp _assets/js/hapi-api.mjs _site/assets/js/hapi-api.mjs'
+    FileUtils.cp(
+      File.join(site.source, '/_assets/js/hapi-api.mjs'),
+      File.join(site.dest, '/assets/js/hapi-api.mjs')
+    )
+  end
+
+  if !File.file?(File.join(site.dest, '/assets/js/hapi-globum.mjs')) || \
+    (!FileUtils.compare_file(
+      File.join(site.dest, '/assets/js/hapi-globum.mjs'),
+      File.join(site.source, '/_assets/js/hapi-globum.mjs')
+    ))
+    puts 'jekyll_hapi_hooks: cp _assets/js/hapi-globum.mjs _site/assets/js/hapi-globum.mjs'
+    FileUtils.cp(
+      File.join(site.source, '/_assets/js/hapi-globum.mjs'),
+      File.join(site.dest, '/assets/js/hapi-globum.mjs')
     )
   end
 

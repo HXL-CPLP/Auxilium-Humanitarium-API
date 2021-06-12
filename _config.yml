@@ -47,9 +47,11 @@ exclude:
   - _data/navigationem.l10n.json
   - _data/referens.l10n.json
   - _data/schema.l10n.json
+  - _assets/
 
 keep_files:
   - _assets/
+  - assets
 
 # GitHub pages related
 # - https://docs.github.com/en/enterprise-server@3.0/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll
@@ -90,74 +92,4 @@ defaults:
     values:
       sitemap: false
 
-# # @see https://github.com/avillafiorita/jekyll-datapage_gen
-# page_gen-dirs: true
-# page_gen:
-#   # referens: api-BR-portais-ckan-brasil
-#   - data: 'api'
-#     template: 'api'
-#     # name: 'title'
-#     name_expr: "record['uid'].split('/').last"
-#     # name_expr: "record['slug'] or record['lid']"
-#     # dir: 'uid'
-#     # "/mul/api/XZ/HXL-Proxy/".chomp("/mul/api/XZ/HXL-Proxy/".split('/').last + "/")
-#     # record['uid'].chomp(record['uid'].split('/').last + "/")
-#     dir_expr: "record['uid'].chomp(record['uid'].split('/').last + '/')"
-#     # dir_expr: "record['uid']"
-#     # dir_expr: "record['linguam'] + '/' + record['typum'] + '/' + record['gid']"
-#     # filter_condition: "record['linguam'] != 'mul'"
-#     # debug: true
-
-#   # - data: 'api'
-#   #   template: 'api'
-#   #   name: 'slug'
-#   #   dir: 'eng/api-TEMP/BR'
-#   #   filter_condition: "record['gid'] == '/api/BR' and record['linguam'] == 'por'"
-#   #   debug: true
-
-
-# @see https://github.com/envygeeks/jekyll-assets
 # > TODO: talvez https://rdyar.github.io/2017/10/01/speed-up-jekyll-by-using-gulp-for-sass-and-other-assets/ (?)
-
-# _config.yml
-# assets:
-#   source_maps: true
-#   destination: "/assets"
-#   compression: false
-#   gzip: false
-#   defaults:
-#     integrity:
-#       {css,img,js}: false
-#   caching:
-#     enabled: true
-#     path: ".jekyll-cache/assets"
-#     type: file
-#   # --
-#   # Assets you wish to always have compiled.
-#   #   This can also be combined with raw_precompile which
-#   #   copies assets without running through the pipeline
-#   #   making them ultra fast.
-#   # --
-#   precompile: []
-#   raw_precompile: [
-#     #
-#   ]
-#   # --
-#   # baseurl: whether or not to append site.baseurl
-#   # destination: the folder you store them in on the CDN.
-#   # url: the CDN url (fqdn, or w/ identifier).
-#   # --
-#   cdn:
-#     baseurl: false
-#     destination: false
-#     url: null
-#   # --
-#   # See lib/jekyll/assets/config.rb
-#   #   for a list of defaults
-#   # --
-#   sources:
-#     - _assets/css
-#     - _assets/js
-#   # plugins:
-#   #   css: { autoprefixer: {}}
-#   #   img: { optim: {}}

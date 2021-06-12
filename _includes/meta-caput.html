@@ -9,29 +9,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
   integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="/assets/css/hapi.css?{{ 'now' | date: '%s' }}">
+
   {% if page.noindex %}<meta name="robots" content="noindex,nofollow">{% endif %}
 
   {% if page.layout contains 'api' or page.openapi_filum != nil %}
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@3.49.0/swagger-ui.css"
   integrity="sha384-cV2XOZCR++vwjNcnG56raZiJn/a7fw78X9BkQ8S4Rgj5BAI1XfOvAMbRm9KmARdg"
   crossorigin="anonymous">
-
-  <style>
-    /* Hide some strange SVG not loading */
-    .swagger-ui>div>svg {
-        display: none;
-    }
-  </style>
   {% endif %}
-
-  <!-- TODO: _[por] Mover este CSS para algum arquivo dedicado [por]_ -->
-  <style>
-    .incognitum-phrasim:after, .incognitum-phrasim:before {
-      content: attr(lang);
-      color:mediumseagreen;
-      font-style: italic;
-      vertical-align: sub;
-    }
-  </style>
 
 </head>
