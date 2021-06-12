@@ -17,3 +17,11 @@
   font-style: italic;
   vertical-align: sub;
 }
+
+
+.peritum-est {
+  display: none
+}
+.peritum-modum-est .peritum-est {
+  display: block
+}

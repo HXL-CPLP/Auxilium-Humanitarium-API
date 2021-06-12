@@ -11,17 +11,29 @@ layout: null
 ---
 <!DOCTYPE html lang="mul">
 <html lang="{{ page.lang | default: site.lang | default: 'la' }}">
-
+  
 {%- include meta-caput.html -%}
-
+  
 <body>
 
   <main class="page-content" aria-label="Content">
     <div class="container">
-      <div class="px-4 pt-5 my-5 text-center border-bottom">
+      <div class="px-4 pt-5 my-5 text-center">
         <h1 class="display-5 fw-bold">
-          {% _🗣️ Hapi_nomen 🗣️_ %}<sup style="white-space: nowrap;">(👩‍🔬<em>alpha</em>👨‍🔬)</sup>
+          {% _🗣️ Hapi_nomen 🗣️_ %}
         </h1>
+
+        <div class="row justify-content-md-center">
+          <div class="col-md-auto">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="peritum-modum-est">
+              <label class="form-check-label" for="peritu-modum-est">Peritum modum est?</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+
         <div class="col-lg-6 mx-auto">
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <a href="/eng-Latn/" class="btn btn-primary btn-lg px-4 me-sm-3">
@@ -31,52 +43,51 @@ layout: null
               <a href="/por-Latn/" class="btn btn-primary btn-lg px-4">
                 {% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}
               </a>
-           </div>
-            <br>
+          </div>
+          <br>
+          <div class="peritum-est">
             <a href="/mul-Zyyy/" class="btn btn-secondary btn-md px-4"
               alt="Mappam Situm">
               🌐 mul-Zyyy 🌐
             </a>
           </div>
-          <br>
+        </div>
       </div>
 
-      {% comment %}
-          @TODO: _[por] Centralizar esta div que aparece na pagina inicial https://hapi.etica.ai/ (Emerson Rocha, 2021-05-16 16:50 UTC) [por]_
-      {% endcomment %}
-
-      <div class="d-flex justify-content-center py-3">
-        <ul class="list-group list-group-horizontal-md">
-          <li class="list-group-item">
-            <a href="https://hapi.etica.ai">
-              <img src="https://img.shields.io/badge/Site-hapi.etica.ai-blue"
-              alt="hapi.etica.ai">
-            </a>
-          </li>
-          <li class="list-group-item">
-            <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API">
-              <img src="https://img.shields.io/badge/GitHub-HXL--CPLP%2FAuxilium--Humanitarium--API-lightgrey?logo=github&style=social"
-                alt="HXL-CPLP/Auxilium-Humanitarium-API">
-            </a>
-          </li>
-          <li class="list-group-item">
-            <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API">
-              <img src="https://img.shields.io/github/stars/HXL-CPLP/Auxilium-Humanitarium-API?style=social"
-                alt="GitHub Repo stars">
+      <div class="peritum-est">
+        <div class="d-flex justify-content-center py-3">
+          <ul class="list-group list-group-horizontal-md">
+            <li class="list-group-item">
+              <a href="https://hapi.etica.ai">
+                <img src="https://img.shields.io/badge/Site-hapi.etica.ai-blue"
+                alt="hapi.etica.ai">
               </a>
-          </li>
-          <li class="list-group-item">
-            <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/archive/refs/heads/main.zip">
-              <img src="https://img.shields.io/badge/Download-.zip-brightgreen"
-              alt="Download .zip">
-            </a>
-          </li>
-          <li class="list-group-item">
-            <a href="https://unlicense.org/">
-              <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="Licentiam: Dominium publicum">
-            </a>
-          </li>
-        </ul>
+            </li>
+            <li class="list-group-item">
+              <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API">
+                <img src="https://img.shields.io/badge/GitHub-HXL--CPLP%2FAuxilium--Humanitarium--API-lightgrey?logo=github&style=social"
+                  alt="HXL-CPLP/Auxilium-Humanitarium-API">
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API">
+                <img src="https://img.shields.io/github/stars/HXL-CPLP/Auxilium-Humanitarium-API?style=social"
+                  alt="GitHub Repo stars">
+                </a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/archive/refs/heads/main.zip">
+                <img src="https://img.shields.io/badge/Download-.zip-brightgreen"
+                alt="Download .zip">
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://unlicense.org/">
+                <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="Licentiam: Dominium publicum">
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </main>

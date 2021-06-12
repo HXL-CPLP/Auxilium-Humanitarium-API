@@ -23,6 +23,8 @@
  *                     - https://en.wiktionary.org/wiki/scribo
  *                   - 'scrībendum'
  *                     - https://en.wiktionary.org/wiki/scribo
+ *                   - 'initiāle'
+ *                     - https://en.wiktionary.org/wiki/initialis#Latin
  */
 console.log('hapi-globum.mjs');
 
@@ -33,7 +35,7 @@ console.log('hapi-globum.mjs');
  *
  * @param {String} clavem Clāvem
  */
-function HapiDatumMemoriamLegendum (clavem) {
+function HapiDatumMemoriamLegendum(clavem) {
   return sessionStorage.getItem(clavem)
 }
 
@@ -45,7 +47,7 @@ function HapiDatumMemoriamLegendum (clavem) {
  * @param {String} clavem Clāvem
  * @param {String} datum Datum
  */
-function HapiDatumMemoriamScribendum (clavem, datum) {
+function HapiDatumMemoriamScribendum(clavem, datum) {
   if (datum) {
     sessionStorage.setItem(clavem, datum)
   } else {
@@ -61,7 +63,8 @@ function HapiDatumMemoriamScribendum (clavem, datum) {
  * @param {String} clavem Clāvem
  * @param {String} datum Datum
  */
-function HapiDatumInterfaciemScribendum (clavem, datum) {
+function HapiDatumInterfaciemScribendum(clavem, datum) {
+  console.log('HapiDatumInterfaciemScribendum', clavem, datum)
   if (datum) {
     document.body.classList.add(clavem)
   } else {
@@ -69,34 +72,41 @@ function HapiDatumInterfaciemScribendum (clavem, datum) {
   }
 }
 
-function testum () {
+function InterfaciemPeritumModumCheckbox() {
   console.log(this);
-  let txt = null
-
-  // TODO: https://stackoverflow.com/questions/11599666/get-the-value-of-checked-checkbox
-  if (confirm("? 🚧 🔎🐛🔍 🚧 ?")) {
-    txt = "You pressed OK!";
-    HapiDatumMemoriamScribendum('peritum-modum-est', 1)
-    HapiDatumInterfaciemScribendum('peritum-modum-est')
-  } else {
-    txt = "You pressed Cancel!";
+  console.log(this.checked);
+  const textum = this.parentElement.textContent.trim();
+  console.log('textum', textum)
+  // let txt = null
+  if (!this.checked) {
     HapiDatumMemoriamScribendum('peritum-modum-est', null)
     HapiDatumInterfaciemScribendum('peritum-modum-est', null)
+  } else {
+    // TODO: https://stackoverflow.com/questions/11599666/get-the-value-of-checked-checkbox
+    if (confirm(textum)) {
+      console.log('InterfaciemPeritumModumCheckbox: Okay')
+      HapiDatumMemoriamScribendum('peritum-modum-est', 1)
+      HapiDatumInterfaciemScribendum('peritum-modum-est', 1)
+    } else {
+      console.log('InterfaciemPeritumModumCheckbox: Non Okay')
+      this.checked = false
+      HapiDatumMemoriamScribendum('peritum-modum-est', null)
+      HapiDatumInterfaciemScribendum('peritum-modum-est', null)
+    }
   }
-  console.log(txt)
+  // console.log(txt)
 }
-function load () {
+function initiāle() {
+  const peritum = document.getElementById('peritum-modum-est')
   if (HapiDatumMemoriamLegendum('peritum-modum-est')) {
-
+    peritum.checked = true;
+    HapiDatumInterfaciemScribendum('peritum-modum-est', 1)
   }
-  console.log('loaded!');
+  peritum.addEventListener('click', InterfaciemPeritumModumCheckbox)
 }
-
-// document.addEventListener("DOMContentLoaded", load, false)
 
 if (document.getElementById('peritum-modum-est')) {
-  document.addEventListener("DOMContentLoaded", load, false)
-  document.getElementById('peritum-modum-est').addEventListener('click', testum)
+  document.addEventListener("DOMContentLoaded", initiāle, false)
 }
 // jQuery("#peritum-modum-checkbox").on('click')
 // addEventListener('click', callback)
