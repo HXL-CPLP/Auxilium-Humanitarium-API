@@ -38,7 +38,7 @@
                   aria-labelledby="navigationem-descendens-{{ forloop.index0 }}">
                   {% for sublink in link.descendens %}
                       {% if sublink.namen == 'separator' %}
-                        <li role="separator" class="divider"></li>
+                        <li role="separator" class="dropdown-divider"></li>
                       {% elsif sublink.debile %}
                       <li class="nav-item">
                         <a class="nav-link disabled" tabindex="-1"

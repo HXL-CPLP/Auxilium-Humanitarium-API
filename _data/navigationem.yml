@@ -88,15 +88,37 @@ Zyyy: &idZyyy
       - namen: <span lang="en" dir="ltr">UNSD SDG API</span>
         debile: true
 
+      - namen: separator
+
+      - namen: <span lang="en" dir="ltr">UN M49</span>
+        debile: true
+
+      - namen: <span lang="en" dir="ltr">UN P</span>
+        debile: true
+
+      - namen: <span lang="en" dir="ltr">UN HTCDS</span>
+        debile: true
+
   - namen: "🌐 XZ 🌐"
     url: "#"
     descendens:
-      - namen: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
+      - namen: '{% _🗣️ Hapi_api_XZ_HXL-Proxy_titulum 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
-        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/XZ/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 🗣️_ %}/'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/XZ/{% _🗣️ 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 🗣️_ %}/'
 
       - namen: <span lang="en" dir="ltr">Worldbank</span>
         debile: true
+
+      - namen: separator
+
+      - namen: '{% _🗣️ ISO_639-3_nomen 🗣️_ %}'
+        linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 🗣️_ %}'
+
+      - namen: '{% _🗣️ ISO_15924_nomen 🗣️_ %}'
+        linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+        url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 🗣️_ %}'
+
 
   - namen: "🇧🇷 BR 🇧🇷"
     url: '#'
@@ -111,9 +133,9 @@ Zyyy: &idZyyy
 
   # - namen: '💾🧱🧮 <!-- TODO: RtL -->'
   #   titulum: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
-  - namen: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
-    linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
-    url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 schemam_slug 🔎🔕🔍 🗣️_ %}'
+  # - namen: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
+  #   linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
+  #   url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 schemam_slug 🔎🔕🔍 🗣️_ %}'
 
   - namen: "💾🗣️💭 <!-- TODO: RtL -->"
     titulum: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %}'
