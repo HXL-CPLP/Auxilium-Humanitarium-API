@@ -131,6 +131,11 @@ Zyyy: &idZyyy
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/BR/{% _🗣️ 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 🗣️_ %}/'
 
+      - namen: separator
+
+      - namen: <span lang="en" dir="ltr">IBGE</span>
+        debile: true
+
   # - namen: '💾🧱🧮 <!-- TODO: RtL -->'
   #   titulum: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
   # - namen: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'

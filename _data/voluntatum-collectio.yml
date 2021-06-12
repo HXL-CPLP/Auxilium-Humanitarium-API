@@ -1,0 +1,34 @@
+# @ARCHĪVUM        _data/voluntatum-collectio.yml
+#  @LICENTIAM      Dominium publicum
+#  @DĒSCRĪPTIŌNEM  _[lat] Voluntatum collectio [lat]_
+#                  _[por] Lista de desejos [por]_
+
+# _[eng] The _data/voluntatum-collectio.yml is a internal draft. [eng]_
+
+- xdefallo: /mul-Zyyy/voluntatum-collectio/UN/M49-MVP
+  linguam: mul-Zyyy
+  typum: voluntatum-collectio
+  gid: UN
+  lid: M49-MVP
+
+- xdefallo: /mul-Zyyy/voluntatum-collectio/UN/P-MVP
+  linguam: mul-Zyyy
+  typum: voluntatum-collectio
+  gid: UN
+  lid: P-MVP
+
+- xdefallo: /mul-Zyyy/voluntatum-collectio/UN/HTCDS-MVP
+  linguam: mul-Zyyy
+  typum: voluntatum-collectio
+  gid: UN
+  lid: HTCDS-MVP
+
+- xdefallo: /mul-Zyyy/voluntatum-collectio/BR/IBGE-MVP
+  linguam: mul-Zyyy
+  typum: voluntatum-collectio
+  gid: BR
+  lid: IBGE-MVP
+  temporarium:
+    "{% _🗣️ situs_interretialis_nomen 🗣️_ %}":
+      "{% _🗣️ referens_officinale_nomen 🗣️_ %}":
+        - https://www.ibge.gov.br/geociencias/organizacao-do-territorio/estrutura-territorial/23701-divisao-territorial-brasileira.html
