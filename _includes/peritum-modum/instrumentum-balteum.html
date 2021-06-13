@@ -65,6 +65,14 @@
               WAVE?
             </a>
           </li>
+          <!--
+            - https://www.w3.org/WAI/ER/tools/?q=online-tool
+            - https://www.accessibility.sa.gov.au/your-role/development/screen-reader
+            - https://www.nvaccess.org/
+            - https://help.gnome.org/users/orca/stable/
+            - https://www.apple.com/br/accessibility/vision/
+
+          -->
           <li class="nav-item">
             <a class="nav-link" aria-current="page" target="_blank"
             href="https://validator.w3.org/nu/?showoutline=yes&showimagereport=yes&doc={{ page.url | absolute_url | url_encode }}">
@@ -84,21 +92,63 @@
             </a>
           </li>
           <li class="nav-item dropup">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown-pm-2"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              A11y
+            </a>
+            <!-- https://www.w3.org/WAI/ER/tools/?q=online-tool -->
+            <ul class="dropdown-menu" aria-labelledby="dropdown-pm-2">
+              <li>
+                <a class="dropdown-item" target="_blank"
+                href="https://wave.webaim.org/report#/{{ page.url | absolute_url }}">
+                  WAVE?
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" target="_blank"
+                href="https://www.accessi.org/?={{ page.url | absolute_url }}">
+                  Accessi?
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" target="_blank"
+                href="https://www.webaccessibility.com/results/?url={{ page.url | absolute_url | url_encode }}">
+                  A11y Level Access?
+                </a>
+              </li>
+              <!--
+                Stopped on 'Accessibility Scanning & Monitoring by UserWay'
+              -->
+              <li>
+                <a class="dropdown-item" target="_blank"
+                href="https://www.w3.org/WAI/ER/tools/?q=online-tool">
+                  W3C WAI (...)
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropup">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown10"
               data-bs-toggle="dropdown" aria-expanded="false">
               ℹ️
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdown10">
               <li>
-                <a class="dropdown-item"
+                <a class="dropdown-item" target="_blank"
                   href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/wiki">
                   Wiki
                 </a>
               </li>
               <li>
-                <a class="dropdown-item"
+                <a class="dropdown-item" target="_blank"
                   href="https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=816634241">
                   T.M.
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" target="_blank"
+                  href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/actions">
+                  GitHub Actions Logs
                 </a>
               </li>
             </ul>

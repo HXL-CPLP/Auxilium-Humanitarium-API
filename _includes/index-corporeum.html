@@ -15,7 +15,7 @@
       <article style="padding: 1em">
         {% if xapi.alternativum_linguam contains page.linguam %}
           {% assign api_alt = xapi.alternativum | where: 'linguam', page.linguam | first %}
-          <article class="card">
+          <div class="card">
             <div class="card-header">
               <small>🗣{{ api_alt.linguam }}🗣</small>
               {% if api_alt.opus_in_progressu %}
@@ -23,9 +23,9 @@
               {% endif %}
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="{{ api_alt.url | slugify }}" >
+              <h4 class="card-title" id="{{ api_alt.url | slugify }}" >
                 {{ api_alt.title }}
-              </h5>
+              </h4>
               <p class="card-text">
 
                 {{ api_alt.description | default: "<mark>_[por] TODO: adicionar descrição [por]_</mark>" }}
@@ -45,9 +45,9 @@
                 <mark>_[por] TODO: adicionar lista de colaboradores [por]_</mark>
               </small>
             </div>
-          </article>
+          </div>
         {% else %}
-        <h4 id="{{ xapi.url | slugify }}">
+        <h4 id="{{ xapi.lid | default: xapi['datum']['lid'] | slugify }}">
           <a href="#{{ xapi.url | slugify }}">🔗</a>
           {{ xapi.lid | default: xapi['datum']['lid'] }}
         </h4>
@@ -99,7 +99,7 @@
     {% endfor %}
   </article>
   <article>
-    <h2>{% _🗣️ schemam_nomen 🗣️_ %}</h2>
+    <h2 id="schemam">{% _🗣️ schemam_nomen 🗣️_ %}</h2>
     <div class="alert alert-info" role="alert">
       <p>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}</p>
     </div>

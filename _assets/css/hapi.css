@@ -21,6 +21,9 @@
 .peritum-est, .peritum-est--block, .peritum-est--inline, .peritum-est--inline-block, .peritum-est--list-item {
   display: none;
 }
+.peritum-modum-est main {
+  padding-bottom: 60px;
+}
 .peritum-modum-est .peritum-est, .peritum-modum-est .peritum-est--block {
   display: block;
 }

@@ -14,7 +14,7 @@
 
       {% for xapi in globum.collectionem_xapi %}
       <article style="padding: 1em">
-        <h4 id="{{ xapi.url | slugify }}">
+        <h4 id="{{ xapi.lid | default: xapi['datum']['lid'] | slugify }}">
           <a href="#{{ xapi.url | slugify }}">🔗</a>
           {{ xapi.lid | default: xapi['datum']['lid'] }}
         </h4>
