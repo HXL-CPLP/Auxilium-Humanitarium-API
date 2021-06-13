@@ -36,12 +36,12 @@ speciale_html: >
             {% _🗣️ 📝por-Latn📝 L10N_ego_summarius 📝por-Latn📝 🗣️_ %}
           </a>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item peritum-est--block">
           <a href="/spa-Latn/">
             {% _🗣️ 📝spa-Latn📝 L10N_ego_summarius 📝spa-Latn📝 🗣️_ %}<sup>👩‍🔬<em>alpha</em>👨‍🔬</sup>
           </a>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item peritum-est--block">
           <a href="/arb-Arab/">
             arb-Arab<sup>👩‍🔬<em>alpha</em>👨‍🔬</sup>
             <!--{% _🗣️ 📝arb-Arab📝 L10N_ego_summarius 📝arb-Arab📝 🗣️_ %}👩‍🔬<em>alpha</em>👨‍🔬-->

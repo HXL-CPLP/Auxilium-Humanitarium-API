@@ -98,10 +98,25 @@ function InterfaciemPeritumModumCheckbox() {
 }
 function initiāle() {
   const peritum = document.getElementById('peritum-modum-est')
+  const toc = document.getElementById('toc')
   if (HapiDatumMemoriamLegendum('peritum-modum-est')) {
     peritum.checked = true;
     HapiDatumInterfaciemScribendum('peritum-modum-est', 1)
   }
+
+  // https://github.com/toshimaru/jekyll-toc
+  if (toc) {
+    toc.querySelectorAll('a').forEach(function (el, index) {
+      // console.log(el, el.href); // The element
+      if (el.href.indexOf('--peritum-est') !== -1) {
+        // console.log('peritum')
+        el.parentElement.classList.add('peritum-est--list-item')
+      }
+    });
+
+    // console.log('toc', toc)
+  }
+
   peritum.addEventListener('click', InterfaciemPeritumModumCheckbox)
 }
 

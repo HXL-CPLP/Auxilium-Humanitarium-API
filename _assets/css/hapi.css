@@ -18,10 +18,10 @@
   vertical-align: sub;
 }
 
-.peritum-est, .peritum-est--block, .peritum-est--inline, .peritum-est--inline-block {
+.peritum-est, .peritum-est--block, .peritum-est--inline, .peritum-est--inline-block, .peritum-est--list-item {
   display: none;
 }
-.peritum-modum-est .peritum-est {
+.peritum-modum-est .peritum-est, .peritum-modum-est .peritum-est--block {
   display: block;
 }
 .peritum-modum-est .peritum-est--inline {
@@ -29,4 +29,7 @@
 }
 .peritum-modum-est .peritum-est--inline-block {
   display: inline-block;
+}
+.peritum-modum-est .peritum-est--list-item {
+  display: list-item;
 }
