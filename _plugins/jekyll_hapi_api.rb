@@ -59,6 +59,7 @@ module Hapi
       gid
       uid
       titulum
+      html_body_class
       namen
       summarius
       opus_in_progressu
@@ -168,6 +169,13 @@ module Hapi
     #   - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
     def gid_est?(gid)
       @gid == gid
+    end
+
+    def html_body_class
+      [
+        'paginam-typum-api',
+        "paginam-linguam-#{@datum['linguam']}"
+      ]
     end
 
     def keys

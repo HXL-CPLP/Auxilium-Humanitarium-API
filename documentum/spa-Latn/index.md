@@ -24,6 +24,9 @@ iso6391: es
 iso6393: spa
 # iso6393: spa
 iso15924: Latn
+html_body_class:
+  - paginam-typum-index
+  - paginam-linguam-spa-Latn
 
 toc: true
 noindex: true

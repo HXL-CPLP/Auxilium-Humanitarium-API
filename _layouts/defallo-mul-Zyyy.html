@@ -16,7 +16,7 @@
 -->
 {% include meta-caput.html -%}
 
-<body>
+<body class="{{ page.html_body_class | join: ' ' }}">
   <header class="container">
     <h1>{{ page.titulum | default: page.title }}</h1>
     {{ page.description | markdownify }}

@@ -3,8 +3,8 @@
 
 {%- include meta-caput.html -%}
 
-<body>
-
+<body class="{{ page.html_body_class | join: ' ' }}">
+{{ page }}
   {%- include caput.html -%}
 
   <main class="page-content" aria-label="Content">

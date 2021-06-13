@@ -8,13 +8,18 @@ linguam: lat-Latn
 # linguam_alternum: lat
 permalink: /
 layout: null
+
+html_body_class:
+  - paginam-typum-fiat-lux
+  - paginam-linguam-lat-Latn
+
 ---
-<!DOCTYPE html lang="mul">
+<!DOCTYPE html">
 <html lang="{{ page.lang | default: site.lang | default: 'la' }}">
   
 {%- include meta-caput.html -%}
   
-<body>
+<body class="{{ page.html_body_class | join: ' ' }}">
 
   <main class="page-content" aria-label="Content">
     <div class="container">
@@ -27,7 +32,9 @@ layout: null
           <div class="col-md-auto">
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" id="peritum-modum-est">
-              <label class="form-check-label" for="peritum-modum-est">Peritum modum est?</label>
+              <label class="form-check-label" for="peritum-modum-est">
+                {% _🗣️ Hapi_peritum_modum_est_nomen 🗣️_ %}
+              </label>
             </div>
           </div>
         </div>

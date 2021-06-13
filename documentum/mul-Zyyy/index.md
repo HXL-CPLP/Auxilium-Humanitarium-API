@@ -11,6 +11,10 @@ sitemap:
   exclude: 'yes'
 toc: true
 
+html_body_class:
+  - paginam-typum-index
+  - paginam-linguam-mul-Zyyy
+
 speciale_html: >
   <div class="alert alert-info" role="alert">
     <nav>

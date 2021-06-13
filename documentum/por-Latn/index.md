@@ -26,6 +26,9 @@ iso6391: pt
 iso6393: por
 # iso6393: spa
 iso15924: Latn
+html_body_class:
+  - paginam-typum-index
+  - paginam-linguam-por-Latn
 
 toc: true
 
