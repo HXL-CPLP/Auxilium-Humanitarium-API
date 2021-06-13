@@ -14,14 +14,12 @@
                 1. ❗https://github.com/HXL-CPLP/Auxilium-Humanitarium-API ❗
                 2. ❗[docs.google.com: HXL-CPLP-Vocab_Auxilium-Humanitarium-API](https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279)❗
                     1. 🆘 https://support.google.com/docs/answer/6000292 🆘
-2. **❓🔤 https://hapi.etica.ai/por/ 🔤❓**
-    1. ❗ [GitHub.com: documentum/por/](documentum/por/) ❗
-        1. ❗ [GitHub.com: _data/Temporarium.yml](_data/Temporarium.yml) ❗
+2. **❓🔤 https://hapi.etica.ai/por-Latn/ 🔤❓**
+    1. ❗ [GitHub.com: documentum/por-Latn/](documentum/por-Latn/) ❗
     2. ❗ [docs.google.com:: HXL-CPLP-Vocab_Auxilium-Humanitarium-API](https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279)❗
-3. **❓🔤 https://hapi.etica.ai/eng/ 🔤❓**
-    1. ❗ [GitHub.com: documentum/eng/](documentum/eng/) ❗
+3. **❓🔤 https://hapi.etica.ai/eng-Latn/ 🔤❓**
+    1. ❗ [GitHub.com: documentum/eng-Latn/](documentum/eng-Latn/) ❗
         1. ❗ [docs.google.com: HXL-CPLP-Vocab_Auxilium-Humanitarium-API](https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279)❗
-        2. ❗ [GitHub.com: _data/Temporarium.yml](_data/Temporarium.yml) ❗
 
 > @TODO: [por] adicionar mais links
 

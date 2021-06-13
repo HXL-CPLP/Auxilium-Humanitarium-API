@@ -1,0 +1,73 @@
+# _data/schema.yml
+
+- xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
+  xdefallo_est: 1
+  linguam: mul-Zyyy
+  typum: schemam
+  gid: XZ
+  lid: ISO-639-3 # ISO_639-3_slug
+  lid_l10n: "{% _🗣️ ISO_639-3_slug 🗣️_ %}"
+  namen: "{% _🗣️ ISO_639-3_nomen 🗣️_ %}"
+  summarius: "{% _🗣️ ISO_639-3_summarius 🗣️_ %}"
+  situs_interretialis:
+    referens_officinale:
+      - http://iso639-3.sil.org/
+    vicipaedia:
+      - https://en.wikipedia.org/wiki/ISO_639-3
+  wikidatum:
+    - codicem: Q845956
+  archivum:
+    officinale:
+      - https://iso639-3.sil.org/code_tables/download_tables
+      - https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab
+    # referens_alternativum_nomen
+    schemam:
+      graphql:
+        - /schema/iso/iso639-3/eng/iso639-3.graphql # TODO: localize
+      json:
+        - /schema/iso/iso639-3/eng/iso639-3.json # TODO: localize
+        - /schema/iso/iso639-3/eng/iso639-3_macrolanguages.json # TODO: localize
+      sql:
+        - /schema/iso/iso639-3/eng/iso639-3.sql # TODO: localize
+  # l10n:
+  #   - linguam: eng-Latn
+  #   - linguam: por-Latn
+
+- xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924
+  xdefallo_est: 1
+  linguam: mul-Zyyy
+  typum: schemam
+  gid: XZ
+  lid: ISO-15924 # ISO_15924_slug
+  lid_n10n: "{% _🗣️ ISO_15924_slug 🗣️_ %}"
+  namen: "{% _🗣️ ISO_15924_nomen 🗣️_ %}"
+  summarius: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
+  situs_interretialis:
+    referens_officinale:
+      - https://www.unicode.org/iso15924/
+      - iri: https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en
+        paywall: true
+    vicipaedia:
+      - iri: https://pt.wikipedia.org/wiki/ISO_15924
+        linguam: por-Latn
+      - iri: https://en.wikipedia.org/wiki/ISO_15924
+        linguam: eng-Latn
+
+  wikidatum:
+    - codicem: Q16866
+  archivum:
+    officinale:
+      - https://www.unicode.org/iso15924/iso15924.txt
+    # referens_alternativum_nomen
+    schemam:
+      json:
+        - /schema/iso/iso15924/eng/iso15924.json # TODO: localize
+  # l10n:
+  #   - linguam: eng-Latn
+  #   - linguam: por-Latn
+
+# TODO: _[por] Alterar este arquivo para conter tanto referencias à fonte
+#              que gera o JSON como as URls finais. Com isso poderíamos usar
+#              praticamente apenas esse YAML como fonte única tanto de
+#              gerar documentação como da navegação do site em si.
+#       [por]_

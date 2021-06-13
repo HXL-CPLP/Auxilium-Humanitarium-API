@@ -5,27 +5,36 @@
 
 # _[eng] The _data/voluntatum-collectio.yml is a internal draft. [eng]_
 
-- xdefallo: /mul-Zyyy/voluntatum-collectio/UN/M49-MVP
+- referens: /mul-Zyyy/voluntatum-collectio/schemam/UN/M49-MVP
+  xdefallo_est: 1
   linguam: mul-Zyyy
   typum: voluntatum-collectio
+  divisionem: schemam
   gid: UN
   lid: M49-MVP
 
-- xdefallo: /mul-Zyyy/voluntatum-collectio/UN/P-MVP
+- referens: /mul-Zyyy/voluntatum-collectio/schemam/UN/P
+  xdefallo_est: 1
   linguam: mul-Zyyy
   typum: voluntatum-collectio
+  divisionem: schemam
   gid: UN
   lid: P-MVP
+  # https://unstats.un.org/unsd/geoinfo/UNGEGN/docs/special-presentations-docs/presentation-ocha.pdf
 
-- xdefallo: /mul-Zyyy/voluntatum-collectio/UN/HTCDS-MVP
+- referens: /mul-Zyyy/voluntatum-collectio/schemam/UN/HTCDS
+  xdefallo_est: 1
   linguam: mul-Zyyy
   typum: voluntatum-collectio
+  divisionem: schemam
   gid: UN
   lid: HTCDS-MVP
 
-- xdefallo: /mul-Zyyy/voluntatum-collectio/BR/IBGE-MVP
+- referens: /mul-Zyyy/voluntatum-collectio/schemam/BR/IBGE
+  xdefallo_est: 1
   linguam: mul-Zyyy
   typum: voluntatum-collectio
+  divisionem: schemam
   gid: BR
   lid: IBGE-MVP
   temporarium:
