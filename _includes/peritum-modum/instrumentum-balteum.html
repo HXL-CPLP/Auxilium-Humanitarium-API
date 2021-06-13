@@ -1,10 +1,11 @@
 <!-- _includes/peritum-modum/instrumentum-balteum.html -->
+<!--
 <aside class="container">
   <hr>
   <div class="form-check form-switch">
     <input class="form-check-input" type="checkbox" id="peritum-modum-est">
     <label class="form-check-label" for="peritum-modum-est">
-      {% _🗣️ Hapi_peritum_modum_est_nomen 🗣️_ %}
+      🛠️{% _🗣️ Hapi_peritum_modum_est_nomen 🗣️_ %}🛠️
     </label>
   </div>
 
@@ -44,3 +45,66 @@
     </nav>
   </div>
 </aside>
+-->
+
+<div class="peritum-est">
+  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+    <h2 class="visually-hidden-focusable">Peritum mode</h2>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">🛠️</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" target="_blank"
+              href="https://wave.webaim.org/report#/{{ page.url | absolute_url }}">
+              WAVE?
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" target="_blank"
+            href="https://validator.w3.org/nu/?showoutline=yes&showimagereport=yes&doc={{ page.url | absolute_url | url_encode }}">
+              HTML5?
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" target="_blank"
+            href="https://search.google.com/structured-data/testing-tool/u/0/#url={{ page.url | absolute_url | url_encode }}">
+               Schema?
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" target="_blank"
+            href="https://developers.google.com/speed/pagespeed/insights/?url={{ page.url | absolute_url | url_encode }}">
+              PageSpeed?
+            </a>
+          </li>
+          <li class="nav-item dropup">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              ℹ️
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown10">
+              <li>
+                <a class="dropdown-item"
+                  href="https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/wiki">
+                  Wiki
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  href="https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=816634241">
+                  T.M.
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div>

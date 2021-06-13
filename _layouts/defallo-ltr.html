@@ -10,6 +10,14 @@
   <header class="container">
     <h1>{{ page.titulum | default: page.title }}</h1>
     {{ page.description | markdownify }}
+
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="peritum-modum-est">
+      <label class="form-check-label" for="peritum-modum-est">
+        🛠️{% _🗣️ Hapi_peritum_modum_est_nomen 🗣️_ %}🛠️
+      </label>
+    </div>
+
     {% if page.speciale_html %}
     {{ page.speciale_html | liquify }}
     {% endif %}
