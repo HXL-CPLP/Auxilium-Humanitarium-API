@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://hapi.etica.ai/schema/iso/iso15924/eng/iso15924.json",
+    "title": "ISO 15924",
+    "description": "ISO 15924: Codes for the representation of names of scripts",
+    "$comment": "https://www.unicode.org/iso15924/codelists.html, https://www.unicode.org/iso15924/iso15924.txt",
+    "type": "object",
+    "properties": {
+        "Code": {
+            "description": "Code",
+            "type": "string",
+            "length": 4,
+            "example": "Arab"
+        },
+        "Nº": {
+            "description": "Nº",
+            "type": "string",
+            "length": 3,
+            "example": "160"
+        },
+        "English Name": {
+            "description": "English Name",
+            "type": "string",
+            "example": "por",
+            "$comment": "TODO: investigate maximum length"
+        },
+        "Nom français": {
+            "description": "Nom français",
+            "type": "string",
+            "example": "arabe",
+            "$comment": "TODO: investigate maximum length"
+        },
+        "PVA": {
+            "description": "The Property Value Alias is defined as part of the Unicode Standard and is provided informatively in the tables here to show how entries in the ISO 15924 code table relate to script names defined in Unicode.",
+            "type": "string",
+            "example": "Arabic",
+            "$comment": "TODO: investigate maximum length"
+        },
+        "Unicode Version": {
+            "description": "Unicode Version",
+            "example": "1.1",
+            "type": "number"
+        },
+        "Date": {
+            "description": "Date",
+            "type": "string",
+            "format": "date",
+            "example": "2004-05-01"
+        }
+    }
+}

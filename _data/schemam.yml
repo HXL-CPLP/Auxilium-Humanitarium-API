@@ -15,15 +15,15 @@
   summarius: "{% _🗣️ ISO_639-3_summarius 🗣️_ %}"
   situs_interretialis:
     referens_officinale:
-      - http://iso639-3.sil.org/
+      - iri: http://iso639-3.sil.org/
     vicipaedia:
-      - https://en.wikipedia.org/wiki/ISO_639-3
+      - iri: https://en.wikipedia.org/wiki/ISO_639-3
   wikidatum:
     - codicem: Q845956
   archivum:
     officinale:
-      - https://iso639-3.sil.org/code_tables/download_tables
-      - https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab
+      - iri: https://iso639-3.sil.org/code_tables/download_tables
+      - iri: https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab
     # referens_alternativum_nomen
     schemam:
       graphql:
@@ -38,7 +38,14 @@
   #   - linguam: por-Latn
 
 - farmulam:
-    commendandum: {}
+    commendandum:
+      translationem: &id_temp001
+        - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
+        - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
+        - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
     structuram:
       # TODO: localizar "schemam"
       uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}"
@@ -52,15 +59,15 @@
       summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_summarius 📝und-Zyyy📝 🗣️_ %}"
       situs_interretialis:
         referens_officinale:
-          - http://iso639-3.sil.org/
+          - iri: http://iso639-3.sil.org/
         vicipaedia:
-          - https://en.wikipedia.org/wiki/ISO_639-3
+          - iri: https://en.wikipedia.org/wiki/ISO_639-3
       wikidatum:
         - codicem: Q845956
       archivum:
         officinale:
-          - https://iso639-3.sil.org/code_tables/download_tables
-          - https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab
+          - iri: https://iso639-3.sil.org/code_tables/download_tables
+          - iri: https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab
         # referens_alternativum_nomen
         schemam:
           graphql:
@@ -70,6 +77,7 @@
             - /schema/iso/iso639-3/eng/iso639-3_macrolanguages.json # TODO: localize
           sql:
             - /schema/iso/iso639-3/eng/iso639-3.sql # TODO: localize
+      __translationem: *id_temp001
 
 - uid: /mul-Zyyy/schemam/XZ/ISO-15924
   xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924
@@ -85,7 +93,7 @@
   summarius_l10n: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
   situs_interretialis:
     referens_officinale:
-      - https://www.unicode.org/iso15924/
+      - iri: https://www.unicode.org/iso15924/
       - iri: https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en
         paywall: true
     vicipaedia:
@@ -118,7 +126,7 @@
       summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}"
       situs_interretialis:
         referens_officinale:
-          - https://www.unicode.org/iso15924/
+          - iri: https://www.unicode.org/iso15924/
           - iri: https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en
             paywall: true
         vicipaedia:
@@ -131,7 +139,7 @@
         - codicem: Q16866
       archivum:
         officinale:
-          - https://www.unicode.org/iso15924/iso15924.txt
+          - iri: https://www.unicode.org/iso15924/iso15924.txt
         # referens_alternativum_nomen
         schemam:
           json:

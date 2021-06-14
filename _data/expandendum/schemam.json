@@ -11,10 +11,14 @@
     "summarius": "{% _🗣️ ISO_639-3_summarius 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "http://iso639-3.sil.org/"
+        {
+          "iri": "http://iso639-3.sil.org/"
+        }
       ],
       "vicipaedia": [
-        "https://en.wikipedia.org/wiki/ISO_639-3"
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_639-3"
+        }
       ]
     },
     "wikidatum": [
@@ -24,8 +28,12 @@
     ],
     "archivum": {
       "officinale": [
-        "https://iso639-3.sil.org/code_tables/download_tables",
-        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        {
+          "iri": "https://iso639-3.sil.org/code_tables/download_tables"
+        },
+        {
+          "iri": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        }
       ],
       "schemam": {
         "graphql": [
@@ -53,10 +61,14 @@
     "summarius": "{% _🗣️ 📝por-Latn📝 ISO_639-3_summarius 📝por-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "http://iso639-3.sil.org/"
+        {
+          "iri": "http://iso639-3.sil.org/"
+        }
       ],
       "vicipaedia": [
-        "https://en.wikipedia.org/wiki/ISO_639-3"
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_639-3"
+        }
       ]
     },
     "wikidatum": [
@@ -66,8 +78,12 @@
     ],
     "archivum": {
       "officinale": [
-        "https://iso639-3.sil.org/code_tables/download_tables",
-        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        {
+          "iri": "https://iso639-3.sil.org/code_tables/download_tables"
+        },
+        {
+          "iri": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        }
       ],
       "schemam": {
         "graphql": [
@@ -81,7 +97,21 @@
           "/schema/iso/iso639-3/eng/iso639-3.sql"
         ]
       }
-    }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}_macrolanguages.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql",
+        "objectivum": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}.sql"
+      }
+    ]
   },
   {
     "uid": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}",
@@ -95,10 +125,14 @@
     "summarius": "{% _🗣️ 📝eng-Latn📝 ISO_639-3_summarius 📝eng-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "http://iso639-3.sil.org/"
+        {
+          "iri": "http://iso639-3.sil.org/"
+        }
       ],
       "vicipaedia": [
-        "https://en.wikipedia.org/wiki/ISO_639-3"
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_639-3"
+        }
       ]
     },
     "wikidatum": [
@@ -108,8 +142,12 @@
     ],
     "archivum": {
       "officinale": [
-        "https://iso639-3.sil.org/code_tables/download_tables",
-        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        {
+          "iri": "https://iso639-3.sil.org/code_tables/download_tables"
+        },
+        {
+          "iri": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        }
       ],
       "schemam": {
         "graphql": [
@@ -123,7 +161,21 @@
           "/schema/iso/iso639-3/eng/iso639-3.sql"
         ]
       }
-    }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}_macrolanguages.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql",
+        "objectivum": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}.sql"
+      }
+    ]
   },
   {
     "uid": "/{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}",
@@ -137,10 +189,14 @@
     "summarius": "{% _🗣️ 📝arb-Arab📝 ISO_639-3_summarius 📝arb-Arab📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "http://iso639-3.sil.org/"
+        {
+          "iri": "http://iso639-3.sil.org/"
+        }
       ],
       "vicipaedia": [
-        "https://en.wikipedia.org/wiki/ISO_639-3"
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_639-3"
+        }
       ]
     },
     "wikidatum": [
@@ -150,8 +206,12 @@
     ],
     "archivum": {
       "officinale": [
-        "https://iso639-3.sil.org/code_tables/download_tables",
-        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        {
+          "iri": "https://iso639-3.sil.org/code_tables/download_tables"
+        },
+        {
+          "iri": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        }
       ],
       "schemam": {
         "graphql": [
@@ -166,6 +226,20 @@
         ]
       }
     },
+    "__translationem": [
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}_macrolanguages.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql",
+        "objectivum": "/{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}.sql"
+      }
+    ],
     "experimentum": 1
   },
   {
@@ -180,10 +254,14 @@
     "summarius": "{% _🗣️ 📝spa-Latn📝 ISO_639-3_summarius 📝spa-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "http://iso639-3.sil.org/"
+        {
+          "iri": "http://iso639-3.sil.org/"
+        }
       ],
       "vicipaedia": [
-        "https://en.wikipedia.org/wiki/ISO_639-3"
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_639-3"
+        }
       ]
     },
     "wikidatum": [
@@ -193,8 +271,12 @@
     ],
     "archivum": {
       "officinale": [
-        "https://iso639-3.sil.org/code_tables/download_tables",
-        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        {
+          "iri": "https://iso639-3.sil.org/code_tables/download_tables"
+        },
+        {
+          "iri": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        }
       ],
       "schemam": {
         "graphql": [
@@ -209,6 +291,20 @@
         ]
       }
     },
+    "__translationem": [
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}_macrolanguages.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql",
+        "objectivum": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}.sql"
+      }
+    ],
     "experimentum": 1
   },
   {
@@ -226,7 +322,9 @@
     "summarius_l10n": "{% _🗣️ ISO_15924_summarius 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.unicode.org/iso15924/"
+        },
         {
           "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
           "paywall": true
@@ -270,7 +368,9 @@
     "summarius": "{% _🗣️ 📝por-Latn📝 ISO_15924_summarius 📝por-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.unicode.org/iso15924/"
+        },
         {
           "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
           "paywall": true
@@ -294,7 +394,9 @@
     ],
     "archivum": {
       "officinale": [
-        "https://www.unicode.org/iso15924/iso15924.txt"
+        {
+          "iri": "https://www.unicode.org/iso15924/iso15924.txt"
+        }
       ],
       "schemam": {
         "json": [
@@ -314,7 +416,9 @@
     "summarius": "{% _🗣️ 📝eng-Latn📝 ISO_15924_summarius 📝eng-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.unicode.org/iso15924/"
+        },
         {
           "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
           "paywall": true
@@ -338,7 +442,9 @@
     ],
     "archivum": {
       "officinale": [
-        "https://www.unicode.org/iso15924/iso15924.txt"
+        {
+          "iri": "https://www.unicode.org/iso15924/iso15924.txt"
+        }
       ],
       "schemam": {
         "json": [
@@ -358,7 +464,9 @@
     "summarius": "{% _🗣️ 📝arb-Arab📝 ISO_15924_summarius 📝arb-Arab📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.unicode.org/iso15924/"
+        },
         {
           "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
           "paywall": true
@@ -382,7 +490,9 @@
     ],
     "archivum": {
       "officinale": [
-        "https://www.unicode.org/iso15924/iso15924.txt"
+        {
+          "iri": "https://www.unicode.org/iso15924/iso15924.txt"
+        }
       ],
       "schemam": {
         "json": [
@@ -403,7 +513,9 @@
     "summarius": "{% _🗣️ 📝spa-Latn📝 ISO_15924_summarius 📝spa-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
-        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.unicode.org/iso15924/"
+        },
         {
           "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
           "paywall": true
@@ -427,7 +539,9 @@
     ],
     "archivum": {
       "officinale": [
-        "https://www.unicode.org/iso15924/iso15924.txt"
+        {
+          "iri": "https://www.unicode.org/iso15924/iso15924.txt"
+        }
       ],
       "schemam": {
         "json": [

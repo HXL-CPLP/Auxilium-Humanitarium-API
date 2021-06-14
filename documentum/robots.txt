@@ -14,6 +14,9 @@ Disallow: *.md
 Disallow: /api/*/*/*/html
 Disallow: /api/*/*/*/html2
 
+## _[eng-Latn] Schema source files [eng-Latn]_
+Disallow: /schemam/
+
 {% if site.url -%}
 {%- unless site.url contains 'https://hapi.etica.ai' %}
 # Test site != https://hapi.etica.ai: Disallow

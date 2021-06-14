@@ -215,12 +215,9 @@ module Hapi
         if item['farmulam'].nil?
           resultatum.append(item)
         else
-          # puts 'TODO: formulae'
           items = Hapi::HSD.expandendum_schemam_de_farmulam(item['farmulam'], referens_schemam)
           resultatum.concat(items) unless items.empty?
-          # resultatum.concat(items) if items
         end
-        # resultatum.append(item) unless item['farmulam']
       end
 
       resultatum
@@ -260,32 +257,6 @@ module Hapi
           resultatum.append(rem)
         end
       end
-
-      # linguam = ref.dig('defallo')
-
-      # puts referens_schemam
-      # puts referens_schemam.dig(:defallo)
-      # puts referens_schemam.dig('defallo')
-      # puts ref
-      # puts ''
-      # puts schemam_farmulam
-      # puts ''
-      # puts meta
-      # puts ''
-      # puts ''
-      # puts ''
-      # puts ''
-      # puts resultatum
-      # puts ''
-      # puts resultatum[0]
-      # schemam.each do |item|
-      #   if item['farmulam'].nil?
-      #     resultatum.append(item)
-      #   else
-      #     puts 'TODO: formulae'
-      #   end
-      #   # resultatum.append(item) unless item['farmulam']
-      # end
 
       resultatum
     end
