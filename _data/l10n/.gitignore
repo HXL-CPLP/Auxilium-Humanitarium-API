@@ -3,5 +3,6 @@
 # _data/mappam-situm.yml => _data/l10n/mappam-situm.l10n.json
 # _data/referens.yml => _data/l10n/referens.l10n.json
 # _data/schema.yml => _data/l10n/schema.l10n.json
+# _data/schemam.yml => _data/expandendum/schemam.json => _data/l10n/schemam.l10n.json
 
 *.l10n.json

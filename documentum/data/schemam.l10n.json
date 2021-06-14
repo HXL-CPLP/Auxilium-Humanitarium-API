@@ -10,4 +10,4 @@ iso6391: pt
 iso6393: por
 iso15924: Latn
 ---
-{{- site.data['schemam'] | bellum_json | liquify -}}
+{{- site.data['expandendum']['schemam'] | bellum_json | liquify -}}

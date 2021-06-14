@@ -1,12 +1,16 @@
 # _data/schemam.yml
 
+# GitHub seems to restrict 10GB; Biggest Git Is windows, 270GB
+# @see https://www.quora.com/What-is-the-practical-maximum-size-of-a-Git-repository-full-of-text-based-data
+# @see https://vfsforgit.org/
+
 - xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
   xdefallo_est: 1
   linguam: mul-Zyyy
   typum: schemam
   gid: XZ
   lid: ISO-639-3 # ISO_639-3_slug
-  lid_l10n: "{% _🗣️ ISO_639-3_slug 🗣️_ %}"
+  # lid_l10n: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}"
   namen: "{% _🗣️ ISO_639-3_nomen 🗣️_ %}"
   summarius: "{% _🗣️ ISO_639-3_summarius 🗣️_ %}"
   situs_interretialis:
@@ -33,16 +37,47 @@
   #   - linguam: eng-Latn
   #   - linguam: por-Latn
 
+- farmulam: &id_mul-Zyyy_schemam_XZ_ISO-639-3
+    structuram:
+      xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
+      xdefallo_est: 0
+      linguam: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
+      typum: schemam
+      gid: XZ
+      lid: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}" #  # Exemplum: ISO-639-3
+      namen: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
+      summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_summarius 📝und-Zyyy📝 🗣️_ %}"
+      situs_interretialis:
+        referens_officinale:
+          - http://iso639-3.sil.org/
+        vicipaedia:
+          - https://en.wikipedia.org/wiki/ISO_639-3
+      wikidatum:
+        - codicem: Q845956
+      archivum:
+        officinale:
+          - https://iso639-3.sil.org/code_tables/download_tables
+          - https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab
+        # referens_alternativum_nomen
+        schemam:
+          graphql:
+            - /schema/iso/iso639-3/eng/iso639-3.graphql # TODO: localize
+          json:
+            - /schema/iso/iso639-3/eng/iso639-3.json # TODO: localize
+            - /schema/iso/iso639-3/eng/iso639-3_macrolanguages.json # TODO: localize
+          sql:
+            - /schema/iso/iso639-3/eng/iso639-3.sql # TODO: localize
+
 - xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924
   xdefallo_est: 1
   linguam: mul-Zyyy
   typum: schemam
   gid: XZ
   lid: ISO-15924 # ISO_15924_slug
-  lid_l10n: "{% _🗣️ ISO_15924_slug 🗣️_ %}"
-  namen: "{% _🗣️ ISO_15924_nomen 🗣️_ %}"
-  namen_l10n: "{% _🗣️ ISO_15924_nomen 🗣️_ %}"
-  summarius: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
+  lid_l10n: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}"
+  namen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
+  namen_l10n: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
+  summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}"
   summarius_l10n: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
   situs_interretialis:
     referens_officinale:
