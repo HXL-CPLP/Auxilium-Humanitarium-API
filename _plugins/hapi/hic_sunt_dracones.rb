@@ -12,6 +12,10 @@
 
 # require 'singleton'
 
+require 'fileutils'
+require 'yaml'
+require 'json'
+
 module Hapi
   # _[lat] HSD, 'HicSuntDracones', Hic Sunt Dracones [lat]_
   # @see https://en.wikipedia.org/wiki/Here_be_dragons
@@ -30,6 +34,24 @@ module Hapi
     #     Jekyll.sites.last.data
     #   end
     # end
+
+    def initiale_after_reset(site)
+      schemam_fontem_path = File.join(site.source, '/_data/schemam.yml')
+      hapi_referens_path = File.join(site.source, '/_data/referens.yml')
+      schemam_expandendum_path = File.join(site.source, '/_data/expandendum/schemam.json')
+
+      api_referens = YAML.load_file(hapi_referens_path)
+      schemam_fontem = YAML.load_file(schemam_fontem_path)
+      # puts "initiale_after_reset #{site.source}"
+      puts "initiale_after_reset #{schemam_fontem_path} #{schemam_expandendum_path} #{api_referens['schemam']}"
+      File.open(schemam_expandendum_path,"w") do |f|
+        f.write(JSON.pretty_generate(schemam_fontem))
+      end
+
+      # File.write("public/temp.json",tempHash.to_json)
+      
+      # puts thing['schemam'].inspect
+    end
 
     # @example
     #   Jekyll::Hooks.register :site, :pre_render do |site, _payload|

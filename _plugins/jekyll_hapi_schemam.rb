@@ -101,6 +101,7 @@ module Hapi
       # @name = 'index.html'
       @name = 'index.html'
       template = api_datum['jekyll-page']['template']
+      template = 'xschemam'
 
       @path = if @site.layouts[template].path.end_with? 'html'
                 @site.layouts[template].path.dup
@@ -182,7 +183,7 @@ module Hapi
 
     def html_body_class
       [
-        'paginam-typum-api',
+        'paginam-typum-schemam',
         "paginam-linguam-#{@datum['linguam']}"
       ]
     end
@@ -204,6 +205,7 @@ module Hapi
     def summarius
       @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
     end
+
     # TODO: remove obsolete parts
     def titulum
       @titulum || @namen || @title

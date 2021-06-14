@@ -16,6 +16,12 @@ require 'json'
 
 ## https://womanonrails.com/ruby-iterators
 
+Jekyll::Hooks.register :site, :after_reset do |site, _payload|
+  # @see _plugins/hapi/hic_sunt_dracones.rb
+  Hapi::HSD.initiale_after_reset(site)
+
+end
+
 # @see https://github.com/jekyll/jekyll/issues/6291
 Jekyll::Hooks.register :site, :pre_render do |_site, _payload|
   # @see _plugins/hapi/hic_sunt_dracones.rb

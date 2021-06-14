@@ -26,6 +26,14 @@ api_gid:
 schema_gid:
   - "XZ"
 
+schemam:
+  linguam:
+    - por-Latn
+    - eng-Latn
+  linguam_opus_in_progressu:
+    - arb-Arab
+    - spa-Latn
+
 # @see _plugins/hapi/drops/globum_drop.rb
 gid:
   UN:

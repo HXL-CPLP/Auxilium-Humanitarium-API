@@ -91,6 +91,25 @@ module Hapi
       apis
     end
 
+    # _[eng] Macro to 'expand' user written Schemam data to new variables  [eng]_
+    # _[por] Macro para 'expandir' o que usuário escreveu em Schemam [por]_
+    def expandendum_schemam_datum(apis, referens)
+      apis.map do |api|
+        # puts api['uid']
+        api['uid'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/#{api['lid']}/"
+        api['dir'] = "/#{api['linguam']}/#{api['typum']}/#{api['gid']}/"
+        api['trivium'] = digitum_premendum(api['xdefallo'])
+
+        # puts api['uid']
+        # api['openapi_filum'] = openapi_filum_de_api(api)
+        # api = expandendum_api_datum_jekyll_page(api)
+        # puts api
+        expandendum_api_datum_jekyll_page(api, referens)
+      end
+
+      apis
+    end
+
     # _[eng] Macro to 'expand' user written api data to new variables [eng]_
     # _[por] Macro para 'expandir' o que usuário escreveu [por]_
     def expandendum_api_datum_jekyll_page(api, referens)
