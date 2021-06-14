@@ -349,22 +349,6 @@ module Hapi
       resultatum
     end
 
-    def testum
-      # puts 'okay'
-      # puts 'Hapi.HSD.site?.inspect'
-      # puts Hapi::HSD.site?.inspect
-
-      # puts 'Hapi.HSD.data?.inspect'
-      # puts Hapi::HSD.data?.inspect
-
-      # var1 = HicSuntDracones::Site
-      # puts var1.inspect
-      # puts var1.methods(false).inspect
-      # puts HicSuntDracones::Site.methods
-      # puts var1.jekyll_site
-      # puts 'Jekyll.sites.last.data.inspect'
-      # puts Jekyll.sites.last.data.inspect
-    end
   end
 end
 

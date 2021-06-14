@@ -67,7 +67,7 @@
             "maxLengh": 150
         },
         "Comment": {
-            "description": "{% _🗣️ ISO_639-3_optionem_Ref_Name_summarius 🗣️_ %}",
+            "description": "{% _🗣️ ISO_639-3_optionem_Comment_summarius 🗣️_ %}",
             "type": "string",
             "maxLengh": 150,
             "example": "{% _🗣️ ISO_639-3_optionem_Ref_Name_exemplum 🗣️_ %}"

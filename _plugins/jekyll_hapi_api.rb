@@ -35,7 +35,6 @@ module Hapi
         site.data['l10n']['apil10n'],
         site.data['l10n']['referensl10n']
       )
-      # puts 'oooooi'
       # _[eng] We override site.data.api [eng]_
       # _[por] Sobrescrevemos o site.data.api [por]_
       site.data['api'] = @apis

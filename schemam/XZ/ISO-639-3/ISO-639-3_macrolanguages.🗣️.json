@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://hapi.etica.ai/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json",
     "title": "ISO 639-3 Macrolanguage Mappings",
-    "description": "Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages",
+    "description": "{% _🗣️ ISO_639-3_summarius 🗣️_ %}",
     "$comment": "See https://iso639-3.sil.org/code_tables/download_tables \n https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3-macrolanguages.tab \n https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso639-3_macrolanguages_table_definition.txt",
     "type": "object",
     "required": [

@@ -34,7 +34,7 @@ schemam:
           - por-Latn
           - eng-Latn
         paginam_linguam_experimentum:
-          - arb-Arab
+          # - arb-Arab # Se nem mesmo slugs estiverem traduzidos, gera URLs repetidas
           - spa-Latn
 
 # @see _plugins/hapi/drops/globum_drop.rb

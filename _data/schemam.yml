@@ -41,14 +41,14 @@
     commendandum:
       translationem: &id_temp001
         - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json"
-          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
         - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json"
-          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
         - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql"
-          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
     structuram:
       # TODO: localizar "schemam"
-      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}"
+      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}"
       xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
       xdefallo_est: 0
       linguam: "{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
@@ -116,7 +116,7 @@
     commendandum: {}
     structuram:
       # TODO: localizar "schemam"
-      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}"
+      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}"
       xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924
       linguam: "{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
       typum: schemam

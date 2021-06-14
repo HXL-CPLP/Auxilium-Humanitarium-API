@@ -26,27 +26,37 @@ module Hapi
   class HapiSchemamGenerator < Jekyll::Generator
     safe true
 
-    def generate(site) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+    def generate(site)
       @debug_all = false
 
-      unless site.data['l10n']['apil10n'] && site.data['l10n']['referensl10n']
+      # unless site.data['l10n']['apil10n'] && site.data['l10n']['referensl10n']
+      #   puts "\n\n\t[🔎ℹ️ #{self.class.name}:#{__LINE__}] requīrendum: 'bundle exec jekyll build' !!!"
+      #   return nil
+      # end
+
+      unless site.data['l10n']['schemaml10n'] && site.data['l10n']['referensl10n']
         puts "\n\n\t[🔎ℹ️ #{self.class.name}:#{__LINE__}] requīrendum: 'bundle exec jekyll build' !!!"
         return nil
       end
 
-      # @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
-      @apis = Utilitatem.expandendum_api_datum(
-        site.data['l10n']['apil10n'],
-        site.data['l10n']['referensl10n']
-      )
-      # puts 'oooooi'
-      # _[eng] We override site.data.api [eng]_
-      # _[por] Sobrescrevemos o site.data.api [por]_
-      site.data['api'] = @apis
+      # # @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
+      # @apis = Utilitatem.expandendum_api_datum(
+      #   site.data['l10n']['apil10n'],
+      #   site.data['l10n']['referensl10n']
+      # )
+      # # puts 'oooooi'
+      # # _[eng] We override site.data.api [eng]_
+      # # _[por] Sobrescrevemos o site.data.api [por]_
+      # site.data['api'] = @apis
 
-      site.data['api'].each do |api_datum|
-        @debug_est = @debug_all or api_datum['debug']
-        site.pages << SchemamPaginam.new(site, api_datum, @debug_est)
+      # site.data['api'].each do |api_datum|
+      #   @debug_est = @debug_all or api_datum['debug']
+      #   site.pages << SchemamPaginam.new(site, api_datum, @debug_est)
+      # end
+      schemam_collectionem = site.data['l10n']['schemaml10n']
+
+      schemam_collectionem.each do |item|
+        site.pages << SchemamPaginam.new(site, item)
       end
     end
   end
@@ -54,8 +64,7 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class SchemamPaginam < Jekyll::Page
-    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :alternativum,
-                   :opus_in_progressu
+    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :alternativum
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
@@ -85,22 +94,23 @@ module Hapi
     # site          - Jekyll site obiectum
     # api_datum     - API Datum
     # debug         - Debug est?
-    def initialize(site, api_datum, _debug) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+    def initialize(site, api_datum) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
       # super()
       @site = site              # the current site instance.
       @base = site.source       # path to the source directory.
       # @dir  = api_datum['dir']  # the directory the page will reside in.
       # @name = api_datum['lid']
       # @dir  = api_datum['dir'] + '/' + api_datum['lid'] + '/'
-      @dir  = "#{api_datum['dir']}/#{api_datum['lid']}/"
+      # @dir  = "#{api_datum['dir']}/#{api_datum['lid']}/"
+      @dir  = "#{api_datum['uid']}/"
       # @dir = @dir.gsub(/\/api\//, '/schemam/')
       # @dir = @dir.sub '/api/' '/schemam/'
-      @dir = @dir.sub('/api/', '/schemam/')
-      # puts @dir
+      # @dir = @dir.sub('/api/', '/schemam/')
+      puts @dir
       # raise 'error'
       # @name = 'index.html'
       @name = 'index.html'
-      template = api_datum['jekyll-page']['template']
+      # template = api_datum['jekyll-page']['template']
       template = 'xschemam'
 
       @path = if @site.layouts[template].path.end_with? 'html'
@@ -144,7 +154,7 @@ module Hapi
 
       # self.data, rubocop complaints about self.
       data['datum'] = api_datum
-      data.merge!(api_datum['jekyll-page'])
+      # data.merge!(api_datum['jekyll-page'])
 
       Jekyll::Hooks.trigger :pages, :post_init, self
     end
@@ -203,7 +213,9 @@ module Hapi
 
     # TODO: remove obsolete parts
     def summarius
-      @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
+      unless @datum['jekyll-page'].nil?
+        @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
+      end
     end
 
     # TODO: remove obsolete parts
@@ -257,14 +269,7 @@ module Hapi
     #   - https://en.wiktionary.org/wiki/trivium#Latin
     # - 'xdefallo'
     #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
-    def xdefallo_est
-      # @datum['linguam'] == 'mul' || @datum['linguam'] == 'mul-Zyyy'
-      # puts "#{@uid} == #{@xdefallo}"
-      # puts @uid == @xdefallo
-      # puts ''
-      # @uid == @xdefallo
-      @xdefallo_est
-    end
+    attr_reader :xdefallo_est
   end
 end
 
