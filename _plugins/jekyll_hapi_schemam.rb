@@ -1,10 +1,14 @@
-# ARCHĪVUM:           _plugins/jekyll_hapi_api.rb
+# ARCHĪVUM:           _plugins/jekyll_hapi_schemam.rb
 #
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
 #   @see https://github.com/rubocop/ruby-style-guide/issues/301
 #   @see https://github.com/rubocop/ruby-style-guide/issues/137
 #
 # Trivia:
+# - 'Hapi'
+#   - https://hapi.etica.ai/
+# - 'schēmam'
+#   - https://en.wiktionary.org/wiki/schema#Latin
 # - 'datum'
 #   - https://en.wiktionary.org/wiki/datum#Latin
 # - 'pāginam'
@@ -19,7 +23,7 @@ require 'json'
 
 module Hapi
   # HapiApiGenerator is (TODO: document)
-  class HapiApiGenerator < Jekyll::Generator
+  class HapiSchemamGenerator < Jekyll::Generator
     safe true
 
     def generate(site) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
@@ -42,14 +46,14 @@ module Hapi
 
       site.data['api'].each do |api_datum|
         @debug_est = @debug_all or api_datum['debug']
-        site.pages << ApiPaginam.new(site, api_datum, @debug_est)
+        site.pages << SchemamPaginam.new(site, api_datum, @debug_est)
       end
     end
   end
 
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
-  class ApiPaginam < Jekyll::Page
+  class SchemamPaginam < Jekyll::Page
     attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :alternativum,
                    :opus_in_progressu
 
@@ -89,6 +93,11 @@ module Hapi
       # @name = api_datum['lid']
       # @dir  = api_datum['dir'] + '/' + api_datum['lid'] + '/'
       @dir  = "#{api_datum['dir']}/#{api_datum['lid']}/"
+      # @dir = @dir.gsub(/\/api\//, '/schemam/')
+      # @dir = @dir.sub '/api/' '/schemam/'
+      @dir = @dir.sub('/api/', '/schemam/')
+      # puts @dir
+      # raise 'error'
       # @name = 'index.html'
       @name = 'index.html'
       template = api_datum['jekyll-page']['template']

@@ -39,9 +39,11 @@
   typum: schemam
   gid: XZ
   lid: ISO-15924 # ISO_15924_slug
-  lid_n10n: "{% _🗣️ ISO_15924_slug 🗣️_ %}"
+  lid_l10n: "{% _🗣️ ISO_15924_slug 🗣️_ %}"
   namen: "{% _🗣️ ISO_15924_nomen 🗣️_ %}"
+  namen_l10n: "{% _🗣️ ISO_15924_nomen 🗣️_ %}"
   summarius: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
+  summarius_l10n: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
   situs_interretialis:
     referens_officinale:
       - https://www.unicode.org/iso15924/
