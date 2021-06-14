@@ -1,4 +1,4 @@
-# _data/schemam.yml
+# @ARCHĪVUM         _data/schemam.yml
 
 # GitHub seems to restrict 10GB; Biggest Git Is windows, 270GB
 # @see https://www.quora.com/What-is-the-practical-maximum-size-of-a-Git-repository-full-of-text-based-data
@@ -38,6 +38,7 @@
   #   - linguam: por-Latn
 
 - farmulam: &id_mul-Zyyy_schemam_XZ_ISO-639-3
+    commendandum: {}
     structuram:
       xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
       xdefallo_est: 0

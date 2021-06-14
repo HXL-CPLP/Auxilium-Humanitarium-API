@@ -1,4 +1,4 @@
-# _data/referens.yml
+# @ARCHĪVUM         _data/referens.yml
 #
 # Trivia:
 # - "referēns"
@@ -28,12 +28,14 @@ schema_gid:
 
 schemam:
   defallo:
-    linguam:
-      - por-Latn
-      - eng-Latn
-    linguam_opus_in_progressu:
-      - arb-Arab
-      - spa-Latn
+    farmulam:
+      commendandum:
+        paginam_linguam:
+          - por-Latn
+          - eng-Latn
+        paginam_linguam_experimentum:
+          - arb-Arab
+          - spa-Latn
 
 # @see _plugins/hapi/drops/globum_drop.rb
 gid:

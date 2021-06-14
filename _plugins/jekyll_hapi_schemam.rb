@@ -1,4 +1,4 @@
-# ARCHĪVUM:           _plugins/jekyll_hapi_schemam.rb
+# @ARCHĪVUM         _plugins/jekyll_hapi_schemam.rb
 #
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
 #   @see https://github.com/rubocop/ruby-style-guide/issues/301
@@ -22,7 +22,7 @@
 require 'json'
 
 module Hapi
-  # HapiApiGenerator is (TODO: document)
+  # HapiSchemamGenerator is (TODO: document)
   class HapiSchemamGenerator < Jekyll::Generator
     safe true
 

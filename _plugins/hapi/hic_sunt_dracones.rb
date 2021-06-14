@@ -1,5 +1,33 @@
-# FILUM:           _plugins/hapi/hic_sunt_dracones.rb
-# DESCRIPTIONEM:   _[lat] hic sunt dracones [lat]_
+# @ARCHĪVUM         _plugins/hapi/hic_sunt_dracones.rb
+# @DĒSCRĪPTIŌNEM   _[lat] hic sunt dracones [lat]_
+#                  Art by Shanaka Dias
+#                               __                  __
+#                               ( _)                ( _)
+#                             / / \\              / /\_\_
+#                             / /   \\            / / | \ \
+#                           / /     \\          / /  |\ \ \
+#                           /  /   ,  \ ,       / /   /|  \ \
+#                         /  /    |\_ /|      / /   / \   \_\
+#                         /  /  |\/ _ '_| \   / /   /   \    \\
+#                       |  /   |/  0 \0\    / |    |    \    \\
+#                       |    |\|      \_\_ /  /    |     \    \\
+#                       |  | |/    \.\ o\o)  /      \     |    \\
+#                       \    |     /\\`v-v  /        |    |     \\
+#                         | \/    /_| \\_|  /         |    | \    \\
+#                         | |    /__/_ `-` /   _____  |    |  \    \\
+#                         \|    [__]  \_/  |_________  \   |   \    ()
+#                         /    [___] (    \         \  |\ |   |   //
+#                         |    [___]                  |\| \|   /  |/
+#                       /|    [____]                  \  |/\ / / ||
+#                   snd (  \   [____ /     ) _\      \  \    \| | ||
+#                       \  \  [_____|    / /     __/    \   / / //
+#                       |   \ [_____/   / /        \    |   \/ //
+#                       |   /  '----|   /=\____   _/    |   / //
+#                     __ /  /        |  /   ___/  _/\    \  | ||
+#                   (/-(/-\)       /   \  (/\/\)/  |    /  | /
+#                                 (/\/\)           /   /   //
+#                                         _________/   /    /
+#                                       \____________/    (
 #
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
 #   @see https://github.com/rubocop/ruby-style-guide/issues/301
@@ -42,14 +70,15 @@ module Hapi
 
       api_referens = YAML.load_file(hapi_referens_path)
       schemam_fontem = YAML.load_file(schemam_fontem_path)
+      schemam_expandendum = Hapi::HSD.expandendum_schemam_archivum(schemam_fontem, api_referens['schemam'])
       # puts "initiale_after_reset #{site.source}"
-      puts "initiale_after_reset #{schemam_fontem_path} #{schemam_expandendum_path} #{api_referens['schemam']}"
-      File.open(schemam_expandendum_path,"w") do |f|
-        f.write(JSON.pretty_generate(schemam_fontem))
+      # puts "initiale_after_reset #{schemam_fontem_path} #{schemam_expandendum_path} #{api_referens['schemam']}"
+      File.open(schemam_expandendum_path, 'w') do |f|
+        f.write(JSON.pretty_generate(schemam_expandendum))
       end
 
       # File.write("public/temp.json",tempHash.to_json)
-      
+
       # puts thing['schemam'].inspect
     end
 
@@ -122,7 +151,7 @@ module Hapi
       Jekyll.sites[idx].data['api'] = api
     end
 
-    def api_gid_xdefallo?(api_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+    def api_gid_xdefallo?(api_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity
       apis = api_collectionem || api?
       referens_gid = referens_gid?
 
@@ -176,6 +205,58 @@ module Hapi
     def data!(data)
       idx = Jekyll.sites.length - 1
       Jekyll.sites[idx].data = data
+    end
+
+    # _[mul-Zyyy] _data/schemam.yml => _data/expandendum/schemam.json [mul-Zyyy]_
+    # _[lat-Latn] Expandendum schēmam archīvum [lat-Latn]_
+    def expandendum_schemam_archivum(schemam_collectionem, referens_schemam) # rubocop:disable Metrics/MethodLength
+      resultatum = []
+      schemam_collectionem.each do |item|
+        if item['farmulam'].nil?
+          resultatum.append(item)
+        else
+          puts 'TODO: formulae'
+          items = Hapi::HSD.expandendum_schemam_de_farmulam(item['farmulam'], referens_schemam)
+          resultatum.concat(item) unless items.empty?
+        end
+        # resultatum.append(item) unless item['farmulam']
+      end
+
+      resultatum
+    end
+
+    # _[lat-Latn] Expandendum schēmam de fōrmulam [lat-Latn]_
+    def expandendum_schemam_de_farmulam(schemam_farmulam, referens_schemam = {})
+      resultatum = []
+      ref = referens_schemam.dig('defallo', 'farmulam')
+
+      raise "[#{self.class.name}:#{__LINE__}] _data/referens.yml schemam.defallo.farmulam?" unless ref
+
+      # raise "[#{self.class.name}:#{__LINE__}] _data/referens.yml schemam.defallo?" unless ref['']
+
+      puts ''
+
+      meta = ref.deep_merge(schemam_farmulam)
+      linguam = ref.dig('defallo')
+
+      # puts referens_schemam
+      # puts referens_schemam.dig(:defallo)
+      # puts referens_schemam.dig('defallo')
+      puts ref
+      puts ''
+      puts schemam_farmulam
+      puts ''
+      puts meta
+      # schemam.each do |item|
+      #   if item['farmulam'].nil?
+      #     resultatum.append(item)
+      #   else
+      #     puts 'TODO: formulae'
+      #   end
+      #   # resultatum.append(item) unless item['farmulam']
+      # end
+
+      resultatum
     end
 
     # _[eng] Not implemented yet with this strategy [eng]_
@@ -272,6 +353,14 @@ module Hapi
       # puts 'Jekyll.sites.last.data.inspect'
       # puts Jekyll.sites.last.data.inspect
     end
+  end
+end
+
+# @see https://stackoverflow.com/questions/9381553/ruby-merge-nested-hash#30225093
+class ::Hash
+  def deep_merge(second)
+    merger = proc { |_, v1, v2| Hash === v1 && Hash === v2 ? v1.merge(v2, &merger) : Array === v1 && Array === v2 ? v1 | v2 : [:undefined, nil, :nil].include?(v2) ? v1 : v2 }
+    merge(second.to_h, &merger)
   end
 end
 
