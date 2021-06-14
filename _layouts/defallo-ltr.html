@@ -6,6 +6,7 @@
 <body class="{{ page.html_body_class | join: ' ' }}">
 
   {%- include caput-ltr.html -%}
+  {%- include peritum-modum/paginam-experimentum.html -%}
 
   <header class="container">
     <h1>{{ page.titulum | default: page.title }}</h1>
@@ -40,6 +41,7 @@
   </main>
 
   {%- include pedem.html -%}
+  {%- include peritum-modum/paginam-experimentum.html -%}
 
   {%- include peritum-modum/instrumentum-balteum.html -%}
 

@@ -32,7 +32,6 @@ html_body_class:
 
 toc: true
 
-
 translationem_modum: html
 # translationem_modum: markdown
 # translationem_modum: json

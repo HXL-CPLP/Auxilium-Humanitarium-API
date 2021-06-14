@@ -27,6 +27,7 @@ iso15924: Latn
 html_body_class:
   - paginam-typum-index
   - paginam-linguam-spa-Latn
+  - paginam-experimentum-est
 
 toc: true
 noindex: true

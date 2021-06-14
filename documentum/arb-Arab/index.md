@@ -21,12 +21,17 @@ tags: ['index', 'linguam-arb-Arab']
 htmldir: rlt
 iso6391: ar
 # iso6391: es
-iso6393: ara
+iso6393: arb
 # iso6393: spa
 iso15924: Arab
 
 toc: true
 noindex: true
+
+html_body_class:
+  - paginam-typum-index
+  - paginam-linguam-arb-Arab
+  - paginam-experimentum-est
 
 translationem_modum: html
 # translationem_modum: markdown
