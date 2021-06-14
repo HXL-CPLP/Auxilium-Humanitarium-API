@@ -1,5 +1,6 @@
 [
   {
+    "uid": "/mul-Zyyy/schemam/XZ/ISO-639-3",
     "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
     "xdefallo_est": 1,
     "linguam": "mul-Zyyy",
@@ -41,6 +42,177 @@
     }
   },
   {
+    "uid": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
+    "xdefallo_est": 0,
+    "linguam": "{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}",
+    "namen": "{% _🗣️ 📝por-Latn📝 ISO_639-3_nomen 📝por-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝por-Latn📝 ISO_639-3_summarius 📝por-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        "http://iso639-3.sil.org/"
+      ],
+      "vicipaedia": [
+        "https://en.wikipedia.org/wiki/ISO_639-3"
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q845956"
+      }
+    ],
+    "archivum": {
+      "officinale": [
+        "https://iso639-3.sil.org/code_tables/download_tables",
+        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+      ],
+      "schemam": {
+        "graphql": [
+          "/schema/iso/iso639-3/eng/iso639-3.graphql"
+        ],
+        "json": [
+          "/schema/iso/iso639-3/eng/iso639-3.json",
+          "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+        ],
+        "sql": [
+          "/schema/iso/iso639-3/eng/iso639-3.sql"
+        ]
+      }
+    }
+  },
+  {
+    "uid": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
+    "xdefallo_est": 0,
+    "linguam": "{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}",
+    "namen": "{% _🗣️ 📝eng-Latn📝 ISO_639-3_nomen 📝eng-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝eng-Latn📝 ISO_639-3_summarius 📝eng-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        "http://iso639-3.sil.org/"
+      ],
+      "vicipaedia": [
+        "https://en.wikipedia.org/wiki/ISO_639-3"
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q845956"
+      }
+    ],
+    "archivum": {
+      "officinale": [
+        "https://iso639-3.sil.org/code_tables/download_tables",
+        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+      ],
+      "schemam": {
+        "graphql": [
+          "/schema/iso/iso639-3/eng/iso639-3.graphql"
+        ],
+        "json": [
+          "/schema/iso/iso639-3/eng/iso639-3.json",
+          "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+        ],
+        "sql": [
+          "/schema/iso/iso639-3/eng/iso639-3.sql"
+        ]
+      }
+    }
+  },
+  {
+    "uid": "/{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
+    "xdefallo_est": 0,
+    "linguam": "{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝arb-Arab📝 ISO_639-3_slug 📝arb-Arab📝 🗣️_ %}",
+    "namen": "{% _🗣️ 📝arb-Arab📝 ISO_639-3_nomen 📝arb-Arab📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝arb-Arab📝 ISO_639-3_summarius 📝arb-Arab📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        "http://iso639-3.sil.org/"
+      ],
+      "vicipaedia": [
+        "https://en.wikipedia.org/wiki/ISO_639-3"
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q845956"
+      }
+    ],
+    "archivum": {
+      "officinale": [
+        "https://iso639-3.sil.org/code_tables/download_tables",
+        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+      ],
+      "schemam": {
+        "graphql": [
+          "/schema/iso/iso639-3/eng/iso639-3.graphql"
+        ],
+        "json": [
+          "/schema/iso/iso639-3/eng/iso639-3.json",
+          "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+        ],
+        "sql": [
+          "/schema/iso/iso639-3/eng/iso639-3.sql"
+        ]
+      }
+    },
+    "experimentum": 1
+  },
+  {
+    "uid": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
+    "xdefallo_est": 0,
+    "linguam": "{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}",
+    "namen": "{% _🗣️ 📝spa-Latn📝 ISO_639-3_nomen 📝spa-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝spa-Latn📝 ISO_639-3_summarius 📝spa-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        "http://iso639-3.sil.org/"
+      ],
+      "vicipaedia": [
+        "https://en.wikipedia.org/wiki/ISO_639-3"
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q845956"
+      }
+    ],
+    "archivum": {
+      "officinale": [
+        "https://iso639-3.sil.org/code_tables/download_tables",
+        "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+      ],
+      "schemam": {
+        "graphql": [
+          "/schema/iso/iso639-3/eng/iso639-3.graphql"
+        ],
+        "json": [
+          "/schema/iso/iso639-3/eng/iso639-3.json",
+          "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+        ],
+        "sql": [
+          "/schema/iso/iso639-3/eng/iso639-3.sql"
+        ]
+      }
+    },
+    "experimentum": 1
+  },
+  {
+    "uid": "/mul-Zyyy/schemam/XZ/ISO-15924",
     "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
     "xdefallo_est": 1,
     "linguam": "mul-Zyyy",
@@ -86,5 +258,183 @@
         ]
       }
     }
+  },
+  {
+    "uid": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝por-Latn📝 ISO_15924_slug 📝por-Latn📝 🗣️_ %}",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
+    "linguam": "{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝por-Latn📝 ISO_15924_slug 📝por-Latn📝 🗣️_ %}",
+    "namen": "{% _🗣️ 📝por-Latn📝 ISO_15924_nomen 📝por-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝por-Latn📝 ISO_15924_summarius 📝por-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
+          "paywall": true
+        }
+      ],
+      "vicipaedia": [
+        {
+          "iri": "https://pt.wikipedia.org/wiki/ISO_15924",
+          "linguam": "por-Latn"
+        },
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_15924",
+          "linguam": "eng-Latn"
+        }
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q16866"
+      }
+    ],
+    "archivum": {
+      "officinale": [
+        "https://www.unicode.org/iso15924/iso15924.txt"
+      ],
+      "schemam": {
+        "json": [
+          "/schema/iso/iso15924/eng/iso15924.json"
+        ]
+      }
+    }
+  },
+  {
+    "uid": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝eng-Latn📝 ISO_15924_slug 📝eng-Latn📝 🗣️_ %}",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
+    "linguam": "{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝eng-Latn📝 ISO_15924_slug 📝eng-Latn📝 🗣️_ %}",
+    "namen": "{% _🗣️ 📝eng-Latn📝 ISO_15924_nomen 📝eng-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝eng-Latn📝 ISO_15924_summarius 📝eng-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
+          "paywall": true
+        }
+      ],
+      "vicipaedia": [
+        {
+          "iri": "https://pt.wikipedia.org/wiki/ISO_15924",
+          "linguam": "por-Latn"
+        },
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_15924",
+          "linguam": "eng-Latn"
+        }
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q16866"
+      }
+    ],
+    "archivum": {
+      "officinale": [
+        "https://www.unicode.org/iso15924/iso15924.txt"
+      ],
+      "schemam": {
+        "json": [
+          "/schema/iso/iso15924/eng/iso15924.json"
+        ]
+      }
+    }
+  },
+  {
+    "uid": "/{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝arb-Arab📝 ISO_15924_slug 📝arb-Arab📝 🗣️_ %}",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
+    "linguam": "{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝arb-Arab📝 ISO_15924_slug 📝arb-Arab📝 🗣️_ %}",
+    "namen": "{% _🗣️ 📝arb-Arab📝 ISO_15924_nomen 📝arb-Arab📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝arb-Arab📝 ISO_15924_summarius 📝arb-Arab📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
+          "paywall": true
+        }
+      ],
+      "vicipaedia": [
+        {
+          "iri": "https://pt.wikipedia.org/wiki/ISO_15924",
+          "linguam": "por-Latn"
+        },
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_15924",
+          "linguam": "eng-Latn"
+        }
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q16866"
+      }
+    ],
+    "archivum": {
+      "officinale": [
+        "https://www.unicode.org/iso15924/iso15924.txt"
+      ],
+      "schemam": {
+        "json": [
+          "/schema/iso/iso15924/eng/iso15924.json"
+        ]
+      }
+    },
+    "experimentum": 1
+  },
+  {
+    "uid": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/schemam/XZ/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
+    "linguam": "{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}",
+    "namen": "{% _🗣️ 📝spa-Latn📝 ISO_15924_nomen 📝spa-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝spa-Latn📝 ISO_15924_summarius 📝spa-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        "https://www.unicode.org/iso15924/",
+        {
+          "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
+          "paywall": true
+        }
+      ],
+      "vicipaedia": [
+        {
+          "iri": "https://pt.wikipedia.org/wiki/ISO_15924",
+          "linguam": "por-Latn"
+        },
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_15924",
+          "linguam": "eng-Latn"
+        }
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q16866"
+      }
+    ],
+    "archivum": {
+      "officinale": [
+        "https://www.unicode.org/iso15924/iso15924.txt"
+      ],
+      "schemam": {
+        "json": [
+          "/schema/iso/iso15924/eng/iso15924.json"
+        ]
+      }
+    },
+    "experimentum": 1
   }
 ]

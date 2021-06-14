@@ -215,9 +215,10 @@ module Hapi
         if item['farmulam'].nil?
           resultatum.append(item)
         else
-          puts 'TODO: formulae'
+          # puts 'TODO: formulae'
           items = Hapi::HSD.expandendum_schemam_de_farmulam(item['farmulam'], referens_schemam)
-          resultatum.concat(item) unless items.empty?
+          resultatum.concat(items) unless items.empty?
+          # resultatum.concat(items) if items
         end
         # resultatum.append(item) unless item['farmulam']
       end
@@ -226,7 +227,7 @@ module Hapi
     end
 
     # _[lat-Latn] Expandendum schēmam de fōrmulam [lat-Latn]_
-    def expandendum_schemam_de_farmulam(schemam_farmulam, referens_schemam = {})
+    def expandendum_schemam_de_farmulam(schemam_farmulam, referens_schemam = {}) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
       resultatum = []
       ref = referens_schemam.dig('defallo', 'farmulam')
 
@@ -234,19 +235,49 @@ module Hapi
 
       # raise "[#{self.class.name}:#{__LINE__}] _data/referens.yml schemam.defallo?" unless ref['']
 
-      puts ''
+      # puts ''
 
       meta = ref.deep_merge(schemam_farmulam)
-      linguam = ref.dig('defallo')
+      paginam_linguam = ref.dig('commendandum', 'paginam_linguam')
+      paginam_linguam_experimentum = ref.dig('commendandum', 'paginam_linguam_experimentum')
+
+      unless paginam_linguam
+        raise "[#{self.class.name}:#{__LINE__}] _data/referens.yml + _data/schemam.yml: paginam_linguam?"
+      end
+
+      paginam_linguam.each do |linguam|
+        # puts "TODO #{linguam}"
+        resultatum.append(
+          Hapi::HSD.convertendum_obiectum_linguam(meta['structuram'], "📝#{linguam}📝")
+        )
+      end
+
+      if paginam_linguam_experimentum # rubocop:disable  Style/SafeNavigation
+        paginam_linguam_experimentum.each do |linguam|
+          # puts "TODO #{linguam}"
+          rem = Hapi::HSD.convertendum_obiectum_linguam(meta['structuram'], "📝#{linguam}📝")
+          rem['experimentum'] = 1
+          resultatum.append(rem)
+        end
+      end
+
+      # linguam = ref.dig('defallo')
 
       # puts referens_schemam
       # puts referens_schemam.dig(:defallo)
       # puts referens_schemam.dig('defallo')
-      puts ref
-      puts ''
-      puts schemam_farmulam
-      puts ''
-      puts meta
+      # puts ref
+      # puts ''
+      # puts schemam_farmulam
+      # puts ''
+      # puts meta
+      # puts ''
+      # puts ''
+      # puts ''
+      # puts ''
+      # puts resultatum
+      # puts ''
+      # puts resultatum[0]
       # schemam.each do |item|
       #   if item['farmulam'].nil?
       #     resultatum.append(item)
@@ -285,6 +316,16 @@ module Hapi
     def pages!(pages)
       idx = Jekyll.sites.length - 1
       Jekyll.sites[idx].pages = pages
+    end
+
+    # _[lat-Latn] Convertendum obiectum linguam [lat-Latn]_
+    def convertendum_obiectum_linguam(
+      obiectum, objectivum_linguam = '📝lat-Latn📝', fontem_linguam = '📝und-Zyyy📝'
+    )
+      textum = JSON.generate(obiectum)
+      textum_l10n = textum.gsub(fontem_linguam, objectivum_linguam)
+
+      JSON.parse(textum_l10n)
     end
 
     # @deprecated
@@ -359,7 +400,19 @@ end
 # @see https://stackoverflow.com/questions/9381553/ruby-merge-nested-hash#30225093
 class ::Hash
   def deep_merge(second)
-    merger = proc { |_, v1, v2| Hash === v1 && Hash === v2 ? v1.merge(v2, &merger) : Array === v1 && Array === v2 ? v1 | v2 : [:undefined, nil, :nil].include?(v2) ? v1 : v2 }
+    merger = proc { |_, v1, v2|
+      if v1.is_a?(Hash) && v2.is_a?(Hash)
+        v1.merge(v2,
+                 &merger)
+      elsif v1.is_a?(Array) && v2.is_a?(Array)
+        v1 | v2
+      elsif [:undefined,
+             nil, :nil].include?(v2)
+        v1
+      else
+        v2
+      end
+    }
     merge(second.to_h, &merger)
   end
 end

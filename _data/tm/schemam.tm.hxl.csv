@@ -29,7 +29,7 @@ ISO_639-3_optionem_Ref_Name_exemplum,,1,,,ISO,639-3,optionem,Ref_Name,,exemplum,
 ISO_639-3_optionem_Comment_summarius,,1,,,ISO,639-3,optionem,Comment,,summarius,,,∅,Comentário relacionado a uma ou mais colunas,∅,Comment relating to one or more of the columns,∅,,∅
 ISO_639-3_optionem_Comment_exemplum,,1,,,ISO,639-3,optionem,Comment,,exemplum,,∅,∅,∅,∅,∅,∅,[(vacuum)],∅
 ISO_15924_nomen,,1,,,ISO,15924,,,,nomen,,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅
-ISO_15924_slug,,1,,,ISO,15924,,,,slug,,iso15924,∅,iso15924,∅,iso15924,∅,iso15924,∅
+ISO_15924_slug,,1,,,ISO,15924,,,,slug,,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅
 ISO_15924_summarius,,1,,,ISO,15924,,,,summarius,,,∅,,∅,ISO 15924: Codes for the representation of names of scripts,∅,,∅
 ISO_15924_optionem_Code_summarius,,0,,,ISO,15924,optionem,Code,,summarius,,,∅,,∅,Code,∅,,∅
 ISO_15924_optionem_Code_exemplum,,0,,,ISO,15924,optionem,Code,,exemplum,,Latn,∅,Latn,∅,Latn,∅,Latn,∅

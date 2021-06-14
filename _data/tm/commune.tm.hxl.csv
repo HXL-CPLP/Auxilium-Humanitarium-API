@@ -57,7 +57,8 @@ vicipaedia_nomen,,1,,,,,,vicipaedia,,nomen,,Vicipaedia,∅,Wikipédia,∅,Wikipe
 descriptionem_nomen,,1,,,,,,descriptionem,,nomen,,Dēscrīptiōnem,∅,Descrição,∅,Description,∅,,∅
 referens_officinale_nomen,,1,,,,,,referens_officinale,,nomen,,Officīnāle referēns,∅,Referência oficial,∅,Official reference,∅,,∅
 referens_alternativum_nomen,,1,,,,,,referens_alternativum,,nomen,,Alternātīvum referēns,∅,Referência alternativa,∅,Alternative reference,∅,,∅
-wikidatum_nomen,Q5296,1,,,,,,wikidatum,,nomen,,Wikidatum,,Wikidata,∅,Wikidata,∅,,∅
-wikidatum_codicem_nomen,Q5296,1,,,,,,wikidatum,codicem,nomen,,Wikidatum cōdicem,,Código Wikidata,∅,Wikidata code,∅,,∅
-HXLStandard_nomen,,1,,HXLStandard,,,,,,nomen,,HXL Normam,,Padrão HXL,∅,HXL Standard,∅,,∅
-HXLStandard_archivum_typum_nomen,,1,,HXLStandard,,,,archivum,typum,nomen,,HXL archīvum typum,,Arquivo do tipo HXL,∅,HXL file type,∅,,∅
+wikidatum_nomen,Q5296,1,,,,,,wikidatum,,nomen,,Wikidatum,∅,Wikidata,∅,Wikidata,∅,,∅
+wikidatum_codicem_nomen,Q5296,1,,,,,,wikidatum,codicem,nomen,,Wikidatum cōdicem,∅,Código Wikidata,∅,Wikidata code,∅,,∅
+HXLStandard_nomen,,1,,HXLStandard,,,,,,nomen,,HXL Normam,∅,Padrão HXL,∅,HXL Standard,∅,,∅
+HXLStandard_archivum_typum_nomen,,1,,HXLStandard,,,,archivum,typum,nomen,,HXL archīvum typum,∅,Arquivo do tipo HXL,∅,HXL file type,∅,,∅
+harenarium_nomen,Q3938,1,,,,,,harenarium,,nomen,,Harenarium,∅,Página de testes,∅,Sandbox,∅,Zona de pruebas,∅
