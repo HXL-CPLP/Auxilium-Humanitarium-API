@@ -65,9 +65,15 @@ jobs:
         run: bundle exec jekyll build
         continue-on-error: true
 
+      # TODO: _[eng-Latn] implement this fix to deal with GitHub actions 'rake aborted!
+      #                   LoadError: cannot load such file -- html-proofer
+      #                   https://github.com/gjtorikian/html-proofer/issues/326#issuecomment-753599594
+      #                   (the next lines are an potential fix for this)
+      #       [eng-Latn]_
       # @see https://github.com/gjtorikian/html-proofer#using-with-jekyll
-      - name: "Steps before Jekyll: rake test (html-proofer tests)"
-        run: rake test
+      - name: "Steps before Jekyll: bundle exec rake test (html-proofer tests)"
+        # run: rake test
+        run: bundle exec rake test
         continue-on-error: true
 
       ### GitHub pages, alternative 1 __________________________________________

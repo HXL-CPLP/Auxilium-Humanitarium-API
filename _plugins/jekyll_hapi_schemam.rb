@@ -57,7 +57,47 @@ module Hapi
 
       schemam_collectionem.each do |item|
         site.pages << SchemamPaginam.new(site, item)
+
+        # TODO: _[eng-Latn] ArchivumSimplex for schema pages that mention attachments [eng-Latn]_
       end
+    end
+  end
+
+  # Subclass of `Jekyll::Page` with custom method definitions.
+  class ArchivumSimplex < Jekyll::Page
+    def initialize(site, category, posts) # rubocop:disable Metrics/MethodLength
+
+      # TODO: _[eng-Latn] Finish the MVP of ArchivumSimplex [eng-Latn]_
+
+      @site = site             # the current site instance.
+      @base = site.source      # path to the source directory.
+      @dir  = category         # the directory the page will reside in.
+
+      # All pages have the same filename, so define attributes straight away.
+      @basename = 'index'      # filename without the extension.
+      @ext      = '.html'      # the extension.
+      @name     = 'index.html' # basically @basename + @ext.
+
+      # Initialize data hash with a key pointing to all posts under current category.
+      # This allows accessing the list in a template via `page.linked_docs`.
+      @data = {
+        'linked_docs' => posts
+      }
+
+      # Look up front matter defaults scoped to type `categories`, if given key
+      # doesn't exist in the `data` hash.
+      data.default_proc = proc do |_, key|
+        site.frontmatter_defaults.find(relative_path, :categories, key)
+      end
+    end
+
+    # Placeholders that are used in constructing page URL.
+    def url_placeholders
+      {
+        category: @dir,
+        basename: basename,
+        output_ext: output_ext
+      }
     end
   end
 

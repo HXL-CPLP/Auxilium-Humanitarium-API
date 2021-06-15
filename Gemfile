@@ -9,6 +9,11 @@ source 'https://rubygems.org'
 
 gem 'jekyll', '~> 4.2'
 
+# TODO: _[eng-Latn] implement this fix to deal with GitHub actions 'rake aborted!
+#                   LoadError: cannot load such file -- html-proofer
+#                   https://github.com/gjtorikian/html-proofer/issues/326#issuecomment-753599594
+#       [eng-Latn]_
+
 group :jekyll_plugins do
   # @see https://github.com/toshimaru/jekyll-toc
   gem 'jekyll-toc'
@@ -33,6 +38,7 @@ group :jekyll_plugins do
 end
 
 gem 'html-proofer'
+gem 'rake'
 
 ## vscode-solargraph
 # @see https://github.com/castwide/vscode-solargraph
