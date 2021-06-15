@@ -111,26 +111,28 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class SchemamPaginam < Jekyll::Page
-    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :alternativum
+    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
-      gid
-      uid
-      titulum
-      html_body_class
-      tags
-      linguam
-      namen
-      summarius
-      opus_in_progressu
-      xdefallo
-      xdefallo_est
       content
       dir
+      gid
+      html_body_class
+      hreflang
+      linguam
+      namen
+      opus_in_progressu
       path
+      summarius
+      tags
+      titulum
+      trivium
+      uid
       url
+      xdefallo
+      xdefallo_est
     ].freeze
     # excerpt
     # name
@@ -150,7 +152,15 @@ module Hapi
       @dir  = "#{api_datum['uid']}/"
       @name = 'index.html'
       # template = api_datum['jekyll-page']['template']
-      template = 'xschemam'
+
+      @xdefallo = api_datum['xdefallo']
+      @xdefallo_est = !!api_datum['xdefallo_est'] # rubocop:disable Style/DoubleNegation
+
+      template = if @xdefallo_est
+                   'xschemam'
+                 else
+                   'schemam'
+                 end
 
       @path = if @site.layouts[template].path.end_with? 'html'
                 @site.layouts[template].path.dup
@@ -161,22 +171,9 @@ module Hapi
       @datum = api_datum
       @gid = api_datum['gid']
       @uid = api_datum['uid']
-      @xdefallo = api_datum['xdefallo']
-      @xdefallo_est = !!api_datum['xdefallo_est']
-      @opus_in_progressu = !!api_datum['opus_in_progressu']
-      # puts api_datum['opus_in_progressu']
-      # puts api_datum
-      # @trivum = 'teste'
-
-      #  Hapi::HapiApiGenerator.quod_datum_api_liquify(site, '/data/api.json')
-      # HapiApiGenerator.quod_datum_api_liquify(site, '/data/api.json')
-
-      # site.pages.each do |paginam|
-      #   puts JSON.parse(paginam.content) if paginam.url == '/data/api.json'
-      # end
+      @opus_in_progressu = !!api_datum['opus_in_progressu'] # rubocop:disable Style/DoubleNegation
 
       process(name)
-      # read_yaml(PathManager.join(base, dir), name)
 
       base_path = @site.layouts[template].path
       base_path.slice! @site.layouts[template].name
@@ -193,7 +190,6 @@ module Hapi
 
       # self.data, rubocop complaints about self.
       data['datum'] = api_datum
-      # data.merge!(api_datum['jekyll-page'])
 
       Jekyll::Hooks.trigger :pages, :post_init, self
     end
@@ -205,10 +201,10 @@ module Hapi
     def alternativum
       # Utilitatem.digitum_premendum(relative_path)
       resultatum = []
-      apis = Hapi::HSD.api_paginam?
-      apis&.each do |api|
+      schemam_collectionem = Hapi::HSD.schemam_paginam?
+      schemam_collectionem&.each do |schemam|
         # puts api.class
-        resultatum.append(api) if @xdefallo == api.xdefallo
+        resultatum.append(schemam) if @xdefallo == schemam.xdefallo
       end
 
       resultatum
@@ -237,6 +233,16 @@ module Hapi
       ]
     end
 
+    def hreflang
+      return 'x-default' if xdefallo_est
+
+      # TODO: _[eng] maybe initialize this once instead of recalculate [eng]_
+
+      site_data = Hapi::HSD.data?
+
+      Hapi::Utilitatem.linguam_to_html_lang(linguam, site_data['referens'])
+    end
+
     def keys
       ATTRIBUTES_FOR_LIQUID
     end
@@ -245,10 +251,10 @@ module Hapi
       @datum['linguam']
     end
 
-    def openapi_filum
-      # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
-      @datum['jekyll-page']['openapi_filum2']
-    end
+    # def openapi_filum
+    #   # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
+    #   @datum['jekyll-page']['openapi_filum2']
+    # end
 
     def opus_in_progressu
       !!@opus_in_progressu
@@ -272,7 +278,7 @@ module Hapi
 
     # TODO: remove obsolete parts
     def titulum
-      @titulum || @namen || @title
+      @titulum || @namen || @title || @datum['summarius']
     end
 
     def namen
@@ -285,7 +291,7 @@ module Hapi
     # - 'xdefallo'
     #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
     def trivium
-      Hapi::Utilitatem.digitum_premendum(xdefallo)
+      Hapi::Utilitatem.digitum_premendum(@xdefallo)
       # @datum
     end
 

@@ -119,4 +119,44 @@ sitemap:
     {% endif %}
   {%- endfor %}
 
+  <!--
+    typum: schemam
+  -->
+  {% for schemam in site.pages -%}
+    {%- if schemam.tags contains 'schemam' %}
+  <url>
+    <loc>{{ site.url }}{{ schemam.url }}</loc>
+    {%- if schemam.sitemap.lastmod -%}
+    <lastmod>{{ schemam.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+    {% elsif schemam.date %}
+    <lastmod>{{ schemam.date | date_to_xmlschema }}</lastmod>
+    {% else %}
+    <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+    {%- endif -%}
+    {%- if schemam.sitemap.changefreq -%}
+    <changefreq>{{ schemam.sitemap.changefreq }}</changefreq>
+    {% else %}
+    <changefreq>weekly</changefreq>
+    {% endif %}
+    {%- if schemam.sitemap.priority -%}
+    <priority>{{ schemam.sitemap.priority }}</priority>
+    {%- elsif schemam.hreflang == 'x-default' -%}
+    <priority>0.1</priority>
+    {%- else -%}
+    <priority>0.3</priority>
+    {% endif %}
+    {%- if schemam.trivium %}
+      {%- for paginam in site.pages -%}
+        {% capture schemam_trivium_tag %}schemam-trivium-{{ schemam.trivium }}{% endcapture %}
+        {%- if paginam.tags contains schemam_trivium_tag %}
+    <xhtml:link
+      rel="alternate" hreflang="{{ paginam.hreflang }}"
+      href="{{ site.url | append: paginam.url }}" />
+        {%- endif %}
+      {%- endfor %}
+    {%- endif %}
+  </url>
+    {% endif %}
+  {%- endfor %}
+
 </urlset>
