@@ -122,7 +122,10 @@ module Hapi
       # api_xdefallo = api_xdefallo?(api)
       api_gid_xdefallo = api_gid_xdefallo?(api)
       xschemam = schemam_xdefallo?(schemam)
-      globum = globum?(api)
+      globum = globum?(api, schemam)
+
+      # puts globum[0]['collectionem_api']
+      puts globum[0]['collectionem_schemam']
 
       jekyll_data = HSD.data?
 
@@ -208,7 +211,7 @@ module Hapi
     end
 
     def l10n_simplex(codicem, linguam)
-      puts "TODO: l10n_simplex #{codicem} #{linguam}"
+      # puts "TODO: l10n_simplex #{codicem} #{linguam}"
 
       codicem
     end
@@ -274,15 +277,16 @@ module Hapi
 
     # _[eng] Not implemented yet with this strategy [eng]_
     def schemam?
-      []
+      Jekyll.sites.last.data['l10n']['schemaml10n'] || []
     end
 
     def schemam_paginam?
       Jekyll.sites.last.data['hapi']['schemam'] || []
     end
 
-    def schemam_xdefallo?(schemam_collectionem) # rubocop:disable Metrics/MethodLength
+    def schemam_xdefallo?(schemam_collectionem = nil) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize,Metrics/CyclomaticComplexity
       # apis = schemam_collectionem
+      schemam_collectionem ||= schemam?
       referens_gid = referens_gid?
 
       # puts 'oi oi '
@@ -359,8 +363,9 @@ module Hapi
       Jekyll.sites.last.data['l10n']['referensl10n']['gid']
     end
 
-    def globum?(api_collectionem = nil, _schemam_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+    def globum?(api_collectionem = nil, schemam_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
       apis = api_collectionem || api?
+      schemam_collectionem ||= schemam?
       referens_gid = referens_gid?
 
       # puts 'oi oi '
@@ -378,6 +383,9 @@ module Hapi
         res = valendum
         res['collectionem_api'] = []
         res['collectionem_xapi'] = []
+        res['collectionem_schemam'] = []
+        res['collectionem_xschemam'] = []
+
         apis.each do |api|
           # api_drop = Hapi::Drops::HapiXdefalloApiDrop.new(res)
           res['collectionem_api'].append(api) if api.gid_est?(clavem_gid)
@@ -391,6 +399,23 @@ module Hapi
           # res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
           # # resultatum[clavem] = valendum
         end
+
+        schemam_collectionem.each do |schemam|
+          # api_drop = Hapi::Drops::HapiXdefalloApiDrop.new(res)
+          res['collectionem_schemam'].append(schemam) if schemam.gid_est?(clavem_gid)
+          # if api.gid_est?(clavem_gid)
+          #   res['collectionem_api'].append(Hapi::Drops::HapiApiDrop.new(api))
+          # end
+
+          # TODO: considerar implementar collectionem_xschemam
+          # if !!schemam.xdefallo_est && schemam.gid_est?(clavem_gid)
+          #   res['collectionem_xschemam'].append(Hapi::Drops::HapiXdefalloApiDrop.new(api))
+          # end
+
+          # res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
+          # # resultatum[clavem] = valendum
+        end
+
         # resultatum.append(res)
         drop = Hapi::Drops::HapiGlobumDrop.new(res)
         resultatum.append(drop)
