@@ -89,6 +89,7 @@ module Hapi
     def initiale_pre_render # rubocop:disable Metrics/AbcSize, Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
       # api = {}
       api = []
+      schemam = []
       categoriam = {}
       pittacium = {}
       # api
@@ -98,6 +99,8 @@ module Hapi
 
           # [page.digitum_signaturum] = page
           api.append(page)
+        elsif page.instance_of?(Hapi::SchemamPaginam)
+          schemam.append(page)
         elsif page.instance_of?(Jekyll::Page)
           # puts 'Generic pages do not have any special feature'
         end
@@ -118,6 +121,7 @@ module Hapi
 
       # api_xdefallo = api_xdefallo?(api)
       api_gid_xdefallo = api_gid_xdefallo?(api)
+      xschemam = schemam_xdefallo?(schemam)
       globum = globum?(api)
 
       jekyll_data = HSD.data?
@@ -126,11 +130,12 @@ module Hapi
         {
           'api' => api,
           # 'api_xdefallo' => api_xdefallo,
+          'schemam' => schemam,
           'xapi' => api_gid_xdefallo,
+          'xschemam' => xschemam,
+          # 'xschemam' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
           'globum' => globum,
           'categoriam' => categoriam,
-          'scheman' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
-          'xscheman' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
           'pittacium' => pittacium
         }
       )
@@ -209,7 +214,7 @@ module Hapi
 
     # _[mul-Zyyy] _data/schemam.yml => _data/expandendum/schemam.json [mul-Zyyy]_
     # _[lat-Latn] Expandendum schēmam archīvum [lat-Latn]_
-    def expandendum_schemam_archivum(schemam_collectionem, referens_schemam) # rubocop:disable Metrics/MethodLength
+    def expandendum_schemam_archivum(schemam_collectionem, referens_schemam)
       resultatum = []
       schemam_collectionem.each do |item|
         if item['farmulam'].nil?
@@ -266,8 +271,47 @@ module Hapi
       []
     end
 
+    def schemam_paginam?
+      Jekyll.sites.last.data['hapi']['schemam'] || []
+    end
+
+    def schemam_xdefallo?(schemam_collectionem) # rubocop:disable Metrics/MethodLength
+      # apis = schemam_collectionem
+      referens_gid = referens_gid?
+
+      # puts 'oi oi '
+      # puts referens_gid.empty?
+      # puts apis.empty?
+      return [] if referens_gid.empty? || schemam_collectionem.empty?
+
+      # puts 'oi oi 2'
+
+      # resultatum = {}
+      resultatum = []
+
+      referens_gid.each do |clavem_gid, valendum|
+        # puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
+        # puts ''
+        res = valendum
+        res['collectionem_schemam'] = []
+        schemam_collectionem.each do |schema|
+          res['collectionem_schemam'].append(schema) if schema.xdefallo_est && schema.gid_est?(clavem_gid)
+          # resultatum[clavem] = valendum
+        end
+        # resultatum.append(res)
+        drop = Hapi::Drops::HapiGlobumDrop.new(res)
+        resultatum.append(drop)
+      end
+
+      resultatum
+    end
+
     # _[eng] Not implemented yet with this strategy [eng]_
     def xschemam?
+      # NOTE: _[eng] the 'schemam_xdefallo?' is not using this method,
+      #              neither 'globum?'
+      #       [eng]_
+
       []
     end
 
@@ -309,7 +353,7 @@ module Hapi
       Jekyll.sites.last.data['l10n']['referensl10n']['gid']
     end
 
-    def globum?(api_collectionem = nil, _schemam_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+    def globum?(api_collectionem = nil, _schemam_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
       apis = api_collectionem || api?
       referens_gid = referens_gid?
 

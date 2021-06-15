@@ -49,8 +49,8 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :alternativum,
-                   :opus_in_progressu
+    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est,
+                  :opus_in_progressu
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
@@ -194,6 +194,7 @@ module Hapi
     def summarius
       @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
     end
+
     # TODO: remove obsolete parts
     def titulum
       @titulum || @namen || @title
@@ -245,14 +246,7 @@ module Hapi
     #   - https://en.wiktionary.org/wiki/trivium#Latin
     # - 'xdefallo'
     #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
-    def xdefallo_est
-      # @datum['linguam'] == 'mul' || @datum['linguam'] == 'mul-Zyyy'
-      # puts "#{@uid} == #{@xdefallo}"
-      # puts @uid == @xdefallo
-      # puts ''
-      # @uid == @xdefallo
-      @xdefallo_est
-    end
+    attr_reader :xdefallo_est
   end
 end
 

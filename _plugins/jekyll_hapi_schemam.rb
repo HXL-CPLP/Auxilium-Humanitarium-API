@@ -120,6 +120,8 @@ module Hapi
       uid
       titulum
       html_body_class
+      tags
+      linguam
       namen
       summarius
       opus_in_progressu
@@ -239,6 +241,10 @@ module Hapi
       ATTRIBUTES_FOR_LIQUID
     end
 
+    def linguam
+      @datum['linguam']
+    end
+
     def openapi_filum
       # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
       @datum['jekyll-page']['openapi_filum2']
@@ -253,6 +259,15 @@ module Hapi
       unless @datum['jekyll-page'].nil?
         @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
       end
+    end
+
+    def tags
+      # @see Utilitatem.tags_de_api
+      [
+        'schemam',
+        "schemam-linguam-#{linguam}",
+        "schemam-trivium-#{trivium}"
+      ]
     end
 
     # TODO: remove obsolete parts
@@ -270,7 +285,8 @@ module Hapi
     # - 'xdefallo'
     #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
     def trivium
-      @datum
+      Hapi::Utilitatem.digitum_premendum(xdefallo)
+      # @datum
     end
 
     # _[eng] Returns the object as a debug String [eng]_
