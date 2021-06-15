@@ -56,9 +56,9 @@ module Hapi
       schemam_collectionem = site.data['l10n']['schemaml10n']
 
       schemam_collectionem.each do |item|
-        unless item['__translationem'].nil?
+        unless item['__translationem'].nil? # rubocop:disable  Style/SafeNavigation
           item['__translationem'].each do |archivum|
-            site.pages << ArchivumSimplex.new(site, archivum)
+            site.pages << ArchivumSimplex.new(site, archivum, item)
             # ArchivumSimplex.new(site, archivum)
           end
         end
@@ -72,7 +72,7 @@ module Hapi
 
   # Subclass of `Jekyll::Page` with custom method definitions.
   class ArchivumSimplex < Jekyll::Page
-    def initialize(site, archivum) # rubocop:disable Metrics/MethodLength,Lint/MissingSuper,Metrics/AbcSize
+    def initialize(site, archivum, schemam) # rubocop:disable Metrics/MethodLength,Lint/MissingSuper,Metrics/AbcSize
       # TODO: _[eng-Latn] Finish the MVP of ArchivumSimplex [eng-Latn]_
 
       template = 'archivum-simplex'
@@ -87,12 +87,9 @@ module Hapi
 
       template_textum = File.read(Jekyll::PathManager.join(@base, archivum['fontem']))
 
-      # @path = Jekyll.sanitized_path(@base, archivum['fontem'])
-      # @path = Jekyll.sanitized_path('_layouts')
       base_path = @site.layouts[template].path
       base_path.slice! @site.layouts[template].name
-      # read_yaml(Jekyll::PathManager.join(@base, @dir), @name)
-      # read_yaml(Jekyll::PathManager.join(@base, @dir), @name)
+
       read_yaml(base_path, "#{template}#{template_ext}")
 
       # _[por] Não estamos usando Jekyll defaults [por]_
@@ -100,52 +97,16 @@ module Hapi
         site.frontmatter_defaults.find(relative_path, type, key)
       end
 
-      data['archivum_fundationem'] = template_textum
+      # @archivum_fundationem = template_textum
+      @content = template_textum
+      # @linguam = schemam['linguam']
+      data['linguam'] = schemam['linguam']
 
-      puts ''
-      puts 'base_path'
-      puts base_path
-      puts ''
-      puts @site.layouts[template].name
-
-      puts @path
-      puts archivum.inspect
-
-      # File.read(file_name)
+      # data['archivum_fundationem'] = template_textum
 
       process(@name)
 
       Jekyll::Hooks.trigger :pages, :post_init, self
-
-      # return nil # rubocop:disable  Lint/ReturnInVoidContext
-
-      # @dir = category # the directory the page will reside in.
-
-      # # All pages have the same filename, so define attributes straight away.
-      # # @basename = 'index'      # filename without the extension.
-
-      # @name = 'index.html' # basically @basename + @ext.
-
-      # # Initialize data hash with a key pointing to all posts under current category.
-      # # This allows accessing the list in a template via `page.linked_docs`.
-      # @data = {
-      #   'linked_docs' => posts
-      # }
-
-      # # Look up front matter defaults scoped to type `categories`, if given key
-      # # doesn't exist in the `data` hash.
-      # data.default_proc = proc do |_, key|
-      #   site.frontmatter_defaults.find(relative_path, :categories, key)
-      # end
-    end
-
-    # Placeholders that are used in constructing page URL.
-    def url_placeholders
-      {
-        category: @dir,
-        basename: basename,
-        output_ext: output_ext
-      }
     end
   end
 
