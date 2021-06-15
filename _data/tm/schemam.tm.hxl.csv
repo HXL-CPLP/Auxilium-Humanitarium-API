@@ -28,29 +28,29 @@ ISO_639-3_optionem_Ref_Name_summarius,,1,,,ISO,639-3,optionem,Ref_Name,,summariu
 ISO_639-3_optionem_Ref_Name_exemplum,,1,,,ISO,639-3,optionem,Ref_Name,,exemplum,,Latin,∅,Portuguese,∅,English,∅,Spanish,∅
 ISO_639-3_optionem_Comment_summarius,,1,,,ISO,639-3,optionem,Comment,,summarius,,,∅,Comentário relacionado a uma ou mais colunas,∅,Comment relating to one or more of the columns,∅,,∅
 ISO_639-3_optionem_Comment_exemplum,,1,,,ISO,639-3,optionem,Comment,,exemplum,,∅,∅,∅,∅,∅,∅,[(vacuum)],∅
-ISO_15924_nomen,,1,,,ISO,15924,,,,nomen,,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅
-ISO_15924_slug,,1,,,ISO,15924,,,,slug,,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅
-ISO_15924_summarius,,1,,,ISO,15924,,,,summarius,,,∅,,∅,ISO 15924: Codes for the representation of names of scripts,∅,,∅
-ISO_15924_optionem_Code_summarius,,0,,,ISO,15924,optionem,Code,,summarius,,,∅,,∅,Code,∅,,∅
-ISO_15924_optionem_Code_exemplum,,0,,,ISO,15924,optionem,Code,,exemplum,,Latn,∅,Latn,∅,Latn,∅,Latn,∅
-ISO_15924_optionem_numerum_summarius,,0,,,ISO,15924,optionem,numerum,,summarius,,,∅,,∅,Nº is ... (TODO),∅,,∅
-ISO_15924_optionem_numerum_exemplum,,0,,,ISO,15924,optionem,numerum,,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_nomen_anglicum_summarius,,0,,,ISO,15924,optionem,nomen,anglicum,summarius,,,∅,,∅,English Name is ... (TODO),∅,,∅
-ISO_15924_optionem_nomen_anglicum_exemplum,,0,,,ISO,15924,optionem,nomen,anglicum,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_nomen_francogallicum_summarius,,0,,,ISO,15924,optionem,nomen,francogallicum,summarius,,,∅,,∅,Nom français is ... (TODO),∅,,∅
-ISO_15924_optionem_nomen_francogallicum_exemplum,,0,,,ISO,15924,optionem,nomen,francogallicum,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_PVA_summarius,,0,,,ISO,15924,optionem,PVA,,summarius,,,∅,,∅,PVA is ... (TODO),∅,,∅
-ISO_15924_optionem_PVA_exemplum,,0,,,ISO,15924,optionem,PVA,,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_Unicode_versionem_summarius,,0,,,ISO,15924,optionem,Unicode,versionem,summarius,,,∅,,∅,Unicode Version is ... (TODO),∅,,∅
-ISO_15924_optionem_Unicode_versionem_exemplum,,0,,,ISO,15924,optionem,Unicode,versionem,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_dactylum_summarius,,0,,,ISO,15924,optionem,dactylum,,summarius,,,∅,,∅,Date is ... (TODO),∅,,∅
-ISO_15924_optionem_dactylum_exemplum,,0,,,ISO,15924,optionem,dactylum,,exemplum,,,∅,,∅,2004-05-01,∅,,∅
+ISO_15924_nomen,Q16866,1,,,ISO,15924,,,,nomen,,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅
+ISO_15924_slug,Q16866,1,,,ISO,15924,,,,slug,,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅
+ISO_15924_summarius,Q16866,1,,,ISO,15924,,,,summarius,,,∅,ISO 15924: Códigos para a representação de nomes de sistemas de escrita,∅,ISO 15924: Codes for the representation of names of scripts,∅,,∅
+ISO_15924_optionem_Code_summarius,,1,,,ISO,15924,optionem,Code,,summarius,,,∅,,∅,Code,∅,,∅
+ISO_15924_optionem_Code_exemplum,,1,,,ISO,15924,optionem,Code,,exemplum,,Latn,∅,Latn,∅,Latn,∅,Latn,∅
+ISO_15924_optionem_numerum_summarius,,1,,,ISO,15924,optionem,numerum,,summarius,,,∅,,∅,Nº is ... (TODO),∅,,∅
+ISO_15924_optionem_numerum_exemplum,,1,,,ISO,15924,optionem,numerum,,exemplum,,,∅,160,∅,160,∅,,∅
+ISO_15924_optionem_nomen_anglicum_summarius,,1,,,ISO,15924,optionem,nomen,anglicum,summarius,,,∅,,∅,English Name is ... (TODO),∅,,∅
+ISO_15924_optionem_nomen_anglicum_exemplum,,1,,,ISO,15924,optionem,nomen,anglicum,exemplum,,,∅,,∅,,∅,,∅
+ISO_15924_optionem_nomen_francogallicum_summarius,,1,,,ISO,15924,optionem,nomen,francogallicum,summarius,,,∅,,∅,Nom français is ... (TODO),∅,,∅
+ISO_15924_optionem_nomen_francogallicum_exemplum,,1,,,ISO,15924,optionem,nomen,francogallicum,exemplum,,,∅,,∅,,∅,,∅
+ISO_15924_optionem_PVA_summarius,,1,,,ISO,15924,optionem,PVA,,summarius,,,∅,,∅,PVA is ... (TODO),∅,,∅
+ISO_15924_optionem_PVA_exemplum,,1,,,ISO,15924,optionem,PVA,,exemplum,,,∅,,∅,,∅,,∅
+ISO_15924_optionem_Unicode_versionem_summarius,,1,,,ISO,15924,optionem,Unicode,versionem,summarius,,,∅,,∅,Unicode Version is ... (TODO),∅,,∅
+ISO_15924_optionem_Unicode_versionem_exemplum,,1,,,ISO,15924,optionem,Unicode,versionem,exemplum,,,∅,,∅,,∅,,∅
+ISO_15924_optionem_dactylum_summarius,,1,,,ISO,15924,optionem,dactylum,,summarius,,,∅,,∅,Date is ... (TODO),∅,,∅
+ISO_15924_optionem_dactylum_exemplum,,1,,,ISO,15924,optionem,dactylum,,exemplum,,,∅,,∅,2004-05-01,∅,,∅
 json_schemam_nomen,,1,,,,,,json_schemam,,nomen,,JSON Schēmam,∅,Esquema de dados JSON,∅,JSON Schema,∅,,∅
-graphql_schemam_nomen,,1,,,,,,graphql_schemam,,nomen,,GraphQL Schēmam,,Esquema de dados GraphQL,,GraphQL Schema,∅,,∅
-SQL_abbreviationem_nomen,,1,,,,,,SQL,abbreviationem,nomen,,SQL,,SQL,,SQL,,SQL,
-UN_P_nomen,,1,UN,,UN,P,,,,nomen,,UN P,,UN P,,UN P,,UN P,
-UN_P_slug,,1,UN,,UN,P,,,,slug,,un-p,,un-p,,un-p,,un-p,
-UN_P_summarius,,1,UN,,UN,P,,,,summarius,,,,,,,,,
-UN_M49_nomen,,1,UN,,UN,M49,,,,nomen,,UN M49,,UN M49,,UN M49,,UN M49,
-UN_M49_slug,,1,UN,,UN,M49,,,,slug,,un-m49,,un-m49,,un-m49,,un-m49,
-UN_M49_summarius,,1,UN,,UN,M49,,,,summarius,,,,,,,,,
+graphql_schemam_nomen,,1,,,,,,graphql_schemam,,nomen,,GraphQL Schēmam,∅,Esquema de dados GraphQL,∅,GraphQL Schema,∅,,∅
+SQL_abbreviationem_nomen,,1,,,,,,SQL,abbreviationem,nomen,,SQL,∅,SQL,∅,SQL,∅,SQL,∅
+UN_P_nomen,,1,UN,,UN,P,,,,nomen,,UN P,∅,UN P,∅,UN P,∅,UN P,∅
+UN_P_slug,,1,UN,,UN,P,,,,slug,,un-p,∅,un-p,∅,un-p,∅,un-p,∅
+UN_P_summarius,,1,UN,,UN,P,,,,summarius,,,∅,,∅,,∅,,∅
+UN_M49_nomen,,1,UN,,UN,M49,,,,nomen,,UN M49,∅,UN M49,∅,UN M49,∅,UN M49,∅
+UN_M49_slug,,1,UN,,UN,M49,,,,slug,,un-m49,∅,un-m49,∅,un-m49,∅,un-m49,∅
+UN_M49_summarius,,1,UN,,UN,M49,,,,summarius,,,∅,,∅,,∅,,∅

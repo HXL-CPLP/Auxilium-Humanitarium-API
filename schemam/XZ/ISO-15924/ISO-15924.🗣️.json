@@ -1,51 +1,51 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://hapi.etica.ai/schema/iso/iso15924/eng/iso15924.json",
-    "title": "ISO 15924",
-    "description": "ISO 15924: Codes for the representation of names of scripts",
+    "$id": "{{ site.url }}{{ page.url }}",
+    "title": "{% _🗣️ ISO_15924_nomen 🗣️_ %}",
+    "description": "{% _🗣️ ISO_15924_summarius 🗣️_ %}",
     "$comment": "https://www.unicode.org/iso15924/codelists.html, https://www.unicode.org/iso15924/iso15924.txt",
     "type": "object",
     "properties": {
         "Code": {
-            "description": "Code",
+            "description": "{% _🗣️ ISO_15924_optionem_Code_summarius 🗣️_ %}",
             "type": "string",
             "length": 4,
-            "example": "Arab"
+            "example": "{% _🗣️ ISO_15924_optionem_Code_exemplum 🗣️_ %}"
         },
         "Nº": {
-            "description": "Nº",
+            "description": "{% _🗣️ ISO_15924_optionem_numerum_summarius 🗣️_ %}",
             "type": "string",
             "length": 3,
             "example": "160"
         },
         "English Name": {
-            "description": "English Name",
+            "description": "{% _🗣️ ISO_15924_optionem_nomen_anglicum_summarius 🗣️_ %}",
             "type": "string",
-            "example": "por",
+            "example": "{% _🗣️ ISO_15924_optionem_nomen_anglicum_exemplum 🗣️_ %}",
             "$comment": "TODO: investigate maximum length"
         },
         "Nom français": {
-            "description": "Nom français",
+            "description": "{% _🗣️ ISO_15924_optionem_nomen_francogallicum_summarius 🗣️_ %}",
             "type": "string",
-            "example": "arabe",
+            "example": "{% _🗣️ ISO_15924_optionem_nomen_francogallicum_exemplum 🗣️_ %}",
             "$comment": "TODO: investigate maximum length"
         },
         "PVA": {
-            "description": "The Property Value Alias is defined as part of the Unicode Standard and is provided informatively in the tables here to show how entries in the ISO 15924 code table relate to script names defined in Unicode.",
+            "description": "{% _🗣️ ISO_15924_optionem_PVA_summarius 🗣️_ %}",
             "type": "string",
-            "example": "Arabic",
+            "example": "{% _🗣️ ISO_15924_optionem_PVA_exemplum 🗣️_ %}",
             "$comment": "TODO: investigate maximum length"
         },
         "Unicode Version": {
-            "description": "Unicode Version",
-            "example": "1.1",
+            "description": "{% _🗣️ ISO_15924_optionem_Unicode_versionem_summarius 🗣️_ %}",
+            "example": "{% _🗣️ ISO_15924_optionem_Unicode_versionem_exemplum 🗣️_ %}",
             "type": "number"
         },
         "Date": {
-            "description": "Date",
+            "description": "{% _🗣️ ISO_15924_optionem_dactylum_summarius 🗣️_ %}",
             "type": "string",
             "format": "date",
-            "example": "2004-05-01"
+            "example": "{% _🗣️ ISO_15924_optionem_dactylum_exemplum 🗣️_ %}"
         }
     }
 }

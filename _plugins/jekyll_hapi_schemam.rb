@@ -64,8 +64,6 @@ module Hapi
         end
 
         site.pages << SchemamPaginam.new(site, item)
-
-        # TODO: _[eng-Latn] ArchivumSimplex for schema pages that mention attachments [eng-Latn]_
       end
     end
   end
@@ -147,17 +145,7 @@ module Hapi
       # super()
       @site = site              # the current site instance.
       @base = site.source       # path to the source directory.
-      # @dir  = api_datum['dir']  # the directory the page will reside in.
-      # @name = api_datum['lid']
-      # @dir  = api_datum['dir'] + '/' + api_datum['lid'] + '/'
-      # @dir  = "#{api_datum['dir']}/#{api_datum['lid']}/"
       @dir  = "#{api_datum['uid']}/"
-      # @dir = @dir.gsub(/\/api\//, '/schemam/')
-      # @dir = @dir.sub '/api/' '/schemam/'
-      # @dir = @dir.sub('/api/', '/schemam/')
-      puts @dir
-      # raise 'error'
-      # @name = 'index.html'
       @name = 'index.html'
       # template = api_datum['jekyll-page']['template']
       template = 'xschemam'

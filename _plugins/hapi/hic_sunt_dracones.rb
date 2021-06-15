@@ -348,7 +348,6 @@ module Hapi
 
       resultatum
     end
-
   end
 end
 

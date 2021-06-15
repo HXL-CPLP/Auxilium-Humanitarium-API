@@ -36,7 +36,7 @@
 ### Data pull configurations ---------------------------------------------------
 
 # @see https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279
-Hapi_L10N="https://proxy.hxlstandard.org/data/download/L10n_hxl_csv.csv?dest=data_edit&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1181688279"
+# Hapi_L10N="https://proxy.hxlstandard.org/data/download/L10n_hxl_csv.csv?dest=data_edit&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1181688279"
 Hapi_miniman="https://proxy.hxlstandard.org/data/download/hapi-miniman_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D816634241"
 
 
@@ -56,12 +56,12 @@ ROOTDIR="$(pwd)"
 
 # TODO: check error codes if download fails
 
-if true ; then
-    echo "Hapi_L10N"
-    echo "   Fontem: [$Hapi_L10N]"
-    echo "   Filum:  [${ROOTDIR}/_data/L10n.hxl.csv]"
-    wget -qO- "$Hapi_L10N" > "${ROOTDIR}/_data/L10n.hxl.csv"
-fi
+# if true ; then
+#     echo "Hapi_L10N"
+#     echo "   Fontem: [$Hapi_L10N]"
+#     echo "   Filum:  [${ROOTDIR}/_data/L10n.hxl.csv]"
+#     wget -qO- "$Hapi_L10N" > "${ROOTDIR}/_data/L10n.hxl.csv"
+# fi
 
 if true ; then
     echo "Hapi_miniman"

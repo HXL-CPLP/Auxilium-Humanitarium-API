@@ -113,7 +113,16 @@
         - /schema/iso/iso15924/eng/iso15924.json # TODO: localize
 
 - farmulam:
-    commendandum: {}
+    commendandum:
+      translationem: &id_temp0012
+        # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json"
+        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
+        # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json"
+        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
+        # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql"
+        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
+        - fontem: "/schemam/XZ/ISO-15924/ISO-15924.🗣️.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}.json"
     structuram:
       # TODO: localizar "schemam"
       uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}"
@@ -144,7 +153,7 @@
         schemam:
           json:
             - /schema/iso/iso15924/eng/iso15924.json # TODO: localize
-
+      __translationem: *id_temp0012
 
 # TODO: _[por] Alterar este arquivo para conter tanto referencias à fonte
 #              que gera o JSON como as URls finais. Com isso poderíamos usar
