@@ -99,14 +99,14 @@ module Hapi
         "<{#{self.class} @item=[#{optionem_explanandum.join(', ')}]}>"
       end
 
-      # TODO: abstract scheman
-      def scheman
-        @optionem['scheman']
+      # TODO: abstract schemam
+      def schemam
+        @optionem['schemam']
       end
 
-      # TODO: abstract xscheman
-      def xscheman
-        @optionem['xscheman']
+      # TODO: abstract xschemam
+      def xschemam
+        @optionem['xschemam']
       end
 
       # _[eng] Generic list of Jekyll Pages, APIs, Schemas by tag.

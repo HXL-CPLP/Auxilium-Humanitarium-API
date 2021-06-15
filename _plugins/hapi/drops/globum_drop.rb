@@ -92,7 +92,7 @@ module Hapi
       end
 
       def collectionem_schemam_xdefallo
-        @optionem['schemam_xdefallo'] || []
+        @optionem['xschemam'] || []
       end
     end
   end

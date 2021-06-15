@@ -1,0 +1,7 @@
+<!-- _includes/schemam/index.html -->
+{% for xschemam in site.data.hapi.xschemam %}
+  <article>
+    {{ xschemam  | inspect }}
+    {% include schemam/item.html schemam=xschemam initiale_html_hN=3 %}
+  </article>
+{% endfor %}

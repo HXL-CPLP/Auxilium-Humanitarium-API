@@ -4,8 +4,72 @@
 {% assign h_2 = h_1 | plus: 1 %}
 {% assign h_3 = h_2 | plus: 1 %}
 {% assign h_4 = h_3 | plus: 1 %}
+{% assign h1 = h_1 | | prepend: 'h' %}
+{% assign h2 = h_2 | | prepend: 'h' %}
+{% assign h3 = h_3 | | prepend: 'h' %}
+{% assign h4 = h_4 | | prepend: 'h' %}
 
+<{{ h1 }} id="{{ schemam.slug }}">
+  {% _🗣️ ISO_639-3_nomen 🗣️_ %}
+</{{ h1 }}>
+<dl>
+  <!-- Web sites -->
+  {% if schemam.datum.situs_interretialis %}
+  <dt>{% _🗣️ situs_interretialis_nomen 🗣️_ %}</dt>
+  <dd>
+    <dl style="padding-left: 2em;">
+      {%- if schemam.datum.situs_interretialis.referens_officinale %}
+        <dt>{% _🗣️ referens_officinale_nomen 🗣️_ %}</dt>
+        {% for situs in schemam.datum.situs_interretialis.referens_officinale %}
+        <dd>
+          <a href="{{ situs.iri }}">
+            {{ situs.nomen | default: situs.iri }}
+          </a>
+        </dd>
+        {%- endfor %}
+      {% endif %}
+      {%- if schemam.datum.situs_interretialis.vicipaedia %}
+        <dt>{% _🗣️ vicipaediam_nomen 🗣️_ %}</dt>
+        {% for situs in schemam.datum.situs_interretialis.vicipaedia %}
+        <dd>
+          <a href="{{ situs.iri }}">
+            {{ situs.nomen | default: situs.iri }}
+          </a>
+        </dd>
+        {%- endfor %}
+      {% endif %}
+      {%- if schemam.datum.wikidatum %}
+        <dt>{% _🗣️ wikidatum_nomen 🗣️_ %}</dt>
+        {% for situs in schemam.datum.wikidatum %}
+        <dd>
+          <a href="{{ situs.codicem | prepend: 'https://www.wikidata.org/wiki/' }}">
+            {{ situs.codicem }}
+          </a>
+        </dd>
+        {%- endfor %}
+      {% endif %}
+    </dl>
+  {% endif %}
+  <!-- Download of files -->
+  {% if schemam.datum.archivum %}
+  <dt>{% _🗣️ download_nomen 🗣️_ %}</dt>
+  <dd>
+    <dl style="padding-left: 2em;">
+      {%- if schemam.datum.archivum.referens_officinale %}
+        <dt>{% _🗣️ referens_officinale_nomen 🗣️_ %}</dt>
+        {% for situs in schemam.datum.archivum.referens_officinale %}
+        <dd>
+          <a href="{{ situs.iri }}">
+            {{ situs.nomen | default: situs.iri }}
+          </a>
+        </dd>
+        {%- endfor %}
+      {% endif %}
+    </dl>
+  {% endif %}
+</dl>
 
-<pre>
-{{ schemam | bellum_json }}
-</pre>
+<div class="alert alert-info" role="alert">
+  {% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}
+  <pre>{{- schemam.datum.archivum | bellum_json -}}</pre>
+</div>

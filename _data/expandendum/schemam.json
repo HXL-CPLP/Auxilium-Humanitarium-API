@@ -87,14 +87,22 @@
       ],
       "schemam": {
         "graphql": [
-          "/schema/iso/iso639-3/eng/iso639-3.graphql"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.graphql"
+          }
         ],
         "json": [
-          "/schema/iso/iso639-3/eng/iso639-3.json",
-          "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.json"
+          },
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+          }
         ],
         "sql": [
-          "/schema/iso/iso639-3/eng/iso639-3.sql"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.sql"
+          }
         ]
       }
     },
@@ -151,14 +159,22 @@
       ],
       "schemam": {
         "graphql": [
-          "/schema/iso/iso639-3/eng/iso639-3.graphql"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.graphql"
+          }
         ],
         "json": [
-          "/schema/iso/iso639-3/eng/iso639-3.json",
-          "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.json"
+          },
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+          }
         ],
         "sql": [
-          "/schema/iso/iso639-3/eng/iso639-3.sql"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.sql"
+          }
         ]
       }
     },
@@ -215,14 +231,22 @@
       ],
       "schemam": {
         "graphql": [
-          "/schema/iso/iso639-3/eng/iso639-3.graphql"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.graphql"
+          }
         ],
         "json": [
-          "/schema/iso/iso639-3/eng/iso639-3.json",
-          "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.json"
+          },
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+          }
         ],
         "sql": [
-          "/schema/iso/iso639-3/eng/iso639-3.sql"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.sql"
+          }
         ]
       }
     },
@@ -281,12 +305,14 @@
       }
     ],
     "archivum": {
-      "officinale": [
+      "referens_officinale": [
         "https://www.unicode.org/iso15924/iso15924.txt"
       ],
       "schemam": {
         "json": [
-          "/schema/iso/iso15924/eng/iso15924.json"
+          {
+            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+          }
         ]
       }
     }
@@ -327,14 +353,16 @@
       }
     ],
     "archivum": {
-      "officinale": [
+      "referens_officinale": [
         {
           "iri": "https://www.unicode.org/iso15924/iso15924.txt"
         }
       ],
       "schemam": {
         "json": [
-          "/schema/iso/iso15924/eng/iso15924.json"
+          {
+            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+          }
         ]
       }
     },
@@ -381,14 +409,16 @@
       }
     ],
     "archivum": {
-      "officinale": [
+      "referens_officinale": [
         {
           "iri": "https://www.unicode.org/iso15924/iso15924.txt"
         }
       ],
       "schemam": {
         "json": [
-          "/schema/iso/iso15924/eng/iso15924.json"
+          {
+            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+          }
         ]
       }
     },
@@ -435,14 +465,16 @@
       }
     ],
     "archivum": {
-      "officinale": [
+      "referens_officinale": [
         {
           "iri": "https://www.unicode.org/iso15924/iso15924.txt"
         }
       ],
       "schemam": {
         "json": [
-          "/schema/iso/iso15924/eng/iso15924.json"
+          {
+            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+          }
         ]
       }
     },

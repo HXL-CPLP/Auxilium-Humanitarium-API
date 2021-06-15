@@ -126,6 +126,7 @@ module Hapi
       nomen
       opus_in_progressu
       path
+      slug
       summarius
       tags
       titulum
@@ -319,6 +320,10 @@ module Hapi
     #   # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
     #   "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
     # end
+
+    def slug
+      @datum['lid']
+    end
 
     # _[eng] Returns the object as a debug String [eng]_
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb

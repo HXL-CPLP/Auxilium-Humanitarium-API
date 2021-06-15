@@ -71,12 +71,12 @@
         # referens_alternativum_nomen
         schemam:
           graphql:
-            - /schema/iso/iso639-3/eng/iso639-3.graphql # TODO: localize
+            - iri: /schema/iso/iso639-3/eng/iso639-3.graphql # TODO: localize
           json:
-            - /schema/iso/iso639-3/eng/iso639-3.json # TODO: localize
-            - /schema/iso/iso639-3/eng/iso639-3_macrolanguages.json # TODO: localize
+            - iri: /schema/iso/iso639-3/eng/iso639-3.json # TODO: localize
+            - iri: /schema/iso/iso639-3/eng/iso639-3_macrolanguages.json # TODO: localize
           sql:
-            - /schema/iso/iso639-3/eng/iso639-3.sql # TODO: localize
+            - iri: /schema/iso/iso639-3/eng/iso639-3.sql # TODO: localize
       __translationem: *id_temp001
 
 - uid: /mul-Zyyy/schemam/XZ/ISO-15924
@@ -104,12 +104,12 @@
   wikidatum:
     - codicem: Q16866
   archivum:
-    officinale:
+    referens_officinale:
       - https://www.unicode.org/iso15924/iso15924.txt
     # referens_alternativum_nomen
     schemam:
       json:
-        - /schema/iso/iso15924/eng/iso15924.json # TODO: localize
+        - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
 
 - farmulam:
     commendandum:
@@ -146,12 +146,12 @@
       wikidatum:
         - codicem: Q16866
       archivum:
-        officinale:
+        referens_officinale:
           - iri: https://www.unicode.org/iso15924/iso15924.txt
         # referens_alternativum_nomen
         schemam:
           json:
-            - /schema/iso/iso15924/eng/iso15924.json # TODO: localize
+            - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
       __translationem: *id_temp0012
 
 # TODO: _[por] Alterar este arquivo para conter tanto referencias à fonte
