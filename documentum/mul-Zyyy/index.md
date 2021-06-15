@@ -60,6 +60,4 @@ speciale_html: >
 
 ---
 
-{{ site.data['hapi'] | inspect }}
-
 {%- include index-corporeum-mul-Zyyy.html -%}

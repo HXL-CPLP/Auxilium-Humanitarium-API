@@ -1,16 +1,11 @@
 ---
 layout: defallo-ltr
 ---
-<h1>TODO: finalizar schemam</h1>
 
-
-<pre>
-  {{- page | bellum_json -}}
-</pre>
-
+<!--
 <div class="px-4 py-5 my-5 text-center">
   <h1 class="display-5 fw-bold">
-    {% _🗣️ Hapi_ad_agendum_MMXXI_titulum 🗣️_ %}
+    {% _🗣️ schemam_datum_nomen 🗣️_ %}: {{ schemam.nomen }}
   </h1>
   <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">
@@ -18,7 +13,9 @@ layout: defallo-ltr
       </p>
   </div>
 </div>
+-->
 
+{% include schemam/item.html schemam=page initiale_html_hN=2 %}
 
 <section>
   <h2>{% _🗣️ licentiam_nomen 🗣️_ %}</h2>

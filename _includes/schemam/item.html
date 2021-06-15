@@ -1,0 +1,11 @@
+<!-- _includes/schemam/item.html -->
+{% assign schemam = include.schemam %}
+{% assign h_1 = initiale_html_hN | default: 2 %}
+{% assign h_2 = h_1 | plus: 1 %}
+{% assign h_3 = h_2 | plus: 1 %}
+{% assign h_4 = h_3 | plus: 1 %}
+
+
+<pre>
+{{ schemam | bellum_json }}
+</pre>

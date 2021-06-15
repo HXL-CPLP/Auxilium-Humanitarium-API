@@ -21,138 +21,138 @@
 #        quer! (Emerson Rocha, 2021-05-23 20:40)
 # [por]_
 # Zyyy: &idZyyy
-#   # - namen: Hapi
+#   # - nomen: Hapi
 #   #   linguam: lat-Latn
 #   #   url: /
 
-#   - namen: "🇺🇳 UN 🇺🇳"
+#   - nomen: "🇺🇳 UN 🇺🇳"
 #     url: "#"
 #     descendens:
-#       - namen: <span lang="en" dir="ltr">HDX - The Humanitarian Data Exchange</span>
+#       - nomen: <span lang="en" dir="ltr">HDX - The Humanitarian Data Exchange</span>
 #         linguam: eng-Latn
 #         url: /api/UN/HDX/eng/
 
-#       - namen: <span lang="en" dir="ltr">ReliefWeb - Informing humanitarians worldwide</span>
+#       - nomen: <span lang="en" dir="ltr">ReliefWeb - Informing humanitarians worldwide</span>
 #         linguam: eng-Latn
 #         url: /api/UN/CODV2API/eng/
 
-#       - namen: <span lang="en" dir="ltr">COD Version 2 API <sup>beta</sup></span>
+#       - nomen: <span lang="en" dir="ltr">COD Version 2 API <sup>beta</sup></span>
 #         linguam: eng-Latn
 #         url: /api/UN/CODV2API/eng/
 
-#       - namen: <span lang="en" dir="ltr">UNSD SDG API</span>
+#       - nomen: <span lang="en" dir="ltr">UNSD SDG API</span>
 #         debile: true
 
-#   - namen: "🌐 XZ 🌐"
+#   - nomen: "🌐 XZ 🌐"
 #     url: "#"
 #     descendens:
-#       - namen: <span lang="en" dir="ltr">HXL-Proxy - Proxy of the Humanitarian Exchange Language</span>
+#       - nomen: <span lang="en" dir="ltr">HXL-Proxy - Proxy of the Humanitarian Exchange Language</span>
 #         linguam: eng-Latn
 #         url: /api/XZ/HXL-Proxy/eng/
 
-#       - namen: <span lang="en" dir="ltr">Worldbank</span>
+#       - nomen: <span lang="en" dir="ltr">Worldbank</span>
 #         debile: true
 
-#   - namen: "🇧🇷 BR 🇧🇷"
+#   - nomen: "🇧🇷 BR 🇧🇷"
 #     url: "#"
 #     descendens:
-#       - namen: <span lang="pt" dir="ltr">Portais CKAN de dados abertos no Brasil</span>
+#       - nomen: <span lang="pt" dir="ltr">Portais CKAN de dados abertos no Brasil</span>
 #         linguam: por-Latn
 #         url: /api/BR/portais-ckan-brasil/por/
 
-#       - namen: <span lang="pt" dir="ltr">Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></span>
+#       - nomen: <span lang="pt" dir="ltr">Portais ArcGIS de dados abertos do Brasil<sup>beta</sup></span>
 #         linguam: por-Latn
 #         url: /api/BR/portais-arcgis-brasil/por/
 
-#   - namen: Data Schema
+#   - nomen: Data Schema
 #     linguam: lat-Latn
 #     url: /eng#schema
 
 Zyyy: &idZyyy
 
-  - namen: "🇺🇳 UN 🇺🇳"
+  - nomen: "🇺🇳 UN 🇺🇳"
     url: "#"
     descendens:
-      - namen: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
+      - nomen: '{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/'
 
-      - namen: '{% _🗣️ Hapi_api_UN_reliefweb_titulum 🗣️_ %}'
+      - nomen: '{% _🗣️ Hapi_api_UN_reliefweb_titulum 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 🗣️_ %}/'
 
-      - namen: '{% _🗣️ Hapi_api_UN_CODV2API_titulum 🗣️_ %}'
+      - nomen: '{% _🗣️ Hapi_api_UN_CODV2API_titulum 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 🗣️_ %}/'
 
-      - namen: <span lang="en" dir="ltr">UNSD SDG API</span>
+      - nomen: <span lang="en" dir="ltr">UNSD SDG API</span>
         debile: true
 
-      - namen: separator
+      - nomen: separator
 
-      - namen: <span lang="en" dir="ltr">UN M49</span>
+      - nomen: <span lang="en" dir="ltr">UN M49</span>
         debile: true
 
-      - namen: <span lang="en" dir="ltr">UN P</span>
+      - nomen: <span lang="en" dir="ltr">UN P</span>
         debile: true
 
-      - namen: <span lang="en" dir="ltr">UN HTCDS</span>
+      - nomen: <span lang="en" dir="ltr">UN HTCDS</span>
         debile: true
 
-  - namen: "🌐 XZ 🌐"
+  - nomen: "🌐 XZ 🌐"
     url: "#"
     descendens:
-      - namen: '{% _🗣️ Hapi_api_XZ_HXL-Proxy_titulum 🗣️_ %}'
+      - nomen: '{% _🗣️ Hapi_api_XZ_HXL-Proxy_titulum 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/XZ/{% _🗣️ 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 🗣️_ %}/'
 
-      - namen: <span lang="en" dir="ltr">Worldbank</span>
+      - nomen: <span lang="en" dir="ltr">Worldbank</span>
         debile: true
 
-      - namen: separator
+      - nomen: separator
 
-      - namen: '{% _🗣️ ISO_639-3_nomen 🗣️_ %}'
+      - nomen: '{% _🗣️ ISO_639-3_nomen 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 🗣️_ %}'
 
-      - namen: '{% _🗣️ ISO_15924_nomen 🗣️_ %}'
+      - nomen: '{% _🗣️ ISO_15924_nomen 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 🗣️_ %}'
 
 
-  - namen: "🇧🇷 BR 🇧🇷"
+  - nomen: "🇧🇷 BR 🇧🇷"
     url: '#'
     descendens:
-      - namen: '{% _🗣️ Hapi_api_BR_portais-ckan-brasil_titulum 🗣️_ %}'
+      - nomen: '{% _🗣️ Hapi_api_BR_portais-ckan-brasil_titulum 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/BR/{% _🗣️ 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 🗣️_ %}/'
 
-      - namen: '{% _🗣️ Hapi_api_BR_portais-arcgis-brasil_titulum 🗣️_ %}'
+      - nomen: '{% _🗣️ Hapi_api_BR_portais-arcgis-brasil_titulum 🗣️_ %}'
         linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
         url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/BR/{% _🗣️ 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 🗣️_ %}/'
 
-      - namen: separator
+      - nomen: separator
 
-      - namen: <span lang="en" dir="ltr">IBGE</span>
+      - nomen: <span lang="en" dir="ltr">IBGE</span>
         debile: true
 
-  # - namen: '💾🧱🧮 <!-- TODO: RtL -->'
+  # - nomen: '💾🧱🧮 <!-- TODO: RtL -->'
   #   titulum: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
-  # - namen: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
+  # - nomen: '{% _🗣️ schemam_datum_nomen 🗣️_ %}'
   #   linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
   #   url: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 schemam_slug 🔎🔕🔍 🗣️_ %}'
 
-  - namen: "💾🗣️💭 <!-- TODO: RtL -->"
+  - nomen: "💾🗣️💭 <!-- TODO: RtL -->"
     titulum: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %}'
     url: "#"
     descendens:
-      - namen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : hapi-api.tm.hxl'
+      - nomen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : hapi-api.tm.hxl'
         url: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1680147913
 
-      - namen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : schemam.tm.hxl'
+      - nomen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : schemam.tm.hxl'
         url: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1345709789
 
-      - namen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : commune.tm.hxl'
+      - nomen: '{% _🗣️ translationem_memoriam_nomen 🗣️_ %} : commune.tm.hxl'
         url: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=355011653
 
   # - html: |

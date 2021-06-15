@@ -59,7 +59,7 @@ module Hapi
       uid
       titulum
       html_body_class
-      namen
+      nomen
       summarius
       opus_in_progressu
       xdefallo
@@ -197,11 +197,11 @@ module Hapi
 
     # TODO: remove obsolete parts
     def titulum
-      @titulum || @namen || @title
+      @titulum || @nomen || @title
     end
 
-    def namen
-      @titulum || @namen || @title
+    def nomen
+      @titulum || @nomen || @title
     end
 
     # Trivia

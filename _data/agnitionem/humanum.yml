@@ -1,6 +1,6 @@
 # _data/agnitionem/humanum.yml
 
-- namen:
+- nomen:
     abecedariam: Latn
     baptismum: Thalles Augusto
   opus:
@@ -11,7 +11,7 @@
   linkedin: https://www.linkedin.com/in/thalles-augusto/
   typum: humanum
 
-- namen:
+- nomen:
     abecedariam: Latn
     baptismum: Emerson Rocha
   opus:
@@ -22,7 +22,7 @@
   linkedin: https://www.linkedin.com/in/fititnt/
   typum: humanum
 
-- namen:
+- nomen:
     abecedariam: Latn
     baptismum: Sine nomine (multis clanculum civibus)
     translatianem:

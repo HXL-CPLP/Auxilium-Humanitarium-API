@@ -117,12 +117,13 @@ module Hapi
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
       content
+      descriptionem
       dir
       gid
       html_body_class
       hreflang
       linguam
-      namen
+      nomen
       opus_in_progressu
       path
       summarius
@@ -220,6 +221,13 @@ module Hapi
     end
 
     # Trivia
+    # - 'dēscrīptiōnem'
+    #   - https://en.wiktionary.org/wiki/descriptio#Latin
+    def descriptionem
+      @datum['summarius']
+    end
+
+    # Trivia
     # - 'gid'
     #   - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
     def gid_est?(gid)
@@ -251,6 +259,10 @@ module Hapi
       @datum['linguam']
     end
 
+    def nomen
+      @datum['nomen']
+    end
+
     # def openapi_filum
     #   # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
     #   @datum['jekyll-page']['openapi_filum2']
@@ -278,12 +290,13 @@ module Hapi
 
     # TODO: remove obsolete parts
     def titulum
-      @titulum || @namen || @title || @datum['summarius']
+      # {% _🗣️ schemam_datum_nomen 🗣️_ %}: {{ schemam.nomen }}
+      prefix = Hapi::HSD.l10n_simplex('schemam_datum_nomen', linguam)
+      # @titulum || @nomen || @title || @datum['summarius']
+
+      "#{prefix} : #{nomen}"
     end
 
-    def namen
-      @titulum || @namen || @title
-    end
 
     # Trivia
     # - 'trivium'

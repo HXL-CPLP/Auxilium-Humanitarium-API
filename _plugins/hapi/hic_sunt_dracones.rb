@@ -207,6 +207,12 @@ module Hapi
       Jekyll.sites.last.data
     end
 
+    def l10n_simplex(codicem, linguam)
+      puts "TODO: l10n_simplex #{codicem} #{linguam}"
+
+      codicem
+    end
+
     def data!(data)
       idx = Jekyll.sites.length - 1
       Jekyll.sites[idx].data = data

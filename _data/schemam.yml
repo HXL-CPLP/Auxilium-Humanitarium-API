@@ -11,7 +11,7 @@
   typum: schemam
   gid: XZ
   lid: ISO-639-3 # ISO_639-3_slug
-  namen: "{% _🗣️ ISO_639-3_nomen 🗣️_ %}"
+  nomen: "{% _🗣️ ISO_639-3_nomen 🗣️_ %}"
   summarius: "{% _🗣️ ISO_639-3_summarius 🗣️_ %}"
   situs_interretialis:
     referens_officinale:
@@ -55,7 +55,7 @@
       typum: schemam
       gid: XZ
       lid: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}" #  # Exemplum: ISO-639-3
-      namen: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
+      nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
       summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_summarius 📝und-Zyyy📝 🗣️_ %}"
       situs_interretialis:
         referens_officinale:
@@ -87,8 +87,7 @@
   gid: XZ
   lid: ISO-15924 # ISO_15924_slug
   lid_l10n: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}"
-  namen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
-  namen_l10n: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
+  nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
   summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}"
   summarius_l10n: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
   situs_interretialis:
@@ -131,7 +130,7 @@
       typum: schemam
       gid: XZ
       lid: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}" # Exemplum: ISO-15924
-      namen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
+      nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
       summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}"
       situs_interretialis:
         referens_officinale:

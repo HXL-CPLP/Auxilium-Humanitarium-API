@@ -26,32 +26,32 @@
 #  https://en.wiktionary.org/wiki/label#English, https://en.wiktionary.org/wiki/%C3%A9tiquette#French
 
 nav: &id_nav
-  - namen: "🇺🇳 UN 🇺🇳"
+  - nomen: "🇺🇳 UN 🇺🇳"
     url: "#"
     descendens:
-      - namen: "{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}"
+      - nomen: "{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}"
         linguam: "{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}"
         url: "/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ Hapi_api_UN_HDX_slug 🗣️_ %}/"
 
-      - namen: "{% _🗣️ Hapi_api_UN_reliefweb_titulum 🗣️_ %}"
+      - nomen: "{% _🗣️ Hapi_api_UN_reliefweb_titulum 🗣️_ %}"
         linguam: "{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}"
         url: "/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 🗣️_ %}/"
 
-      - namen: "{% _🗣️ Hapi_api_UN_CODV2API_titulum 🗣️_ %}"
+      - nomen: "{% _🗣️ Hapi_api_UN_CODV2API_titulum 🗣️_ %}"
         linguam: "{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}"
         url: "/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/UN/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 🗣️_ %}/"
 
-      - namen: <span lang="en" dir="ltr">UNSD SDG API</span>
+      - nomen: <span lang="en" dir="ltr">UNSD SDG API</span>
         debile: true
 
-  - namen: "🌐 XZ 🌐"
+  - nomen: "🌐 XZ 🌐"
     url: "#"
     descendens:
-      - namen: "{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}"
+      - nomen: "{% _🗣️ Hapi_api_UN_HDX_titulum 🗣️_ %}"
         linguam: "{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}"
         url: "/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/api/XZ/{% _🗣️ 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 🗣️_ %}/"
 
-      - namen: <span lang="en" dir="ltr">Worldbank</span>
+      - nomen: <span lang="en" dir="ltr">Worldbank</span>
         debile: true
 
 grupum:

@@ -29,21 +29,21 @@
                   data-bs-toggle="dropdown" aria-expanded="false" 
                   id="navigationem-descendens-{{ forloop.index0 }}" href="#">
                   {% if link.titulum %}
-                    <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.namen }}</abbr>
+                    <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.nomen }}</abbr>
                   {% else %}
-                    {{ link.namen | liquify }}
+                    {{ link.nomen | liquify }}
                   {% endif %}
                 </a>
                 <ul class="dropdown-menu"
                   aria-labelledby="navigationem-descendens-{{ forloop.index0 }}">
                   {% for sublink in link.descendens %}
-                      {% if sublink.namen == 'separator' %}
+                      {% if sublink.nomen == 'separator' %}
                         <li role="separator" class="dropdown-divider"></li>
                       {% elsif sublink.debile %}
                       <li class="nav-item">
                         <a class="nav-link disabled" tabindex="-1"
                           aria-disabled="true" href="#">
-                          {{ sublink.namen | liquify }}
+                          {{ sublink.nomen | liquify }}
                         </a>
                       </li>
                       {% else %}
@@ -51,9 +51,9 @@
                           <a class="dropdown-item"
                             href="{{ site.url }}{{ site.baseurl }}{{ sublink.url | liquify | strip_html }}">
                             {% if sublink.titulum %}
-                              <abbr title="{{ sublink.titulum | liquify | strip_html }}">{{ sublink.namen }}</abbr>
+                              <abbr title="{{ sublink.titulum | liquify | strip_html }}">{{ sublink.nomen }}</abbr>
                             {% else %}
-                              {{ sublink.namen | liquify }}
+                              {{ sublink.nomen | liquify }}
                             {% endif %}
                           </a>
                         </li>
@@ -66,9 +66,9 @@
                 <a class="nav-link"
                   href="{{ site.url }}{{ site.baseurl }}{{ link.url | liquify | strip_html }}">
                   {% if link.titulum %}
-                    <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.namen }}</abbr>
+                    <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.nomen }}</abbr>
                   {% else %}
-                    {{ link.namen | liquify }}
+                    {{ link.nomen | liquify }}
                   {% endif %}
                 </a>
               </li>

@@ -128,7 +128,7 @@ Trivia:
 
 ```yaml
 
-- namen:
+- nomen:
     abecedariam: Latn
     baptismum: Thalles Augusto
   opus:
@@ -138,7 +138,7 @@ Trivia:
   github: https://github.com/ThesllaDev
   linkedin: https://www.linkedin.com/in/thalles-augusto/
 
-- namen:
+- nomen:
     abecedariam: Latn
     baptismum: Emerson Rocha
   opus:
@@ -148,7 +148,7 @@ Trivia:
   github: https://github.com/fititnt
   linkedin: https://www.linkedin.com/in/fititnt/
 
-- namen:
+- nomen:
     abecedariam: Latn
     baptismum: Sine nomine (multis clanculum civibus)
     translatianem:

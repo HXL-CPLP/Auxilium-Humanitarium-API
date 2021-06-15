@@ -41,7 +41,7 @@ schemam:
 gid:
   UN:
     gid: UN
-    namen: "🇺🇳 UN 🇺🇳"
+    nomen: "🇺🇳 UN 🇺🇳"
     descriptionem: "{% _🗣️ nomen_spatium_UN_summarius 🗣️_ %}"
     hashtag:
       api: "api-UN"
@@ -53,7 +53,7 @@ gid:
 
   XZ:
     gid: XZ
-    namen: "🌐 XZ 🌐"
+    nomen: "🌐 XZ 🌐"
     descriptionem: "{% _🗣️ nomen_spatium_XZ_summarius 🗣️_ %}"
     hashtag:
       api: "api-XZ"
@@ -61,7 +61,7 @@ gid:
 
   BR:
     gid: BR
-    namen: "🇧🇷 BR 🇧🇷"
+    nomen: "🇧🇷 BR 🇧🇷"
     descriptionem: "{% _🗣️ nomen_spatium_BR_summarius 🗣️_ %}"
     hashtag:
       api: "api-BR"

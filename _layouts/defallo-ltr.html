@@ -10,7 +10,7 @@
 
   <header class="container">
     <h1>{{ page.titulum | default: page.title }}</h1>
-    {{ page.description | markdownify }}
+    {{ page.descriptionem | default: page.description | markdownify }}
 
     <div class="form-check form-switch">
       <input class="form-check-input" type="checkbox" id="peritum-modum-est">

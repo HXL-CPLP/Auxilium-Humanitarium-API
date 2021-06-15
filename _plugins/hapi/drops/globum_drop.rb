@@ -69,8 +69,8 @@ module Hapi
         @optionem['gid']
       end
 
-      def namen
-        @optionem['namen']
+      def nomen
+        @optionem['nomen']
       end
 
       def descriptionem

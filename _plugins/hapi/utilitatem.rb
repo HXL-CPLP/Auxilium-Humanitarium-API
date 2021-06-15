@@ -126,7 +126,7 @@ module Hapi
         # @see https://www.w3.org/International/questions/qa-html-dir, dir="auto"
         'htmldir' => 'ltr', # FIXME: _[eng] Use _data/referens.yml for non-LTR [eng]-
         'hreflang' => @hreflang,
-        'title' => api['namen'] || api['title'],
+        'title' => api['nomen'] || api['title'],
         'description' => api['description'] || api['descriptionem'],
         'tags' => tags_de_api(api),
         'openapi_filum2' => openapi_filum_de_api(api),

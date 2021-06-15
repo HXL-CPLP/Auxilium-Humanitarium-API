@@ -31,7 +31,7 @@
 
 ### dēprecātum _________________________________________________________________
 
-# title -> namen
+# title -> nomen
 # description -> descriptionem
 # noindex -> x-temporarium.noindex
 # openapi_filum -> x-temporarium.openapi_filum
@@ -196,7 +196,7 @@
   slug: dados-abertos-arcgis-brasil
   title: Portais ArcGIS de dados abertos do Brasil
   noindex: true
-  # namen:
+  # nomen:
   # descriptionen:
 
 # Note: jekyll-datapage-generator.rb needs fix for non-latin alphabet
@@ -206,6 +206,6 @@
 #   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
 #   slug: "اختبارات"
 #   noindex: true
-#   # namen: Humanitarian Data Exchange
-#   # namen:
+#   # nomen: Humanitarian Data Exchange
+#   # nomen:
 #   # descriptionen:

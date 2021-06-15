@@ -7,7 +7,7 @@
     <article>
       <header>
         <h3 id="api-{{ globum.gid | slugify }}">
-          {{ globum.namen }}
+          {{ globum.nomen }}
         </h3>
         {{ globum.descriptionem | default: '<mark>_[lat] Ignotum textum. Adiuva me 🥺[lat]_</mark> '}}
       </header>
@@ -98,7 +98,7 @@
       </h3>
     <ul>
     {% for humanum in site.data.agnitionem.humanum -%}
-      <li>{{ humanum.namen.baptismum }}</li>
+      <li>{{ humanum.nomen.baptismum }}</li>
     {%- endfor %}
     </ul>
     <h3 id="agnitionem-communitatem">
@@ -106,7 +106,7 @@
     </h3>
     <ul>
     {% for communitatem in site.data.agnitionem.communitatem -%}
-      <li>{{ communitatem.namen.baptismum }}</li>
+      <li>{{ communitatem.nomen.baptismum }}</li>
     {%- endfor %}
     </ul>
   </aside>
