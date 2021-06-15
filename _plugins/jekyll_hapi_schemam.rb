@@ -56,6 +56,13 @@ module Hapi
       schemam_collectionem = site.data['l10n']['schemaml10n']
 
       schemam_collectionem.each do |item|
+        unless item['__translationem'].nil?
+          item['__translationem'].each do |archivum|
+            site.pages << ArchivumSimplex.new(site, archivum)
+            # ArchivumSimplex.new(site, archivum)
+          end
+        end
+
         site.pages << SchemamPaginam.new(site, item)
 
         # TODO: _[eng-Latn] ArchivumSimplex for schema pages that mention attachments [eng-Latn]_
@@ -65,30 +72,71 @@ module Hapi
 
   # Subclass of `Jekyll::Page` with custom method definitions.
   class ArchivumSimplex < Jekyll::Page
-    def initialize(site, category, posts) # rubocop:disable Metrics/MethodLength
-
+    def initialize(site, archivum) # rubocop:disable Metrics/MethodLength,Lint/MissingSuper,Metrics/AbcSize
       # TODO: _[eng-Latn] Finish the MVP of ArchivumSimplex [eng-Latn]_
 
-      @site = site             # the current site instance.
-      @base = site.source      # path to the source directory.
-      @dir  = category         # the directory the page will reside in.
+      template = 'archivum-simplex'
+      template_ext = '.html'
 
-      # All pages have the same filename, so define attributes straight away.
-      @basename = 'index'      # filename without the extension.
-      @ext      = '.html'      # the extension.
-      @name     = 'index.html' # basically @basename + @ext.
+      @site = site                                         # the current site instance.
+      @base = site.source                                  # path to the source directory.
+      @dir  = File.dirname(archivum['objectivum'])            # the directory the page will reside in.
+      @ext  = File.extname(archivum['objectivum'])            # the extension.
+      @basename = File.basename(archivum['objectivum'], '.*') # filename without the extension.
+      @name = File.basename(archivum['objectivum'])           # basically @basename + @ext.
 
-      # Initialize data hash with a key pointing to all posts under current category.
-      # This allows accessing the list in a template via `page.linked_docs`.
-      @data = {
-        'linked_docs' => posts
-      }
+      template_textum = File.read(Jekyll::PathManager.join(@base, archivum['fontem']))
 
-      # Look up front matter defaults scoped to type `categories`, if given key
-      # doesn't exist in the `data` hash.
+      # @path = Jekyll.sanitized_path(@base, archivum['fontem'])
+      # @path = Jekyll.sanitized_path('_layouts')
+      base_path = @site.layouts[template].path
+      base_path.slice! @site.layouts[template].name
+      # read_yaml(Jekyll::PathManager.join(@base, @dir), @name)
+      # read_yaml(Jekyll::PathManager.join(@base, @dir), @name)
+      read_yaml(base_path, "#{template}#{template_ext}")
+
+      # _[por] Não estamos usando Jekyll defaults [por]_
       data.default_proc = proc do |_, key|
-        site.frontmatter_defaults.find(relative_path, :categories, key)
+        site.frontmatter_defaults.find(relative_path, type, key)
       end
+
+      data['archivum_fundationem'] = template_textum
+
+      puts ''
+      puts 'base_path'
+      puts base_path
+      puts ''
+      puts @site.layouts[template].name
+
+      puts @path
+      puts archivum.inspect
+
+      # File.read(file_name)
+
+      process(@name)
+
+      Jekyll::Hooks.trigger :pages, :post_init, self
+
+      # return nil # rubocop:disable  Lint/ReturnInVoidContext
+
+      # @dir = category # the directory the page will reside in.
+
+      # # All pages have the same filename, so define attributes straight away.
+      # # @basename = 'index'      # filename without the extension.
+
+      # @name = 'index.html' # basically @basename + @ext.
+
+      # # Initialize data hash with a key pointing to all posts under current category.
+      # # This allows accessing the list in a template via `page.linked_docs`.
+      # @data = {
+      #   'linked_docs' => posts
+      # }
+
+      # # Look up front matter defaults scoped to type `categories`, if given key
+      # # doesn't exist in the `data` hash.
+      # data.default_proc = proc do |_, key|
+      #   site.frontmatter_defaults.find(relative_path, :categories, key)
+      # end
     end
 
     # Placeholders that are used in constructing page URL.
