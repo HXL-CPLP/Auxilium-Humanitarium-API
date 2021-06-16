@@ -125,7 +125,7 @@ module Hapi
       globum = globum?(api, schemam)
 
       # puts globum[0]['collectionem_api']
-      puts globum[0]['collectionem_schemam']
+      # puts globum[0]['collectionem_schemam']
 
       jekyll_data = HSD.data?
 

@@ -6,6 +6,13 @@
   {% if xschemam_global.collectionem_xschemam %}
   gid - {{ xschemam_global.gid }}
   {% for xschemam in xschemam_global.collectionem_xschemam %}
+    {% if xschemam.alternativum_linguam contains page.linguam %}
+      {% assign rem = xschemam.alternativum | where: 'linguam', page.linguam | first %}
+      {% include schemam/item.html schemam=rem initiale_html_hN=3 %}
+    {% else %}
+     TODO: do it
+    {% endif %}
+
     <article>
       {% comment %} {{ xschemam_global | inspect }} {% endcomment %}
       <br>
@@ -19,7 +26,6 @@
       <br>
       <br>
       <br>
-      {% include schemam/item.html schemam=xschemam initiale_html_hN=3 %}
     </article>
   {% endfor %}
   {% endif %}
