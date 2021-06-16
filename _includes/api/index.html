@@ -4,9 +4,9 @@
 {% assign h_2ax = h_1ax | plus: 1 %}
 {% assign h_3ax = h_2ax | plus: 1 %}
 
-{% assign h1ax = h_1ax | | prepend: 'h' %}
-{% assign h2ax = h_2ax | | prepend: 'h' %}
-{% assign h3ax = h_3ax | | prepend: 'h' %}
+{% assign h1ax = h_1ax | prepend: 'h' %}
+{% assign h2ax = h_2ax | prepend: 'h' %}
+{% assign h3ax = h_3ax | prepend: 'h' %}
 
 {% for globum in site.data.hapi.globum %}
   {% if globum.collectionem_xapi[0] %}

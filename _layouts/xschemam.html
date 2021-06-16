@@ -1,18 +1,17 @@
 ---
 layout: defallo-mul-Zyyy
 ---
+<!-- _[lat-Latn] Datum Schēmam [lat-Latn]_ -->
 
-<hr>
+{% assign h_1sx = include.initiale_html_hN %}
+{% assign h_2sx = h_1sx | plus: 1 %}
+{% assign h_3sx = h_2sx | plus: 1 %}
 
-<pre>
-{{- page | bellum_json -}}
-</pre>
+{% assign h1sx = h_1sx | prepend: 'h' %}
+{% assign h2sx = h_2sx | prepend: 'h' %}
+{% assign h3sx = h_3sx | prepend: 'h' %}
 
-<hr>
-<div class="alert alert-info" role="alert">
-  <ul>
-    <li>{% de_markdown %}{% _🗣️ 📝lat-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝lat-Latn📝 🗣️_ %}{% endde_markdown %}</li>
-    <li>{% de_markdown %}{% _🗣️ 📝por-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝por-Latn📝 🗣️_ %}{% endde_markdown %}</li>
-    <li>{% de_markdown %}{% _🗣️ 📝eng-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝eng-Latn📝 🗣️_ %}{% endde_markdown %}</li>
-  </ul>
-</div>
+{% include xdefallo-linguam-notitia.html %}
+
+{% include schemam/index-xdefallo.html xschemam=page initiale_html_hN=2 %}
+

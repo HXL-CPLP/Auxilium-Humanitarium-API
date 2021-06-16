@@ -9,7 +9,7 @@ linguam: spa-Latn
 permalink: /spa-Latn/
 # categories: [ index ]
 # layout: defallo
-layout: defallo-ltr
+layout: defallo
 
 categories: ['index', 'linguam-spa-Latn']
 tags: ['index', 'linguam-spa-Latn']

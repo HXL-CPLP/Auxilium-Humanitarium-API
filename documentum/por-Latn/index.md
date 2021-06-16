@@ -11,7 +11,7 @@ linguam: por-Latn
 permalink: /por-Latn/
 # categories: [ index ]
 # layout: defallo
-layout: defallo-ltr
+layout: defallo
 
 categories: ['index', 'linguam-por-Latn']
 tags: ['index', 'linguam-por-Latn']

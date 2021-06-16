@@ -9,7 +9,7 @@ linguam: arb-Arab
 permalink: /arb-Arab/
 # categories: [ index ]
 # layout: defallo
-layout: defallo-ltr
+layout: defallo
 
 categories: ['index', 'linguam-arb-Arab']
 tags: ['index', 'linguam-arb-Arab']
@@ -18,7 +18,7 @@ tags: ['index', 'linguam-arb-Arab']
 #                we would do with automatically generated API pages.
 #               (Emerson Rocha, 2021-05-25 04:30 UTC)
 #          [eng]_
-htmldir: rlt
+htmldir: rtl
 iso6391: ar
 # iso6391: es
 iso6393: arb

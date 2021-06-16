@@ -1,10 +1,10 @@
 ---
 layout: defallo-mul-Zyyy
 ---
+{% include xdefallo-linguam-notitia.html %}
+{% include api/index-xdefallo.html xapi=page initiale_html_hN=2 %}
 
-<hr>
-
-{% for api_alt in page.alternativum %}
+{% comment %} {% for api_alt in page.alternativum %}
   {% if api_alt.url == page.url %}
     {% continue %}
   {% endif %}
@@ -29,11 +29,4 @@ layout: defallo-mul-Zyyy
   </article>
 {% endfor %}
 
-<hr>
-<div class="alert alert-info" role="alert">
-  <ul>
-    <li>{% de_markdown %}{% _🗣️ 📝lat-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝lat-Latn📝 🗣️_ %}{% endde_markdown %}</li>
-    <li>{% de_markdown %}{% _🗣️ 📝por-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝por-Latn📝 🗣️_ %}{% endde_markdown %}</li>
-    <li>{% de_markdown %}{% _🗣️ 📝eng-Latn📝 Hapi_paginam_discretiva_linguam_summarius 📝eng-Latn📝 🗣️_ %}{% endde_markdown %}</li>
-  </ul>
-</div>
+<hr> {% endcomment %}

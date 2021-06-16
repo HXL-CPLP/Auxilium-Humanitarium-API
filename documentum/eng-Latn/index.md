@@ -11,7 +11,7 @@ linguam: eng-Latn
 permalink: /eng-Latn/
 # categories: [ index ]
 # layout: defallo
-layout: defallo-ltr
+layout: defallo
 
 categories: ['index', 'linguam-eng-Latn']
 tags: ['index', 'linguam-eng-Latn']

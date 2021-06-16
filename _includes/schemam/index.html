@@ -4,9 +4,9 @@
 {% assign h_2sx = h_1sx | plus: 1 %}
 {% assign h_3sx = h_2sx | plus: 1 %}
 
-{% assign h1sx = h_1sx | | prepend: 'h' %}
-{% assign h2sx = h_2sx | | prepend: 'h' %}
-{% assign h3sx = h_3sx | | prepend: 'h' %}
+{% assign h1sx = h_1sx | prepend: 'h' %}
+{% assign h2sx = h_2sx | prepend: 'h' %}
+{% assign h3sx = h_3sx | prepend: 'h' %}
 
 
 {% for xschemam_global in site.data.hapi.xschemam %}
