@@ -1,79 +1,15 @@
 <!-- _includes/index-corporeum-mul-Zyyy.html -->
 <div>
-  <article>
 
-    <h2 id="api">API</h2>
-    {% for globum in site.data.hapi.globum %}
-    <article>
-      <header>
-        <h3 id="api-{{ globum.gid | slugify }}">
-          {{ globum.nomen }}
-        </h3>
-        {{ globum.descriptionem | default: '<mark>_[lat] Ignotum textum. Adiuva me 🥺[lat]_</mark> '}}
-      </header>
-
-      {% for xapi in globum.collectionem_xapi %}
-      <article style="padding: 1em">
-        <h4 id="{{ xapi.lid | default: xapi['datum']['lid'] | slugify }}">
-          <a href="#{{ xapi.url | slugify }}">🔗</a>
-          {{ xapi.lid | default: xapi['datum']['lid'] }}
-        </h4>
-        <div class="row">
-          {% for api_alt in xapi.alternativum %}
-            {% if api_alt.url == xapi.url %}
-              {% continue %}
-            {% endif %}
-          <div class="col-12 col-xxl-6 pb-3">
-            <article class="card">
-              <div class="card-header">
-                <small>🗣{{ api_alt.linguam }}🗣</small>
-                {% if api_alt.opus_in_progressu %}
-                  <small>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}</small>
-                {% endif %}
-              </div>
-              <div class="card-body">
-                <h5 class="card-title" id="{{ api_alt.url | slugify }}" >
-                  {{ api_alt.title }}
-                </h5>
-                <p class="card-text">
-
-                  {{ api_alt.description | default: "<mark>_[por] TODO: adicionar descrição [por]_</mark>" }}
-                </p>
-                <a href="{{ api_alt.url }}" hreflang="{{ api_alt.hreflang }}"
-                  class="btn btn-primary">
-                  API Interativa
-                </a>
-                <a href="{{ api_alt.datum.openapi_filum }}"
-                  hreflang="{{ api_alt.hreflang }}" class="btn btn-default">
-                  OpenAPI
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">
-                  {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}: <br>
-                  <mark>_[por] TODO: adicionar lista de colaboradores [por]_</mark>
-                </small>
-              </div>
-            </article>
-          </div>
-          {% endfor %}
-      </div>
-
-      </article>
-      {% endfor %}
-      <br>
-    </article>
-    {% endfor %}
-  </article>
-
-  <div class="peritum-est--block">
-    <h2 id="{% _🗣️ Hapi_API_slug 🗣️_ %}--peritum-est">{% _🗣️ abbreviationem_XZ_API_nomen 🗣️_ %}</h2>
+  <!-- _[lat-Latn] Application Programming Interface [neolatīnum; de eng] [lat-Latn]_ -->
+  <div>
+    <h2 id="{% _🗣️ 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 🗣️_ %}">{% _🗣️ abbreviationem_XZ_API_nomen 🗣️_ %}</h2>
     {% include api/index.html initiale_html_hN=3 %}
   </div>
 
   <!-- _[lat-Latn] Datum Schēmam [lat-Latn]_ -->
   <article>
-    <h2 id="{% _🗣️ schemam_datum_slug 🗣️_ %}">{% _🗣️ schemam_datum_nomen 🗣️_ %}</h2>
+    <h2 id="{% _🗣️ 🔎🔕🔍 schemam_datum_slug 🔎🔕🔍 🗣️_ %}">{% _🗣️ schemam_datum_nomen 🗣️_ %}</h2>
     {% include schemam/index.html initiale_html_hN=3 %}
   </article>
 
@@ -115,7 +51,7 @@
     <h2 id="licentiam">{% _🗣️ licentiam_nomen 🗣️_ %}</h2>
     <a href="https://unlicense.org/">
       <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png"
-        alt="{% _🗣️ dominium_publicum_nomen 🗣️_ %}">
+        alt="{% _🗣️ 🔎🔕🔍 dominium_publicum_nomen 🔎🔕🔍 🗣️_ %}">
     </a>
     <br>
     {% de_markdown %}{% _🗣️ Hapi_licentiam_Hapi_descriptionem 🗣️_ %}{% endde_markdown %}

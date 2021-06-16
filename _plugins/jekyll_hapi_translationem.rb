@@ -116,6 +116,13 @@ module Hapi
           { 'linguam' => @alternandum_linguam, 'referens' => @referens }
         )
 
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @fontem_linguam [#{@fontem_linguam}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] resultatum [#{resultatum.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @tag_fontem [#{@tag_fontem.inspect}]"
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @textum [#{quod_textum_solum_est?.inspect}]" if @sos_est
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @textum [#{@initiale_argumentum.inspect}]" if @sos_est
+        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @fontem_linguam [#{@fontem_linguam.inspect}]"
+
         Hapi::Datum::L10nTag.new(
           {
             'crudum' => @tag_fontem,
@@ -139,15 +146,9 @@ module Hapi
                              end
           }
         )
-
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @fontem_linguam [#{@fontem_linguam}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] resultatum [#{resultatum.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @tag_fontem [#{@tag_fontem.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @textum [#{@textum.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @fontem_linguam [#{@fontem_linguam.inspect}]"
       end
 
-      def investigationem_contextum(contextum)
+      def investigationem_contextum(contextum) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
         # @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
         @contextum_archivum_extensionem = File.extname(contextum['page']['url']) || contextum['ego_ext']
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
@@ -286,7 +287,8 @@ module Hapi
 
       def quod_textum_solum_est?
         TEXTUM_SOLUM_EMOJI.each do |item|
-          return true if @initiale_argumentum.include?(item)
+          # return true if @initiale_argumentum.include?(item)
+          return true if @tag_fontem.include?(item)
           # if @initiale_argumentum.include?(item)
         end
         false
@@ -385,11 +387,13 @@ module Hapi
     # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
     # - 'alternandum', https://en.wiktionary.org/wiki/alternandus#Latin
     def farmatum_alternandum(
-          contextum, trns_codicem, trns_resultatum, _trns_resultatum_linguam, textum_solum_est = false)
+      contextum, trns_codicem, trns_resultatum,
+      _trns_resultatum_linguam, textum_solum_est = false # # rubocop:disable Style/OptionalBooleanParameter)
+    )
       html_est = contextum['page']['translationem_modum']
       linguam = contextum['page']['linguam']
       debug_est = contextum['page']['translationem_debug']
-      # print 'oooi'
+      # print 'oooi' if textum_solum_est
       if html_est == 'html' && !textum_solum_est
         return "<span data-l10n-c='#{trns_codicem}' data-l10n-linguam='#{linguam}'" \
                " class='incognitum-phrasim'>#{trns_resultatum}</span>"
@@ -727,84 +731,6 @@ module Hapi
         "<!--[de_linguam:[lat-Latn]]-->#{@textum}<!--[[lat-Latn]:de_linguam]-->"
       end
     end
-
-    # @deprecated
-    # _[por]  Converte '#item +id' da coleção de memórias de tradução para
-    #         o idioma requisitado pelo contexto da página atual.
-    #         Para simplificar documentação com uso em sistemas de escrita
-    #         direita-para-esquerda intencionamente tanto início como
-    #         final do método repetem a função.
-    #         Ou seja:
-    #         {% _ TERMO _ %}
-    #         {% __ TERMO __ %}
-    #         {% ___ TERMO ___ %}
-    # [por]_
-    #
-    # @exemplum Primum exemplum
-    #   linguam: por-Latn
-    #   ---
-    #   {% _ dominium_publicum_nomen _ %}
-    # @resultatum Primum exemplum
-    #   Domínio público
-    # class DeL10n < Liquid::Tag
-    #   def initialize(tag_name, text, tokens)
-    #     super
-
-    #     @tokens = text.strip.split
-    #     # @linguam_fontem = @tokens.shift
-    #     @textum = @tokens.shift
-
-    #     if @textum.include?('🗣️') && @textum.length < 8
-    #       tag_name = "#{tag_name}#{@textum}"
-    #       @textum = @tokens.shift
-    #     end
-
-    #     @l10n_typum = L10n_typum_requisitum(tag_name)
-
-    #     # puts '    DeL10n'
-    #     # puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
-    #     # puts  @textum
-
-    #     # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
-    #     # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
-    #   end
-
-    #   def render(context)
-    #     # temp = Translationem.datum_temporarium(context)
-    #     # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
-    #     # l10nval = nil
-
-    #     # Translationem.translationem_memoriam_collectionem(context)
-    #     # puts Translationem.translationem_memoriam_rememorandum(context, @textum)
-    #     l10nval = Translationem.translationem_memoriam_rememorandum(context, @textum)
-    #     # l10nval = 'tes'
-    #     # raise l10nval if l10nval
-    #     # return l10nval if l10nval != false
-    #     return Translationem.farmatum_praefectum(context, @textum, l10nval) if l10nval != false
-
-    #     l10nval_eng = Translationem.translationem_memoriam_rememorandum(context, @textum, 'eng-Latn')
-    #     return Translationem.farmatum_alternandum(context, @textum, l10nval_eng, 'eng-Latn') if l10nval_eng != false
-
-    #     l10nval_por = Translationem.translationem_memoriam_rememorandum(context, @textum, 'por-Latn')
-    #     return Translationem.farmatum_alternandum(context, @textum, l10nval_por, 'por-Latn') if l10nval_por != false
-
-    #     l10nval_spa = Translationem.translationem_memoriam_rememorandum(context, @textum, 'spa-Latn')
-    #     return Translationem.farmatum_alternandum(context, @textum, l10nval_spa, 'spa-Latn') if l10nval_spa != false
-
-    #     "[?#{@textum} #{@tokens}?]"
-    #   end
-
-    #   private
-
-    #   # Trivia: requīsītum, https://en.wiktionary.org/wiki/requisitus#Latin
-    #   def L10n_typum_requisitum(_tagname)
-    #     # puts '_L10Ntypum'
-    #     # {% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}
-    #     resultatum = ('minimum' if @textum.include?('#️⃣'))
-
-    #     # puts tagname
-    #   end
-    # end
 
     # _[eng] The L10n emoji entrypoint [eng]_
     # _[por] O ponto de entrada L10n emoji [por]_
