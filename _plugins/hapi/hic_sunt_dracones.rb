@@ -267,7 +267,7 @@ module Hapi
         paginam_linguam_experimentum.each do |linguam|
           # puts "TODO #{linguam}"
           rem = Hapi::HSD.convertendum_obiectum_linguam(meta['structuram'], "📝#{linguam}📝")
-          rem['experimentum'] = 1
+          rem['experimentum_est'] = true
           resultatum.append(rem)
         end
       end

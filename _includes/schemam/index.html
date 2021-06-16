@@ -18,10 +18,10 @@
 
       {% for xschemam in xschemam_global.collectionem_xschemam %}
 
-        {%- if xschemam.alternativum_linguam contains page.linguam -%}
+        {%- if xschemam.alternativum_linguam contains page.linguam and page.linguam != 'mul-Zyyy' -%}
           {% assign rem = xschemam.alternativum | where: 'linguam', page.linguam | first %}
           <article style="padding: 1em">
-            {% include schemam/item.html schemam=rem initiale_html_hN=h_2sx %}
+            {% include schemam/item.html schemam=rem initiale_html_hN=h_2sx multiplum_linguam=false %}
           </article>
 
         {%- else -%}
@@ -32,9 +32,11 @@
               {{ xschemam.lid }}
             </{{ h2sx }}>
 
-            <p>
-              <mark lang="pt">_[por] TODO: Sem idioma disponível. Apresentando todas as opções. [por]_</mark>
-            </p>
+            {% unless page.linguam == 'mul-Zyyy' %}
+              <p>
+                <mark lang="pt">_[por] TODO: Sem idioma disponível. Apresentando todas as opções. [por]_</mark>
+              </p>
+            {% endunless %}
 
             {% for rem in xschemam.alternativum %}
               {% comment %} {% if api_alt.url == xapi.url %}
@@ -42,7 +44,7 @@
               {% endif %} {% endcomment %}
 
               <article style="padding: 1em">
-                {% include schemam/item.html schemam=rem initiale_html_hN=h_3sx %}
+                {% include schemam/item.html schemam=rem initiale_html_hN=h_3sx multiplum_linguam=true %}
               </article>
 
             {% endfor %}

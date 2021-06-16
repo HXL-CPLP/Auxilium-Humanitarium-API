@@ -272,7 +272,7 @@
         "objectivum": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}.sql"
       }
     ],
-    "experimentum": 1
+    "experimentum_est": true
   },
   {
     "uid": "/mul-Zyyy/schemam/XZ/ISO-15924",
@@ -494,6 +494,6 @@
         "objectivum": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}.json"
       }
     ],
-    "experimentum": 1
+    "experimentum_est": true
   }
 ]

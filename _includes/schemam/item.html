@@ -1,5 +1,7 @@
 <!-- _includes/schemam/item.html -->
 {% assign schemam = include.schemam %}
+{% assign multiplum_linguam = include.multiplum_linguam %}
+
 {% assign h_1 = include.initiale_html_hN %}
 {% assign h_2 = h_1 | plus: 1 %}
 {% assign h_3 = h_2 | plus: 1 %}
@@ -17,12 +19,19 @@
     {% endif %}
   </div>
   <div class="card-body">
+
     <{{ h1 }} class="card-title" id="{{ schemam.url | slugify }}" >
-      {{ schemam.linguam }} - {{ schemam.nomen }}
+      {% if multiplum_linguam %}
+        {{ schemam.linguam }} - {{  schemam.nomen }}
+      {% else -%}
+        {{  schemam.nomen }}
+      {%- endif -%}
     </{{ h1 }}>
+
     <p class="card-text">
       {{ schemam.summarius }}
     </p>
+
     <a href="{{ schemam.url }}" hreflang="{{ schemam.hreflang }}"
       class="btn btn-primary">
       {% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}

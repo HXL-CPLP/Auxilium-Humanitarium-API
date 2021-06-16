@@ -6,9 +6,13 @@
  *                 [por]_
  */
 
-/* _[eng] API layoyt; Hide some strange SVG not loading [eng]_ */
+/* _[eng-Latn] API layout; Hide some strange SVG not loading [eng-Latn]_ */
 .swagger-ui>div>svg {
   display: none;
+}
+/* _[eng-Latn] API layout; max-width dont work, need for force width [eng-Latn]_  */
+.swagger-ui .servers>label select {
+  width: 100%;
 }
 
 .incognitum-phrasim:after, .incognitum-phrasim:before {

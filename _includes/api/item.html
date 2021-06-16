@@ -1,5 +1,6 @@
 <!-- _includes/api/item.html -->
 {% assign api = include.api %}
+{% assign multiplum_linguam = include.multiplum_linguam %}
 
 {% assign h_1 = include.initiale_html_hN %}
 {% assign h_2 = h_1 | plus: 1 %}
@@ -10,7 +11,6 @@
 {% assign h3 = h_3 | | prepend: 'h' %}
 {% assign h4 = h_4 | | prepend: 'h' %}
 
-
 <div class="card">
   <div class="card-header">
     <small>🗣{{ api.linguam }}🗣</small>
@@ -19,12 +19,19 @@
     {% endif %}
   </div>
   <div class="card-body">
-    <{{ h1 }} class="card-title" id="{{ api.url | slugify }}" >
-      {{ api.title }}
+
+    <{{ h1 }} class="card-title" id="{{ api.url | slugify }}">
+      {% if multiplum_linguam %}
+        {{ api.linguam }} - {{ api.title }}
+      {% else -%}
+        {{ api.title }}
+      {%- endif -%}
     </{{ h1 }}>
+
     <p class="card-text">
       {{ api.summarius }}
     </p>
+
     <a href="{{ api.url }}" hreflang="{{ api.hreflang }}"
       class="btn btn-primary">
       API Interativa

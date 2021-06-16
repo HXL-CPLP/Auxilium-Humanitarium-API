@@ -26,7 +26,7 @@ module Hapi
   class HapiSchemamGenerator < Jekyll::Generator
     safe true
 
-    def generate(site)
+    def generate(site) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
       @debug_all = false
 
       # unless site.data['l10n']['apil10n'] && site.data['l10n']['referensl10n']
@@ -56,7 +56,7 @@ module Hapi
       schemam_collectionem = site.data['l10n']['schemaml10n']
 
       schemam_collectionem.each do |item|
-        unless item['__translationem'].nil? # rubocop:disable  Style/SafeNavigation
+        unless item['__translationem'].nil? # rubocop:disable Style/SafeNavigation
           item['__translationem'].each do |archivum|
             site.pages << ArchivumSimplex.new(site, archivum, item)
             # ArchivumSimplex.new(site, archivum)
@@ -71,8 +71,6 @@ module Hapi
   # Subclass of `Jekyll::Page` with custom method definitions.
   class ArchivumSimplex < Jekyll::Page
     def initialize(site, archivum, schemam) # rubocop:disable Metrics/MethodLength,Lint/MissingSuper,Metrics/AbcSize
-      # TODO: _[eng-Latn] Finish the MVP of ArchivumSimplex [eng-Latn]_
-
       template = 'archivum-simplex'
       template_ext = '.html'
 
@@ -110,14 +108,15 @@ module Hapi
 
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
-  class SchemamPaginam < Jekyll::Page
-    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est
+  class SchemamPaginam < Jekyll::Page # rubocop:disable Metrics/ClassLength
+    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :experimentum_est
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
       content
       descriptionem
+      experimentum_est
       dir
       gid
       html_body_class
@@ -173,7 +172,10 @@ module Hapi
       @datum = api_datum
       @gid = api_datum['gid']
       @uid = api_datum['uid']
+
+      # opus_in_progressu deprecated, Use experimentum_est
       @opus_in_progressu = !!api_datum['opus_in_progressu'] # rubocop:disable Style/DoubleNegation
+      @experimentum_est = api_datum['experimentum_est'] ? true : false
 
       process(name)
 
@@ -300,7 +302,6 @@ module Hapi
 
       "#{prefix} : #{nomen}"
     end
-
 
     # Trivia
     # - 'trivium'

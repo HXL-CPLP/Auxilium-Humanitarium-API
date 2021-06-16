@@ -49,12 +49,12 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class ApiPaginam < Jekyll::Page
-    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est,
-                  :opus_in_progressu
+    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :experimentum_est
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
+      experimentum_est
       gid
       uid
       titulum
@@ -103,7 +103,8 @@ module Hapi
       @uid = api_datum['uid']
       @xdefallo = api_datum['xdefallo']
       @xdefallo_est = !!api_datum['xdefallo_est']
-      @opus_in_progressu = !!api_datum['opus_in_progressu']
+      @opus_in_progressu = !!api_datum['opus_in_progressu'] # rubocop:disable Style/DoubleNegation
+      @experimentum_est = api_datum['experimentum_est'] ? true : false
       # puts api_datum['opus_in_progressu']
       # puts api_datum
       # @trivum = 'teste'
@@ -186,6 +187,7 @@ module Hapi
       @datum['jekyll-page']['openapi_filum2']
     end
 
+    # @deprecated use experimentum_est
     def opus_in_progressu
       !!@opus_in_progressu
     end

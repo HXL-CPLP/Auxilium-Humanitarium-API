@@ -20,11 +20,11 @@
 
       {%- for xapi in globum.collectionem_xapi -%}
 
-        {%- if xapi.alternativum_linguam contains page.linguam %}
+        {%- if xapi.alternativum_linguam contains page.linguam and page.linguam != 'mul-Zyyy' %}
 
           <article style="padding: 1em">
             {% assign api = xapi.alternativum | where: 'linguam', page.linguam | first %}
-            {% include api/item.html api=api initiale_html_hN=h_2ax %}
+            {% include api/item.html api=api multiplum_linguam=false initiale_html_hN=h_2ax %}
           </article>
 
         {%- else -%}
@@ -35,9 +35,11 @@
               {{ xapi.lid }}
             </{{ h2ax }}>
 
-            <p>
-              <mark lang="pt">_[por] TODO: Sem idioma disponível. Apresentando todas as opções. [por]_</mark>
-            </p>
+            {% unless page.linguam == 'mul-Zyyy' %}
+              <p>
+                <mark lang="pt">_[por] TODO: Sem idioma disponível. Apresentando todas as opções. [por]_</mark>
+              </p>
+            {% endunless %}
 
             {% for api_alt in xapi.alternativum %}
               {% if api_alt.url == xapi.url %}
@@ -45,7 +47,7 @@
               {% endif %}
 
               <article style="padding: 1em">
-                {% include api/item.html api=api_alt initiale_html_hN=h_3ax %}
+                {% include api/item.html api=api_alt multiplum_linguam=true initiale_html_hN=h_3ax %}
               </article>
 
             {% endfor %}

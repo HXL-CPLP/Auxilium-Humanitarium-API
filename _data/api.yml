@@ -56,7 +56,8 @@
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   # title: HDX - The Humanitarian Data Exchange API
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}'
-  opus_in_progressu: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
   noindex: true
 
 - xdefallo: /mul-Zyyy/api/UN/HDX/
@@ -68,6 +69,8 @@
   # title: HDX - The Humanitarian Data Exchange API
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_HDX_titulum 📝por-Latn📝 🗣️_ %}'
   noindex: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
 
 # # Note: this is just a test to check if non US-ASCII characters can work with
 # #       Hapi toolchain
@@ -79,7 +82,8 @@
   lid: 'اختبارات'
   openapi_filum: /api/UN/HDX/eng/openapi.yaml
   title: "اختبارات"
-  opus_in_progressu: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
   noindex: true
 
 ## -----------------------------------------------------------------------------
@@ -90,7 +94,7 @@
   gid: UN
   lid: reliefweb # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}"
-  noindex: true
+  # noindex: true
  
 - xdefallo: /mul-Zyyy/api/UN/reliefweb/
   linguam: eng-Latn
@@ -100,7 +104,7 @@
   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
   # title: ReliefWeb - Informing humanitarians worldwide
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}'
-  noindex: true
+  # noindex: true
 
 - xdefallo: /mul-Zyyy/api/UN/reliefweb/
   linguam: por-Latn
@@ -110,8 +114,9 @@
   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
   # title: ReliefWeb - Informing humanitarians worldwide
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_reliefweb_titulum 📝por-Latn📝 🗣️_ %}'
-  opus_in_progressu: true
-  noindex: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
+  # noindex: true
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/UN/CODV2API/
@@ -121,7 +126,9 @@
   gid: UN
   lid: CODV2API # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}"
-  noindex: true
+  # noindex: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
 
 - xdefallo: /mul-Zyyy/api/UN/CODV2API/
   linguam: eng-Latn
@@ -133,7 +140,9 @@
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
   # title: Common Operational Datasets Services 2 (COD Services)
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}'
-  noindex: true
+  # noindex: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
 
 - xdefallo: /mul-Zyyy/api/UN/CODV2API/
   linguam: por-Latn
@@ -143,8 +152,9 @@
   lid: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_CODV2API_slug 📝por-Latn📝 🗣️_ %}'
   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_CODV2API_titulum 📝por-Latn📝 🗣️_ %}'
-  opus_in_progressu: true
-  noindex: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
+  # noindex: true
 
 ### [linguam]/api/ZX ___________________________________________________________
 
@@ -156,7 +166,7 @@
   gid: XZ
   lid: HXL-Proxy # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}"
-  noindex: true
+  # noindex: true
 
 - xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
   linguam: eng-Latn
@@ -166,7 +176,7 @@
   openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml
   # title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}'
-  noindex: true
+  # noindex: true
 
 - xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
   linguam: por-Latn
@@ -176,8 +186,8 @@
   openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
   # title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝por-Latn📝 🗣️_ %}'
-  opus_in_progressu: true
-  noindex: true
+  # opus_in_progressu: true
+  # noindex: true
 
 ### [linguam]/api/BR ___________________________________________________________
 
@@ -189,7 +199,7 @@
   gid: BR
   lid: portais-ckan-brasil # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}"
-  noindex: true
+  # noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
   linguam: eng-Latn
@@ -201,7 +211,7 @@
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}'
   description: |
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
-  noindex: true
+  # noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
   linguam: por-Latn
@@ -213,7 +223,7 @@
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝por-Latn📝 🗣️_ %}'
   description: |
     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
-  noindex: true
+  # noindex: true
 
 ## -----------------------------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
@@ -223,7 +233,7 @@
   gid: BR
   lid:  portais-arcgis-brasil # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
   title: "Alternātīvum pāginam: {% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}"
-  noindex: true
+  # noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
   linguam: eng-Latn
@@ -233,7 +243,7 @@
   openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
   # title: Portais ArcGIS de dados abertos do Brasil
   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝eng-Latn📝 🗣️_ %}'
-  noindex: true
+  # noindex: true
 
 - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
   linguam: por-Latn
@@ -243,7 +253,7 @@
   openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml
   # title: Portais ArcGIS de dados abertos do Brasil
   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}'
-  noindex: true
+  # noindex: true
   # nomen:
   # descriptionen:
 
