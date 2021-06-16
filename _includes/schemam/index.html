@@ -1,32 +1,34 @@
 <!-- _includes/schemam/index.html -->
 
 
+<section>
+  <h3 id="todo-schema">schemam</h3>
+  {% for xschemam_global in site.data.hapi.xschemam %}
+    {% if xschemam_global.collectionem_xschemam %}
+    gid - {{ xschemam_global.gid }}
+    {% for xschemam in xschemam_global.collectionem_xschemam %}
+      {% if xschemam.alternativum_linguam contains page.linguam %}
+        {% assign rem = xschemam.alternativum | where: 'linguam', page.linguam | first %}
+        {% include schemam/item.html schemam=rem initiale_html_hN=3 %}
+      {% else %}
+      TODO: do it
+      {% endif %}
 
-{% for xschemam_global in site.data.hapi.xschemam %}
-  {% if xschemam_global.collectionem_xschemam %}
-  gid - {{ xschemam_global.gid }}
-  {% for xschemam in xschemam_global.collectionem_xschemam %}
-    {% if xschemam.alternativum_linguam contains page.linguam %}
-      {% assign rem = xschemam.alternativum | where: 'linguam', page.linguam | first %}
-      {% include schemam/item.html schemam=rem initiale_html_hN=3 %}
-    {% else %}
-     TODO: do it
+      <article>
+        {% comment %} {{ xschemam_global | inspect }} {% endcomment %}
+        <br>
+        <br>
+        {% comment %} {{ xschemam_global.collectionem_xschemam | inspect }} {% endcomment %}
+        <br>
+        <br>
+        {{ xschemam }}
+        <br>
+        {{ xschemam.alternativum_linguam }}
+        <br>
+        <br>
+        <br>
+      </article>
+    {% endfor %}
     {% endif %}
-
-    <article>
-      {% comment %} {{ xschemam_global | inspect }} {% endcomment %}
-      <br>
-      <br>
-      {% comment %} {{ xschemam_global.collectionem_xschemam | inspect }} {% endcomment %}
-      <br>
-      <br>
-      {{ xschemam }}
-      <br>
-      {{ xschemam.alternativum_linguam }}
-      <br>
-      <br>
-      <br>
-    </article>
   {% endfor %}
-  {% endif %}
-{% endfor %}
+<section>

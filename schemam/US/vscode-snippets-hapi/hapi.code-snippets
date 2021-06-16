@@ -1,0 +1,70 @@
+{
+	// Place your Auxilium-Humanitarium-API workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	// See also - https://code.visualstudio.com/docs/editor/userdefinedsnippets
+	//          - https://code.visualstudio.com/api/language-extensions/snippet-guide
+	//          - https://snippet-generator.app/
+	"l10n": {
+		"scope": "html,markdown,yaml,sql,xml,json",
+		"prefix": "l10n",
+		"body": [
+			"{% _🗣️ $1 🗣️_ %}"
+		],
+		"description": "Hapi L10n Tag, minimum"
+	},
+	"l10n0": {
+		"scope": "html,markdown,yaml,sql,xml,json",
+		"prefix": "l10n0",
+		"body": [
+			"{% _🗣️ 👁️$2-$3👁️ _👂$1👂_ 👁️$2-$3👁️ 🗣️_ %}"
+		],
+		"description": "Hapi L10n Tag, minimum, non codicem"
+	},
+	"l10n2": {
+		"scope": "html,markdown,yaml,sql,xml,json",
+		"prefix": "l10n2",
+		"body": [
+			"{% _🗣️ 📝${2-${3|Arab,Latn|}📝 $1 📝${2-${3|Arab,Latn|}📝 🗣️_ %}"
+			// "{% _🗣️ 📝${2:/downcase}/}-${3|Arab,Latn|}📝 $1 📝${2:/downcase}/}-${3|Arab,Latn|}📝 🗣️_ %} ${1/(.*)/${1:/capitalize}/}"
+		],
+		"description": "Hapi L10n Tag, minimum"
+	},
+	"l10n0eng": {
+		"scope": "html,markdown,yaml,sql,xml,json",
+		"prefix": "l10n0eng",
+		"body": [
+			"{% _🗣️ 👁️eng-Latn👁️ _👂$1👂_ 👁️eng-Latn👁️ 🗣️_ %}"
+		],
+		"description": "Hapi L10n Tag, textum, eng-Latn"
+	},
+	"l10n0spa": {
+		"scope": "html,markdown,yaml,sql,xml,json",
+		"prefix": "l10n0spa",
+		"body": [
+			"{% _🗣️ 👁️spa-Latn👁️ _👂$1👂_ 👁️spa-Latn👁️ 🗣️_ %}"
+		],
+		"description": "Hapi L10n Tag, textum, spa-Latn"
+	},
+	"l10n0por": {
+		"scope": "html,markdown,yaml,sql,xml,json",
+		"prefix": "l10n0por",
+		"body": [
+			"{% _🗣️ 👁️por-Latn👁️ _👂$1👂_ 👁️por-Latn👁️ 🗣️_ %}"
+		],
+		"description": "Hapi L10n Tag, textum, por-Latn"
+	}
+}

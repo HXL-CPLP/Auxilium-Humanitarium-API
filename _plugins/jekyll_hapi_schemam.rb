@@ -232,7 +232,7 @@ module Hapi
     # - 'gid'
     #   - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
     def gid_est?(gid)
-      # puts "gid_est?(gid) #{@gid} #{gid}" 
+      # puts "gid_est?(gid) #{@gid} #{gid}"
       @gid == gid
     end
 
