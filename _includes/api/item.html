@@ -1,0 +1,35 @@
+<!-- _includes/api/item.html -->
+{% assign api = include.api %}
+
+{{ include.api_rem }}
+<div class="card">
+  <div class="card-header">
+    <small>🗣{{ api.linguam }}🗣</small>
+    {% if api.opus_in_progressu %}
+      <small>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}</small>
+    {% endif %}
+  </div>
+  <div class="card-body">
+    <h4 class="card-title" id="{{ api.url | slugify }}" >
+      {{ api.title }}
+    </h4>
+    <p class="card-text">
+
+      {{ api.description | default: "<mark>_[por] TODO: adicionar descrição [por]_</mark>" }}
+    </p>
+    <a href="{{ api.url }}" hreflang="{{ api.hreflang }}"
+      class="btn btn-primary">
+      API Interativa
+    </a>
+    <a href="{{ api.datum.openapi_filum }}"
+      hreflang="{{ api.hreflang }}" class="btn btn-default">
+      OpenAPI
+    </a>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted">
+      {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}: <br>
+      <mark>_[por] TODO: adicionar lista de colaboradores [por]_</mark>
+    </small>
+  </div>
+</div>

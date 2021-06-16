@@ -16,7 +16,7 @@ numerum_systama_nomen,Q122653,1,L10N,,,numerum,,systama,,nomen,,Systema numerale
 licentiam_nomen,Q79719,2,L10N|legem,,,,,licentiam,,nomen,,Licentiam,∅,Licença,∅,License,∅,,∅
 dominium_publicum_nomen,Q19652,2,L10N|legem,,,,,dominium_publicum,,nomen,,Dominium publicum,∅,Domínio público,∅,Public domain,∅,Dominio público,∅
 abbreviationem_XZ_API_abbreviationem,Q165194,1,,,abbreviationem,XZ,,API,,abbreviationem,,API,∅,API,∅,API,∅,,∅
-abbreviationem_XZ_API_nomen,Q165194,1,,,abbreviationem,XZ,,API,,nomen,,,∅,Interface de Programação de Aplicações,∅,Application Programming Interface,∅,Interfaz de Programación de Aplicaciones,∅
+abbreviationem_XZ_API_nomen,Q165194,1,,,abbreviationem,XZ,,API,,nomen,,Application Programming Interface [neolatīnum; de eng],∅,Interface de Programação de Aplicações,∅,Application Programming Interface,∅,Interfaz de Programación de Aplicaciones,∅
 abbreviationem_XZ_I10N_abbreviationem,,1,,,abbreviationem,XZ,,I10N,,abbreviationem,,I10N,∅,I10N,∅,I10N,∅,,∅
 abbreviationem_XZ_L10N_abbreviationem,Q130543,1,,,abbreviationem,XZ,,L10N,,abbreviationem,,L10N,∅,L10N,∅,L10N,∅,,∅
 abbreviationem_XZ_T9N_abbreviationem,,1,,,abbreviationem,XZ,,T9N,,abbreviationem,,T9N,∅,T9N,∅,T9N,∅,,∅

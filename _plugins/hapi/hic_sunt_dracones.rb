@@ -409,7 +409,7 @@ module Hapi
 
           # TODO: considerar implementar collectionem_xschemam
           if !!schemam.xdefallo_est && schemam.gid_est?(clavem_gid)
-            puts "é schema default #{schemam.nomen}"
+            # puts " #{schemam.nomen}"
             res['collectionem_xschemam'].append(Hapi::Drops::HapiXschemamDrop.new(schemam))
           end
 

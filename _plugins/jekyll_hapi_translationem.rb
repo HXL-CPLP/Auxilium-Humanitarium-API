@@ -879,6 +879,20 @@ module Hapi
           )
         end
 
+        l10nval_lat = Translationem.translationem_memoriam_rememorandum(
+          context, rem.fontem_textum, 'lat-Latn'
+        )
+        if l10nval_lat != false
+          rem.alternandum_textum = l10nval_lat
+          rem.alternandum_linguam = 'lat-Latn'
+          # puts rem.inspect if rem.est_textum_solum_est?
+          return Translationem.farmatum_alternandum(
+            context, rem.fontem_textum, l10nval_lat,
+            'lat-Latn', rem.est_textum_solum_est?
+          )
+          # return Translationem.farmatum_alternandum_neo(rem)
+        end
+
         l10nval_por = Translationem.translationem_memoriam_rememorandum(
           context, rem.fontem_textum, 'por-Latn'
         )

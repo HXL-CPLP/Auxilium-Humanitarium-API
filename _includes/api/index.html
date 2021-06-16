@@ -1,0 +1,58 @@
+<!-- _includes/api/index.html -->
+
+{% assign h_1ax = include.initiale_html_hN %}
+{% assign h_2ax = h_1ax | plus: 1 %}
+{% assign h_3ax = h_2ax | plus: 1 %}
+
+{% assign h1ax = h_1ax | | prepend: 'h' %}
+{% assign h2ax = h_2ax | | prepend: 'h' %}
+{% assign h3ax = h_3ax | | prepend: 'h' %}
+
+{% for globum in site.data.hapi.globum %}
+  <section>
+    <header>
+      <{{ h1ax }} id="api-gid-{{ globum.gid | slugify }}">
+          {{ globum.nomen }}
+      </{{ h1ax }}>
+      {{ globum.descriptionem }}
+    </header>
+
+    {%- for xapi in globum.collectionem_xapi -%}
+
+      {%- if xapi.alternativum_linguam contains page.linguam %}
+
+        <article style="padding: 1em">
+          {% assign api = xapi.alternativum | where: 'linguam', page.linguam | first %}
+          {% include api/item.html api=api initiale_html_hN=h_2ax %}
+        </article>
+
+      {%- else -%}
+
+        <section style="padding-left: 1em; padding-right: 1em">
+          <{{ h2ax }} id="{{ xapi.lid | default: xapi['datum']['lid'] | slugify }}">
+            <a href="#{{ xapi.url | slugify }}">🔗</a>
+            {{ xapi.lid }}
+          </{{ h2ax }}>
+
+          <p>
+            <mark lang="pt">_[por] TODO: Sem idioma disponível. Apresentando todas as opções. [por]_</mark>
+          </p>
+
+          {% for api_alt in xapi.alternativum %}
+            {% if api_alt.url == xapi.url %}
+              {% continue %}
+            {% endif %}
+
+            <article style="padding: 1em">
+              {% include api/item.html api=api_alt initiale_html_hN=h_3ax %}
+            </article>
+
+          {% endfor %}
+
+        </section>
+
+      {%- endif %}
+      
+    {% endfor %}
+  </section>
+{% endfor %}
