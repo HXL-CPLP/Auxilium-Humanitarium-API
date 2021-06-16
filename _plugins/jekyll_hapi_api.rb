@@ -192,7 +192,11 @@ module Hapi
 
     # TODO: remove obsolete parts
     def summarius
-      @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
+      unless @datum['jekyll-page'].nil?
+        @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
+      end
+
+      @summarius || @datum['summarius']
     end
 
     # TODO: remove obsolete parts

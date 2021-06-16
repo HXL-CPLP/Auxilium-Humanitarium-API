@@ -37,7 +37,8 @@ module Hapi
                     :paginam_contextum, :referens,
                     :contextum_archivum_extensionem, :contextum_linguam,
                     :contextum_ego, :paratum_est, :referens_praeiudico,
-                    :alternandum_linguam, :textum_solum_est
+                    :alternandum_linguam, :textum_solum_est,
+                    :l10n_ego_linguam
 
       FONTEM_LINGUAM_EMOJI = ['👁️'].freeze
       OBJECTIVUM_LINGUAM_EMOJI = ['📝'].freeze
@@ -105,6 +106,9 @@ module Hapi
         contextum_linguam = Hapi::Datum::Linguam.new(
           { 'linguam' => @contextum_linguam, 'referens' => @referens }
         )
+        l10n_ego_linguam = Hapi::Datum::Linguam.new(
+          { 'linguam' => @l10n_ego_linguam, 'referens' => @referens }
+        )
         fontem_linguam = Hapi::Datum::Linguam.new(
           { 'linguam' => @fontem_linguam, 'referens' => @referens }
         )
@@ -119,7 +123,7 @@ module Hapi
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @fontem_linguam [#{@fontem_linguam}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] resultatum [#{resultatum.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @tag_fontem [#{@tag_fontem.inspect}]"
-        # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @textum [#{quod_textum_solum_est?.inspect}]" if @sos_est
+        puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{@contextum_linguam.inspect}]" if @sos_est
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @textum [#{@initiale_argumentum.inspect}]" if @sos_est
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] @fontem_linguam [#{@fontem_linguam.inspect}]"
 
@@ -128,7 +132,8 @@ module Hapi
             'crudum' => @tag_fontem,
             'contextum_archivum_extensionem' => @contextum_archivum_extensionem,
             'contextum_sos' => @contextum_sos,
-            'contextum_linguam' => contextum_linguam,
+            'contextum_linguam' => contextum_linguam, # TODO: replace contextum_linguam with l10n_ego_linguam
+            'l10n_ego_linguam' => l10n_ego_linguam,
             'fontem_linguam' => fontem_linguam,
             'objectivum_linguam' => objectivum_linguam,
             'alternandum_linguam' => alternandum_linguam,
@@ -156,11 +161,18 @@ module Hapi
         @referens_praeiudico = contextum['site']['data']['referens']['praeiudico']
         @paginam_contextum = contextum['page']
         @textum_solum_est = quod_textum_solum_est?
+
+        # TODO: convert contextum_linguam to @l10n_ego_linguam
         @contextum_linguam = if contextum['ego_linguam']
                                contextum['ego_linguam']
                              elsif contextum['page']['linguam']
                                contextum['page']['linguam']
                              end
+        @l10n_ego_linguam = if contextum['l10n_ego_linguam']
+                              contextum['l10n_ego_linguam']
+                            elsif contextum['page']['linguam']
+                              contextum['page']['linguam']
+                            end
       end
 
       def quod_fontem_linguam_de_initiale_argumentum_et_textum
@@ -748,7 +760,7 @@ module Hapi
         )
       end
 
-      def render(context) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity
+      def render(context) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
         # temp = Translationem.datum_temporarium(context)
         # l10nval = Translationem.datum_l10n(@textum, context, @linguam_fontem)
         # l10nval = nil

@@ -23,8 +23,7 @@
       {{ api.title }}
     </{{ h1 }}>
     <p class="card-text">
-
-      {{ api.description | default: "<mark>_[por] TODO: adicionar descrição [por]_</mark>" }}
+      {{ api.summarius }}
     </p>
     <a href="{{ api.url }}" hreflang="{{ api.hreflang }}"
       class="btn btn-primary">

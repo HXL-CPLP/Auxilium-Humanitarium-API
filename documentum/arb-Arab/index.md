@@ -43,7 +43,5 @@ translationem_debug: false # true
 #             (Emerson Rocha, 2021-06-12 07:46 UTC)
 #      [eng]_
 ---
-{% _🗣️ 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 🗣️_ %}
-{% _🗣️ Hapi_schemam_slug 🗣️_ %}
 
 {%- include index-corporeum.html -%}

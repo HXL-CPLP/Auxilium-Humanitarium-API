@@ -36,7 +36,8 @@ module Hapi
 
         # @crudum = optionem.fetch(:crudum)
         @contextum_archivum_extensionem = optionem['contextum_archivum_extensionem']
-        @contextum_linguam = optionem['contextum_linguam']
+        @contextum_linguam = optionem['contextum_linguam'] # TODO: replace contextum_linguam with l10n_ego_linguam
+        @l10n_ego_linguam = optionem['l10n_ego_linguam']
         @contextum_sos = optionem['contextum_sos']
         @crudum = optionem['crudum']
         # @tag_nomen = optionem.fetch(:tag_nomen)
@@ -78,7 +79,8 @@ module Hapi
           alternandum_textum: nil,
           alternandum_linguam: nil,
           contextum_archivum_extensionem: '.html', # .csv, .json, ...
-          contextum_linguam: nil, # .csv, .json, ...
+          contextum_linguam: nil,
+          l10n_ego_linguam: nil, # TODO: replace contextum_linguam with l10n_ego_linguam
           contextum_sos: nil,
           # contextum_htmldir: nil,
           # objectivum_htmldir: nil,
@@ -108,6 +110,7 @@ module Hapi
       # - 'contextum'
       #   - https://en.wiktionary.org/wiki/contextus#Latin
       def est_idem_linguam_contextum?
+        # TODO: replace contextum_linguam with l10n_ego_linguam
         @contextum_linguam == if @objectivum_textum.nil?
                                 @fontem_linguam
                               else
@@ -200,12 +203,6 @@ module Hapi
     end
   end
 
-  class MembersDrop < Liquid::Drop
-    def before_method(method)
-      user = User.find_by_name(method)
-      user ? UserDrop.new(user) : nil
-    end
-  end
 end
 
 # module Jekyll
