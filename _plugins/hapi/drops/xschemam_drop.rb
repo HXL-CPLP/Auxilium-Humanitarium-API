@@ -1,4 +1,4 @@
-# ARCHĪVUM:        _plugins/hapi/drops/hapi_drop.rb
+# ARCHĪVUM:        _plugins/hapi/drops/xschemam_drop.rb
 # DESCRIPTIONEM:
 #
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
@@ -9,7 +9,7 @@
 module Hapi
   # TODO: document...
   module Drops
-    # _[por] Conteiner de coleções apis por uma xdefallo ('x-default')
+    # _[por] Conteiner de coleções schemam por uma xdefallo ('x-default')
     #         Sem alguma forma
     #        de abstrair objetos que há não sejam algo como uma Jekyll:Page
     #        ou Hapi::Datum::HapiDrop o liquid e Jekyll nem mesmo irá exibir
@@ -17,55 +17,15 @@ module Hapi
     # [por]_
     # @see _data/referens.yml#gid
     #
-    # Trivia
-    # - 'api':
-    #   - https://www.wikidata.org/wiki/Q165194
-    # - 'xdefallo':
-    #   - https://en.wikipedia.org/wiki/Hreflang
-    class HapiXdefalloApiDrop < Liquid::Drop
+    class HapiXschemamDrop < Liquid::Drop
       attr_accessor :optionem
 
       # TODO: _[eng] No idea if this is necessary. Maybe remove later [eng]_
       class << self
         def global
-          @global ||= HapiXdefalloApiDrop.new
+          @global ||= HapiXschemamDrop.new
         end
       end
-
-      # _[eng] Allow 'create' on the fly keys by language name to allow
-      #        direct access to specific alternative, if exists
-      # [eng]_
-      # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/drops/drop.rb
-      # def [](key)
-      #   # puts key
-      #   # puts !!@optionem['alternativum']
-      #   if self.class.invokable? key
-      #     public_send key
-      #   elsif key == 'url' || key == 'datum'
-      #     # TODO: _[eng] about the key != 'url'
-      #     #              sometimes we may try to access URL process, and
-      #     #              with raw YAML data (not the actuall ApiPaginam)
-      #     #              this will raise error
-      #     #       [eng]_
-      #     nil
-      #   elsif @optionem['alternativum'] && key.length >= 8
-
-      #     puts "[] #{key}"
-      #     @optionem['alternativum'].each do |apt_alt|
-      #       # puts 'achou!'
-      #       puts apt_alt['linguam'] && apt_alt['linguam'] == key
-      #       return apt_alt if apt_alt['linguam'] && apt_alt['linguam'] == key
-      #     end
-      #   end
-
-      # if @optionem['alternativum']
-      #   puts @optionem['alternativum'].class
-      #   # @optionem['alternativum'].each do |api|
-      #   #   puts 'oi'
-      #   # end
-
-      # end
-      # end
 
       def alternativum
         # puts ''
@@ -85,7 +45,8 @@ module Hapi
       end
 
       def to_s
-        "<#{self.class} @item=#{@optionem.keys}>"
+        opts = optionem.keys + ['alternativum_linguam']
+        "#<#{self.class} @gid=#{gid} @lid=#{lid} @optionem=[#{opts.join(', ')}]>"
       end
 
       def lid
@@ -111,12 +72,12 @@ module Hapi
         resultatum
       end
 
-      def linguam_est
-        @optionem['linguam']
-      end
+      # def linguam_est
+      #   @optionem['linguam']
+      # end
 
-      def api
-        @optionem['api'] || []
+      def schemam
+        @optionem['schemam'] || []
       end
 
       def xdefallo

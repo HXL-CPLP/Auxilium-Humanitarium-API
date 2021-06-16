@@ -6,7 +6,7 @@
 
 - uid: /mul-Zyyy/schemam/XZ/ISO-639-3
   xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
-  xdefallo_est: 1
+  xdefallo_est: true
   linguam: mul-Zyyy
   typum: schemam
   gid: XZ
@@ -50,7 +50,7 @@
       # TODO: localizar "schemam"
       uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}"
       xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
-      xdefallo_est: 0
+      xdefallo_est: false
       linguam: "{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
       typum: schemam
       gid: XZ

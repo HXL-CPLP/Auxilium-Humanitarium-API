@@ -135,7 +135,7 @@ module Hapi
           # 'api_xdefallo' => api_xdefallo,
           'schemam' => schemam,
           'xapi' => api_gid_xdefallo,
-          'xschemam' => xschemam,
+          'xschemam' => xschemam, # Nota: acesse via globum ou entao interaga direto via schemam
           # 'xschemam' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
           'globum' => globum,
           'categoriam' => categoriam,
@@ -408,9 +408,10 @@ module Hapi
           # end
 
           # TODO: considerar implementar collectionem_xschemam
-          # if !!schemam.xdefallo_est && schemam.gid_est?(clavem_gid)
-          #   res['collectionem_xschemam'].append(Hapi::Drops::HapiXdefalloApiDrop.new(api))
-          # end
+          if !!schemam.xdefallo_est && schemam.gid_est?(clavem_gid)
+            puts "é schema default #{schemam.nomen}"
+            res['collectionem_xschemam'].append(Hapi::Drops::HapiXschemamDrop.new(schemam))
+          end
 
           # res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
           # # resultatum[clavem] = valendum

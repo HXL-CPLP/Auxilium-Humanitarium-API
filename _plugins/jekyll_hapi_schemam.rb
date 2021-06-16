@@ -244,7 +244,7 @@ module Hapi
     end
 
     def hreflang
-      return 'x-default' if xdefallo_est
+      return 'x-default' if @xdefallo_est
 
       # TODO: _[eng] maybe initialize this once instead of recalculate [eng]_
 

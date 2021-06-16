@@ -1,7 +1,26 @@
 <!-- _includes/schemam/index.html -->
-{% for xschemam in site.data.hapi.xschemam %}
-  <article>
-    {{ xschemam  | inspect }}
-    {% include schemam/item.html schemam=xschemam initiale_html_hN=3 %}
-  </article>
+
+
+
+{% for xschemam_global in site.data.hapi.xschemam %}
+  {% if xschemam_global.collectionem_xschemam %}
+  gid - {{ xschemam_global.gid }}
+  {% for xschemam in xschemam_global.collectionem_xschemam %}
+    <article>
+      {% comment %} {{ xschemam_global | inspect }} {% endcomment %}
+      <br>
+      <br>
+      {% comment %} {{ xschemam_global.collectionem_xschemam | inspect }} {% endcomment %}
+      <br>
+      <br>
+      {{ xschemam }}
+      <br>
+      {{ xschemam.alternativum_linguam }}
+      <br>
+      <br>
+      <br>
+      {% include schemam/item.html schemam=xschemam initiale_html_hN=3 %}
+    </article>
+  {% endfor %}
+  {% endif %}
 {% endfor %}

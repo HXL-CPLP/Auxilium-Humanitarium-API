@@ -2,7 +2,7 @@
   {
     "uid": "/mul-Zyyy/schemam/XZ/ISO-639-3",
     "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
-    "xdefallo_est": 1,
+    "xdefallo_est": true,
     "linguam": "mul-Zyyy",
     "typum": "schemam",
     "gid": "XZ",
@@ -52,7 +52,7 @@
   {
     "uid": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 Hapi_schemam_slug 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}",
     "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
-    "xdefallo_est": 0,
+    "xdefallo_est": false,
     "linguam": "{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
@@ -124,7 +124,7 @@
   {
     "uid": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 Hapi_schemam_slug 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}",
     "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
-    "xdefallo_est": 0,
+    "xdefallo_est": false,
     "linguam": "{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
@@ -196,7 +196,7 @@
   {
     "uid": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}",
     "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
-    "xdefallo_est": 0,
+    "xdefallo_est": false,
     "linguam": "{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
