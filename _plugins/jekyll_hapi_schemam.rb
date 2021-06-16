@@ -279,6 +279,8 @@ module Hapi
       unless @datum['jekyll-page'].nil?
         @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
       end
+
+      @summarius || @datum['summarius']
     end
 
     def tags

@@ -98,15 +98,13 @@
     </article>
     {% endfor %}
   </article>
+
+  <!-- _[lat-Latn] Datum Schēmam [lat-Latn]_ -->
   <article>
-    <h2 id="schemam">{% _🗣️ schemam_nomen 🗣️_ %}</h2>
-    <div class="alert alert-info" role="alert">
-      <p>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}</p>
-    </div>
-
-  {% include temporarium/scheman.html %}
-
+    <h2 id="{% _🗣️ schemam_datum_slug 🗣️_ %}">{% _🗣️ schemam_datum_nomen 🗣️_ %}</h2>
+    {% include schemam/index.html initiale_html_hN=3 %}
   </article>
+
   <article>
     <h2 id="translationem-memoriam">{% _🗣️ translationem_memoriam_nomen 🗣️_ %}</h2>
     <div class="alert alert-info" role="alert">
@@ -137,15 +135,6 @@
     {%- endfor %}
     </ul>
   </aside>
-
-  <div class="peritum-est--block">
-    <h2 id="teste--peritum-est">_[por]Teste de schemam via YAML[por]_</h2>
-
-    {% include temporarium/schemam.html %}
-    <hr>
-    {% include schemam/index.html %}
-
-  </div>
 
   <section>
     <h2 id="licentiam">{% _🗣️ licentiam_nomen 🗣️_ %}</h2>

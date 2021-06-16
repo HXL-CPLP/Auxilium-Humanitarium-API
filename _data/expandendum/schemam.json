@@ -27,7 +27,7 @@
       }
     ],
     "archivum": {
-      "officinale": [
+      "referens_officinale": [
         {
           "iri": "https://iso639-3.sil.org/code_tables/download_tables"
         },
@@ -37,14 +37,22 @@
       ],
       "schemam": {
         "graphql": [
-          "/schema/iso/iso639-3/eng/iso639-3.graphql"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.graphql"
+          }
         ],
         "json": [
-          "/schema/iso/iso639-3/eng/iso639-3.json",
-          "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.json"
+          },
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
+          }
         ],
         "sql": [
-          "/schema/iso/iso639-3/eng/iso639-3.sql"
+          {
+            "iri": "/schema/iso/iso639-3/eng/iso639-3.sql"
+          }
         ]
       }
     }
@@ -77,7 +85,7 @@
       }
     ],
     "archivum": {
-      "officinale": [
+      "referens_officinale": [
         {
           "iri": "https://iso639-3.sil.org/code_tables/download_tables"
         },
@@ -149,7 +157,7 @@
       }
     ],
     "archivum": {
-      "officinale": [
+      "referens_officinale": [
         {
           "iri": "https://iso639-3.sil.org/code_tables/download_tables"
         },
@@ -221,7 +229,7 @@
       }
     ],
     "archivum": {
-      "officinale": [
+      "referens_officinale": [
         {
           "iri": "https://iso639-3.sil.org/code_tables/download_tables"
         },
@@ -306,7 +314,9 @@
     ],
     "archivum": {
       "referens_officinale": [
-        "https://www.unicode.org/iso15924/iso15924.txt"
+        {
+          "iri": "https://www.unicode.org/iso15924/iso15924.txt"
+        }
       ],
       "schemam": {
         "json": [
