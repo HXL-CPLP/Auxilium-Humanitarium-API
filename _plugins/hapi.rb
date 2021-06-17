@@ -10,4 +10,5 @@ module Hapi
   require_relative 'hapi/datum'
   require_relative 'hapi/utilitatem'
   require_relative 'hapi/hxl'
+  require_relative 'hapi/commune_paginam'
 end

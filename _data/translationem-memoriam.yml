@@ -1,0 +1,70 @@
+# @ARCHĪVUM         _data/translationem-memoriam.yml
+# @see              _systema/programma/download-hxl-datum.sh
+
+- uid: /mul-Zyyy/tm/XZ/hapi-miniman
+  xdefallo: /mul-Zyyy/tm/XZ/hapi-miniman
+  xdefallo_est: true
+  linguam: mul-Zyyy
+  typum: tm
+  gid: XZ
+  lid: hapi-miniman
+  title: "hapi-miniman.tm"
+  noindex: true
+  situs_interretialis:
+    referens_officinale:
+      - iri: https://github.com/HXL-CPLP/Auxilium-Humanitarium-API
+  archivum:
+    referens_officinale:
+      - iri: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=816634241
+      - iri: https://proxy.hxlstandard.org/data/download/hapi-miniman_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D816634241
+
+- uid: /mul-Zyyy/tm/XZ/hapi-api
+  xdefallo: /mul-Zyyy/tm/XZ/hapi-api
+  xdefallo_est: true
+  linguam: mul-Zyyy
+  typum: tm
+  gid: XZ
+  lid: hapi-api
+  title: "hapi-api.tm"
+  noindex: true
+  situs_interretialis:
+    referens_officinale:
+      - iri: https://github.com/HXL-CPLP/Auxilium-Humanitarium-API
+  archivum:
+    referens_officinale:
+      - iri: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1680147913
+      - iri: https://proxy.hxlstandard.org/data/download/hapi-api_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1680147913
+
+- uid: /mul-Zyyy/tm/XZ/schemam
+  xdefallo: /mul-Zyyy/tm/XZ/schemam
+  xdefallo_est: true
+  linguam: mul-Zyyy
+  typum: tm
+  gid: XZ
+  lid: schemam
+  title: "schemam.tm"
+  noindex: true
+  situs_interretialis:
+    referens_officinale:
+      - iri: https://github.com/HXL-CPLP/Auxilium-Humanitarium-API
+  archivum:
+    referens_officinale:
+      - iri: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1345709789
+      - iri: https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1345709789
+
+- uid: /mul-Zyyy/tm/XZ/commune
+  xdefallo: /mul-Zyyy/tm/XZ/commune
+  xdefallo_est: true
+  linguam: mul-Zyyy
+  typum: tm
+  gid: XZ
+  lid: commune
+  title: "commune.tm"
+  noindex: true
+  situs_interretialis:
+    referens_officinale:
+      - iri: https://github.com/HXL-CPLP/Auxilium-Humanitarium-API
+  archivum:
+    referens_officinale:
+      - iri: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=355011653
+      - iri: https://proxy.hxlstandard.org/data/download/commune_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Remove+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653

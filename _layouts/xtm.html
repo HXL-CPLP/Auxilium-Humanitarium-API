@@ -1,0 +1,17 @@
+---
+layout: defallo-mul-Zyyy
+---
+<!-- _[lat-Latn] xtm.html [lat-Latn]_ -->
+
+{% assign h_1sx = include.initiale_html_hN %}
+{% assign h_2sx = h_1sx | plus: 1 %}
+{% assign h_3sx = h_2sx | plus: 1 %}
+
+{% assign h1sx = h_1sx | prepend: 'h' %}
+{% assign h2sx = h_2sx | prepend: 'h' %}
+{% assign h3sx = h_3sx | prepend: 'h' %}
+
+{% include xdefallo-linguam-notitia.html %}
+
+{% include schemam/index-xdefallo.html xschemam=page initiale_html_hN=2 %}
+
