@@ -85,11 +85,13 @@ linguam:
   arb-Arab: &id_linguam_arb-Arab
     BCP47: ar
     hxlattrs: # deprecated
-      - "+i_arb+is_arab"
-      - "+i_arb"
-      - "+i_ara+is_arab"
-      - "+i_ara"
-      - "+i_ar"
+        - "+i_ar+i_arb+is_arab"
+        - "+i_arb+is_arab"
+        - "+i_arb"
+        - "+i_ar+i_ara+is_arab"
+        - "+i_ara+is_arab"
+        - "+i_ara"
+        - "+i_ar"
     hxl:
       attributum:
         - "+i_ar+i_arb+is_arab"
