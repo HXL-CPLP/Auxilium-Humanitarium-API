@@ -1,4 +1,4 @@
-# @ARCHĪVUM         _plugins/jekyll_hapi_hooks.rb
+# @ARCHĪVUM         _plugins/hapi/jekyll_hooks.rb
 #
 # @see https://jekyllrb.com/docs/plugins/hooks/
 # @see https://github.com/jekyll/jekyll/blob/master/features/hooks.feature

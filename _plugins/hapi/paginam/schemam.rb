@@ -1,4 +1,4 @@
-# @ARCHĪVUM         _plugins/jekyll_hapi_schemam.rb
+# @ARCHĪVUM         _plugins/hapi/paginam/schemam.rb
 #
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
 #   @see https://github.com/rubocop/ruby-style-guide/issues/301
@@ -106,12 +106,14 @@ module Hapi
     end
   end
 
-  require_relative './hapi/commune_paginam'
+  # require_relative './hapi/commune_paginam'
+  # require_relative './hapi/paginam/commune'
+  require_relative './commune'
 
   # _[eng] Subclass of `Hapi::HapiCommunePaginam` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Hapi::HapiCommunePaginam` com customizações nos métodos [eng]_
   # class SchemamPaginam < Jekyll::Page
-  class SchemamPaginam < Hapi::HapiCommunePaginam # rubocop:disable Metrics/ClassLength
+  class SchemamPaginam < Hapi::HapiPaginamCommune
     attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :experimentum_est
 
     # Attributes for Liquid templates

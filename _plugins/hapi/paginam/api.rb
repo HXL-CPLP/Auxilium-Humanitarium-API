@@ -1,9 +1,12 @@
-# ARCHĪVUM:           _plugins/jekyll_hapi_api.rb
+# ARCHĪVUM:           _plugins/hapi/paginam/api.rb
 #
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
 #   @see https://github.com/rubocop/ruby-style-guide/issues/301
 #   @see https://github.com/rubocop/ruby-style-guide/issues/137
-#
+# frozen_string_literal: true
+
+require 'json'
+
 # Trivia:
 # - 'datum'
 #   - https://en.wiktionary.org/wiki/datum#Latin
@@ -13,10 +16,6 @@
 #   - https://en.wiktionary.org/wiki/utilitas#Latin
 # - 'expandendum'
 #   - https://en.wiktionary.org/wiki/expando#Latin
-# frozen_string_literal: true
-
-require 'json'
-
 module Hapi
   # HapiApiGenerator is (TODO: document)
   class HapiApiGenerator < Jekyll::Generator
@@ -46,9 +45,14 @@ module Hapi
     end
   end
 
+  # require_relative './hapi/commune_paginam'
+  # require_relative './hapi/paginam/commune'
+  require_relative './commune'
+
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
-  class ApiPaginam < Jekyll::Page
+  # class ApiPaginam < Jekyll::Page
+  class ApiPaginam < Hapi::HapiPaginamCommune
     attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :experimentum_est
 
     # Attributes for Liquid templates
@@ -155,21 +159,21 @@ module Hapi
       resultatum
     end
 
-    # Trivia
-    # - 'digitum'
-    #   - https://en.wiktionary.org/wiki/digitus#Latin
-    # - 'signātūrum'
-    #   - https://en.wiktionary.org/wiki/signaturus#Latin
-    def digitum_signaturum
-      Utilitatem.digitum_premendum(relative_path)
-    end
+    # # Trivia
+    # # - 'digitum'
+    # #   - https://en.wiktionary.org/wiki/digitus#Latin
+    # # - 'signātūrum'
+    # #   - https://en.wiktionary.org/wiki/signaturus#Latin
+    # def digitum_signaturum
+    #   Utilitatem.digitum_premendum(relative_path)
+    # end
 
-    # Trivia
-    # - 'gid'
-    #   - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-    def gid_est?(gid)
-      @gid == gid
-    end
+    # # Trivia
+    # # - 'gid'
+    # #   - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+    # def gid_est?(gid)
+    #   @gid == gid
+    # end
 
     def html_body_class
       [
@@ -178,46 +182,48 @@ module Hapi
       ]
     end
 
-    def keys
-      ATTRIBUTES_FOR_LIQUID
-    end
+    # def keys
+    #   ATTRIBUTES_FOR_LIQUID
+    # end
 
     def openapi_filum
       # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
       @datum['jekyll-page']['openapi_filum2']
     end
 
-    # @deprecated use experimentum_est
-    def opus_in_progressu
-      !!@opus_in_progressu
-    end
+    # # @deprecated use experimentum_est
+    # def opus_in_progressu
+    #   !!@opus_in_progressu
+    # end
+
+    # # TODO: remove obsolete parts
+    # def summarius
+    #   unless @datum['jekyll-page'].nil?
+    #     @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
+    #   end
+
+    #   @summarius || @datum['summarius']
+    # end
 
     # TODO: remove obsolete parts
-    def summarius
-      unless @datum['jekyll-page'].nil?
-        @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
-      end
-
-      @summarius || @datum['summarius']
-    end
-
-    # TODO: remove obsolete parts
+    # TODO: Hapi::HapiCommunePaginam.titulum?
     def titulum
       @titulum || @nomen || @title
     end
 
+    # TODO: Hapi::HapiCommunePaginam.titulum?
     def nomen
       @titulum || @nomen || @title
     end
 
-    # Trivia
-    # - 'trivium'
-    #   - https://en.wiktionary.org/wiki/trivium#Latin
-    # - 'xdefallo'
-    #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
-    def trivium
-      @datum
-    end
+    # # Trivia
+    # # - 'trivium'
+    # #   - https://en.wiktionary.org/wiki/trivium#Latin
+    # # - 'xdefallo'
+    # #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
+    # def trivium
+    #   @datum
+    # end
 
     # _[eng] Returns the object as a debug String [eng]_
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
@@ -243,16 +249,16 @@ module Hapi
       "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
     end
 
-    attr_reader :xdefallo
+    # attr_reader :xdefallo
 
-    # _[eng] Is this an xdefallo API? [eng]_
-    # _[por] Esta é uma API xdefallo? [por]_
-    # Trivia
-    # - 'trivium'
-    #   - https://en.wiktionary.org/wiki/trivium#Latin
-    # - 'xdefallo'
-    #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
-    attr_reader :xdefallo_est
+    # # _[eng] Is this an xdefallo API? [eng]_
+    # # _[por] Esta é uma API xdefallo? [por]_
+    # # Trivia
+    # # - 'trivium'
+    # #   - https://en.wiktionary.org/wiki/trivium#Latin
+    # # - 'xdefallo'
+    # #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
+    # attr_reader :xdefallo_est
   end
 end
 
