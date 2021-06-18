@@ -4,8 +4,8 @@
 # @see https://www.quora.com/What-is-the-practical-maximum-size-of-a-Git-repository-full-of-text-based-data
 # @see https://vfsforgit.org/
 
-- uid: /mul-Zyyy/schemam/XZ/ISO-639-3
-  xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
+- uid: /mul-Zyyy/schemam/XZ/ISO-639-3/
+  xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3/
   xdefallo_est: true
   linguam: mul-Zyyy
   typum: schemam
@@ -48,15 +48,15 @@
           objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
     structuram:
       # TODO: localizar "schemam"
-      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}"
-      xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3
+      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/"
+      xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3/
       xdefallo_est: false
       linguam: "{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
       typum: schemam
       gid: XZ
       lid: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}" #  # Exemplum: ISO-639-3
-      nomen: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
-      titulum: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
+      nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
+      titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
       summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_summarius 📝und-Zyyy📝 🗣️_ %}"
       situs_interretialis:
         referens_officinale:
@@ -84,8 +84,8 @@
             - iri: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
       __translationem: *id_temp001
 
-- uid: /mul-Zyyy/schemam/XZ/ISO-15924
-  xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924
+- uid: /mul-Zyyy/schemam/XZ/ISO-15924/
+  xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924/
   xdefallo_est: 1
   linguam: mul-Zyyy
   typum: schemam
@@ -93,6 +93,7 @@
   lid: ISO-15924 # ISO_15924_slug
   lid_l10n: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}"
   nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
+  titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
   summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}"
   summarius_l10n: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
   situs_interretialis:
@@ -129,13 +130,14 @@
           objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}.json"
     structuram:
       # TODO: localizar "schemam"
-      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}"
-      xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924
+      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}/"
+      xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924/
       linguam: "{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
       typum: schemam
       gid: XZ
       lid: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}" # Exemplum: ISO-15924
       nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
+      titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
       summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}"
       situs_interretialis:
         referens_officinale:

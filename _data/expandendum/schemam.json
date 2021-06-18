@@ -1,7 +1,7 @@
 [
   {
-    "uid": "/mul-Zyyy/schemam/XZ/ISO-639-3",
-    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
+    "uid": "/mul-Zyyy/schemam/XZ/ISO-639-3/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3/",
     "xdefallo_est": true,
     "linguam": "mul-Zyyy",
     "typum": "schemam",
@@ -58,15 +58,15 @@
     }
   },
   {
-    "uid": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 Hapi_schemam_slug 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}",
-    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
+    "uid": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 Hapi_schemam_slug 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3/",
     "xdefallo_est": false,
     "linguam": "{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
     "lid": "{% _🗣️ 📝por-Latn📝 ISO_639-3_slug 📝por-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝por-Latn📝 schemam_datum_nomen 📝por-Latn📝 🗣️_ %}: {% _🗣️ 📝por-Latn📝 ISO_639-3_nomen 📝por-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝por-Latn📝 ISO_639-3_nomen 📝por-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝por-Latn📝 ISO_639-3_nomen 📝por-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝por-Latn📝 schemam_datum_nomen 📝por-Latn📝 🗣️_ %}: {% _🗣️ 📝por-Latn📝 ISO_639-3_nomen 📝por-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝por-Latn📝 ISO_639-3_summarius 📝por-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -131,15 +131,15 @@
     ]
   },
   {
-    "uid": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 Hapi_schemam_slug 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}",
-    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
+    "uid": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 Hapi_schemam_slug 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3/",
     "xdefallo_est": false,
     "linguam": "{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
     "lid": "{% _🗣️ 📝eng-Latn📝 ISO_639-3_slug 📝eng-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝eng-Latn📝 schemam_datum_nomen 📝eng-Latn📝 🗣️_ %}: {% _🗣️ 📝eng-Latn📝 ISO_639-3_nomen 📝eng-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝eng-Latn📝 ISO_639-3_nomen 📝eng-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝eng-Latn📝 ISO_639-3_nomen 📝eng-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝eng-Latn📝 schemam_datum_nomen 📝eng-Latn📝 🗣️_ %}: {% _🗣️ 📝eng-Latn📝 ISO_639-3_nomen 📝eng-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝eng-Latn📝 ISO_639-3_summarius 📝eng-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -204,15 +204,15 @@
     ]
   },
   {
-    "uid": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}",
-    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3",
+    "uid": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3/",
     "xdefallo_est": false,
     "linguam": "{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
     "lid": "{% _🗣️ 📝spa-Latn📝 ISO_639-3_slug 📝spa-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝spa-Latn📝 schemam_datum_nomen 📝spa-Latn📝 🗣️_ %}: {% _🗣️ 📝spa-Latn📝 ISO_639-3_nomen 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 ISO_639-3_nomen 📝spa-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝spa-Latn📝 ISO_639-3_nomen 📝spa-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝spa-Latn📝 schemam_datum_nomen 📝spa-Latn📝 🗣️_ %}: {% _🗣️ 📝spa-Latn📝 ISO_639-3_nomen 📝spa-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝spa-Latn📝 ISO_639-3_summarius 📝spa-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -278,8 +278,8 @@
     "experimentum_est": true
   },
   {
-    "uid": "/mul-Zyyy/schemam/XZ/ISO-15924",
-    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
+    "uid": "/mul-Zyyy/schemam/XZ/ISO-15924/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924/",
     "xdefallo_est": 1,
     "linguam": "mul-Zyyy",
     "typum": "schemam",
@@ -287,6 +287,7 @@
     "lid": "ISO-15924",
     "lid_l10n": "{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}",
     "summarius_l10n": "{% _🗣️ ISO_15924_summarius 🗣️_ %}",
     "situs_interretialis": {
@@ -331,13 +332,14 @@
     }
   },
   {
-    "uid": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 Hapi_schemam_slug 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 ISO_15924_slug 📝por-Latn📝 🗣️_ %}",
-    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
+    "uid": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 Hapi_schemam_slug 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 ISO_15924_slug 📝por-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924/",
     "linguam": "{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
     "lid": "{% _🗣️ 📝por-Latn📝 ISO_15924_slug 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 ISO_15924_nomen 📝por-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝por-Latn📝 schemam_datum_nomen 📝por-Latn📝 🗣️_ %}: {% _🗣️ 📝por-Latn📝 ISO_15924_nomen 📝por-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝por-Latn📝 ISO_15924_summarius 📝por-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -387,13 +389,14 @@
     ]
   },
   {
-    "uid": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 Hapi_schemam_slug 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 ISO_15924_slug 📝eng-Latn📝 🗣️_ %}",
-    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
+    "uid": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 Hapi_schemam_slug 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 ISO_15924_slug 📝eng-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924/",
     "linguam": "{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
     "lid": "{% _🗣️ 📝eng-Latn📝 ISO_15924_slug 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 ISO_15924_nomen 📝eng-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝eng-Latn📝 schemam_datum_nomen 📝eng-Latn📝 🗣️_ %}: {% _🗣️ 📝eng-Latn📝 ISO_15924_nomen 📝eng-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝eng-Latn📝 ISO_15924_summarius 📝eng-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -443,13 +446,14 @@
     ]
   },
   {
-    "uid": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}",
-    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924",
+    "uid": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924/",
     "linguam": "{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}",
     "typum": "schemam",
     "gid": "XZ",
     "lid": "{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝spa-Latn📝 ISO_15924_nomen 📝spa-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝spa-Latn📝 schemam_datum_nomen 📝spa-Latn📝 🗣️_ %}: {% _🗣️ 📝spa-Latn📝 ISO_15924_nomen 📝spa-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝spa-Latn📝 ISO_15924_summarius 📝spa-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [

@@ -1,8 +1,8 @@
 # @ARCHĪVUM         _data/translationem-memoriam.yml
 # @see              _systema/programma/download-hxl-datum.sh
 
-- uid: /mul-Zyyy/tm/XZ/hapi-miniman
-  xdefallo: /mul-Zyyy/tm/XZ/hapi-miniman
+- uid: /mul-Zyyy/tm/XZ/hapi-miniman/
+  xdefallo: /mul-Zyyy/tm/XZ/hapi-miniman/
   xdefallo_est: true
   linguam: mul-Zyyy
   typum: tm
@@ -22,8 +22,8 @@
       - nomen: "hapi-miniman.tm.hxl.csv"
         iri: https://proxy.hxlstandard.org/data/download/hapi-miniman_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D816634241
 
-- uid: /mul-Zyyy/tm/XZ/hapi-api
-  xdefallo: /mul-Zyyy/tm/XZ/hapi-api
+- uid: /mul-Zyyy/tm/XZ/hapi-api/
+  xdefallo: /mul-Zyyy/tm/XZ/hapi-api/
   xdefallo_est: true
   linguam: mul-Zyyy
   typum: tm
@@ -41,8 +41,8 @@
       - nomen: "hapi-api.tm.hxl.csv"
         iri: https://proxy.hxlstandard.org/data/download/hapi-api_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1680147913
 
-- uid: /mul-Zyyy/tm/XZ/schemam
-  xdefallo: /mul-Zyyy/tm/XZ/schemam
+- uid: /mul-Zyyy/tm/XZ/schemam/
+  xdefallo: /mul-Zyyy/tm/XZ/schemam/
   xdefallo_est: true
   linguam: mul-Zyyy
   typum: tm
@@ -60,8 +60,8 @@
       - nomen: "schemam.tm.hxl.csv"
         iri: https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1345709789
 
-- uid: /mul-Zyyy/tm/XZ/commune
-  xdefallo: /mul-Zyyy/tm/XZ/commune
+- uid: /mul-Zyyy/tm/XZ/commune/
+  xdefallo: /mul-Zyyy/tm/XZ/commune/
   xdefallo_est: true
   linguam: mul-Zyyy
   typum: tm

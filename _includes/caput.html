@@ -1,5 +1,8 @@
-<!-- _includes/caput-ltr.html -->
+<!-- _includes/caput.html -->
 <!-- Trivia: 'caput', https://en.wiktionary.org/wiki/caput#Latin -->
+
+{% assign paginam_iri = site.pages | map: "url" %}
+
 <header class="site-header">
   <nav aria-label="Main navbar of site"
     class="navbar navbar-expand-lg navbar-light"
@@ -9,21 +12,22 @@
         Hapi
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#caput-ltr-navigationem"
-        aria-controls="caput-ltr-navigationem" aria-expanded="false"
+        data-bs-target="#caput-navigationem"
+        aria-controls="caput-navigationem" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="caput-ltr-navigationem">
+      <div class="collapse navbar-collapse" id="caput-navigationem">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           {% assign links = site.data.navigationem[page.linguam] %}
           {% for link in links %}
             {% assign class = nil %}
-            {% if page.url contains link.url %}
+            {% if page.url contains link.iri %}
                 {% assign class = 'active' %}
             {% endif %}
-            {% if link.descendens %}
+  
+            {%- if link.descendens -%}
               <li class="nav-item dropdown {{ class }}">
                 <a class="nav-link dropdown-toggle"
                   data-bs-toggle="dropdown" aria-expanded="false" 
@@ -34,6 +38,7 @@
                     {{ link.nomen | liquify }}
                   {% endif %}
                 </a>
+
                 <ul class="dropdown-menu"
                   aria-labelledby="navigationem-descendens-{{ forloop.index0 }}">
                   {% for sublink in link.descendens %}
@@ -46,25 +51,49 @@
                           {{ sublink.nomen | liquify }}
                         </a>
                       </li>
-                      {% else %}
-                        <li>
-                          <a class="dropdown-item"
-                            href="{{ site.url }}{{ site.baseurl }}{{ sublink.url | liquify | strip_html }}">
-                            {% if sublink.titulum %}
-                              <abbr title="{{ sublink.titulum | liquify | strip_html }}">{{ sublink.nomen }}</abbr>
-                            {% else %}
-                              {{ sublink.nomen | liquify }}
-                            {% endif %}
-                          </a>
-                        </li>
-                      {% endif %}
-                  {% endfor %}
+                      {%- else %}
+                        {%- capture rem_iri %}{{ sublink.iri | liquify | strip_html }}{% endcapture -%}
+  
+                        {%- if paginam_iri contains rem_iri -%}
+                          <li>
+                            <a class="dropdown-item"
+                              href="{{ site.url }}{{ site.baseurl }}{{ rem_iri }}">
+                              {% if sublink.titulum %}
+                                <abbr title="{{ sublink.titulum | liquify | strip_html }}">
+                                  {{ sublink.nomen }}
+                                </abbr>
+                              {% else %}
+                                {{ sublink.nomen | liquify }}
+                              {% endif %}
+                            </a>
+                          </li>
+                        {%- else -%}
+                          <!-- _[lat-Latn] Non {{ rem_iri }}; xdefallo est! [lat-Latn]_ -->
+                          <li>
+                            <a class="dropdown-item"
+                              href="{{ site.url }}{{ site.baseurl }}{{ sublink.xdefallo }}">
+                              {%- if sublink.titulum -%}
+                                <abbr title="{{ sublink.titulum | liquify | strip_html }}">
+                                  {{ sublink.nomen }}
+                                </abbr>
+                              {%- else -%}
+                                {{ sublink.xdefallo }}
+                                <!--{{ sublink.nomen | liquify }}-->
+                              {%- endif -%}
+                            </a>
+                          </li>
+                        {%- endif -%}
+
+
+                      {%- endif -%}
+                  {%- endfor -%}
                   </ul>
                 </li>
-            {% else %}
+  
+            {%- else -%}
               <li class="nav-item {{ class }}">
                 <a class="nav-link"
-                  href="{{ site.url }}{{ site.baseurl }}{{ link.url | liquify | strip_html }}">
+                  href="{{ site.url }}{{ site.baseurl }}{{ link.iri | liquify | strip_html }}">
                   {% if link.titulum %}
                     <abbr title="{{ link.titulum | liquify | strip_html }}">{{ link.nomen }}</abbr>
                   {% else %}
@@ -72,8 +101,8 @@
                   {% endif %}
                 </a>
               </li>
-            {% endif %}
-          {% endfor %}
+            {%- endif -%}
+          {%- endfor -%}
         </ul>
         <!--
           _[eng] About dir="auto", check:
