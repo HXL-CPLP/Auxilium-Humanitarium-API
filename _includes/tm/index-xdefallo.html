@@ -1,0 +1,18 @@
+<!-- _includes/schemam/index-xdefallo.html -->
+
+{% assign xtm = include.xtm %}
+{% assign h_1sx = include.initiale_html_hN %}
+{% assign h_2sx = h_1sx | plus: 1 %}
+{% assign h_3sx = h_2sx | plus: 1 %}
+
+{% assign h1sx = h_1sx | prepend: 'h' %}
+{% assign h2sx = h_2sx | prepend: 'h' %}
+{% assign h3sx = h_3sx | prepend: 'h' %}
+
+{% _🗣️ opus_in_progressu_emoji_nomen 🗣_️ %}
+
+{% for rem in xtm.alternativum %}
+  <article style="padding: 1em">
+    {% include tm/item.html tm=rem initiale_html_hN=h_3sx multiplum_linguam=true %}
+  </article>
+{% endfor %}

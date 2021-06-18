@@ -50,19 +50,6 @@ module Hapi
   module HSD # rubocop:disable Metrics/ModuleLength
     module_function
 
-    # # _[eng] Global Anti-pattern of global variable without global variable [eng]_
-    # class Site
-    #   include Singleton
-
-    #   def jekyll_site
-    #     Jekyll.sites.last
-    #   end
-
-    #   def jekyll_data
-    #     Jekyll.sites.last.data
-    #   end
-    # end
-
     def initiale_after_reset(site)
       schemam_fontem_path = File.join(site.source, '/_data/schemam.yml')
       hapi_referens_path = File.join(site.source, '/_data/referens.yml')
@@ -210,7 +197,7 @@ module Hapi
       Jekyll.sites.last.data
     end
 
-    def l10n_simplex(codicem, linguam)
+    def l10n_simplex(codicem, _linguam)
       # puts "TODO: l10n_simplex #{codicem} #{linguam}"
 
       codicem

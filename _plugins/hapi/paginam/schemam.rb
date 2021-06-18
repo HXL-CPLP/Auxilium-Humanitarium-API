@@ -22,37 +22,18 @@
 require 'json'
 
 module Hapi
-  # HapiSchemamGenerator is (TODO: document)
-  class HapiSchemamGenerator < Jekyll::Generator
+  # SchemamGenerator is (TODO: document)
+  class SchemamGenerator < Jekyll::Generator
     safe true
 
     def generate(site) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
       @debug_all = false
-
-      # unless site.data['l10n']['apil10n'] && site.data['l10n']['referensl10n']
-      #   puts "\n\n\t[🔎ℹ️ #{self.class.name}:#{__LINE__}] requīrendum: 'bundle exec jekyll build' !!!"
-      #   return nil
-      # end
 
       unless site.data['l10n']['schemaml10n'] && site.data['l10n']['referensl10n']
         puts "\n\n\t[🔎ℹ️ #{self.class.name}:#{__LINE__}] requīrendum: 'bundle exec jekyll build' !!!"
         return nil
       end
 
-      # # @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
-      # @apis = Utilitatem.expandendum_api_datum(
-      #   site.data['l10n']['apil10n'],
-      #   site.data['l10n']['referensl10n']
-      # )
-      # # puts 'oooooi'
-      # # _[eng] We override site.data.api [eng]_
-      # # _[por] Sobrescrevemos o site.data.api [por]_
-      # site.data['api'] = @apis
-
-      # site.data['api'].each do |api_datum|
-      #   @debug_est = @debug_all or api_datum['debug']
-      #   site.pages << SchemamPaginam.new(site, api_datum, @debug_est)
-      # end
       schemam_collectionem = site.data['l10n']['schemaml10n']
 
       schemam_collectionem.each do |item|
@@ -106,15 +87,13 @@ module Hapi
     end
   end
 
-  # require_relative './hapi/commune_paginam'
-  # require_relative './hapi/paginam/commune'
   require_relative './commune'
 
   # _[eng] Subclass of `Hapi::HapiCommunePaginam` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Hapi::HapiCommunePaginam` com customizações nos métodos [eng]_
   # class SchemamPaginam < Jekyll::Page
   class SchemamPaginam < Hapi::HapiPaginamCommune
-    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :experimentum_est
+    attr_accessor :datum, :gid, :uid, :experimentum_est
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
@@ -219,76 +198,12 @@ module Hapi
       resultatum
     end
 
-    # # Trivia
-    # # - 'digitum'
-    # #   - https://en.wiktionary.org/wiki/digitus#Latin
-    # # - 'signātūrum'
-    # #   - https://en.wiktionary.org/wiki/signaturus#Latin
-    # def digitum_signaturum
-    #   Utilitatem.digitum_premendum(relative_path)
-    # end
-
-    # # Trivia
-    # # - 'dēscrīptiōnem'
-    # #   - https://en.wiktionary.org/wiki/descriptio#Latin
-    # def descriptionem
-    #   @datum['summarius']
-    # end
-
-    # # Trivia
-    # # - 'gid'
-    # #   - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-    # def gid_est?(gid)
-    #   # puts "gid_est?(gid) #{@gid} #{gid}"
-    #   @gid == gid
-    # end
-
     def html_body_class
       [
         'paginam-typum-schemam',
         "paginam-linguam-#{@datum['linguam']}"
       ]
     end
-
-    # def hreflang
-    #   return 'x-default' if @xdefallo_est
-
-    #   # TODO: _[eng] maybe initialize this once instead of recalculate [eng]_
-
-    #   site_data = Hapi::HSD.data?
-
-    #   Hapi::Utilitatem.linguam_to_html_lang(linguam, site_data['referens'])
-    # end
-
-    # def keys
-    #   ATTRIBUTES_FOR_LIQUID
-    # end
-
-    # def linguam
-    #   @datum['linguam']
-    # end
-
-    # def nomen
-    #   @datum['nomen']
-    # end
-
-    # def openapi_filum
-    #   # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
-    #   @datum['jekyll-page']['openapi_filum2']
-    # end
-
-    # def opus_in_progressu
-    #   !!@opus_in_progressu
-    # end
-
-    # # TODO: remove obsolete parts
-    # def summarius
-    #   unless @datum['jekyll-page'].nil?
-    #     @summarius || @datum['jekyll-page']['summarius'] || '<mark lang="la">Nulla summarius. Adiuva me 🥺</mark>'
-    #   end
-
-    #   @summarius || @datum['summarius']
-    # end
 
     def tags
       # @see Utilitatem.tags_de_api
@@ -300,6 +215,7 @@ module Hapi
     end
 
     # TODO: remove obsolete parts
+    # TODO: Hapi::HapiPaginamCommune.titulum?
     def titulum
       # {% _🗣️ schemam_datum_nomen 🗣️_ %}: {{ schemam.nomen }}
       prefix = Hapi::HSD.l10n_simplex('schemam_datum_nomen', linguam)
@@ -307,32 +223,6 @@ module Hapi
 
       "#{prefix} : #{nomen}"
     end
-
-    # # Trivia
-    # # - 'trivium'
-    # #   - https://en.wiktionary.org/wiki/trivium#Latin
-    # # - 'xdefallo'
-    # #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
-    # def trivium
-    #   Hapi::Utilitatem.digitum_premendum(@xdefallo)
-    #   # @datum
-    # end
-
-    # _[eng] Returns the object as a debug String [eng]_
-    # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
-    # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb
-    # # .
-    # def inspect
-    #   # puts 'datum'
-    #   # puts @datum
-
-    #   # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
-    #   "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
-    # end
-
-    # def slug
-    #   @datum['lid']
-    # end
 
     # _[eng] Returns the object as a debug String [eng]_
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
@@ -345,17 +235,6 @@ module Hapi
       # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
       "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
     end
-
-    # attr_reader :xdefallo
-
-    # # _[eng] Is this an xdefallo API? [eng]_
-    # # _[por] Esta é uma API xdefallo? [por]_
-    # # Trivia
-    # # - 'trivium'
-    # #   - https://en.wiktionary.org/wiki/trivium#Latin
-    # # - 'xdefallo'
-    # #   - https://developers.google.com/search/blog/2013/04/x-default-hreflang-for-international-pages
-    # attr_reader :xdefallo_est
   end
 end
 

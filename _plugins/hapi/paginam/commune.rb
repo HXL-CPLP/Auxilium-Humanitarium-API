@@ -16,7 +16,8 @@ module Hapi
   # _[eng] Subclass of `Jekyll::Page` with custom method definitions. [eng]_
   # _[eng] Subclasse de `Jekyll::Page` com customizações nos métodos [eng]_
   class HapiPaginamCommune < Jekyll::Page # rubocop:disable Metrics/ClassLength
-    attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :experimentum_est
+    # attr_accessor :datum, :gid, :uid, :xdefallo, :xdefallo_est, :experimentum_est
+    attr_accessor :datum, :gid, :uid, :experimentum_est
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[

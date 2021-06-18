@@ -1,0 +1,76 @@
+<!-- _includes/schemam/item.html -->
+{% assign schemam = include.schemam %}
+{% assign multiplum_linguam = include.multiplum_linguam %}
+
+{% assign h_1 = include.initiale_html_hN %}
+{% assign h_2 = h_1 | plus: 1 %}
+{% assign h_3 = h_2 | plus: 1 %}
+{% assign h_4 = h_3 | plus: 1 %}
+{% assign h1 = h_1 | prepend: 'h' %}
+{% assign h2 = h_2 | prepend: 'h' %}
+{% assign h3 = h_3 | prepend: 'h' %}
+{% assign h4 = h_4 | prepend: 'h' %}
+
+<div class="card">
+  <div class="card-header">
+    <small>🗣{{ schemam.linguam }}🗣</small>
+    {% if schemam.opus_in_progressu %}
+      <small>{% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}</small>
+    {% endif %}
+  </div>
+  <div class="card-body">
+
+    <{{ h1 }} class="card-title" id="{{ schemam.url | slugify }}" >
+      {% if multiplum_linguam %}
+        {{ schemam.linguam }} - {{  schemam.nomen }}
+      {% else -%}
+        {{  schemam.nomen }}
+      {%- endif -%}
+    </{{ h1 }}>
+
+    <p class="card-text">
+      {{ schemam.summarius }}
+    </p>
+
+    <a href="{{ schemam.url }}" hreflang="{{ schemam.hreflang }}"
+      class="btn btn-primary">
+      {% _🗣️ abbreviationem_XZ_URL_canonicum_nomen 🗣️_ %}
+    </a>
+
+    {%- if schemam.datum.archivum %}
+
+      {%- if schemam.datum.archivum.schemam.graphql %}
+        {% for rem in schemam.datum.archivum.schemam.graphql %}
+          <a href="{{ rem.iri }}" class="btn btn-secondary">
+            {% _🗣️ graphql_schemam_nomen 🗣️_ %}
+          </a>
+        {%- endfor %}
+      {% endif %}
+
+      {%- if schemam.datum.archivum.schemam.json %}
+        {% for rem in schemam.datum.archivum.schemam.json %}
+          <a href="{{ rem.iri }}" class="btn btn-secondary">
+            {% _🗣️ json_schemam_nomen 🗣️_ %}
+          </a>
+        {%- endfor %}
+      {% endif %}
+
+      {%- if schemam.datum.archivum.schemam.sql %}
+        {% for rem in schemam.datum.archivum.schemam.sql %}
+          <a href="{{ rem.iri }}" class="btn btn-secondary">
+            {% _🗣️ SQL_abbreviationem_nomen 🗣️_ %}
+          </a>
+        {%- endfor %}
+      {% endif %}
+
+    {% endif %}
+
+  </div>
+  <div class="card-footer">
+    <small class="text-muted">
+      {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}: <br>
+      <mark>_[por] TODO: adicionar lista de colaboradores [por]_</mark>
+    </small>
+  </div>
+</div>
+

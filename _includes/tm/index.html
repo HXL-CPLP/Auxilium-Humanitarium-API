@@ -1,0 +1,58 @@
+<!-- _includes/schemam/index.html -->
+
+{% assign h_1sx = include.initiale_html_hN %}
+{% assign h_2sx = h_1sx | plus: 1 %}
+{% assign h_3sx = h_2sx | plus: 1 %}
+
+{% assign h1sx = h_1sx | prepend: 'h' %}
+{% assign h2sx = h_2sx | prepend: 'h' %}
+{% assign h3sx = h_3sx | prepend: 'h' %}
+
+{% for xschemam_global in site.data.hapi.xschemam %}
+  {% if xschemam_global.collectionem_xschemam[0] %}
+    <section>
+      <{{ h1sx }} id="{% _🗣️ 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 🗣️_ %}--{{ xschemam_global.gid }}">
+        {{ xschemam_global.nomen }}
+      </{{ h1sx }}>
+
+      {% for xschemam in xschemam_global.collectionem_xschemam %}
+
+        {%- if xschemam.alternativum_linguam contains page.linguam and page.linguam != 'mul-Zyyy' -%}
+          {% assign rem = xschemam.alternativum | where: 'linguam', page.linguam | first %}
+          <article style="padding: 1em">
+            {% include schemam/item.html schemam=rem initiale_html_hN=h_2sx multiplum_linguam=false %}
+          </article>
+
+        {%- else -%}
+
+          <section style="padding-left: 1em; padding-right: 1em">
+            <{{ h2sx }} id="{% _🗣️ 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 🗣️_ %}--{{ xschemam.lid | slugify }}">
+              <a href="#{{ xschemam.url | slugify }}">🔗</a>
+              {{ xschemam.lid }}
+            </{{ h2sx }}>
+
+            {% unless page.linguam == 'mul-Zyyy' %}
+              <p>
+                <mark lang="pt">_[por] TODO: Sem idioma disponível. Apresentando todas as opções. [por]_</mark>
+              </p>
+            {% endunless %}
+
+            {% for rem in xschemam.alternativum %}
+              {% comment %} {% if api_alt.url == xapi.url %}
+                {% continue %}
+              {% endif %} {% endcomment %}
+
+              <article style="padding: 1em">
+                {% include schemam/item.html schemam=rem initiale_html_hN=h_3sx multiplum_linguam=true %}
+              </article>
+
+            {% endfor %}
+
+          </section>
+
+        {%- endif -%}
+
+      {% endfor %}
+    </section>
+  {% endif %}
+{% endfor %}
