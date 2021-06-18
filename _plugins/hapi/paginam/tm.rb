@@ -142,10 +142,11 @@ module Hapi
     def alternativum
       # Utilitatem.digitum_premendum(relative_path)
       resultatum = []
-      schemam_collectionem = Hapi::HSD.schemam_paginam?
-      schemam_collectionem&.each do |schemam|
+      tm_collectionem = Hapi::HSD.tm_paginam?
+      # puts tm_collectionem.inspect
+      tm_collectionem&.each do |tm|
         # puts api.class
-        resultatum.append(schemam) if @xdefallo == schemam.xdefallo
+        resultatum.append(tm) if @xdefallo == tm.xdefallo
       end
 
       resultatum

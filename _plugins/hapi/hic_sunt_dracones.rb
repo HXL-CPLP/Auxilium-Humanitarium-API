@@ -77,6 +77,7 @@ module Hapi
       # api = {}
       api = []
       schemam = []
+      tm = []
       categoriam = {}
       pittacium = {}
       # api
@@ -88,6 +89,8 @@ module Hapi
           api.append(page)
         elsif page.instance_of?(Hapi::SchemamPaginam)
           schemam.append(page)
+        elsif page.instance_of?(Hapi::TranslationemMemoriamPaginam)
+          tm.append(page)
         elsif page.instance_of?(Jekyll::Page)
           # puts 'Generic pages do not have any special feature'
         end
@@ -109,7 +112,8 @@ module Hapi
       # api_xdefallo = api_xdefallo?(api)
       api_gid_xdefallo = api_gid_xdefallo?(api)
       xschemam = schemam_xdefallo?(schemam)
-      globum = globum?(api, schemam)
+      xtm = tm_xdefallo?(tm)
+      globum = globum?(api, schemam, tm)
 
       # puts globum[0]['collectionem_api']
       # puts globum[0]['collectionem_schemam']
@@ -124,6 +128,7 @@ module Hapi
           'xapi' => api_gid_xdefallo,
           'xschemam' => xschemam, # Nota: acesse via globum ou entao interaga direto via schemam
           # 'xschemam' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
+          'tm' => tm,
           'globum' => globum,
           'categoriam' => categoriam,
           'pittacium' => pittacium
@@ -350,9 +355,10 @@ module Hapi
       Jekyll.sites.last.data['l10n']['referensl10n']['gid']
     end
 
-    def globum?(api_collectionem = nil, schemam_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+    def globum?(api_collectionem = nil, schemam_collectionem = nil, tm_collectionem = nil) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
       apis = api_collectionem || api?
       schemam_collectionem ||= schemam?
+      tm_collectionem ||= tm?
       referens_gid = referens_gid?
 
       # puts 'oi oi '
@@ -372,6 +378,8 @@ module Hapi
         res['collectionem_xapi'] = []
         res['collectionem_schemam'] = []
         res['collectionem_xschemam'] = []
+        res['collectionem_tm'] = []
+        res['collectionem_xtm'] = []
 
         apis.each do |api|
           # api_drop = Hapi::Drops::HapiXdefalloApiDrop.new(res)
@@ -404,12 +412,68 @@ module Hapi
           # # resultatum[clavem] = valendum
         end
 
+        tm_collectionem.each do |tm|
+          # api_drop = Hapi::Drops::HapiXdefalloApiDrop.new(res)
+          res['collectionem_tm'].append(tm) if tm.gid_est?(clavem_gid)
+          # if api.gid_est?(clavem_gid)
+          #   res['collectionem_api'].append(Hapi::Drops::HapiApiDrop.new(api))
+          # end
+
+          # TODO: this is a draft, needs implement exclusive XTmDrop
+          if !!tm.xdefallo_est && tm.gid_est?(clavem_gid)
+            # puts " #{schemam.nomen}"
+            res['collectionem_xtm'].append(Hapi::Drops::HapiXschemamDrop.new(tm))
+          end
+
+          # res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
+          # # resultatum[clavem] = valendum
+        end
+
         # resultatum.append(res)
         drop = Hapi::Drops::HapiGlobumDrop.new(res)
         resultatum.append(drop)
       end
 
       resultatum
+    end
+
+    # _[eng] Not implemented yet with this strategy [eng]_
+    def tm?
+      Jekyll.sites.last.data['translationem-memoriam'] || []
+    end
+
+    # TODO: _[eng] This is a draft; Not ready. [eng]_
+    def tm_xdefallo?(tm_collectionem = nil) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize,Metrics/CyclomaticComplexity
+      # apis = schemam_collectionem
+      tm_collectionem ||= tm?
+      referens_gid = referens_gid?
+
+      return [] if referens_gid.empty? || tm_collectionem.empty?
+
+      # puts 'oi oi 2'
+
+      # resultatum = {}
+      resultatum = []
+
+      referens_gid.each do |clavem_gid, valendum|
+        # puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
+        # puts ''
+        res = valendum
+        res['collectionem_tm'] = []
+        tm_collectionem.each do |tm|
+          res['collectionem_tm'].append(tm) if tm.xdefallo_est && tm.gid_est?(clavem_gid)
+          # resultatum[clavem] = valendum
+        end
+        # resultatum.append(res)
+        drop = Hapi::Drops::HapiGlobumDrop.new(res)
+        resultatum.append(drop)
+      end
+
+      resultatum
+    end
+
+    def tm_paginam?
+      Jekyll.sites.last.data['hapi']['tm'] || []
     end
   end
 end

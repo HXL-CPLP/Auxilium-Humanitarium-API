@@ -97,8 +97,18 @@ module Hapi
         @optionem['collectionem_schemam'] || []
       end
 
+      # NOTE: _[eng] collectionem_xschemam is a draft [eng]_
       def collectionem_xschemam
         @optionem['collectionem_xschemam'] || []
+      end
+
+      def collectionem_tm
+        @optionem['collectionem_tm'] || []
+      end
+
+      # NOTE: _[eng] collectionem_xtm is a draft [eng]_
+      def collectionem_xtm
+        @optionem['collectionem_xtm'] || []
       end
     end
   end
