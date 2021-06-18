@@ -278,6 +278,80 @@
     "experimentum_est": true
   },
   {
+    "uid": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3/",
+    "xdefallo_est": false,
+    "linguam": "{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝hin-Deva📝 ISO_639-3_nomen 📝hin-Deva📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝hin-Deva📝 schemam_datum_nomen 📝hin-Deva📝 🗣️_ %}: {% _🗣️ 📝hin-Deva📝 ISO_639-3_nomen 📝hin-Deva📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝hin-Deva📝 ISO_639-3_summarius 📝hin-Deva📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "http://iso639-3.sil.org/"
+        }
+      ],
+      "vicipaedia": [
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_639-3"
+        }
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q845956"
+      }
+    ],
+    "archivum": {
+      "referens_officinale": [
+        {
+          "iri": "https://iso639-3.sil.org/code_tables/download_tables"
+        },
+        {
+          "iri": "https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab"
+        }
+      ],
+      "schemam": {
+        "graphql": [
+          {
+            "iri": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}.sql"
+          }
+        ],
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}.json"
+          },
+          {
+            "iri": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}_macrolanguages.json"
+          }
+        ],
+        "sql": [
+          {
+            "iri": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}.sql"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}_macrolanguages.json"
+      },
+      {
+        "fontem": "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql",
+        "objectivum": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_639-3_slug 📝hin-Deva📝 🗣️_ %}.sql"
+      }
+    ],
+    "experimentum_est": true
+  },
+  {
     "uid": "/mul-Zyyy/schemam/XZ/ISO-15924/",
     "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924/",
     "xdefallo_est": 1,
@@ -499,6 +573,64 @@
       {
         "fontem": "/schemam/XZ/ISO-15924/ISO-15924.🗣️.json",
         "objectivum": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}.json"
+      }
+    ],
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_15924_slug 📝hin-Deva📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-15924/",
+    "linguam": "{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝hin-Deva📝 ISO_15924_slug 📝hin-Deva📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝hin-Deva📝 ISO_15924_nomen 📝hin-Deva📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝hin-Deva📝 schemam_datum_nomen 📝hin-Deva📝 🗣️_ %}: {% _🗣️ 📝hin-Deva📝 ISO_15924_nomen 📝hin-Deva📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝hin-Deva📝 ISO_15924_summarius 📝hin-Deva📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://www.unicode.org/iso15924/"
+        },
+        {
+          "iri": "https://www.iso.org/obp/ui/#iso:std:iso:15924:ed-1:v1:en",
+          "paywall": true
+        }
+      ],
+      "vicipaedia": [
+        {
+          "iri": "https://pt.wikipedia.org/wiki/ISO_15924",
+          "linguam": "por-Latn"
+        },
+        {
+          "iri": "https://en.wikipedia.org/wiki/ISO_15924",
+          "linguam": "eng-Latn"
+        }
+      ]
+    },
+    "wikidatum": [
+      {
+        "codicem": "Q16866"
+      }
+    ],
+    "archivum": {
+      "referens_officinale": [
+        {
+          "iri": "https://www.unicode.org/iso15924/iso15924.txt"
+        }
+      ],
+      "schemam": {
+        "json": [
+          {
+            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/XZ/ISO-15924/ISO-15924.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_15924_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_15924_slug 📝hin-Deva📝 🗣️_ %}.json"
       }
     ],
     "experimentum_est": true

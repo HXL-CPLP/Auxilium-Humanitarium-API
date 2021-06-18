@@ -19,6 +19,12 @@
 # - 'ignōrandum'
 #   - https://en.wiktionary.org/wiki/ignoro#Latin
 
+# TODO: _[eng-Latn] add more writting systems,
+#                   @see https://www.worldatlas.com/articles/the-world-s-most-popular-writing-scripts.html
+#       [eng-Latn]_
+
+# Tool: https://www.convert-me.com/en/convert/hex_octal_binary_roman/numdec/numdec-to-numeastarabic.html
+
 api_gid:
   - "UN"
   - "XZ"
@@ -36,6 +42,8 @@ schemam:
         paginam_linguam_experimentum:
           # - arb-Arab # Se nem mesmo slugs estiverem traduzidos, gera URLs repetidas
           - spa-Latn
+          # - arb-Arab
+          - hin-Deva
 
 # @see _plugins/hapi/drops/globum_drop.rb
 gid:
@@ -101,6 +109,20 @@ linguam:
         - "+i_ara+is_arab"
         - "+i_ara"
         - "+i_ar"
+  hin-Deva: &id_linguam_hin-Deva
+    BCP47: hi
+    hxlattrs: # deprecated
+      - "+i_hi+i_hin+is_deva"
+      - "+i_hin+is_deva"
+      - "+i_hin"
+      - "+i_hi"
+    hxl:
+      attributum:
+        - "+i_hi+i_hin+is_deva"
+        - "+i_hin+is_deva"
+        - "+i_hin"
+        - "+i_hi"
+
   eng-Latn: &id_linguam_eng-Latn
     BCP47: en
     hxlattrs: # deprecated
@@ -235,6 +257,10 @@ praeiudico:
       iso15924: Arab
       iso6391: ar
       htmldir: rtl
+    hin: &id_praeiudico_iso3693_hin
+      iso15924: Deva
+      iso6391: hi
+      htmldir: ltr
     spa: &id_praeiudico_iso3693_spa
       iso15924: Latn
       iso6391: es
@@ -256,6 +282,7 @@ praeiudico:
     ar: *id_praeiudico_iso3693_ara
     en: *id_praeiudico_iso3693_eng
     es: *id_praeiudico_iso3693_spa
+    hi: *id_praeiudico_iso3693_hin
 
 alternandum:
   Arab: [] # TODO Arab

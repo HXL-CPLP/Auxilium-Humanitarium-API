@@ -16,7 +16,7 @@
 
 principale:
 
-  - nomen: "🇺🇳UN🇺🇳"
+  - nomen: '{% _🗣️ Hapi_locum_UN_nomen_emoji 🗣️_ %}'
     iri: "#"
     descendens:
       - xdefallo: /mul-Zyyy/api/UN/HDX/
@@ -48,7 +48,7 @@ principale:
       - nomen: <span lang="en" dir="ltr">UN HTCDS</span>
         debile: true
 
-  - nomen: "🌐001🌐"
+  - nomen: '{% _🗣️ Hapi_locum_001_nomen_emoji 🗣️_ %}'
     iri: "#"
     descendens:
       - xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
@@ -73,8 +73,7 @@ principale:
         # iri: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 🗣️_ %}'
         iri: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/{% _🗣️ 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 🗣️_ %}/XZ/{% _🗣️ 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 🗣️_ %}/'
 
-
-  - nomen: "🇧🇷076🇧🇷"
+  - nomen: '{% _🗣️ Hapi_locum_076_nomen_emoji 🗣️_ %}'
     iri: '#'
     descendens:
       - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
