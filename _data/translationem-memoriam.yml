@@ -8,7 +8,7 @@
   typum: tm
   gid: XZ
   lid: hapi-miniman
-  title: "hapi-miniman.tm"
+  titulum: "hapi-miniman.tm"
   noindex: true
   situs_interretialis:
     referens_officinale:
@@ -25,7 +25,7 @@
   typum: tm
   gid: XZ
   lid: hapi-api
-  title: "hapi-api.tm"
+  titulum: "hapi-api.tm"
   noindex: true
   situs_interretialis:
     referens_officinale:
@@ -42,7 +42,7 @@
   typum: tm
   gid: XZ
   lid: schemam
-  title: "schemam.tm"
+  titulum: "schemam.tm"
   noindex: true
   situs_interretialis:
     referens_officinale:
@@ -59,7 +59,7 @@
   typum: tm
   gid: XZ
   lid: commune
-  title: "commune.tm"
+  titulum: "commune.tm"
   noindex: true
   situs_interretialis:
     referens_officinale:

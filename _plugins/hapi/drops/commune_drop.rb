@@ -58,6 +58,15 @@ module Hapi
         JSON.pretty_generate(@optionem)
       end
 
+      # def keys
+      #   keys = []
+      #   # @optionem.each do |clavem, _valendum|
+      #   #   keys.append(clavem)
+      #   # end
+
+      #   keys
+      # end
+
       def lid
         # puts 'lid'
         @optionem['lid'] || @optionem['datum']['lid']
@@ -69,7 +78,8 @@ module Hapi
 
       # _[eng] Returns the object as a debug String [eng]_
       def to_s
-        opts = optionem.keys + ['alternativum_linguam']
+        opts = @optionem.keys + ['alternativum_linguam']
+        # opts = self.keys
         "#<#{self.class} @gid=#{gid} @lid=#{lid} @optionem=[#{opts.join(', ')}]>"
       end
 

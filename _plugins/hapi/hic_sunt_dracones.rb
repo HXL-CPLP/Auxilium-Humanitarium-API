@@ -129,6 +129,7 @@ module Hapi
           'xschemam' => xschemam, # Nota: acesse via globum ou entao interaga direto via schemam
           # 'xschemam' => { 'TODO' => '_[eng] To be implemented also here [eng]_' },
           'tm' => tm,
+          'xtm' => xtm,
           'globum' => globum,
           'categoriam' => categoriam,
           'pittacium' => pittacium
@@ -422,12 +423,19 @@ module Hapi
           # TODO: this is a draft, needs implement exclusive XTmDrop
           if !!tm.xdefallo_est && tm.gid_est?(clavem_gid)
             # puts " #{schemam.nomen}"
-            res['collectionem_xtm'].append(Hapi::Drops::XTranslationemMemoriamDrop.new(tm))
+            # res['collectionem_xtm'].append(Hapi::Drops::XTranslationemMemoriamDrop.new(tm))
+            res['collectionem_xtm'].append(tm)
           end
 
           # res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
           # # resultatum[clavem] = valendum
         end
+
+        # puts res['collectionem_tm']
+        # puts ''
+        # puts ''
+        # puts ''
+        # puts res['collectionem_xtm']
 
         # resultatum.append(res)
         drop = Hapi::Drops::HapiGlobumDrop.new(res)

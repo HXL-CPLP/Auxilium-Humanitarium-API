@@ -166,12 +166,12 @@ module Hapi
     end
 
     # TODO: remove obsolete parts
-    # TODO: Hapi::HapiCommunePaginam.titulum?
+    # TODO: Hapi::HapiPaginamCommune.titulum?
     def titulum
       @titulum || @nomen || @title
     end
 
-    # TODO: Hapi::HapiCommunePaginam.titulum?
+    # TODO: Hapi::HapiPaginamCommune.titulum?
     def nomen
       @titulum || @nomen || @title
     end

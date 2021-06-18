@@ -168,15 +168,6 @@ module Hapi
       ]
     end
 
-    # TODO: remove obsolete parts
-    def titulum
-      # {% _🗣️ schemam_datum_nomen 🗣️_ %}: {{ schemam.nomen }}
-      prefix = Hapi::HSD.l10n_simplex('schemam_datum_nomen', linguam)
-      # @titulum || @nomen || @title || @datum['summarius']
-
-      "#{prefix} : #{nomen}"
-    end
-
     # _[eng] Returns the object as a debug String [eng]_
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/collection.rb
     # @see https://github.com/jekyll/jekyll/blob/master/lib/jekyll/page.rb

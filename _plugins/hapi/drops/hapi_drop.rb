@@ -91,8 +91,12 @@ module Hapi
       def to_s # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         optionem_explanandum = []
         @optionem.each_key do |clavem|
+          # puts 'clavem'
+          # puts clavem
+
           optionem_item = ''
-          if @optionem[clavem].length.positive? && @optionem[clavem][0] && @optionem[clavem][0].keys
+          # if @optionem[clavem].length.positive? && @optionem[clavem][0] && @optionem[clavem][0].keys
+          if @optionem[clavem].length.positive? && @optionem[clavem][0] && defined? @optionem[clavem][0].keys
             optionem_item = @optionem[clavem][0].keys.join(', ')
             # puts @optionem[clavem][0].inspect
             optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}, optionem => #{optionem_item}}")
@@ -122,7 +126,7 @@ module Hapi
         @optionem['xschemam']
       end
 
-      # TODO: abstract xschemam
+      # TODO: abstract xtm
       def xtm
         @optionem['xtm']
       end
