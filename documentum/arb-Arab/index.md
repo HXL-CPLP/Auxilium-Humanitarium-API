@@ -1,7 +1,8 @@
 ---
-title: 'Auxilium Humanitarium API documentōrum<sup style="white-space: nowrap;">(👩‍🔬<em>alpha</em>👨‍🔬)</sup>'
+# Hapi_breve_nomen
+title: 'إنساني واجهة برمجة التطبيقات'
 description: |
-  Auxilium Humanitarium API documentōrum
+  إنساني واجهة برمجة التطبيقات
 # locale: pt
 linguam: arb-Arab
 # linguam: por-Latn

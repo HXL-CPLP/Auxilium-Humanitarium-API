@@ -2,15 +2,24 @@
 <!-- Trivia: 'caput', https://en.wiktionary.org/wiki/caput#Latin -->
 
 {% assign paginam_iri = site.pages | map: "url" %}
+{%- capture paginam_l10n -%}{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}{%- endcapture -%}
 
 <header class="site-header">
   <nav aria-label="Main navbar of site"
     class="navbar navbar-expand-lg navbar-light"
     style="background-color: #e3f2fd;">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        Hapi
-      </a>
+
+      {%- if paginam_l10n != '' and paginam_l10n != 'lat-Latn' and paginam_l10n != 'mul-Zyyy' -%}
+        <a class="navbar-brand" href="/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/">
+          {% _🗣️ Hapi_breve_nomen 🗣️_ %} <sup><em>{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}</em></sup>
+        </a>
+      {%- else -%}
+        <a class="navbar-brand" href="/">
+          {% _🗣️ Hapi_breve_nomen 🗣️_ %}
+        </a>
+      {%- endif -%}
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#caput-navigationem"
         aria-controls="caput-navigationem" aria-expanded="false"
@@ -20,7 +29,7 @@
 
       <div class="collapse navbar-collapse" id="caput-navigationem">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          {% assign links = site.data.navigationem[page.linguam] %}
+          {% assign links = site.data.navigationem.principale %}
           {% for link in links %}
             {% assign class = nil %}
             {% if page.url contains link.iri %}

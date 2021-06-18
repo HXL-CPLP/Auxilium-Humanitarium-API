@@ -1,23 +1,23 @@
-#item+id,#item+wikidata+code,#status,#item+type+lat_dominium+list,#item+type+lat_regnum,#item+type+lat_divisionem,#item+type+lat_classem,#item+type+lat_ordinem,#item+type+lat_familiam,#item+type+lat_genus,#item+type+lat_speciem,#item+type+lat_segmentum,#item+i_la+i_lat+is_latn,#item+i_la+i_lat+is_latn+alt+list,#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#item+i_en+i_eng+is_latn,#item+i_en+i_eng+is_latn+alt+list,#item+i_es+i_spa+is_latn,#item+i_es+i_spa+is_latn+alt+list
-L10N_ego_summarius,Q1,2,L10N,L10N,ego,,,,,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,Idioma español (Alfabeto latino),∅
-L10N_ego_codicem,,2,L10N,L10N,ego,,,,,codicem,,lat-Latn,∅,por-Latn,∅,eng-Latn,∅,spa-Latn,∅
-L10N_ego_linguam_nomen,,2,L10N,L10N,ego,linguam,,,,nomen,,Lingua Latina,∅,Língua portuguesa,∅,English language,∅,Idioma español,∅
-L10N_ego_scriptum_nomen,Q19845720,2,L10N,L10N,ego,scriptum,,,,nomen,,Abecedarium Latinum,∅,Alfabeto latino,∅,Latin script,∅,Alfabeto latino,∅
-L10N_ego_patriam_UN_M49_numerum,Q7865431,2,L10N,L10N,ego,patriam,UN,M49,,numerum,,001,∅,001,∅,001,∅,001,∅
-L10N_ego_patriam_UN_P_codicem,,2,L10N,L10N,ego,patriam,UN,P,,codicem,,∅,∅,∅,∅,∅,∅,∅,∅
-I18N_testum_salve_mundi_testum_I18N,Q131303,2,I18N,I18N,testum,salve,mundi,,testum,I18N,,Salvi mundi!,∅,Olá mundo!,Alô Mundo!!Programa alô mundo,"Hello, World!","Hello, world|""Hello, world!"" program",¡Hola mundo!,"¡Hola, mundo!|Programa Hola Mundo"
-I18N_إختبار_טעסט_测试_테스트_испытание_I18N,,2,I18N,I18N,إختبار,טעסט,测试,테스트,испытание,I18N,,"Testum, I, II, III",∅,"Teste, 1, 2, 3",∅,"Test, 1, 2, 3",∅,"Prueba, 1, 2, 3",∅
-I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,Q3634986,2,I18N,I18N,०१२३४५६७८९,〇一二三四五六七八九十百千万亿,-1+2/3*4,٩٨٧٦٥٤٣٢١٠,零壹贰叁肆伍陆柒捌玖拾佰仟萬億,I18N,,"I,V, X, L, C, D, M","1, 2, 3, 4, 5, 6, 7, 8, 9","1, 2, 3, 4, 5, 6, 7, 8, 9, 10|ūnum, duo, tria, quattuor, quīnque, sex, septem, octō, novem, decem","um, dois, três, quatro, cinco, seis, sete, oito, nove, dez","1, 2, 3, 4, 5, 6, 7, 8, 9, 10",,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-L10N_linguam_ego_summarius,,1,L10N,L10N,linguam,,,,ego,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,,∅
-Hapi_api_UN_HDX_titulum,,1,,Hapi,api,UN,HDX,,,titulum,,,∅,HDX - Intercâmbio de Dados Humanitários,∅,HDX - The Humanitarian Data Exchange API,∅,,∅
-Hapi_api_UN_HDX_slug,,1,,Hapi,api,UN,HDX,,,slug,,,∅,humanitarian-data-exchange,∅,humanitarian-data-exchange,∅,,∅
-Hapi_api_UN_CODV2API_titulum,,1,,Hapi,api,UN,CODV2API,,,titulum,,,∅,COD API versão 2,∅,Common Operational Datasets Services 2 (COD Services),∅,,∅
-Hapi_api_UN_CODV2API_slug,,1,,Hapi,api,UN,CODV2API,,,slug,,,∅,common-operational-datasets-api,∅,common-operational-datasets-api,∅,,∅
-Hapi_api_UN_reliefweb_titulum,,1,,Hapi,api,UN,reliefweb,,,titulum,,,∅,ReliefWeb - Informando humanitários em todo o mundo,∅,ReliefWeb - Informing humanitarians worldwide,∅,,∅
-Hapi_api_UN_reliefweb_slug,,1,,Hapi,api,UN,reliefweb,,,slug,,,∅,reliefweb,∅,reliefweb,∅,,∅
-Hapi_api_XZ_HXL-Proxy_titulum,,1,,Hapi,api,XZ,HXL-Proxy,,,titulum,,,∅,HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária,∅,HXL-Proxy - Proxy of the Humanitarian Exchange Language,∅,,∅
-Hapi_api_XZ_HXL-Proxy_slug,,1,,Hapi,api,XZ,HXL-Proxy,,,slug,,,∅,HXL-Proxy,∅,HXL-Proxy,∅,,∅
-Hapi_api_BR_portais-ckan-brasil_titulum,,1,,Hapi,api,BR,portais-ckan-brasil,,,titulum,,,∅,Portais CKAN de dados abertos no Brasil,∅,Brazilian CKAN open data portals,∅,,∅
-Hapi_api_BR_portais-ckan-brasil_slug,,1,,Hapi,api,BR,portais-ckan-brasil,,,slug,,,∅,portais-ckan-brasil,∅,brazilian-ckan-portals,∅,,∅
-Hapi_api_BR_portais-arcgis-brasil_titulum,,1,,Hapi,api,BR,portais-arcgis-brasil,,,titulum,,,∅,Portais ArcGIS de dados abertos do Brasil,∅,Brazilian ArcGIS open data portals,∅,,∅
-Hapi_api_BR_portais-arcgis-brasil_slug,,1,,Hapi,api,BR,portais-arcgis-brasil,,,slug,,,∅,portais-arcgis-brasil,∅,brazilian-arcgis-portals,∅,,∅
+#item+id,#item+wikidata+code,#status,#item+type+lat_dominium+list,#item+type+lat_regnum,#item+type+lat_divisionem,#item+type+lat_classem,#item+type+lat_ordinem,#item+type+lat_familiam,#item+type+lat_genus,#item+type+lat_speciem,#item+type+lat_segmentum,#item+i_la+i_lat+is_latn,#item+i_la+i_lat+is_latn+alt+list,#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#item+i_en+i_eng+is_latn,#item+i_en+i_eng+is_latn+alt+list,#item+i_es+i_spa+is_latn,#item+i_es+i_spa+is_latn+alt+list,#item+i_ar+i_arb+is_arab,#item+i_es+i_arb+is_arab+alt+list
+L10N_ego_summarius,Q1,2,L10N,L10N,ego,,,,,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,Idioma español (Alfabeto latino),∅,اللغة العربية,∅
+L10N_ego_codicem,,2,L10N,L10N,ego,,,,,codicem,,lat-Latn,∅,por-Latn,∅,eng-Latn,∅,spa-Latn,∅,arb-Arab,∅
+L10N_ego_linguam_nomen,,2,L10N,L10N,ego,linguam,,,,nomen,,Lingua Latina,∅,Língua portuguesa,∅,English language,∅,Idioma español,∅,اللغة العربية,∅
+L10N_ego_scriptum_nomen,Q19845720,2,L10N,L10N,ego,scriptum,,,,nomen,,Abecedarium Latinum,∅,Alfabeto latino,∅,Latin script,∅,Alfabeto latino,∅,,∅
+L10N_ego_patriam_UN_M49_numerum,Q7865431,2,L10N,L10N,ego,patriam,UN,M49,,numerum,,001,∅,001,∅,001,∅,001,∅,001,∅
+L10N_ego_patriam_UN_P_codicem,,2,L10N,L10N,ego,patriam,UN,P,,codicem,,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅
+I18N_testum_salve_mundi_testum_I18N,Q131303,2,I18N,I18N,testum,salve,mundi,,testum,I18N,,Salvi mundi!,∅,Olá mundo!,Alô Mundo!!Programa alô mundo,"Hello, World!","Hello, world|""Hello, world!"" program",¡Hola mundo!,"¡Hola, mundo!|Programa Hola Mundo",,∅
+I18N_إختبار_טעסט_测试_테스트_испытание_I18N,,2,I18N,I18N,إختبار,טעסט,测试,테스트,испытание,I18N,,"Testum, I, II, III",∅,"Teste, 1, 2, 3",∅,"Test, 1, 2, 3",∅,"Prueba, 1, 2, 3",∅,,∅
+I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,Q3634986,2,I18N,I18N,०१२३४५६७८९,〇一二三四五六七八九十百千万亿,-1+2/3*4,٩٨٧٦٥٤٣٢١٠,零壹贰叁肆伍陆柒捌玖拾佰仟萬億,I18N,,"I,V, X, L, C, D, M","1, 2, 3, 4, 5, 6, 7, 8, 9","1, 2, 3, 4, 5, 6, 7, 8, 9, 10|ūnum, duo, tria, quattuor, quīnque, sex, septem, octō, novem, decem","um, dois, três, quatro, cinco, seis, sete, oito, nove, dez","1, 2, 3, 4, 5, 6, 7, 8, 9, 10",,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅,,∅
+L10N_linguam_ego_summarius,,1,L10N,L10N,linguam,,,,ego,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,,∅,,∅
+Hapi_api_UN_HDX_titulum,,1,,Hapi,api,UN,HDX,,,titulum,,,∅,HDX - Intercâmbio de Dados Humanitários,∅,HDX - The Humanitarian Data Exchange API,∅,,∅,,∅
+Hapi_api_UN_HDX_slug,,1,,Hapi,api,UN,HDX,,,slug,,,∅,humanitarian-data-exchange,∅,humanitarian-data-exchange,∅,,∅,,∅
+Hapi_api_UN_CODV2API_titulum,,1,,Hapi,api,UN,CODV2API,,,titulum,,,∅,COD API versão 2,∅,Common Operational Datasets Services 2 (COD Services),∅,,∅,,∅
+Hapi_api_UN_CODV2API_slug,,1,,Hapi,api,UN,CODV2API,,,slug,,,∅,common-operational-datasets-api,∅,common-operational-datasets-api,∅,,∅,,∅
+Hapi_api_UN_reliefweb_titulum,,1,,Hapi,api,UN,reliefweb,,,titulum,,,∅,ReliefWeb - Informando humanitários em todo o mundo,∅,ReliefWeb - Informing humanitarians worldwide,∅,,∅,,∅
+Hapi_api_UN_reliefweb_slug,,1,,Hapi,api,UN,reliefweb,,,slug,,,∅,reliefweb,∅,reliefweb,∅,,∅,,∅
+Hapi_api_XZ_HXL-Proxy_titulum,,1,,Hapi,api,XZ,HXL-Proxy,,,titulum,,,∅,HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária,∅,HXL-Proxy - Proxy of the Humanitarian Exchange Language,∅,,∅,,∅
+Hapi_api_XZ_HXL-Proxy_slug,,1,,Hapi,api,XZ,HXL-Proxy,,,slug,,,∅,HXL-Proxy,∅,HXL-Proxy,∅,,∅,,∅
+Hapi_api_BR_portais-ckan-brasil_titulum,,1,,Hapi,api,BR,portais-ckan-brasil,,,titulum,,,∅,Portais CKAN de dados abertos no Brasil,∅,Brazilian CKAN open data portals,∅,,∅,,∅
+Hapi_api_BR_portais-ckan-brasil_slug,,1,,Hapi,api,BR,portais-ckan-brasil,,,slug,,,∅,portais-ckan-brasil,∅,brazilian-ckan-portals,∅,,∅,,∅
+Hapi_api_BR_portais-arcgis-brasil_titulum,,1,,Hapi,api,BR,portais-arcgis-brasil,,,titulum,,,∅,Portais ArcGIS de dados abertos do Brasil,∅,Brazilian ArcGIS open data portals,∅,,∅,,∅
+Hapi_api_BR_portais-arcgis-brasil_slug,,1,,Hapi,api,BR,portais-arcgis-brasil,,,slug,,,∅,portais-arcgis-brasil,∅,brazilian-arcgis-portals,∅,,∅,,∅

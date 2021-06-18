@@ -1,56 +1,56 @@
-#item+id,#item+wikidata+code,#status,#item+type+lat_dominium+list,#item+type+lat_regnum,#item+type+lat_divisionem,#item+type+lat_classem,#item+type+lat_ordinem,#item+type+lat_familiam,#item+type+lat_genus,#item+type+lat_speciem,#item+type+lat_segmentum,#item+i_la+i_lat+is_latn,#item+i_la+i_lat+is_latn+alt+list,#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#item+i_en+i_eng+is_latn,#item+i_en+i_eng+is_latn+alt+list,#item+i_es+i_spa+is_latn,#item+i_es+i_spa+is_latn+alt+list
-L10N_ego_summarius,Q1,2,L10N,L10N,ego,,,,,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,Idioma español (Alfabeto latino),∅
-L10N_ego_codicem,,2,L10N,L10N,ego,,,,,codicem,,lat-Latn,∅,por-Latn,∅,eng-Latn,∅,spa-Latn,∅
-L10N_ego_linguam_nomen,,2,L10N,L10N,ego,linguam,,,,nomen,,Lingua Latina,∅,Língua portuguesa,∅,English language,∅,Idioma español,∅
-L10N_ego_scriptum_nomen,Q19845720,2,L10N,L10N,ego,scriptum,,,,nomen,,Abecedarium Latinum,∅,Alfabeto latino,∅,Latin script,∅,Alfabeto latino,∅
-L10N_ego_patriam_UN_M49_numerum,Q7865431,2,L10N,L10N,ego,patriam,UN,M49,,numerum,,001,∅,001,∅,001,∅,001,∅
-L10N_ego_patriam_UN_P_codicem,,2,L10N,L10N,ego,patriam,UN,P,,codicem,,∅,∅,∅,∅,∅,∅,∅,∅
-I18N_testum_salve_mundi_testum_I18N,Q131303,2,I18N,I18N,testum,salve,mundi,,testum,I18N,,Salvi mundi!,∅,Olá mundo!,Alô Mundo!!Programa alô mundo,"Hello, World!","Hello, world|""Hello, world!"" program",¡Hola mundo!,"¡Hola, mundo!|Programa Hola Mundo"
-I18N_إختبار_טעסט_测试_테스트_испытание_I18N,,2,I18N,I18N,إختبار,טעסט,测试,테스트,испытание,I18N,,"Testum, I, II, III",∅,"Teste, 1, 2, 3",∅,"Test, 1, 2, 3",∅,"Prueba, 1, 2, 3",∅
-I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,Q3634986,2,I18N,I18N,०१२३४५६७८९,〇一二三四五六七八九十百千万亿,-1+2/3*4,٩٨٧٦٥٤٣٢١٠,零壹贰叁肆伍陆柒捌玖拾佰仟萬億,I18N,,"I,V, X, L, C, D, M","1, 2, 3, 4, 5, 6, 7, 8, 9","1, 2, 3, 4, 5, 6, 7, 8, 9, 10|ūnum, duo, tria, quattuor, quīnque, sex, septem, octō, novem, decem","um, dois, três, quatro, cinco, seis, sete, oito, nove, dez","1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-linguam_ego_summarius,,1,L10N,,linguam,,,,ego,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,,∅
-ISO_639-3_nomen,,1,,,ISO,639-3,,,,nomen,,ISO 639-3,∅,ISO 639-3,∅,ISO 639-3,∅,ISO 639-3,∅
-ISO_639-3_slug,,1,,,ISO,639-3,,,,slug,,ISO-639-3,∅,ISO-639-3,∅,ISO-639-3,∅,ISO-639-3,∅
-ISO_639-3_summarius,,1,,,ISO,639-3,,,,summarius,,,∅,Conjuntos de códigos para um número de sistemas de escrita – Parte 3:códigos Alpha-3 para cobertura abrangente de idiomas,∅,Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages,∅,,∅
-ISO_639-3_optionem_Id_summarius,,1,,,ISO,639-3,optionem,Id,,summarius,,,∅,O identificador ISO 639-3 de três letras,∅,The three-letter ISO 639-3 identifier,∅,,∅
-ISO_639-3_optionem_Id_exemplum,,1,,,ISO,639-3,optionem,Id,,exemplum,,lat,∅,por,∅,eng,∅,spa,∅
-ISO_639-3_optionem_Part2B_summarius,,1,,,ISO,639-3,optionem,Part2B,,summarius,,,∅,"Identificador equivalente ISO 639-2 do conjunto de códigos de aplicativos bibliográficos, se houver",∅,"Equivalent ISO 639-2 identifier of the bibliographic applications code set, if there is one",∅,,∅
-ISO_639-3_optionem_Part2B_exemplum,,1,,,ISO,639-3,optionem,Part2B,,exemplum,,lat,∅,por,∅,eng,∅,spa,∅
-ISO_639-3_optionem_Part2T_summarius,,1,,,ISO,639-3,optionem,Part2T,,summarius,,,∅,"Identificador equivalente ISO 639-2 do conjunto de códigos de aplicativos de terminologia, se houver um",∅,"Equivalent ISO 639-2 identifier of the terminology applications code set, if there is one",∅,,∅
-ISO_639-3_optionem_Part2T_exemplum,,1,,,ISO,639-3,optionem,Part2T,,exemplum,,lat,∅,por,∅,eng,∅,spa,∅
-ISO_639-3_optionem_Part1_summarius,,1,,,ISO,639-3,optionem,Part1,,summarius,,,∅,"Identificador ISO 639-1 equivalente, se houver",∅,"Equivalent ISO 639-1 identifier, if there is one",∅,,∅
-ISO_639-3_optionem_Part1_exemplum,,1,,,ISO,639-3,optionem,Part1,,exemplum,,la,∅,pt,∅,en,∅,es,∅
-ISO_639-3_optionem_Scope_summarius,,1,,,ISO,639-3,optionem,Scope,,summarius,,,∅,I: Individual; M: Macrolíngua; S: Especial,∅,"I(ndividual), M(acrolanguage), S(pecial)",∅,,∅
-ISO_639-3_optionem_Scope_exemplum,,1,,,ISO,639-3,optionem,Scope,,exemplum,,I,∅,I,∅,I,∅,I,∅
-ISO_639-3_optionem_Type_summarius,,1,,,ISO,639-3,optionem,Type,,summarius,,,∅,"A: Antiga; C: Construída (língua artificial, planejada); E: Extinta; L: Língua viva; S: Especial",∅,"A(ncient), C(onstructed), E(xtinct), H(istorical), L(iving), S(pecial)",∅,,∅
-ISO_639-3_optionem_Type_exemplum,,1,,,ISO,639-3,optionem,Type,,exemplum,,A,∅,L,∅,L,∅,L,∅
-ISO_639-3_optionem_Ref_Name_summarius,,1,,,ISO,639-3,optionem,Ref_Name,,summarius,,,∅,Nome no idioma de referência (provavelmente língua inglesa ou língua francesa e no sistema de escrita alfabeto latino),∅,Name in the reference language (probably English or French and in the Latin script),∅,,∅
-ISO_639-3_optionem_Ref_Name_exemplum,,1,,,ISO,639-3,optionem,Ref_Name,,exemplum,,Latin,∅,Portuguese,∅,English,∅,Spanish,∅
-ISO_639-3_optionem_Comment_summarius,,1,,,ISO,639-3,optionem,Comment,,summarius,,,∅,Comentário relacionado a uma ou mais colunas,∅,Comment relating to one or more of the columns,∅,,∅
-ISO_639-3_optionem_Comment_exemplum,,1,,,ISO,639-3,optionem,Comment,,exemplum,,∅,∅,∅,∅,∅,∅,[(vacuum)],∅
-ISO_15924_nomen,Q16866,1,,,ISO,15924,,,,nomen,,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅
-ISO_15924_slug,Q16866,1,,,ISO,15924,,,,slug,,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅
-ISO_15924_summarius,Q16866,1,,,ISO,15924,,,,summarius,,,∅,ISO 15924: Códigos para a representação de nomes de sistemas de escrita,∅,ISO 15924: Codes for the representation of names of scripts,∅,,∅
-ISO_15924_optionem_Code_summarius,,1,,,ISO,15924,optionem,Code,,summarius,,,∅,,∅,Code,∅,,∅
-ISO_15924_optionem_Code_exemplum,,1,,,ISO,15924,optionem,Code,,exemplum,,Latn,∅,Latn,∅,Latn,∅,Latn,∅
-ISO_15924_optionem_numerum_summarius,,1,,,ISO,15924,optionem,numerum,,summarius,,,∅,,∅,Nº is ... (TODO),∅,,∅
-ISO_15924_optionem_numerum_exemplum,,1,,,ISO,15924,optionem,numerum,,exemplum,,,∅,160,∅,160,∅,,∅
-ISO_15924_optionem_nomen_anglicum_summarius,,1,,,ISO,15924,optionem,nomen,anglicum,summarius,,,∅,,∅,English Name is ... (TODO),∅,,∅
-ISO_15924_optionem_nomen_anglicum_exemplum,,1,,,ISO,15924,optionem,nomen,anglicum,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_nomen_francogallicum_summarius,,1,,,ISO,15924,optionem,nomen,francogallicum,summarius,,,∅,,∅,Nom français is ... (TODO),∅,,∅
-ISO_15924_optionem_nomen_francogallicum_exemplum,,1,,,ISO,15924,optionem,nomen,francogallicum,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_PVA_summarius,,1,,,ISO,15924,optionem,PVA,,summarius,,,∅,,∅,PVA is ... (TODO),∅,,∅
-ISO_15924_optionem_PVA_exemplum,,1,,,ISO,15924,optionem,PVA,,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_Unicode_versionem_summarius,,1,,,ISO,15924,optionem,Unicode,versionem,summarius,,,∅,,∅,Unicode Version is ... (TODO),∅,,∅
-ISO_15924_optionem_Unicode_versionem_exemplum,,1,,,ISO,15924,optionem,Unicode,versionem,exemplum,,,∅,,∅,,∅,,∅
-ISO_15924_optionem_dactylum_summarius,,1,,,ISO,15924,optionem,dactylum,,summarius,,,∅,,∅,Date is ... (TODO),∅,,∅
-ISO_15924_optionem_dactylum_exemplum,,1,,,ISO,15924,optionem,dactylum,,exemplum,,,∅,,∅,2004-05-01,∅,,∅
-json_schemam_nomen,,1,,,,,,json_schemam,,nomen,,JSON Schēmam,∅,Esquema de dados JSON,∅,JSON Schema,∅,,∅
-graphql_schemam_nomen,,1,,,,,,graphql_schemam,,nomen,,GraphQL Schēmam,∅,Esquema de dados GraphQL,∅,GraphQL Schema,∅,,∅
-SQL_abbreviationem_nomen,,1,,,,,,SQL,abbreviationem,nomen,,SQL,∅,SQL,∅,SQL,∅,SQL,∅
-UN_P_nomen,,1,UN,,UN,P,,,,nomen,,UN P,∅,UN P,∅,UN P,∅,UN P,∅
-UN_P_slug,,1,UN,,UN,P,,,,slug,,un-p,∅,un-p,∅,un-p,∅,un-p,∅
-UN_P_summarius,,1,UN,,UN,P,,,,summarius,,,∅,,∅,,∅,,∅
-UN_M49_nomen,,1,UN,,UN,M49,,,,nomen,,UN M49,∅,UN M49,∅,UN M49,∅,UN M49,∅
-UN_M49_slug,,1,UN,,UN,M49,,,,slug,,un-m49,∅,un-m49,∅,un-m49,∅,un-m49,∅
-UN_M49_summarius,,1,UN,,UN,M49,,,,summarius,,,∅,,∅,,∅,,∅
+#item+id,#item+wikidata+code,#status,#item+type+lat_dominium+list,#item+type+lat_regnum,#item+type+lat_divisionem,#item+type+lat_classem,#item+type+lat_ordinem,#item+type+lat_familiam,#item+type+lat_genus,#item+type+lat_speciem,#item+type+lat_segmentum,#item+i_la+i_lat+is_latn,#item+i_la+i_lat+is_latn+alt+list,#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#item+i_en+i_eng+is_latn,#item+i_en+i_eng+is_latn+alt+list,#item+i_es+i_spa+is_latn,#item+i_es+i_spa+is_latn+alt+list,#item+i_ar+i_arb+is_arab,#item+i_es+i_arb+is_arab+alt+list
+L10N_ego_summarius,Q1,2,L10N,L10N,ego,,,,,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,Idioma español (Alfabeto latino),∅,اللغة العربية,∅
+L10N_ego_codicem,,2,L10N,L10N,ego,,,,,codicem,,lat-Latn,∅,por-Latn,∅,eng-Latn,∅,spa-Latn,∅,arb-Arab,∅
+L10N_ego_linguam_nomen,,2,L10N,L10N,ego,linguam,,,,nomen,,Lingua Latina,∅,Língua portuguesa,∅,English language,∅,Idioma español,∅,اللغة العربية,∅
+L10N_ego_scriptum_nomen,Q19845720,2,L10N,L10N,ego,scriptum,,,,nomen,,Abecedarium Latinum,∅,Alfabeto latino,∅,Latin script,∅,Alfabeto latino,∅,,∅
+L10N_ego_patriam_UN_M49_numerum,Q7865431,2,L10N,L10N,ego,patriam,UN,M49,,numerum,,001,∅,001,∅,001,∅,001,∅,001,∅
+L10N_ego_patriam_UN_P_codicem,,2,L10N,L10N,ego,patriam,UN,P,,codicem,,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅
+I18N_testum_salve_mundi_testum_I18N,Q131303,2,I18N,I18N,testum,salve,mundi,,testum,I18N,,Salvi mundi!,∅,Olá mundo!,Alô Mundo!!Programa alô mundo,"Hello, World!","Hello, world|""Hello, world!"" program",¡Hola mundo!,"¡Hola, mundo!|Programa Hola Mundo",,∅
+I18N_إختبار_טעסט_测试_테스트_испытание_I18N,,2,I18N,I18N,إختبار,טעסט,测试,테스트,испытание,I18N,,"Testum, I, II, III",∅,"Teste, 1, 2, 3",∅,"Test, 1, 2, 3",∅,"Prueba, 1, 2, 3",∅,,∅
+I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,Q3634986,2,I18N,I18N,०१२३४५६७८९,〇一二三四五六七八九十百千万亿,-1+2/3*4,٩٨٧٦٥٤٣٢١٠,零壹贰叁肆伍陆柒捌玖拾佰仟萬億,I18N,,"I,V, X, L, C, D, M","1, 2, 3, 4, 5, 6, 7, 8, 9","1, 2, 3, 4, 5, 6, 7, 8, 9, 10|ūnum, duo, tria, quattuor, quīnque, sex, septem, octō, novem, decem","um, dois, três, quatro, cinco, seis, sete, oito, nove, dez","1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",,,∅
+linguam_ego_summarius,,1,L10N,,linguam,,,,ego,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,,∅,,∅
+ISO_639-3_nomen,,1,,,ISO,639-3,,,,nomen,,ISO 639-3,∅,ISO 639-3,∅,ISO 639-3,∅,ISO 639-3,∅,,
+ISO_639-3_slug,,1,,,ISO,639-3,,,,slug,,ISO-639-3,∅,ISO-639-3,∅,ISO-639-3,∅,ISO-639-3,∅,,
+ISO_639-3_summarius,,1,,,ISO,639-3,,,,summarius,,,∅,Conjuntos de códigos para um número de sistemas de escrita – Parte 3:códigos Alpha-3 para cobertura abrangente de idiomas,∅,Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages,∅,,∅,,
+ISO_639-3_optionem_Id_summarius,,1,,,ISO,639-3,optionem,Id,,summarius,,,∅,O identificador ISO 639-3 de três letras,∅,The three-letter ISO 639-3 identifier,∅,,∅,,
+ISO_639-3_optionem_Id_exemplum,,1,,,ISO,639-3,optionem,Id,,exemplum,,lat,∅,por,∅,eng,∅,spa,∅,,
+ISO_639-3_optionem_Part2B_summarius,,1,,,ISO,639-3,optionem,Part2B,,summarius,,,∅,"Identificador equivalente ISO 639-2 do conjunto de códigos de aplicativos bibliográficos, se houver",∅,"Equivalent ISO 639-2 identifier of the bibliographic applications code set, if there is one",∅,,∅,,
+ISO_639-3_optionem_Part2B_exemplum,,1,,,ISO,639-3,optionem,Part2B,,exemplum,,lat,∅,por,∅,eng,∅,spa,∅,,
+ISO_639-3_optionem_Part2T_summarius,,1,,,ISO,639-3,optionem,Part2T,,summarius,,,∅,"Identificador equivalente ISO 639-2 do conjunto de códigos de aplicativos de terminologia, se houver um",∅,"Equivalent ISO 639-2 identifier of the terminology applications code set, if there is one",∅,,∅,,
+ISO_639-3_optionem_Part2T_exemplum,,1,,,ISO,639-3,optionem,Part2T,,exemplum,,lat,∅,por,∅,eng,∅,spa,∅,,
+ISO_639-3_optionem_Part1_summarius,,1,,,ISO,639-3,optionem,Part1,,summarius,,,∅,"Identificador ISO 639-1 equivalente, se houver",∅,"Equivalent ISO 639-1 identifier, if there is one",∅,,∅,,
+ISO_639-3_optionem_Part1_exemplum,,1,,,ISO,639-3,optionem,Part1,,exemplum,,la,∅,pt,∅,en,∅,es,∅,,
+ISO_639-3_optionem_Scope_summarius,,1,,,ISO,639-3,optionem,Scope,,summarius,,,∅,I: Individual; M: Macrolíngua; S: Especial,∅,"I(ndividual), M(acrolanguage), S(pecial)",∅,,∅,,
+ISO_639-3_optionem_Scope_exemplum,,1,,,ISO,639-3,optionem,Scope,,exemplum,,I,∅,I,∅,I,∅,I,∅,,
+ISO_639-3_optionem_Type_summarius,,1,,,ISO,639-3,optionem,Type,,summarius,,,∅,"A: Antiga; C: Construída (língua artificial, planejada); E: Extinta; L: Língua viva; S: Especial",∅,"A(ncient), C(onstructed), E(xtinct), H(istorical), L(iving), S(pecial)",∅,,∅,,
+ISO_639-3_optionem_Type_exemplum,,1,,,ISO,639-3,optionem,Type,,exemplum,,A,∅,L,∅,L,∅,L,∅,,
+ISO_639-3_optionem_Ref_Name_summarius,,1,,,ISO,639-3,optionem,Ref_Name,,summarius,,,∅,Nome no idioma de referência (provavelmente língua inglesa ou língua francesa e no sistema de escrita alfabeto latino),∅,Name in the reference language (probably English or French and in the Latin script),∅,,∅,,
+ISO_639-3_optionem_Ref_Name_exemplum,,1,,,ISO,639-3,optionem,Ref_Name,,exemplum,,Latin,∅,Portuguese,∅,English,∅,Spanish,∅,,
+ISO_639-3_optionem_Comment_summarius,,1,,,ISO,639-3,optionem,Comment,,summarius,,,∅,Comentário relacionado a uma ou mais colunas,∅,Comment relating to one or more of the columns,∅,,∅,,
+ISO_639-3_optionem_Comment_exemplum,,1,,,ISO,639-3,optionem,Comment,,exemplum,,∅,∅,∅,∅,∅,∅,[(vacuum)],∅,,
+ISO_15924_nomen,Q16866,1,,,ISO,15924,,,,nomen,,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,,
+ISO_15924_slug,Q16866,1,,,ISO,15924,,,,slug,,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,,
+ISO_15924_summarius,Q16866,1,,,ISO,15924,,,,summarius,,,∅,ISO 15924: Códigos para a representação de nomes de sistemas de escrita,∅,ISO 15924: Codes for the representation of names of scripts,∅,,∅,,
+ISO_15924_optionem_Code_summarius,,1,,,ISO,15924,optionem,Code,,summarius,,,∅,,∅,Code,∅,,∅,,
+ISO_15924_optionem_Code_exemplum,,1,,,ISO,15924,optionem,Code,,exemplum,,Latn,∅,Latn,∅,Latn,∅,Latn,∅,,
+ISO_15924_optionem_numerum_summarius,,1,,,ISO,15924,optionem,numerum,,summarius,,,∅,,∅,Nº is ... (TODO),∅,,∅,,
+ISO_15924_optionem_numerum_exemplum,,1,,,ISO,15924,optionem,numerum,,exemplum,,,∅,160,∅,160,∅,,∅,,
+ISO_15924_optionem_nomen_anglicum_summarius,,1,,,ISO,15924,optionem,nomen,anglicum,summarius,,,∅,,∅,English Name is ... (TODO),∅,,∅,,
+ISO_15924_optionem_nomen_anglicum_exemplum,,1,,,ISO,15924,optionem,nomen,anglicum,exemplum,,,∅,,∅,,∅,,∅,,
+ISO_15924_optionem_nomen_francogallicum_summarius,,1,,,ISO,15924,optionem,nomen,francogallicum,summarius,,,∅,,∅,Nom français is ... (TODO),∅,,∅,,
+ISO_15924_optionem_nomen_francogallicum_exemplum,,1,,,ISO,15924,optionem,nomen,francogallicum,exemplum,,,∅,,∅,,∅,,∅,,
+ISO_15924_optionem_PVA_summarius,,1,,,ISO,15924,optionem,PVA,,summarius,,,∅,,∅,PVA is ... (TODO),∅,,∅,,
+ISO_15924_optionem_PVA_exemplum,,1,,,ISO,15924,optionem,PVA,,exemplum,,,∅,,∅,,∅,,∅,,
+ISO_15924_optionem_Unicode_versionem_summarius,,1,,,ISO,15924,optionem,Unicode,versionem,summarius,,,∅,,∅,Unicode Version is ... (TODO),∅,,∅,,
+ISO_15924_optionem_Unicode_versionem_exemplum,,1,,,ISO,15924,optionem,Unicode,versionem,exemplum,,,∅,,∅,,∅,,∅,,
+ISO_15924_optionem_dactylum_summarius,,1,,,ISO,15924,optionem,dactylum,,summarius,,,∅,,∅,Date is ... (TODO),∅,,∅,,
+ISO_15924_optionem_dactylum_exemplum,,1,,,ISO,15924,optionem,dactylum,,exemplum,,,∅,,∅,2004-05-01,∅,,∅,,
+json_schemam_nomen,,1,,,,,,json_schemam,,nomen,,JSON Schēmam,∅,Esquema de dados JSON,∅,JSON Schema,∅,,∅,,
+graphql_schemam_nomen,,1,,,,,,graphql_schemam,,nomen,,GraphQL Schēmam,∅,Esquema de dados GraphQL,∅,GraphQL Schema,∅,,∅,,
+SQL_abbreviationem_nomen,,1,,,,,,SQL,abbreviationem,nomen,,SQL,∅,SQL,∅,SQL,∅,SQL,∅,,
+UN_P_nomen,,1,UN,,UN,P,,,,nomen,,UN P,∅,UN P,∅,UN P,∅,UN P,∅,,
+UN_P_slug,,1,UN,,UN,P,,,,slug,,un-p,∅,un-p,∅,un-p,∅,un-p,∅,,
+UN_P_summarius,,1,UN,,UN,P,,,,summarius,,,∅,,∅,,∅,,∅,,
+UN_M49_nomen,,1,UN,,UN,M49,,,,nomen,,UN M49,∅,UN M49,∅,UN M49,∅,UN M49,∅,,
+UN_M49_slug,,1,UN,,UN,M49,,,,slug,,un-m49,∅,un-m49,∅,un-m49,∅,un-m49,∅,,
+UN_M49_summarius,,1,UN,,UN,M49,,,,summarius,,,∅,,∅,,∅,,∅,,
