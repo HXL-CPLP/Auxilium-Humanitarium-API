@@ -44,11 +44,12 @@ module Hapi
         @optionem['api']
       end
 
-      # _[eng] List of all x-default APIs [eng]_
-      #
-      # @see _plugins/hapi/drops/xdefallo_api_drop.rb
-      def xapi
-        @optionem['xapi']
+      # _[eng] Generic list of Jekyll Pages, APIs, Schemas by category.
+      #        Warning: this is a draft and may not be used. Consider this a
+      #        draft.
+      # [eng]_
+      def categoriam
+        @optionem['categoriam']
       end
 
       # _[eng] List of APIs & Schemas per Region [eng]_
@@ -62,14 +63,6 @@ module Hapi
       #   @optionem['api_xdefallo']
       # end
 
-      # _[eng] Generic list of Jekyll Pages, APIs, Schemas by category.
-      #        Warning: this is a draft and may not be used. Consider this a
-      #        draft.
-      # [eng]_
-      def categoriam
-        @optionem['categoriam']
-      end
-
       def inspect
         # Liquid uses 'self.class.to_s'
         # @see https://github.com/Shopify/liquid/blob/master/lib/liquid/drop.rb#L47
@@ -77,7 +70,25 @@ module Hapi
         JSON.pretty_generate(@optionem)
       end
 
-      def to_s
+      # _[eng] Generic list of Jekyll Pages, APIs, Schemas by tag.
+      #        Warning: this is a draft and may not be used. Consider this a
+      #        draft.
+      # [eng]_
+      def pittacium
+        @optionem['pittacium']
+      end
+
+      # TODO: abstract schemam
+      def schemam
+        @optionem['schemam']
+      end
+
+      # TODO: abstract schemam
+      def tm
+        @optionem['tm']
+      end
+
+      def to_s # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         optionem_explanandum = []
         @optionem.each_key do |clavem|
           optionem_item = ''
@@ -99,9 +110,11 @@ module Hapi
         "<{#{self.class} @item=[#{optionem_explanandum.join(', ')}]}>"
       end
 
-      # TODO: abstract schemam
-      def schemam
-        @optionem['schemam']
+      # _[eng] List of all x-default APIs [eng]_
+      #
+      # @see _plugins/hapi/drops/xdefallo_api_drop.rb
+      def xapi
+        @optionem['xapi']
       end
 
       # TODO: abstract xschemam
@@ -109,12 +122,9 @@ module Hapi
         @optionem['xschemam']
       end
 
-      # _[eng] Generic list of Jekyll Pages, APIs, Schemas by tag.
-      #        Warning: this is a draft and may not be used. Consider this a
-      #        draft.
-      # [eng]_
-      def pittacium
-        @optionem['pittacium']
+      # TODO: abstract xschemam
+      def xtm
+        @optionem['xtm']
       end
     end
   end

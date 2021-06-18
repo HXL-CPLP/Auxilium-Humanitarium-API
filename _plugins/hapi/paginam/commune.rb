@@ -172,7 +172,7 @@ module Hapi
     end
 
     def nomen
-      @datum['nomen']
+      @datum['nomen'] || @datum['titulum']
     end
 
     # def openapi_filum
@@ -203,13 +203,17 @@ module Hapi
       ]
     end
 
-    # TODO: remove obsolete parts
-    def titulum
-      # {% _🗣️ schemam_datum_nomen 🗣️_ %}: {{ schemam.nomen }}
-      prefix = Hapi::HSD.l10n_simplex('schemam_datum_nomen', linguam)
-      # @titulum || @nomen || @title || @datum['summarius']
+    # # TODO: remove obsolete parts
+    # def titulum
+    #   # {% _🗣️ schemam_datum_nomen 🗣️_ %}: {{ schemam.nomen }}
+    #   prefix = Hapi::HSD.l10n_simplex('schemam_datum_nomen', linguam)
+    #   # @titulum || @nomen || @title || @datum['summarius']
 
-      "#{prefix} : #{nomen}"
+    #   "#{prefix} : #{nomen}"
+    # end
+
+    def titulum
+      @datum['titulum'] || @datum['nomen']
     end
 
     # Trivia

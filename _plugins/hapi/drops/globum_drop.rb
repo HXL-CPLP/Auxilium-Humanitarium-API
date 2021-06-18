@@ -35,56 +35,16 @@ module Hapi
         @optionem = argumentum
       end
 
-      def inspect
-        # Liquid uses 'self.class.to_s'
-        # @see https://github.com/Shopify/liquid/blob/master/lib/liquid/drop.rb#L47
-        require 'json'
-        JSON.pretty_generate(@optionem)
-      end
-
-      # def to_s
-      #   optionem_explanandum = []
-      #   @optionem.each_key do |clavem|
-      #     optionem_explanandum.append(clavem) if !clavem.nil? && !clavem.empty?
-      #     #   optionem_item = ''
-      #     #   if @optionem[clavem].length.positive? && @optionem[clavem][0] && @optionem[clavem][0]&.keys
-      #     #     optionem_item = @optionem[clavem][0].keys.join(', ')
-      #     #     # puts @optionem[clavem][0].inspect
-      #     #     optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}, optionem => #{optionem_item}}")
-      #     #   else
-      #     #     optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}}")
-      #     #   end
-      #     #   # optionem_explanandum.append("#{clavem} => {dēscendēns => #{@optionem[clavem].length}, optionem => #{optionem_item}}")
-      #   end
-
-      #   # puts @optionem['api_gid_xdefallo']
-      #   # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
-      #   # optionem_explanandum.append(@optionem['api_gid_xdefallo'].to_s)
-
-      #   # "#{HapiDrop} @item=#{@optionem.keys} #{optionem_num}"
-      #   "{#{self.class} @gid=#{gid} @item=[#{optionem_explanandum.join(', ')}]}"
-      #   # "{#{self.class} @gid=#{gid}}"
-      # end
-
-      def to_s
-        # "#<#{self.class} @gid=#{gid} @item=#{@optionem.keys}>"
-        "#<#{self.class} @gid=#{gid} @optionem=[#{@optionem.keys.join(', ')}]>"
-      end
-
-      def gid
-        @optionem['gid']
-      end
-
-      def nomen
-        @optionem['nomen']
-      end
-
-      def descriptionem
-        @optionem['descriptionem']
-      end
-
       def collectionem_api
         @optionem['collectionem_api'] || []
+      end
+
+      def collectionem_schemam
+        @optionem['collectionem_schemam'] || []
+      end
+
+      def collectionem_tm
+        @optionem['collectionem_tm'] || []
       end
 
       # @see _plugins/hapi/drops/xdefallo_api_drop.rb
@@ -93,8 +53,9 @@ module Hapi
         @optionem['collectionem_xapi'] || []
       end
 
-      def collectionem_schemam
-        @optionem['collectionem_schemam'] || []
+      # NOTE: _[eng] collectionem_xtm is a draft [eng]_
+      def collectionem_xtm
+        @optionem['collectionem_xtm'] || []
       end
 
       # NOTE: _[eng] collectionem_xschemam is a draft [eng]_
@@ -102,13 +63,29 @@ module Hapi
         @optionem['collectionem_xschemam'] || []
       end
 
-      def collectionem_tm
-        @optionem['collectionem_tm'] || []
+      def descriptionem
+        @optionem['descriptionem']
       end
 
-      # NOTE: _[eng] collectionem_xtm is a draft [eng]_
-      def collectionem_xtm
-        @optionem['collectionem_xtm'] || []
+      def gid
+        @optionem['gid']
+      end
+
+      def inspect
+        # Liquid uses 'self.class.to_s'
+        # @see https://github.com/Shopify/liquid/blob/master/lib/liquid/drop.rb#L47
+        require 'json'
+        JSON.pretty_generate(@optionem)
+      end
+
+      def nomen
+        @optionem['nomen']
+      end
+
+      # _[eng] Returns the object as a debug String [eng]_
+      def to_s
+        # "#<#{self.class} @gid=#{gid} @item=#{@optionem.keys}>"
+        "#<#{self.class} @gid=#{gid} @optionem=[#{@optionem.keys.join(', ')}]>"
       end
     end
   end

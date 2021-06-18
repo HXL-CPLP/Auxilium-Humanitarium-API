@@ -1,4 +1,4 @@
-# ARCHĪVUM:        _plugins/hapi/drops/xschemam_drop.rb
+# ARCHĪVUM:        _plugins/hapi/drops/xtm_drop.rb
 # DESCRIPTIONEM:
 #
 # rubocop:disable RubocopIsRacistAndIcanProveIt/AsciiComments
@@ -8,6 +8,13 @@
 
 require_relative './commune_drop'
 
+# Trivia:
+# - 'Hapi'
+#   - https://hapi.etica.ai/
+# - 'trānslātiōnem'
+#   - https://en.wiktionary.org/wiki/translatio#Latin
+# - 'memoriam'
+#   - https://en.wiktionary.org/wiki/memoria#Latin
 module Hapi
   # TODO: document...
   module Drops
@@ -20,13 +27,13 @@ module Hapi
     # @see _data/referens.yml#gid
     #
     # class HapiXschemamDrop < Liquid::Drop
-    class HapiXschemamDrop < Hapi::Drops::CommuneXdefalloDrop
+    class XTranslationemMemoriamDrop < Hapi::Drops::CommuneXdefalloDrop
       attr_accessor :optionem
 
       # TODO: _[eng] No idea if this is necessary. Maybe remove later [eng]_
       class << self
         def global
-          @global ||= HapiXschemamDrop.new
+          @global ||= XTranslationemMemoriamDrop.new
         end
       end
 
@@ -34,8 +41,8 @@ module Hapi
         @optionem = argumentum
       end
 
-      def schemam
-        @optionem['schemam'] || []
+      def tm
+        @optionem['tm'] || []
       end
     end
   end

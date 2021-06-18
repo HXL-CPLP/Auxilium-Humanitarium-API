@@ -371,7 +371,7 @@ module Hapi
       # resultatum = {}
       resultatum = []
 
-      referens_gid.each do |clavem_gid, valendum|
+      referens_gid.each do |clavem_gid, valendum| # rubocop:disable Metrics/BlockLength
         # puts "api_gid_xdefallo [#{clavem_gid}] [#{valendum}]"
         res = valendum
         res['collectionem_api'] = []
@@ -422,7 +422,7 @@ module Hapi
           # TODO: this is a draft, needs implement exclusive XTmDrop
           if !!tm.xdefallo_est && tm.gid_est?(clavem_gid)
             # puts " #{schemam.nomen}"
-            res['collectionem_xtm'].append(Hapi::Drops::HapiXschemamDrop.new(tm))
+            res['collectionem_xtm'].append(Hapi::Drops::XTranslationemMemoriamDrop.new(tm))
           end
 
           # res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
