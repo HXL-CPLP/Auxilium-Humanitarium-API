@@ -1,2 +1,51 @@
 <!-- _includes/commune/html-dl-rem-circa.html -->
-TODO html-dl-rem-circa
+{% assign rem = include.rem %}
+
+<dl>
+  <!-- Web sites -->
+  {% if rem.datum.situs_interretialis %}
+    <dt>
+      {% _🗣️ situs_interretialis_nomen 🗣️_ %}
+    </dt>
+    <dd>
+      <dl style="padding-left: 2em;">
+        {%- if rem.datum.situs_interretialis.referens_officinale %}
+          <dt>
+            {% _🗣️ referens_officinale_nomen 🗣️_ %}
+          </dt>
+          {% for situs in rem.datum.situs_interretialis.referens_officinale %}
+          <dd>
+            <a href="{{ situs.iri }}">
+              {{ situs.nomen | default: situs.iri }}
+            </a>
+          </dd>
+          {%- endfor %}
+        {% endif %}
+        {%- if rem.datum.situs_interretialis.vicipaedia %}
+          <dt>
+            {% _🗣️ vicipaediam_nomen 🗣️_ %}
+          </dt>
+          {% for situs in rem.datum.situs_interretialis.vicipaedia %}
+          <dd>
+            <a href="{{ situs.iri }}">
+              {{ situs.nomen | default: situs.iri }}
+            </a>
+          </dd>
+          {%- endfor %}
+        {% endif %}
+        {%- if rem.datum.wikidatum %}
+          <dt>
+            {% _🗣️ wikidatum_nomen 🗣️_ %}
+          </dt>
+          {% for situs in rem.datum.wikidatum %}
+          <dd>
+            <a href="{{ situs.codicem | prepend: 'https://www.wikidata.org/wiki/' }}">
+              {{ situs.codicem }}
+            </a>
+          </dd>
+          {%- endfor %}
+        {% endif %}
+      </dl>
+    </dd>
+  {% endif %}
+</dl>

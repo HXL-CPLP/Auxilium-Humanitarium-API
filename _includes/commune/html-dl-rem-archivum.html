@@ -1,3 +1,83 @@
 <!-- _includes/commune/html-dl-rem-archivum.html -->
+{% assign rem = include.rem %}
 
-TODO: html-dl-rem-archivum
+<dl>
+  <!-- Download of files -->
+  {% if rem.datum.archivum %}
+    <dt>
+      {% _🗣️ download_nomen 🗣️_ %}
+    </dt>
+    <dd>
+      <dl style="padding-left: 2em;">
+        {%- if rem.datum.archivum.referens_officinale %}
+          <dt>
+            {% _🗣️ referens_officinale_nomen 🗣️_ %}
+          </dt>
+          {% for situs in rem.datum.archivum.referens_officinale %}
+          <dd>
+            <a href="{{ situs.iri }}" class="btn btn-secondary">
+              {{ situs.nomen | default: situs.iri }}
+            </a>
+          </dd>
+          {%- endfor %}
+        {% endif %}
+
+        {%- if rem.datum.archivum %}
+
+          {%- if rem.datum.archivum.schemam['csv+hxl'] %}
+            <dt>
+              {% _🗣️ 👁️eng-Latn👁️ _👂CSV+HXL👂_ 👁️eng-Latn👁️ 🗣️_ %}
+            </dt>
+            {% for situs in rem.datum.archivum.schemam['csv+hxl'] %}
+            <dd>
+              <a href="{{ situs.iri }}" class="btn btn-primary">
+                {{ situs.nomen | default: situs.iri }}
+              </a>
+            </dd>
+            {%- endfor %}
+          {% endif %}
+
+          {%- if rem.datum.archivum.schemam.graphql %}
+            <dt>
+              {% _🗣️ graphql_schemam_nomen 🗣️_ %}
+            </dt>
+            {% for rem2 in rem.datum.archivum.schemam.graphql %}
+            <dd>
+              <a href="{{ rem2.iri }}" class="btn btn-primary">
+                {{ rem2.nomen | default: rem2.iri }}
+              </a>
+            </dd>
+            {%- endfor %}
+          {% endif %}
+
+          {%- if rem.datum.archivum.schemam.json %}
+            <dt>
+              {% _🗣️ json_schemam_nomen 🗣️_ %}
+            </dt>
+            {% for rem2 in rem.datum.archivum.schemam.json %}
+            <dd>
+              <a href="{{ rem2.iri }}" class="btn btn-primary">
+                {{ rem2.nomen | default: rem2.iri }}
+              </a>
+            </dd>
+            {%- endfor %}
+          {% endif %}
+
+          {%- if rem.datum.archivum.schemam.sql %}
+            <dt>
+              {% _🗣️ SQL_abbreviationem_nomen 🗣️_ %}
+            </dt>
+            {% for rem2 in rem.datum.archivum.schemam.sql %}
+            <dd>
+              <a href="{{ rem2.iri }}" class="btn btn-primary">
+                {{ rem2.nomen | default: rem2.iri }}
+              </a>
+            </dd>
+            {%- endfor %}
+          {% endif %}
+
+        {% endif %}
+      </dl>
+    </dd>
+  {% endif %}
+</dl>

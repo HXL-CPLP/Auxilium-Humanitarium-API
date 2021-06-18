@@ -217,6 +217,8 @@ module Hapi
     # TODO: remove obsolete parts
     # TODO: Hapi::HapiPaginamCommune.titulum?
     def titulum
+      return @datum['titulum'] if @datum['titulum']
+
       # {% _🗣️ schemam_datum_nomen 🗣️_ %}: {{ schemam.nomen }}
       prefix = Hapi::HSD.l10n_simplex('schemam_datum_nomen', linguam)
       # @titulum || @nomen || @title || @datum['summarius']
