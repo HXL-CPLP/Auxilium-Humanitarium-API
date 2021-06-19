@@ -156,9 +156,9 @@ module Hapi
         )
       end
 
-      def investigationem_contextum(contextum) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
+      def investigationem_contextum(contextum) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize,Metrics/PerceivedComplexity
         # @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
-        @contextum_archivum_extensionem = contextum['page']['archivum_extensionem']
+        @contextum_archivum_extensionem = contextum['page']['archivum_extensionem'] || 'html'
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
         @referens = contextum['site']['data']['referens']
         @referens_praeiudico = contextum['site']['data']['referens']['praeiudico']
@@ -440,14 +440,15 @@ module Hapi
     # Trivia:
     # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
     # - 'alternandum', https://en.wiktionary.org/wiki/alternandus#Latin
-    def farmatum_alternandum_neo(rem) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize,Metrics/CyclomaticComplexity
+    def farmatum_alternandum_neo(rem) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
       puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
       # return rem.objectivum_textum + 'so texto' if rem.est_textum_solum_est?
       return rem.objectivum_textum if rem.est_textum_solum_est? && rem.objectivum_textum
       return rem.fontem_textum if rem.est_textum_solum_est?
 
-      puts 'oi' if rem.est_sos?
-      # puts 'oi est_html' if rem.est_sos? && rem.est_html?
+      puts 'oi est_sos' if rem.est_sos?
+      puts rem.contextum_archivum_extensionem if rem.est_sos?
+      puts 'oi est_html' if rem.est_sos? && rem.est_html?
       # puts 'oi est_html' if rem.est_html?
 
       # attrs = {
@@ -456,7 +457,7 @@ module Hapi
       #   'data-l10n-objectivum-linguam' => rem.objectivum_linguam.linguam,
       # }
 
-      if rem.est_html?
+      if rem.est_html? && !rem.est_textum_solum_est?
         attrs_str = Utilitatem.quod_html_attributum_markup_nunc?(
           {
             'lang' => rem.fontem_linguam.bcp47,
@@ -466,19 +467,21 @@ module Hapi
           }
         )
 
-        return "<span #{attrs_str}>#{rem.fontem_textum}</span>"
+        # return "<span #{attrs_str}>#{rem.fontem_textum}</span>"
+        return "<span #{attrs_str}>#{rem.alternandum_textum}</span>"
       end
 
-      puts 'oi2' if rem.est_sos?
-      puts rem.objectivum_textum if rem.est_sos?
-      puts rem.inspect if rem.est_sos?
-      puts 'oi2' if rem.est_sos?
+      # puts 'oi2' if rem.est_sos?
+      # puts rem.objectivum_textum if rem.est_sos?
+      # puts rem.inspect if rem.est_sos?
+      # puts 'oi2' if rem.est_sos?
 
       # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
       # _[eng] If not HTML, then likely to be JSON, XML or CSV. If this is
       #        an error, use 🔎🆘🔍 on the tag
       # _[eng]
-      rem.objectivum_textum
+      # rem.objectivum_textum
+      rem.alternandum_textum
     end
 
     # Trivia:
@@ -842,11 +845,11 @@ module Hapi
           rem.alternandum_textum = l10nval_lat
           rem.alternandum_linguam = 'lat-Latn'
           # puts rem.inspect if rem.est_textum_solum_est?
-          return Translationem.farmatum_alternandum(
-            context, rem.fontem_textum, l10nval_lat,
-            'lat-Latn', rem.est_textum_solum_est?
-          )
-          # return Translationem.farmatum_alternandum_neo(rem)
+          # return Translationem.farmatum_alternandum(
+          #   context, rem.fontem_textum, l10nval_lat,
+          #   'lat-Latn', rem.est_textum_solum_est?
+          # )
+          return Translationem.farmatum_alternandum_neo(rem)
         end
 
         l10nval_por = Translationem.translationem_memoriam_rememorandum(
@@ -859,11 +862,11 @@ module Hapi
           rem.alternandum_textum = l10nval_por
           rem.alternandum_linguam = 'por-Latn'
           # puts rem.inspect if rem.est_textum_solum_est?
-          return Translationem.farmatum_alternandum(
-            context, rem.fontem_textum, l10nval_por,
-            'por-Latn', rem.est_textum_solum_est?
-          )
-          # return Translationem.farmatum_alternandum_neo(rem)
+          # return Translationem.farmatum_alternandum(
+          #   context, rem.fontem_textum, l10nval_por,
+          #   'por-Latn', rem.est_textum_solum_est?
+          # )
+          return Translationem.farmatum_alternandum_neo(rem)
         end
 
         l10nval_eng = Translationem.translationem_memoriam_rememorandum(
@@ -876,10 +879,11 @@ module Hapi
           rem.alternandum_textum = l10nval_eng
           rem.alternandum_linguam = 'eng-Latn'
 
-          return Translationem.farmatum_alternandum(
-            context, rem.fontem_textum, l10nval_eng,
-            'eng-Latn', rem.est_textum_solum_est?
-          )
+          # return Translationem.farmatum_alternandum(
+          #   context, rem.fontem_textum, l10nval_eng,
+          #   'eng-Latn', rem.est_textum_solum_est?
+          # )
+          return Translationem.farmatum_alternandum_neo(rem)
         end
 
         l10nval_spa = Translationem.translationem_memoriam_rememorandum(
@@ -891,10 +895,11 @@ module Hapi
         if l10nval_spa != false && !l10nval_spa.nil?
           rem.alternandum_textum = l10nval_spa
           rem.alternandum_linguam = 'spa-Latn'
-          return Translationem.farmatum_alternandum(
-            context, rem.fontem_textum, l10nval_spa,
-            'spa-Latn', rem.est_textum_solum_est?
-          )
+          # return Translationem.farmatum_alternandum(
+          #   context, rem.fontem_textum, l10nval_spa,
+          #   'spa-Latn', rem.est_textum_solum_est?
+          # )
+          return Translationem.farmatum_alternandum_neo(rem)
         end
 
         Hapi::HSD.translationem_memoriam_rememorandum_fallendum(rem)

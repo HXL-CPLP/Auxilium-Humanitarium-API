@@ -41,23 +41,23 @@
     commendandum:
       translationem: &id_temp001
         - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json"
-          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
         - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json"
-          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
         - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql"
-          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.sql"
     structuram:
       # TODO: localizar "schemam"
-      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/"
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
       xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3/
       xdefallo_est: false
-      linguam: "{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
+      linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
       typum: schemam
       gid: XZ
-      lid: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}" #  # Exemplum: ISO-639-3
-      nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
-      titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 ISO_639-3_nomen 📝und-Zyyy📝 🗣️_ %}"
-      summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_639-3_summarius 📝und-Zyyy📝 🗣️_ %}"
+      lid: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}" #  # Exemplum: ISO-639-3
+      nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 schemam_datum_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      summarius: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_summarius 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
       situs_interretialis:
         referens_officinale:
           - iri: http://iso639-3.sil.org/
@@ -73,15 +73,15 @@
         schemam:
           graphql:
             # - iri: /schema/iso/iso639-3/eng/iso639-3.graphql # TODO: _[eng-Latn] remove old version [eng-Latn]_
-            - iri: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
+            - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.sql"
           json:
             # - iri: /schema/iso/iso639-3/eng/iso639-3.json # TODO: _[eng-Latn] remove old version [eng-Latn]_
-            - iri: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
+            - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
             # - iri: /schema/iso/iso639-3/eng/iso639-3_macrolanguages.json # TODO: _[eng-Latn] remove old version [eng-Latn]_
-            - iri: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
+            - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
           sql:
             # - iri: /schema/iso/iso639-3/eng/iso639-3.sql # TODO: _[eng-Latn] remove old version [eng-Latn]_
-            - iri: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
+            - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.sql"
       __translationem: *id_temp001
 
 - uid: /mul-Zyyy/schemam/XZ/ISO-15924/
@@ -91,9 +91,9 @@
   typum: schemam
   gid: XZ
   lid: ISO-15924 # ISO_15924_slug
-  lid_l10n: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}"
-  nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
-  titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
+  lid_l10n: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+  nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+  titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
   summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}"
   summarius_l10n: "{% _🗣️ ISO_15924_summarius 🗣️_ %}"
   situs_interretialis:
@@ -121,23 +121,23 @@
     commendandum:
       translationem: &id_temp0012
         # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json"
-        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
+        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
         # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json"
-        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
+        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
         # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql"
-        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
+        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
         - fontem: "/schemam/XZ/ISO-15924/ISO-15924.🗣️.json"
-          objectivum: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
     structuram:
       # TODO: localizar "schemam"
-      uid: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}/"
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
       xdefallo: /mul-Zyyy/schemam/XZ/ISO-15924/
-      linguam: "{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
+      linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
       typum: schemam
       gid: XZ
-      lid: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}" # Exemplum: ISO-15924
-      nomen: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
-      titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 ISO_15924_nomen 📝und-Zyyy📝 🗣️_ %}"
+      lid: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}" # Exemplum: ISO-15924
+      nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
       summarius: "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}"
       situs_interretialis:
         referens_officinale:
@@ -159,7 +159,7 @@
         schemam:
           json:
             # - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
-            - iri: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}.json"
+            - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
       __translationem: *id_temp0012
 
 # TODO: _[por] Alterar este arquivo para conter tanto referencias à fonte

@@ -97,7 +97,8 @@ module Hapi
       end
 
       def est_html?
-        @contextum_archivum_extensionem == '.html'
+        # @contextum_archivum_extensionem.end_with?('html')
+       false
       end
 
       # Trivia:
