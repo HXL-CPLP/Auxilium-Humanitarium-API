@@ -32,8 +32,8 @@ vicipaediam_nomen,,1,,,,,,vicipaediam,,nomen,,Vicipaediam,∅,Wikipédia,∅,Wik
 commune_voluntarius_auxilio_tuo_nomen,,1,,commune,,,,voluntarius_auxilio_tuo,,nomen,,Voluntarius Auxilio Tuo,∅,Ajudantes voluntário,∅,Volunteer helpers,∅,,∅,,∅,,∅
 schemam_nomen,Q2233315,1,,,,,,schemam,,nomen,,Schēmam,∅,Schema,∅,Schema,∅,,∅,,∅,,∅
 schemam_slug,Q2233315,1,,,,,,schemam,,slug,,schemam,∅,schema,∅,schema,∅,,∅,,∅,,∅
-schemam_datum_nomen,Q2233315,1,,,,,,schemam,datum,nomen,,Datum Schēmam,∅,Esquemas de dados,∅,Data Schemas,∅,Esquema de datos,∅,,∅,,∅
-schemam_datum_slug,Q2233315,1,,,,,,schemam,datum,slug,,datum-Schemam,∅,esquemas-de-dados,∅,data-schemas,∅,esquema-de-datos,∅,,∅,,∅
+schemam_datum_nomen,Q2233315,1,,,,,,schemam,datum,nomen,,Datum Schēmam,∅,Esquemas de dados,∅,Data Schemas,∅,Esquema de datos,∅,مخطط قاعدة بيانات,∅,,∅
+schemam_datum_slug,Q2233315,1,,,,,,schemam,datum,slug,,datum-Schemam,∅,esquemas-de-dados,∅,data-schemas,∅,esquema-de-datos,∅,مخطط-قاعدة-بيانات,∅,datum-Schemam,∅
 OpenAPI_archivum_nomen,,1,,,,,,OpenAPI,archivum,nomen,,Archīvum OpenAPI,∅,Arquivo OpenAPI,∅,OpenAPI file,∅,,∅,,∅,,∅
 PDF_archivum_salvandum_nomen,,1,,,,,,PDF,archivum_salvandum,nomen,,Salvandum PDF archīvum,∅,Salvar como arquivo PDF,∅,Save as PDF archive,∅,,∅,,∅,,∅
 L10N_linguam_Q436240_nomen,Q436240,1,L10N,L10N,linguam,Q436240,,,,nomen,,,∅,Língua antiga,∅,Ancient language,∅,,∅,,∅,,∅

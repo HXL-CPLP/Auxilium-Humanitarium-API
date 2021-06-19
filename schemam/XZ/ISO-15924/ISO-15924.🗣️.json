@@ -22,7 +22,7 @@
             "description": "{% _🗣️ ISO_15924_optionem_nomen_anglicum_summarius 🗣️_ %}",
             "type": "string",
             "example": "{% _🗣️ ISO_15924_optionem_nomen_anglicum_exemplum 🗣️_ %}",
-            "$comment": "TODO: investigate maximum length"
+            "$comment": "_[eng-Latn]TODO: investigate maximum length[eng-Latn]_"
         },
         "Nom français": {
             "description": "{% _🗣️ ISO_15924_optionem_nomen_francogallicum_summarius 🗣️_ %}",
@@ -34,7 +34,7 @@
             "description": "{% _🗣️ ISO_15924_optionem_PVA_summarius 🗣️_ %}",
             "type": "string",
             "example": "{% _🗣️ ISO_15924_optionem_PVA_exemplum 🗣️_ %}",
-            "$comment": "TODO: investigate maximum length"
+            "$comment": "_[eng-Latn]TODO: investigate maximum length[eng-Latn]_"
         },
         "Unicode Version": {
             "description": "{% _🗣️ ISO_15924_optionem_Unicode_versionem_summarius 🗣️_ %}",

@@ -42,7 +42,7 @@ schemam:
         paginam_linguam_experimentum:
           # - arb-Arab # Se nem mesmo slugs estiverem traduzidos, gera URLs repetidas
           - spa-Latn
-          # - arb-Arab
+          - arb-Arab
           - hin-Deva
 
 # @see _plugins/hapi/drops/globum_drop.rb
