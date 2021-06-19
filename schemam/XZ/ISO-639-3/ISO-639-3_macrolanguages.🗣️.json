@@ -12,21 +12,22 @@
     ],
     "properties": {
         "M_Id": {
-            "description": "The identifier for a macrolanguage",
+            "description": "{% _🗣️ ISO_639-3_optionem_M_Id_summarius 🗣️_ %}",
             "type": "string",
             "length": 3,
-            "example": "ara"
+            "example": "{% _🗣️ ISO_639-3_optionem_M_Id_exemplum 🗣️_ %}"
         },
         "I_Id": {
-            "description": "The identifier for an individual language that is a member of the macrolanguage",
+            "description": "{% _🗣️ ISO_639-3_optionem_I_Id_summarius 🗣️_ %}",
             "type": "string",
             "length": 3,
-            "example": "arb"
+            "example": "{% _🗣️ ISO_639-3_optionem_I_Id_exemplum 🗣️_ %}"
         },
         "I_Status": {
-            "description": "A (active) or R (retired) indicating the status of the individual code element",
+            "description": "{% _🗣️ ISO_639-3_optionem_I_Status_summarius 🗣️_ %}",
             "type": "string",
             "length": 1,
+            "example": "{% _🗣️ ISO_639-3_optionem_I_Status_exemplum 🗣️_ %}",
             "enum": [
                 "A",
                 "R",

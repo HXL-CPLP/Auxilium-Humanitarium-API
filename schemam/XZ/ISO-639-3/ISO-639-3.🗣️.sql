@@ -23,11 +23,9 @@ CREATE TABLE [ISO_639-3_Names] (
 
 --- https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso639-3_macrolanguages_table_definition.txt
 CREATE TABLE [ISO_639-3_Macrolanguages] (
-         M_Id      char(3) NOT NULL,   -- The identifier for a macrolanguage
-         I_Id      char(3) NOT NULL,   -- The identifier for an individual language
-                                       -- that is a member of the macrolanguage
-         I_Status  char(1) NOT NULL)   -- A (active) or R (retired) indicating the
-                                       -- status of the individual code element
+         M_Id      char(3) NOT NULL,   -- {% _🗣️ ISO_639-3_optionem_M_Id_summarius 🗣️_ %}
+         I_Id      char(3) NOT NULL,   -- {% _🗣️ ISO_639-3_optionem_I_Id_summarius 🗣️_ %}
+         I_Status  char(1) NOT NULL)   -- {% _🗣️ ISO_639-3_optionem_I_Status_summarius 🗣️_ %}
 
 
 --- https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso639-3_retirements_table_definition.txt

@@ -28,7 +28,7 @@
             "description": "{% _🗣️ ISO_15924_optionem_nomen_francogallicum_summarius 🗣️_ %}",
             "type": "string",
             "example": "{% _🗣️ ISO_15924_optionem_nomen_francogallicum_exemplum 🗣️_ %}",
-            "$comment": "TODO: investigate maximum length"
+            "$comment": "_[eng-Latn]TODO: investigate maximum length[eng-Latn]_"
         },
         "PVA": {
             "description": "{% _🗣️ ISO_15924_optionem_PVA_summarius 🗣️_ %}",

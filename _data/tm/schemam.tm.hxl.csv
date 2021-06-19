@@ -28,23 +28,29 @@ ISO_639-3_optionem_Ref_Name_summarius,,1,,,ISO,639-3,optionem,Ref_Name,,summariu
 ISO_639-3_optionem_Ref_Name_exemplum,,1,,,ISO,639-3,optionem,Ref_Name,,exemplum,,Latin,∅,Portuguese,∅,English,∅,Spanish,∅,Standard Arabic,∅,,∅
 ISO_639-3_optionem_Comment_summarius,,1,,,ISO,639-3,optionem,Comment,,summarius,,,∅,Comentário relacionado a uma ou mais colunas,∅,Comment relating to one or more of the columns,∅,,∅,,∅,,∅
 ISO_639-3_optionem_Comment_exemplum,,1,,,ISO,639-3,optionem,Comment,,exemplum,,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅
+ISO_639-3_optionem_M_Id_summarius,,1,,,ISO,639-3,optionem,M_Id,,summarius,,,∅,O identificador ISO 639-3 para uma macrolíngua,∅,The ISO 639-3 identifier for a macrolanguage,∅,,∅,,∅,,
+ISO_639-3_optionem_M_Id_exemplum,,1,,,ISO,639-3,optionem,M_Id,,exemplum,,∅,∅,∅,∅,∅,∅,,∅,ara,∅,,
+ISO_639-3_optionem_I_Id_summarius,,1,,,ISO,639-3,optionem,I_Id,,summarius,,,∅,O identificador ISO 639-3 para um idioma individual que é membro da macrolíngua,∅,The ISO 639-3 identifier for an individual language that is a member of the macrolanguage,∅,,∅,,∅,,
+ISO_639-3_optionem_I_Id_exemplum,,1,,,ISO,639-3,optionem,I_Id,,exemplum,,∅,∅,∅,∅,∅,∅,,∅,arb,∅,,
+ISO_639-3_optionem_I_Status_summarius,,1,,,ISO,639-3,optionem,I_Status,,summarius,,,∅,A (active) or R (retired) indicando o status do elemento de código individual,∅,A (active) or R (retired) indicating the status of the individual code element,∅,,∅,,∅,,
+ISO_639-3_optionem_I_Status_exemplum,,1,,,ISO,639-3,optionem,I_Status,,exemplum,,∅,∅,∅,∅,∅,∅,,∅,A,∅,,
 ISO_15924_nomen,Q16866,1,,,ISO,15924,,,,nomen,,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,الأيزو ١٥٩٢٤,∅,,ISO 15924
 ISO_15924_slug,Q16866,1,,,ISO,15924,,,,slug,,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,الأيزو-١٥٩٢٤,∅,,ISO-15924
 ISO_15924_summarius,Q16866,1,,,ISO,15924,,,,summarius,,,∅,ISO 15924: Códigos para a representação de nomes de sistemas de escrita,∅,ISO 15924: Codes for the representation of names of scripts,∅,,∅,,∅,,∅
-ISO_15924_optionem_Code_summarius,,1,,,ISO,15924,optionem,Code,,summarius,,,∅,,∅,Code,∅,,∅,,∅,,∅
+ISO_15924_optionem_Code_summarius,,1,,,ISO,15924,optionem,Code,,summarius,,,∅,O código no formato Latin Básico (bloco Unicode) para o identificador ISO 15924,∅,The 4 bytes Basic Latin (Unicode block) code for the ISO 15924 identifier,∅,,∅,,∅,,∅
 ISO_15924_optionem_Code_exemplum,,1,,,ISO,15924,optionem,Code,,exemplum,,Latn,∅,Latn,∅,Latn,∅,Latn,∅,Arab,∅,Deva,∅
-ISO_15924_optionem_numerum_summarius,,1,,,ISO,15924,optionem,numerum,,summarius,,,∅,,∅,Nº is ... (TODO),∅,,∅,,∅,,∅
-ISO_15924_optionem_numerum_exemplum,,1,,,ISO,15924,optionem,numerum,,exemplum,,,∅,160,∅,160,∅,,∅,,∅,,∅
-ISO_15924_optionem_nomen_anglicum_summarius,,1,,,ISO,15924,optionem,nomen,anglicum,summarius,,,∅,,∅,English Name is ... (TODO),∅,,∅,,∅,,∅
-ISO_15924_optionem_nomen_anglicum_exemplum,,1,,,ISO,15924,optionem,nomen,anglicum,exemplum,,,∅,,∅,,∅,,∅,,∅,,∅
-ISO_15924_optionem_nomen_francogallicum_summarius,,1,,,ISO,15924,optionem,nomen,francogallicum,summarius,,,∅,,∅,Nom français is ... (TODO),∅,,∅,,∅,,∅
-ISO_15924_optionem_nomen_francogallicum_exemplum,,1,,,ISO,15924,optionem,nomen,francogallicum,exemplum,,,∅,,∅,,∅,,∅,,∅,,∅
-ISO_15924_optionem_PVA_summarius,,1,,,ISO,15924,optionem,PVA,,summarius,,,∅,,∅,PVA is ... (TODO),∅,,∅,,∅,,∅
-ISO_15924_optionem_PVA_exemplum,,1,,,ISO,15924,optionem,PVA,,exemplum,,,∅,,∅,,∅,,∅,,∅,,∅
-ISO_15924_optionem_Unicode_versionem_summarius,,1,,,ISO,15924,optionem,Unicode,versionem,summarius,,,∅,,∅,Unicode Version is ... (TODO),∅,,∅,,∅,,∅
-ISO_15924_optionem_Unicode_versionem_exemplum,,1,,,ISO,15924,optionem,Unicode,versionem,exemplum,,,∅,,∅,,∅,,∅,,∅,,∅
-ISO_15924_optionem_dactylum_summarius,,1,,,ISO,15924,optionem,dactylum,,summarius,,,∅,,∅,Date is ... (TODO),∅,,∅,,∅,,∅
-ISO_15924_optionem_dactylum_exemplum,,1,,,ISO,15924,optionem,dactylum,,exemplum,,,∅,,∅,2004-05-01,∅,,∅,,∅,,∅
+ISO_15924_optionem_numerum_summarius,,1,,,ISO,15924,optionem,numerum,,summarius,,,∅,O código identificador para o ISO 15924 expressado em linguagem neutra para sistemas de escrita expressado em números de 3 dígitos em sistema numérico decimal,∅,The writing system neutral identifier code for ISO 15924 using 3 digit decimal-radix numbers,∅,,∅,,∅,,∅
+ISO_15924_optionem_numerum_exemplum,,1,,,ISO,15924,optionem,numerum,,exemplum,,215,∅,215,∅,215,∅,,∅,,∅,,∅
+ISO_15924_optionem_nomen_anglicum_summarius,,1,,,ISO,15924,optionem,nomen,anglicum,summarius,,,∅,Nome em inglês do identificador ISO 15924,∅,English name of the ISO 15924 identifier,∅,,∅,,∅,,∅
+ISO_15924_optionem_nomen_anglicum_exemplum,,1,,,ISO,15924,optionem,nomen,anglicum,exemplum,,Latin,∅,Latin,∅,Latin,∅,,∅,,∅,,∅
+ISO_15924_optionem_nomen_francogallicum_summarius,,1,,,ISO,15924,optionem,nomen,francogallicum,summarius,,,∅,Nome em francês do identificador ISO 15924,∅,French name of the ISO 15924 identifier,∅,,∅,,∅,,∅
+ISO_15924_optionem_nomen_francogallicum_exemplum,,1,,,ISO,15924,optionem,nomen,francogallicum,exemplum,,latin,∅,latin,∅,latin,∅,,∅,,∅,,∅
+ISO_15924_optionem_PVA_summarius,,1,,,ISO,15924,optionem,PVA,,summarius,,,∅,O alias do valor da propriedade é definido como parte do padrão Unicode e é fornecido informativamente nas tabelas aqui para mostrar como as entradas na tabela de códigos ISO 15924 se relacionam com nomes de script definidos em Unicode,∅,The Property Value Alias is defined as part of the Unicode Standard and is provided informatively in the tables here to show how entries in the ISO 15924 code table relate to script names defined in Unicode,∅,,∅,,∅,,∅
+ISO_15924_optionem_PVA_exemplum,,1,,,ISO,15924,optionem,PVA,,exemplum,,Latin,∅,Latin,∅,Latin,∅,,∅,,∅,,∅
+ISO_15924_optionem_Unicode_versionem_summarius,,1,,,ISO,15924,optionem,Unicode,versionem,summarius,,,∅,A versão Unicode em que o identificador ISO 15924 foi adicionado,∅,The unicode version the ISO 15924 identifier was added,∅,,∅,,∅,,∅
+ISO_15924_optionem_Unicode_versionem_exemplum,,1,,,ISO,15924,optionem,Unicode,versionem,exemplum,,1.1,∅,1.1,∅,1.1,∅,,∅,,∅,,∅
+ISO_15924_optionem_dactylum_summarius,,1,,,ISO,15924,optionem,dactylum,,summarius,,,∅,A data em que o identificador ISO 15924 foi adicionado,∅,The date the ISO 15924 identifier was added,∅,,∅,,∅,,∅
+ISO_15924_optionem_dactylum_exemplum,,1,,,ISO,15924,optionem,dactylum,,exemplum,,2004-05-01,∅,2004-05-01,∅,2004-05-01,∅,,∅,,∅,,∅
 json_schemam_nomen,,1,,,,,,json_schemam,,nomen,,JSON Schēmam,∅,Esquema de dados JSON,∅,JSON Schema,∅,,∅,,∅,,∅
 graphql_schemam_nomen,,1,,,,,,graphql_schemam,,nomen,,GraphQL Schēmam,∅,Esquema de dados GraphQL,∅,GraphQL Schema,∅,,∅,,∅,,∅
 SQL_abbreviationem_nomen,,1,,,,,,SQL,abbreviationem,nomen,,SQL,∅,SQL,∅,SQL,∅,SQL,∅,,∅,,∅
