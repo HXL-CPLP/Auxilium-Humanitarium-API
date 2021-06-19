@@ -421,11 +421,11 @@ module Hapi
           # end
 
           # TODO: this is a draft, needs implement exclusive XTmDrop
-          if !!tm.xdefallo_est && tm.gid_est?(clavem_gid)
-            # puts " #{schemam.nomen}"
-            # res['collectionem_xtm'].append(Hapi::Drops::XTranslationemMemoriamDrop.new(tm))
-            res['collectionem_xtm'].append(tm)
-          end
+          next unless !!tm.xdefallo_est && tm.gid_est?(clavem_gid)
+
+          # puts " #{schemam.nomen}"
+          # res['collectionem_xtm'].append(Hapi::Drops::XTranslationemMemoriamDrop.new(tm))
+          res['collectionem_xtm'].append(tm)
 
           # res['collectionem_xapi'].append(api) if api.xdefallo_est && api.gid_est?(clavem_gid)
           # # resultatum[clavem] = valendum
@@ -483,12 +483,24 @@ module Hapi
     def tm_paginam?
       Jekyll.sites.last.data['hapi']['tm'] || []
     end
+
+    # _[lat-Latn] Translationem memoriam rememorandum, non-perfectiōnem. [lat-Latn]_
+    def translationem_memoriam_rememorandum_non_perfectionem(rem)
+      puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] non_perfectionem [#{rem}]" if rem.est_sos?
+
+      puts 'test' if rem.est_sos?
+    end
+
+    # _[lat-Latn] Translationem memoriam rememorandum, fallendum [lat-Latn]_
+    def translationem_memoriam_rememorandum_fallendum(rem)
+      puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] fallendum [#{rem}]" if rem.est_sos?
+    end
   end
 end
 
 # @see https://stackoverflow.com/questions/9381553/ruby-merge-nested-hash#30225093
 class ::Hash
-  def deep_merge(second)
+  def deep_merge(second) # rubocop:disable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/MethodLength
     merger = proc { |_, v1, v2|
       if v1.is_a?(Hash) && v2.is_a?(Hash)
         v1.merge(v2,

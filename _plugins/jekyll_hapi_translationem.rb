@@ -46,6 +46,9 @@ module Hapi
       SOS_EMOJI = ['🔎🆘🔍'].freeze
       SILENTIUM_EMOJI = ['🔇'].freeze
 
+      # https://en.wiktionary.org/wiki/vacuus#Latin
+      # VACUUM_TEXTUM = '∅'
+
       # 📳 https://emojipedia.org/vibration-mode/
       # 🔕 https://emojipedia.org/bell-with-slash/
       TEXTUM_SOLUM_EMOJI = ['🔎🔕🔍'].freeze
@@ -142,7 +145,7 @@ module Hapi
             'sos_est' => @sos_est,
             'textum_solum_est' => @textum_solum_est,
             'contextum_url' => @paginam_contextum['url'],
-            'paratum_est' => if @fontem_linguam.nil?
+            'paratum_est' => if @fontem_linguam.nil? || @textum_solum_est == false
                                false
                              elsif @objectivum_linguam.nil?
                                @contextum_linguam == @fontem_linguam
@@ -331,7 +334,7 @@ module Hapi
   module Translationem # rubocop:disable Metrics/ModuleLength
     module_function
 
-    # def datum_l10n(l10n_codice, context, linguam = nil) # rubocop:disable Metrics/AbcSize
+    # def datum_l10n(l10n_codice, context, linguam = nil)
     #   linguam = linguam.nil? ? context['page']['linguam'] : linguam
     #   # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
     #   #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
@@ -355,7 +358,7 @@ module Hapi
     #   nil
     # end
 
-    # def datum_l10n_de_textum(textum, context, linguam_fontem, linguam_objectivum = nil) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
+    # def datum_l10n_de_textum(textum, context, linguam_fontem, linguam_objectivum = nil)
     #   linguam_objectivum = linguam_objectivum.nil? ? context['page']['linguam'] : linguam_objectivum
     #   hxlattrs_fontem = context['site']['data']['referens']['linguam'][linguam_fontem]['hxlattrs']
     #   hxlattrs_objectivum = context['site']['data']['referens']['linguam'][linguam_objectivum]['hxlattrs']
@@ -663,12 +666,14 @@ module Hapi
       }
     end
 
+    # _[lat-Lat] Trānslātiōnem memoriam, collēctiōnem [lat-Lat]_
     def translationem_memoriam_collectionem(contextum)
       # puts 'test'
       # puts contextum['site']['data']['tm'].keys
       contextum['site']['data']['tm']
     end
 
+    # _[lat-Lat] Trānslātiōnem memoriam, rememorandum [lat-Lat]_
     def translationem_memoriam_rememorandum(contextum, codicem, linguam = nil)
       tm = translationem_memoriam_collectionem(contextum)
       # hxlattrs = HXL.hxlattrs_de_linguam(contextum, linguam)
@@ -750,6 +755,9 @@ module Hapi
     class DeL10nEmoji < Liquid::Tag
       attr_accessor :tag_aux, :textum
 
+      # https://en.wiktionary.org/wiki/vacuus#Latin
+      VACUUM_TEXTUM = '∅'
+
       # @see https://www.rubydoc.info/gems/liquid/Liquid/ParseContext
       # @see https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers#arguments-and-initialization
       def initialize(tag_nomen, argumentum, initiale_processum)
@@ -775,7 +783,8 @@ module Hapi
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{@tag_aux.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{rem.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{rem.inspect}]"
-
+        puts 'sos_est' if rem.sos_est
+        puts 'est_sos?' if rem.est_sos?
         if rem.paratum_est
           # return Translationem.farmatum_praefectum(
           #   context, rem.fontem_textum, rem.fontem_textum
@@ -785,7 +794,7 @@ module Hapi
           )
         end
 
-        l10n_contextum_init(context)
+        # l10n_contextum_init(context)
 
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  oi #{rem.paratum_est}" if rem.venandum_insectum_est
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}]  oi #{rem.inspect}" if rem.venandum_insectum_est
@@ -795,23 +804,17 @@ module Hapi
         l10nval = Translationem.translationem_memoriam_rememorandum(
           context, rem.fontem_textum, rem.objectivum_linguam.linguam
         )
-        # l10nval = 'tes'
-        # raise l10nval if l10nval
-        # return l10nval if l10nval != false
-        if l10nval != false
+
+        # puts 'sos_est' if rem.sos_est
+        # puts 'est_sos?' if rem.est_sos?
+        # puts l10nval.inspect if rem.est_sos?
+
+        return '' if l10nval == VACUUM_TEXTUM
+
+        if l10nval == false || l10nval.nil?
+          Hapi::HSD.translationem_memoriam_rememorandum_non_perfectionem(rem)
+        else
           rem.objectivum_textum = l10nval
-
-          # puts 'l10nval'
-          # puts l10nval
-          # puts rem.fontem_textum
-
-          # TODO: migrar para o Translationem.farmatum_praefectum_neo
-          # return Translationem.farmatum_praefectum_neo(
-          #   rem
-          # )
-          # return Translationem.farmatum_praefectum(
-          #   context, rem.fontem_textum, l10nval
-          # )
           return Translationem.farmatum_praefectum_neo(
             rem
           )
@@ -824,7 +827,10 @@ module Hapi
         l10nval_lat = Translationem.translationem_memoriam_rememorandum(
           context, rem.fontem_textum, 'lat-Latn'
         )
-        if l10nval_lat != false
+
+        return '' if l10nval_lat == VACUUM_TEXTUM
+
+        if l10nval_lat != false && !l10nval_lat.nil?
           rem.alternandum_textum = l10nval_lat
           rem.alternandum_linguam = 'lat-Latn'
           # puts rem.inspect if rem.est_textum_solum_est?
@@ -838,7 +844,10 @@ module Hapi
         l10nval_por = Translationem.translationem_memoriam_rememorandum(
           context, rem.fontem_textum, 'por-Latn'
         )
-        if l10nval_por != false
+
+        return '' if l10nval_por == VACUUM_TEXTUM
+
+        if l10nval_por != false && !l10nval_por.nil?
           rem.alternandum_textum = l10nval_por
           rem.alternandum_linguam = 'por-Latn'
           # puts rem.inspect if rem.est_textum_solum_est?
@@ -852,7 +861,10 @@ module Hapi
         l10nval_eng = Translationem.translationem_memoriam_rememorandum(
           context, rem.fontem_textum, 'eng-Latn'
         )
-        if l10nval_eng != false
+
+        return '' if l10nval_eng == VACUUM_TEXTUM
+
+        if l10nval_eng != false && !l10nval_eng.nil?
           rem.alternandum_textum = l10nval_eng
           rem.alternandum_linguam = 'eng-Latn'
 
@@ -865,7 +877,10 @@ module Hapi
         l10nval_spa = Translationem.translationem_memoriam_rememorandum(
           context, rem.fontem_textum, 'spa-Latn'
         )
-        if l10nval_spa != false
+
+        return '' if l10nval_spa == VACUUM_TEXTUM
+
+        if l10nval_spa != false && !l10nval_spa.nil?
           rem.alternandum_textum = l10nval_spa
           rem.alternandum_linguam = 'spa-Latn'
           return Translationem.farmatum_alternandum(
@@ -873,6 +888,8 @@ module Hapi
             'spa-Latn', rem.est_textum_solum_est?
           )
         end
+
+        Hapi::HSD.translationem_memoriam_rememorandum_fallendum(rem)
 
         # item1 = Hapi::Datum::Linguam.new({'linguam' => 'por-Latn', 'referens' => context['site']['data']['referens']})
         # item2 = Hapi::Datum::Linguam.new({'linguam' => 'eng-Latn', 'referens' => context['site']['data']['referens']})
@@ -887,15 +904,15 @@ module Hapi
         # )
       end
 
-      private
+      # private
 
-      def l10n_contextum_init(contextum)
-        @ego_sos = (contextum['ego'] && contextum['ego'] == '🆘')
-        # if @ego_sos
-        #   puts "!!! [DeL10nEmoji 🆘 de tag [#{@tag_nomen}], de textum [#{@textum}], \
-        #     de site.page [#{contextum['site']['page']}] ]!!!"
-        # end
-      end
+      # def l10n_contextum_init(contextum)
+      #   @ego_sos = (contextum['ego'] && contextum['ego'] == '🆘')
+      #   # if @ego_sos
+      #   #   puts "!!! [DeL10nEmoji 🆘 de tag [#{@tag_nomen}], de textum [#{@textum}], \
+      #   #     de site.page [#{contextum['site']['page']}] ]!!!"
+      #   # end
+      # end
     end
 
     # _[eng] Generate HTML from markdown inside this block [eng]_

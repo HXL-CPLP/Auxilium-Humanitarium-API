@@ -33,7 +33,7 @@ module Hapi
     module_function
 
     # def hxlattrs_de_linguam(contextum, linguam = nil)
-    def optionem_de_linguam(contextum, linguam = nil)
+    def optionem_de_linguam(contextum, linguam = nil) # rubocop:disable Metrics/AbcSize
       linguam = linguam.nil? ? contextum['page']['linguam'] : linguam
       ref = contextum['site']['data']['referens']
       # resultatum = Struct.new(:attributum, :hashtag, :ignorandum)
@@ -66,21 +66,13 @@ module Hapi
       true
     end
 
-    def testum(_obiectum, hxlattrs)
-      # puts 'testum'
-      # puts obiectum
-      # puts hxlattrs
-
-      "TODO #{hxlattrs}"
-    end
-
     # _[eng] A quick helper to , for a guiven linguam, make inferences from
     #        _data/referens.yml to what is likely to be desired column
     # [eng]_
     class HXLOptionem
       attr_accessor :attributum, :hashtag, :ignorandum_hashtag, :ignorandum_attributum, :referens
 
-      def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+id'])
+      def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+id']) # rubocop:disable Metrics/ParameterLists
         @attributum = attributum
         @hashtag = hashtag
         @ignorandum_hashtag = ignorandum.nil? || ignorandum['hashtag'].nil? ? nil : ignorandum['hashtag']
