@@ -524,7 +524,7 @@
       "schemam": {
         "json": [
           {
-            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+            "iri": "/{% _🗣️ 📝por-Latn📝 L10N_ego_codicem 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 Hapi_schemam_slug 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 ISO_15924_slug 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 ISO_15924_slug 📝por-Latn📝 🗣️_ %}.json"
           }
         ]
       }
@@ -581,7 +581,7 @@
       "schemam": {
         "json": [
           {
-            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+            "iri": "/{% _🗣️ 📝eng-Latn📝 L10N_ego_codicem 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 Hapi_schemam_slug 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 ISO_15924_slug 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 ISO_15924_slug 📝eng-Latn📝 🗣️_ %}.json"
           }
         ]
       }
@@ -638,7 +638,7 @@
       "schemam": {
         "json": [
           {
-            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+            "iri": "/{% _🗣️ 📝spa-Latn📝 L10N_ego_codicem 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 Hapi_schemam_slug 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 ISO_15924_slug 📝spa-Latn📝 🗣️_ %}.json"
           }
         ]
       }
@@ -696,7 +696,7 @@
       "schemam": {
         "json": [
           {
-            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+            "iri": "/{% _🗣️ 📝arb-Arab📝 L10N_ego_codicem 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 Hapi_schemam_slug 📝arb-Arab📝 🗣️_ %}/XZ/{% _🗣️ 📝arb-Arab📝 ISO_15924_slug 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 ISO_15924_slug 📝arb-Arab📝 🗣️_ %}.json"
           }
         ]
       }
@@ -754,7 +754,7 @@
       "schemam": {
         "json": [
           {
-            "iri": "/schema/iso/iso15924/eng/iso15924.json"
+            "iri": "/{% _🗣️ 📝hin-Deva📝 L10N_ego_codicem 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 Hapi_schemam_slug 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 ISO_15924_slug 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 ISO_15924_slug 📝hin-Deva📝 🗣️_ %}.json"
           }
         ]
       }

@@ -158,7 +158,8 @@
         # referens_alternativum_nomen
         schemam:
           json:
-            - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
+            # - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
+            - iri: "/{% _🗣️ 📝und-Zyyy📝 L10N_ego_codicem 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 Hapi_schemam_slug 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_15924_slug 📝und-Zyyy📝 🗣️_ %}.json"
       __translationem: *id_temp0012
 
 # TODO: _[por] Alterar este arquivo para conter tanto referencias à fonte

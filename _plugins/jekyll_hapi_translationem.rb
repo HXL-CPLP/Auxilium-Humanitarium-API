@@ -153,7 +153,7 @@ module Hapi
         )
       end
 
-      def investigationem_contextum(contextum) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
+      def investigationem_contextum(contextum) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize,Metrics/PerceivedComplexity
         # @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
         @contextum_archivum_extensionem = File.extname(contextum['page']['url']) || contextum['ego_ext']
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
@@ -211,7 +211,7 @@ module Hapi
 
       # _[eng] remove 🐛 / 🆘 before detect what is real text[eng]_
       # _[eng] remove 🐛 / 🆘 antes de descobrir o que realmente é texto [eng]_
-      def purgatum_optionem
+      def purgatum_optionem # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
         # return nil unless @initiale_argumentum.length > 1
 
         delvals = VENANDUM_INSECTUM_EMOJI + SOS_EMOJI + TEXTUM_SOLUM_EMOJI
@@ -243,7 +243,7 @@ module Hapi
       end
 
       # @see https://www.justinweiss.com/articles/3-steps-to-fix-encoding-problems-in-ruby/
-      def quod_optionem_est?(emojis)
+      def quod_optionem_est?(emojis) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
         return nil unless @initiale_argumentum.length > 1
 
         valere = nil
@@ -328,59 +328,59 @@ module Hapi
   end
 
   # _[lat] Hapi.Translationem de Auxilium Humanitarium API documentōrum. [lat]_
-  module Translationem
+  module Translationem # rubocop:disable Metrics/ModuleLength
     module_function
 
-    def datum_l10n(l10n_codice, context, linguam = nil)
-      linguam = linguam.nil? ? context['page']['linguam'] : linguam
-      # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
-      #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
-      #       [por]_
-      hxlattrs = context['site']['data']['referens']['linguam'][linguam]['hxlattrs']
-      context['site']['data']['L10nhxl'].each do |line|
-        # if line['#item+code'] == l10n_codice
-        next if line['#item+code'] != l10n_codice
+    # def datum_l10n(l10n_codice, context, linguam = nil) # rubocop:disable Metrics/AbcSize
+    #   linguam = linguam.nil? ? context['page']['linguam'] : linguam
+    #   # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
+    #   #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
+    #   #       [por]_
+    #   hxlattrs = context['site']['data']['referens']['linguam'][linguam]['hxlattrs']
+    #   context['site']['data']['L10nhxl'].each do |line|
+    #     # if line['#item+code'] == l10n_codice
+    #     next if line['#item+code'] != l10n_codice
 
-        hxlattrs.each do |hxlattr|
-          # puts hxlattr
-          next unless line["#item+l10n#{hxlattr}"]
+    #     hxlattrs.each do |hxlattr|
+    #       # puts hxlattr
+    #       next unless line["#item+l10n#{hxlattr}"]
 
-          # puts hxlattr
-          # puts line["#item+l10n#{hxlattr}"]
+    #       # puts hxlattr
+    #       # puts line["#item+l10n#{hxlattr}"]
 
-          return line["#item+l10n#{hxlattr}"]
-        end
-      end
+    #       return line["#item+l10n#{hxlattr}"]
+    #     end
+    #   end
 
-      nil
-    end
+    #   nil
+    # end
 
-    def datum_l10n_de_textum(textum, context, linguam_fontem, linguam_objectivum = nil)
-      linguam_objectivum = linguam_objectivum.nil? ? context['page']['linguam'] : linguam_objectivum
-      hxlattrs_fontem = context['site']['data']['referens']['linguam'][linguam_fontem]['hxlattrs']
-      hxlattrs_objectivum = context['site']['data']['referens']['linguam'][linguam_objectivum]['hxlattrs']
+    # def datum_l10n_de_textum(textum, context, linguam_fontem, linguam_objectivum = nil) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
+    #   linguam_objectivum = linguam_objectivum.nil? ? context['page']['linguam'] : linguam_objectivum
+    #   hxlattrs_fontem = context['site']['data']['referens']['linguam'][linguam_fontem]['hxlattrs']
+    #   hxlattrs_objectivum = context['site']['data']['referens']['linguam'][linguam_objectivum]['hxlattrs']
 
-      context['site']['data']['L10nhxl'].each do |line|
-        # if line['#item+code'] == l10n_codice
-        # puts "#item+l10n#{hxlattrs_fontem}"
+    #   context['site']['data']['L10nhxl'].each do |line|
+    #     # if line['#item+code'] == l10n_codice
+    #     # puts "#item+l10n#{hxlattrs_fontem}"
 
-        hxlattrs_fontem.each do |hxlattr_fon|
-          next if line["#item+l10n#{hxlattr_fon}"] != textum
+    #     hxlattrs_fontem.each do |hxlattr_fon|
+    #       next if line["#item+l10n#{hxlattr_fon}"] != textum
 
-          hxlattrs_objectivum.each do |hxlattr_obj|
-            # puts hxlattr
-            next unless line["#item+l10n#{hxlattr_obj}"]
+    #       hxlattrs_objectivum.each do |hxlattr_obj|
+    #         # puts hxlattr
+    #         next unless line["#item+l10n#{hxlattr_obj}"]
 
-            # puts hxlattr
-            # puts line["#item+l10n#{hxlattr}"]
+    #         # puts hxlattr
+    #         # puts line["#item+l10n#{hxlattr}"]
 
-            return line["#item+l10n#{hxlattr_obj}"]
-          end
-        end
-      end
+    #         return line["#item+l10n#{hxlattr_obj}"]
+    #       end
+    #     end
+    #   end
 
-      nil
-    end
+    #   nil
+    # end
 
     # TODO: esta meio feio isso. Melhorar. Um problema é que cria
     #       tags <p> mesmo em elementos inline.
@@ -400,7 +400,7 @@ module Hapi
     # - 'alternandum', https://en.wiktionary.org/wiki/alternandus#Latin
     def farmatum_alternandum(
       contextum, trns_codicem, trns_resultatum,
-      _trns_resultatum_linguam, textum_solum_est = false # # rubocop:disable Style/OptionalBooleanParameter)
+      _trns_resultatum_linguam, textum_solum_est = false # rubocop:disable Style/OptionalBooleanParameter
     )
       html_est = contextum['page']['translationem_modum']
       linguam = contextum['page']['linguam']
@@ -437,7 +437,7 @@ module Hapi
     # Trivia:
     # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
     # - 'alternandum', https://en.wiktionary.org/wiki/alternandus#Latin
-    def farmatum_alternandum_neo(rem)
+    def farmatum_alternandum_neo(rem) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
       puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
       # return rem.objectivum_textum + 'so texto' if rem.est_textum_solum_est?
       return rem.objectivum_textum if rem.est_textum_solum_est? && rem.objectivum_textum
@@ -472,7 +472,7 @@ module Hapi
     # Trivia:
     # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
     # - 'praefectum', https://en.wiktionary.org/wiki/praefectus#Latin
-    def farmatum_praefectum_neo(rem)
+    def farmatum_praefectum_neo(rem) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
       # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
       # return rem.objectivum_textum + 'so texto' if rem.est_textum_solum_est?
       return rem.objectivum_textum if rem.est_textum_solum_est?
@@ -587,7 +587,7 @@ module Hapi
     #   - https://en.wiktionary.org/wiki/praeiudico
     #     - https://en.wiktionary.org/wiki/prejudge
     # - https://en.wikipedia.org/wiki/Linguistic_discrimination
-    def praeiudico_htmldir_de_linguam(linguam, referens_praeiudico)
+    def praeiudico_htmldir_de_linguam(linguam, referens_praeiudico) # rubocop:disable Metrics/AbcSize
       return nil if linguam.length != 8
 
       @parts = linguam.split('-')
@@ -704,45 +704,45 @@ module Hapi
       }
     end
 
-    # _[eng] The {% de_lat_codicem (...) %} implementation [eng]_
-    # _[por] A implementação de {% de_lat_codicem (...) %} [por]_
-    #
-    # @exemplum Primum exemplum
-    #   linguam: por-Latn
-    #   ---
-    #   {% de_lat_codicem licentiam_nomen %}
-    # @resultatum Primum exemplum
-    #   Licença
-    class DeLatCodicem < Liquid::Tag
-      def initialize(tag_name, text, tokens)
-        super
+    # # _[eng] The {% de_lat_codicem (...) %} implementation [eng]_
+    # # _[por] A implementação de {% de_lat_codicem (...) %} [por]_
+    # #
+    # # @exemplum Primum exemplum
+    # #   linguam: por-Latn
+    # #   ---
+    # #   {% de_lat_codicem licentiam_nomen %}
+    # # @resultatum Primum exemplum
+    # #   Licença
+    # class DeLatCodicem < Liquid::Tag
+    #   def initialize(tag_name, text, tokens)
+    #     super
 
-        @tokens = text.strip.split
-        @textum = @tokens.shift
-        @variant1 = @tokens.shift if @tokens
-        # @datum = 123
-      end
+    #     @tokens = text.strip.split
+    #     @textum = @tokens.shift
+    #     @variant1 = @tokens.shift if @tokens
+    #     # @datum = 123
+    #   end
 
-      def render(context)
-        temp = Translationem.datum_temporarium(context)
-        l10nval = Translationem.datum_l10n(@textum, context)
+    #   def render(context)
+    #     temp = Translationem.datum_temporarium(context)
+    #     l10nval = Translationem.datum_l10n(@textum, context)
 
-        return l10nval if l10nval
+    #     return l10nval if l10nval
 
-        return temp[@textum] if temp && temp[@textum]
+    #     return temp[@textum] if temp && temp[@textum]
 
-        suffixes = Translationem.datum_temporarium_suffix(context)
+    #     suffixes = Translationem.datum_temporarium_suffix(context)
 
-        suffixes.each do |suffix|
-          # puts "#{@text}#{suffix}"
-          # puts temp["#{@text}#{suffix}"]
-          # return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
-          return temp["#{@textum}#{suffix}"] if temp && temp["#{@textum}#{suffix}"]
-        end
+    #     suffixes.each do |suffix|
+    #       # puts "#{@text}#{suffix}"
+    #       # puts temp["#{@text}#{suffix}"]
+    #       # return Translationem.de(temp["#{@textum}#{suffix}"]) if temp && temp["#{@textum}#{suffix}"]
+    #       return temp["#{@textum}#{suffix}"] if temp && temp["#{@textum}#{suffix}"]
+    #     end
 
-        "<!--[de_linguam:[lat-Latn]]-->#{@textum}<!--[[lat-Latn]:de_linguam]-->"
-      end
-    end
+    #     "<!--[de_linguam:[lat-Latn]]-->#{@textum}<!--[[lat-Latn]:de_linguam]-->"
+    #   end
+    # end
 
     # _[eng] The L10n emoji entrypoint [eng]_
     # _[por] O ponto de entrada L10n emoji [por]_
@@ -816,6 +816,10 @@ module Hapi
             rem
           )
         end
+
+        # @TODO: _[eng-Latn] This entire section of language fallback should be
+        #                    moved to the YAML configuration files eventually
+        #        [eng-Latn]_
 
         l10nval_lat = Translationem.translationem_memoriam_rememorandum(
           context, rem.fontem_textum, 'lat-Latn'
@@ -892,62 +896,6 @@ module Hapi
         #     de site.page [#{contextum['site']['page']}] ]!!!"
         # end
       end
-
-      # Trivia: requīsītum, https://en.wiktionary.org/wiki/requisitus#Latin
-      def L10n_typum_requisitum(_tagname)
-        # puts '_L10Ntypum'
-        # {% _🗣️#️⃣ L10N_ego_summarius #️⃣🗣️_ %}
-        resultatum = ('minimum' if @textum.include?('#️⃣'))
-
-        # puts tagname
-      end
-    end
-
-    # {% __🆘__ %}
-    class DeL10nDebug < Liquid::Tag
-      def initialize(tag_name, text, tokens)
-        super
-
-        @tokens = text.strip.split
-        # @linguam_fontem = @tokens.shift
-        @textum = @tokens.shift
-
-        if @textum.include?('🗣️') && @textum.length < 8
-          tag_name = "#{tag_name}#{@textum}"
-          @textum = @tokens.shift
-        end
-
-        # puts '   DeL10nDebug'
-        # puts "   tag_name [#{tag_name}] @tokens [#{@tokens}] @textum [#{@textum}]"
-        # puts  @textum
-
-        # @iso6393 = Translationem.iso6393_de_linguam(@linguam_fontem)
-        # @iso15924 = Translationem.iso15924_de_linguam(@linguam_fontem)
-      end
-
-      def render(context)
-        # "[?#{@textum} #{@tokens}?]"
-        # @see https://jekyllrb.com/docs/variables/#global-variables
-        {
-          page: {
-            linguam: context['page']['linguam'],
-            url: context['page']['url'],
-            dir: context['page']['dir'],
-            path: context['page']['path']
-          },
-          # layout: {
-          #   ___: context['layout']
-          # },
-          site: {
-            linguam: context['site']['linguam']
-          },
-          translationem: {
-            errors: [
-              '_[por]Funcionalidade ainda não implementada[por]_'
-            ]
-          }
-        }
-      end
     end
 
     # _[eng] Generate HTML from markdown inside this block [eng]_
@@ -998,31 +946,25 @@ module Hapi
   end
 end
 
-# Liquid::Template.register_filter(HapiApi::Translationem)
-
-# {% __🆘__ %}
-Liquid::Template.register_tag(
-  '__', Hapi::Translationem::DeL10nDebug
-)
-# _ deprecated
-Liquid::Template.register_tag(
-  '_', Hapi::Translationem::DeL10nEmoji
-)
-
 ### Normal usage (html output, except as tag attribute)
 ## @exemplum:
 #    {% _🗣️ L10N_ego_summarius 🗣️_ %}
+Liquid::Template.register_tag(
+  '_', Hapi::Translationem::DeL10nEmoji
+)
 Liquid::Template.register_tag(
   '_🗣️', Hapi::Translationem::DeL10nEmoji
 )
 Liquid::Template.register_tag(
   '🗣️_', Hapi::Translationem::DeL10nEmoji
 )
+
+# @deprecated l10n / n01l
 Liquid::Template.register_tag(
   'l10n', Hapi::Translationem::DeL10nEmoji
 )
 # Liquid::Template.register_tag(
-#   'n10l', Hapi::Translationem::DeL10nEmoji
+#   'n01l', Hapi::Translationem::DeL10nEmoji
 # )
 
 # _[eng]We still using de_markdown [eng]_
