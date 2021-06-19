@@ -156,9 +156,9 @@ module Hapi
         )
       end
 
-      def investigationem_contextum(contextum) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize,Metrics/PerceivedComplexity
+      def investigationem_contextum(contextum) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
         # @objectivum_archivum_extensionem = File.extname(contextum['page']['url']) unless contextum['page']['url'].nil?
-        @contextum_archivum_extensionem = File.extname(contextum['page']['url']) || contextum['ego_ext']
+        @contextum_archivum_extensionem = contextum['page']['archivum_extensionem']
         @contextum_sos = contextum['page']['ego'] unless contextum['page']['ego'].nil?
         @referens = contextum['site']['data']['referens']
         @referens_praeiudico = contextum['site']['data']['referens']['praeiudico']
@@ -440,11 +440,15 @@ module Hapi
     # Trivia:
     # - 'fōrmātum', https://en.wiktionary.org/wiki/formatus#Latin
     # - 'alternandum', https://en.wiktionary.org/wiki/alternandus#Latin
-    def farmatum_alternandum_neo(rem) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
+    def farmatum_alternandum_neo(rem) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize,Metrics/CyclomaticComplexity
       puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
       # return rem.objectivum_textum + 'so texto' if rem.est_textum_solum_est?
       return rem.objectivum_textum if rem.est_textum_solum_est? && rem.objectivum_textum
       return rem.fontem_textum if rem.est_textum_solum_est?
+
+      puts 'oi' if rem.est_sos?
+      # puts 'oi est_html' if rem.est_sos? && rem.est_html?
+      # puts 'oi est_html' if rem.est_html?
 
       # attrs = {
       #   'lang' => rem.fontem_linguam.bcp47,
@@ -464,6 +468,11 @@ module Hapi
 
         return "<span #{attrs_str}>#{rem.fontem_textum}</span>"
       end
+
+      puts 'oi2' if rem.est_sos?
+      puts rem.objectivum_textum if rem.est_sos?
+      puts rem.inspect if rem.est_sos?
+      puts 'oi2' if rem.est_sos?
 
       # puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
       # _[eng] If not HTML, then likely to be JSON, XML or CSV. If this is
@@ -783,8 +792,7 @@ module Hapi
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{@tag_aux.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{rem.inspect}]"
         # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] [#{rem.inspect}]"
-        puts 'sos_est' if rem.sos_est
-        puts 'est_sos?' if rem.est_sos?
+
         if rem.paratum_est
           # return Translationem.farmatum_praefectum(
           #   context, rem.fontem_textum, rem.fontem_textum

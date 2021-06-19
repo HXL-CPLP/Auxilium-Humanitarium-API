@@ -40,7 +40,6 @@ schemam:
           - por-Latn
           - eng-Latn
         paginam_linguam_experimentum:
-          # - arb-Arab # Se nem mesmo slugs estiverem traduzidos, gera URLs repetidas
           - spa-Latn
           - arb-Arab
           - hin-Deva

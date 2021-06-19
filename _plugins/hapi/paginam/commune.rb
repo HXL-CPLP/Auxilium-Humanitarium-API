@@ -22,6 +22,7 @@ module Hapi
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
+      archivum_extensionem
       content
       descriptionem
       experimentum_est
@@ -120,6 +121,15 @@ module Hapi
       end
 
       resultatum
+    end
+
+    # Trivia
+    # - 'archivum'
+    #   - https://en.wiktionary.org/wiki/archivum
+    # - 'extēnsionem'
+    #   - https://en.wiktionary.org/wiki/extensio#Latin
+    def archivum_extensionem
+      '.html'
     end
 
     # Trivia

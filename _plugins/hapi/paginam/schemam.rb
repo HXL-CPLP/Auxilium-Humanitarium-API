@@ -98,6 +98,7 @@ module Hapi
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
+      archivum_extensionem
       content
       descriptionem
       experimentum_est

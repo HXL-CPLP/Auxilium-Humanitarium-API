@@ -493,7 +493,8 @@ module Hapi
 
     # _[lat-Latn] Translationem memoriam rememorandum, fallendum [lat-Latn]_
     def translationem_memoriam_rememorandum_fallendum(rem)
-      puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] fallendum [#{rem}]" if rem.est_sos?
+      # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] fallendum [#{rem}]" if rem.est_sos?
+      puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] fallendum [#{rem.inspect}]"
     end
   end
 end

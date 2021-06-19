@@ -58,6 +58,7 @@ module Hapi
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
       alternativum
+      archivum_extensionem
       experimentum_est
       gid
       uid
