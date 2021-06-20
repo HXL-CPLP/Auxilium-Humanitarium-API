@@ -487,7 +487,6 @@ module Hapi
     # _[lat-Latn] Translationem memoriam rememorandum, non-perfectiōnem. [lat-Latn]_
     def translationem_memoriam_rememorandum_non_perfectionem(rem)
       puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] non_perfectionem [#{rem}]" if rem.est_sos?
-
     end
 
     # _[lat-Latn] Translationem memoriam rememorandum, fallendum [lat-Latn]_

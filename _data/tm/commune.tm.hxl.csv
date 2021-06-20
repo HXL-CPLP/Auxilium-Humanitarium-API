@@ -63,3 +63,7 @@ wikidatum_codicem_nomen,Q5296,1,,,,,,wikidatum,codicem,nomen,,Wikidatum cōdicem
 HXLStandard_nomen,,1,,HXLStandard,,,,,,nomen,,HXL Normam,∅,Padrão HXL,∅,HXL Standard,∅,,∅,,∅,,∅
 HXLStandard_archivum_typum_nomen,,1,,HXLStandard,,,,archivum,typum,nomen,,HXL archīvum typum,∅,Arquivo do tipo HXL,∅,HXL file type,∅,,∅,,∅,,∅
 harenarium_nomen,Q3938,1,,,,,,harenarium,,nomen,,Harenarium,∅,Página de testes,∅,Sandbox,∅,Zona de pruebas,∅,,∅,,∅
+UN_abbreviationem_anglicum_IOM_abbreviationem,Q472311,1,UN,UN,,abbreviationem_anglicum_IOM,,,,abbreviationem,,CIM,∅,OIM,∅,IOM,∅,OIM,∅,,∅,,∅
+UN_abbreviationem_anglicum_IOM_nomen,Q472311,1,UN,UN,,abbreviationem_anglicum_IOM,,,,nomen,,Consociatio internationalis migrationis,∅,Organização Internacional para as Migrações,∅,International Organization for Migration,∅,Organización Internacional para las Migraciones,∅,,∅,,∅
+UN_abbreviationem_anglicum_UN_abbreviationem,Q1065,1,UN,UN,,abbreviationem_anglicum_UN,,,,abbreviationem,,ONU,∅,ONU,∅,UN,∅,ONU,∅,,∅,,∅
+UN_abbreviationem_anglicum_UN_nomen,Q1065,1,UN,UN,,abbreviationem_anglicum_UN,,,,nomen,,Unitarum Nationum Coetus,∅,Organização das Nações Unidas,∅,United Nations,∅,Naciones Unidas,∅,,∅,,∅
