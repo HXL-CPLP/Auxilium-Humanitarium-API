@@ -39,6 +39,10 @@ principale:
 
       - nomen: separator
 
+      - xdefallo: /mul-Zyyy/schemam/UN/HTCDS/
+        nomen: '{% _🗣️ UN_codicem_anglicum_IOM_HTCDS_nomen 🗣️_ %}'
+        iri: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/{% _🗣️ 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 🗣️_ %}/UN/{% _🗣️ 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 🗣️_ %}/'
+
       - nomen: <span lang="en" dir="ltr">UN M49</span>
         debile: true
 
