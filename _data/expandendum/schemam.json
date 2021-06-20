@@ -1,5 +1,213 @@
 [
   {
+    "uid": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/UN/HTCDS/",
+    "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝por-Latn📝 schemam_datum_nomen 📝por-Latn📝 🗣️_ %}: {% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝por-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝por-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Excel/HTCDS%20Excel%20Spreadsheet.xlsm"
+        },
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Survey/htcds_xlsform.xlsx"
+        }
+      ],
+      "schemam": {
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.json"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.csv"
+      }
+    ]
+  },
+  {
+    "uid": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/UN/HTCDS/",
+    "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝eng-Latn📝 schemam_datum_nomen 📝eng-Latn📝 🗣️_ %}: {% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝eng-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝eng-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Excel/HTCDS%20Excel%20Spreadsheet.xlsm"
+        },
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Survey/htcds_xlsform.xlsx"
+        }
+      ],
+      "schemam": {
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.json"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.csv"
+      }
+    ]
+  },
+  {
+    "uid": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/UN/HTCDS/",
+    "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝spa-Latn📝 schemam_datum_nomen 📝spa-Latn📝 🗣️_ %}: {% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝spa-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝spa-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Excel/HTCDS%20Excel%20Spreadsheet.xlsm"
+        },
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Survey/htcds_xlsform.xlsx"
+        }
+      ],
+      "schemam": {
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.json"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.csv"
+      }
+    ],
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/UN/HTCDS/",
+    "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝arb-Arab📝 schemam_datum_nomen 📝arb-Arab📝 🗣️_ %}: {% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝arb-Arab📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝arb-Arab📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Excel/HTCDS%20Excel%20Spreadsheet.xlsm"
+        },
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Survey/htcds_xlsform.xlsx"
+        }
+      ],
+      "schemam": {
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/XZ/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.json"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/XZ/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.csv"
+      }
+    ],
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/UN/HTCDS/",
+    "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝hin-Deva📝 schemam_datum_nomen 📝hin-Deva📝 🗣️_ %}: {% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝hin-Deva📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝hin-Deva📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Excel/HTCDS%20Excel%20Spreadsheet.xlsm"
+        },
+        {
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Survey/htcds_xlsform.xlsx"
+        }
+      ],
+      "schemam": {
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.json"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.csv"
+      }
+    ],
+    "experimentum_est": true
+  },
+  {
     "uid": "/mul-Zyyy/schemam/XZ/ISO-639-3/",
     "xdefallo": "/mul-Zyyy/schemam/XZ/ISO-639-3/",
     "xdefallo_est": true,

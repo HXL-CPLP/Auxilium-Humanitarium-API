@@ -4,6 +4,43 @@
 # @see https://www.quora.com/What-is-the-practical-maximum-size-of-a-Git-repository-full-of-text-based-data
 # @see https://vfsforgit.org/
 
+- farmulam:
+    commendandum:
+      translationem: &id_temp0000
+        - fontem: "/schemam/UN/HTCDS/HTCDS.🗣️.csv"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.csv"
+    structuram:
+      # TODO: localizar "schemam"
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
+      xdefallo: /mul-Zyyy/schemam/UN/HTCDS/
+      linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
+      typum: schemam
+      gid: XZ
+      lid: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}" # Exemplum: htcds
+      nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      titulum: "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      summarius: "{% _🗣️ 📝und-Zyyy📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝und-Zyyy📝 🗣️_ %}"
+      situs_interretialis:
+        referens_officinale:
+          - iri: https://github.com/UNMigration/HTCDS
+        # vicipaedia:
+        #   - iri: https://pt.wikipedia.org/wiki/ISO_15924
+        #     linguam: por-Latn
+
+      # wikidatum:
+      #   - codicem: Q16866
+      archivum:
+        referens_officinale:
+          - iri: https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Excel/HTCDS%20Excel%20Spreadsheet.xlsm
+          - iri: https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Survey/htcds_xlsform.xlsx
+        # referens_alternativum_nomen
+        schemam:
+          json:
+            # - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
+            - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
+      __translationem: *id_temp0000
+
+
 - uid: /mul-Zyyy/schemam/XZ/ISO-639-3/
   xdefallo: /mul-Zyyy/schemam/XZ/ISO-639-3/
   xdefallo_est: true
@@ -120,12 +157,6 @@
 - farmulam:
     commendandum:
       translationem: &id_temp0012
-        # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.json"
-        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.json"
-        # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3_macrolanguages.🗣️.json"
-        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}_macrolanguages.json"
-        # - fontem: "/schemam/XZ/ISO-639-3/ISO-639-3.🗣️.sql"
-        #   objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 ISO_639-3_slug 📝und-Zyyy📝 🗣️_ %}.sql"
         - fontem: "/schemam/XZ/ISO-15924/ISO-15924.🗣️.json"
           objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
     structuram:
@@ -161,9 +192,3 @@
             # - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
             - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
       __translationem: *id_temp0012
-
-# TODO: _[por] Alterar este arquivo para conter tanto referencias à fonte
-#              que gera o JSON como as URls finais. Com isso poderíamos usar
-#              praticamente apenas esse YAML como fonte única tanto de
-#              gerar documentação como da navegação do site em si.
-#       [por]_
