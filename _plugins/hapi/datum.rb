@@ -25,7 +25,8 @@ module Hapi
                     :contextum_archivum_extensionem, :objectivum_textum,
                     :contextum_linguam, :contextum_sos, :paratum_est,
                     :contextum_url, :alternandum_textum, :alternandum_linguam,
-                    :textum_solum_est, :contextum_textum_solum_est
+                    :textum_solum_est, :contextum_textum_solum_est,
+                    :alternandum_linguam_neo
 
       # :initiale_processum
 
@@ -97,8 +98,8 @@ module Hapi
       end
 
       def est_html?
-        # @contextum_archivum_extensionem.end_with?('html')
-       false
+        @contextum_archivum_extensionem.end_with?('html')
+      #  false
       end
 
       # Trivia:
@@ -162,12 +163,16 @@ module Hapi
       # :referens
 
       def initialize(argumentum = {})
+      # def initialize(linguam)
         optionem = initiale_datum.merge(argumentum)
 
+        # @linguam = linguam
         @linguam = optionem['linguam']
 
+
         unless @linguam.nil?
-          referens = optionem['referens']
+          # referens = optionem['referens']
+          referens = Hapi::HSD.data?['referens']
           @iso15924 = Utilitatem.iso15924_de_linguam(@linguam)
           @iso6391 = Utilitatem.iso6391_de_linguam(@linguam, referens['praeiudico'])
           @bcp47 = @iso6391
@@ -205,82 +210,3 @@ module Hapi
   end
 
 end
-
-# module Jekyll
-#   module Drops
-#     # ...
-#     class HapiDrop < Liquid::Drop
-#       attr_accessor :api, :api_xdefallo, :categoriam, :scheman, :pittacium
-
-#       class << self
-#         def global
-#           @global ||= HapiDrop.new
-#         end
-#       end
-
-#       # Create a new Drop
-#       #
-#       # obj - the Jekyll Site, Collection, or Document required by the
-#       # drop.
-#       #
-#       # Returns nothing
-#         @obj = obj
-#       end
-
-#       def api
-#         @obj.api
-#       end
-
-#       def version
-#         Jekyll::VERSION
-#       end
-
-#       def environment
-#         Jekyll.env
-#       end
-
-#       def inspect
-#         # puts 'datum'
-#         # puts @datum
-
-#         # "#<#{self.class} @relative_path=#{relative_path.inspect} xdefallo=#{@trivum}>"
-#         # "#<#{self.class} @uid=#{@uid} xdefallo=#{@xdefallo}>"
-#         "#<#{self.class}>"
-#       end
-
-#       # Generates a list of keys with user content as their values.
-#       # This gathers up the Drop methods and keys of the mutations and
-#       # underlying data hashes and performs a set union to ensure a list
-#       # of unique keys for the Drop.
-#       #
-#       # Returns an Array of unique keys for content for the Drop.
-#       def keys
-#         ['api']
-#       end
-
-#       # Generate a Hash representation of the Drop by resolving each key's
-#       # value. It includes Drop methods, mutations, and the underlying object's
-#       # data. See the documentation for Drop#keys for more.
-#       #
-#       # Returns a Hash with all the keys and values resolved.
-#       def to_h
-#         # keys.each_with_object({}) do |(key, _), result|
-#         #   result[key] = self[key]
-#         # end
-#         @obj
-#       end
-#       alias to_hash to_h
-
-#       # def to_h
-#       #   @to_h ||= {
-#       #     'version' => version,
-#       #     'environment' => environment
-#       #   }
-#       # end
-
-#       def to_json(state = nil)
-#         JSON.generate(to_h, state)
-#       end
-#     end
-#   end
-# end

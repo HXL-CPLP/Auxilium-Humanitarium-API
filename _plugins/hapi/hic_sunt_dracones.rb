@@ -488,13 +488,12 @@ module Hapi
     def translationem_memoriam_rememorandum_non_perfectionem(rem)
       puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] non_perfectionem [#{rem}]" if rem.est_sos?
 
-      puts 'test' if rem.est_sos?
     end
 
     # _[lat-Latn] Translationem memoriam rememorandum, fallendum [lat-Latn]_
     def translationem_memoriam_rememorandum_fallendum(rem)
-      # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] fallendum [#{rem}]" if rem.est_sos?
-      puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] fallendum [#{rem.inspect}]"
+      puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] fallendum [#{rem}]" if rem.est_sos?
+      # puts "\n\n\t[🔎🐛 #{self.class.name}:#{__LINE__}] fallendum [#{rem.inspect}]"
     end
   end
 end

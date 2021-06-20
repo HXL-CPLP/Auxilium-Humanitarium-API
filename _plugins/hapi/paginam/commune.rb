@@ -129,8 +129,8 @@ module Hapi
     # - 'extēnsionem'
     #   - https://en.wiktionary.org/wiki/extensio#Latin
     def archivum_extensionem
-      # '.html'
-      ''
+      '.html'
+      # ''
     end
 
     # Trivia

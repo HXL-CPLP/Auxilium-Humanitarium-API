@@ -3,6 +3,7 @@
 
 {% assign paginam_iri = site.pages | map: "url" %}
 {%- capture paginam_l10n -%}{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}{%- endcapture -%}
+{% assign paginam_l10n_initialle = paginam_l10n | prepend: '/' | append: '/' %}
 
 <header class="site-header">
   <nav aria-label="Main navbar of site"
@@ -10,7 +11,7 @@
     style="background-color: #e3f2fd;">
     <div class="container">
 
-      {%- if paginam_l10n != '' and paginam_l10n != 'lat-Latn' and paginam_l10n != 'mul-Zyyy' -%}
+      {%- if paginam_l10n != '' and paginam_l10n != 'lat-Latn' and paginam_l10n != 'mul-Zyyy' and paginam_iri contains paginam_l10n_initialle -%}
         <a class="navbar-brand" href="/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/">
           {% _🗣️ Hapi_breve_nomen 🗣️_ %} <sup><em>{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}</em></sup>
         </a>

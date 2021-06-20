@@ -334,57 +334,6 @@ module Hapi
   module Translationem # rubocop:disable Metrics/ModuleLength
     module_function
 
-    # def datum_l10n(l10n_codice, context, linguam = nil)
-    #   linguam = linguam.nil? ? context['page']['linguam'] : linguam
-    #   # TODO: _[por] Implementar mensagem de erro se usuário errar linguam
-    #   #              como usar 'linguam: por' em vez de 'linguam: por-Latn'
-    #   #       [por]_
-    #   hxlattrs = context['site']['data']['referens']['linguam'][linguam]['hxlattrs']
-    #   context['site']['data']['L10nhxl'].each do |line|
-    #     # if line['#item+code'] == l10n_codice
-    #     next if line['#item+code'] != l10n_codice
-
-    #     hxlattrs.each do |hxlattr|
-    #       # puts hxlattr
-    #       next unless line["#item+l10n#{hxlattr}"]
-
-    #       # puts hxlattr
-    #       # puts line["#item+l10n#{hxlattr}"]
-
-    #       return line["#item+l10n#{hxlattr}"]
-    #     end
-    #   end
-
-    #   nil
-    # end
-
-    # def datum_l10n_de_textum(textum, context, linguam_fontem, linguam_objectivum = nil)
-    #   linguam_objectivum = linguam_objectivum.nil? ? context['page']['linguam'] : linguam_objectivum
-    #   hxlattrs_fontem = context['site']['data']['referens']['linguam'][linguam_fontem]['hxlattrs']
-    #   hxlattrs_objectivum = context['site']['data']['referens']['linguam'][linguam_objectivum]['hxlattrs']
-
-    #   context['site']['data']['L10nhxl'].each do |line|
-    #     # if line['#item+code'] == l10n_codice
-    #     # puts "#item+l10n#{hxlattrs_fontem}"
-
-    #     hxlattrs_fontem.each do |hxlattr_fon|
-    #       next if line["#item+l10n#{hxlattr_fon}"] != textum
-
-    #       hxlattrs_objectivum.each do |hxlattr_obj|
-    #         # puts hxlattr
-    #         next unless line["#item+l10n#{hxlattr_obj}"]
-
-    #         # puts hxlattr
-    #         # puts line["#item+l10n#{hxlattr}"]
-
-    #         return line["#item+l10n#{hxlattr_obj}"]
-    #       end
-    #     end
-    #   end
-
-    #   nil
-    # end
-
     # TODO: esta meio feio isso. Melhorar. Um problema é que cria
     #       tags <p> mesmo em elementos inline.
     # @deprecated
@@ -446,9 +395,9 @@ module Hapi
       return rem.objectivum_textum if rem.est_textum_solum_est? && rem.objectivum_textum
       return rem.fontem_textum if rem.est_textum_solum_est?
 
-      puts 'oi est_sos' if rem.est_sos?
-      puts rem.contextum_archivum_extensionem if rem.est_sos?
-      puts 'oi est_html' if rem.est_sos? && rem.est_html?
+      # puts 'oi est_sos' if rem.est_sos?
+      # puts rem.contextum_archivum_extensionem if rem.est_sos?
+      # puts 'oi est_html' if rem.est_sos? && rem.est_html?
       # puts 'oi est_html' if rem.est_html?
 
       # attrs = {
@@ -458,9 +407,13 @@ module Hapi
       # }
 
       if rem.est_html? && !rem.est_textum_solum_est?
+        # puts 'oooi' if rem.est_sos?
+        # puts rem.objectivum_linguam.bcp47 if rem.est_sos?
+        # puts rem.alternandum_linguam.bcp47 if rem.est_sos?
         attrs_str = Utilitatem.quod_html_attributum_markup_nunc?(
           {
-            'lang' => rem.fontem_linguam.bcp47,
+            # 'lang' => rem.fontem_linguam.bcp47,
+            'lang' => rem.objectivum_linguam.bcp47,
             'data-l10n-fontem-linguam' => rem.fontem_linguam.linguam,
             'data-l10n-objectivum-linguam' => rem.objectivum_linguam.linguam,
             'class' => 'incognitum-phrasim'
@@ -501,13 +454,15 @@ module Hapi
       if rem.est_html?
         attrs_str = Utilitatem.quod_html_attributum_markup_nunc?(
           {
+            # TODO: fix the rem.fontem_linguam.bcp47
             'lang' => rem.fontem_linguam.bcp47,
             'data-l10n-fontem-linguam' => rem.fontem_linguam.linguam,
             'data-l10n-objectivum-linguam' => rem.objectivum_linguam.linguam
           }
         )
 
-        return "<span #{attrs_str}>#{rem.fontem_textum}</span>"
+        # return "<span #{attrs_str}>#{rem.fontem_textum}</span>"
+        return "<span #{attrs_str}>#{rem.objectivum_textum}</span>"
       end
 
       puts "\n\n\t[🔎🆘🔍 #{self.class.name}] #{__LINE__} [#{rem.inspect}]" if rem.est_sos?
@@ -531,7 +486,7 @@ module Hapi
       if rem.est_html?
         return "<span lang='#{rem.fontem_linguam.bcp47}' data-l10n-fontem-textum='#{rem.fontem_textum}' " \
                "data-l10n-fontem-linguam='#{rem.fontem_linguam.linguam}' " \
-               "data-l10n-errorem='1' data-l10n-objectivum-linguam='#{rem.objectivum_linguam.linguam}'>" \
+               "data-l10n-errorem='1' data-l10n-objectivum-linguam4444='#{rem.objectivum_linguam.linguam}'>" \
                "#{rem.fontem_textum}</span>"
       end
       rem.fontem_textum
@@ -844,6 +799,7 @@ module Hapi
         if l10nval_lat != false && !l10nval_lat.nil?
           rem.alternandum_textum = l10nval_lat
           rem.alternandum_linguam = 'lat-Latn'
+          # rem.alternandum_linguam_neo = Hapi::Datum::Linguam('lat-Latn')
           # puts rem.inspect if rem.est_textum_solum_est?
           # return Translationem.farmatum_alternandum(
           #   context, rem.fontem_textum, l10nval_lat,
