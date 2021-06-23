@@ -2,11 +2,17 @@
 layout: defallo
 ---
 
-{% include schemam/rem.html schemam=page initiale_html_hN=2 %}
+<div style="border-style: dotted; border-width: 2px; border-color: #ccc">
+  {% include schemam/rem.html schemam=page initiale_html_hN=2 %}
+</div>
+
+<aside>
+  {% include commune/agnitionem-paginam.html %}
+</aside>
 
 <section>
   <h2>{% _🗣️ licentiam_nomen 🗣️_ %}</h2>
-  <a href="https://unlicense.org/">
+  <a rel="license" href="https://unlicense.org/">
     <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png"
       alt="{% _🗣️ dominium_publicum_nomen 🗣️_ %}">
   </a>

@@ -1,0 +1,79 @@
+<!-- _includes/commune/agnitionem-paginam.html -->
+
+<!-- TODO: https://www.w3.org/TR/2011/WD-html5-author-20110809/links.html -->
+
+<h2 id="agnitionem">
+  {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}
+</h2>
+<h3 id="agnitionem-voluntarius">
+  {% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}
+</h3>
+
+
+<ul>
+  {% for humanum in site.data.agnitionem.humanum -%}
+
+    {%- if page.tags contains 'index' -%}
+      <!-- index est -->
+    {%- else -%}
+      {%- if humanum.opus contains 'fundatarem' -%}
+        <!-- _[por-Latn] Fundadores gerais são omitidos fora de páginas de listagem[por-Latn]_ -->
+        {% continue %}
+      {%- endif -%}
+    {%- endif -%}
+
+    <li>
+      <details>
+        <summary>{{ humanum.nomen.baptismum }}</summary>
+        <ul>
+          <li>
+            <a rel="external" href="{{ humanum.iri }}">
+            {{ humanum.iri }}
+            </a>
+          </li>
+          {%- if humanum.gitee and humanum.gitee != humanum.iri -%}
+            <li>
+              <a rel="external" href="{{ humanum.gitee }}">
+              {{ humanum.gitee }}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if humanum.github and humanum.github != humanum.iri -%}
+            <li>
+              <a rel="external" href="{{ humanum.github }}">
+              {{ humanum.github }}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if humanum.linkedin and humanum.linkedin != humanum.iri -%}
+            <li>
+              <a rel="external" href="{{ humanum.linkedin }}">
+              {{ humanum.linkedin }}
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </details>
+    </li>
+
+  {%- endfor %}
+</ul>
+
+<h3 id="agnitionem-communitatem">
+  {% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}
+</h3>
+
+<ul>
+{% for communitatem in site.data.agnitionem.communitatem -%}
+  <li>
+  {%- if communitatem.iri -%}
+    <a href="{{ communitatem.iri }}">
+      {{ communitatem.nomen.baptismum }}
+    </a>
+  {%- else -%}
+    {{ communitatem.nomen.baptismum }}
+  {%- endif -%}
+  </li>
+{%- endfor %}
+</ul>
+

@@ -21,30 +21,12 @@
   </article>
 
   <aside>
-    <h2 id="agnitionem">
-      {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}
-      </h2>
-    <h3 id="agnitionem-voluntarius">
-      {% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}
-      </h3>
-    <ul>
-    {% for humanum in site.data.agnitionem.humanum -%}
-      <li>{{ humanum.nomen.baptismum }}</li>
-    {%- endfor %}
-    </ul>
-    <h3 id="agnitionem-communitatem">
-      {% _🗣️ commune_agnitionem_communitatem_nomen 🗣️_ %}
-    </h3>
-    <ul>
-    {% for communitatem in site.data.agnitionem.communitatem -%}
-      <li>{{ communitatem.nomen.baptismum }}</li>
-    {%- endfor %}
-    </ul>
+    {% include commune/agnitionem-paginam.html %}
   </aside>
 
   <section>
     <h2 id="licentiam">{% _🗣️ licentiam_nomen 🗣️_ %}</h2>
-    <a href="https://unlicense.org/">
+    <a rel="license" href="https://unlicense.org/">
       <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png"
         alt="{% _🗣️ 🔎🔕🔍 dominium_publicum_nomen 🔎🔕🔍 🗣️_ %}">
     </a>

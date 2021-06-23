@@ -4,6 +4,7 @@
 
 
 <!--
+- http://sqlfiddle.com/
 TODO: https://stoplight.io/blog/openapi-json-schema/
 TODO: https://github.com/better/jsonschema2db
 -->

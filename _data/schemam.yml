@@ -3,6 +3,11 @@
 # GitHub seems to restrict 10GB; Biggest Git Is windows, 270GB
 # @see https://www.quora.com/What-is-the-practical-maximum-size-of-a-Git-repository-full-of-text-based-data
 # @see https://vfsforgit.org/
+# @TODO - https://schema.org/docs/data-and-datasets.html
+#         - https://www.w3.org/TR/tabular-data-primer/#tabular-data
+#           - https://pypi.org/project/csvw/
+#             - https://github.com/cldf/csvw
+#         - https://datacommons.org/
 
 - uid: /mul-Zyyy/schemam/UN/HTCDS/
   xdefallo: /mul-Zyyy/schemam/UN/HTCDS/
