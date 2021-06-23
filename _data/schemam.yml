@@ -33,6 +33,8 @@
       translationem: &id_temp0000
         - fontem: "/schemam/UN/HTCDS/HTCDS.🗣️.csv"
           objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.csv"
+        - fontem: "/schemam/UN/HTCDS/HTCDS.🗣️.json"
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
     structuram:
       # TODO: localizar "schemam"
       uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
@@ -60,8 +62,9 @@
         # referens_alternativum_nomen
         schemam:
           csv+hxl:
-            # - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
             - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.csv"
+          json:
+            - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
       __translationem: *id_temp0000
       opus_in_progressu: true # deprecated, Use experimentum_est
       experimentum_est: true

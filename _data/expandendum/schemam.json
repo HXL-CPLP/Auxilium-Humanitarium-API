@@ -60,6 +60,11 @@
           {
             "iri": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.csv"
           }
+        ],
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.json"
+          }
         ]
       }
     },
@@ -67,6 +72,10 @@
       {
         "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
         "objectivum": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.csv"
+      },
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.json"
       }
     ],
     "opus_in_progressu": true,
@@ -103,6 +112,11 @@
           {
             "iri": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.csv"
           }
+        ],
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.json"
+          }
         ]
       }
     },
@@ -110,6 +124,10 @@
       {
         "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
         "objectivum": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.csv"
+      },
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.json"
       }
     ],
     "opus_in_progressu": true,
@@ -146,6 +164,11 @@
           {
             "iri": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.csv"
           }
+        ],
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.json"
+          }
         ]
       }
     },
@@ -153,6 +176,10 @@
       {
         "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
         "objectivum": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.csv"
+      },
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.json"
       }
     ],
     "opus_in_progressu": true,
@@ -189,6 +216,11 @@
           {
             "iri": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.csv"
           }
+        ],
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.json"
+          }
         ]
       }
     },
@@ -196,6 +228,10 @@
       {
         "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
         "objectivum": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.csv"
+      },
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.json"
       }
     ],
     "opus_in_progressu": true,
@@ -232,6 +268,11 @@
           {
             "iri": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.csv"
           }
+        ],
+        "json": [
+          {
+            "iri": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.json"
+          }
         ]
       }
     },
@@ -239,6 +280,10 @@
       {
         "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
         "objectivum": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.csv"
+      },
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.json",
+        "objectivum": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.json"
       }
     ],
     "opus_in_progressu": true,
