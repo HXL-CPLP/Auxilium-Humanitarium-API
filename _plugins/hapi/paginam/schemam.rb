@@ -51,6 +51,19 @@ module Hapi
 
   # Subclass of `Jekyll::Page` with custom method definitions.
   class ArchivumSimplex < Jekyll::Page
+    attr_accessor :archivum_extensionem
+
+    # Attributes for Liquid templates
+    ATTRIBUTES_FOR_LIQUID = %w[
+      archivum_extensionem
+      content
+      dir
+      excerpt
+      name
+      path
+      url
+    ].freeze
+
     def initialize(site, archivum, schemam) # rubocop:disable Metrics/MethodLength,Lint/MissingSuper,Metrics/AbcSize
       template = 'archivum-simplex'
       template_ext = '.html'
@@ -61,6 +74,9 @@ module Hapi
       @ext  = File.extname(archivum['objectivum'])            # the extension.
       @basename = File.basename(archivum['objectivum'], '.*') # filename without the extension.
       @name = File.basename(archivum['objectivum'])           # basically @basename + @ext.
+
+      @archivum_extensionem = @ext
+      # puts @ext
 
       template_textum = File.read(Jekyll::PathManager.join(@base, archivum['fontem']))
 

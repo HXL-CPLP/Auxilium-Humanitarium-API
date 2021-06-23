@@ -2,6 +2,11 @@
 
 > **GitHub issue: https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/15**
 
+
+<!--
+TODO: https://stoplight.io/blog/openapi-json-schema/
+-->
+
 ---
 
 Atalhos rápidos:
