@@ -69,6 +69,8 @@
             - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
           sql:
             - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/sql/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.sql"
+          tm:
+            - iri: "/data/tm/schemam-un-htcds.tm.hxl.csv"
       __translationem: *id_temp0000
       opus_in_progressu: true # deprecated, Use experimentum_est
       experimentum_est: true
@@ -95,13 +97,8 @@
       - iri: https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab
     # referens_alternativum_nomen
     schemam:
-      graphql:
-        - iri: /schema/iso/iso639-3/eng/iso639-3.graphql # TODO: localize
-      json:
-        - iri: /schema/iso/iso639-3/eng/iso639-3.json # TODO: localize
-        - iri: /schema/iso/iso639-3/eng/iso639-3_macrolanguages.json # TODO: localize
-      sql:
-        - iri: /schema/iso/iso639-3/eng/iso639-3.sql # TODO: localize
+          tm:
+            - iri: "/data/tm/schemam.tm.hxl.csv"
   # l10n:
   #   - linguam: eng-Latn
   #   - linguam: por-Latn
@@ -151,6 +148,8 @@
           sql:
             # - iri: /schema/iso/iso639-3/eng/iso639-3.sql # TODO: _[eng-Latn] remove old version [eng-Latn]_
             - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.sql"
+          tm:
+            - iri: "/data/tm/schemam.tm.hxl.csv"
       __translationem: *id_temp001
 
 - uid: /mul-Zyyy/schemam/XZ/ISO-15924/
@@ -223,4 +222,6 @@
           json:
             # - iri: /schema/iso/iso15924/eng/iso15924.json # TODO: localize
             - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
+          tm:
+            - iri: "/data/tm/schemam.tm.hxl.csv"
       __translationem: *id_temp0012

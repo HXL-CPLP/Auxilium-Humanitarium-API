@@ -1,4 +1,5 @@
---- TEMP @see http://sqlfiddle.com/
+--- {% _🗣️ opus_in_progressu_emoji_nomen 🗣️_ %}
+
 CREATE TABLE htcds(
   id PRIMARY KEY,
   cas_CaseOwner VARCHAR(255), --- {% _🗣️ UN_codicem_anglicum_IOM_HTCDS_cas_CaseOwner_nomen 🗣️_ %}

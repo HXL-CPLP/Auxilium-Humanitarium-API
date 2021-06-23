@@ -48,6 +48,7 @@ exclude:
   - _data/referens.l10n.json
   - _data/schema.l10n.json
   - _data/expandendum/schemam.json
+  - _data/tm/
   - _assets/
 
 keep_files:

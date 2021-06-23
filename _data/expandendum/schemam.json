@@ -70,6 +70,11 @@
           {
             "iri": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/sql/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.sql"
           }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam-un-htcds.tm.hxl.csv"
+          }
         ]
       }
     },
@@ -130,6 +135,11 @@
         "sql": [
           {
             "iri": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/sql/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.sql"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam-un-htcds.tm.hxl.csv"
           }
         ]
       }
@@ -192,6 +202,11 @@
           {
             "iri": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/sql/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.sql"
           }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam-un-htcds.tm.hxl.csv"
+          }
         ]
       }
     },
@@ -252,6 +267,11 @@
         "sql": [
           {
             "iri": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/sql/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.sql"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam-un-htcds.tm.hxl.csv"
           }
         ]
       }
@@ -314,6 +334,11 @@
           {
             "iri": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/sql/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.sql"
           }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam-un-htcds.tm.hxl.csv"
+          }
         ]
       }
     },
@@ -371,22 +396,9 @@
         }
       ],
       "schemam": {
-        "graphql": [
+        "tm": [
           {
-            "iri": "/schema/iso/iso639-3/eng/iso639-3.graphql"
-          }
-        ],
-        "json": [
-          {
-            "iri": "/schema/iso/iso639-3/eng/iso639-3.json"
-          },
-          {
-            "iri": "/schema/iso/iso639-3/eng/iso639-3_macrolanguages.json"
-          }
-        ],
-        "sql": [
-          {
-            "iri": "/schema/iso/iso639-3/eng/iso639-3.sql"
+            "iri": "/data/tm/schemam.tm.hxl.csv"
           }
         ]
       }
@@ -446,6 +458,11 @@
         "sql": [
           {
             "iri": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.sql"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
           }
         ]
       }
@@ -520,6 +537,11 @@
           {
             "iri": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.sql"
           }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
+          }
         ]
       }
     },
@@ -592,6 +614,11 @@
         "sql": [
           {
             "iri": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.sql"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
           }
         ]
       }
@@ -667,6 +694,11 @@
           {
             "iri": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/XZ/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.sql"
           }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
+          }
         ]
       }
     },
@@ -740,6 +772,11 @@
         "sql": [
           {
             "iri": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.sql"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
           }
         ]
       }
@@ -861,6 +898,11 @@
           {
             "iri": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.json"
           }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
+          }
         ]
       }
     },
@@ -918,6 +960,11 @@
           {
             "iri": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.json"
           }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
+          }
         ]
       }
     },
@@ -974,6 +1021,11 @@
         "json": [
           {
             "iri": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.json"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
           }
         ]
       }
@@ -1033,6 +1085,11 @@
           {
             "iri": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/XZ/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.json"
           }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
+          }
         ]
       }
     },
@@ -1090,6 +1147,11 @@
         "json": [
           {
             "iri": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.json"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/schemam.tm.hxl.csv"
           }
         ]
       }

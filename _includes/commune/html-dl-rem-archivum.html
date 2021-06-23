@@ -76,6 +76,19 @@
             {%- endfor %}
           {% endif %}
 
+          {%- if rem.datum.archivum.schemam.tm %}
+            <dt>
+              {% _🗣️ translationem_memoriam_nomen 🗣️_ %}
+            </dt>
+            {% for rem2 in rem.datum.archivum.schemam.tm %}
+            <dd>
+              <a href="{{ rem2.iri }}" class="btn btn-secondary">
+                {{ rem2.nomen | default: rem2.iri }}
+              </a>
+            </dd>
+            {%- endfor %}
+          {% endif %}
+
         {% endif %}
       </dl>
     </dd>
