@@ -10,8 +10,10 @@ I18N_إختبار_טעסט_测试_테스트_испытание_I18N,,2,I18N,I18N
 I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,Q3634986,2,I18N,I18N,०१२३४५६७८९,〇一二三四五六七八九十百千万亿,-1+2/3*4,٩٨٧٦٥٤٣٢١٠,零壹贰叁肆伍陆柒捌玖拾佰仟萬億,I18N,,"I,V, X, L, C, D, M","1, 2, 3, 4, 5, 6, 7, 8, 9","1, 2, 3, 4, 5, 6, 7, 8, 9, 10|ūnum, duo, tria, quattuor, quīnque, sex, septem, octō, novem, decem","um, dois, três, quatro, cinco, seis, sete, oito, nove, dez","1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",,,∅,"०, १, २, ३, ४, ५, ६, ७, ८, ९",∅
 linguam_ego_summarius,,1,L10N,,linguam,,,,ego,summarius,,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,Idioma español (Alfabeto latino),∅,,∅,हिन्दी भाषा (देवनागरी लिपि),∅
 ISO_639-3_nomen,,1,,,ISO,639-3,,,,nomen,,ISO 639-3,∅,ISO 639-3,∅,ISO 639-3,∅,ISO 639-3,∅,الأيزو ٣٦٩-٣,∅,ISO 639-3,∅
+ISO_639-3_titulum,,1,,,ISO,639-3,,,,titulum,,,∅,ISO 639-3: Códigos para a representação de nomes de idiomas – Parte 3: códigos Alpha-3 para cobertura abrangente de idiomas,∅,ISO 639-3: Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages,∅,ISO 639-3,∅,الأيزو ٣٦٩-٣,∅,ISO 639-3,∅
 ISO_639-3_slug,,1,,,ISO,639-3,,,,slug,,ISO-639-3,∅,ISO-639-3,∅,ISO-639-3,∅,ISO-639-3,∅,الأيزو-٣٦٩-٣,∅,ISO-639-3,∅
-ISO_639-3_summarius,,1,,,ISO,639-3,,,,summarius,,,∅,Conjuntos de códigos para um número de sistemas de escrita – Parte 3:códigos Alpha-3 para cobertura abrangente de idiomas,∅,Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages,∅,,∅,,∅,,∅
+ISO_639-3_situs_interretialis_slug,,1,,,ISO,639-3,,,situs_interretialis,slug,,ISO-639-3,∅,iso-639-3-conjuntos-de-codigos-nomes-de-idiomas,∅,iso-639-3-codes-for-the-representation-of-names-of-languages ,∅,iso-639-3,∅,الأيزو-٣٦٩-٣,∅,ISO-639-3,∅
+ISO_639-3_summarius,,1,,,ISO,639-3,,,,summarius,,,∅,Códigos para a representação de nomes de idiomas – Parte 3: códigos Alpha-3 para cobertura abrangente de idiomas,∅,Codes for the representation of names of languages – Part 3: Alpha-3 code for comprehensive coverage of languages,∅,,∅,,∅,,∅
 ISO_639-3_optionem_Id_summarius,,1,,,ISO,639-3,optionem,Id,,summarius,,,∅,O identificador ISO 639-3 de três letras,∅,The three-letter ISO 639-3 identifier,∅,,∅,,∅,,∅
 ISO_639-3_optionem_Id_exemplum,,1,,,ISO,639-3,optionem,Id,,exemplum,,lat,∅,por,∅,eng,∅,spa,∅,arb,∅,,∅
 ISO_639-3_optionem_Part2B_summarius,,1,,,ISO,639-3,optionem,Part2B,,summarius,,,∅,"Identificador equivalente ISO 639-2 do conjunto de códigos de aplicativos bibliográficos, se houver",∅,"Equivalent ISO 639-2 identifier of the bibliographic applications code set, if there is one",∅,,∅,,∅,,∅
@@ -34,9 +36,11 @@ ISO_639-3_optionem_I_Id_summarius,,1,,,ISO,639-3,optionem,I_Id,,summarius,,,∅,
 ISO_639-3_optionem_I_Id_exemplum,,1,,,ISO,639-3,optionem,I_Id,,exemplum,,∅,∅,∅,∅,∅,∅,,∅,arb,∅,,
 ISO_639-3_optionem_I_Status_summarius,,1,,,ISO,639-3,optionem,I_Status,,summarius,,,∅,A (active) or R (retired) indicando o status do elemento de código individual,∅,A (active) or R (retired) indicating the status of the individual code element,∅,,∅,,∅,,
 ISO_639-3_optionem_I_Status_exemplum,,1,,,ISO,639-3,optionem,I_Status,,exemplum,,∅,∅,∅,∅,∅,∅,,∅,A,∅,,
-ISO_15924_nomen,Q16866,1,,,ISO,15924,,,,nomen,,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,الأيزو ١٥٩٢٤,∅,,ISO 15924
-ISO_15924_slug,Q16866,1,,,ISO,15924,,,,slug,,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,الأيزو-١٥٩٢٤,∅,,ISO-15924
-ISO_15924_summarius,Q16866,1,,,ISO,15924,,,,summarius,,,∅,ISO 15924: Códigos para a representação de nomes de sistemas de escrita,∅,ISO 15924: Codes for the representation of names of scripts,∅,,∅,,∅,,∅
+ISO_15924_nomen,Q16866,1,,,ISO,15924,,,,nomen,,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,ISO 15924,∅,الأيزو ١٥٩٢٤,∅,ISO 15924,∅
+ISO_15924_titulum,Q16866,1,,,ISO,15924,,,,titulum,,,∅,ISO 15924: Códigos para a representação de nomes de sistemas de escrita,∅,ISO 15924: Codes for the representation of names of writing systems,∅,,∅,الأيزو ١٥٩٢٤,∅,,
+ISO_15924_slug,Q16866,1,,,ISO,15924,,,,slug,,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,ISO-15924,∅,الأيزو-١٥٩٢٤,∅,ISO-15924,∅
+ISO_15924_situs_interretialis_slug,Q16866,1,,,ISO,15924,,,situs_interretialis,slug,,iso-15924,∅,ISO-15924-codigos-sistemas-de-escrita,∅,ISO-15924-codes-writing-systems,∅,iso-15924,∅,الأيزو-١٥٩٢٤,∅,iso-15924,∅
+ISO_15924_summarius,Q16866,1,,,ISO,15924,,,,summarius,,,∅,Códigos para a representação de nomes de sistemas de escrita,∅,ISO 15924: Codes for the representation of names of scripts,∅,,∅,,∅,,∅
 ISO_15924_optionem_Code_summarius,,1,,,ISO,15924,optionem,Code,,summarius,,,∅,O código no formato Latin Básico (bloco Unicode) para o identificador ISO 15924,∅,The 4 bytes Basic Latin (Unicode block) code for the ISO 15924 identifier,∅,,∅,,∅,,∅
 ISO_15924_optionem_Code_exemplum,,1,,,ISO,15924,optionem,Code,,exemplum,,Latn,∅,Latn,∅,Latn,∅,Latn,∅,Arab,∅,Deva,∅
 ISO_15924_optionem_numerum_summarius,,1,,,ISO,15924,optionem,numerum,,summarius,,,∅,O código identificador para o ISO 15924 expressado em linguagem neutra para sistemas de escrita expressado em números de 3 dígitos em sistema numérico decimal,∅,The writing system neutral identifier code for ISO 15924 using 3 digit decimal-radix numbers,∅,,∅,,∅,,∅

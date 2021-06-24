@@ -8,6 +8,7 @@
     "gid": "UN",
     "lid": "HTCDS",
     "nomen": "{% _🗣️ UN_codicem_anglicum_IOM_HTCDS_nomen 🗣️_ %}",
+    "titulum": "{% _🗣️ UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_nomen 🗣️_ %}",
     "summarius": "{% _🗣️ UN_codicem_anglicum_IOM_HTCDS_summarius 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -36,8 +37,10 @@
     "typum": "schemam",
     "gid": "UN",
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝por-Latn📝 schemam_datum_nomen 📝por-Latn📝 🗣️_ %}: {% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝por-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝por-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -102,8 +105,10 @@
     "typum": "schemam",
     "gid": "UN",
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝eng-Latn📝 schemam_datum_nomen 📝eng-Latn📝 🗣️_ %}: {% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝eng-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝eng-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -168,8 +173,10 @@
     "typum": "schemam",
     "gid": "UN",
     "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 schemam_datum_nomen 📝spa-Latn📝 🗣️_ %}: {% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝spa-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝spa-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -234,8 +241,10 @@
     "typum": "schemam",
     "gid": "UN",
     "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 schemam_datum_nomen 📝arb-Arab📝 🗣️_ %}: {% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝arb-Arab📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝arb-Arab📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -300,8 +309,10 @@
     "typum": "schemam",
     "gid": "UN",
     "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 schemam_datum_nomen 📝hin-Deva📝 🗣️_ %}: {% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝hin-Deva📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝hin-Deva📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -369,6 +380,8 @@
     "lid": "ISO-639-3",
     "nomen": "{% _🗣️ ISO_639-3_nomen 🗣️_ %}",
     "summarius": "{% _🗣️ ISO_639-3_summarius 🗣️_ %}",
+    "slug_permanens": "ISO-639-3",
+    "slug_situs_interretialis": "ISO-639-3",
     "situs_interretialis": {
       "referens_officinale": [
         {
@@ -413,7 +426,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 schemam_datum_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}: {% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_situs_interretialis_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_639-3_summarius 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -491,7 +506,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 schemam_datum_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}: {% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_situs_interretialis_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_639-3_summarius 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -569,7 +586,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 schemam_datum_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}: {% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_situs_interretialis_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_639-3_summarius 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -648,7 +667,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 schemam_datum_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}: {% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_situs_interretialis_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_639-3_summarius 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -727,7 +748,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 schemam_datum_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}: {% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_situs_interretialis_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_639-3_summarius 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -807,7 +830,9 @@
     "lid": "ISO-15924",
     "lid_l10n": "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝und-Zyyy📝 schemam_datum_nomen 📝und-Zyyy📝 🗣️_ %}: {% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝und-Zyyy📝 ISO_15924_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}",
+    "slug_permanens": "ISO-15924",
+    "slug_situs_interretialis": "ISO-15924",
     "summarius": "{% _🗣️ 📝und-Zyyy📝 ISO_15924_summarius 📝und-Zyyy📝 🗣️_ %}",
     "summarius_l10n": "{% _🗣️ ISO_15924_summarius 🗣️_ %}",
     "situs_interretialis": {
@@ -859,7 +884,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝por-Latn📝 schemam_datum_nomen 📝por-Latn📝 🗣️_ %}: {% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝por-Latn📝 ISO_15924_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 ISO_15924_situs_interretialis_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝por-Latn📝 ISO_15924_summarius 📝por-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -921,7 +948,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝eng-Latn📝 schemam_datum_nomen 📝eng-Latn📝 🗣️_ %}: {% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝eng-Latn📝 ISO_15924_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 ISO_15924_situs_interretialis_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝eng-Latn📝 ISO_15924_summarius 📝eng-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -983,7 +1012,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 schemam_datum_nomen 📝spa-Latn📝 🗣️_ %}: {% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝spa-Latn📝 ISO_15924_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 ISO_15924_situs_interretialis_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝spa-Latn📝 ISO_15924_summarius 📝spa-Latn📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -1046,7 +1077,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 schemam_datum_nomen 📝arb-Arab📝 🗣️_ %}: {% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝arb-Arab📝 ISO_15924_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 ISO_15924_situs_interretialis_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝arb-Arab📝 ISO_15924_summarius 📝arb-Arab📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
@@ -1109,7 +1142,9 @@
     "gid": "XZ",
     "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 schemam_datum_nomen 📝hin-Deva📝 🗣️_ %}: {% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_15924_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝hin-Deva📝 ISO_15924_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 ISO_15924_situs_interretialis_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
     "summarius": "{% _🗣️ 📝hin-Deva📝 ISO_15924_summarius 📝hin-Deva📝 🗣️_ %}",
     "situs_interretialis": {
       "referens_officinale": [
