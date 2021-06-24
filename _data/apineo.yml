@@ -34,11 +34,12 @@
 # noindex -> x-temporarium.noindex
 # openapi_filum -> x-temporarium.openapi_filum
 
-### [linguam]/api/UN ___________________________________________________________
+#### [linguam]/api/UN __________________________________________________________
 
-## -----------------------------------------------------------------------------
+### /mul-Zyyy/api/UN/HDX/ ------------------------------------------------------
 - xdefallo: /mul-Zyyy/api/UN/HDX/
   xdefallo_est: 1
+  uid: /mul-Zyyy/api/UN/HDX/
   linguam: mul-Zyyy  # mul-Zyyy
   typum: api
   gid: UN
@@ -77,112 +78,143 @@
         htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         openapi_filum2: "/api/UN/HDX/eng/openapi.yaml" # TODO: generalize it
 
-# ## -----------------------------------------------------------------------------
-# - xdefallo: /mul-Zyyy/api/UN/reliefweb/
-#   xdefallo_est: 1
-#   linguam: mul-Zyyy  # mul-Zyyy
-#   typum: api
-#   gid: UN
-#   lid: reliefweb # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-#   title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}"
-#   # noindex: true
- 
-# - xdefallo: /mul-Zyyy/api/UN/reliefweb/
-#   linguam: eng-Latn
-#   typum: api
-#   gid: UN
-#   lid: '{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
-#   # title: ReliefWeb - Informing humanitarians worldwide
-#   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}'
-#   # noindex: true
+### /mul-Zyyy/api/UN/reliefweb/ ------------------------------------------------
+- xdefallo: /mul-Zyyy/api/UN/reliefweb/
+  xdefallo_est: 1
+  uid: /mul-Zyyy/api/UN/reliefweb/
+  linguam: mul-Zyyy  # mul-Zyyy
+  typum: api
+  gid: UN
+  lid: reliefweb # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
+  title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_reliefweb_titulum 📝eng-Latn📝 🗣️_ %}"
+  # @deprecated jekyll-page
+  jekyll-page:
+    linguam: "mul-Zyyy"
+    lang: "mul"
+    htmldir: "auto"
 
-# - xdefallo: /mul-Zyyy/api/UN/reliefweb/
-#   linguam: por-Latn
-#   typum: api
-#   gid: UN
-#   lid: '{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
-#   # title: ReliefWeb - Informing humanitarians worldwide
-#   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_reliefweb_titulum 📝por-Latn📝 🗣️_ %}'
-#   opus_in_progressu: true # deprecated, Use experimentum_est
-#   experimentum_est: true
-#   # noindex: true
+- farmulam:
+    commendandum:
+      translationem: []
+    structuram:
+      xdefallo: /mul-Zyyy/api/UN/reliefweb/
+      # Exemplum: /eng-Latn/api/UN/humanitarian-data-exchange/
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
+      # Exemplum: por-Latn
+      linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      typum: api
+      gid: UN
+      # Exemplum: humanitarian-data-exchange
+      lid: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: The Humanitarian Data Exchange API
+      nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_reliefweb_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: HDX - The Humanitarian Data Exchange API
+      titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_reliefweb_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
+      # noindex: true
 
-# ## -----------------------------------------------------------------------------
-# - xdefallo: /mul-Zyyy/api/UN/CODV2API/
-#   xdefallo_est: 1
-#   linguam: mul-Zyyy  # mul-Zyyy
-#   typum: api
-#   gid: UN
-#   lid: CODV2API # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-#   title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}"
-#   # noindex: true
-#   opus_in_progressu: true # deprecated, Use experimentum_est
-#   experimentum_est: true
+      # @deprecated jekyll-page
+      jekyll-page:
+        linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        openapi_filum2: "/api/UN/reliefweb/eng/openapi.yaml" # TODO: generalize it
 
-# - xdefallo: /mul-Zyyy/api/UN/CODV2API/
-#   linguam: eng-Latn
-#   typum: api
-#   gid: UN
-#   # lid: common-operational-datasets-api
-#   lid: '{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}'
-#   # lid_l10n_crudum: 'Hapi_api_UN_HDX_slug'
-#   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml
-#   # title: Common Operational Datasets Services 2 (COD Services)
-#   title: '{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}'
-#   # noindex: true
-#   opus_in_progressu: true # deprecated, Use experimentum_est
-#   experimentum_est: true
+### /mul-Zyyy/api/UN/CODV2API/ -------------------------------------------------
+- xdefallo: /mul-Zyyy/api/UN/CODV2API/
+  xdefallo_est: 1
+  uid: /mul-Zyyy/api/UN/CODV2API/
+  linguam: mul-Zyyy  # mul-Zyyy
+  typum: api
+  gid: UN
+  lid: CODV2API # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
+  title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_CODV2API_titulum 📝eng-Latn📝 🗣️_ %}"
+  # noindex: true
+  experimentum_est: true
+  # @deprecated jekyll-page
+  jekyll-page:
+    linguam: "mul-Zyyy"
+    lang: "mul"
+    htmldir: "auto"
 
-# - xdefallo: /mul-Zyyy/api/UN/CODV2API/
-#   linguam: por-Latn
-#   typum: api
-#   gid: UN
-#   # lid: common-operational-datasets-api
-#   lid: '{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/UN/CODV2API/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
-#   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_UN_CODV2API_titulum 📝por-Latn📝 🗣️_ %}'
-#   opus_in_progressu: true # deprecated, Use experimentum_est
-#   experimentum_est: true
-#   # noindex: true
+- farmulam:
+    commendandum:
+      translationem: []
+    structuram:
+      xdefallo: /mul-Zyyy/api/UN/CODV2API/
+      # Exemplum: /eng-Latn/api/UN/CODV2API/
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
+      # Exemplum: por-Latn
+      linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      typum: api
+      gid: UN
+      # Exemplum: CODV2API
+      lid: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: Common Operational Datasets Services 2
+      nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_CODV2API_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: COD Services: Common Operational Datasets Services 2
+      titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_CODV2API_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
+      # noindex: true
+      experimentum_est: true
 
-# ### [linguam]/api/ZX ___________________________________________________________
+      # @deprecated jekyll-page
+      jekyll-page:
+        linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        openapi_filum2: "/api/UN/CODV2API/eng/openapi.yaml" # TODO: generalize it
 
-# ## -----------------------------------------------------------------------------
-# - xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
-#   xdefallo_est: 1
-#   linguam: mul-Zyyy  # mul-Zyyy
-#   typum: api
-#   gid: XZ
-#   lid: HXL-Proxy # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-#   title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}"
-#   # noindex: true
 
-# - xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
-#   linguam: eng-Latn
-#   typum: api
-#   gid: XZ
-#   lid: '{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml
-#   # title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
-#   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}'
-#   # noindex: true
+#### [linguam]/api/XZ __________________________________________________________
 
-# - xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
-#   linguam: por-Latn
-#   typum: api
-#   gid: XZ
-#   lid: '{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/XZ/HXL-Proxy/eng/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
-#   # title: HXL-Proxy - Proxy of the Humanitarian Exchange Language
-#   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝por-Latn📝 🗣️_ %}'
-#   # opus_in_progressu: true
-#   # noindex: true
+### /mul-Zyyy/api/XZ/HXL-Proxy/ ------------------------------------------------
+- xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
+  xdefallo_est: 1
+  uid: /mul-Zyyy/api/XZ/HXL-Proxy/
+  linguam: mul-Zyyy  # mul-Zyyy
+  typum: api
+  gid: XZ
+  lid: HXL-Proxy # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
+  title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_XZ_HXL-Proxy_titulum 📝eng-Latn📝 🗣️_ %}"
+  # noindex: true
+  # @deprecated jekyll-page
+  jekyll-page:
+    linguam: "mul-Zyyy"
+    lang: "mul"
+    htmldir: "auto"
 
-# ### [linguam]/api/BR ___________________________________________________________
+- farmulam:
+    commendandum:
+      translationem: []
+    structuram:
+      xdefallo: /mul-Zyyy/api/XZ/HXL-Proxy/
+      # Exemplum: /eng-Latn/api/XZ/HXL-Proxy/
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
+      # Exemplum: eng-Latn
+      linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      typum: api
+      gid: XZ
+      # Exemplum: HXL-Proxy
+      lid: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: Common Operational Datasets Services 2
+      nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: HXL-Proxy - Proxy of the Humanitarian Exchange Language
+      titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # noindex: true
+      # experimentum_est: true
 
-# ## -----------------------------------------------------------------------------
+      # @deprecated jekyll-page
+      jekyll-page:
+        linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        openapi_filum2: "/api/XZ/HXL-Proxy/eng/openapi.yaml" # TODO: generalize it
+
+
+#### [linguam]/api/BR __________________________________________________________
+
+### /mul-Zyyy/api/BR/portais-ckan-brasil/ --------------------------------------
 # - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
 #   xdefallo_est: 1
 #   linguam: mul-Zyyy  # mul-Zyyy
@@ -192,69 +224,87 @@
 #   title: "Alternātīvum pāginam: {% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}"
 #   # noindex: true
 
-# - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
-#   linguam: eng-Latn
-#   typum: api
-#   gid: BR
-#   lid: '{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/BR/brazilian-ckan-portals/eng/openapi.yaml
-#   # title: Brazilian CKAN Open Data Portals
-#   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝eng-Latn📝 🗣️_ %}'
-#   description: |
-#     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
-#   # noindex: true
+- xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
+  xdefallo_est: 1
+  uid: /mul-Zyyy/api/BR/portais-ckan-brasil/
+  linguam: mul-Zyyy  # mul-Zyyy
+  typum: api
+  gid: BR
+  lid: HXL-Proxy # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
+  title: "Alternātīvum pāginam: {% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝por-Latn📝 🗣️_ %}"
+  # noindex: true
+  # @deprecated jekyll-page
+  jekyll-page:
+    linguam: "mul-Zyyy"
+    lang: "mul"
+    htmldir: "auto"
 
-# - xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
-#   linguam: por-Latn
-#   typum: api
-#   gid: BR
-#   lid: '{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/BR/portais-ckan-brasil/por/openapi.yaml
-#   # title: Portais CKAN de dados abertos do Brasil
-#   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-ckan-brasil_titulum 📝por-Latn📝 🗣️_ %}'
-#   description: |
-#     Discussão em https://github.com/HXL-CPLP/COD-Services-API-doc/issues/4
-#   # noindex: true
+- farmulam:
+    commendandum:
+      translationem: []
+    structuram:
+      xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
+      # Exemplum: /por-Latn/api/BR/portais-ckan-brasil/
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/BR/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
+      # Exemplum: eng-Latn
+      linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      typum: api
+      gid: BR
+      # Exemplum: portais-ckan-brasil
+      lid: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: Portais CKAN de dados abertos no Brasil
+      nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: Portais CKAN de dados abertos no Brasil
+      titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # noindex: true
+      # experimentum_est: true
 
-# ## -----------------------------------------------------------------------------
-# - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
-#   xdefallo_est: 1
-#   linguam: mul-Zyyy  # mul-Zyyy
-#   typum: api
-#   gid: BR
-#   lid:  portais-arcgis-brasil # _[por] xdefallo_est: 1, logo lid é forçado manualmente [por]_
-#   title: "Alternātīvum pāginam: {% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}"
-#   # noindex: true
+      # @deprecated jekyll-page
+      jekyll-page:
+        linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        openapi_filum2: "/api/BR/brazilian-ckan-portals/eng/openapi.yaml" # TODO: generalize it
 
-# - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
-#   linguam: eng-Latn
-#   typum: api
-#   gid: BR
-#   lid: '{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml # TODO: _[por] Criar uma versão em português [por]_
-#   # title: Portais ArcGIS de dados abertos do Brasil
-#   title: '{% _🗣️ 📝eng-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝eng-Latn📝 🗣️_ %}'
-#   # noindex: true
 
-# - xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
-#   linguam: por-Latn
-#   typum: api
-#   gid: BR
-#   lid: '{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}'
-#   openapi_filum: /api/BR/portais-arcgis-brasil/por/openapi.yaml
-#   # title: Portais ArcGIS de dados abertos do Brasil
-#   title: '{% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}'
-#   # noindex: true
-#   # nomen:
-#   # descriptionen:
+### /mul-Zyyy/api/BR/portais-arcgis-brasil/ ------------------------------------
+- xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
+  xdefallo_est: 1
+  uid: /mul-Zyyy/api/BR/portais-arcgis-brasil/
+  linguam: mul-Zyyy  # mul-Zyyy
+  typum: api
+  gid: BR
+  lid:  portais-arcgis-brasil
+  title: "Alternātīvum pāginam: {% _🗣️ 📝por-Latn📝 Hapi_api_BR_portais-arcgis-brasil_titulum 📝por-Latn📝 🗣️_ %}"
+  # @deprecated jekyll-page
+  jekyll-page:
+    linguam: "mul-Zyyy"
+    lang: "mul"
+    htmldir: "auto"
 
-# # Note: jekyll-datapage-generator.rb needs fix for non-latin alphabet
-# # - gid: api/UN
-# #   lid: ReliefWeb
-# #   linguam: eng-Latn
-# #   openapi_filum: /api/UN/reliefweb/eng/openapi.yaml
-# #   slug: "اختبارات"
-# #   noindex: true
-# #   # nomen: Humanitarian Data Exchange
-# #   # nomen:
-# #   # descriptionen:
+- farmulam:
+    commendandum:
+      translationem: []
+    structuram:
+      xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
+      # Exemplum: /por-Latn/api/BR/portais-arcgis-brasil/
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/BR/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
+      # Exemplum: por-Latn
+      linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      typum: api
+      gid: BR
+      # Exemplum: portais-ckan-brasil
+      lid: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: Portais CKAN de dados abertos no Brasil
+      nomen: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_nomen 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # Exemplum: Portais CKAN de dados abertos no Brasil
+      titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+      # noindex: true
+      # experimentum_est: true
+
+      # @deprecated jekyll-page
+      jekyll-page:
+        linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
+        openapi_filum2: "/api/BR/brazilian-ckan-portals/eng/openapi.yaml" # TODO: generalize it
