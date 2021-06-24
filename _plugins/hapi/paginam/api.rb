@@ -170,6 +170,15 @@ module Hapi
       @datum['jekyll-page']['openapi_filum2']
     end
 
+    def tags
+      # @see Utilitatem.tags_de_api
+      [
+        'api',
+        "api-linguam-#{linguam}",
+        "api-trivium-#{trivium}"
+      ]
+    end
+
     # TODO: remove obsolete parts
     # TODO: Hapi::HapiPaginamCommune.titulum?
     def titulum

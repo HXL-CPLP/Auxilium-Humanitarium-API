@@ -30,7 +30,7 @@ exclude:
   - "api/*/*/*/mysql-schema/*.md"
   - "api/*/*/*/mysql-schema/*.md"
   - api/README.md
-  - api/UN/README.md
+  - api/UN/README.md_data/expandendum/api.json
   - api/UN/CODV1API/README.md
   - api/UN/reliefweb/README.md
   - api/UN/UNdata/README.md
@@ -48,6 +48,8 @@ exclude:
   - _data/referens.l10n.json
   - _data/schema.l10n.json
   - _data/expandendum/
+  # - _data/expandendum/api.json
+  # - _data/expandendum/schemam.json
   - _data/tm/
   - _assets/
 

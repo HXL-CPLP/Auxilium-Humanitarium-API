@@ -51,7 +51,8 @@ module Hapi
     module_function
 
     def initiale_after_reset(site)
-      api_fontem_path = File.join(site.source, '/_data/api.yml')
+      # api_fontem_path = File.join(site.source, '/_data/api.yml')
+      api_fontem_path = File.join(site.source, '/_data/apineo.yml')
       schemam_fontem_path = File.join(site.source, '/_data/schemam.yml')
       hapi_referens_path = File.join(site.source, '/_data/referens.yml')
       schemam_expandendum_path = File.join(site.source, '/_data/expandendum/schemam.json')
