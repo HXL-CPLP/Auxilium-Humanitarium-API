@@ -5,10 +5,10 @@
 <h2 id="agnitionem">
   {% _🗣️ commune_agnitionem_et_gratiam_nomen 🗣️_ %}
 </h2>
+
 <h3 id="agnitionem-voluntarius">
   {% _🗣️ commune_voluntarius_auxilio_tuo_nomen 🗣️_ %}
 </h3>
-
 
 <ul>
   {% for humanum in site.data.agnitionem.humanum -%}
@@ -66,13 +66,37 @@
 <ul>
 {% for communitatem in site.data.agnitionem.communitatem -%}
   <li>
-  {%- if communitatem.iri -%}
-    <a href="{{ communitatem.iri }}">
-      {{ communitatem.nomen.baptismum }}
-    </a>
-  {%- else -%}
-    {{ communitatem.nomen.baptismum }}
-  {%- endif -%}
+    <details>
+      <summary>{{ communitatem.nomen.baptismum }}</summary>
+      <ul>
+        <li>
+          <a rel="external" href="{{ communitatem.iri }}">
+          {{ communitatem.iri }}
+          </a>
+        </li>
+        {%- if communitatem.gitee and communitatem.gitee != communitatem.iri -%}
+          <li>
+            <a rel="external" href="{{ communitatem.gitee }}">
+            {{ communitatem.gitee }}
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if communitatem.github and communitatem.github != communitatem.iri -%}
+          <li>
+            <a rel="external" href="{{ communitatem.github }}">
+            {{ communitatem.github }}
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if communitatem.linkedin and communitatem.linkedin != communitatem.iri -%}
+          <li>
+            <a rel="external" href="{{ communitatem.linkedin }}">
+            {{ communitatem.linkedin }}
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </details>
   </li>
 {%- endfor %}
 </ul>
