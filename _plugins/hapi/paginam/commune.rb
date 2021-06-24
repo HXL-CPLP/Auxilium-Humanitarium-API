@@ -35,6 +35,8 @@ module Hapi
       opus_in_progressu
       path
       slug
+      slug_permanens
+      slug_situs_interretialis
       summarius
       tags
       titulum
@@ -251,6 +253,14 @@ module Hapi
 
     def slug
       @datum['lid']
+    end
+
+    def slug_permanens
+      @datum['slug_permanens'] || @datum['lid']
+    end
+
+    def slug_situs_interretialis
+      @datum['slug_situs_interretialis'] || @datum['slug_permanens'] || @datum['lid']
     end
 
     # _[eng] Returns the object as a debug String [eng]_

@@ -66,6 +66,9 @@ module Hapi
       html_body_class
       nomen
       summarius
+      slug
+      slug_permanens
+      slug_situs_interretialis
       opus_in_progressu
       xdefallo
       xdefallo_est

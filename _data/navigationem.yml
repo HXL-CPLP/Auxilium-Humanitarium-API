@@ -49,9 +49,6 @@ principale:
       - nomen: <span lang="en" dir="ltr">UN P</span>
         debile: true
 
-      - nomen: <span lang="en" dir="ltr">UN HTCDS</span>
-        debile: true
-
   - nomen: '{% _🗣️ Hapi_locum_001_nomen_emoji 🗣️_ %}'
     iri: "#"
     descendens:

@@ -1,6 +1,10 @@
 # _config_dev.yml
 url: ""
 
+# This will use Linux temp dir instead of _site folder.
+# Can speed rebuild times. Not really necessary.
+destination: /tmp/jekyll_site/
+
 # @see https://jekyllrb.com/docs/configuration/liquid/
 liquid:
   # error_mode: warn

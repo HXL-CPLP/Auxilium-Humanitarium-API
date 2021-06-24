@@ -49,60 +49,6 @@ module Hapi
     end
   end
 
-  # Subclass of `Jekyll::Page` with custom method definitions.
-  class ArchivumSimplex < Jekyll::Page
-    attr_accessor :archivum_extensionem
-
-    # Attributes for Liquid templates
-    ATTRIBUTES_FOR_LIQUID = %w[
-      archivum_extensionem
-      content
-      dir
-      excerpt
-      name
-      path
-      url
-    ].freeze
-
-    def initialize(site, archivum, schemam) # rubocop:disable Metrics/MethodLength,Lint/MissingSuper,Metrics/AbcSize
-      template = 'archivum-simplex'
-      template_ext = '.html'
-
-      @site = site                                         # the current site instance.
-      @base = site.source                                  # path to the source directory.
-      @dir  = File.dirname(archivum['objectivum'])            # the directory the page will reside in.
-      @ext  = File.extname(archivum['objectivum'])            # the extension.
-      @basename = File.basename(archivum['objectivum'], '.*') # filename without the extension.
-      @name = File.basename(archivum['objectivum'])           # basically @basename + @ext.
-
-      @archivum_extensionem = @ext
-      # puts @ext
-
-      template_textum = File.read(Jekyll::PathManager.join(@base, archivum['fontem']))
-
-      base_path = @site.layouts[template].path
-      base_path.slice! @site.layouts[template].name
-
-      read_yaml(base_path, "#{template}#{template_ext}")
-
-      # _[por] Não estamos usando Jekyll defaults [por]_
-      data.default_proc = proc do |_, key|
-        site.frontmatter_defaults.find(relative_path, type, key)
-      end
-
-      # @archivum_fundationem = template_textum
-      @content = template_textum
-      # @linguam = schemam['linguam']
-      data['linguam'] = schemam['linguam']
-
-      # data['archivum_fundationem'] = template_textum
-
-      process(@name)
-
-      Jekyll::Hooks.trigger :pages, :post_init, self
-    end
-  end
-
   require_relative './commune'
 
   # _[eng] Subclass of `Hapi::HapiCommunePaginam` with custom method definitions. [eng]_
@@ -127,6 +73,8 @@ module Hapi
       opus_in_progressu
       path
       slug
+      slug_permanens
+      slug_situs_interretialis
       summarius
       tags
       titulum

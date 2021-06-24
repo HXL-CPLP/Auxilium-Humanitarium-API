@@ -64,6 +64,8 @@ module Hapi
       opus_in_progressu
       path
       slug
+      slug_permanens
+      slug_situs_interretialis
       summarius
       tags
       titulum
