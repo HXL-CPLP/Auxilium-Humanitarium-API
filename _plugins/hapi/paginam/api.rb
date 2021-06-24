@@ -63,6 +63,7 @@ module Hapi
       gid
       uid
       titulum
+      title
       html_body_class
       nomen
       summarius

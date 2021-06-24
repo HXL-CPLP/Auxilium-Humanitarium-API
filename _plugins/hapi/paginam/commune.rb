@@ -40,6 +40,7 @@ module Hapi
       summarius
       tags
       titulum
+      title
       trivium
       uid
       url
@@ -216,18 +217,14 @@ module Hapi
       ]
     end
 
-    # # TODO: remove obsolete parts
-    # def titulum
-    #   # {% _🗣️ schemam_datum_nomen 🗣️_ %}: {{ schemam.nomen }}
-    #   prefix = Hapi::HSD.l10n_simplex('schemam_datum_nomen', linguam)
-    #   # @titulum || @nomen || @title || @datum['summarius']
-
-    #   "#{prefix} : #{nomen}"
-    # end
 
     def titulum
       @datum['titulum'] || @datum['nomen']
     end
+
+    # _[eng-Latn] Since we still using Jekyll-SEO-tag, we need to define title [eng-Latn]_
+    # _[por-Latn] Como ainda estamos usando o Jekyll-SEO-tag, é necessário definir title [por-Latn]_
+    alias title titulum
 
     # Trivia
     # - 'trivium'

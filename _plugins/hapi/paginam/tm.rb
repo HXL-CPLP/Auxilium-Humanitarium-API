@@ -69,6 +69,7 @@ module Hapi
       summarius
       tags
       titulum
+      title
       trivium
       uid
       url

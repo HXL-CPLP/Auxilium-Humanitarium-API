@@ -51,19 +51,25 @@ module Hapi
     module_function
 
     def initiale_after_reset(site)
+      api_fontem_path = File.join(site.source, '/_data/api.yml')
       schemam_fontem_path = File.join(site.source, '/_data/schemam.yml')
       hapi_referens_path = File.join(site.source, '/_data/referens.yml')
       schemam_expandendum_path = File.join(site.source, '/_data/expandendum/schemam.json')
+      api_expandendum_path = File.join(site.source, '/_data/expandendum/api.json')
 
       api_referens = YAML.load_file(hapi_referens_path)
+      api_fontem = YAML.load_file(api_fontem_path)
       schemam_fontem = YAML.load_file(schemam_fontem_path)
+      api_expandendum = Hapi::HSD.expandendum_api_archivum(api_fontem, api_referens['schemam'])
       schemam_expandendum = Hapi::HSD.expandendum_schemam_archivum(schemam_fontem, api_referens['schemam'])
       # puts "initiale_after_reset #{site.source}"
       # puts "initiale_after_reset #{schemam_fontem_path} #{schemam_expandendum_path} #{api_referens['schemam']}"
+      File.open(api_expandendum_path, 'w') do |f|
+        f.write(JSON.pretty_generate(api_expandendum))
+      end
       File.open(schemam_expandendum_path, 'w') do |f|
         f.write(JSON.pretty_generate(schemam_expandendum))
       end
-
       # File.write("public/temp.json",tempHash.to_json)
 
       # puts thing['schemam'].inspect
@@ -212,6 +218,60 @@ module Hapi
     def data!(data)
       idx = Jekyll.sites.length - 1
       Jekyll.sites[idx].data = data
+    end
+
+    # _[mul-Zyyy] _data/api.yml => _data/expandendum/api.json [mul-Zyyy]_
+    # _[lat-Latn] Expandendum schēmam archīvum [lat-Latn]_
+    def expandendum_api_archivum(api_collectionem, referens_api)
+      resultatum = []
+      api_collectionem.each do |item|
+        if item['farmulam'].nil?
+          resultatum.append(item)
+        else
+          items = Hapi::HSD.expandendum_api_de_farmulam(item['farmulam'], referens_api)
+          resultatum.concat(items) unless items.empty?
+        end
+      end
+
+      resultatum
+    end
+
+    # _[lat-Latn] Expandendum schēmam de fōrmulam [lat-Latn]_
+    def expandendum_api_de_farmulam(schemam_farmulam, referens_api = {}) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
+      resultatum = []
+      ref = referens_api.dig('defallo', 'farmulam')
+
+      raise "[#{self.class.name}:#{__LINE__}] _data/referens.yml api.defallo.farmulam?" unless ref
+
+      # raise "[#{self.class.name}:#{__LINE__}] _data/referens.yml schemam.defallo?" unless ref['']
+
+      # puts ''
+
+      meta = ref.deep_merge(schemam_farmulam)
+      paginam_linguam = ref.dig('commendandum', 'paginam_linguam')
+      paginam_linguam_experimentum = ref.dig('commendandum', 'paginam_linguam_experimentum')
+
+      unless paginam_linguam
+        raise "[#{self.class.name}:#{__LINE__}] _data/referens.yml + _data/api.yml: paginam_linguam?"
+      end
+
+      paginam_linguam.each do |linguam|
+        # puts "TODO #{linguam}"
+        resultatum.append(
+          Hapi::HSD.convertendum_obiectum_linguam(meta['structuram'], "📝#{linguam}📝")
+        )
+      end
+
+      if paginam_linguam_experimentum # rubocop:disable  Style/SafeNavigation
+        paginam_linguam_experimentum.each do |linguam|
+          # puts "TODO #{linguam}"
+          rem = Hapi::HSD.convertendum_obiectum_linguam(meta['structuram'], "📝#{linguam}📝")
+          rem['experimentum_est'] = true
+          resultatum.append(rem)
+        end
+      end
+
+      resultatum
     end
 
     # _[mul-Zyyy] _data/schemam.yml => _data/expandendum/schemam.json [mul-Zyyy]_

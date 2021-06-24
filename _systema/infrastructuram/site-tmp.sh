@@ -51,4 +51,6 @@ if [ ! -d "${DESTDIR}" ]; then
     # exit 0
 fi
 
-# (... not finished)
+
+# ln -s /tmp/jekyll_site/ /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_site
+ln -s /tmp/jekyll_site/ "$DESTDIR"
