@@ -32,6 +32,17 @@ api_gid:
 schema_gid:
   - "XZ"
 
+api:
+  defallo:
+    farmulam:
+      commendandum:
+        paginam_linguam:
+          - por-Latn
+          - eng-Latn
+        # paginam_linguam_experimentum:
+        #   - spa-Latn
+        #   - arb-Arab
+        #   - hin-Deva
 schemam:
   defallo:
     farmulam:

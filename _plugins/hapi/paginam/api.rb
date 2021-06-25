@@ -31,7 +31,8 @@ module Hapi
 
       # @apis = Utilitatem.expandendum_api_datum(site.data['api'], site.data['referens'])
       @apis = Utilitatem.expandendum_api_datum(
-        site.data['l10n']['apil10n'],
+        site.data['l10n']['apil10n'], # versão antiga
+        # site.data['l10n']['apineol10n'], # versão nova
         site.data['l10n']['referensl10n']
       )
       # _[eng] We override site.data.api [eng]_
@@ -70,6 +71,7 @@ module Hapi
       slug
       slug_permanens
       slug_situs_interretialis
+      openapi_archivum
       opus_in_progressu
       xdefallo
       xdefallo_est
@@ -164,6 +166,11 @@ module Hapi
     # def keys
     #   ATTRIBUTES_FOR_LIQUID
     # end
+
+    def openapi_archivum
+      # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'
+      @datum['openapi_archivum']
+    end
 
     def openapi_filum
       # @datum['jekyll-page']['openapi_filum2'] || '<mark lang="la">Nulla openapi filum. Adiuva me 🥺</mark>'

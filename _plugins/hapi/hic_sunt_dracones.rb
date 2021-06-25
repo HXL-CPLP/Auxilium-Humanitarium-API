@@ -61,7 +61,7 @@ module Hapi
       api_referens = YAML.load_file(hapi_referens_path)
       api_fontem = YAML.load_file(api_fontem_path)
       schemam_fontem = YAML.load_file(schemam_fontem_path)
-      api_expandendum = Hapi::HSD.expandendum_api_archivum(api_fontem, api_referens['schemam'])
+      api_expandendum = Hapi::HSD.expandendum_api_archivum(api_fontem, api_referens['api'])
       schemam_expandendum = Hapi::HSD.expandendum_schemam_archivum(schemam_fontem, api_referens['schemam'])
       # puts "initiale_after_reset #{site.source}"
       # puts "initiale_after_reset #{schemam_fontem_path} #{schemam_expandendum_path} #{api_referens['schemam']}"

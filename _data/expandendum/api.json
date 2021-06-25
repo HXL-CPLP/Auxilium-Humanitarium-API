@@ -23,11 +23,11 @@
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/UN/HDX/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/HDX/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}"
     }
   },
   {
@@ -39,63 +39,12 @@
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/UN/HDX/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/HDX/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}"
     }
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/HDX/",
-    "uid": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_HDX_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/HDX/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/HDX/",
-    "uid": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_HDX_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_HDX_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/HDX/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/HDX/",
-    "uid": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_HDX_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_HDX_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_HDX_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/HDX/eng/openapi.yaml"
-    },
-    "experimentum_est": true
   },
   {
     "xdefallo": "/mul-Zyyy/api/UN/reliefweb/",
@@ -121,11 +70,11 @@
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/UN/reliefweb/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/reliefweb/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}"
     }
   },
   {
@@ -137,63 +86,12 @@
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/UN/reliefweb/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/reliefweb/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}"
     }
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/reliefweb/",
-    "uid": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_reliefweb_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/reliefweb/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/reliefweb/",
-    "uid": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_reliefweb_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_reliefweb_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/reliefweb/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/reliefweb/",
-    "uid": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_reliefweb_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_reliefweb_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_reliefweb_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/reliefweb/eng/openapi.yaml"
-    },
-    "experimentum_est": true
   },
   {
     "xdefallo": "/mul-Zyyy/api/UN/CODV2API/",
@@ -220,12 +118,12 @@
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/UN/CODV2API/eng/openapi.yaml",
     "experimentum_est": true,
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/CODV2API/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}"
     }
   },
   {
@@ -237,63 +135,12 @@
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/UN/CODV2API/eng/openapi.yaml",
     "experimentum_est": true,
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/CODV2API/eng/openapi.yaml"
-    }
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/CODV2API/",
-    "uid": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_UN_CODV2API_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "experimentum_est": true,
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/CODV2API/eng/openapi.yaml"
-    }
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/CODV2API/",
-    "uid": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_CODV2API_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_UN_CODV2API_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "experimentum_est": true,
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/CODV2API/eng/openapi.yaml"
-    }
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/UN/CODV2API/",
-    "uid": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "UN",
-    "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_CODV2API_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_CODV2API_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_UN_CODV2API_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "experimentum_est": true,
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "openapi_filum2": "/api/UN/CODV2API/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}"
     }
   },
   {
@@ -320,11 +167,11 @@
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/XZ/HXL-Proxy/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/XZ/HXL-Proxy/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}"
     }
   },
   {
@@ -336,63 +183,12 @@
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/XZ/HXL-Proxy/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/XZ/HXL-Proxy/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}"
     }
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/XZ/HXL-Proxy/",
-    "uid": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "XZ",
-    "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/XZ/HXL-Proxy/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/XZ/HXL-Proxy/",
-    "uid": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/XZ/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "XZ",
-    "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "openapi_filum2": "/api/XZ/HXL-Proxy/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/XZ/HXL-Proxy/",
-    "uid": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "XZ",
-    "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "openapi_filum2": "/api/XZ/HXL-Proxy/eng/openapi.yaml"
-    },
-    "experimentum_est": true
   },
   {
     "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
@@ -418,11 +214,11 @@
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}"
     }
   },
   {
@@ -434,63 +230,12 @@
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}"
     }
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
-    "uid": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/BR/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "BR",
-    "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
-    "uid": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/BR/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "BR",
-    "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
-    "uid": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/BR/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "BR",
-    "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
-    },
-    "experimentum_est": true
   },
   {
     "xdefallo": "/mul-Zyyy/api/BR/portais-arcgis-brasil/",
@@ -508,7 +253,7 @@
     }
   },
   {
-    "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
+    "xdefallo": "/mul-Zyyy/api/BR/portais-arcgis-brasil/",
     "uid": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/BR/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/",
     "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "typum": "api",
@@ -516,15 +261,21 @@
     "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
-    }
+      "htmldir": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}"
+    },
+    "__translationem": [
+      {
+        "fontem": "/api/076/ArcGIS-BR/openapi.🗣️.yaml",
+        "objectivum": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/076/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/openapi.yaml"
+      }
+    ]
   },
   {
-    "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
+    "xdefallo": "/mul-Zyyy/api/BR/portais-arcgis-brasil/",
     "uid": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/BR/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/",
     "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "typum": "api",
@@ -532,62 +283,17 @@
     "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
     "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "openapi_archivum": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml",
     "jekyll-page": {
       "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
       "lang": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
-    }
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
-    "uid": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/BR/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "BR",
-    "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
+      "htmldir": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}"
     },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
-    "uid": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/BR/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "BR",
-    "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
-    },
-    "experimentum_est": true
-  },
-  {
-    "xdefallo": "/mul-Zyyy/api/BR/portais-ckan-brasil/",
-    "uid": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/BR/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/",
-    "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "typum": "api",
-    "gid": "BR",
-    "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-    "jekyll-page": {
-      "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "lang": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "htmldir": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
-      "openapi_filum2": "/api/BR/brazilian-ckan-portals/eng/openapi.yaml"
-    },
-    "experimentum_est": true
+    "__translationem": [
+      {
+        "fontem": "/api/076/ArcGIS-BR/openapi.🗣️.yaml",
+        "objectivum": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/076/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/openapi.yaml"
+      }
+    ]
   }
 ]

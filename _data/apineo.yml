@@ -71,12 +71,14 @@
       # title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
       # noindex: true
 
+      openapi_archivum: "/api/UN/HDX/eng/openapi.yaml" # TODO: generalize it
+
       # @deprecated jekyll-page
       jekyll-page:
         linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
-        openapi_filum2: "/api/UN/HDX/eng/openapi.yaml" # TODO: generalize it
+
 
 ### /mul-Zyyy/api/UN/reliefweb/ ------------------------------------------------
 - xdefallo: /mul-Zyyy/api/UN/reliefweb/
@@ -113,12 +115,14 @@
       # title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
       # noindex: true
 
+      openapi_archivum: "/api/UN/reliefweb/eng/openapi.yaml" # TODO: generalize it
+
       # @deprecated jekyll-page
       jekyll-page:
         linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
-        openapi_filum2: "/api/UN/reliefweb/eng/openapi.yaml" # TODO: generalize it
+        # openapi_filum2: "/api/UN/reliefweb/eng/openapi.yaml" # TODO: generalize it
 
 ### /mul-Zyyy/api/UN/CODV2API/ -------------------------------------------------
 - xdefallo: /mul-Zyyy/api/UN/CODV2API/
@@ -155,6 +159,8 @@
       # Exemplum: COD Services: Common Operational Datasets Services 2
       titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_UN_CODV2API_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
       # title: "Index: {% _🗣️ 📝eng-Latn📝 Hapi_api_UN_HDX_titulum 📝eng-Latn📝 🗣️_ %}"
+
+      openapi_archivum: "/api/UN/CODV2API/eng/openapi.yaml" # TODO: generalize it
       # noindex: true
       experimentum_est: true
 
@@ -163,7 +169,7 @@
         linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
-        openapi_filum2: "/api/UN/CODV2API/eng/openapi.yaml" # TODO: generalize it
+        # openapi_filum: "/api/UN/CODV2API/eng/openapi.yaml" # TODO: generalize it
 
 
 #### [linguam]/api/XZ __________________________________________________________
@@ -203,14 +209,14 @@
       titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_XZ_HXL-Proxy_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
       # noindex: true
       # experimentum_est: true
+      openapi_archivum: "/api/XZ/HXL-Proxy/eng/openapi.yaml" # TODO: generalize it
 
       # @deprecated jekyll-page
       jekyll-page:
         linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
-        openapi_filum2: "/api/XZ/HXL-Proxy/eng/openapi.yaml" # TODO: generalize it
-
+        # openapi_filum: "/api/XZ/HXL-Proxy/eng/openapi.yaml" # TODO: generalize it
 
 #### [linguam]/api/BR __________________________________________________________
 
@@ -258,13 +264,13 @@
       titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-ckan-brasil_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
       # noindex: true
       # experimentum_est: true
+      openapi_archivum: "/api/BR/brazilian-ckan-portals/eng/openapi.yaml" # TODO: generalize it
 
       # @deprecated jekyll-page
       jekyll-page:
         linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
-        openapi_filum2: "/api/BR/brazilian-ckan-portals/eng/openapi.yaml" # TODO: generalize it
 
 
 ### /mul-Zyyy/api/BR/portais-arcgis-brasil/ ------------------------------------
@@ -284,9 +290,12 @@
 
 - farmulam:
     commendandum:
-      translationem: []
+      translationem: &id_tempArcGIS-BR
+        - fontem: "/api/076/ArcGIS-BR/openapi.🗣️.yaml"
+          # Exemplum: /por-Latn/esquema-de-dados/076/portais-arcgis-brasil/openapi.yaml
+          objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/076/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/openapi.yaml"
     structuram:
-      xdefallo: /mul-Zyyy/api/BR/portais-ckan-brasil/
+      xdefallo: /mul-Zyyy/api/BR/portais-arcgis-brasil/
       # Exemplum: /por-Latn/api/BR/portais-arcgis-brasil/
       uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_API_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/BR/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
       # Exemplum: por-Latn
@@ -301,10 +310,12 @@
       titulum: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_api_BR_portais-arcgis-brasil_titulum 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
       # noindex: true
       # experimentum_est: true
+      openapi_archivum: "/api/BR/brazilian-ckan-portals/eng/openapi.yaml" # TODO: generalize it
 
       # @deprecated jekyll-page
       jekyll-page:
         linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         lang: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_IETF_BCP47_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
         htmldir: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_W3C_HTML_dir_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}"
-        openapi_filum2: "/api/BR/brazilian-ckan-portals/eng/openapi.yaml" # TODO: generalize it
+
+      __translationem: *id_tempArcGIS-BR
