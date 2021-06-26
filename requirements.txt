@@ -4,6 +4,9 @@
 #             @see https://github.com/EticaAI/HXL-Data-Science-file-formats
 # [eng-Latn]_
 
-hdp-toolchain
+# hdp-toolchain
+libhxl
+csvkit
 
+# @see https://github.com/EticaAI/HXL-Data-Science-file-formats/blob/main/guides/command-line-tools-for-csv.sh
 # @see https://docs.github.com/en/enterprise-server@2.22/actions/guides/building-and-testing-python

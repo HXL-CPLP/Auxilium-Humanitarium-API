@@ -5,7 +5,14 @@
 #
 #         USAGE:  ./_systema/infrastructuram/okapi-install-locally.sh
 #
-#   DESCRIPTION:  ---
+#   DESCRIPTION:  _[eng-Latn] Intall Okapi, linux version on /opt/okapi
+#                             To manually test, via cli
+#                                 sh /opt/okapi/tikal.sh --info
+#                             To manually test, via gui
+#                                 sh /opt/okapi/rainbow.sh
+#                             To get started with Okapi:
+#                                 https://okapiframework.org/wiki/index.php/Getting_Started
+#                 [eng-Latn]_
 #
 #       OPTIONS:  ---
 #
