@@ -39,8 +39,8 @@ api:
         paginam_linguam:
           - por-Latn
           - eng-Latn
-        # paginam_linguam_experimentum:
-        #   - spa-Latn
+        paginam_linguam_experimentum:
+          - slv-Latn
         #   - arb-Arab
         #   - hin-Deva
 schemam:
@@ -51,8 +51,9 @@ schemam:
           - por-Latn
           - eng-Latn
         paginam_linguam_experimentum:
-          - spa-Latn
           - arb-Arab
+          - slv-Latn
+          - spa-Latn
           - hin-Deva
 
 # @see _plugins/hapi/drops/globum_drop.rb
@@ -119,19 +120,6 @@ linguam:
         - "+i_ara+is_arab"
         - "+i_ara"
         - "+i_ar"
-  hin-Deva: &id_linguam_hin-Deva
-    BCP47: hi
-    hxlattrs: # deprecated
-      - "+i_hi+i_hin+is_deva"
-      - "+i_hin+is_deva"
-      - "+i_hin"
-      - "+i_hi"
-    hxl:
-      attributum:
-        - "+i_hi+i_hin+is_deva"
-        - "+i_hin+is_deva"
-        - "+i_hin"
-        - "+i_hi"
 
   eng-Latn: &id_linguam_eng-Latn
     BCP47: en
@@ -146,6 +134,21 @@ linguam:
         - "+i_eng+is_latn"
         - "+i_eng"
         - "+i_en"
+
+  hin-Deva: &id_linguam_hin-Deva
+    BCP47: hi
+    hxlattrs: # deprecated
+      - "+i_hi+i_hin+is_deva"
+      - "+i_hin+is_deva"
+      - "+i_hin"
+      - "+i_hi"
+    hxl:
+      attributum:
+        - "+i_hi+i_hin+is_deva"
+        - "+i_hin+is_deva"
+        - "+i_hin"
+        - "+i_hi"
+
 
   # https://en.wikipedia.org/wiki/Interlingua
   ina-Latn: &id_linguam_ina-Latn
@@ -188,6 +191,21 @@ linguam:
 
   # TODO: remover necessidade disto
   mul: *id_linguam_mul-Zyyy
+
+  # #item +i_sl +i_slv +is_Latn
+  slv-Latn: &id_linguam_slv-Latn
+    BCP47: sl
+    hxlattrs: # deprecated
+      - "+i_sl+i_slv+is_latn"
+      - "+i_slv+is_latn"
+      - "+i_slv"
+      - "+i_sl"
+    hxl:
+      attributum:
+        - "+i_sl+i_slv+is_latn"
+        - "+i_slv+is_latn"
+        - "+i_slv"
+        - "+i_sl"
 
   spa-Latn: &id_linguam_spa-Latn
     BCP47: es
@@ -271,6 +289,10 @@ praeiudico:
       iso15924: Deva
       iso6391: hi
       htmldir: ltr
+    slv: &id_praeiudico_iso3693_slv
+      iso15924: Latn
+      iso6391: sl
+      htmldir: ltr
     spa: &id_praeiudico_iso3693_spa
       iso15924: Latn
       iso6391: es
@@ -293,6 +315,7 @@ praeiudico:
     en: *id_praeiudico_iso3693_eng
     es: *id_praeiudico_iso3693_spa
     hi: *id_praeiudico_iso3693_hin
+    sl: *id_praeiudico_iso3693_slv
 
 alternandum:
   Arab: [] # TODO Arab
