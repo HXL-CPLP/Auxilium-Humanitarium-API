@@ -51,6 +51,7 @@ exclude:
   # - _data/expandendum/api.json
   # - _data/expandendum/schemam.json
   - _data/tm/
+  - _hxltm/
   - _assets/
 
 keep_files:

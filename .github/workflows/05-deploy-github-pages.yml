@@ -21,7 +21,7 @@ jobs:
         run: bash _systema/programma/download-hxl-datum.sh
 
       # @see https://github.com/actions/setup-java#supported-distributions
-      - name: "Java installation (required by openapi-generator-cli)"
+      - name: "Java installation (required by openapi-generator-cli) (required by Okapi Framework)"
         uses: actions/setup-java@v2
         with:
           distribution: "adopt"
@@ -56,6 +56,10 @@ jobs:
             ${{ runner.os }}-
       - name: "python: Install dependencies"
         run: pip install -r requirements.txt
+
+      - name: "Okapi Framework install"
+        run: bash _systema/infrastructuram/okapi-install-locally.sh
+        continue-on-error: true
 
       - name: "Steps before Jekyll: CNAME"
         run: echo "hapi.etica.ai" > ./CNAME
