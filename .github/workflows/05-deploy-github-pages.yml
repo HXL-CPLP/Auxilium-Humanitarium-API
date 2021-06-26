@@ -39,6 +39,24 @@ jobs:
       - name: "openapi-generator-cli: generate files"
         run: bash ./_systema/programma/openapi-exportandum.sh
 
+      - name: "python: Setup Python"
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: "python: Cache pip"
+        uses: actions/cache@v2
+        with:
+          # This path is specific to Ubuntu
+          path: ~/.cache/pip
+          # Look to see if there is a cache hit for the corresponding requirements file
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - name: "python: Install dependencies"
+        run: pip install -r requirements.txt
+
       - name: "Steps before Jekyll: CNAME"
         run: echo "hapi.etica.ai" > ./CNAME
 

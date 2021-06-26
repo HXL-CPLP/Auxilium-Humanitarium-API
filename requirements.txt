@@ -1,0 +1,9 @@
+# Work in progress
+# _[eng-Latn] This file may install the hdp-toolchain used mostly to
+#             export some HXL translation memory files to other formats.
+#             @see https://github.com/EticaAI/HXL-Data-Science-file-formats
+# [eng-Latn]_
+
+hdp-toolchain
+
+# @see https://docs.github.com/en/enterprise-server@2.22/actions/guides/building-and-testing-python
