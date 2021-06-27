@@ -11,6 +11,7 @@
 #                             @see https://github.com/HXL-CPLP/forum/issues/58
 #                             To manually test, via cli
 #                                 sh /opt/okapi/tikal.sh --info
+#                                 sh /opt/okapi/tikal.sh -listconf
 #                             To manually test, via gui
 #                                 sh /opt/okapi/rainbow.sh
 #                             To get started with Okapi:

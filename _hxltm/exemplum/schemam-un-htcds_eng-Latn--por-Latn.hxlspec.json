@@ -1,0 +1,26 @@
+{
+    "input": "https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1292720422",
+    "recipe": [
+        {
+            "filter": "with_rows",
+            "queries": [
+                "#status>-1"
+            ],
+            "$comment": "_[eng-Latn]Only rows that are ready for translation (including initial metadata per file)[eng-Latn]_"
+        },
+        {
+            "filter": "with_columns",
+            "includes": "#item+id,#item+i_en+i_eng+is_latn,#item+i_pt+i_por+is_latn,#meta+item+i_en+i_eng+is_latn",
+            "$comment": "_[eng-Latn]Select only some fields[eng-Latn]_"
+        }
+    ],
+    "$comments": [
+        {
+            "$comment": "_[eng-Latn]Only rows that are ready for translation, but still includes the #status=2 (like the initial testing fields)[eng-Latn]_",
+            "filter": "with_rows",
+            "queries": [
+                "#status=1"
+            ]
+        }
+    ]
+}
