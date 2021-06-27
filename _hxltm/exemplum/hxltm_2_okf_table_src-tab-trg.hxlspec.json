@@ -1,5 +1,8 @@
 {
-    "input": "https://proxy.hxlstandard.org/data/download/schemam-un-htcds_tm_hxl.csv?dest=data_edit&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1292720422",
+    "//input (online)": "https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1292720422",
+    "//input (1h HXL-Proxy cached)": "https://proxy.hxlstandard.org/data/download/schemam-un-htcds_tm_hxl.csv?dest=data_edit&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1292720422",
+    "input": "_hxltm/schemam-un-htcds.tm.hxl.csv",
+    "allow_local": true,
     "recipe": [
         {
             "filter": "with_rows",
@@ -9,14 +12,27 @@
             "$comment": "_[eng-Latn]Only rows that are ready for translation (including initial metadata per file)[eng-Latn]_"
         },
         {
+            "filter": "add_columns",
+            "specs": [
+                "Comment#x_comment={{ join(\"|\", #item+wikidata+code, #meta+item+url+list, #meta+item+i_en+i_eng+is_Latn) }}"
+            ],
+            "$comments": [
+                "_[eng-Latn]We create a new column that merge 1. #item+wikidata+code, 2.#meta+item+url+list [eng-Latn]_",
+                "_[eng-Latn]We also merge the #meta of the eng-Latn (you may need to customize for new languages [eng-Latn]_",
+                "https://github.com/HXLStandard/hxl-proxy/wiki/Add-column-filter",
+                "https://github.com/HXLStandard/hxl-proxy/wiki/Row-formulas"
+
+            ]
+        },
+        {
             "filter": "with_columns",
-            "includes": "#item+i_en+i_eng+is_latn,#item+i_pt+i_por+is_latn",
+            "includes": "#item+i_en+i_eng+is_latn,#item+i_pt+i_por+is_latn,#x_comment",
             "$comment": "_[eng-Latn]Select source and target languages[eng-Latn]_"
         },
         {
             "filter": "without_columns",
             "excludes": "#item+alt",
-            "$comment": "_[eng-Latn]Remove duplicated +alt+list[eng-Latn]_"
+            "$comment": "_[eng-Latn]Remove duplicated +alt+list, we only want exact matches[eng-Latn]_"
         },
         {
             "filter": "rename_columns",

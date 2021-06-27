@@ -8,17 +8,20 @@ NOTE: seems that --remove-headers work on almost every place, except
 -->
 
 - \_[eng-Latn] **Recommeded**: use the schemam-un-htcds.tm.hxl HXL-proxy 
- 1-hour cached version of theto avoid Google returning 400 erros. [eng-Latn]\_
+ 1-hour cached version of theto avoid Google returning 400 erros or save the
+ file locally and change some options[eng-Latn]\_
   - <https://proxy.hxlstandard.org/data/download/schemam-un-htcds_tm_hxl.csv?dest=data_edit&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1292720422>
+  - `"input": "_hxltm/schemam-un-htcds.tm.hxl.csv"` + `"allow_local": true`
 
-
-## Exemplum: fiat lux!
-- Archīvum: [schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json](schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json)
+---
 
 ```sh
 ## _[eng-Latn]Required: libhxl, provides hxlspec and more [eng-Latn]_
 # pip install libhxl
 # @see https://github.com/HXLStandard/libhxl-python
+
+pip3 show libhxl | grep Version
+# Version: 4.22
 
 ## _[eng-Latn]Suggested: csvkit, some operations, like reordering with csvcut, may need it [eng-Latn]_
 # pip install csvkit
@@ -34,15 +37,27 @@ NOTE: seems that --remove-headers work on almost every place, except
 ## [eng-Latn]_
 wget -O _hxltm/schemam-un-htcds.tm.hxl.csv 'https://proxy.hxlstandard.org/data/download/schemam-un-htcds_tm_hxl.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1292720422&force=on'
 
+ls -a _hxltm/schemam-un-htcds.tm.hxl.csv
+# _hxltm/schemam-un-htcds.tm.hxl.csv
+
+```
+
+---
+
+## Exemplum: schemam-un-htcds_eng-Latn--por-Latn
+
+- Archīvum: [schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json](schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json)
+
+```sh
+
 hxlspec _hxltm/exemplum/schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json > _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv
 
 head -n3  _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv
 #    Codicem,Lingua Lusitana,Lingua Lusitana (alternātīvum),Lingua Anglica,Lingua Anglica (alternātīvum),Lingua Anglica (meta)
 #    #item+id,#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#item+i_en+i_eng+is_latn,#item+i_en+i_eng+is_latn+alt+list,#meta+item+i_en+i_eng+is_latn
 #    L10N_ego_summarius,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,∅
-
-
 ```
+
 
 ## Exemplum: okf_table_src-tab-trg
 - Archīvum: [hxltm_2_okf_table_src-tab-trg.hxlspec.json](hxltm_2_okf_table_src-tab-trg.hxlspec.json)
@@ -56,14 +71,35 @@ head -n3  _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv
 hxlspec _hxltm/exemplum/hxltm_2_okf_table_src-tab-trg.hxlspec.json > _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv
 
 head -n4  _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv
-#    pt,en
-#    #x_target,#x_source
-#    Língua portuguesa (alfabeto latino),English language (Latin script)
-#    por-Latn,eng-Latn
+#    pt,en,Comment
+#    #x_target,#x_source,#x_comment
+#    Língua portuguesa (alfabeto latino),English language (Latin script),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    por-Latn,eng-Latn,||∅
 
 # Since we have different column order, we can re
-csvcut -c en,pt _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv > _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
+csvcut -c en,pt,Comment _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv > _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
+
+head -n4  _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
+#    en,pt,Comment
+#    #x_source,#x_target,#x_comment
+#    English language (Latin script),Língua portuguesa (alfabeto latino),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    eng-Latn,por-Latn,||∅
 
 
+# Remove only the '#x_target,#x_source,#x_comment' line
+sed -i '2d' _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
+#    en,pt,Comment
+#    English language (Latin script),Língua portuguesa (alfabeto latino),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    eng-Latn,por-Latn,||∅
+#    English language,Língua portuguesa,||∅
+
+# Then, generate a Tab-separed CSV (a TSV)
+csvformat --out-tabs _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv > _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
+
+head -n4  _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
+#    en	pt	Comment
+#    English language (Latin script)	Língua portuguesa (alfabeto latino)	Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    eng-Latn	por-Latn	||∅
+#    English language	Língua portuguesa	||∅
 
 ```
