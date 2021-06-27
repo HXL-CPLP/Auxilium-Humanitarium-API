@@ -1,24 +1,18 @@
 #!/usr/bin/env python3
 # ==============================================================================
 #
-#          FILE:  hxl2example
+#          FILE:  hxltm2xliff
 #
-#         USAGE:  hxl2example hxlated-data.hxl my-exported-file.example
-#                 cat hxlated-data.hxl | hxl2example > my-exported-file.example
-#                 # Via web, in two different terminals, do it
-#                     hug -f bin/hxl2example
-#                     ngrok http 8000
+#         USAGE:  hxltm2xliff schemam-un-htcds.tm.hxl.csv schemam-un-htcds.xliff
+#                 cat schemam-un-htcds.tm.hxl.csv | hxltm2xliff > schemam-un-htcds.xliff
 #
-#   DESCRIPTION:  hxl2example is an example script to create other scripts with
-#                 some bare minimum command line interface that could work.
-#                 With exception of external libraries, the hxl2example is
-#                 meant to be somewhat self-contained one-file executable ready
-#                 to just be added to the path.
-#
-#                 Hug API can be used to create an ad-hoc web interface to your
-#                 script. This can be both useful if you are using an software
-#                 that accepts an URL as data source and you don't want to use
-#                 this script to save a file locally.
+#   DESCRIPTION:  _[eng-Latn] hxltm2xliff is an working draft of a tool to
+#                             convert prototype of translation memory stored
+#                             with HXL to XLIFF v2.1
+#                 [eng-Latn]_
+#                 @see http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html
+#                 @see https://github.com/HXL-CPLP/forum/issues/58
+#                 @see https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/16
 #
 #       OPTIONS:  ---
 #
@@ -29,13 +23,21 @@
 #                 - your-non-python-dependency-here
 #          BUGS:  ---
 #         NOTES:  ---
-#        AUTHOR:  Your Name <you[at]example.org>
-#       COMPANY:  Your Company
-#       LICENSE:  Your License here
-#       VERSION:  v1.0
-#       CREATED:  YYYY-MM-DD hh:mm UTC
-#      REVISION:  ---
+#        AUTHOR:  Emerson Rocha <rocha[at]ieee.org>
+#       COMPANY:  EticaAI
+#       LICENSE:  Public Domain dedication
+#                 SPDX-License-Identifier: Unlicense
+#       VERSION:  v0.6
+#       CREATED: 2021-06-27 19:50 UTC v0.5, de github.com/EticaAI
+#                       /HXL-Data-Science-file-formats/blob/main/bin/hxl2example
+#      REVISION:  2021-06-27 19:50 UTC v0.6 de hxl2tab
 # ==============================================================================
+
+# Tests
+# ./_systema/programma/hxltm2xliff.py --help
+# ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv
+
+__VERSION__ = "v0.6"
 
 import sys
 import os
@@ -49,6 +51,7 @@ import hxl.converters
 import hxl.filters
 import hxl.io
 
+import csv
 import tempfile
 
 # @see https://github.com/hugapi/hug
@@ -59,15 +62,19 @@ import tempfile
 STDIN = sys.stdin.buffer
 
 
-class HXL2Example:
+class HXLTM2XLIFF:
     """
-    HXL2Example is a classe to export already HXLated data in the format
-    example.
+    _[eng-Latn] hxltm2xliff is an working draft of a tool to
+                convert prototype of translation memory stored with HXL to
+                XLIFF v2.1
+    [eng-Latn]_
     """
 
     def __init__(self):
         """
-        Constructs all the necessary attributes for the HXL2Example object.
+        _[eng-Latn] Constructs all the necessary attributes for the
+                    HXLTM2XLIFF object.
+        [eng-Latn]_
         """
         self.hxlhelper = None
         self.args = None
@@ -77,14 +84,53 @@ class HXL2Example:
         self.EXIT_ERROR = 1
         self.EXIT_SYNTAX = 2
 
+        self.original_outfile = None
+        self.original_outfile_is_stdout = True
+
     def make_args_hxl2example(self):
 
         self.hxlhelper = HXLUtils()
         parser = self.hxlhelper.make_args(
-            description=("hxl2example is an example script to create other "
-                         "scripts with some bare minimum command line "
-                         "interfaces that could work to export HXL files to "
-                         "other formats."))
+            #     description=("""
+            # _[eng-Latn] hxltm2xliff is an working draft of a tool to
+            #             convert prototype of translation memory stored with HXL to
+            #             XLIFF v2.1
+            # [eng-Latn]_
+            # """)
+            description=(
+                "_[eng-Latn] hxltm2xliff " + __VERSION__ + " " +
+                "is an working draft of a tool to " +
+                "convert prototype of translation memory stored with HXL to " +
+                "XLIFF v2.1 [eng-Latn]_"
+            )
+        )
+
+        parser.add_argument(
+            '--fontem-linguam',
+            help='Source language (use if not autodetected). ' +
+            'Must be like {ISO 639-3}-{ISO 15924}. Example: por-Latn',
+            action='store',
+            default='por-Latn',
+            nargs='?'
+        )
+
+        parser.add_argument(
+            '--objectivum-linguam',
+            help='XLiff Target language (use if not autodetected). ' +
+            'Must be like {ISO 639-3}-{ISO 15924}. Example: eng-Latn',
+            action='store',
+            default='eng-Latn',
+            nargs='?'
+        )
+
+        parser.add_argument(
+            "--hxlmeta",
+            help="Don't print output, just the hxlmeta of the input",
+            action='store_const',
+            const=True,
+            metavar='hxlmeta',
+            default=False
+        )
 
         self.args = parser.parse_args()
         return self.args
@@ -92,61 +138,207 @@ class HXL2Example:
     def execute_cli(self, args,
                     stdin=STDIN, stdout=sys.stdout, stderr=sys.stderr):
         """
-        The execute_cli is the main entrypoint of HXL2Example. When
+        The execute_cli is the main entrypoint of HXLTM2XLIFF. When
         called will convert the HXL source to example format.
         """
 
-        # NOTE: the next lines, in fact, only generate an csv outut. So you
-        #       can use as starting point.
-        with self.hxlhelper.make_source(args, stdin) as source, \
-                self.hxlhelper.make_output(args, stdout) as output:
-            hxl.io.write_hxl(output.output, source,
-                             show_tags=not args.strip_tags)
+        # # NOTE: the next lines, in fact, only generate an csv outut. So you
+        # #       can use as starting point.
+        # with self.hxlhelper.make_source(args, stdin) as source, \
+        #         self.hxlhelper.make_output(args, stdout) as output:
+        #     hxl.io.write_hxl(output.output, source,
+        #                      show_tags=not args.strip_tags)
 
-        return self.EXIT_OK
+        # return self.EXIT_OK
 
-    def execute_web(self, source_url, stdin=STDIN, stdout=sys.stdout,
-                    stderr=sys.stderr, hxlmeta=False):
-        """
-        The execute_web is the main entrypoint of HXL2Tab when this class is
-        called outside command line interface, like the build in HTTP use with
-        hug
-        """
-
-        # TODO: the execute_web needs to output the tabfile with correct
-        #       mimetype, compression, etc
-        #       (fititnt, 2021-02-07 15:59 UTC)
-
-        self.hxlhelper = HXLUtils()
+        # If the user specified an output file, we will save on
+        # self.original_outfile. The args.outfile will be used for temporary
+        # output
+        if args.outfile:
+            self.original_outfile = args.outfile
+            self.original_outfile_is_stdout = False
 
         try:
-            temp_input = tempfile.NamedTemporaryFile('w')
-            temp_output = tempfile.NamedTemporaryFile('w')
+            temp = tempfile.NamedTemporaryFile()
+            args.outfile = temp.name
 
-            webargs = type('obj', (object,), {
-                "infile": source_url,
-                "sheet_index": None,
-                "selector": None,
-                'sheet': None,
-                'http_header': None,
-                'ignore_certs': False
-            })
+            with self.hxlhelper.make_source(args, stdin) as source, \
+                    self.hxlhelper.make_output(args, stdout) as output:
+                hxl.io.write_hxl(output.output, source,
+                                 show_tags=not args.strip_tags)
 
-            with self.hxlhelper.make_source(webargs, stdin) as source:
-                for line in source.gen_csv(True, True):
-                    temp_input.write(line)
-
-                temp_input.seek(0)
-                # self.hxl2tab(temp_input.name, temp_output.name, False)
-
-                result_file = open(temp_input.name, 'r')
-                return result_file.read()
+            if args.hxlmeta:
+                print('TODO: hxlmeta')
+                # print('output.output', output.output)
+                # print('source', source)
+                # # print('source.columns', source.headers())
+                # hxlmeta = HXLMeta(local_hxl_file=output.output.name)
+                # hxlmeta.debuginfo()
+            else:
+                self.hxl2tab(args.outfile, self.original_outfile,
+                             self.original_outfile_is_stdout)
 
         finally:
-            temp_input.close()
-            temp_output.close()
+            temp.close()
 
         return self.EXIT_OK
+
+    def hxl2tab(self, hxlated_input, tab_output, is_stdout):
+        """
+        hxl2tab is  is the main method to de facto make the conversion.
+        """
+
+        with open(hxlated_input, 'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+
+            # Hotfix: skip first non-HXL header. Ideally I think the already
+            # exported HXlated file should already save without headers.
+            next(csv_reader)
+            header_original = next(csv_reader)
+            header_new = self.hxl2tab_header(header_original)
+
+            if is_stdout:
+                txt_writer = csv.writer(sys.stdout, delimiter='\t')
+                txt_writer.writerow(header_new)
+                for line in csv_reader:
+                    txt_writer.writerow(line)
+            else:
+
+                tab_output_cleanup = open(tab_output, 'w')
+                tab_output_cleanup.truncate()
+                tab_output_cleanup.close()
+
+                with open(tab_output, 'a') as new_txt:
+                    txt_writer = csv.writer(new_txt, delimiter='\t')
+                    txt_writer.writerow(header_new)
+                    for line in csv_reader:
+                        txt_writer.writerow(line)
+
+    def hxl2tab_header(self, hxlated_header):
+        """
+        Add prefixes to an hxlated_header to work as typehints for Orange Data
+        Mining
+        orange.biolab.si/docs/latest/reference/rst/Orange.data.formats.html:
+c for class feature            -> +vt_orange_flag_class|+vt_class
+i for feature to be ignored    -> +vt_orange_flag_ignore
+m for the meta attribute       -> +vt_orange_flag_meta|#meta
+C for continuous-typed feature -> +vt_orange_type_continuous|+number
+D for discrete feature         -> +vt_orange_type_discrete|+vt_categorical
+S for string                   -> +vt_orange_type_string|+text|+name
+        An example data file in this format is shown below:
+C#sepal length	iC#sepal width	mC#petal length	mC#petal width	cD#iris
+5.1	3.5	1.4	0.2	Iris-setosa
+4.9	3.0	1.4	0.2	Iris-setosa
+4.7	3.2	1.3	0.2	Iris-setosa
+        """
+
+        # TODO: improve this block. I'm very sure there is some cleaner way to
+        #       do it in a more cleaner way (fititnt, 2021-01-28 08:56 UTC)
+
+        # NOTE: +vt_orange_type_continuous (but not +number),
+        #       +vt_orange_type_string (but not +text, +name)
+        #       etc are replaced from the end result
+        #       In other words: the very specific data types don't need to be
+        #       added to the end result, but we keep generic ones to avoid
+        #       potentially break other tools.
+
+        for idx, _ in enumerate(hxlated_header):
+
+            # feature types
+            if hxlated_header[idx].find('+vt_orange_type_discrete') > -1 \
+                    or hxlated_header[idx].find('+vt_categorical') > -1:
+
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_orange_type_discrete', '')
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_categorical', '')
+                hxlated_header[idx] = 'D' + hxlated_header[idx]
+
+            elif hxlated_header[idx].find('+vt_orange_type_continuous') > -1 \
+                    or hxlated_header[idx].find('+number') > -1:
+
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_orange_type_discrete', '')
+                hxlated_header[idx] = 'C' + hxlated_header[idx]
+            elif hxlated_header[idx].find('+vt_orange_type_string') > -1 or \
+                    hxlated_header[idx].find('+text') > -1 or \
+                    hxlated_header[idx].find('+name') > -1:
+
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_orange_type_string', '')
+                hxlated_header[idx] = 'S' + hxlated_header[idx]
+
+            # optional flags
+            if hxlated_header[idx].find('+vt_orange_flag_class') > -1 or \
+                    hxlated_header[idx].find('+vt_class') > -1:
+
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_orange_flag_class', '')
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_class', '')
+                hxlated_header[idx] = 'c' + hxlated_header[idx]
+
+            elif hxlated_header[idx].find('+vt_orange_flag_meta') > -1 or \
+                    hxlated_header[idx].find('+vt_meta') > -1 or \
+                    hxlated_header[idx].find('#meta') > -1:
+
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_orange_flag_meta', '')
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_meta', '')
+                hxlated_header[idx] = 'm' + hxlated_header[idx]
+
+            elif hxlated_header[idx].find('+vt_orange_flag_ignore') > -1:
+
+                hxlated_header[idx] = hxlated_header[idx].replace(
+                    '+vt_orange_flag_ignore', '')
+                hxlated_header[idx] = 'i' + hxlated_header[idx]
+
+        # print('hxl2tab_header', hxlated_header)
+        return hxlated_header
+
+    # def execute_web(self, source_url, stdin=STDIN, stdout=sys.stdout,
+    #                 stderr=sys.stderr, hxlmeta=False):
+    #     """
+    #     The execute_web is the main entrypoint of HXL2Tab when this class is
+    #     called outside command line interface, like the build in HTTP use with
+    #     hug
+    #     """
+
+    #     # TODO: the execute_web needs to output the tabfile with correct
+    #     #       mimetype, compression, etc
+    #     #       (fititnt, 2021-02-07 15:59 UTC)
+
+    #     self.hxlhelper = HXLUtils()
+
+    #     try:
+    #         temp_input = tempfile.NamedTemporaryFile('w')
+    #         temp_output = tempfile.NamedTemporaryFile('w')
+
+    #         webargs = type('obj', (object,), {
+    #             "infile": source_url,
+    #             "sheet_index": None,
+    #             "selector": None,
+    #             'sheet': None,
+    #             'http_header': None,
+    #             'ignore_certs': False
+    #         })
+
+    #         with self.hxlhelper.make_source(webargs, stdin) as source:
+    #             for line in source.gen_csv(True, True):
+    #                 temp_input.write(line)
+
+    #             temp_input.seek(0)
+    #             # self.hxl2tab(temp_input.name, temp_output.name, False)
+
+    #             result_file = open(temp_input.name, 'r')
+    #             return result_file.read()
+
+    #     finally:
+    #         temp_input.close()
+    #         temp_output.close()
+
+    #     return self.EXIT_OK
 
 
 class HXLUtils:
@@ -354,10 +546,10 @@ class StreamOutput(object):
 
 if __name__ == "__main__":
 
-    hxl2example = HXL2Example()
-    args = hxl2example.make_args_hxl2example()
+    hxltm2xliff = HXLTM2XLIFF()
+    args = hxltm2xliff.make_args_hxl2example()
 
-    hxl2example.execute_cli(args)
+    hxltm2xliff.execute_cli(args)
 
 
 # @hug.format.content_type('text/csv')
@@ -372,15 +564,15 @@ if __name__ == "__main__":
 #     return str(data).encode("utf8")
 
 
-# @hug.get('/hxl2example.csv', output=output_csv)
+# @hug.get('/hxltm2xliff.csv', output=output_csv)
 # def api_hxl2example(source_url):
-#     """hxl2example (@see https://github.com/EticaAI/HXL-Data-Science-file-formats)
+#     """hxltm2xliff (@see https://github.com/EticaAI/HXL-Data-Science-file-formats)
 
 #     Example:
-#     http://localhost:8000/hxl2example.csv?source_url=https://docs.google.com/spreadsheets/u/1/d/1l7POf1WPfzgJb-ks4JM86akFSvaZOhAUWqafSJsm3Y4/edit#gid=634938833
+#     http://localhost:8000/hxltm2xliff.csv?source_url=https://docs.google.com/spreadsheets/u/1/d/1l7POf1WPfzgJb-ks4JM86akFSvaZOhAUWqafSJsm3Y4/edit#gid=634938833
 
 #     """
 
-#     hxl2example = HXL2Example()
+#     hxltm2xliff = HXLTM2XLIFF()
 
-#     return hxl2example.execute_web(source_url)
+#     return hxltm2xliff.execute_web(source_url)
