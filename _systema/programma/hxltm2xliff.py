@@ -27,10 +27,11 @@
 #       COMPANY:  EticaAI
 #       LICENSE:  Public Domain dedication
 #                 SPDX-License-Identifier: Unlicense
-#       VERSION:  v0.6
+#       VERSION:  v0.7
 #       CREATED: 2021-06-27 19:50 UTC v0.5, de github.com/EticaAI
 #                       /HXL-Data-Science-file-formats/blob/main/bin/hxl2example
-#      REVISION:  2021-06-27 19:50 UTC v0.6 de hxl2tab
+#      REVISION:  2021-06-27 21:16 UTC v0.6 de hxl2tab
+#      REVISION:  2021-06-27 23:53 UTC v0.7 --archivum-extensionem=.csv
 # ==============================================================================
 
 # Tests
@@ -38,7 +39,7 @@
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv
 
-__VERSION__ = "v0.6"
+__VERSION__ = "v0.7"
 
 import sys
 import os
@@ -226,7 +227,8 @@ class HXLTM2XLIFF:
             )
 
             if is_stdout:
-                txt_writer = csv.writer(sys.stdout, delimiter='\t')
+                # txt_writer = csv.writer(sys.stdout, delimiter='\t')
+                txt_writer = csv.writer(sys.stdout)
                 txt_writer.writerow(header_new)
                 for line in csv_reader:
                     txt_writer.writerow(line)
@@ -237,7 +239,8 @@ class HXLTM2XLIFF:
                 tab_output_cleanup.close()
 
                 with open(tab_output, 'a') as new_txt:
-                    txt_writer = csv.writer(new_txt, delimiter='\t')
+                    # txt_writer = csv.writer(new_txt, delimiter='\t')
+                    txt_writer = csv.writer(new_txt)
                     txt_writer.writerow(header_new)
                     for line in csv_reader:
                         txt_writer.writerow(line)
@@ -284,8 +287,16 @@ class HXLTM2XLIFF:
                     XLIFF translation pair
         [eng-Latn]_
 
-#item+id                       -> #x_xliff+unit+id
-#meta+archivum                 -> #x_xliff+file
+#item+id                               -> #x_xliff+unit+id
+#meta+archivum                         -> #x_xliff+file
+
+    [contextum: XLIFF srcLang]
+#item(*)+i_ZZZ+is_ZZZZ                 -> #x_xliff+source+i_ZZZ+is_ZZZZ
+#status(*)+i_ZZZ+is_ZZZZ+xliff         -> #meta+x_xliff+segment_source+state+i_ZZZ+is_ZZZZ (XLIFF don't support)
+
+    [contextum: XLIFF trgLang]
+#item(*)+i_ZZZ+is_ZZZZ                 -> #x_xliff+target+i_ZZZ+is_ZZZZ
+#status(*)+i_ZZZ+is_ZZZZ+xliff         -> #x_xliff+segment+state+i_ZZZ+is_ZZZZ
         """
 
         # TODO: improve this block. I'm very sure there is some cleaner way to
@@ -301,18 +312,52 @@ class HXLTM2XLIFF:
         fon_ling = HXLTM2XLIFF.linguam_2_hxlattrs(fontem_linguam)
         obj_ling = HXLTM2XLIFF.linguam_2_hxlattrs(objectivum_linguam)
 
+        # print('fon_ling', fon_ling)
+        # print('obj_ling', obj_ling)
+
         for idx, _ in enumerate(hxlated_header):
 
             # feature types
             if hxlated_header[idx] == '#item+id':
-
-                # hxlated_header[idx] = '#item+id+xliff_segment_id'
                 hxlated_header[idx] = '#x_xliff+unit+id'
-                # hxlated_header[idx] = 'D' + hxlated_header[idx]
+                continue
+
             elif hxlated_header[idx] == '#meta+archivum':
                 hxlated_header[idx] = '#x_xliff+file'
-            elif True:
-                break
+                continue
+
+            elif hxlated_header[idx].startswith('#item'):
+
+                if hxlated_header[idx].find(fon_ling) > -1 and \
+                        not hxlated_header[idx].find('+list') > -1:
+                    hxlated_header[idx] = '#x_xliff+source' + fon_ling
+                elif hxlated_header[idx].find(obj_ling) > -1 and \
+                        not hxlated_header[idx].find('+list') > -1:
+                    hxlated_header[idx] = '#x_xliff+target' + obj_ling
+
+                continue
+
+            elif hxlated_header[idx].startswith('#status'):
+                if hxlated_header[idx].find(fon_ling) > -1 and \
+                        not hxlated_header[idx].find('+list') > -1:
+                    # TODO: maybe just ignore source state? XLIFF do not
+                    #       support translations from source languages that
+                    #       are not ideally ready yet
+                    if hxlated_header[idx].find('+xliff') > -1:
+                        hxlated_header[idx] = '#x_xliff+segment+state' + fon_ling
+                elif hxlated_header[idx].find(obj_ling) > -1 and \
+                        not hxlated_header[idx].find('+list') > -1:
+                    if hxlated_header[idx].find('+xliff') > -1:
+                        hxlated_header[idx] = '#x_xliff+segment+state' + obj_ling
+                if hxlated_header[idx] != '#status':
+                    print('#status ERROR?, FIX ME', hxlated_header[idx])
+                continue
+
+            elif hxlated_header[idx].startswith('#meta'):
+                continue
+                # print('TODO')
+            # elif True:
+            #     break
             # elif hxlated_header[idx].find('+vt_orange_type_discrete') > -1 \
             #         or hxlated_header[idx].find('+vt_categorical') > -1:
 
@@ -413,9 +458,9 @@ class HXLTM2XLIFF:
 
         Example:
             >>> HXLTM2XLIFF.linguam_2_hxlattrs('por-Latn')
-            i_por+is_latn
+            +i_por+is_latn
             >>> HXLTM2XLIFF.linguam_2_hxlattrs('arb-Arab')
-            i_arb+is_Arab
+            +i_arb+is_Arab
 
         Args:
             linguam ([String]): A linguam code
@@ -424,7 +469,7 @@ class HXLTM2XLIFF:
             [String]: HXL Attributes
         """
         iso6393, iso115924 = list(linguam.lower().split('-'))
-        return 'i_' + iso6393 + '+is_' + iso115924
+        return '+i_' + iso6393 + '+is_' + iso115924
 
 
 class HXLUtils:
