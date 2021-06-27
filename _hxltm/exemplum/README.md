@@ -1,4 +1,14 @@
-# _hxltm/exemplum/README.md
+# HXL TM exemplum
+- https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/16
+- https://github.com/HXL-CPLP/forum/issues/58
+
+<!-- TOC -->
+
+- [HXL TM exemplum](#hxl-tm-exemplum)
+    - [Exemplum: okf_table_src-tab-trg](#exemplum-okf_table_src-tab-trg)
+    - [Exemplum: schemam-un-htcds_eng-Latn--por-Latn](#exemplum-schemam-un-htcds_eng-latn--por-latn)
+
+<!-- /TOC -->
 
 <!--
 NOTE: seems that --remove-headers work on almost every place, except
@@ -44,6 +54,115 @@ ls -a _hxltm/schemam-un-htcds.tm.hxl.csv
 
 ---
 
+## Exemplum: okf_table_src-tab-trg
+- Archīvum: [hxltm_2_okf_table_src-tab-trg.hxlspec.json](hxltm_2_okf_table_src-tab-trg.hxlspec.json)
+- Auxilium: 
+  - https://okapiframework.org/wiki/index.php/Table_Filter
+  - https://site.matecat.com/support/managing-language-resources/add-glossary/
+
+
+```sh
+
+### ACTUM I
+
+hxlspec _hxltm/exemplum/hxltm_2_okf_table_src-tab-trg.hxlspec.json > _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv
+
+head -n4  _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv
+#    pt,en,Comment
+#    #x_target,#x_source,#x_comment
+#    Língua portuguesa (alfabeto latino),English language (Latin script),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    por-Latn,eng-Latn,||∅
+
+### ACTUM II
+# _[eng-Latn] Since we have different column order, we enforce it here [eng-Latn]_
+csvcut -c en,pt,Comment _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv > _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
+
+head -n4 _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
+#    en,pt,Comment
+#    #x_source,#x_target,#x_comment
+#    English language (Latin script),Língua portuguesa (alfabeto latino),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    eng-Latn,por-Latn,||∅
+
+### ACTUM III
+# _[eng-Latn] Remove only the '#x_target,#x_source,#x_comment' line [eng-Latn]_
+
+sed -i '2d' _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
+#    en,pt,Comment
+#    English language (Latin script),Língua portuguesa (alfabeto latino),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    eng-Latn,por-Latn,||∅
+#    English language,Língua portuguesa,||∅
+
+### ACTUM IV
+# _[eng-Latn] hen, generate a Tab-separed CSV (a TSV) [eng-Latn]_
+csvformat --out-tabs _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv > _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
+
+head -n4 _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
+#    en	pt	Comment
+#    English language (Latin script)	Língua portuguesa (alfabeto latino)	Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    eng-Latn	por-Latn	||∅
+#    English language	Língua portuguesa	||∅
+
+### ACTUM V
+# _[eng-Latn] Create an XLIFF 2 file [eng-Latn]_
+
+sh /opt/okapi/tikal.sh -x _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv -fc okf_table_src-tab-trg -nocopy
+#    -------------------------------------------------------------------------------
+#    Okapi Tikal - Localization Toolset
+#    Version: 2.1.41.0
+#    -------------------------------------------------------------------------------
+#    Extraction
+#    Source language: en
+#    Target language: pt-BR
+#    Default input encoding: UTF-8
+#    Filter configuration: okf_table_src-tab-trg
+#    Output: /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv.xlf
+#    Input: /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
+#    Done in 0.772s
+
+
+```
+
+`_hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv.xlf`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:okp="okapi-framework:xliff-extensions" xmlns:its="http://www.w3.org/2005/11/its" xmlns:itsxlf="http://www.w3.org/ns/its-xliff/" its:version="2.0">
+<file original="_hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv" source-language="en" target-language="pt-BR" datatype="x-text/csv" okp:inputEncoding="UTF-8">
+<body>
+<group id="3" restype="row">
+<trans-unit id="1">
+<source xml:lang="en">en</source>
+<target xml:lang="pt-BR">pt</target>
+<note>Comment</note>
+</trans-unit>
+</group>
+<group id="6" restype="row">
+<trans-unit id="2">
+<source xml:lang="en">English language (Latin script)</source>
+<target xml:lang="pt-BR">Língua portuguesa (alfabeto latino)</target>
+<note>Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅</note>
+</trans-unit>
+</group>
+<!-- (...) -->
+
+<group id="438" restype="row">
+<trans-unit id="129">
+<source xml:lang="en">This division includes activities of households as employers of domestic personnel. Furthermore, it includes the undifferentiated subsistence goods-producing and services producing activities of households.</source>
+<target xml:lang="pt-BR"></target>
+</trans-unit>
+</group>
+<group id="441" restype="row">
+<trans-unit id="130">
+<source xml:lang="en">This class includes activities (...)</source>
+<target xml:lang="pt-BR"></target>
+</trans-unit>
+</group>
+</body>
+</file>
+</xliff>
+
+```
+
 ## Exemplum: schemam-un-htcds_eng-Latn--por-Latn
 
 - Archīvum: [schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json](schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json)
@@ -58,48 +177,3 @@ head -n3  _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv
 #    L10N_ego_summarius,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,∅
 ```
 
-
-## Exemplum: okf_table_src-tab-trg
-- Archīvum: [hxltm_2_okf_table_src-tab-trg.hxlspec.json](hxltm_2_okf_table_src-tab-trg.hxlspec.json)
-- Auxilium: 
-  - https://okapiframework.org/wiki/index.php/Table_Filter
-  - https://site.matecat.com/support/managing-language-resources/add-glossary/
-
-
-```sh
-
-hxlspec _hxltm/exemplum/hxltm_2_okf_table_src-tab-trg.hxlspec.json > _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv
-
-head -n4  _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv
-#    pt,en,Comment
-#    #x_target,#x_source,#x_comment
-#    Língua portuguesa (alfabeto latino),English language (Latin script),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
-#    por-Latn,eng-Latn,||∅
-
-# Since we have different column order, we can re
-csvcut -c en,pt,Comment _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv > _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
-
-head -n4  _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
-#    en,pt,Comment
-#    #x_source,#x_target,#x_comment
-#    English language (Latin script),Língua portuguesa (alfabeto latino),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
-#    eng-Latn,por-Latn,||∅
-
-
-# Remove only the '#x_target,#x_source,#x_comment' line
-sed -i '2d' _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
-#    en,pt,Comment
-#    English language (Latin script),Língua portuguesa (alfabeto latino),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
-#    eng-Latn,por-Latn,||∅
-#    English language,Língua portuguesa,||∅
-
-# Then, generate a Tab-separed CSV (a TSV)
-csvformat --out-tabs _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv > _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
-
-head -n4  _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
-#    en	pt	Comment
-#    English language (Latin script)	Língua portuguesa (alfabeto latino)	Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
-#    eng-Latn	por-Latn	||∅
-#    English language	Língua portuguesa	||∅
-
-```

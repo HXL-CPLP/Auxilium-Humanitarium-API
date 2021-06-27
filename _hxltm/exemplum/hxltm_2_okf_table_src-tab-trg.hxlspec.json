@@ -21,8 +21,14 @@
                 "_[eng-Latn]We also merge the #meta of the eng-Latn (you may need to customize for new languages [eng-Latn]_",
                 "https://github.com/HXLStandard/hxl-proxy/wiki/Add-column-filter",
                 "https://github.com/HXLStandard/hxl-proxy/wiki/Row-formulas"
-
             ]
+        },
+        {
+            "filter": "replace_data",
+            "original": "||∅",
+            "replacement": "",
+            "pattern": "#x_comment",
+            "$comment": "_[eng-Latn]The add_columns step may add '||∅' for fields with no comment at all. So we remove it here[eng-Latn]_"
         },
         {
             "filter": "with_columns",
