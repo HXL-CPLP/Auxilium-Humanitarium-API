@@ -64,6 +64,7 @@ ls -a _hxltm/schemam-un-htcds.tm.hxl.csv
 ```sh
 
 ### ACTUM I
+# _[eng-Latn] Use HXL JSON Spec to reduce an HXL TM to a translation pair [eng-Latn]_
 
 hxlspec _hxltm/exemplum/hxltm_2_okf_table_src-tab-trg.hxlspec.json > _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp1.csv
 
@@ -93,7 +94,7 @@ sed -i '2d' _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv
 #    English language,Língua portuguesa,||∅
 
 ### ACTUM IV
-# _[eng-Latn] hen, generate a Tab-separed CSV (a TSV) [eng-Latn]_
+# _[eng-Latn] Generate a Tab-separed CSV (a TSV) [eng-Latn]_
 csvformat --out-tabs _hxltm/out/hxltm_2_okf_table_src-tab-trg_temp2.csv > _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
 
 head -n4 _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv
@@ -168,12 +169,119 @@ sh /opt/okapi/tikal.sh -x _hxltm/out/hxltm_2_okf_table_src-tab-trg.tsv -fc okf_t
 - Archīvum: [schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json](schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json)
 
 ```sh
+### ACTUM I
+# _[eng-Latn] Use HXL JSON Spec to reduce an HXL TM to a translation pair [eng-Latn]_
+hxlspec _hxltm/exemplum/schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json > _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp1.csv
 
-hxlspec _hxltm/exemplum/schemam-un-htcds_eng-Latn--por-Latn.hxlspec.json > _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv
+head -n4  _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp1.csv
+#    Source ID,pt,en,Comment
+#    #x_source_id,#x_target,#x_source,#x_comment
+#    L10N_ego_summarius,Língua portuguesa (alfabeto latino),English language (Latin script),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    L10N_ego_codicem,por-Latn,eng-Latn,
 
-head -n3  _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv
-#    Codicem,Lingua Lusitana,Lingua Lusitana (alternātīvum),Lingua Anglica,Lingua Anglica (alternātīvum),Lingua Anglica (meta)
-#    #item+id,#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#item+i_en+i_eng+is_latn,#item+i_en+i_eng+is_latn+alt+list,#meta+item+i_en+i_eng+is_latn
-#    L10N_ego_summarius,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,∅
+
+### ACTUM II
+# _[eng-Latn] Since we have different column order, we enforce it here [eng-Latn]_
+
+csvcut -n _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp1.csv
+#   1: Source ID
+#   2: pt
+#   3: en
+#   4: Comment
+
+csvcut -c 'en','pt','Comment',"Source ID" _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp1.csv > _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp2.csv
+
+head -n4 _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp2.csv
+#    en,pt,Comment,Source ID
+#    #x_source,#x_target,#x_comment,#x_source_id
+#    English language (Latin script),Língua portuguesa (alfabeto latino),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅,L10N_ego_summarius
+#    eng-Latn,por-Latn,,L10N_ego_codicem
+
+
+### ACTUM III
+# _[eng-Latn] Remove only the '#x_source_id,#x_source,#x_target,#x_comment' line [eng-Latn]_
+
+sed -i '2d' _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp2.csv
+
+head -n4 _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp2.csv
+#    Source ID,en,pt,Comment
+#    L10N_ego_summarius,English language (Latin script),Língua portuguesa (alfabeto latino),Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅
+#    L10N_ego_codicem,eng-Latn,por-Latn,
+#    L10N_ego_linguam_nomen,English language,Língua portuguesa,
+
+### ACTUM IV
+# _[eng-Latn] CSV format [eng-Latn]_
+cp _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn_temp2.csv _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv
+
+# _[eng-Latn] Generate a Tab-separed CSV (a TSV) [eng-Latn]_
+csvformat --out-tabs _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv > _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv
+
+head -n4 _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv
+#    en	pt	Comment	Source ID
+#    English language (Latin script)	Língua portuguesa (alfabeto latino)	Q1|https://github.com/HXL-CPLP/forum/issues/58|https://example.org|∅	L10N_ego_summarius
+#    eng-Latn	por-Latn		L10N_ego_codicem
+#    English language	Língua portuguesa		L10N_ego_linguam_nomen
+
+### ACTUM V
+# _[eng-Latn] Create an XLIFF 2 file [eng-Latn]_
+
+# sh /opt/okapi/tikal.sh -x _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv -fc okf_table_src-tab-trg -nocopy
+sh /opt/okapi/tikal.sh -x _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.csv -nocopy
+
+# Isso funciona
+sh /opt/okapi/tikal.sh -x _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv -fc okf_table_src -nocopy
+
+
+sh /opt/okapi/tikal.sh -x _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv -fc okf_table_src@hapi2 -nocopy
+-------------------------------------------------------------------------------
+Okapi Tikal - Localization Toolset
+Version: 2.1.41.0
+-------------------------------------------------------------------------------
+Extraction
+# Error: Cannot find filter configuration 'okf_table_src'
+# Error: Cannot find filter with ID: okf_table_src. Cannot add configuration
+# Source language: en
+# Target language: pt-BR
+# Default input encoding: UTF-8
+# Filter configuration: okf_table_src@hapi2
+# Output: /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv.xlf
+# Input: /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv
+# Error: Cannot find filter configuration 'okf_table_src@hapi2'
+# Error: Unsupported filter type 'okf_table_src@hapi2'.
+# You can use the -trace option for more details.
+
+sh /opt/okapi/tikal.sh -x _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv -gs /home/fititnt/okf_table_src@hapi2.fprm -nocopy -trace
+
+sh /opt/okapi/tikal.sh -x _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv -gs /home/fititnt/Downloads/okf_table_src@hapi2.fprm -nocopy -trace
+
+# -------------------------------------------------------------------------------
+# Okapi Tikal - Localization Toolset
+# Version: 2.1.41.0
+# -------------------------------------------------------------------------------
+# Trace: 1 class net.sf.okapi.applications.tikal.Main
+# Trace: 2 ProtectionDomain  (file:/opt/okapi/lib/okapi-application-tikal-1.41.0.jar <no signer certificates>)
+#  sun.misc.Launcher$AppClassLoader@3fee733d
+#  <no principals>
+#  java.security.Permissions@3b08f438 (
+#  ("java.io.FilePermission" "/opt/okapi/lib/okapi-application-tikal-1.41.0.jar" "read")
+#  ("java.lang.RuntimePermission" "exitVM")
+# )
+
+
+# Trace: 3 (file:/opt/okapi/lib/okapi-application-tikal-1.41.0.jar <no signer certificates>)
+# Trace: 4 file:/opt/okapi/lib/okapi-application-tikal-1.41.0.jar
+# Trace: 5 /opt/okapi/lib/okapi-application-tikal-1.41.0.jar
+# Error: Cannot find filter configuration 'okf_table_src'
+# Error: Cannot find filter with ID: okf_table_src. Cannot add configuration
+# Extraction
+# net.sf.okapi.common.exceptions.OkapiException: Could not guess the configuration for the extension '.tsv'
+# 	at net.sf.okapi.applications.tikal.Main.getConfigurationId(Main.java:751)
+# 	at net.sf.okapi.applications.tikal.Main.guessMissingParameters(Main.java:882)
+# 	at net.sf.okapi.applications.tikal.Main.process(Main.java:999)
+# 	at net.sf.okapi.applications.tikal.Main.main(Main.java:604)
+
+
+## TODO: estou tendo MESMO problema que este issue aqui
+##  >>> https://bitbucket.org/okapiframework/okapi/issues/1053/an-error-occurred-when-extracting-from-the
 ```
 

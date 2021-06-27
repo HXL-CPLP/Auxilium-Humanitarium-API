@@ -32,8 +32,8 @@
         },
         {
             "filter": "with_columns",
-            "includes": "#item+i_en+i_eng+is_latn,#item+i_pt+i_por+is_latn,#x_comment",
-            "$comment": "_[eng-Latn]Select source and target languages[eng-Latn]_"
+            "includes": "#item+i_en+i_eng+is_latn, #item+id, #item+i_pt+i_por+is_latn,#x_comment",
+            "$comment": "_[eng-Latn]Source, Source ID, Target, Comment, (not implemented) Record ID[eng-Latn]_"
         },
         {
             "filter": "without_columns",
@@ -44,6 +44,7 @@
             "filter": "rename_columns",
             "specs": [
                 "#item+i_en+i_eng+is_latn:en#x_source",
+                "#item+id:Source ID#x_source_id",
                 "#item+i_pt+i_por+is_latn:pt#x_target"
             ],
             "$comment": "_[eng-Latn]Rename columns[eng-Latn]_"
