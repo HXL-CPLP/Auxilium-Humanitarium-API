@@ -1,0 +1,30 @@
+{
+    "input": "https://proxy.hxlstandard.org/data/download/schemam-un-htcds_tm_hxl.csv?dest=data_edit&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1292720422",
+    "recipe": [
+        {
+            "filter": "with_rows",
+            "queries": [
+                "#status>-1"
+            ],
+            "$comment": "_[eng-Latn]Only rows that are ready for translation (including initial metadata per file)[eng-Latn]_"
+        },
+        {
+            "filter": "with_columns",
+            "includes": "#item+i_en+i_eng+is_latn,#item+i_pt+i_por+is_latn",
+            "$comment": "_[eng-Latn]Select source and target languages[eng-Latn]_"
+        },
+        {
+            "filter": "without_columns",
+            "excludes": "#item+alt",
+            "$comment": "_[eng-Latn]Remove duplicated +alt+list[eng-Latn]_"
+        },
+        {
+            "filter": "rename_columns",
+            "specs": [
+                "#item+i_en+i_eng+is_latn:en#x_source",
+                "#item+i_pt+i_por+is_latn:pt#x_target"
+            ],
+            "$comment": "_[eng-Latn]Rename columns[eng-Latn]_"
+        }
+    ]
+}
