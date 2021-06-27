@@ -36,6 +36,7 @@
 # Tests
 # ./_systema/programma/hxltm2xliff.py --help
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv
+# ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv
 
 __VERSION__ = "v0.6"
 
@@ -60,6 +61,12 @@ import tempfile
 
 # In Python2, sys.stdin is a byte stream; in Python3, it's a text stream
 STDIN = sys.stdin.buffer
+
+# for line in hxl.data(sys.stdin).gen_csv():
+# for line in hxl.data('_hxltm/schemam-un-htcds-5items.tm.hxl.csv', allow_local=True).gen_csv():
+# for line in hxl.data('_hxltm/schemam-un-htcds-5items.tm.hxl.csv', allow_local=True).with_rows('#sector=WASH').gen_csv():
+# for line in hxl.data('_hxltm/schemam-un-htcds-5items.tm.hxl.csv', allow_local=True).without_columns('#meta').gen_csv():
+#     print('ooooi', line)
 
 
 class HXLTM2XLIFF:
@@ -106,11 +113,19 @@ class HXLTM2XLIFF:
         )
 
         parser.add_argument(
+            '--archivum-extensionem',
+            help='File extension. .xlf or .csv',
+            action='store',
+            default='.xlf',
+            nargs='?'
+        )
+
+        parser.add_argument(
             '--fontem-linguam',
             help='Source language (use if not autodetected). ' +
             'Must be like {ISO 639-3}-{ISO 15924}. Example: por-Latn',
             action='store',
-            default='por-Latn',
+            default='lat-Latn',
             nargs='?'
         )
 
@@ -119,7 +134,7 @@ class HXLTM2XLIFF:
             help='XLiff Target language (use if not autodetected). ' +
             'Must be like {ISO 639-3}-{ISO 15924}. Example: eng-Latn',
             action='store',
-            default='eng-Latn',
+            default='arb-Arab',
             nargs='?'
         )
 
@@ -164,6 +179,11 @@ class HXLTM2XLIFF:
 
             with self.hxlhelper.make_source(args, stdin) as source, \
                     self.hxlhelper.make_output(args, stdout) as output:
+                source.without_columns('#meta')
+                source.with_columns('#item')
+
+                # print(source)
+
                 hxl.io.write_hxl(output.output, source,
                                  show_tags=not args.strip_tags)
 
@@ -174,16 +194,20 @@ class HXLTM2XLIFF:
                 # # print('source.columns', source.headers())
                 # hxlmeta = HXLMeta(local_hxl_file=output.output.name)
                 # hxlmeta.debuginfo()
+            elif args.archivum_extensionem == '.csv':
+                # print('CSV!')
+                self.hxltm2csv(args.outfile, self.original_outfile,
+                               self.original_outfile_is_stdout, args)
             else:
                 self.hxl2tab(args.outfile, self.original_outfile,
-                             self.original_outfile_is_stdout)
+                             self.original_outfile_is_stdout, args)
 
         finally:
             temp.close()
 
         return self.EXIT_OK
 
-    def hxl2tab(self, hxlated_input, tab_output, is_stdout):
+    def hxltm2csv(self, hxlated_input, tab_output, is_stdout, args):
         """
         hxl2tab is  is the main method to de facto make the conversion.
         """
@@ -195,7 +219,11 @@ class HXLTM2XLIFF:
             # exported HXlated file should already save without headers.
             next(csv_reader)
             header_original = next(csv_reader)
-            header_new = self.hxl2tab_header(header_original)
+            header_new = self.hxltm2csv_header(
+                header_original,
+                fontem_linguam=args.fontem_linguam,
+                objectivum_linguam=args.objectivum_linguam,
+            )
 
             if is_stdout:
                 txt_writer = csv.writer(sys.stdout, delimiter='\t')
@@ -214,22 +242,50 @@ class HXLTM2XLIFF:
                     for line in csv_reader:
                         txt_writer.writerow(line)
 
-    def hxl2tab_header(self, hxlated_header):
+    def hxl2tab(self, hxlated_input, tab_output, is_stdout, args):
         """
-        Add prefixes to an hxlated_header to work as typehints for Orange Data
-        Mining
-        orange.biolab.si/docs/latest/reference/rst/Orange.data.formats.html:
-c for class feature            -> +vt_orange_flag_class|+vt_class
-i for feature to be ignored    -> +vt_orange_flag_ignore
-m for the meta attribute       -> +vt_orange_flag_meta|#meta
-C for continuous-typed feature -> +vt_orange_type_continuous|+number
-D for discrete feature         -> +vt_orange_type_discrete|+vt_categorical
-S for string                   -> +vt_orange_type_string|+text|+name
-        An example data file in this format is shown below:
-C#sepal length	iC#sepal width	mC#petal length	mC#petal width	cD#iris
-5.1	3.5	1.4	0.2	Iris-setosa
-4.9	3.0	1.4	0.2	Iris-setosa
-4.7	3.2	1.3	0.2	Iris-setosa
+        hxl2tab is  is the main method to de facto make the conversion.
+        """
+
+        with open(hxlated_input, 'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+
+            # Hotfix: skip first non-HXL header. Ideally I think the already
+            # exported HXlated file should already save without headers.
+            next(csv_reader)
+            header_original = next(csv_reader)
+            header_new = self.hxltm2csv_header(
+                header_original,
+                fontem_linguam=args.fontem_linguam,
+                objectivum_linguam=args.objectivum_linguam,
+            )
+
+            if is_stdout:
+                txt_writer = csv.writer(sys.stdout, delimiter='\t')
+                txt_writer.writerow(header_new)
+                for line in csv_reader:
+                    txt_writer.writerow(line)
+            else:
+
+                tab_output_cleanup = open(tab_output, 'w')
+                tab_output_cleanup.truncate()
+                tab_output_cleanup.close()
+
+                with open(tab_output, 'a') as new_txt:
+                    txt_writer = csv.writer(new_txt, delimiter='\t')
+                    txt_writer.writerow(header_new)
+                    for line in csv_reader:
+                        txt_writer.writerow(line)
+
+    # def hxl2tab_header(self, hxlated_header):
+    def hxltm2csv_header(self, hxlated_header, fontem_linguam, objectivum_linguam):
+        """
+        _[eng-Latn] Convert the Main HXL TM file to a single or source to target
+                    XLIFF translation pair
+        [eng-Latn]_
+
+#item+id                       -> #x_xliff+unit+id
+#meta+archivum                 -> #x_xliff+file
         """
 
         # TODO: improve this block. I'm very sure there is some cleaner way to
@@ -242,57 +298,69 @@ C#sepal length	iC#sepal width	mC#petal length	mC#petal width	cD#iris
         #       added to the end result, but we keep generic ones to avoid
         #       potentially break other tools.
 
+        fon_ling = HXLTM2XLIFF.linguam_2_hxlattrs(fontem_linguam)
+        obj_ling = HXLTM2XLIFF.linguam_2_hxlattrs(objectivum_linguam)
+
         for idx, _ in enumerate(hxlated_header):
 
             # feature types
-            if hxlated_header[idx].find('+vt_orange_type_discrete') > -1 \
-                    or hxlated_header[idx].find('+vt_categorical') > -1:
+            if hxlated_header[idx] == '#item+id':
 
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_orange_type_discrete', '')
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_categorical', '')
-                hxlated_header[idx] = 'D' + hxlated_header[idx]
+                # hxlated_header[idx] = '#item+id+xliff_segment_id'
+                hxlated_header[idx] = '#x_xliff+unit+id'
+                # hxlated_header[idx] = 'D' + hxlated_header[idx]
+            elif hxlated_header[idx] == '#meta+archivum':
+                hxlated_header[idx] = '#x_xliff+file'
+            elif True:
+                break
+            # elif hxlated_header[idx].find('+vt_orange_type_discrete') > -1 \
+            #         or hxlated_header[idx].find('+vt_categorical') > -1:
 
-            elif hxlated_header[idx].find('+vt_orange_type_continuous') > -1 \
-                    or hxlated_header[idx].find('+number') > -1:
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_orange_type_discrete', '')
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_categorical', '')
+            #     hxlated_header[idx] = 'D' + hxlated_header[idx]
 
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_orange_type_discrete', '')
-                hxlated_header[idx] = 'C' + hxlated_header[idx]
-            elif hxlated_header[idx].find('+vt_orange_type_string') > -1 or \
-                    hxlated_header[idx].find('+text') > -1 or \
-                    hxlated_header[idx].find('+name') > -1:
+            # elif hxlated_header[idx].find('+vt_orange_type_continuous') > -1 \
+            #         or hxlated_header[idx].find('+number') > -1:
 
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_orange_type_string', '')
-                hxlated_header[idx] = 'S' + hxlated_header[idx]
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_orange_type_discrete', '')
+            #     hxlated_header[idx] = 'C' + hxlated_header[idx]
+            # elif hxlated_header[idx].find('+vt_orange_type_string') > -1 or \
+            #         hxlated_header[idx].find('+text') > -1 or \
+            #         hxlated_header[idx].find('+name') > -1:
 
-            # optional flags
-            if hxlated_header[idx].find('+vt_orange_flag_class') > -1 or \
-                    hxlated_header[idx].find('+vt_class') > -1:
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_orange_type_string', '')
+            #     hxlated_header[idx] = 'S' + hxlated_header[idx]
 
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_orange_flag_class', '')
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_class', '')
-                hxlated_header[idx] = 'c' + hxlated_header[idx]
+            # # optional flags
+            # if hxlated_header[idx].find('+vt_orange_flag_class') > -1 or \
+            #         hxlated_header[idx].find('+vt_class') > -1:
 
-            elif hxlated_header[idx].find('+vt_orange_flag_meta') > -1 or \
-                    hxlated_header[idx].find('+vt_meta') > -1 or \
-                    hxlated_header[idx].find('#meta') > -1:
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_orange_flag_class', '')
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_class', '')
+            #     hxlated_header[idx] = 'c' + hxlated_header[idx]
 
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_orange_flag_meta', '')
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_meta', '')
-                hxlated_header[idx] = 'm' + hxlated_header[idx]
+            # elif hxlated_header[idx].find('+vt_orange_flag_meta') > -1 or \
+            #         hxlated_header[idx].find('+vt_meta') > -1 or \
+            #         hxlated_header[idx].find('#meta') > -1:
 
-            elif hxlated_header[idx].find('+vt_orange_flag_ignore') > -1:
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_orange_flag_meta', '')
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_meta', '')
+            #     hxlated_header[idx] = 'm' + hxlated_header[idx]
 
-                hxlated_header[idx] = hxlated_header[idx].replace(
-                    '+vt_orange_flag_ignore', '')
-                hxlated_header[idx] = 'i' + hxlated_header[idx]
+            # elif hxlated_header[idx].find('+vt_orange_flag_ignore') > -1:
+
+            #     hxlated_header[idx] = hxlated_header[idx].replace(
+            #         '+vt_orange_flag_ignore', '')
+            #     hxlated_header[idx] = 'i' + hxlated_header[idx]
 
         # print('hxl2tab_header', hxlated_header)
         return hxlated_header
@@ -339,6 +407,24 @@ C#sepal length	iC#sepal width	mC#petal length	mC#petal width	cD#iris
     #         temp_output.close()
 
     #     return self.EXIT_OK
+
+    def linguam_2_hxlattrs(linguam):
+        """linguam_2_hxlattrs
+
+        Example:
+            >>> HXLTM2XLIFF.linguam_2_hxlattrs('por-Latn')
+            i_por+is_latn
+            >>> HXLTM2XLIFF.linguam_2_hxlattrs('arb-Arab')
+            i_arb+is_Arab
+
+        Args:
+            linguam ([String]): A linguam code
+
+        Returns:
+            [String]: HXL Attributes
+        """
+        iso6393, iso115924 = list(linguam.lower().split('-'))
+        return 'i_' + iso6393 + '+is_' + iso115924
 
 
 class HXLUtils:
