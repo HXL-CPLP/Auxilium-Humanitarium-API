@@ -289,14 +289,27 @@ class HXLTM2XLIFF:
 
 #item+id                               -> #x_xliff+unit+id
 #meta+archivum                         -> #x_xliff+file
+#item+wikidata+code                    -> #x_xliff+unit+note+note_category__wikidata
+#meta+wikidata+code                    -> #x_xliff+unit+note+note_category__wikidata
+#meta+item+url+list                    -> #x_xliff+unit+notes+note_category__url
+#item+type+lat_dominium+list           -> #x_xliff+group+group_0 (We will not implement deeper levels  than 0 now)
 
     [contextum: XLIFF srcLang]
 #item(*)+i_ZZZ+is_ZZZZ                 -> #x_xliff+source+i_ZZZ+is_ZZZZ
 #status(*)+i_ZZZ+is_ZZZZ+xliff         -> #meta+x_xliff+segment_source+state+i_ZZZ+is_ZZZZ (XLIFF don't support)
+#meta(*)+i_ZZZ+is_ZZZZ                 -> #x_xliff+unit+note+note_category__source
+#meta(*)+i_ZZZ+is_ZZZZ+list            -> #x_xliff+unit+notes+note_category__source
 
     [contextum: XLIFF trgLang]
 #item(*)+i_ZZZ+is_ZZZZ                 -> #x_xliff+target+i_ZZZ+is_ZZZZ
 #status(*)+i_ZZZ+is_ZZZZ+xliff         -> #x_xliff+segment+state+i_ZZZ+is_ZZZZ
+#meta(*)+i_ZZZ+is_ZZZZ                 -> #x_xliff+unit+note+note_category__target
+#meta(*)+i_ZZZ+is_ZZZZ+list            -> #x_xliff+unit+notes+note_category__target
+
+        _[eng-Latn] TODO:
+- Map XLIFF revisions back MateCat back to HXL TM
+  @see http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#revisions
+        [eng-Latn]_
         """
 
         # TODO: improve this block. I'm very sure there is some cleaner way to
@@ -317,13 +330,31 @@ class HXLTM2XLIFF:
 
         for idx, _ in enumerate(hxlated_header):
 
-            # feature types
-            if hxlated_header[idx] == '#item+id':
+            if hxlated_header[idx].startswith('#x_xliff'):
+                # Something explicitly was previously defined with #x_xliff
+                # So we will intentionally ignore on this step.
+                # This could be useful if someone is trying to translate twice
+                continue
+
+            elif hxlated_header[idx] == '#item+id':
                 hxlated_header[idx] = '#x_xliff+unit+id'
                 continue
 
             elif hxlated_header[idx] == '#meta+archivum':
                 hxlated_header[idx] = '#x_xliff+file'
+                continue
+
+            elif hxlated_header[idx] == '#meta+item+url+list':
+                hxlated_header[idx] = '#x_xliff+unit+notes+note_category__url'
+                continue
+
+            elif hxlated_header[idx] == '#item+wikidata+code' or \
+                    hxlated_header[idx] == '#meta+wikidata+code':
+                hxlated_header[idx] = '#x_xliff+unit+note+note_category__wikidata'
+                continue
+
+            elif hxlated_header[idx] == '#item+type+lat_dominium+list':
+                hxlated_header[idx] = '#x_xliff+group+group_0'
                 continue
 
             elif hxlated_header[idx].startswith('#item'):
@@ -354,104 +385,27 @@ class HXLTM2XLIFF:
                 continue
 
             elif hxlated_header[idx].startswith('#meta'):
+                # @see http://docs.oasis-open.org/xliff/xliff-core/v2.1/os
+                #      /xliff-core-v2.1-os.html#category
+
+                if hxlated_header[idx].find(fon_ling) > -1:
+                    if hxlated_header[idx].find('+list') > -1:
+                        hxlated_header[idx] = '#x_xliff+unit+notes+note_category__source'
+                    else:
+                        hxlated_header[idx] = '#x_xliff+unit+note+note_category__source'
+                    continue
+
+                if hxlated_header[idx].find(obj_ling) > -1:
+                    if hxlated_header[idx].find('+list') > -1:
+                        hxlated_header[idx] = '#x_xliff+unit+notes+note_category__target'
+                    else:
+                        hxlated_header[idx] = '#x_xliff+unit+note+note_category__target'
+                    continue
+
+                # We will ignore other #metas
                 continue
-                # print('TODO')
-            # elif True:
-            #     break
-            # elif hxlated_header[idx].find('+vt_orange_type_discrete') > -1 \
-            #         or hxlated_header[idx].find('+vt_categorical') > -1:
 
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_orange_type_discrete', '')
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_categorical', '')
-            #     hxlated_header[idx] = 'D' + hxlated_header[idx]
-
-            # elif hxlated_header[idx].find('+vt_orange_type_continuous') > -1 \
-            #         or hxlated_header[idx].find('+number') > -1:
-
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_orange_type_discrete', '')
-            #     hxlated_header[idx] = 'C' + hxlated_header[idx]
-            # elif hxlated_header[idx].find('+vt_orange_type_string') > -1 or \
-            #         hxlated_header[idx].find('+text') > -1 or \
-            #         hxlated_header[idx].find('+name') > -1:
-
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_orange_type_string', '')
-            #     hxlated_header[idx] = 'S' + hxlated_header[idx]
-
-            # # optional flags
-            # if hxlated_header[idx].find('+vt_orange_flag_class') > -1 or \
-            #         hxlated_header[idx].find('+vt_class') > -1:
-
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_orange_flag_class', '')
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_class', '')
-            #     hxlated_header[idx] = 'c' + hxlated_header[idx]
-
-            # elif hxlated_header[idx].find('+vt_orange_flag_meta') > -1 or \
-            #         hxlated_header[idx].find('+vt_meta') > -1 or \
-            #         hxlated_header[idx].find('#meta') > -1:
-
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_orange_flag_meta', '')
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_meta', '')
-            #     hxlated_header[idx] = 'm' + hxlated_header[idx]
-
-            # elif hxlated_header[idx].find('+vt_orange_flag_ignore') > -1:
-
-            #     hxlated_header[idx] = hxlated_header[idx].replace(
-            #         '+vt_orange_flag_ignore', '')
-            #     hxlated_header[idx] = 'i' + hxlated_header[idx]
-
-        # print('hxl2tab_header', hxlated_header)
         return hxlated_header
-
-    # def execute_web(self, source_url, stdin=STDIN, stdout=sys.stdout,
-    #                 stderr=sys.stderr, hxlmeta=False):
-    #     """
-    #     The execute_web is the main entrypoint of HXL2Tab when this class is
-    #     called outside command line interface, like the build in HTTP use with
-    #     hug
-    #     """
-
-    #     # TODO: the execute_web needs to output the tabfile with correct
-    #     #       mimetype, compression, etc
-    #     #       (fititnt, 2021-02-07 15:59 UTC)
-
-    #     self.hxlhelper = HXLUtils()
-
-    #     try:
-    #         temp_input = tempfile.NamedTemporaryFile('w')
-    #         temp_output = tempfile.NamedTemporaryFile('w')
-
-    #         webargs = type('obj', (object,), {
-    #             "infile": source_url,
-    #             "sheet_index": None,
-    #             "selector": None,
-    #             'sheet': None,
-    #             'http_header': None,
-    #             'ignore_certs': False
-    #         })
-
-    #         with self.hxlhelper.make_source(webargs, stdin) as source:
-    #             for line in source.gen_csv(True, True):
-    #                 temp_input.write(line)
-
-    #             temp_input.seek(0)
-    #             # self.hxl2tab(temp_input.name, temp_output.name, False)
-
-    #             result_file = open(temp_input.name, 'r')
-    #             return result_file.read()
-
-    #     finally:
-    #         temp_input.close()
-    #         temp_output.close()
-
-    #     return self.EXIT_OK
 
     def linguam_2_hxlattrs(linguam):
         """linguam_2_hxlattrs
@@ -681,29 +635,3 @@ if __name__ == "__main__":
     args = hxltm2xliff.make_args_hxl2example()
 
     hxltm2xliff.execute_cli(args)
-
-
-# @hug.format.content_type('text/csv')
-# def output_csv(data, response):
-#     if isinstance(data, dict) and 'errors' in data:
-#         response.content_type = 'application/json'
-#         return hug.output_format.json(data)
-#     response.content_type = 'text/csv'
-#     if hasattr(data, "read"):
-#         return data
-
-#     return str(data).encode("utf8")
-
-
-# @hug.get('/hxltm2xliff.csv', output=output_csv)
-# def api_hxl2example(source_url):
-#     """hxltm2xliff (@see https://github.com/EticaAI/HXL-Data-Science-file-formats)
-
-#     Example:
-#     http://localhost:8000/hxltm2xliff.csv?source_url=https://docs.google.com/spreadsheets/u/1/d/1l7POf1WPfzgJb-ks4JM86akFSvaZOhAUWqafSJsm3Y4/edit#gid=634938833
-
-#     """
-
-#     hxltm2xliff = HXLTM2XLIFF()
-
-#     return hxltm2xliff.execute_web(source_url)
