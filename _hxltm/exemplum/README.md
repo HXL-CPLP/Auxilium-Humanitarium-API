@@ -285,3 +285,36 @@ sh /opt/okapi/tikal.sh -x _hxltm/out/schemam-un-htcds_eng-Latn--por-Latn.tsv -gs
 ##  >>> https://bitbucket.org/okapiframework/okapi/issues/1053/an-error-occurred-when-extracting-from-the
 ```
 
+
+
+<!--
+
+- /workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_hxltm/schemam-un-htcds-5items.tm.hxl.zip
+
+ ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv
+'utf-8' codec can't decode byte 0xd0 in position 4094: unexpected end of data
+'utf-8' codec can't decode byte 0xd0 in position 4094: unexpected end of data
+'utf-8' codec can't decode byte 0xd0 in position 4094: unexpected end of data
+'utf-8' codec can't decode byte 0xd0 in position 4094: unexpected end of data
+'utf-8' codec can't decode byte 0xd0 in position 4094: unexpected end of data
+'utf-8' codec can't decode byte 0xd0 in position 4094: unexpected end of data
+'utf-8' codec can't decode byte 0xd0 in position 4094: unexpected end of data
+Traceback (most recent call last):
+  File "./_systema/programma/hxltm2xliff.py", line 766, in <module>
+    hxltm2xliff.execute_cli(args)
+  File "./_systema/programma/hxltm2xliff.py", line 185, in execute_cli
+    with self.hxlhelper.make_source(args, stdin) as source, \
+  File "./_systema/programma/hxltm2xliff.py", line 670, in make_source
+    input = self.make_input(args, stdin)
+  File "./_systema/programma/hxltm2xliff.py", line 689, in make_input
+    return hxl.io.make_input(
+  File "/home/fititnt/.local/lib/python3.8/site-packages/hxl/io.py", line 442, in make_input
+    return CSVInput(input, encoding=encoding)
+  File "/home/fititnt/.local/lib/python3.8/site-packages/hxl/io.py", line 763, in __init__
+    delimiter = CSVInput._detect_delimiter(input, encoding)
+  File "/home/fititnt/.local/lib/python3.8/site-packages/hxl/io.py", line 797, in _detect_delimiter
+    lines = re.split(r'\r?\n', sample)
+UnboundLocalError: local variable 'sample' referenced before assignment
+
+
+-->

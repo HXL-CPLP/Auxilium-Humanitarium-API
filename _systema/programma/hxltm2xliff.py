@@ -35,9 +35,12 @@
 # ==============================================================================
 
 # Tests
+# Exemplos: https://github.com/oasis-tcs/xliff-xliff-22/blob/master/xliff-21/test-suite/core/valid/allExtensions.xlf
 # ./_systema/programma/hxltm2xliff.py --help
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv
+# ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv --fontem-linguam=eng-Latn
+
 
 __VERSION__ = "v0.7"
 
@@ -302,36 +305,91 @@ class HXLTM2XLIFF:
         #       maybe csv.DictReader?
         #       @see https://www.geeksforgeeks.org/convert-csv-to-json-using-python/
         #       @see https://docs.python.org/3/library/csv.html#csv.DictReader
+        datum = []
 
         with open(hxlated_input, 'r') as csv_file:
-            csv_reader = csv.reader(csv_file)
+            csvReader = csv.DictReader(csv_file)
 
-            # # Hotfix: skip first non-HXL header. Ideally I think the already
-            # # exported HXlated file should already save without headers.
-            # next(csv_reader)
-            header_original = next(csv_reader)
-            header_new = self.hxltm2csv_header(
-                header_original,
-                fontem_linguam=args.fontem_linguam,
-                objectivum_linguam=args.objectivum_linguam,
-            )
+            # Convert each row into a dictionary
+            # and add it to data
+            for item in csvReader:
 
-            if is_stdout:
-                txt_writer = csv.writer(sys.stdout, delimiter='\t')
-                txt_writer.writerow(header_new)
-                for line in csv_reader:
-                    txt_writer.writerow(line)
-            else:
+                datum.append(HXLTM2XLIFF.hxltm_item_relevant_options(item))
 
-                tab_output_cleanup = open(tab_output, 'w')
-                tab_output_cleanup.truncate()
-                tab_output_cleanup.close()
+        resultatum = []
+        resultatum.append('<?xml version="1.0"?>')
+        resultatum.append(
+            '<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="fr">')
+        resultatum.append('  <file id="f1">')
 
-                with open(tab_output, 'a') as new_txt:
-                    txt_writer = csv.writer(new_txt, delimiter='\t')
-                    txt_writer.writerow(header_new)
-                    for line in csv_reader:
-                        txt_writer.writerow(line)
+        num = 0
+
+        for rem in datum:
+            num += 1
+            # unit_id = rem['#x_xliff+unit+id'] if rem.has_key('#x_xliff+unit+id') else num
+            unit_id = rem['#x_xliff+unit+id'] if rem['#x_xliff+unit+id'] else num
+            resultatum.append('      <unit id="' + unit_id + '">')
+
+            resultatum.append('        <segment>')
+
+            xsource = HXLTM2XLIFF.hxltm_item_xliff_source_key(rem)
+            if xsource:
+                if not rem[xsource]:
+                    resultatum.append('          <!-- ERROR source ' + unit_id + ', ' + xsource + '-->')
+                    print('ERROR:', unit_id, xsource)
+                    # continue
+                else:
+                    resultatum.append('          <source>' + rem[xsource] + '</source>')
+
+            xtarget = HXLTM2XLIFF.hxltm_item_xliff_target_key(rem)
+            if xtarget and rem[xtarget]:
+                resultatum.append('          <target>' + rem[xtarget] + '</target>')
+
+            resultatum.append('        </segment>')
+
+            resultatum.append('      </unit>')
+
+        resultatum.append('  </file>')
+        resultatum.append('</xliff>')
+
+        # print('datum', datum)
+        # print('')
+        # print('')
+        # print('resultatum')
+        # print('resultatum', resultatum)
+        for ln in resultatum:
+            print (ln)
+
+
+        # with open(hxlated_input, 'r') as csv_file:
+        #     csv_reader = csv.reader(csv_file)
+
+        #     # # Hotfix: skip first non-HXL header. Ideally I think the already
+        #     # # exported HXlated file should already save without headers.
+        #     # next(csv_reader)
+        #     header_original = next(csv_reader)
+        #     header_new = self.hxltm2csv_header(
+        #         header_original,
+        #         fontem_linguam=args.fontem_linguam,
+        #         objectivum_linguam=args.objectivum_linguam,
+        #     )
+
+        #     if is_stdout:
+        #         txt_writer = csv.writer(sys.stdout, delimiter='\t')
+        #         txt_writer.writerow(header_new)
+        #         for line in csv_reader:
+        #             txt_writer.writerow(line)
+        #     else:
+
+        #         tab_output_cleanup = open(tab_output, 'w')
+        #         tab_output_cleanup.truncate()
+        #         tab_output_cleanup.close()
+
+        #         with open(tab_output, 'a') as new_txt:
+        #             txt_writer = csv.writer(new_txt, delimiter='\t')
+        #             txt_writer.writerow(header_new)
+        #             for line in csv_reader:
+        #                 txt_writer.writerow(line)
 
     # def hxl2tab_header(self, hxlated_header):
     def hxltm2csv_header(self, hxlated_header, fontem_linguam, objectivum_linguam):
@@ -459,6 +517,32 @@ class HXLTM2XLIFF:
                 continue
 
         return hxlated_header
+
+    def hxltm_item_relevant_options(item):
+        item_neo = {}
+
+        for k in item:
+            if k.startswith('#x_xliff'):
+                if item[k] == '∅':
+                    item_neo[k] = None
+                else:
+                    item_neo[k] = item[k]
+
+        return item_neo
+
+    def hxltm_item_xliff_source_key(item):
+        for k in item:
+            if k.startswith('#x_xliff+source'):
+                return k
+
+        return None
+
+    def hxltm_item_xliff_target_key(item):
+        for k in item:
+            if k.startswith('#x_xliff+target'):
+                return k
+
+        return None
 
     def linguam_2_hxlattrs(linguam):
         """linguam_2_hxlattrs
