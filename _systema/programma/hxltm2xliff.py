@@ -11,6 +11,7 @@
 #                             with HXL to XLIFF v2.1
 #                 [eng-Latn]_
 #                 @see http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html
+#                 @see https://www.gala-global.org/lisa-oscar-standards
 #                 @see https://github.com/HXL-CPLP/forum/issues/58
 #                 @see https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/16
 #
@@ -40,6 +41,7 @@
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv --fontem-linguam=eng-Latn
+# ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv --fontem-linguam=eng-Latn --archivum-extensionem=.tmx
 
 
 __VERSION__ = "v0.7"
@@ -118,7 +120,7 @@ class HXLTM2XLIFF:
 
         parser.add_argument(
             '--archivum-extensionem',
-            help='File extension. .xlf or .csv',
+            help='File extension. .xlf, .csv or .tmx',
             action='store',
             default='.xlf',
             nargs='?'
@@ -202,6 +204,10 @@ class HXLTM2XLIFF:
             elif args.archivum_extensionem == '.csv':
                 # print('CSV!')
                 self.hxltm2csv(args.outfile, self.original_outfile,
+                               self.original_outfile_is_stdout, args)
+            elif args.archivum_extensionem == '.tmx':
+                # print('tmx!')
+                self.hxltm2tmx(args.outfile, self.original_outfile,
                                self.original_outfile_is_stdout, args)
             else:
                 # self.hxl2tab(args.outfile, self.original_outfile,
@@ -294,7 +300,105 @@ class HXLTM2XLIFF:
                     for line in csv_reader:
                         txt_writer.writerow(line)
 
-    def hxltm2xliff(self, hxlated_input, tab_output, is_stdout, args):
+    def hxltm2tmx(self, hxlated_input, tmx_output, is_stdout, args):
+        """
+        hxltm2tmx is  is the main method to de facto make the conversion.
+
+        TODO: this is a work-in-progress at this moment, 2021-06-28
+        @see https://en.wikipedia.org/wiki/Translation_Memory_eXchange
+        @see https://www.gala-global.org/lisa-oscar-standards
+        @see https://cloud.google.com/translate/automl/docs/prepare
+        @see http://xml.coverpages.org/tmxSpec971212.html
+        """
+
+        # example of test file https://github.com/rmeertens/tmxtools/blob/master/tests/testfiles/test1.tmx
+        # TODO: implement something like internal structure of a object,
+        #       maybe csv.DictReader?
+        #       @see https://www.geeksforgeeks.org/convert-csv-to-json-using-python/
+        #       @see https://docs.python.org/3/library/csv.html#csv.DictReader
+        datum = []
+
+        with open(hxlated_input, 'r') as csv_file:
+            # TODO: fix problem if input data already only have HXL hashtags
+            #       but no extra headings (Emerson Rocha, 2021-06-28 01:27 UTC)
+
+            # Hotfix: skip first non-HXL header. Ideally I think the already
+            # exported HXlated file should already save without headers.
+            next(csv_file)
+
+            csvReader = csv.DictReader(csv_file)
+
+            # Convert each row into a dictionary
+            # and add it to data
+            for item in csvReader:
+
+                datum.append(HXLTM2XLIFF.tmx_item_relevan_options(item))
+
+        # @examplum https://cloud.google.com/translate/automl/docs/prepare#translation_memory_exchange_tmx
+        # @examplum https://www.gala-global.org/knowledge-center/industry-development/standards/lisa-oscar-standards
+        resultatum = []
+        resultatum.append("<?xml version='1.0' encoding='utf-8'?>")
+        resultatum.append('<!DOCTYPE tmx SYSTEM "tmx14.dtd">')
+        resultatum.append('<tmx version="1.4">')
+        # @see https://www.gala-global.org/sites/default/files/migrated-pages/docs/tmx14%20%281%29.dtd
+        resultatum.append(
+            '  <header creationtool="hxltm" creationtoolversion="' + __VERSION__ + '" ' +
+            'segtype="sentence" o-tmf="UTF-8" ' +
+            'adminlang="en" srclang="en" datatype="PlainText"/>')
+        resultatum.append('  <body>')
+
+        num = 0
+
+        for rem in datum:
+            num += 1
+            # unit_id = rem['#x_xliff+unit+id'] if rem.has_key('#x_xliff+unit+id') else num
+            # print(type (rem))
+            # print(rem)
+
+            unit_id = rem['#item+id'] if '#item+id' in rem else num
+            resultatum.append('      <tu id="' + str(unit_id) + '">')
+            if '#item+wikidata+code' in rem:
+                resultatum.append(
+                    '        <prop type="wikidata">' + rem['#item+wikidata+code'] + '</prop>')
+
+            # TODO: reduzir repetitividade; os valores estao hardcoded. Não ideal.
+
+            if '#item+i_la+i_lat+is_latn' in rem:
+                resultatum.append('        <tuv xml:lang="la">')
+                resultatum.append(
+                    '          <seg>' + rem['#item+i_la+i_lat+is_latn'] + '</seg>')
+
+            if '#item+i_pt+i_por+is_latn' in rem:
+                resultatum.append('        <tuv xml:lang="pt">')
+                resultatum.append(
+                    '          <seg>' + rem['#item+i_pt+i_por+is_latn'] + '</seg>')
+
+                resultatum.append('        </tuv>')
+            if '#item+i_en+i_eng+is_latn' in rem:
+                resultatum.append('        <tuv xml:lang="en">')
+                resultatum.append(
+                    '          <seg>' + rem['#item+i_en+i_eng+is_latn'] + '</seg>')
+                resultatum.append('        </tuv>')
+
+            resultatum.append('      </tu>')
+
+        resultatum.append('  </body>')
+        resultatum.append('</tmx>')
+
+        if is_stdout:
+            for ln in resultatum:
+                print(ln)
+        else:
+            tmx_output_cleanup = open(tmx_output, 'w')
+            tmx_output_cleanup.truncate()
+            tmx_output_cleanup.close()
+
+            with open(tmx_output, 'a') as new_txt:
+                for ln in resultatum:
+                    new_txt.write(ln + "\n")
+                    # print (ln)
+
+    def hxltm2xliff(self, hxlated_input, xliff_output, is_stdout, args):
         """
         hxltm2xliff is  is the main method to de facto make the conversion.
 
@@ -328,22 +432,25 @@ class HXLTM2XLIFF:
             num += 1
             # unit_id = rem['#x_xliff+unit+id'] if rem.has_key('#x_xliff+unit+id') else num
             unit_id = rem['#x_xliff+unit+id'] if rem['#x_xliff+unit+id'] else num
-            resultatum.append('      <unit id="' + unit_id + '">')
+            resultatum.append('      <unit id="' + str(unit_id) + '">')
 
             resultatum.append('        <segment>')
 
             xsource = HXLTM2XLIFF.hxltm_item_xliff_source_key(rem)
             if xsource:
                 if not rem[xsource]:
-                    resultatum.append('          <!-- ERROR source ' + unit_id + ', ' + xsource + '-->')
+                    resultatum.append(
+                        '          <!-- ERROR source ' + unit_id + ', ' + xsource + '-->')
                     print('ERROR:', unit_id, xsource)
                     # continue
                 else:
-                    resultatum.append('          <source>' + rem[xsource] + '</source>')
+                    resultatum.append('          <source>' +
+                                      rem[xsource] + '</source>')
 
             xtarget = HXLTM2XLIFF.hxltm_item_xliff_target_key(rem)
             if xtarget and rem[xtarget]:
-                resultatum.append('          <target>' + rem[xtarget] + '</target>')
+                resultatum.append('          <target>' +
+                                  rem[xtarget] + '</target>')
 
             resultatum.append('        </segment>')
 
@@ -352,46 +459,19 @@ class HXLTM2XLIFF:
         resultatum.append('  </file>')
         resultatum.append('</xliff>')
 
-        # print('datum', datum)
-        # print('')
-        # print('')
-        # print('resultatum')
-        # print('resultatum', resultatum)
-        for ln in resultatum:
-            print (ln)
+        if is_stdout:
+            for ln in resultatum:
+                print(ln)
+        else:
+            xliff_output_cleanup = open(xliff_output, 'w')
+            xliff_output_cleanup.truncate()
+            xliff_output_cleanup.close()
 
+            with open(xliff_output, 'a') as new_txt:
+                for ln in resultatum:
+                    new_txt.write(ln + "\n")
+                    # print (ln)
 
-        # with open(hxlated_input, 'r') as csv_file:
-        #     csv_reader = csv.reader(csv_file)
-
-        #     # # Hotfix: skip first non-HXL header. Ideally I think the already
-        #     # # exported HXlated file should already save without headers.
-        #     # next(csv_reader)
-        #     header_original = next(csv_reader)
-        #     header_new = self.hxltm2csv_header(
-        #         header_original,
-        #         fontem_linguam=args.fontem_linguam,
-        #         objectivum_linguam=args.objectivum_linguam,
-        #     )
-
-        #     if is_stdout:
-        #         txt_writer = csv.writer(sys.stdout, delimiter='\t')
-        #         txt_writer.writerow(header_new)
-        #         for line in csv_reader:
-        #             txt_writer.writerow(line)
-        #     else:
-
-        #         tab_output_cleanup = open(tab_output, 'w')
-        #         tab_output_cleanup.truncate()
-        #         tab_output_cleanup.close()
-
-        #         with open(tab_output, 'a') as new_txt:
-        #             txt_writer = csv.writer(new_txt, delimiter='\t')
-        #             txt_writer.writerow(header_new)
-        #             for line in csv_reader:
-        #                 txt_writer.writerow(line)
-
-    # def hxl2tab_header(self, hxlated_header):
     def hxltm2csv_header(self, hxlated_header, fontem_linguam, objectivum_linguam):
         """
         _[eng-Latn] Convert the Main HXL TM file to a single or source to target
@@ -529,6 +609,19 @@ class HXLTM2XLIFF:
                     item_neo[k] = item[k]
 
         return item_neo
+
+    def tmx_item_relevan_options(item):
+        return item
+        # item_neo = {}
+
+        # for k in item:
+        #     if k.startswith('#x_xliff'):
+        #         if item[k] == '∅':
+        #             item_neo[k] = None
+        #         else:
+        #             item_neo[k] = item[k]
+
+        # return item_neo
 
     def hxltm_item_xliff_source_key(item):
         for k in item:
