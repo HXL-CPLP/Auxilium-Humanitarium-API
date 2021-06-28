@@ -176,15 +176,16 @@ class HXLTM2XLIFF:
 
         try:
             temp = tempfile.NamedTemporaryFile()
+            temp_csv4xliff = tempfile.NamedTemporaryFile()
             args.outfile = temp.name
+
+            # print(temp_csv4xliff)
+            # print(temp_csv4xliff.name)
 
             with self.hxlhelper.make_source(args, stdin) as source, \
                     self.hxlhelper.make_output(args, stdout) as output:
-                source.without_columns('#meta')
-                source.with_columns('#item')
-
-                # print(source)
-
+                # Save the HXL TM locally. It will be used by either hxltm2csv
+                # or hxltm2csv + hxltm2xliff
                 hxl.io.write_hxl(output.output, source,
                                  show_tags=not args.strip_tags)
 
@@ -200,21 +201,31 @@ class HXLTM2XLIFF:
                 self.hxltm2csv(args.outfile, self.original_outfile,
                                self.original_outfile_is_stdout, args)
             else:
-                self.hxl2tab(args.outfile, self.original_outfile,
-                             self.original_outfile_is_stdout, args)
+                # self.hxl2tab(args.outfile, self.original_outfile,
+                #              self.original_outfile_is_stdout, args)
+
+                self.hxltm2csv(args.outfile, temp_csv4xliff.name,
+                               False, args)
+                self.hxltm2xliff(temp_csv4xliff.name, self.original_outfile,
+                                 self.original_outfile_is_stdout, args)
 
         finally:
             temp.close()
+            temp_csv4xliff.close()
 
         return self.EXIT_OK
 
     def hxltm2csv(self, hxlated_input, tab_output, is_stdout, args):
         """
-        hxl2tab is  is the main method to de facto make the conversion.
+        hxltm2csv pre-process the initial HXL TM on a intermediate format that
+        can be used alone or as requisite of the hxltm2xliff exporter
         """
 
         with open(hxlated_input, 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
+
+            # TODO: fix problem if input data already only have HXL hashtags
+            #       but no extra headings (Emerson Rocha, 2021-06-28 01:27 UTC)
 
             # Hotfix: skip first non-HXL header. Ideally I think the already
             # exported HXlated file should already save without headers.
@@ -256,6 +267,48 @@ class HXLTM2XLIFF:
             # Hotfix: skip first non-HXL header. Ideally I think the already
             # exported HXlated file should already save without headers.
             next(csv_reader)
+            header_original = next(csv_reader)
+            header_new = self.hxltm2csv_header(
+                header_original,
+                fontem_linguam=args.fontem_linguam,
+                objectivum_linguam=args.objectivum_linguam,
+            )
+
+            if is_stdout:
+                txt_writer = csv.writer(sys.stdout, delimiter='\t')
+                txt_writer.writerow(header_new)
+                for line in csv_reader:
+                    txt_writer.writerow(line)
+            else:
+
+                tab_output_cleanup = open(tab_output, 'w')
+                tab_output_cleanup.truncate()
+                tab_output_cleanup.close()
+
+                with open(tab_output, 'a') as new_txt:
+                    txt_writer = csv.writer(new_txt, delimiter='\t')
+                    txt_writer.writerow(header_new)
+                    for line in csv_reader:
+                        txt_writer.writerow(line)
+
+    def hxltm2xliff(self, hxlated_input, tab_output, is_stdout, args):
+        """
+        hxltm2xliff is  is the main method to de facto make the conversion.
+
+        TODO: this is a work-in-progress at this moment, 2021-06-28
+        """
+
+        # TODO: implement something like internal structure of a object,
+        #       maybe csv.DictReader?
+        #       @see https://www.geeksforgeeks.org/convert-csv-to-json-using-python/
+        #       @see https://docs.python.org/3/library/csv.html#csv.DictReader
+
+        with open(hxlated_input, 'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+
+            # # Hotfix: skip first non-HXL header. Ideally I think the already
+            # # exported HXlated file should already save without headers.
+            # next(csv_reader)
             header_original = next(csv_reader)
             header_new = self.hxltm2csv_header(
                 header_original,
