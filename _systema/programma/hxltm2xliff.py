@@ -42,7 +42,7 @@
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv --fontem-linguam=eng-Latn
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv --fontem-linguam=eng-Latn --archivum-extensionem=.tmx
-
+# python3 -m doctest ./_systema/programma/hxltm2xliff.py
 
 __VERSION__ = "v0.7"
 
@@ -332,7 +332,7 @@ class HXLTM2XLIFF:
             # and add it to data
             for item in csvReader:
 
-                datum.append(HXLTM2XLIFF.tmx_item_relevan_options(item))
+                datum.append(HXLTMUtil.tmx_item_relevan_options(item))
 
         # @examplum https://cloud.google.com/translate/automl/docs/prepare#translation_memory_exchange_tmx
         # @examplum https://www.gala-global.org/knowledge-center/industry-development/standards/lisa-oscar-standards
@@ -418,7 +418,7 @@ class HXLTM2XLIFF:
             # and add it to data
             for item in csvReader:
 
-                datum.append(HXLTM2XLIFF.hxltm_item_relevant_options(item))
+                datum.append(HXLTMUtil.xliff_item_relevant_options(item))
 
         resultatum = []
         resultatum.append('<?xml version="1.0"?>')
@@ -436,7 +436,7 @@ class HXLTM2XLIFF:
 
             resultatum.append('        <segment>')
 
-            xsource = HXLTM2XLIFF.hxltm_item_xliff_source_key(rem)
+            xsource = HXLTMUtil.xliff_item_xliff_source_key(rem)
             if xsource:
                 if not rem[xsource]:
                     resultatum.append(
@@ -447,7 +447,7 @@ class HXLTM2XLIFF:
                     resultatum.append('          <source>' +
                                       rem[xsource] + '</source>')
 
-            xtarget = HXLTM2XLIFF.hxltm_item_xliff_target_key(rem)
+            xtarget = HXLTMUtil.xliff_item_xliff_target_key(rem)
             if xtarget and rem[xtarget]:
                 resultatum.append('          <target>' +
                                   rem[xtarget] + '</target>')
@@ -513,8 +513,8 @@ class HXLTM2XLIFF:
         #       added to the end result, but we keep generic ones to avoid
         #       potentially break other tools.
 
-        fon_ling = HXLTM2XLIFF.linguam_2_hxlattrs(fontem_linguam)
-        obj_ling = HXLTM2XLIFF.linguam_2_hxlattrs(objectivum_linguam)
+        fon_ling = HXLTMUtil.linguam_2_hxlattrs(fontem_linguam)
+        obj_ling = HXLTMUtil.linguam_2_hxlattrs(objectivum_linguam)
 
         # print('fon_ling', fon_ling)
         # print('obj_ling', obj_ling)
@@ -598,7 +598,23 @@ class HXLTM2XLIFF:
 
         return hxlated_header
 
-    def hxltm_item_relevant_options(item):
+
+class HXLTMUtil:
+
+    def bcp47_from_hxlattrs(hashtag):
+        # TODO: do it
+        return hashtag
+
+    def xliff_item_relevant_options(item):
+        """From an dict (python object) return only keys that start with
+        #x_xliff
+
+        Args:
+            item ([Dict]): An non-filtered dict (python object) represent a row
+
+        Returns:
+            [Dict]: A filtered object. ∅ is replaced by python None
+        """
         item_neo = {}
 
         for k in item:
@@ -623,14 +639,14 @@ class HXLTM2XLIFF:
 
         # return item_neo
 
-    def hxltm_item_xliff_source_key(item):
+    def xliff_item_xliff_source_key(item):
         for k in item:
             if k.startswith('#x_xliff+source'):
                 return k
 
         return None
 
-    def hxltm_item_xliff_target_key(item):
+    def xliff_item_xliff_target_key(item):
         for k in item:
             if k.startswith('#x_xliff+target'):
                 return k
@@ -641,10 +657,10 @@ class HXLTM2XLIFF:
         """linguam_2_hxlattrs
 
         Example:
-            >>> HXLTM2XLIFF.linguam_2_hxlattrs('por-Latn')
-            +i_por+is_latn
-            >>> HXLTM2XLIFF.linguam_2_hxlattrs('arb-Arab')
-            +i_arb+is_Arab
+            >>> HXLTMUtil.linguam_2_hxlattrs('por-Latn')
+            '+i_por+is_latn'
+            >>> HXLTMUtil.linguam_2_hxlattrs('arb-Arab')
+            '+i_arb+is_arab'
 
         Args:
             linguam ([String]): A linguam code
