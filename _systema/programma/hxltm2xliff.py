@@ -695,8 +695,6 @@ class HXLTMUtil:
             >  >> item = {'#item+i_pt+i_por+is_latn': '','#item+i_pt+i_por+is_latn+alt+list': '', '#meta+item+i_pt+i_por+is_latn': ''}
             >  >> HXLTMUtil.item_linguam_keys_grouped(item)
             'arab'
-            >  >> HXLTMUtil.item_linguam_keys_grouped('#item+i_ar')
-            ''
 
         Args:
             hashtag ([String]): A linguam code
@@ -705,7 +703,10 @@ class HXLTMUtil:
             [String]: HXL Attributes
         """
 
-        print(item)
+        pattern = hxl.model.TagPattern.parse("#*+i_por")
+        print(pattern)
+
+        # print(item)
         alllangs = set()
         for k in item:
             iso6393 = HXLTMUtil.iso6393_from_hxlattrs(k)
@@ -715,6 +716,65 @@ class HXLTMUtil:
         # TODO: finish item_linguam_keys_grouped. Maybe with hxl.model.TagPattern?
         #       @see https://github.com/HXLStandard/libhxl-python/blob/main/hxl/model.py#L29
         return ''
+
+    def item_to_hxlrow(item):
+        """Syntatic sugar for ad hoc usage of
+        HXLStandard/libhxl-python/blob/main/hxl/model.py.
+
+        TODO: consider optimize the speed on how this is used on HXLTM script.
+
+        Example:
+            >>> item = {'#item+i_pt+i_por+is_latn': '','#item+i_pt+i_por+is_latn+alt+list': '', '#meta+item+i_pt+i_por+is_latn': ''}
+            >>> HXLTMUtil.item_to_hxlrow(item)
+            'arab'
+
+        Args:
+            item (Union[Dict, List[Dict]]): [description]
+        """
+        hxlcolumns = []
+        hxlcolumnsvals = []
+        for key in item:
+            hxlcolumns.append(hxl.model.Column.parse(key))
+            if item[key] == '∅':
+                hxlcolumnsvals.append(None)
+            else:
+                hxlcolumnsvals.append(item[key])
+
+        HXLRow = hxl.model.Row(hxlcolumns, hxlcolumnsvals)
+        # queries = [hxl.model.RowQuery.parse('#item')]
+        queries = hxl.model.RowQuery.parse('item+i_pt')
+        print(queries)
+
+        hxl.model.RowQuery.match_list(HXLRow)
+
+        return HXLRow
+
+    # def item_to_hxlrow(item_or_items):
+    #     """Syntatic sugar for ad hoc usage of
+    #     HXLStandard/libhxl-python/blob/main/hxl/model.py.
+
+    #     Likely to not be optimized.
+
+    #     Args:
+    #         item (Union[Dict, List[Dict]]): [description]
+    #     """
+    #     hxlcolumns = []
+    #     hxlcolumnsvals = []
+    #     if isinstance(item_or_items, dict):
+    #         items = item_or_items
+    #     else:
+    #         items = item_or_items
+
+    #     for index, item in enumerate(items):
+    #         for key in item:
+    #             hxlcolumns.append(hxl.model.Column.parse(key))
+    #             if item[key] == '∅':
+    #                 hxlcolumnsvals.append(None)
+    #             else:
+    #                 hxlcolumnsvals.append(item[key])
+
+    #     HXLRow = hxl.model.Row(hxlcolumns, hxlcolumnsvals)
+
 
     def linguam_2_hxlattrs(linguam):
         """linguam_2_hxlattrs
