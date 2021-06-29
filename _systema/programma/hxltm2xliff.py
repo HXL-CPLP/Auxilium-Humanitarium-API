@@ -742,10 +742,41 @@ class HXLTMUtil:
 
         HXLRow = hxl.model.Row(hxlcolumns, hxlcolumnsvals)
         # queries = [hxl.model.RowQuery.parse('#item')]
-        queries = hxl.model.RowQuery.parse('item+i_pt')
-        print(queries)
+        # queries = hxl.model.RowQuery.parse('item+i_pt')
+        # print(queries)
 
-        hxl.model.RowQuery.match_list(HXLRow)
+        # result = hxl.data("https://example.org/data.csv")
+        # result = hxl.data([item])
+        # result = hxl.data([
+        #     ["#item+i_pt+i_por+is_latn", '#item+i_pt+i_por+is_latn+alt+list', '#meta+item+i_pt+i_por+is_latn'],
+        #     ["teste", "teste2|teste3", "Exemplo de teste"]
+        # ])
+        result = hxl.io.make_input([
+            # ["#item+i_pt+i_por+is_latn", '#item+i_pt+i_por+is_latn+alt+list',
+            #     '#meta+item+i_pt+i_por+is_latn'],
+            # ["teste", "teste2|teste3", "Exemplo de teste"]
+            ['#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#meta+item+i_pt+i_por+is_latn'],
+            ['#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#meta+item+i_pt+i_por+is_latn'],
+            ["teste,teste2|teste3,Exemplo de teste"],
+            ["teste,teste2|teste3,Exemplo de teste"]
+        ])
+        result2 = hxl.data({'data': result})
+
+        print(result)
+        print(result2)
+        print(result2.values())
+        for i in result2:
+            print(i)
+        result3 = result2.with_columns('#meta')
+        print(result3)
+        print(result3.values())
+        for i2 in result3:
+            print(i2)
+        # print(result2.columns())
+        # print(result.columns())
+        return None
+
+        # hxl.model.RowQuery.match_list(HXLRow)
 
         return HXLRow
 
@@ -774,7 +805,6 @@ class HXLTMUtil:
     #                 hxlcolumnsvals.append(item[key])
 
     #     HXLRow = hxl.model.Row(hxlcolumns, hxlcolumnsvals)
-
 
     def linguam_2_hxlattrs(linguam):
         """linguam_2_hxlattrs
