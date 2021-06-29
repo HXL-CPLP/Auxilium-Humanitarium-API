@@ -506,18 +506,10 @@ class HXLTM2XLIFF:
         # TODO: improve this block. I'm very sure there is some cleaner way to
         #       do it in a more cleaner way (fititnt, 2021-01-28 08:56 UTC)
 
-        # NOTE: +vt_orange_type_continuous (but not +number),
-        #       +vt_orange_type_string (but not +text, +name)
-        #       etc are replaced from the end result
-        #       In other words: the very specific data types don't need to be
-        #       added to the end result, but we keep generic ones to avoid
-        #       potentially break other tools.
-
         fon_ling = HXLTMUtil.linguam_2_hxlattrs(fontem_linguam)
+        fon_bcp47 = HXLTMUtil.bcp47_from_hxlattrs(fontem_linguam)
         obj_ling = HXLTMUtil.linguam_2_hxlattrs(objectivum_linguam)
-
-        # print('fon_ling', fon_ling)
-        # print('obj_ling', obj_ling)
+        obj_bcp47 = HXLTMUtil.bcp47_from_hxlattrs(objectivum_linguam)
 
         for idx, _ in enumerate(hxlated_header):
 
@@ -552,7 +544,8 @@ class HXLTM2XLIFF:
 
                 if hxlated_header[idx].find(fon_ling) > -1 and \
                         not hxlated_header[idx].find('+list') > -1:
-                    hxlated_header[idx] = '#x_xliff+source' + fon_ling
+                    hxlated_header[idx] = '#x_xliff+source' + \
+                        fon_bcp47 + fon_ling
                 elif hxlated_header[idx].find(obj_ling) > -1 and \
                         not hxlated_header[idx].find('+list') > -1:
                     hxlated_header[idx] = '#x_xliff+target' + obj_ling
@@ -566,11 +559,13 @@ class HXLTM2XLIFF:
                     #       support translations from source languages that
                     #       are not ideally ready yet
                     if hxlated_header[idx].find('+xliff') > -1:
-                        hxlated_header[idx] = '#x_xliff+segment+state' + fon_ling
+                        hxlated_header[idx] = '#x_xliff+segment+state' + \
+                            fon_bcp47 + fon_ling
                 elif hxlated_header[idx].find(obj_ling) > -1 and \
                         not hxlated_header[idx].find('+list') > -1:
                     if hxlated_header[idx].find('+xliff') > -1:
-                        hxlated_header[idx] = '#x_xliff+segment+state' + obj_ling
+                        hxlated_header[idx] = '#x_xliff+segment+state' + \
+                            obj_bcp47 + obj_ling
                 if hxlated_header[idx] != '#status':
                     print('#status ERROR?, FIX ME', hxlated_header[idx])
                 continue
@@ -602,8 +597,142 @@ class HXLTM2XLIFF:
 class HXLTMUtil:
 
     def bcp47_from_hxlattrs(hashtag):
-        # TODO: do it
-        return hashtag
+        """From a typical HXLTM hashtag, return only the bcp47 language code
+        without require a complex table equivalence.
+
+        Example:
+            >>> HXLTMUtil.bcp47_from_hxlattrs('#item+i_ar+i_arb+is_arab')
+            'ar'
+            >>> HXLTMUtil.bcp47_from_hxlattrs('#item+i_arb+is_arab')
+            ''
+
+        Args:
+            linguam ([String]): A linguam code
+
+        Returns:
+            [String]: HXL Attributes
+        """
+        if hashtag:
+            parts = hashtag.lower().split('+i_')
+            for k in parts:
+                if len(k) == 2:
+                    return k
+
+        return ''
+
+    # def hxlattrlangs_list_from_item(item):
+    #     result = []
+
+    # def hxlattrlangs_list_from_item(item):
+    #     result = []
+
+    #     for k in item:
+    #         if k.startswith('#x_xliff'):
+    #             if item[k] == '∅':
+    #                 item_neo[k] = None
+    #             else:
+    #                 item_neo[k] = item[k]
+
+    def iso6393_from_hxlattrs(hashtag):
+        """From a typical HXLTM hashtag, return only the ISO 639-3 language code
+        without require a complex table equivalence.
+
+        Example:
+            >>> HXLTMUtil.iso6393_from_hxlattrs('#item+i_ar+i_arb+is_arab')
+            'arb'
+            >>> HXLTMUtil.iso6393_from_hxlattrs('#item+i_ar')
+            ''
+
+        Args:
+            hashtag ([String]): A hashtag string
+
+        Returns:
+            [String]: HXL Attributes
+        """
+        if hashtag:
+            parts = hashtag.lower().split('+i_')
+            # '#item+i_ar+i_arb+is_arab' => ['#item', 'ar', 'arb+is_arab']
+            # print(parts)
+            for k in parts:
+                if len(k) == 3:
+                    return k
+                if len(k) == 11 and k.find('+is_') > -1:
+                    return k.split('+is_')[0]
+
+        return ''
+
+    def iso115924_from_hxlattrs(hashtag):
+        """From a typical HXLTM hashtag, return only the ISO 115924
+        writting system without require a complex table equivalence.
+
+        Example:
+            >>> HXLTMUtil.iso115924_from_hxlattrs('#item+i_ar+i_arb+is_arab')
+            'arab'
+            >>> HXLTMUtil.iso115924_from_hxlattrs('#item+i_ar')
+            ''
+
+        Args:
+            hashtag ([String]): A linguam code
+
+        Returns:
+            [String]: HXL Attributes
+        """
+        if hashtag:
+            parts = hashtag.lower().split('+')
+            # '#item+i_ar+i_arb+is_arab' => ['#item', 'i_ar', 'i_arb', 'is_arab']
+            # print(parts)
+            for k in parts:
+                if k.startswith('is_'):
+                    return k.replace('is_', '')
+
+        return ''
+
+    def item_linguam_keys_grouped(item):
+        """From a item with several non-grouped keys, return list of grouped
+        results per different language
+
+        Example:
+            >  >> item = {'#item+i_pt+i_por+is_latn': '','#item+i_pt+i_por+is_latn+alt+list': '', '#meta+item+i_pt+i_por+is_latn': ''}
+            >  >> HXLTMUtil.item_linguam_keys_grouped(item)
+            'arab'
+            >  >> HXLTMUtil.item_linguam_keys_grouped('#item+i_ar')
+            ''
+
+        Args:
+            hashtag ([String]): A linguam code
+
+        Returns:
+            [String]: HXL Attributes
+        """
+
+        print(item)
+        alllangs = set()
+        for k in item:
+            iso6393 = HXLTMUtil.iso6393_from_hxlattrs(k)
+            if iso6393:
+                alllangs.add(iso6393)
+
+        # TODO: finish item_linguam_keys_grouped. Maybe with hxl.model.TagPattern?
+        #       @see https://github.com/HXLStandard/libhxl-python/blob/main/hxl/model.py#L29
+        return ''
+
+    def linguam_2_hxlattrs(linguam):
+        """linguam_2_hxlattrs
+
+        Example:
+            >>> HXLTMUtil.linguam_2_hxlattrs('por-Latn')
+            '+i_por+is_latn'
+            >>> HXLTMUtil.linguam_2_hxlattrs('arb-Arab')
+            '+i_arb+is_arab'
+
+        Args:
+            linguam ([String]): A linguam code
+
+        Returns:
+            [String]: HXL Attributes
+        """
+        iso6393, iso115924 = list(linguam.lower().split('-'))
+        return '+i_' + iso6393 + '+is_' + iso115924
 
     def xliff_item_relevant_options(item):
         """From an dict (python object) return only keys that start with
@@ -652,24 +781,6 @@ class HXLTMUtil:
                 return k
 
         return None
-
-    def linguam_2_hxlattrs(linguam):
-        """linguam_2_hxlattrs
-
-        Example:
-            >>> HXLTMUtil.linguam_2_hxlattrs('por-Latn')
-            '+i_por+is_latn'
-            >>> HXLTMUtil.linguam_2_hxlattrs('arb-Arab')
-            '+i_arb+is_arab'
-
-        Args:
-            linguam ([String]): A linguam code
-
-        Returns:
-            [String]: HXL Attributes
-        """
-        iso6393, iso115924 = list(linguam.lower().split('-'))
-        return '+i_' + iso6393 + '+is_' + iso115924
 
 
 class HXLUtils:
