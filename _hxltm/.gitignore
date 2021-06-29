@@ -7,3 +7,5 @@
 out/*
 !out/.gitkeep
 *.zip
+*.tmx
+*.dtd

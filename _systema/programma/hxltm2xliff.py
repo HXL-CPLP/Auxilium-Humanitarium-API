@@ -28,11 +28,13 @@
 #       COMPANY:  EticaAI
 #       LICENSE:  Public Domain dedication
 #                 SPDX-License-Identifier: Unlicense
-#       VERSION:  v0.7
+#       VERSION:  v0.8
 #       CREATED: 2021-06-27 19:50 UTC v0.5, de github.com/EticaAI
 #                       /HXL-Data-Science-file-formats/blob/main/bin/hxl2example
 #      REVISION:  2021-06-27 21:16 UTC v0.6 de hxl2tab
 #      REVISION:  2021-06-27 23:53 UTC v0.7 --archivum-extensionem=.csv
+#                 2021-06-29 22:29 UTC v0.8 MVP of --archivum-extensionem=.tmx
+#                                      Translation Memory eXchange format (TMX).
 # ==============================================================================
 
 # Tests
@@ -42,9 +44,10 @@
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds.tm.hxl.csv --fontem-linguam=eng-Latn
 # ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv --fontem-linguam=eng-Latn --archivum-extensionem=.tmx
+# ./_systema/programma/hxltm2xliff.py _hxltm/schemam-un-htcds-5items.tm.hxl.csv _hxltm/schemam-un-htcds-5items.tmx --fontem-linguam=eng-Latn --archivum-extensionem=.tmx
 # python3 -m doctest ./_systema/programma/hxltm2xliff.py
 
-__VERSION__ = "v0.7"
+__VERSION__ = "v0.8"
 
 import sys
 import os
@@ -345,6 +348,7 @@ class HXLTM2XLIFF:
             '  <header creationtool="hxltm" creationtoolversion="' + __VERSION__ + '" ' +
             'segtype="sentence" o-tmf="UTF-8" ' +
             'adminlang="en" srclang="en" datatype="PlainText"/>')
+        # TODO: make source and adminlang configurable
         resultatum.append('  <body>')
 
         num = 0
@@ -356,31 +360,47 @@ class HXLTM2XLIFF:
             # print(rem)
 
             unit_id = rem['#item+id'] if '#item+id' in rem else num
-            resultatum.append('      <tu id="' + str(unit_id) + '">')
-            if '#item+wikidata+code' in rem:
+            resultatum.append('    <tu tuid="' + str(unit_id) + '">')
+            if '#item+wikidata+code' in rem and rem['#item+wikidata+code']:
                 resultatum.append(
-                    '        <prop type="wikidata">' + rem['#item+wikidata+code'] + '</prop>')
+                    '      <prop type="wikidata">' + rem['#item+wikidata+code'] + '</prop>')
+
+            if '#meta+item+url+list' in rem and rem['#meta+item+url+list']:
+                resultatum.append(
+                    # TODO: improve naming
+                    '      <prop type="meta_urls">' + rem['#meta+item+url+list'] + '</prop>')
 
             # TODO: reduzir repetitividade; os valores estao hardcoded. Não ideal.
 
-            if '#item+i_la+i_lat+is_latn' in rem:
-                resultatum.append('        <tuv xml:lang="la">')
-                resultatum.append(
-                    '          <seg>' + rem['#item+i_la+i_lat+is_latn'] + '</seg>')
+            hattrsl = HXLTMUtil.hxllangattrs_list_from_item(rem)
+            # print(hattrsl)
+            for langattrs in hattrsl:
+                # print(langattrs)
 
-            if '#item+i_pt+i_por+is_latn' in rem:
-                resultatum.append('        <tuv xml:lang="pt">')
-                resultatum.append(
-                    '          <seg>' + rem['#item+i_pt+i_por+is_latn'] + '</seg>')
+                if '#item' + langattrs in rem:
+                    bcp47 = HXLTMUtil.bcp47_from_hxlattrs(langattrs)
+                    resultatum.append('      <tuv xml:lang="' + bcp47 + '">')
+                    resultatum.append(
+                        '        <seg>' + rem['#item' + langattrs] + '</seg>')
+                    resultatum.append('      </tuv>')
 
-                resultatum.append('        </tuv>')
-            if '#item+i_en+i_eng+is_latn' in rem:
-                resultatum.append('        <tuv xml:lang="en">')
-                resultatum.append(
-                    '          <seg>' + rem['#item+i_en+i_eng+is_latn'] + '</seg>')
-                resultatum.append('        </tuv>')
+            # if '#item+i_la+i_lat+is_latn' in rem:
+            #     resultatum.append('        <tuv xml:lang="la">')
+            #     resultatum.append(
+            #         '          <seg>' + rem['#item+i_la+i_lat+is_latn'] + '</seg>')
 
-            resultatum.append('      </tu>')
+            # if '#item+i_pt+i_por+is_latn' in rem:
+            #     resultatum.append('        <tuv xml:lang="pt">')
+            #     resultatum.append(
+            #         '          <seg>' + rem['#item+i_pt+i_por+is_latn'] + '</seg>')
+
+            #     resultatum.append('        </tuv>')
+            # if '#item+i_en+i_eng+is_latn' in rem:
+            #     resultatum.append('        <tuv xml:lang="en">')
+            #     resultatum.append(
+            #         '          <seg>' + rem['#item+i_en+i_eng+is_latn'] + '</seg>')
+
+            resultatum.append('    </tu>')
 
         resultatum.append('  </body>')
         resultatum.append('</tmx>')
@@ -620,18 +640,38 @@ class HXLTMUtil:
 
         return ''
 
-    # def hxlattrlangs_list_from_item(item):
-    #     result = []
+    def hxllangattrs_list_from_item(item):
+        """hxllangattrs_list_from_item get only the raw attr string part
+        that is repeated severa times and mean the same logical group.
 
-    # def hxlattrlangs_list_from_item(item):
-    #     result = []
+        Example:
+            >>> item = {'#item+i_pt+i_por+is_latn':
+            ...          '','#item+i_pt+i_por+is_latn+alt+list': '',
+            ...           '#meta+item+i_pt+i_por+is_latn': ''}
+            >>> HXLTMUtil.hxllangattrs_list_from_item(item)
+            {'+i_pt+i_por+is_latn'}
 
-    #     for k in item:
-    #         if k.startswith('#x_xliff'):
-    #             if item[k] == '∅':
-    #                 item_neo[k] = None
-    #             else:
-    #                 item_neo[k] = item[k]
+        Args:
+            item ([Dict]): An dict item
+        Returns:
+            [Set]: Set of unique HXL language attributes
+        """
+        result = set()
+
+        for k in item:
+            rawstr = ''
+            bcp47 = HXLTMUtil.bcp47_from_hxlattrs(k)
+            iso6393 = HXLTMUtil.iso6393_from_hxlattrs(k)
+            iso115924 = HXLTMUtil.iso115924_from_hxlattrs(k)
+            if bcp47:
+                rawstr += '+i_' + bcp47
+            if iso6393:
+                rawstr += '+i_' + iso6393
+            if iso115924:
+                rawstr += '+is_' + iso115924
+            # print('   ', k, '   ', rawstr)
+            result.add(rawstr)
+        return result
 
     def iso6393_from_hxlattrs(hashtag):
         """From a typical HXLTM hashtag, return only the ISO 639-3 language code
@@ -642,6 +682,8 @@ class HXLTMUtil:
             'arb'
             >>> HXLTMUtil.iso6393_from_hxlattrs('#item+i_ar')
             ''
+            >>> HXLTMUtil.iso6393_from_hxlattrs('#item+i_pt+i_por+is_latn+alt+list')
+            'por'
 
         Args:
             hashtag ([String]): A hashtag string
@@ -650,14 +692,15 @@ class HXLTMUtil:
             [String]: HXL Attributes
         """
         if hashtag:
-            parts = hashtag.lower().split('+i_')
+            # parts = hashtag.lower().split('+i_')
+            parts = hashtag.lower().split('+')
             # '#item+i_ar+i_arb+is_arab' => ['#item', 'ar', 'arb+is_arab']
             # print(parts)
             for k in parts:
-                if len(k) == 3:
-                    return k
-                if len(k) == 11 and k.find('+is_') > -1:
-                    return k.split('+is_')[0]
+                # if len(k) == 5 and k.find('+i_') == 0:
+                if len(k) == 5 and k.startswith('i_'):
+                    # print(k.find('i_'))
+                    return k.replace('i_', '')
 
         return ''
 
@@ -702,10 +745,6 @@ class HXLTMUtil:
         Returns:
             [String]: HXL Attributes
         """
-
-        pattern = hxl.model.TagPattern.parse("#*+i_por")
-        print(pattern)
-
         # print(item)
         alllangs = set()
         for k in item:
@@ -716,95 +755,6 @@ class HXLTMUtil:
         # TODO: finish item_linguam_keys_grouped. Maybe with hxl.model.TagPattern?
         #       @see https://github.com/HXLStandard/libhxl-python/blob/main/hxl/model.py#L29
         return ''
-
-    def item_to_hxlrow(item):
-        """Syntatic sugar for ad hoc usage of
-        HXLStandard/libhxl-python/blob/main/hxl/model.py.
-
-        TODO: consider optimize the speed on how this is used on HXLTM script.
-
-        Example:
-            >>> item = {'#item+i_pt+i_por+is_latn': '','#item+i_pt+i_por+is_latn+alt+list': '', '#meta+item+i_pt+i_por+is_latn': ''}
-            >>> HXLTMUtil.item_to_hxlrow(item)
-            'arab'
-
-        Args:
-            item (Union[Dict, List[Dict]]): [description]
-        """
-        hxlcolumns = []
-        hxlcolumnsvals = []
-        for key in item:
-            hxlcolumns.append(hxl.model.Column.parse(key))
-            if item[key] == '∅':
-                hxlcolumnsvals.append(None)
-            else:
-                hxlcolumnsvals.append(item[key])
-
-        HXLRow = hxl.model.Row(hxlcolumns, hxlcolumnsvals)
-        # queries = [hxl.model.RowQuery.parse('#item')]
-        # queries = hxl.model.RowQuery.parse('item+i_pt')
-        # print(queries)
-
-        # result = hxl.data("https://example.org/data.csv")
-        # result = hxl.data([item])
-        # result = hxl.data([
-        #     ["#item+i_pt+i_por+is_latn", '#item+i_pt+i_por+is_latn+alt+list', '#meta+item+i_pt+i_por+is_latn'],
-        #     ["teste", "teste2|teste3", "Exemplo de teste"]
-        # ])
-        result = hxl.io.make_input([
-            # ["#item+i_pt+i_por+is_latn", '#item+i_pt+i_por+is_latn+alt+list',
-            #     '#meta+item+i_pt+i_por+is_latn'],
-            # ["teste", "teste2|teste3", "Exemplo de teste"]
-            ['#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#meta+item+i_pt+i_por+is_latn'],
-            ['#item+i_pt+i_por+is_latn,#item+i_pt+i_por+is_latn+alt+list,#meta+item+i_pt+i_por+is_latn'],
-            ["teste,teste2|teste3,Exemplo de teste"],
-            ["teste,teste2|teste3,Exemplo de teste"]
-        ])
-        result2 = hxl.data({'data': result})
-
-        print(result)
-        print(result2)
-        print(result2.values())
-        for i in result2:
-            print(i)
-        result3 = result2.with_columns('#meta')
-        print(result3)
-        print(result3.values())
-        for i2 in result3:
-            print(i2)
-        # print(result2.columns())
-        # print(result.columns())
-        return None
-
-        # hxl.model.RowQuery.match_list(HXLRow)
-
-        return HXLRow
-
-    # def item_to_hxlrow(item_or_items):
-    #     """Syntatic sugar for ad hoc usage of
-    #     HXLStandard/libhxl-python/blob/main/hxl/model.py.
-
-    #     Likely to not be optimized.
-
-    #     Args:
-    #         item (Union[Dict, List[Dict]]): [description]
-    #     """
-    #     hxlcolumns = []
-    #     hxlcolumnsvals = []
-    #     if isinstance(item_or_items, dict):
-    #         items = item_or_items
-    #     else:
-    #         items = item_or_items
-
-    #     for index, item in enumerate(items):
-    #         for key in item:
-    #             hxlcolumns.append(hxl.model.Column.parse(key))
-    #             if item[key] == '∅':
-    #                 hxlcolumnsvals.append(None)
-    #             else:
-    #                 hxlcolumnsvals.append(item[key])
-
-    #     HXLRow = hxl.model.Row(hxlcolumns, hxlcolumnsvals)
 
     def linguam_2_hxlattrs(linguam):
         """linguam_2_hxlattrs
