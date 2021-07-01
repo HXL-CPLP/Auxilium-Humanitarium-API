@@ -47,6 +47,7 @@ Hapi_schemam="https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?des
 Hapi_schemam_un_htcds="https://proxy.hxlstandard.org/data/download/schemam-un-htcds_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1292720422"
 
 Hapi_api="https://proxy.hxlstandard.org/data/download/hapi-api_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1680147913"
+hxltm_specificationem="https://proxy.hxlstandard.org/data/download/hxltm-specificationem_hxl.csv?dest=data_edit&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1864477588"
 
 ROOTDIR="$(pwd)"
 
@@ -102,6 +103,13 @@ if true ; then
     echo "   Fontem: [$Hapi_api]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
     wget -qO- "$Hapi_api" > "${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
+fi
+
+if true ; then
+    echo "hxltm_specificationem"
+    echo "   Fontem: [$hxltm_specificationem]"
+    echo "   Filum:  [${ROOTDIR}/_data/tm/specificationem/hxltm-specificationem.hxl.csv"
+    wget -qO- "$hxltm_specificationem" > "${ROOTDIR}/_data/tm/specificationem/hxltm-specificationem.hxl.csv"
 fi
 
 exit 0
