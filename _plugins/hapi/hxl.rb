@@ -102,6 +102,19 @@ module Hapi
         opts = _chaves_relevantes(obiectum)
         uglyhack = hashtag_exemplum
 
+        # TODO: investigate why after recent changes on Spreadsheets the
+        #       opts.nil can become nil. This fails around 1153 times. Started
+        #       after this commit
+        #       https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/commit
+        #       /e51c47a1740fe4218796f66ee03ef3aa2a6db00f
+        #       That fixed '#item+i_es+i_arb+is_arab' to
+        #       #item+i_ar+i_arb+is_arab
+        if opts.nil?
+          # log.debug("Created Logger")
+          puts " > Hapi.HXL.HXLOptionem: non opts [#{obiectum}]"
+          return false
+        end
+
         unless @referens.any? { |ref| opts.include?(ref) }
           # log.debug("Created Logger")
           puts " > Hapi.HXL.HXLOptionem: non referens [#{referens}]"
@@ -159,7 +172,7 @@ module Hapi
       end
 
       def _chaves_relevantes(obiectum)
-        obiectum.keys
+        return obiectum.keys unless obiectum.nil?
 
         # obiectum.keys.select do |item|
         #   unless @ignorandum_hashtag.nil?

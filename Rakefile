@@ -32,7 +32,7 @@ end
 require 'html-proofer'
 
 task :test do
-  sh 'bundle exec jekyll build'
+  sh 'bundle exec jekyll build --trace'
   options = {
     assume_extension: true,
     # If true, does not run the external link checker, which can take a lot of time.

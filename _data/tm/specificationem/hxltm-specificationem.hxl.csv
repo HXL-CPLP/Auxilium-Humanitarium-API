@@ -1,8 +1,50 @@
 #item+hxltm_hashtag,#item+hxltm_optionem_terminum,#item+hxltm_optionem_hashtag,#item+hxltm_optionem_speciale,#meta+url,#item+standard+abbr,#item+standard+field,#item+standard+value,#description
-#item+i_ZZ+i_ZZZ+is_ZZZZ,1,,,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdff,TBX-Basic,body > termEntry > langSet > tig > term,1,TBX-Basic-3.1: uses the value of this field
+#item +id,1,,,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"body > termEntry id=""{1}""",,TBX-Basic-3.1: Concept level This level contains elements whose immediate parent is or can be <termEntry>
+#item +id,1,,,http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#unit,XLIFF,"xliff > file (> group?) > unit id=""{1}""",,"XLIFF 2.1: unit Static container for a dynamic structure of elements holding the extracted translatable source text, aligned with the Translated text. 
+Attributes:
+- id, REQUIRED
+(...)"
+,1,,,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,concept ID,1,
+#item+i_ZZ+i_ZZZ+is_ZZZZ,1,,,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,body > termEntry > langSet > tig > term,1,TBX-Basic-3.1: uses the value of this field
+#item+i_ZZ+i_ZZZ+is_ZZZZ,1,,,http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#source,XLIFF,xliff > file > unit|group > segment > source,1,XLIFF 2.1: Portion of text to be translated.
+#item+i_ZZ+i_ZZZ+is_ZZZZ,1,,,http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#target,XLIFF,xliff > file > unit|group > segment > target,1,XLIFF 2.1: The translation of the sibling <source> element.
+#item+i_ZZ+i_ZZZ+is_ZZZZ,1,,,https://www.gala-global.org/tmx-14b#seg,TMX,tmx > body > tu > tuv > seg,1,"TMX 1.4b: Segment - The <seg> element contains the text of the given segment. There is no length limitation to the content of a <seg> element. All spacing and line-breaking characters are significant within a <seg> element.
+Required attributes: None.
+Optional attributes: None.
+Contents:
+Text data (without leading or trailing white spaces characters),
+Zero, one or more of the following elements: <bpt>, <ept>, <it>, <ph>, and <hi>.
+They can be in any order, except that each <bpt> element must have a subsequent corresponding <ept> element."
+#item+i_ZZ+i_ZZZ+is_ZZZZ,1,,,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,term:{ZZ},1,"UTX 1.20 (Multilingual glossary): Language tags for term (src/tgt) fields (multilingual)
+Language tags for term (src/tgt) fields in a multilingual glossary are specified in a similar way as the language declaration.
+(...)
+(...)
+term:en | term:fr | term:ja The source/target distinction is not required"
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"(...) > body > termEntry > langSet > <termNote type=""partOfSpeech"">",plainText,"TBX-Basic-3.1: In TBX-Default, the data type for part of speech is plainText. TBX-Basic's use of picklist is in compliance with TBX-Default because picklist is more constrained than plainText."
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,tbx_noun,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"(...) > body > termEntry > langSet > <termNote type=""partOfSpeech"">",noun,TBX-Basic-3.1: Part of speech noun www.isocat.org/datcat/DC-1333
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_noun,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},noun,UTX 1.20: Noun
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,tbx_properNoun,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"(...) > body > termEntry > langSet > <termNote type=""partOfSpeech"">",properNoun,TBX-Basic-3.1: Part of speech properNoun www.isocat.org/datcat/DC-384
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_properNoun,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},properNoun,UTX 1.20: Proper noun
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,tbx_verb,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"(...) > body > termEntry > langSet > <termNote type=""partOfSpeech"">",verb,TBX-Basic-3.1: Part of speech verb www.isocat.org/datcat/DC-1424
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_verb,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},verb,UTX 1.20: Verb
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_vt,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},vt,UTX 1.20: vt Transitive verb
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_vi,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},vi,UTX 1.20: vi Intransitive verb
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,tbx_adjective,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"(...) > body > termEntry > langSet > <termNote type=""partOfSpeech"">",adjective,TBX-Basic-3.1: Part of speech adjective www.isocat.org/datcat/DC-1230
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_adjective,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},adjective,UTX 1.20: Adjective
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_prenominal,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},prenominal,UTX 1.20: Prenominal
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,tbx_adverb,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"(...) > body > termEntry > langSet > <termNote type=""partOfSpeech"">",adverb,TBX-Basic-3.1: Part of speech adverb www.isocat.org/datcat/DC-1232
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_adverb,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},adverb,UTX 1.20: Adverb
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,tbx_phrase,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"(...) > body > termEntry > langSet > <termNote type=""partOfSpeech"">",phrase,TBX-Basic-3.1: Part of speech The other value can be used for terms of the phrase type.
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,utx_sentence,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos:{ZZ},sentence,"UTX 1.20: sentence and special characters sentence is a special pos field item that indicates that the term is a sentence.
+Note: sentence should only be used when necessary. sentence would be used for a user interface message in the form of a sentence, for example. Entries of pairs of translated sentences should be stored in a translation memory format (such as TMX) rather than a
+glossary.
+When a UTX glossary is exported for an MT system that does not treat sentence as a type of part of speech, sentence entries can be treated as nouns.
+Some special characters can be used within a sentence entry. These are used only for a sentence entry."
+#meta +item+i_ZZ+i_ZZZ+is_ZZZZ +lat_partem_orationis +list,1,,tbx_other,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,"(...) > body > termEntry > langSet > <termNote type=""partOfSpeech"">",other,TBX-Basic-3.1: Part of speech other www.isocat.org/datcat/DC-4336
+#meta +item +lat_partem_orationis +list,1,,utx_noun|utx_properNoun|utx_verb|utx_vt|utx_vi|utx_adjective|utx_prenominal|utx_adverb,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,pos,utx_noun|utx_properNoun|utx_verb|utx_vt|utx_vi|utx_adjective|utx_prenominal|utx_adverb,"HXLTM: same as #meta +item+i_ZZ+i_ZZZ+is_ZZZZ +partem_orationis +list, but ised as default for every item if explicited"
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,,http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#state,XLIFF,state,initial,Empty in XLIFF means 'initial'
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,term status,approved,"UTX 1.20: if the term status is left blank, it is considered as approved (a change from UTX 1.11). The term status of a term paired with a non-standard, forbidden, rejected, and obsolete term (explained later) can also be blank, which implicitly indicates approved status. See the example at the beginning of ""4.5 Term status field."""
-#status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,Usage status,?????,(not clear what TBX-Basic expect when empty value is provided)
+#status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,Usage status,,(not clear what TBX-Basic expect when empty value is provided)
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,xliff_initial,http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#state,XLIFF,state,initial,XLIFF 2.1: initial - indicates the segment is in its initial state.
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,xliff_translated,http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#state,XLIFF,state,translated,XLIFF 2.1: translated - indicates the segment has been translated.
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,xliff_reviewed,http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#state,XLIFF,state,reviewed,XLIFF 2.1: reviewed - indicates the segment has been reviewed.
@@ -22,7 +64,7 @@ Forbidden terms can be exported from a UTX glossary for terminological checking.
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,utx_obsolete,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,term status,obsolete,"UTX 1.20: The term status ""obsolete"" indicates that a term was previously used, but should no longer be used. Obsolete terms can be kept in the glossary for record keeping, moved into a separate list, or deleted at a later time."
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,tbx_preferred,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,Usage status,preferred,"TBX-Basic-3.1: The term that, among a set of synonymous terms, is most recommended for use"
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,tbx_admitted,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,Usage status,admitted,TBX-Basic-3.1:  The term is acceptable for use.
-#status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,tbx_not-recommended,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,Usage status,not recommended,TBX-Basic-3.1: The term should not be used.
+#status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,tbx_notRecommended,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,Usage status,notRecommended,TBX-Basic-3.1: The term should not be used.
 #status+item+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,tbx_obsolete,http://www.terminorgs.net/downloads/TBX_Basic_Version_3.1.pdf,TBX-Basic,Usage status,obsolete,"TBX-Basic-3.1: The term is no longer used, usually because a more modern term has replaced it."
 #meta+item+type+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,,http://docs.oasis-open.org/xliff/xliff-core/v2.1/os/xliff-core-v2.1-os.html#type,XLIFF,(not applicable),(not applicable),(This field is is not used by the XLIFF type spec)
 #meta+item+type+i_ZZ+i_ZZZ+is_ZZZZ+list,0,,,https://aamt.info/wp-content/uploads/2019/06/utx1.20-specification-e.pdf,UTX,,,TODO: investigate

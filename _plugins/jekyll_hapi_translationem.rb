@@ -486,7 +486,7 @@ module Hapi
       if rem.est_html?
         return "<span lang='#{rem.fontem_linguam.bcp47}' data-l10n-fontem-textum='#{rem.fontem_textum}' " \
                "data-l10n-fontem-linguam='#{rem.fontem_linguam.linguam}' " \
-               "data-l10n-errorem='1' data-l10n-objectivum-linguam4444='#{rem.objectivum_linguam.linguam}'>" \
+               "data-l10n-errorem='1' data-l10n-objectivum-linguam='#{rem.objectivum_linguam.linguam}'>" \
                "#{rem.fontem_textum}</span>"
       end
       rem.fontem_textum
