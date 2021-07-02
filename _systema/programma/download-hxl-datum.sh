@@ -66,6 +66,7 @@ ROOTDIR="$(pwd)"
 # fi
 
 if true ; then
+    echo ''
     echo "Hapi_miniman"
     echo "   Fontem: [$Hapi_miniman]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-miniman.tm.hxl.csv]"
@@ -73,6 +74,7 @@ if true ; then
 fi
 
 if true ; then
+    echo ''
     echo "Hapi_commune"
     echo "   Fontem: [$Hapi_commune]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/commune.tm.hxl.csv"
@@ -85,6 +87,7 @@ fi
 #     wget -qO- "$Hapi_commune_meta" > "${ROOTDIR}/_data/tm/commune-meta.tm.hxl.csv"
 # fi
 if true ; then
+    echo ''
     echo "Hapi_schemam"
     echo "   Fontem: [$Hapi_schemam]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-schemam.tm.hxl.csv"
@@ -92,6 +95,7 @@ if true ; then
 fi
 
 if true ; then
+    echo ''
     echo "Hapi_schemam_un_htcds"
     echo "   Fontem: [$Hapi_schemam_un_htcds]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/schemam-un-htcds.tm.hxl.csv"
@@ -99,6 +103,7 @@ if true ; then
 fi
 
 if true ; then
+    echo ''
     echo "Hapi_api"
     echo "   Fontem: [$Hapi_api]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
@@ -106,10 +111,19 @@ if true ; then
 fi
 
 if true ; then
+    echo ''
     echo "hxltm_specificationem"
     echo "   Fontem: [$hxltm_specificationem]"
-    echo "   Filum:  [${ROOTDIR}/_data/tm/specificationem/hxltm-specificationem.hxl.csv"
-    wget -qO- "$hxltm_specificationem" > "${ROOTDIR}/_data/tm/specificationem/hxltm-specificationem.hxl.csv"
+    # echo "   Filum:  [${ROOTDIR}/_data/tm/specificationem/hxltm-specificationem.hxl.csv"
+    # echo "   Filum:  [${ROOTDIR}/_data/hxltm-specificationem.hxl.csv"
+    echo "   Filum:  [${ROOTDIR}/_hxltm/hxltm-specificationem.hxl.csv"
+    # wget -qO- "$hxltm_specificationem" > "${ROOTDIR}/_data/tm/specificationem/hxltm-specificationem.hxl.csv"
+    # wget -qO- "$hxltm_specificationem" > "${ROOTDIR}/_data/hxltm-specificationem.hxl.csv"
+    echo ''
+    echo "Note: this file is not downloaded automatically (it's a spec, not translations). Execute this to download:"
+    # wget -qO- "$hxltm_specificationem" > "${ROOTDIR}/_hxltm/hxltm-specificationem.hxl.csv"
+    echo "wget -qO- \"$hxltm_specificationem\" > \"${ROOTDIR}/_hxltm/hxltm-specificationem.hxl.csv\""
+    echo ''
 fi
 
 exit 0
