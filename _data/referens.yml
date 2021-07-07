@@ -90,7 +90,7 @@ hxl:
   linguam:
     # attributum: [] # @see linguam.zzz-Zzz.hxl.attributum
     hashtag:
-      - '#item'
+      - '#item+rem'
     ignorandum:
       hashtag:
         - '#meta'
