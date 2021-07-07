@@ -98,7 +98,7 @@ hxl:
       attributum:
         # - '+meta'
     referens:
-      - '#item+id'
+      - '#item+conceptum+codicem'
 
 linguam:
   arb-Arab: &id_linguam_arb-Arab

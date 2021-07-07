@@ -72,7 +72,7 @@ module Hapi
     class HXLOptionem
       attr_accessor :attributum, :hashtag, :ignorandum_hashtag, :ignorandum_attributum, :referens
 
-      def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+id']) # rubocop:disable Metrics/ParameterLists
+      def initialize(attributum = nil, hashtag = nil, ignorandum = nil, referens = ['#item+conceptum+codicem']) # rubocop:disable Metrics/ParameterLists
         @attributum = attributum
         @hashtag = hashtag
         @ignorandum_hashtag = ignorandum.nil? || ignorandum['hashtag'].nil? ? nil : ignorandum['hashtag']

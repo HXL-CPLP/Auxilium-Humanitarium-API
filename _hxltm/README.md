@@ -14,7 +14,7 @@
 
 ### `hxltmcli`
 
-- <https://github.com/EticaAI/HXL-Data-Science-file-formats#15-hxltmcli-hxl-tr%C4%81nsl%C4%81ti%C5%8Dnem-memoriam>
+- <https://github.com/EticaAI/HXL-Data-Science-file-formats#HXLTM>
 
 ## ruby
 

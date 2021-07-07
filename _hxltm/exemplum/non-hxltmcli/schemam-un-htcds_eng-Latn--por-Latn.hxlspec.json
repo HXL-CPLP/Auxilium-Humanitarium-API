@@ -32,7 +32,7 @@
         },
         {
             "filter": "with_columns",
-            "includes": "#item+i_en+i_eng+is_latn, #item+id, #item+i_pt+i_por+is_latn,#x_comment",
+            "includes": "#item+i_en+i_eng+is_latn, #item+conceptum+codicem, #item+i_pt+i_por+is_latn,#x_comment",
             "$comment": "_[eng-Latn]Source, Source ID, Target, Comment, (not implemented) Record ID[eng-Latn]_"
         },
         {
@@ -44,7 +44,7 @@
             "filter": "rename_columns",
             "specs": [
                 "#item+i_en+i_eng+is_latn:en#x_source",
-                "#item+id:Source ID#x_source_id",
+                "#item+conceptum+codicem:Source ID#x_source_id",
                 "#item+i_pt+i_por+is_latn:pt#x_target"
             ],
             "$comment": "_[eng-Latn]Rename columns[eng-Latn]_"

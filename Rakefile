@@ -28,6 +28,36 @@ task :openapi_exportandum do
   sh '_systema/programma/openapi-exportandum.sh'
 end
 
+task :purgatorium do
+  puts 'purgatorium'
+
+  # JEKYLL_ENV=development bundle exec jekyll clean
+  cached_list = [
+    '_data/expandendum/api.json',
+    '_data/expandendum/schemam.json',
+    '_data/l10n/api.l10n.json',
+    '_data/l10n/api.l10n.json',
+    '_data/l10n/apineo.l10n.json',
+    '_data/l10n/mappam-situm.l10n.json',
+    '_data/l10n/navigationem.l10n.json',
+    '_data/l10n/referens.l10n.json',
+    '_data/l10n/schema.l10n.json',
+    '_data/l10n/schemam.l10n.json',
+    '_data/tm/commune.tm.hxl.csv',
+    '_data/tm/hapi-api.tm.hxl.csv',
+    '_data/tm/hapi-miniman.tm.hxl.csv',
+    '_data/tm/schemam-un-htcds.tm.hxl.csv',
+    '_data/tm/schemam.tm.hxl.csv',
+    'do-not-exit-skip'
+  ]
+  cached_list.each do |archivum|
+    if File.exist?(archivum)
+      puts archivum
+      File.delete(archivum)
+    end
+  end
+end
+
 # @see https://github.com/gjtorikian/html-proofer#using-with-jekyll
 require 'html-proofer'
 
