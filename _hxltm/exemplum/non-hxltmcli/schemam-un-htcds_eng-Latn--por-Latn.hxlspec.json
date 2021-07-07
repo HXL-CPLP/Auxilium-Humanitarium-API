@@ -14,10 +14,10 @@
         {
             "filter": "add_columns",
             "specs": [
-                "Comment#x_comment={{ join(\"|\", #item+wikidata+code, #meta+item+url+list, #meta+item+i_en+i_eng+is_Latn) }}"
+                "Comment#x_comment={{ join(\"|\", #item+conceptum+codicem, #meta+item+url+list, #meta+item+i_en+i_eng+is_Latn) }}"
             ],
             "$comments": [
-                "_[eng-Latn]We create a new column that merge 1. #item+wikidata+code, 2.#meta+item+url+list [eng-Latn]_",
+                "_[eng-Latn]We create a new column that merge 1. #item+conceptum+codicem, 2.#meta+item+url+list [eng-Latn]_",
                 "_[eng-Latn]We also merge the #meta of the eng-Latn (you may need to customize for new languages [eng-Latn]_",
                 "https://github.com/HXLStandard/hxl-proxy/wiki/Add-column-filter",
                 "https://github.com/HXLStandard/hxl-proxy/wiki/Row-formulas"
