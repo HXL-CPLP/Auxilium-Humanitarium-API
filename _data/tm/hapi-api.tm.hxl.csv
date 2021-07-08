@@ -1,35 +1,35 @@
-#item+conceptum+codicem,#status,#item+conceptum+dominium,#item+rem+i_la+i_lat+is_latn,#item+rem+i_la+i_lat+is_latn+alt+list,#item+rem+i_pt+i_por+is_latn,#item+rem+i_pt+i_por+is_latn+alt+list,#item+rem+i_en+i_eng+is_latn,#item+rem+i_en+i_eng+is_latn+alt+list,#item+rem+i_es+i_spa+is_latn,#item+rem+i_es+i_spa+is_latn+alt+list,#item+rem+i_ar+i_arb+is_arab,#item+rem+i_ar+i_arb+is_arab+alt+list,#item+rem+i_hi+i_hin+is_deva,#item+rem+i_hi+i_hin+is_deva+alt+list,#item+rem+i_sl+i_slv+is_latn,#item+rem+i_sl+i_slv+is_latn+alt+list
-L10N_ego_summarius,2,L10N,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,Idioma español (Alfabeto latino),∅,اللغة العربية,∅,हिन्दी भाषा (देवनागरी लिपि),∅,Slovenščina (Latinska abeceda),∅
-L10N_ego_codicem,2,L10N,lat-Latn,∅,por-Latn,∅,eng-Latn,∅,spa-Latn,∅,arb-Arab,∅,hin-Deva,∅,slv-Latn,∅
-L10N_ego_linguam_nomen,2,L10N,Lingua Latina,∅,Língua portuguesa,∅,English language,∅,Idioma español,∅,اللغة العربية,∅,हिन्दी भाषा,∅,Slovenščina,∅
-L10N_ego_scriptum_nomen,2,L10N,Abecedarium Latinum,∅,Alfabeto latino,∅,Latin script,∅,Alfabeto latino,∅,,∅,देवनागरी लिपि,∅,Latinska abeceda,∅
-L10N_ego_patriam_UN_M49_numerum,2,L10N,001,∅,001,∅,001,∅,001,∅,001,∅,001,∅,001,∅
-L10N_ego_patriam_UN_P_codicem,2,L10N,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅,∅
-I18N_testum_salve_mundi_testum_I18N,2,I18N,Salvi mundi!,∅,Olá mundo!,Alô Mundo!!Programa alô mundo,"Hello, World!","Hello, world|""Hello, world!"" program",¡Hola mundo!,"¡Hola, mundo!|Programa Hola Mundo",,∅,नमस्ते दुनिया,∅,,∅
-I18N_إختبار_טעסט_测试_테스트_испытание_I18N,2,I18N,"Testum, I, II, III",∅,"Teste, 1, 2, 3",∅,"Test, 1, 2, 3",∅,"Prueba, 1, 2, 3",∅,,∅,"परीक्षा, १, २, ३",∅,,∅
-I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,2,I18N,"I,V, X, L, C, D, M","1, 2, 3, 4, 5, 6, 7, 8, 9||ūnum, duo, tria, quattuor, quīnque, sex, septem, octō, novem, decem","1, 2, 3, 4, 5, 6, 7, 8, 9, 10","um, dois, três, quatro, cinco, seis, sete, oito, nove, dez","1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅,,∅,"०, १, २, ३, ४, ५, ६, ७, ८, ९",∅,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅
-L10N_linguam_ego_summarius,1,L10N,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),∅,English language (Latin script),∅,,∅,,∅,हिन्दी भाषा (देवनागरी लिपि),∅,,∅
-Hapi_api_UN_HDX_abbreviationem,1,,,∅,HDX,,HDX,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_HDX_nomen,1,,,∅,Intercâmbio de Dados Humanitários,,The Humanitarian Data Exchange API,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_HDX_titulum,1,,,∅,HDX - Intercâmbio de Dados Humanitários,∅,HDX - The Humanitarian Data Exchange API,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_HDX_slug,1,,,∅,humanitarian-data-exchange,∅,humanitarian-data-exchange,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_CODV2API_abbreviationem,1,,,∅,CODV2API,∅,CODV2API,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_CODV2API_nomen,1,,,∅,ReliefWeb,∅,ReliefWeb,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_CODV2API_titulum,1,,,∅,COD API versão 2,∅,COD Services: Common Operational Datasets Services 2,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_CODV2API_slug,1,,,∅,common-operational-datasets-api,∅,common-operational-datasets-api,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_reliefweb_abbreviationem,1,,,∅,ReliefWeb,∅,ReliefWeb,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_reliefweb_nomen,1,,,∅,ReliefWeb - Informando humanitários em todo o mundo,∅,ReliefWeb - Informing humanitarians worldwide,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_reliefweb_titulum,1,,,∅,ReliefWeb - Informando humanitários em todo o mundo,∅,ReliefWeb - Informing humanitarians worldwide,∅,,∅,,∅,,∅,,∅
-Hapi_api_UN_reliefweb_slug,1,,,∅,reliefweb,∅,reliefweb,∅,,∅,,∅,,∅,,∅
-Hapi_api_XZ_HXL-Proxy_abbreviationem,1,,,∅,HXL-Proxy,∅,HXL-Proxy,∅,,∅,,∅,,∅,,∅
-Hapi_api_XZ_HXL-Proxy_nomen,1,,,∅,Proxy da Linguagem de Intercâmbio Humanitária,∅,Proxy of the Humanitarian Exchange Language,∅,,∅,,∅,,∅,,∅
-Hapi_api_XZ_HXL-Proxy_titulum,1,,,∅,HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária,∅,HXL-Proxy - Proxy of the Humanitarian Exchange Language,∅,,∅,,∅,,∅,,∅
-Hapi_api_XZ_HXL-Proxy_slug,1,,,∅,HXL-Proxy,∅,HXL-Proxy,∅,,∅,,∅,,∅,,∅
-Hapi_api_BR_portais-ckan-brasil_abbreviationem,1,,,∅,CKAN-BR,∅,CKAN-BR,∅,,∅,,∅,,∅,,∅
-Hapi_api_BR_portais-ckan-brasil_nomen,1,,,∅,Portais CKAN de dados abertos no Brasil,∅,Brazilian CKAN open data portals,∅,,∅,,∅,,∅,,∅
-Hapi_api_BR_portais-ckan-brasil_titulum,1,,,∅,Portais CKAN de dados abertos no Brasil,∅,Brazilian CKAN open data portals,∅,,∅,,∅,,∅,,∅
-Hapi_api_BR_portais-ckan-brasil_slug,1,,,∅,portais-ckan-brasil,∅,brazilian-ckan-portals,∅,,∅,,∅,,∅,,∅
-Hapi_api_BR_portais-arcgis-brasil_abbreviationem,1,,,∅,ArcGIS-BR,∅,ArcGIS-BR,∅,,∅,,∅,,∅,,∅
-Hapi_api_BR_portais-arcgis-brasil_nomen,1,,,∅,Portais ArcGIS de dados abertos do Brasil,∅,Brazilian ArcGIS open data portals,∅,,∅,,∅,,∅,,∅
-Hapi_api_BR_portais-arcgis-brasil_titulum,1,,,∅,Portais ArcGIS de dados abertos do Brasil,∅,Brazilian ArcGIS open data portals,∅,,∅,,∅,,∅,,∅
-Hapi_api_BR_portais-arcgis-brasil_slug,1,,,∅,portais-arcgis-brasil,∅,brazilian-arcgis-portals,∅,,∅,,∅,,∅,,∅
+#item+conceptum+codicem,#status,#item+conceptum+dominium,#item+rem+i_la+i_lat+is_latn,#item+rem+i_la+i_lat+is_latn+alt+list,#item+rem+i_pt+i_por+is_latn,#status+rem+accuratum+i_pt+i_por+is_latn,#status+rem+textum+i_pt+i_por+is_latn,#item+rem+i_en+i_eng+is_latn,#status+rem+accuratum+i_en+i_eng+is_latn,#status+rem+textum+i_en+i_eng+is_latn,#item+rem+i_es+i_spa+is_latn,#item+rem+i_es+i_spa+is_latn+alt+list,#item+rem+i_ar+i_arb+is_arab,#item+rem+i_ar+i_arb+is_arab+alt+list,#item+rem+i_hi+i_hin+is_deva,#item+rem+i_hi+i_hin+is_deva+alt+list,#item+rem+i_sl+i_slv+is_latn,#item+rem+i_sl+i_slv+is_latn+alt+list
+L10N_ego_summarius,2,L10N,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),6,lat_rem_finale,English language (Latin script),6,lat_rem_finale,Idioma español (Alfabeto latino),∅,اللغة العربية,∅,हिन्दी भाषा (देवनागरी लिपि),∅,Slovenščina (Latinska abeceda),∅
+L10N_ego_codicem,2,L10N,lat-Latn,∅,por-Latn,6,lat_rem_finale,eng-Latn,6,lat_rem_finale,spa-Latn,∅,arb-Arab,∅,hin-Deva,∅,slv-Latn,∅
+L10N_ego_linguam_nomen,2,L10N,Lingua Latina,∅,Língua portuguesa,6,lat_rem_finale,English language,6,lat_rem_finale,Idioma español,∅,اللغة العربية,∅,हिन्दी भाषा,∅,Slovenščina,∅
+L10N_ego_scriptum_nomen,2,L10N,Abecedarium Latinum,∅,Alfabeto latino,6,lat_rem_finale,Latin script,6,lat_rem_finale,Alfabeto latino,∅,,∅,देवनागरी लिपि,∅,Latinska abeceda,∅
+L10N_ego_patriam_UN_M49_numerum,2,L10N,001,∅,001,6,lat_rem_finale,001,6,lat_rem_finale,001,∅,001,∅,001,∅,001,∅
+L10N_ego_patriam_UN_P_codicem,2,L10N,∅,∅,∅,6,lat_rem_finale,∅,6,lat_rem_finale,∅,∅,∅,∅,∅,∅,∅,∅
+I18N_testum_salve_mundi_testum_I18N,2,I18N,Salvi mundi!,∅,Olá mundo!,6,lat_rem_finale,"Hello, World!",6,lat_rem_finale,¡Hola mundo!,"¡Hola, mundo!|Programa Hola Mundo",,∅,नमस्ते दुनिया,∅,,∅
+I18N_إختبار_טעסט_测试_테스트_испытание_I18N,2,I18N,"Testum, I, II, III",∅,"Teste, 1, 2, 3",6,lat_rem_finale,"Test, 1, 2, 3",6,lat_rem_finale,"Prueba, 1, 2, 3",∅,,∅,"परीक्षा, १, २, ३",∅,,∅
+I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,2,I18N,"I,V, X, L, C, D, M","1, 2, 3, 4, 5, 6, 7, 8, 9||ūnum, duo, tria, quattuor, quīnque, sex, septem, octō, novem, decem","1, 2, 3, 4, 5, 6, 7, 8, 9, 10",6,lat_rem_finale,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",6,lat_rem_finale,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅,,∅,"०, १, २, ३, ४, ५, ६, ७, ८, ९",∅,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",∅
+L10N_linguam_ego_summarius,1,L10N,Lingua Latina (Abecedarium Latinum),∅,Língua portuguesa (alfabeto latino),6,lat_rem_temporarium,English language (Latin script),6,lat_rem_temporarium,,∅,,∅,हिन्दी भाषा (देवनागरी लिपि),∅,,∅
+Hapi_api_UN_HDX_abbreviationem,1,,,∅,HDX,6,lat_rem_temporarium,HDX,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_HDX_nomen,1,,,∅,Intercâmbio de Dados Humanitários,6,lat_rem_temporarium,The Humanitarian Data Exchange API,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_HDX_titulum,1,,,∅,HDX - Intercâmbio de Dados Humanitários,6,lat_rem_temporarium,HDX - The Humanitarian Data Exchange API,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_HDX_slug,1,,,∅,humanitarian-data-exchange,6,lat_rem_temporarium,humanitarian-data-exchange,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_CODV2API_abbreviationem,1,,,∅,CODV2API,6,lat_rem_temporarium,CODV2API,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_CODV2API_nomen,1,,,∅,ReliefWeb,6,lat_rem_temporarium,ReliefWeb,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_CODV2API_titulum,1,,,∅,COD API versão 2,6,lat_rem_temporarium,COD Services: Common Operational Datasets Services 2,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_CODV2API_slug,1,,,∅,common-operational-datasets-api,6,lat_rem_temporarium,common-operational-datasets-api,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_reliefweb_abbreviationem,1,,,∅,ReliefWeb,6,lat_rem_temporarium,ReliefWeb,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_reliefweb_nomen,1,,,∅,ReliefWeb - Informando humanitários em todo o mundo,6,lat_rem_temporarium,ReliefWeb - Informing humanitarians worldwide,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_reliefweb_titulum,1,,,∅,ReliefWeb - Informando humanitários em todo o mundo,6,lat_rem_temporarium,ReliefWeb - Informing humanitarians worldwide,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_UN_reliefweb_slug,1,,,∅,reliefweb,6,lat_rem_temporarium,reliefweb,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_XZ_HXL-Proxy_abbreviationem,1,,,∅,HXL-Proxy,6,lat_rem_temporarium,HXL-Proxy,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_XZ_HXL-Proxy_nomen,1,,,∅,Proxy da Linguagem de Intercâmbio Humanitária,6,lat_rem_temporarium,Proxy of the Humanitarian Exchange Language,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_XZ_HXL-Proxy_titulum,1,,,∅,HXL-Proxy - Proxy da Linguagem de Intercâmbio Humanitária,6,lat_rem_temporarium,HXL-Proxy - Proxy of the Humanitarian Exchange Language,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_XZ_HXL-Proxy_slug,1,,,∅,HXL-Proxy,6,lat_rem_temporarium,HXL-Proxy,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_BR_portais-ckan-brasil_abbreviationem,1,,,∅,CKAN-BR,6,lat_rem_temporarium,CKAN-BR,6,lat_rem_temporarium,,,,,,,,
+Hapi_api_BR_portais-ckan-brasil_nomen,1,,,∅,Portais CKAN de dados abertos no Brasil,6,lat_rem_temporarium,Brazilian CKAN open data portals,2,lat_rem_temporarium_de_non_nativum,,,,,,,,
+Hapi_api_BR_portais-ckan-brasil_titulum,1,,,∅,Portais CKAN de dados abertos no Brasil,6,lat_rem_temporarium,Brazilian CKAN open data portals,2,lat_rem_temporarium_de_non_nativum,,,,,,,,
+Hapi_api_BR_portais-ckan-brasil_slug,1,,,∅,portais-ckan-brasil,6,lat_rem_temporarium,brazilian-ckan-portals,2,lat_rem_temporarium_de_non_nativum,,,,,,,,
+Hapi_api_BR_portais-arcgis-brasil_abbreviationem,1,,,∅,ArcGIS-BR,6,lat_rem_temporarium,ArcGIS-BR,2,lat_rem_temporarium_de_non_nativum,,,,,,,,
+Hapi_api_BR_portais-arcgis-brasil_nomen,1,,,∅,Portais ArcGIS de dados abertos do Brasil,6,lat_rem_temporarium,Brazilian ArcGIS open data portals,2,lat_rem_temporarium_de_non_nativum,,,,,,,,
+Hapi_api_BR_portais-arcgis-brasil_titulum,1,,,∅,Portais ArcGIS de dados abertos do Brasil,6,lat_rem_temporarium,Brazilian ArcGIS open data portals,2,lat_rem_temporarium_de_non_nativum,,,,,,,,
+Hapi_api_BR_portais-arcgis-brasil_slug,1,,,∅,portais-arcgis-brasil,6,lat_rem_temporarium,brazilian-arcgis-portals,2,lat_rem_temporarium_de_non_nativum,,,,,,,,
