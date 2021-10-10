@@ -39,6 +39,7 @@ exclude:
   - api/XZ/README.md
   - schema/iso/iso639-3/eng/README.md
   - schema/iso/iso15924/eng/README.md
+  - schemam/XZ/vaccinum/README.md
   - README-old.md
   # _[por] Evitar loop infinito com _plugins/jekyll_hapi_hooks.rb e
   #        jekyll serve --watch

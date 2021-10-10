@@ -9,4 +9,6 @@ out/*
 *.zip
 *.tmx
 *.dtd
+vaccinum.tm.hxl.tbx
+vaccinum.tm.hxl.xml
 !hxltm-specificationem.hxl.csv

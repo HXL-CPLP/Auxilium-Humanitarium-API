@@ -78,8 +78,9 @@ Hapi_schemam_un_htcds="https://proxy.hxlstandard.org/data/download/schemam-un-ht
 
 ROOTDIR="$(pwd)"
 
-
 #### Okapi checks ______________________________________________________________
+# TODO: as 2021-10-10, is tital used? Maybe hxltmcli already releace its need
+#       (fititnt, 2021-10-10 04:24 BRT)
 
 if [ ! -f "/opt/okapi/tikal.sh" ]; then
     echo "Okapi already NOT installed?"

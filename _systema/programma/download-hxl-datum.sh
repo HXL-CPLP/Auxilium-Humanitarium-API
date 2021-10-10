@@ -111,14 +111,16 @@ if true ; then
     echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
     wget -qO- "$Hapi_api" > "${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
 fi
+
 if true ; then
     echo ''
-    echo "Hapi_api"
+    echo "hxltm_vaccinum"
     echo "   Fontem: [$hxltm_vaccinum]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/vaccinum.tm.hxl.csv"
     echo "wget -qO- \"$hxltm_vaccinum\" > \"${ROOTDIR}/_data/tm/vaccinum.tm.hxl.csv\""
     wget -qO- "$hxltm_vaccinum" > "${ROOTDIR}/_data/tm/vaccinum.tm.hxl.csv"
 fi
+
 
 if true ; then
     echo ''
