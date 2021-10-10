@@ -49,6 +49,8 @@ Hapi_schemam_un_htcds="https://proxy.hxlstandard.org/data/download/schemam-un-ht
 Hapi_api="https://proxy.hxlstandard.org/data/download/hapi-api_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1680147913"
 hxltm_specificationem="https://proxy.hxlstandard.org/data/download/hxltm-specificationem_hxl.csv?dest=data_edit&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1864477588"
 
+hxltm_vaccinum="https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1couRYFuVLnr6CfIMEiXKBamJtmcHinSAy1K1e69rNqw%2Fedit%23gid%3D141644151&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on"
+
 ROOTDIR="$(pwd)"
 
 #### DATA PULL _________________________________________________________________
@@ -108,6 +110,13 @@ if true ; then
     echo "   Fontem: [$Hapi_api]"
     echo "   Filum:  [${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
     wget -qO- "$Hapi_api" > "${ROOTDIR}/_data/tm/hapi-api.tm.hxl.csv"
+fi
+if true ; then
+    echo ''
+    echo "Hapi_api"
+    echo "   Fontem: [$hxltm_vaccinum]"
+    echo "   Filum:  [${ROOTDIR}/_data/tm/vaccinum.tm.hxl.csv"
+    wget -qO- "$hxltm_vaccinum" > "${ROOTDIR}/_data/tm/vaccinum.tm.hxl.csv"
 fi
 
 if true ; then
