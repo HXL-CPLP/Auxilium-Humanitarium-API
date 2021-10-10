@@ -1,0 +1,30 @@
+Código da Variável,Nome da Variável,Formato,Descrição,Inputs possíveis
+data_publicacao,Data de publicação da base,Data (DD-MM-AAAA),Data em que o arquivo CSV foi atualizado. Alterar a cada publicação.,-
+data_sintomas,Data de início dos sintomas,Data (DD-MM-AAAA),Data em que se registrou a existência dos primeiros sintomas de Covid-19 no paciente.,-
+data_notificacao,Data da Notificação,Data (DD-MM-AAAA),"Data em que o paciente deu entrada no sistema de saúde e recebeu as primeiras informações sobre o encaminhamento de seu caso, independentemente do tipo de atendimento prestado (internação, isolamento etc).",-
+classificacao_final,Classificação Final,Texto,"Descrição do caso, após investigação.",Descartado; Confirmado Clínico-Epidemiológico; Confirmado Laboratorial; Síndrome Gripal Não Especificada; Confirmado Clínico-Imagem; Confirmado por Critério Clínico
+criterio_confirmacao,Critério de confirmação,Texto,Tipo de exame realizado para investigação do caso.,Laboratorial; Clínico; Clínico Epidemiológico
+data_encerramento,Data de encerramento,Data (DD-MM-AAAA),"Data em que o caso foi encerrado, após alta ou óbito do paciente.",-
+situacao_teste,Situação do teste,Texto,Descrição do status de testagem do paciente.,Solicitado; Coletado;  Concluído; Exame Não Solicitado
+data_coleta,Data da coleta do teste,Data (DD-MM-AAAA),Data em que  o teste foi coletado.,-
+tipo_teste,Tipo de teste aplicado,Texto,Padrão do teste utilizado para confirmação dos casos.,Teste rápido - Anticorpo; Teste rápido - Antígeno; RT-PCR; Teste sorológico
+resultado_teste,Resultado do teste,Texto,Descrição do resultado do teste aplicado.,Negativo; Positivo; Inconclusivo
+evolucao,Evolução,Texto,Evolução clínica do caso acompanhado.,Cancelado; Ignorado; Em tratamento domiciliar; Internado em UTI; Internado; Óbito; Cura
+municipio,Município (Nome),Texto,Nome do Município onde o caso foi registrado.,-
+cod_ibge,Município (Código),Texto,Código IBGE do Município.,-
+estado,Estado,Texto,Nome do Estado onde o caso está sendo tratado.,-
+municipio_residencia,Município de Residência (Nome),Texto,"Nome do Município onde o paciente reside (se houver). Caso o registro seja de pessoa em situação de rua ou análogo,  preencher com os dados do notificante. No caso de estrangeiros, preencher com dados do local onde o paciente está hospedado.",-
+cod_ibge_res,Município de Residência (Código),Texto,Código IBGE do Município onde o paciente reside (se houver),-
+estado_residencia,Estado de Residência,Texto,"Nome do Estado onde o paciente reside (se houver). Caso o registro seja de pessoa em situação de rua ou análogo,  preencher com os dados do notificante. No caso de estrangeiros, preencher com dados do local onde o paciente está hospedado.",-
+pais_origem,País de origem,Texto,"País de origem do paciente, em caso de estrangeiro",-
+profissional_saude,Profissional da Saúde,Texto,Indicação se o paciente é profissional da saúde ,Sim; Não
+profissional_seguranca,Profissional da Segurança,Texto,Indicação se o paciente é profissional da segurança,Sim; Não
+cbo,Código Brasileiro de Ocupação,Texto,"Código da ocupação profissional do paciente, de acordo com a Classificação Brasileira de Ocupações (CBO). O Ministério da Saúde orienta o preenchimento no caso de profissionais da saúde. ",-
+idade,Faixa etária/Idade,Número ou Texto,Descrição da idade ou faixa etária do paciente.,Idade exata OU Faixa etária com intervalos fixos OU as duas informações em colunas diferentes
+sexo,Sexo,Texto,Descrição do sexo biológico do paciente.,Feminino; Masculino
+cor_raca,Cor/Raça,Texto,Descrição da cor/raça do paciente de acordo com os critérios de classificação do IBGE.,Branco; Preto; Pardo; Amarelo; Índigena
+etnia,Etnia Indígena ,Texto,"Descrição da etnia, em caso de pessoa indígena.",-
+comorbidade_cardio,Comorbidade - Doença Cardiovascular,Texto,"Descrição das demais enfermidades que acometem o paciente - Doença cardiovascular; Diabetes mellitus; Doença respiratória crônica; Doença renal crônica; Imunodeficiência etc.. Caso não sejam observadas comorbidades, preencher com ""Não há"". Utilizar uma coluna para cada comorbidade com nome correspondente (ex: comorbidade_diabetes) para as principais. E outras_comorbidades.",
+comorbidade_diabetes,Comorbidade - Diabetes,Texto,"Descrição das demais enfermidades que acometem o paciente - Doença cardiovascular; Diabetes mellitus; Doença respiratória crônica; Doença renal crônica; Imunodeficiência etc.. Caso não sejam observadas comorbidades, preencher com ""Não há"". Utilizar uma coluna para cada comorbidade com nome correspondente (ex: comorbidade_diabetes) para as principais. E outras_comorbidades.",Sim; Não
+sintoma_coriza,Sintoma - Coriza,Texto,Descrição dos sintomas apresentados pelo paciente de Covid-19.  Tosse; Febre; Coriza; Dispneia; Dor de garganta etc. Utilizar uma coluna para cada sintoma com nome correspondente (ex: sintoma_coriza) para os mais frequentes. E outros_sintomas,Sim; Não
+sintoma_tosse,Sintoma - Tosse,Texto,Descrição dos sintomas apresentados pelo paciente de Covid-19.  Tosse; Febre; Coriza; Dispneia; Dor de garganta etc. Utilizar uma coluna para cada sintoma com nome correspondente (ex: sintoma_coriza) para os mais frequentes. E outros_sintomas,Sim; Não
