@@ -132,7 +132,13 @@ jobs:
       #       ${{ runner.os }}-gems-
 
       # Use GitHub Deploy Action to build and deploy to Github
-      - uses: jeffreytse/jekyll-deploy-action@v0.2.1
+      # - uses: jeffreytse/jekyll-deploy-action@v0.2.1
+      # Security notice: the GH_TOKEN uses an dedicated account, @eticaaibot,
+      #                  an account to deal with public repos, instead of
+      #                  someone personal token. If you are reusing HApi code
+      #                  consider creating an GitHub account for bot-like
+      #                  actions that require access to different repository.
+      - uses: jeffreytse/jekyll-deploy-action@v0.3.0
         with:
           provider: 'github'
           token: ${{ secrets.GH_TOKEN }}        # It's your Personal Access Token(PAT)
