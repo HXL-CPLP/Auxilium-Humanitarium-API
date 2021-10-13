@@ -13,3 +13,5 @@ medicinam_vaccinum,1,,vaccīnum,1,lat_rem_temporarium_de_non_nativum,vacina,,,va
 medicinam_patiens,1,,medicīnam patiēns,1,lat_rem_temporarium_de_non_nativum,paciente,,,patient,6,,,,
 medicinam_hospitale,1,,medicīnam hospitāle,1,lat_rem_temporarium_de_non_nativum,hospital,,,virus,6,,,,
 medicinam_virus,1,,vīrus,1,lat_rem_temporarium_de_non_nativum,vírus,,,,,,,,
+geographicum_geographicum,1,,geōgraphicum,1,lat_rem_temporarium_de_non_nativum,,,,,,,,,
+geographicum_administratum,2,,geōgraphicum administrātum,1,lat_rem_temporarium_de_non_nativum,divisão administrativa,6,lat_rem_finale,administrative division,6,lat_rem_finale,,,
