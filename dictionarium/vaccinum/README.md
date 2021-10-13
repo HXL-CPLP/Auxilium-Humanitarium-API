@@ -92,19 +92,19 @@ hxltmcli _data/tm/vaccinum.tm.hxl.csv \
 hxltmcli _data/tm/vaccinum.tm.hxl.csv \
   --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.py \
   --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
-  > dictionarium/vaccinum/programma/exemplum/vaccinum-transfarmandum.076_BR-840_US_US-CA.py
+  > dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR-840_US_US-CA.py
 
 
 hxltmcli _data/tm/vaccinum.tm.hxl.csv \
   --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.sh \
   --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
-  > dictionarium/vaccinum/programma/exemplum/vaccinum-transfarmandum.076_BR-840_US_US-CA.sh
+  > dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR-840_US_US-CA.sh
 ```
 
 
 <!--
-./dictionarium/vaccinum/programma/exemplum/vaccinum-transfarmandum.076_BR-840_US_US-CA.py
-./dictionarium/vaccinum/programma/exemplum/vaccinum-transfarmandum.076_BR-840_US_US-CA.sh
+./dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR-840_US_US-CA.py
+./dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR-840_US_US-CA.sh
 
 
 hxltmcli _data/tm/vaccinum.tm.hxl.csv --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.py --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn
