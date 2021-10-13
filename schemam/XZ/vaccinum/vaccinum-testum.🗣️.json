@@ -1,3 +1,12 @@
 {
-    "medicinam_medicinam": "{% _🗣️ medicinam_medicinam 🗣️_ %}"
+    "medicinam_medicinam": "{% _🗣️ medicinam_medicinam 🗣️_ %}",
+    "geographicum_administratum": "{% _🗣️ geographicum_administratum 🗣️_ %}",
+    "geographicum_administratum_1": "{% _🗣️ geographicum_administratum_1 🗣️_ %}",
+    "geographicum_administratum_2": "{% _🗣️ geographicum_administratum_2 🗣️_ %}",
+    "geographicum_administratum_3": "{% _🗣️ geographicum_administratum_3 🗣️_ %}",
+    "geographicum_administratum_4": "{% _🗣️ geographicum_administratum_4 🗣️_ %}",
+    "geographicum_administratum_5": "{% _🗣️ geographicum_administratum_5 🗣️_ %}",
+    "geographicum_latitudinem": "{% _🗣️ geographicum_latitudinem 🗣️_ %}",
+    "geographicum_longitudinem": "{% _🗣️ geographicum_longitudinem 🗣️_ %}",
+    "geographicum_elevationem": "{% _🗣️ geographicum_elevationem 🗣️_ %}"
 }

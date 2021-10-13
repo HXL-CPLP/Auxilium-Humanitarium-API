@@ -67,7 +67,7 @@ fi
 
 #### HXLTMCLI __________________________________________________________________
 
-# wget -qO- "https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1couRYFuVLnr6CfIMEiXKBamJtmcHinSAy1K1e69rNqw%2Fedit%23gid%3D141644151&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on" > "/workspace/git/HXL-CPLP/Auxilium-Humanitarium-API/_data/tm/vaccinum.tm.hxl.csv"
+# wget -qO- "https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1couRYFuVLnr6CfIMEiXKBamJtmcHinSAy1K1e69rNqw%2Fedit%23gid%3D141644151&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on" > "./_data/tm/vaccinum.tm.hxl.csv"
 # hxltmcli https://docs.google.com/spreadsheets/d/1couRYFuVLnr6CfIMEiXKBamJtmcHinSAy1K1e69rNqw/edit#gid=141644151 --objectivum-TBX-Basim
 
 # hxltmcli _data/tm/vaccinum.tm.hxl.csv --objectivum-TBX-Basim > _hxltm/vaccinum.tm.hxl.tbx

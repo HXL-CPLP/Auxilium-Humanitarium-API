@@ -14,4 +14,12 @@ medicinam_patiens,1,,medicīnam patiēns,1,lat_rem_temporarium_de_non_nativum,pa
 medicinam_hospitale,1,,medicīnam hospitāle,1,lat_rem_temporarium_de_non_nativum,hospital,,,virus,6,,,,
 medicinam_virus,1,,vīrus,1,lat_rem_temporarium_de_non_nativum,vírus,,,,,,,,
 geographicum_geographicum,1,,geōgraphicum,1,lat_rem_temporarium_de_non_nativum,,,,,,,,,
-geographicum_administratum,2,,geōgraphicum administrātum,1,lat_rem_temporarium_de_non_nativum,divisão administrativa,6,lat_rem_finale,administrative division,6,lat_rem_finale,,,
+geographicum_administratum,1,,geōgraphicum administrātum,1,lat_rem_temporarium_de_non_nativum,divisão administrativa,6,lat_rem_finale,administrative division,6,lat_rem_finale,,,
+geographicum_administratum_1,1,,geōgraphicum administrātum I,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 1,2,lat_rem_initiale,,,,,,
+geographicum_administratum_2,1,,geōgraphicum administrātum II,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 2,2,lat_rem_initiale,,,,,,
+geographicum_administratum_3,1,,geōgraphicum administrātum III,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 3,2,lat_rem_initiale,,,,,,
+geographicum_administratum_4,1,,geōgraphicum administrātum IV,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 4,2,lat_rem_initiale,,,,,,
+geographicum_administratum_5,1,,geōgraphicum administrātum V,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 5,2,lat_rem_initiale,,,,,,
+geographicum_latitudinem,1,,geōgraphicum lātitūdinem,1,lat_rem_temporarium_de_non_nativum,latitude,6,lat_rem_finale,latitude,6,lat_rem_finale,latitud,6,lat_rem_finale
+geographicum_longitudinem,1,,geōgraphicum longitūdinem,1,lat_rem_temporarium_de_non_nativum,longitude,6,lat_rem_finale,longitude,6,lat_rem_finale,longitud,6,lat_rem_finale
+geographicum_elevationem,1,,geōgraphicum ēlevātiōnem,1,lat_rem_temporarium_de_non_nativum,elevação,6,lat_rem_finale,elevation,6,lat_rem_finale,elevación,6,lat_rem_finale
