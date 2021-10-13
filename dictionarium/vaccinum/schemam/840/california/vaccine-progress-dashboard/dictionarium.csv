@@ -1,0 +1,31 @@
+Column Name,Format,Definition
+County,Plain Text,"County of residence for vaccine recipient. Note this may be different than the county in which the vaccine was administered.
+
+Where county of residence was not reported in a vaccination record, the county of provider that vaccinated the resident is used. This applies to less than 1% of vaccination records. 
+
+Non-California residents who received a vaccine in California are listed as “Outside of California.”"
+Administered Date,Date,Date on which the vaccine was administered. This is different than the report date; the total number for a particular administration date may change as the data is subsequently updated.
+Total Doses,Numeric,Total number of vaccines administered on a particular administration date. Includes both single and two-dose vaccines.
+Cumulative Total Doses,Numeric,Cumulative number of vaccines administered up to a particular administration date. Includes both single and two-dose vaccines.
+Pfizer Doses,Numeric,Pfizer doses administered on a particular administration date.
+Cumulative Pfizer Doses,Numeric,Cumulative Pfizer doses administered up to that date.
+Moderna Doses,Numeric,Moderna doses administered on a particular administration date.
+Cumulative Moderna Doses,Numeric,Cumulative Moderna doses administered up to that date.
+Johnson & Johnson Doses,Numeric,Johnson & Johnson doses administered on a particular administration date.
+Cumulative Johnson & Johnson Doses,Numeric,"Cumulative Johnson & Johnson doses administered up to that date
+"
+Partially Vaccinated,Numeric,"The number of people who became partially vaccinated on a particular administration date. All people in this total were administered vaccine on that date, but have not met the criteria for “full vaccination” yet."
+Total Partially Vaccinated,Numeric,"Total number of all partially vaccinated people for a particular administration date. This is the total number of all people who received at least one vaccine, but have not met the criteria for “full vaccination” yet. Unlike the “Partially Vaccinated” total, this total is not restricted to people who received vaccine specifically on that date."
+Fully Vaccinated,Numeric,"Total number of people who became fully vaccinated on a particular administration date.
+
+FULLY VACCINATED INCLUSION CRITERIA:
+1) They received one dose of Johnson & Johnson
+2) They received two Pfizer doses >= 17 days apart
+3) They received two Moderna doses >= 24 days apart
+4) They received a combination of Pfizer/Moderna doses >= 17 days apart
+5) They have three or more vaccination records
+6) Their only dose in their immunization records is labeled as dose number 2."
+Cumulative Fully Vaccinated,Numeric,Cumulative number of fully vaccinated people up to that date.
+At Least One Dose,Numeric,Total number of people who got their first dose on a particular administration date.
+Cumulative At Least One Dose,Numeric,Cumulative number of people with at least one dose on that date.
+California Flag,Plain Text,Non-California or Unknown doses have text entry “Not in California” for this column. Non-California and Unknown doses have been included so the total of all entries matches the total reported for California for a particular date.

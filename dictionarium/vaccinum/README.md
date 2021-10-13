@@ -76,7 +76,41 @@ como pequenos programas executáveis.
 dados entre implementações regionais diferentes (usand software) sem
 sobrecarregar trabalho quem gerencia as planilhas.
 
----
+## Exemplos de comandos
+
+### (rascunho)
+
+```bash
+## A parir do diretório raíz do projeto, imprima em tela
+
+hxltmcli _data/tm/vaccinum.tm.hxl.csv \
+  --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.py \
+  --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn
+
+## Salva em subpasta
+
+hxltmcli _data/tm/vaccinum.tm.hxl.csv \
+  --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.py \
+  --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
+  > dictionarium/vaccinum/programma/exemplum/vaccinum-transfarmandum.076_BR-840_US_US-CA.py
+
+
+hxltmcli _data/tm/vaccinum.tm.hxl.csv \
+  --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.sh \
+  --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
+  > dictionarium/vaccinum/programma/exemplum/vaccinum-transfarmandum.076_BR-840_US_US-CA.sh
+```
+
+
+<!--
+./dictionarium/vaccinum/programma/exemplum/vaccinum-transfarmandum.076_BR-840_US_US-CA.py
+./dictionarium/vaccinum/programma/exemplum/vaccinum-transfarmandum.076_BR-840_US_US-CA.sh
+
+
+hxltmcli _data/tm/vaccinum.tm.hxl.csv --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.py --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn
+-->
+
+<!--
 
 ## schemam
 
@@ -100,10 +134,6 @@ sobrecarregar trabalho quem gerencia as planilhas.
 ### 076
 > Trivia: "076" de https://unstats.un.org/unsd/methodology/m49/
 
-<!--
-> - HDX, Brazil:
->   - https://data.humdata.org/event/covid-19?groups=bra&q=&ext_page_size=25
--->
 
 #### brasil.io
 - [schemam/076/brasil.io/datapackage.🗣️.json](schemam/076/brasil.io/datapackage.🗣️.json)
@@ -117,6 +147,18 @@ sobrecarregar trabalho quem gerencia as planilhas.
 #### okbr
 - [schemam/076/okbr/formulam.csv](schemam/076/okbr/formulam.csv)
   - <https://transparenciacovid19.ok.org.br/files/Toolkit_1_microdados_basicosV2.pdf>
+
+
+### 840
+> Trivia: "840" de https://unstats.un.org/unsd/methodology/m49/
+
+https://data.chhs.ca.gov/dataset/vaccine-progress-dashboard
+-->
+
+<!--
+> - HDX, Brazil:
+>   - https://data.humdata.org/event/covid-19?groups=bra&q=&ext_page_size=25
+-->
 
 <!--
 - https://data.humdata.org/event/covid-19 (?)
