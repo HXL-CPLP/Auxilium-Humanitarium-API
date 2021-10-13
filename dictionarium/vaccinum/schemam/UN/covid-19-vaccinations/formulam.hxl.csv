@@ -1,0 +1,2 @@
+location,iso_code,date,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,daily_vaccinations_raw,daily_vaccinations,total_vaccinations_per_hundred,people_vaccinated_per_hundred,people_fully_vaccinated_per_hundred,total_boosters_per_hundred,daily_vaccinations_per_million
+#country+name,#country+code,#date,#total+vaccinations,,,,,#total+vaccinations+daily,,,,,
