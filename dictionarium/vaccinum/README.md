@@ -85,26 +85,47 @@ sobrecarregar trabalho quem gerencia as planilhas.
 
 hxltmcli _data/tm/vaccinum.tm.hxl.csv \
   --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.py \
-  --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn
+  --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
+  --fontem-normam 076_BR \
+  --objectivum-normam 840_US_USCA
+
+# US não tem P-Codes oficiais, 'US-CA' é gambiarra temporária (2021-10-14)
 
 ## Salva em subpasta
 
 hxltmcli _data/tm/vaccinum.tm.hxl.csv \
   --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.py \
   --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
-  > dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR-840_US_US-CA.py
-
+  --fontem-normam 076_BR \
+  --objectivum-normam 840_US_USCA \
+  > dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR---840_US_USCA.py
 
 hxltmcli _data/tm/vaccinum.tm.hxl.csv \
   --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.sh \
   --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
-  > dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR-840_US_US-CA.sh
+  --fontem-normam 076_BR \
+  --objectivum-normam 840_US_USCA \
+  > dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR---840_US_USCA.sh
+
+hxltmcli _data/tm/vaccinum.tm.hxl.csv \
+  --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.json \
+  --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
+  --fontem-normam 076_BR \
+  --objectivum-normam 840_US_USCA \
+  > dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR---840_US_USCA.json
+
+## Depuração, template de exemplo
+hxltmcli _data/tm/vaccinum.tm.hxl.csv \
+  --objectivum-formulam dictionarium/vaccinum/programma/venandum-insectum.🗣️.json \
+  --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
+  --fontem-normam 076_BR \
+  --objectivum-normam 840_US_USCA
+
 ```
 
-
 <!--
-./dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR-840_US_US-CA.py
-./dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR-840_US_US-CA.sh
+./dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR---840_US_USCA.py
+./dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR---840_US_USCA.sh
 
 
 hxltmcli _data/tm/vaccinum.tm.hxl.csv --objectivum-formulam dictionarium/vaccinum/programma/vaccinum-transfarmandum.🗣️.py --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn
