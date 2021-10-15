@@ -115,8 +115,10 @@ hxltmcli _data/tm/vaccinum.tm.hxl.csv \
   > dictionarium/vaccinum/programma/resultatum/vaccinum-transfarmandum.076_BR---840_US_USCA.json
 
 ## Depuração, template de exemplo
+# --expertum-HXLTM-ASA asa.hxltm.yml: gera uma Abstract Syntax Tree (AST) da operação
 hxltmcli _data/tm/vaccinum.tm.hxl.csv \
   --objectivum-formulam dictionarium/vaccinum/programma/venandum-insectum.🗣️.json \
+  --expertum-HXLTM-ASA dictionarium/vaccinum/programma/resultatum/venandum-insectum.asa.hxltm.yml \
   --objectivum-linguam por-Latn --agendum-linguam eng-Latn,lat-Latn \
   --fontem-normam 076_BR \
   --objectivum-normam 840_US_USCA

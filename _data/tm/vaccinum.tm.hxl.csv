@@ -1,27 +1,29 @@
-#item+conceptum+codicem,#status,#item+conceptum+dominium,#item+rem+i_la+i_lat+is_latn,#status+rem+accuratum+i_la+i_lat+is_latn,#status+rem+textum+i_la+i_lat+is_latn,#item+rem+i_pt+i_por+is_latn,#status+rem+accuratum+i_pt+i_por+is_latn,#status+rem+textum+i_pt+i_por+is_latn,#item+rem+i_en+i_eng+is_latn,#status+rem+accuratum+i_en+i_eng+is_latn,#status+rem+textum+i_en+i_eng+is_latn,#item+rem+i_es+i_spa+is_latn,#status+rem+accuratum+i_es+i_spa+is_latn,#status+rem+textum+i_es+i_spa+is_latn
-L10N_ego_summarius,2,L10N,Lingua Latina (Abecedarium Latinum),10,lat_rem_finale,Língua portuguesa (alfabeto latino),10,lat_rem_finale,English language (Latin script),10,lat_rem_finale,Idioma español (Alfabeto latino),10,lat_rem_finale
-L10N_ego_codicem,2,L10N,lat-Latn,10,lat_rem_finale,por-Latn,10,lat_rem_finale,eng-Latn,10,lat_rem_finale,spa-Latn,10,lat_rem_finale
-L10N_ego_linguam_nomen,2,L10N,Lingua Latina,10,lat_rem_finale,Língua portuguesa,10,lat_rem_finale,English language,10,lat_rem_finale,Idioma español,10,lat_rem_finale
-L10N_ego_scriptum_nomen,2,L10N,Abecedarium Latinum,10,lat_rem_finale,Alfabeto latino,10,lat_rem_finale,Latin script,10,lat_rem_finale,Alfabeto latino,10,lat_rem_finale
-L10N_ego_patriam_UN_M49_numerum,2,L10N,001,10,lat_rem_finale,001,10,lat_rem_finale,001,10,lat_rem_finale,001,10,lat_rem_finale
-L10N_ego_patriam_UN_P_codicem,2,L10N,∅,10,lat_rem_finale,∅,10,lat_rem_finale,∅,10,lat_rem_finale,∅,10,lat_rem_finale
-I18N_testum_salve_mundi_testum_I18N,2,I18N,Salvi mundi!,10,lat_rem_finale,Olá mundo!,10,lat_rem_finale,"Hello, World!",10,lat_rem_finale,¡Hola mundo!,10,lat_rem_finale
-I18N_إختبار_טעסט_测试_테스트_испытание_I18N,2,I18N,"Testum, I, II, III",10,lat_rem_finale,"Teste, 1, 2, 3",10,lat_rem_finale,"Test, 1, 2, 3",10,lat_rem_finale,"Prueba, 1, 2, 3",10,lat_rem_finale
-I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,2,I18N,"I,V, X, L, C, D, M",10,lat_rem_finale,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",10,lat_rem_finale,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",10,lat_rem_finale,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",10,lat_rem_finale
-medicinam_medicinam,1,,medicīnam,1,lat_rem_temporarium_de_non_nativum,medicina,6,lat_rem_finale,medicine,6,lat_rem_finale,,,
-medicinam_vaccinum,1,,vaccīnum,1,lat_rem_temporarium_de_non_nativum,vacina,6,lat_rem_finale,vaccine,6,lat_rem_finale,vacuna,6,lat_rem_finale
-medicinam_patiens,1,,medicīnam patiēns,1,lat_rem_temporarium_de_non_nativum,paciente,6,lat_rem_finale,patient,6,lat_rem_finale,paciente,6,lat_rem_finale
-medicinam_hospitale,1,,medicīnam hospitāle,1,lat_rem_temporarium_de_non_nativum,hospital,6,lat_rem_finale,hospital,6,lat_rem_finale,hospital,6,lat_rem_finale
-medicinam_virus,1,,vīrus,1,lat_rem_temporarium_de_non_nativum,vírus,6,lat_rem_finale,virus,6,lat_rem_finale,virus,6,lat_rem_finale
-medicinam_medicamentum,1,,medicāmentum,1,lat_rem_temporarium_de_non_nativum,medication,6,lat_rem_finale,medication,6,lat_rem_finale,medicamento,6,lat_rem_finale
-geographicum_geographicum,1,,geōgraphicum,1,lat_rem_temporarium_de_non_nativum,,,,,,,,,
-geographicum_administratum,1,,geōgraphicum administrātum,1,lat_rem_temporarium_de_non_nativum,divisão administrativa,6,lat_rem_finale,administrative division,6,lat_rem_finale,,,
-geographicum_administratum_1,1,,geōgraphicum administrātum I,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 1,2,lat_rem_initiale,,,,,,
-geographicum_administratum_2,1,,geōgraphicum administrātum II,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 2,2,lat_rem_initiale,,,,,,
-geographicum_administratum_3,1,,geōgraphicum administrātum III,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 3,2,lat_rem_initiale,,,,,,
-geographicum_administratum_4,1,,geōgraphicum administrātum IV,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 4,2,lat_rem_initiale,,,,,,
-geographicum_administratum_5,1,,geōgraphicum administrātum V,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 5,2,lat_rem_initiale,,,,,,
-geographicum_latitudinem,1,,geōgraphicum lātitūdinem,1,lat_rem_temporarium_de_non_nativum,latitude,6,lat_rem_finale,latitude,6,lat_rem_finale,latitud,6,lat_rem_finale
-geographicum_longitudinem,1,,geōgraphicum longitūdinem,1,lat_rem_temporarium_de_non_nativum,longitude,6,lat_rem_finale,longitude,6,lat_rem_finale,longitud,6,lat_rem_finale
-geographicum_elevationem,1,,geōgraphicum ēlevātiōnem,1,lat_rem_temporarium_de_non_nativum,elevação,6,lat_rem_finale,elevation,6,lat_rem_finale,elevación,6,lat_rem_finale
-tempus_dactylum,1,,tempus dactylum,1,lat_rem_temporarium_de_non_nativum,data,6,lat_rem_finale,date,6,lat_rem_finale,,,
+#item+conceptum+codicem,#status,#item+conceptum+dominium,#item+conceptum+normam+normam_001_xz_org_hxlstandard,#item+conceptum+normam+normam_001_xz_ai_etica,#item+conceptum+normam+normam_076_br,#item+conceptum+normam+normam_840_us_usca,#item+rem+i_la+i_lat+is_latn,#status+rem+accuratum+i_la+i_lat+is_latn,#status+rem+textum+i_la+i_lat+is_latn,#item+rem+i_pt+i_por+is_latn,#status+rem+accuratum+i_pt+i_por+is_latn,#status+rem+textum+i_pt+i_por+is_latn,#item+rem+i_en+i_eng+is_latn,#status+rem+accuratum+i_en+i_eng+is_latn,#status+rem+textum+i_en+i_eng+is_latn,#item+rem+i_es+i_spa+is_latn,#status+rem+accuratum+i_es+i_spa+is_latn,#status+rem+textum+i_es+i_spa+is_latn
+L10N_ego_summarius,2,L10N,,,,,Lingua Latina (Abecedarium Latinum),10,lat_rem_finale,Língua portuguesa (alfabeto latino),10,lat_rem_finale,English language (Latin script),10,lat_rem_finale,Idioma español (Alfabeto latino),10,lat_rem_finale
+L10N_ego_codicem,2,L10N,,,,,lat-Latn,10,lat_rem_finale,por-Latn,10,lat_rem_finale,eng-Latn,10,lat_rem_finale,spa-Latn,10,lat_rem_finale
+L10N_ego_linguam_nomen,2,L10N,,,,,Lingua Latina,10,lat_rem_finale,Língua portuguesa,10,lat_rem_finale,English language,10,lat_rem_finale,Idioma español,10,lat_rem_finale
+L10N_ego_scriptum_nomen,2,L10N,,,,,Abecedarium Latinum,10,lat_rem_finale,Alfabeto latino,10,lat_rem_finale,Latin script,10,lat_rem_finale,Alfabeto latino,10,lat_rem_finale
+L10N_ego_patriam_UN_M49_numerum,2,L10N,,,,,001,10,lat_rem_finale,001,10,lat_rem_finale,001,10,lat_rem_finale,001,10,lat_rem_finale
+L10N_ego_patriam_UN_P_codicem,2,L10N,,,,,∅,10,lat_rem_finale,∅,10,lat_rem_finale,∅,10,lat_rem_finale,∅,10,lat_rem_finale
+I18N_testum_salve_mundi_testum_I18N,2,I18N,,,,,Salvi mundi!,10,lat_rem_finale,Olá mundo!,10,lat_rem_finale,"Hello, World!",10,lat_rem_finale,¡Hola mundo!,10,lat_rem_finale
+I18N_إختبار_טעסט_测试_테스트_испытание_I18N,2,I18N,,,,,"Testum, I, II, III",10,lat_rem_finale,"Teste, 1, 2, 3",10,lat_rem_finale,"Test, 1, 2, 3",10,lat_rem_finale,"Prueba, 1, 2, 3",10,lat_rem_finale
+I18N_०१२३४५६७८९_〇一二三四五六七八九十百千万亿_-1+2/3*4_٩٨٧٦٥٤٣٢١٠_零壹贰叁肆伍陆柒捌玖拾佰仟萬億_I18N,2,I18N,,,,,"I,V, X, L, C, D, M",10,lat_rem_finale,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",10,lat_rem_finale,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",10,lat_rem_finale,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10",10,lat_rem_finale
+medicinam_medicinam,1,,,,,,medicīnam,1,lat_rem_temporarium_de_non_nativum,medicina,6,lat_rem_finale,medicine,6,lat_rem_finale,,,
+medicinam_vaccinum,1,,,,,,vaccīnum,1,lat_rem_temporarium_de_non_nativum,vacina,6,lat_rem_finale,vaccine,6,lat_rem_finale,vacuna,6,lat_rem_finale
+medicinam_patiens,1,,,,,,medicīnam patiēns,1,lat_rem_temporarium_de_non_nativum,paciente,6,lat_rem_finale,patient,6,lat_rem_finale,paciente,6,lat_rem_finale
+medicinam_hospitale,1,,,,,,medicīnam hospitāle,1,lat_rem_temporarium_de_non_nativum,hospital,6,lat_rem_finale,hospital,6,lat_rem_finale,hospital,6,lat_rem_finale
+medicinam_virus,1,,,,,,vīrus,1,lat_rem_temporarium_de_non_nativum,vírus,6,lat_rem_finale,virus,6,lat_rem_finale,virus,6,lat_rem_finale
+medicinam_medicamentum,1,,,,,,medicāmentum,1,lat_rem_temporarium_de_non_nativum,medication,6,lat_rem_finale,medication,6,lat_rem_finale,medicamento,6,lat_rem_finale
+geographicum_geographicum,1,,,,,,geōgraphicum,1,lat_rem_temporarium_de_non_nativum,,,,,,,,,
+geographicum_administratum,1,,,,,,geōgraphicum administrātum,1,lat_rem_temporarium_de_non_nativum,divisão administrativa,6,lat_rem_finale,administrative division,6,lat_rem_finale,,,
+geographicum_administratum_1,1,,#adm1__meta__,adm1,,,geōgraphicum administrātum I,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 1,2,lat_rem_initiale,,,,,,
+geographicum_administratum_2,1,,#adm2__meta__,adm2,,,geōgraphicum administrātum II,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 2,2,lat_rem_initiale,,,,,,
+geographicum_administratum_3,1,,#adm3__meta__,adm3,,,geōgraphicum administrātum III,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 3,2,lat_rem_initiale,,,,,,
+geographicum_administratum_4,1,,#adm4__meta__,adm4,,,geōgraphicum administrātum IV,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 4,2,lat_rem_initiale,,,,,,
+geographicum_administratum_5,1,,#adm5__meta__,adm5,,,geōgraphicum administrātum V,1,lat_rem_temporarium_de_non_nativum,divisão administrativa 5,2,lat_rem_initiale,,,,,,
+geographicum_latitudinem,1,,#geo+lat__meta__,geo_lat,,,geōgraphicum lātitūdinem,1,lat_rem_temporarium_de_non_nativum,latitude,6,lat_rem_finale,latitude,6,lat_rem_finale,latitud,6,lat_rem_finale
+geographicum_longitudinem,1,,#geo+lon__meta__,geo_lon,,,geōgraphicum longitūdinem,1,lat_rem_temporarium_de_non_nativum,longitude,6,lat_rem_finale,longitude,6,lat_rem_finale,longitud,6,lat_rem_finale
+geographicum_elevationem,1,,#geo+elevation__meta__,geo_elevation,,,geōgraphicum ēlevātiōnem,1,lat_rem_temporarium_de_non_nativum,elevação,6,lat_rem_finale,elevation,6,lat_rem_finale,elevación,6,lat_rem_finale
+tempus_dactylum,1,,#date__meta__,date,,,tempus dactylum,1,lat_rem_temporarium_de_non_nativum,data,6,lat_rem_finale,date,6,lat_rem_finale,,,
+,0,,#date+lat_vaccinum,date_vaccinum,vacina_dataaplicacao,administered_date,,,,,,,,,,,,
+,0,,,,,,,,,,,,,,,,,
