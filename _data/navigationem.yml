@@ -74,12 +74,10 @@ principale:
         # iri: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 🗣️_ %}'
         iri: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/{% _🗣️ 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 🗣️_ %}/XZ/{% _🗣️ 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 🗣️_ %}/'
 
-      - xdefallo: /mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/
-        # nomen: '{% _🗣️ ISO_15924_nomen 🗣️_ %}'
-        nomen: 'humanitarium-responsum-rem'
-        # linguam: '{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}'
-        # iri: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/#{% _🗣️ 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 🗣️_ %}'
-        iri: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/{% _🗣️ 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 🗣️_ %}/XZ/{% _🗣️ 🔎🔕🔍 ISO_15924_slug 🔎🔕🔍 🗣️_ %}/'
+      - xdefallo: /mul-Zyyy/dictionarium/XZ/humanitarium-responsum-rem/
+        # nomen: '{% _🗣️ HRR_nomen 🗣️_ %}'
+        nomen: '{% _🗣️ HRR_titulum 🗣️_ %}'
+        iri: '/{% _🗣️ 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 🗣️_ %}/{% _🗣️ 🔎🔕🔍 Hapi_dictionarium_slug 🔎🔕🔍 🗣️_ %}/XZ/{% _🗣️ 🔎🔕🔍 HRR_slug 🔎🔕🔍 🗣️_ %}/'
 
   - nomen: '{% _🗣️ Hapi_locum_076_nomen_emoji 🗣️_ %}'
     iri: '#'
