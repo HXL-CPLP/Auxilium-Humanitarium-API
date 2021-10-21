@@ -1,5 +1,326 @@
 [
   {
+    "uid": "/mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/",
+    "xdefallo_est": true,
+    "linguam": "mul-Zyyy",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "humanitarium-responsum-rem",
+    "nomen": "{% _🗣️ UN_codicem_anglicum_IOM_HTCDS_nomen 🗣️_ %}",
+    "titulum": "{% _🗣️ UN_codicem_anglicum_IOM_HTCDS_titulum 🗣️_ %}",
+    "summarius": "{% _🗣️ UN_codicem_anglicum_IOM_HTCDS_summarius 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "nomen": "HTCDS Excel Spreadsheet.xlsm",
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Excel/HTCDS%20Excel%20Spreadsheet.xlsm"
+        },
+        {
+          "nomen": "htcds_xlsform.xlsx",
+          "iri": "https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Survey/htcds_xlsform.xlsx"
+        }
+      ]
+    },
+    "opus_in_progressu": true,
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/",
+    "linguam": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_titulum 🔎🔕🔍 📝por-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝por-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝por-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "nomen": "HXL-CPLP/forum#60",
+          "iri": "https://github.com/HXL-CPLP/forum/issues/60"
+        }
+      ],
+      "schemam": {
+        "csv+hxl": [
+          {
+            "iri": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.csv"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/humanitarium-responsum-rem.tm.hxl.csv"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}/{% _🗣️ 📝por-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝por-Latn📝 🗣️_ %}.csv"
+      }
+    ],
+    "opus_in_progressu": true,
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/",
+    "linguam": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_titulum 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝eng-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝eng-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "nomen": "HXL-CPLP/forum#60",
+          "iri": "https://github.com/HXL-CPLP/forum/issues/60"
+        }
+      ],
+      "schemam": {
+        "csv+hxl": [
+          {
+            "iri": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.csv"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/humanitarium-responsum-rem.tm.hxl.csv"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}/{% _🗣️ 📝eng-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝eng-Latn📝 🗣️_ %}.csv"
+      }
+    ],
+    "opus_in_progressu": true,
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/UN/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/",
+    "linguam": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_titulum 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝arb-Arab📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝arb-Arab📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "nomen": "HXL-CPLP/forum#60",
+          "iri": "https://github.com/HXL-CPLP/forum/issues/60"
+        }
+      ],
+      "schemam": {
+        "csv+hxl": [
+          {
+            "iri": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/XZ/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.csv"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/humanitarium-responsum-rem.tm.hxl.csv"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/XZ/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}/{% _🗣️ 📝arb-Arab📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝arb-Arab📝 🗣️_ %}.csv"
+      }
+    ],
+    "opus_in_progressu": true,
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/",
+    "linguam": "{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_titulum 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝slv-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝slv-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "nomen": "HXL-CPLP/forum#60",
+          "iri": "https://github.com/HXL-CPLP/forum/issues/60"
+        }
+      ],
+      "schemam": {
+        "csv+hxl": [
+          {
+            "iri": "/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}.csv"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/humanitarium-responsum-rem.tm.hxl.csv"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}/{% _🗣️ 📝slv-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝slv-Latn📝 🗣️_ %}.csv"
+      }
+    ],
+    "opus_in_progressu": true,
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/UN/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/",
+    "linguam": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_titulum 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝spa-Latn📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝spa-Latn📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "nomen": "HXL-CPLP/forum#60",
+          "iri": "https://github.com/HXL-CPLP/forum/issues/60"
+        }
+      ],
+      "schemam": {
+        "csv+hxl": [
+          {
+            "iri": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.csv"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/humanitarium-responsum-rem.tm.hxl.csv"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/XZ/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}/{% _🗣️ 📝spa-Latn📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝spa-Latn📝 🗣️_ %}.csv"
+      }
+    ],
+    "opus_in_progressu": true,
+    "experimentum_est": true
+  },
+  {
+    "uid": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/UN/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/",
+    "xdefallo": "/mul-Zyyy/schemam/XZ/humanitarium-responsum-rem/",
+    "linguam": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "typum": "schemam",
+    "gid": "XZ",
+    "lid": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "slug_permanens": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "slug_situs_interretialis": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_situs_interretialis_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "nomen": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_nomen 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "titulum": "{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_titulum 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}",
+    "summarius": "{% _🗣️ 📝hin-Deva📝 UN_codicem_anglicum_IOM_HTCDS_summarius 📝hin-Deva📝 🗣️_ %}",
+    "situs_interretialis": {
+      "referens_officinale": [
+        {
+          "iri": "https://github.com/UNMigration/HTCDS"
+        }
+      ]
+    },
+    "archivum": {
+      "referens_officinale": [
+        {
+          "nomen": "HXL-CPLP/forum#60",
+          "iri": "https://github.com/HXL-CPLP/forum/issues/60"
+        }
+      ],
+      "schemam": {
+        "csv+hxl": [
+          {
+            "iri": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.csv"
+          }
+        ],
+        "tm": [
+          {
+            "iri": "/data/tm/humanitarium-responsum-rem.tm.hxl.csv"
+          }
+        ]
+      }
+    },
+    "__translationem": [
+      {
+        "fontem": "/schemam/UN/HTCDS/HTCDS.🗣️.csv",
+        "objectivum": "/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/XZ/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}/{% _🗣️ 📝hin-Deva📝 🔎🔕🔍 UN_codicem_anglicum_IOM_HTCDS_slug 🔎🔕🔍 📝hin-Deva📝 🗣️_ %}.csv"
+      }
+    ],
+    "opus_in_progressu": true,
+    "experimentum_est": true
+  },
+  {
     "uid": "/mul-Zyyy/schemam/UN/HTCDS/",
     "xdefallo": "/mul-Zyyy/schemam/UN/HTCDS/",
     "xdefallo_est": true,
