@@ -55,9 +55,9 @@ HXL-CPLP.
   - [docs.google.com: HXL-CPLP-Vocab_Auxilium-Humanitarium-API](https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1181688279)
 
 
-### Executar o Jekyll localmente
+#### Executar o Jekyll localmente
 
-#### Configuração inicial (apenas uma vez): obter cópia e instalar dependências
+##### Configuração inicial (apenas uma vez): obter cópia e instalar dependências
 
 - Como clonar repositório?
   - <https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository>
@@ -79,7 +79,7 @@ bundle config set path 'vendor/bundle'
 bundle install
 ```
 
-#### Dia a dia: executar versão local
+##### Dia a dia: executar versão local
 
 ```bash
 JEKYLL_ENV=development bundle exec jekyll serve --config _config.yml,_config_dev.yml
@@ -94,6 +94,59 @@ JEKYLL_ENV=development bundle exec jekyll serve --config _config.yml,_config_dev
 bundle exec jekyll serve --config _config.yml,_config_dev.yml --profile
 
 ```
+
+### Tópico especial: de onde "vem os dados do site"?
+
+#### Resposta curta
+
+Se você estiver fazendo um clone local, ele usará tanto arquivos YAML
+(que são projetados para ser editados usando git) como arquivos HXLizados
+que contém as traduções.
+
+Caso você queira ajudar com traduções, por favor, entre em contato com
+mantenedores que explicamos a você.
+
+#### Resposta para pessoas mantenedoras
+
+Ao usar `bundle exec jekyll serve` os arquivos de dados locais funcionam como
+um **tipo de cacheamento** (bem como um implicitamente um histórico),
+**porém pessoas colaboradoras** (mesmo que não sejam quem cria as traduções,
+mas sim os YAMLs) **também tem acesso de edição nas planilhas**.
+
+O arquivo [Rakefile](Rakefile) tem atalhos para algumas rotinas comuns do
+utilitário de linha de comando rake (veja <https://ruby.github.io/rake/>).
+
+```bash
+### Roda as tarefas padrões (exceto testes e limpeza de cache local)
+# No mínimo irá baixar todas as planilhas que são editadas colaborativamente
+# por humanos no GSheets.
+rake
+
+### Roda testes (exemplo: checagem de links quebrados)
+rake test
+
+### Deleta caches intermediários
+# Como o site é executado DUAS vezes antes de estar pronto (isto é, na primeria
+# vez que o site é executado, se não houver cache, ele pede para rodar de novo)
+# Existe situação onde quem trabalhar localmente pode ter um cache
+# intermediário que impede terminar o ciclo. O comando a seguir limpa esses
+# arquivos
+rake purgatorium
+```
+
+### Tópico especial: planilhas foram alteradas, mas não precisa editar códigos e YAML. O que fazer para atualizar o hapi.etica.ai?
+
+Vá em <https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/actions>, encontre
+um teste qualquer recente e clique **"Re-run all jobs"**.
+
+O [.github/workflows/05-deploy-github-pages.yml](.github/workflows/05-deploy-github-pages.yml)
+é instruído a sempre baixar arquivos das planilhas online e ignorar os caches
+salvos no GitHub.
+
+<!--
+O motivo para **independente** do que for enviado nos commits dos CSVs de dados
+a automação baixar novamente eles antes de enviar para <https://hapi.etica.ai>
+é justamente 
 
 ### `_data/L10n.hxl.csv`
 - Automação
@@ -110,6 +163,7 @@ GitHub pages com ajuda do script `_systema/programma/download-hxl-datum.sh`.
 porém qualquer customização, mesmo que commitada neste repositório, caso
 não esteja também em _GSheets: HXL-CPLP-Vocab_Auxilium-Humanitarium-API_L10n_
 sera completamente ignorada.
+-->
 
 <!--
 ### Licença
