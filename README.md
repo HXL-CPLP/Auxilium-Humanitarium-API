@@ -57,6 +57,30 @@ HXL-CPLP.
 
 ### Executar o Jekyll localmente
 
+#### Configuração inicial (apenas uma vez): obter cópia e instalar dependências
+
+- Como clonar repositório?
+  - <https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository>
+- Como instalar dependências do bundler?
+  - <https://bundler.io/>
+
+```bash
+# Existem pelo menos 3 formas de clonar o repositório. Esta não requer
+# configurar credenciais de acesso. Você talvez queria criar próprio fork
+git clone https://github.com/HXL-CPLP/Auxilium-Humanitarium-API.git
+cd Auxilium-Humanitarium-API
+
+# Como instalar Ruby e o Bundler: não explicado aqui
+
+# Uma das formas de definir onde ficariam instaladas as dependências
+bundle config set path 'vendor/bundle'
+
+# Instala, de fato, as dependências
+bundle install
+```
+
+#### Dia a dia: executar versão local
+
 ```bash
 JEKYLL_ENV=development bundle exec jekyll serve --config _config.yml,_config_dev.yml
 
