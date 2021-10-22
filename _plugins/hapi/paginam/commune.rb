@@ -174,7 +174,9 @@ module Hapi
 
       site_data = Hapi::HSD.data?
 
-      Hapi::Utilitatem.linguam_to_html_lang(linguam, site_data['referens'])
+      Hapi::Utilitatem.linguam_to_html_lang(
+        linguam, site_data['referens'], @datum
+      )
     end
 
     def keys
@@ -216,7 +218,6 @@ module Hapi
         "schemam-trivium-#{trivium}"
       ]
     end
-
 
     def titulum
       @datum['titulum'] || @datum['nomen']

@@ -116,13 +116,13 @@ module Hapi
       @hreflang = if xdefault_est(api)
                     'x-default'
                   else
-                    linguam_to_html_lang(api['linguam'], referens)
+                    linguam_to_html_lang(api['linguam'], referens, api)
                   end
       # puts @hreflang
       api['jekyll-page'] = {
         # 'locale' => Utilitatem.linguam_to_html_lang(api['linguam']),
         'linguam' => api['linguam'],
-        'lang' => linguam_to_html_lang(api['linguam'], referens),
+        'lang' => linguam_to_html_lang(api['linguam'], referens, api),
         # @see https://www.w3.org/International/questions/qa-html-dir, dir="auto"
         'htmldir' => 'ltr', # FIXME: _[eng] Use _data/referens.yml for non-LTR [eng]-
         'hreflang' => @hreflang,
@@ -190,9 +190,14 @@ module Hapi
 
     # _[eng] We use ISO 639-3, but HTML lang wants BCP-47 [eng]_
     # _[por] Usamos ISO 639-3, porém HTML lang deseja BCP-47 [por]_
-    def linguam_to_html_lang(linguam, referens)
+    def linguam_to_html_lang(linguam, referens, debug = nil)
+      # def linguam_to_html_lang(linguam, referens, debug_api)
       if referens['linguam'][linguam].nil?
         puts "ERROR! linguam_to_html_lang referens #{linguam}!"
+        # puts debug.keys
+        # puts debug
+        # puts debug['uid'] unless debug['uid'].nil?
+        puts debug['xdefallo'] unless debug['xdefallo'].nil?
         return nil
       end
 

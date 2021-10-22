@@ -27,17 +27,15 @@
   summarius: "{% _🗣️ HRR_summarius 🗣️_ %}"
   situs_interretialis:
     referens_officinale:
-      - iri: https://github.com/UNMigration/HTCDS
+      - iri: https://github.com/HXL-CPLP/forum/issues/60
     # vicipaedia:
     #   - iri: (...)
   # wikidatum:
   #   - codicem: (...)
   archivum:
     referens_officinale:
-      - nomen: "HTCDS Excel Spreadsheet.xlsm"
-        iri: https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Excel/HTCDS%20Excel%20Spreadsheet.xlsm
-      - nomen: htcds_xlsform.xlsx
-        iri: https://github.com/UNMigration/HTCDS/blob/master/Toolkit/Survey/htcds_xlsform.xlsx
+      - nomen: "HXL-CPLP/forum#60"
+        iri: https://github.com/HXL-CPLP/forum/issues/60
     # referens_alternativum_nomen
   opus_in_progressu: true # deprecated, Use experimentum_est
   experimentum_est: true
@@ -50,7 +48,7 @@
         - fontem: "/dictionarium/humanitarium-responsum-rem/testum.🗣️.json"
           objectivum: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_dictionarium_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
     structuram:
-      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
+      uid: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_dictionarium_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/"
       xdefallo: /mul-Zyyy/dictionarium/XZ/humanitarium-responsum-rem/
       linguam: "{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}" # Exemplum: por-Latn
       typum: dictionarium
@@ -87,10 +85,6 @@
           #   - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_dictionarium_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.csv"
           json:
             - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_dictionarium_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/XZ/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
-          # json:
-          #   - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.json"
-          # sql:
-          #   - iri: "/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 L10N_ego_codicem 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 Hapi_schemam_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/UN/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}/sql/{% _🗣️ 📝und-Zyyy📝 🔎🔕🔍 HRR_slug 🔎🔕🔍 📝und-Zyyy📝 🗣️_ %}.sql"
           tm:
             - iri: "/data/tm/humanitarium-responsum-rem.tm.hxl.csv"
       __translationem: *id_temp0009
