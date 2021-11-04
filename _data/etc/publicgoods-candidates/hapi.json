@@ -1,0 +1,28 @@
+{
+    "name": "Auxilium Humanitarium API documentōrum",
+    "description": "Auxilium Humanitarium API documentōrum (alpha)",
+    "website": "https://hapi.etica.ai/",
+    "license": [
+        {
+            "spdx": "Unlicense",
+            "licenseURL": "https://unlicense.org"
+        }
+    ],
+    "SDGs": [
+        {
+            "SDGNumber": -1
+        }
+    ],
+    "sectors": [],
+    "type": [
+        "content"
+    ],
+    "organizations": [
+        {
+            "name": "Grupo de Usuários do Padrão HXL da Comunidade dos Países de Língua Portuguesa",
+            "website": "https://github.com/HXL-CPLP",
+            "org_type": "owner"
+        }
+    ],
+    "stage": "nominee"
+}
