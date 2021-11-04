@@ -1,6 +1,7 @@
 # @ARCHĪVUM         _data/translationem-memoriam.yml
 # @see              _systema/programma/download-hxl-datum.sh
 
+#### hapi-miniman ______________________________________________________________
 - uid: /mul-Zyyy/tm/XZ/hapi-miniman/
   xdefallo: /mul-Zyyy/tm/XZ/hapi-miniman/
   xdefallo_est: true
@@ -22,6 +23,7 @@
       - nomen: "hapi-miniman.tm.hxl.csv"
         iri: https://proxy.hxlstandard.org/data/download/hapi-miniman_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D816634241
 
+#### hapi-api __________________________________________________________________
 - uid: /mul-Zyyy/tm/XZ/hapi-api/
   xdefallo: /mul-Zyyy/tm/XZ/hapi-api/
   xdefallo_est: true
@@ -41,6 +43,29 @@
       - nomen: "hapi-api.tm.hxl.csv"
         iri: https://proxy.hxlstandard.org/data/download/hapi-api_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1680147913
 
+#### humanitarium-responsum-rem __________________________________________________________________
+- uid: /mul-Zyyy/tm/XZ/humanitarium-responsum-rem/
+  xdefallo: /mul-Zyyy/tm/XZ/humanitarium-responsum-rem/
+  xdefallo_est: true
+  linguam: mul-Zyyy
+  typum: tm
+  gid: XZ
+  lid: humanitarium-responsum-rem
+  titulum: "humanitarium-responsum-rem.tm"
+  noindex: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
+  situs_interretialis:
+    referens_officinale:
+      - iri: https://github.com/HXL-CPLP/forum/issues/60
+  archivum:
+    referens_officinale:
+      - nomen: "humanitarium-responsum-rem.tm.gsheet"
+        iri: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1331879749
+      - nomen: "humanitarium-responsum-rem.tm.hxl.csv"
+        iri: https://proxy.hxlstandard.org/data/download/humanitarium-responsum-rem_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1331879749
+
+#### schemam ___________________________________________________________________
 - uid: /mul-Zyyy/tm/XZ/schemam/
   xdefallo: /mul-Zyyy/tm/XZ/schemam/
   xdefallo_est: true
@@ -60,6 +85,30 @@
       - nomen: "schemam.tm.hxl.csv"
         iri: https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%3Fpli%3D1%23gid%3D1345709789
 
+#### schemam-un-htcds ___________________________________________________________________
+- uid: /mul-Zyyy/tm/XZ/schemam-un-htcds/
+  xdefallo: /mul-Zyyy/tm/XZ/schemam-un-htcds/
+  xdefallo_est: true
+  linguam: mul-Zyyy
+  typum: tm
+  gid: XZ
+  lid: schemam-un-htcds
+  titulum: "schemam-un-htcds.tm"
+  noindex: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
+  situs_interretialis:
+    referens_officinale:
+      - iri: https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/15
+  archivum:
+    referens_officinale:
+      - nomen: "schemam-un-htcds.tm.gsheet"
+        iri: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=1292720422
+      - nomen: "schemam-un-htcds.tm.hxl.csv"
+        iri: https://proxy.hxlstandard.org/data/download/schemam-un-htcds_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D1292720422
+
+
+#### commune ___________________________________________________________________
 - uid: /mul-Zyyy/tm/XZ/commune/
   xdefallo: /mul-Zyyy/tm/XZ/commune/
   xdefallo_est: true
@@ -78,3 +127,25 @@
         iri: https://docs.google.com/spreadsheets/d/1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4/edit#gid=355011653
       - nomen: "commune.tm.hxl.csv"
         iri: https://proxy.hxlstandard.org/data/download/commune_tm_hxl.csv?dest=data_edit&filter01=cut&filter-label01=Remove+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ih3ouvx_n8W5ntNcYBqoyZ2NRMdaA0LRg5F9mGriZm4%2Fedit%23gid%3D355011653
+
+#### schemam-un-htcds ___________________________________________________________________
+- uid: /mul-Zyyy/tm/XZ/vaccinum/
+  xdefallo: /mul-Zyyy/tm/XZ/vaccinum/
+  xdefallo_est: true
+  linguam: mul-Zyyy
+  typum: tm
+  gid: XZ
+  lid: vaccinum
+  titulum: "vaccinum.tm"
+  noindex: true
+  opus_in_progressu: true # deprecated, Use experimentum_est
+  experimentum_est: true
+  situs_interretialis:
+    referens_officinale:
+      - iri: https://github.com/HXL-CPLP/forum/issues/59
+  archivum:
+    referens_officinale:
+      - nomen: "vaccinum.tm.gsheet"
+        iri: https://docs.google.com/spreadsheets/d/1couRYFuVLnr6CfIMEiXKBamJtmcHinSAy1K1e69rNqw/edit#gid=141644151
+      - nomen: "vaccinum.tm.hxl.csv"
+        iri: https://proxy.hxlstandard.org/data/download/schemam_tm_hxl.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1couRYFuVLnr6CfIMEiXKBamJtmcHinSAy1K1e69rNqw%2Fedit%23gid%3D141644151&filter01=cut&filter-label01=Non+%23meta&cut-exclude-tags01=%23meta&cut-skip-untagged01=on&filter02=select&filter-label02=%23status%3E-1&select-query02-01=%23status%3E-1&strip-headers=on&force=on

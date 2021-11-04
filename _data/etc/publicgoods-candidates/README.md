@@ -1,7 +1,8 @@
 # _data/etc/publicgoods-candidates/README.md
 
-> <https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/18>
-
+> - <https://github.com/HXL-CPLP/Auxilium-Humanitarium-API/issues/18>
+> - Avaliações de candidatos passados
+>   - https://github.com/unicef/publicgoods-candidates/tree/main/reviews
 
 ### template
 
